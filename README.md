@@ -3,7 +3,7 @@ Projeto integrador dos alunos da Digital House, Grupo 04
 
 SANTANDER CODERS BY DIGITAL HOUSE
 
-Tema: Rede Social - ***
+Tema: Rede Social - Jogos de Tabuleiro
 
 Integrantes:
 - Daniele de Oliveira Lucas
