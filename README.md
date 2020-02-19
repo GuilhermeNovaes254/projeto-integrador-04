@@ -14,4 +14,5 @@ Integrantes:
 
 
 Nome da Rede Social: Looders
+Paleta de cores: https://color.adobe.com/pt/search?q=jogos%20de%20tabuleiro&t=term
 
