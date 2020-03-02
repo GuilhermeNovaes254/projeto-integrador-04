@@ -8,7 +8,7 @@ Tema: Rede Social - Jogos de Tabuleiro
 Integrantes:
 - Daniele de Oliveira Lucas
 - Marcos Vinicius
-- Andrè Kenzo
+- André Kenzo
 - Guilherme Novaes
 - Álan deMoraes Torelli 
 
