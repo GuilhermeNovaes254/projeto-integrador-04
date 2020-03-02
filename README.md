@@ -10,7 +10,7 @@ Integrantes:
 - Marcos Vinicius
 - André Kenzo
 - Guilherme Novaes
-- Álan deMoraes Torelli 
+- Álan de Moraes Torelli 
 
 
 Nome da Rede Social: Looders
