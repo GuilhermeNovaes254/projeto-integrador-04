@@ -1,0 +1,37 @@
+1 Home - Andre
+2 Home2 - Andre
+3 Cadastro - Dani
+4 Perfil - Alan
+5 Jogo - Marcos
+6 Busca - Marcos
+7 Cadastro jogo - Dani
+8 Perfil Adm - Guilherme
+9 Perfil Moderador - Marcos
+10 Modulo Destaques - Guilherme
+11 Excluir Conta - Guilherme
+12 Editar Perfil - Dani
+13 Login - Guilherme
+14 Header - Andre
+15 Footer - Andre
+
+********************************************
+
+Home - *Andre*
+Home2 - *Andre*
+Header - *Andre*
+Footer - *Andre*
+
+Editar Perfil - *Dani*
+Cadastro jogo - *Dani*
+Cadastro - *Dani*
+
+Perfil - *Alan*
+
+Perfil Moderador - *Marcos*
+Jogo - *Marcos*
+Busca - *Marcos*
+
+10 Modulo Destaques - *Guilherme*
+11 Excluir Conta - *Guilherme*
+13 Login - *Guilherme*
+8 Perfil Adm - *Guilherme*
