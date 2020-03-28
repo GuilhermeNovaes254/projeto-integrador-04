@@ -12,6 +12,7 @@ Integrantes:
 - Guilherme Novaes
 - Álan de Moraes Torelli 
 
+*********
 
 Nome da Rede Social: Looders
 Paleta de cores: https://color.adobe.com/pt/search?q=game%20boarding&t=term
@@ -39,5 +40,5 @@ Inicialização do projeto
 - Tenha intalado o NodeJS no computador.
 - clone o projeto.
 - Na pasta raiz do projeto, rode os seguites comandos.
-	$ npm i
-	$ nodemon start
+$ npm i
+$ nodemon start
