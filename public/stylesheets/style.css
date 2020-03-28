@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Comfortaa|Montserrat&display=swap');
+
+body {
+  padding: 50px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+h{
+    font-family: 'Comfortaa', cursive;
+}
+
