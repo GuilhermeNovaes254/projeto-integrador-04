@@ -27,6 +27,10 @@ h1 {
   align-content: center;
   color: white;
   border-color: #181718;
-  border-radius: 15px;
+  border-radius: 100px;
   max-width: 200px;
+}
+
+#formElement {
+  border-radius: 100px;
 }
