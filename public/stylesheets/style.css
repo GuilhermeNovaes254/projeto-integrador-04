@@ -12,6 +12,7 @@
 body {
   padding: 50px;
   font-family: 'Montserrat', sans-serif;
+  background-color: #E5E5E5;
 }
 
 a {
@@ -20,6 +21,13 @@ a {
 
 h1 {
   font-family: 'Comfortaa', cursive;
+}
+
+/* Início login.ejs  */
+#formElement {
+  background: #FFFFFF;
+  border: 1px solid #DDDDDD;
+  border-radius: 15px;
 }
 
 #button {
@@ -31,6 +39,9 @@ h1 {
   max-width: 200px;
 }
 
-#formElement {
-  border-radius: 100px;
+#imgLogin,
+#BotaoFechar{
+  display: flex;
+  align-content: center;
+  
 }

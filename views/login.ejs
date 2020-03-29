@@ -1,31 +1,36 @@
 <%- include('./partials/header') %>
+<div class='col-md-12'>
+  <img  src="../public/images/icons/fechar.png" id="botaoFechar" alt='Botão Fechar' title="Fechar">
+</div>
 
-    <div class="dropdown-menu p-4" >
-        <p>Foto do login</p>
+<div class='col-md-4  center'>
+  <img src="../public/images/icons/PerfilVermelho.png" id="imgLogin" alt='Ícone de Login' title="Ícone de Login" />
+</div>
+
+
+
+<div class='row'>
+<section>
+  <form class='col-md-4 align-center' >
+
+    <div class="form-group" id='formElement'>
+      <input type="email" class="form-control" id="formElement" placeholder="E-mail" >
     </div>
+    <div class="form-group" id='formElement'>
+      <input type="password" class="form-control" id="formElement" placeholder="Senha">
+    </div>
+    <div class="form-group">
+      <div class="form-check">
+        <input type="checkbox" class="form-check-input center" id="dropdownCheck2">
+        <label class="form-check-label" for="dropdownCheck2">
+          Lembrar Senha
+        </label>
+      </div>
+    </div>
+    <button type="submit" id="button" class="btn btn-primary col-md-4 ">Entrar</button>
+  </form>
 
-    <div class="align-content-center"></div>
-
-        <section>
-            <form class='col-md-4'>
-                <div class="form-group" id='formElement'>
-                  <input type="email" class="form-control" id="formElement" placeholder="E-mail">
-                </div>
-                <div class="form-group" id='formElement'>
-                  <input type="password" class="form-control" id="formElement" placeholder="Senha">
-                </div>
-                <div class="form-group">
-                  <div class="form-check">
-                    <input type="checkbox" class="form-check-input center" id="dropdownCheck2">
-                    <label class="form-check-label" for="dropdownCheck2">
-                      Lembrar Senha
-                    </label>
-                  </div>
-                </div>
-                <button type="submit" id="button" class="btn btn-primary col-md-4 ">Entrar</button>
-              </form>
-
-        </section>
-
+</section>
+</div>
 
 <%- include('./partials/footer') %>
