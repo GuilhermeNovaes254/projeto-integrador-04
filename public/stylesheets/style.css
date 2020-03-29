@@ -1,15 +1,32 @@
 @import url('https://fonts.googleapis.com/css?family=Comfortaa|Montserrat&display=swap');
 
+/*
+#F22441   - Vermelho/Rosa
+#0F7A2F   - Verde
+#E5E5E5   - Cinza
+#FFFFFF   - Branco
+#181718   - Preto
+*/
+
+
 body {
   padding: 50px;
   font-family: 'Montserrat', sans-serif;
 }
 
 a {
-  color: #00B7FF;
+  color: #0F7A2F;
 }
 
-h{
-    font-family: 'Comfortaa', cursive;
+h1 {
+  font-family: 'Comfortaa', cursive;
 }
 
+#button {
+  background-color: #181718;
+  align-content: center;
+  color: white;
+  border-color: #181718;
+  border-radius: 15px;
+  max-width: 200px;
+}
