@@ -39,9 +39,10 @@ h1 {
   max-width: 200px;
 }
 
-#imgLogin,
-#BotaoFechar{
-  display: flex;
-  align-content: center;
-  
+.container{
+text-align: center;
+}
+
+#botaoFechar{
+  text-align: right;
 }
