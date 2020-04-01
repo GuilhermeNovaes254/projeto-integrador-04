@@ -12,9 +12,9 @@ const homeController = {
     });
   },
 
-  home2: (req, res) => {
-    res.render('home2', {
-      title: 'home2'
+  feeds: (req, res) => {
+    res.render('feeds', {
+      title: 'Feeds'
     });
   },
 

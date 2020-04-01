@@ -10,7 +10,6 @@
 
 
 body {
-  padding: 50px;
   font-family: 'Montserrat', sans-serif;
   background-color: #E5E5E5;
 }
@@ -26,7 +25,7 @@ h1 {
 
 
 .fotoDePagina{
-  max-height: 230 px;
+  max-height: 230px;
   max-width: 100%;
   box-sizing: border-box;
 }
@@ -138,3 +137,9 @@ box-sizing: border-box;
   text-align: center;
 }
 /* Fim cadastroJOgo.ejs */
+
+/* Inicio header.ejs */
+
+
+
+/* Fim header.ejs */

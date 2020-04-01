@@ -6,7 +6,7 @@ let homeController = require('../controllers/homeController');
 /* GET home page. */
 router.get('/', homeController.index);
 router.get('/login', homeController.login);
-router.get('/home2', homeController.home2);
+router.get('/feeds', homeController.feeds);
 router.get('/cadastroJogo', homeController.cadastroJogo);
 router.get('/perfil', homeController.perfil);
 router.get('/jogo', homeController.jogo);
