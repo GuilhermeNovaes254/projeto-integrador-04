@@ -135,6 +135,13 @@ box-sizing: border-box;
 }
 /* Fim cadastroJOgo.ejs */
 
+/* Inicio BuscaJogo */
+#caixaDeBusca{
+  
+  background: #E9E9E9;
+}
+/* Fim BuscaJogo */
+
 /* Inicio header.ejs */
 
 .o-header{
