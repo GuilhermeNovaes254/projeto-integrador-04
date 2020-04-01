@@ -137,8 +137,11 @@ box-sizing: border-box;
 
 /* Inicio BuscaJogo */
 #caixaDeBusca{
-  
+
   background: #E9E9E9;
+}
+.form-control {
+  width: unset;
 }
 /* Fim BuscaJogo */
 
