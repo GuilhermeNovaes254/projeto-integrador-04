@@ -19,8 +19,8 @@ const homeController = {
   },
 
   cadastroJogo: (req, res) => {
-    res.render('cadastro', {
-      title: 'cadastro'
+    res.render('cadastroJogo', {
+      title: 'Cadastro Jogo'
     });
   },
 
@@ -55,7 +55,8 @@ const homeController = {
   },
 
   perfilModerador: (req, res) => {
-    res.render('perfilModerador', {      title: 'perfilModerador'
+    res.render('perfilModerador', {      
+      title: 'perfilModerador'
     });
   },
 

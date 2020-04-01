@@ -31,6 +31,17 @@ h1 {
   box-sizing: border-box;
 }
 
+
+section#tema {
+  background-image: url('/images/heads/h1.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 50vh;
+  /* viewport height */
+}
+
 /* Início login.ejs  */
 #formElement {
   background: #FFFFFF;
@@ -52,6 +63,10 @@ h1 {
 .container{
 text-align: center;
 box-sizing: border-box;
+}
+
+#containerTema{
+  margin-top: -100px;
 }
 
 #botaoFechar{
@@ -114,3 +129,12 @@ box-sizing: border-box;
 }
 
 /*Fim excluir.ejs */
+
+/* Começo cadastroJogo.ejs */
+
+#cadJogoH1{
+  padding: 30px 30px 0px;
+  box-sizing: border-box;
+  text-align: center;
+}
+/* Fim cadastroJOgo.ejs */
