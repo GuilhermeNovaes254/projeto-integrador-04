@@ -41,4 +41,4 @@ Inicialização do projeto
 - clone o projeto.
 - Na pasta raiz do projeto, rode os seguites comandos.
 $ npm i
-$ nodemon start
+$ nodemon start ( npm start )

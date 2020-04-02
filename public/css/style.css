@@ -281,8 +281,8 @@ section#temaPerfilAdm {
 }
 
 #perfilAdmH1 {
-	padding-top: 80px;
-	padding-bottom: 80px;
+	padding-top: 50px;
+	padding-bottom: 50px;
 	text-align: center;
 	box-sizing: border-box;
 	font-size: 1;
@@ -332,6 +332,26 @@ section#temaPerfilAdm {
 	font-weight: 600;
 	font-size: 30pt;
 	font-family: 'Montserrat', arial, sans-serif;
+}
+
+#buscaAdm{
+	margin-left: 5%;
+	margin-right: 5%;
+	margin-top: 5%;
+	margin-bottom: 5%;
+	background-color: #E5E5E5;
+	min-height: 40px;
+	border-radius: 8px;
+
+}
+
+#buscaAdmForm{
+	text-align: right;
+	border-radius: 	10%;
+	max-height: 95vh;
+	padding-right: 5%;
+	padding-top: 1%;
+	padding-bottom: 1%;
 }
 
 /* Fim perfilAdm.ejs*/
