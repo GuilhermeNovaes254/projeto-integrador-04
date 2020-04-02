@@ -26,7 +26,6 @@ h2 {
 	font-size: 15pt;
 }
 
-
 .fotoDePagina {
 	max-height: 230px;
 	max-width: 100%;
@@ -209,11 +208,9 @@ section#temaCadastroJogo {
 #formCadJogo{
   padding: 30px 0px;
 }
-
 /* Fim cadastroJOgo.ejs */
 
 /* Inicio BuscaJogo */
-<<<<<<< HEAD
 #caixaDeBusca {
 	margin: 20px auto;
 	background: #E9E9E9;
@@ -223,15 +220,6 @@ section#temaCadastroJogo {
 	width: unset;
 }
 
-=======
-#caixaDeBusca{
-  margin: 20px auto;
-  background: #E9E9E9;
-}
-.form-control {
-  width: unset;
-}
->>>>>>> 45170ad58fb9b759ab73481d6f0a6bc6a74cebe6
 /* Fim BuscaJogo */
 
 /* Inicio header.ejs */
