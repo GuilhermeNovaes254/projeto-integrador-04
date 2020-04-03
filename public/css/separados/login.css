@@ -1,9 +1,25 @@
+/*
+#F22441   - Vermelho/Rosa
+#0F7A2F   - Verde
+#E5E5E5   - Cinza
+#FFFFFF   - Branco
+#181718   - Preto
+*/
+
+
 /* Início login.ejs  */
+
+body{
+	background-color: #e5e5e5;
+
+}
+
+
 #formElement {
 	background: #FFFFFF;
 	border: 1px solid #FFFFFF;
-	border-radius: 15px;
-	box-sizing: border-box;
+	border-radius: 15px; 
+	align-content: center;
 }
 
 #button {
@@ -16,14 +32,19 @@
 	box-sizing: border-box;
 }
 
-.container {
+#container{
 	text-align: center;
 	box-sizing: border-box;
+	background-color: #ffffff;
 }
 
-#containerTema {
-	margin-top: -100px;
+#container2{
+	align-content: center;
+	text-align: center;
+	box-sizing: border-box;
+	background-color: #E5E5E5;
 }
+ 
 
 #botaoFechar {
 	padding-left: 100%;
@@ -36,4 +57,8 @@
 	box-sizing: border-box;
 }
 
+.btn,
+.figura{
+	text-align: center;
+}
 /*Fim login.ejs*/
