@@ -85,7 +85,6 @@ section#temaExcluir {
 
 /*Começo excluir.ejs */
 
-<<<<<<< HEAD
 #areaCentral{
   background-color: #fff;
   height: 800px;
@@ -93,15 +92,6 @@ section#temaExcluir {
   border-radius: 15px;
   text-align: left;
   box-sizing: border-box;
-=======
-#areaCentral {
-	background-color: #fff;
-	height: 420px;
-	width: 100%;
-	border-radius: 15px;
-	text-align: left;
-	box-sizing: border-box;
->>>>>>> d0ba9e06438fbb7f9dd5260dd511563016327e7d
 }
 
 #deleteUser,
@@ -229,24 +219,17 @@ section#temaCadastroJogo {
 /* Fim cadastroJOgo.ejs */
 
 /* Inicio BuscaJogo */
-<<<<<<< HEAD
 #caixaDeBusca{
   padding-top: 10px;
   margin: 20px auto;
   background: #E9E9E9;
   padding-bottom:10px;
   border-radius: 15px;
-=======
-#caixaDeBusca {
-	margin: 20px auto;
-	background: #E9E9E9;
->>>>>>> d0ba9e06438fbb7f9dd5260dd511563016327e7d
 }
 
 .form-control {
 	width: unset;
 }
-<<<<<<< HEAD
 #input2{
 margin-left: 95px;
 
@@ -267,9 +250,6 @@ margin-left: 95px;
   margin-top: 30px;
   color: #E5E5E5;
 }
-=======
-
->>>>>>> d0ba9e06438fbb7f9dd5260dd511563016327e7d
 /* Fim BuscaJogo */
 
 /* Inicio header.ejs */
