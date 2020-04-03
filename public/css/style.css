@@ -76,7 +76,7 @@ box-sizing: border-box;
 
 #areaCentral{
   background-color: #fff;
-  height: 420px;
+  height: 800px;
   width: 100%;
   border-radius: 15px;
   text-align: left;
@@ -137,11 +137,34 @@ box-sizing: border-box;
 
 /* Inicio BuscaJogo */
 #caixaDeBusca{
+  padding-top: 10px;
   margin: 20px auto;
   background: #E9E9E9;
+  padding-bottom:10px;
+  border-radius: 15px;
 }
 .form-control {
   width: unset;
+}
+#input2{
+margin-left: 95px;
+
+}
+.btn-sm{
+  margin-left: 20px;
+}
+#filtroBuscaJogo{
+  padding-left: 40px;
+}
+
+#avatar1{
+  background-image: url('\images\fotos\laura.jpg');
+}
+#entrar{
+  border-radius: 15px;
+  background-color: #F22441;
+  margin-top: 30px;
+  color: #E5E5E5;
 }
 /* Fim BuscaJogo */
 
