@@ -208,6 +208,14 @@ section#temaCadastroJogo {
 #formCadJogo{
   padding: 30px 0px;
 }
+
+.image-upload>input {
+	display: none;
+  }
+
+#addImg{
+	padding: 30px;
+}
 /* Fim cadastroJOgo.ejs */
 
 /* Inicio BuscaJogo */
