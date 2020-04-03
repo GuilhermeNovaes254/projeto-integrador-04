@@ -1,39 +1,84 @@
 <%- include('./partials/header') %>
+
 <!--
 <div>
     <img src="/images/heads/h1.jpg" id="fotoDePagina" alt='fotoDePagina' title="FotoDePagina" width=100% />
 </div>
 -->
-<section id="tema"></section>
+<section id="temaCadastroJogo"></section>
 <div class="container" id='containerTema'>
     <div class="row">
         <div class="col-2"></div>
 
-        <div class="col-8" id='areaCentral'>
+        <div class="col-8" id='areaCentralJogo'>
             <h1 id='cadJogoH1'>Cadastro Jogo</h1>
-            <!--
-            <p id="pExclude">Para exclusão do usuário copie o texto abaixo na caixa de texto:</p>    
+            <div class="row">
+                <div class="col-1"></div>
+                <div class="col-8" id='areaCinzaFormJogo'>
 
-            <p id='usuario'>Candy Daniele</p>
-            <form>
-                <div class="form-group" id='deleteUser'>
-                  <input type="text" class="deleteUser" id="deleteUserForm">
-            </form>
 
-            <p id="alerta"> * Esta ação é irreversível</p>
-            <form>
-                <button type="submit" id='botaoExcluir'>Prosseguir</button>
-            </form>
-            -->
+
+                    <div class="row">
+                        <div class="col-1"></div>
+                        <div class="col-10" id='areaCentralFormJogo'>
+                            <h2>Informações Básicas</h2>
+                            <form id="formCadJogo">
+                                <div class="form-group">
+                                    <label for="exampleFormControlInput1">Email address</label>
+                                    <input type="email" class="form-control" id="exampleFormControlInput1"
+                                        placeholder="name@example.com">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleFormControlSelect1">Example select</label>
+                                    <select class="form-control" id="exampleFormControlSelect1">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleFormControlSelect2">Example multiple select</label>
+                                    <select multiple class="form-control" id="exampleFormControlSelect2">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleFormControlTextarea1">Example textarea</label>
+                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                </div>
+                            </form>
+                            <div class="col-1"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3" id="addImg">
+                    <div class="image-upload">
+                        <label for="file-input">
+                          <img src="https://icon-library.net/images/upload-photo-icon/upload-photo-icon-21.jpg" width="150px"/>
+                        </label>
+                      
+                        <input id="file-input" type="file" />
+                      </div>
+                </div>
+
+
+
+
+            </div>
+
+
         </div>
 
         <div class="col-2"></div>
-        
+
     </div>
 </div>
-
-
-
 
 
 <%- include('./partials/footer') %>
