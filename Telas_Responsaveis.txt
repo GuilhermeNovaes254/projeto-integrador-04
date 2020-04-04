@@ -27,7 +27,7 @@ Cadastro - *Dani*
 
 Perfil - *Alan*
 
-Perfil Moderador - *Marcos*
+
 Jogo - *Marcos*
 Busca - *Marcos*
 
@@ -35,3 +35,4 @@ Busca - *Marcos*
 11 Excluir Conta - *Guilherme*
 13 Login - *Guilherme*
 8 Perfil Adm - *Guilherme*
+Perfil Moderador - *Guilherme*

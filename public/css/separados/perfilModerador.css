@@ -1,6 +1,6 @@
 /* Início perfilAdm.ejs*/
-section#temaPerfil {
-	background-image: url('/images/heads/h2.jpg');
+section#temaPerfilAdm {
+	background-image: url('/images/heads/h1.jpg');
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
@@ -94,6 +94,11 @@ section#temaPerfil {
 	padding-right: 5%;
 	padding-top: 1%;
 	padding-bottom: 1%;
+}
+
+#buscaAdmFormTx{
+	text-align: right;
+	padding-right: 1%;
 	
 }
 
@@ -116,6 +121,10 @@ td{
 #like{
 	width: 25px;
 	height: 25px;
+}
+
+#descricao{
+	max-width: 20%;
 }
 
 /* Fim perfilAdm.ejs*/
