@@ -84,6 +84,8 @@ section#temaPerfil {
 	min-height: 40px;
 	border-radius: 8px;
 	max-width: 40%;
+	box-sizing: border-box;
+
 }
 
 #buscaForm {
@@ -93,7 +95,7 @@ section#temaPerfil {
 	padding-right: 5%;
 	padding-top: 1%;
 	padding-bottom: 1%;
-	
+	border: 2px solid #E5E5E5;
 }
 
 #square{
@@ -101,6 +103,12 @@ section#temaPerfil {
 	height: 45px;
 	color: #0F7A2F;
 }
+
+#squarefig{
+	width: 45px;
+	height: 45px;
+}
+
 
 img {
 	border-radius: 50%;
@@ -114,11 +122,16 @@ img {
 	
 }
 
-td{
-	max-width: 50%;
+td {
+	max-width: 33%;
+	vertical-align: middle;
 }
 
-#like{
-	width: 25px;
-	height: 25px;
+th {
+	font-weight: 600;
+}
+
+#lapisVerde{
+	width: 35px;
+	height: 35px;
 }
