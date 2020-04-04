@@ -83,9 +83,6 @@ section#temaPerfil {
 	background-color: #E5E5E5;
 	min-height: 40px;
 	border-radius: 8px;
-	max-width: 40%;
-	box-sizing: border-box;
-
 }
 
 #buscaForm {
@@ -95,7 +92,7 @@ section#temaPerfil {
 	padding-right: 5%;
 	padding-top: 1%;
 	padding-bottom: 1%;
-	border: 2px solid #E5E5E5;
+	border: 0px
 }
 
 #square{
