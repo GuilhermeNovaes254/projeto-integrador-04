@@ -1,6 +1,5 @@
-/* Início perfilAdm.ejs*/
 section#temaPerfil {
-	background-image: url('/images/heads/h2.jpg');
+	background-image: url('/images/heads/h3.jpg');
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
@@ -76,7 +75,7 @@ section#temaPerfil {
 	font-family: 'Montserrat', arial, sans-serif;
 }
 
-#buscaAdm {
+#busca {
 	margin-left: 5%;
 	margin-right: 5%;
 	margin-top: 5%;
@@ -84,10 +83,10 @@ section#temaPerfil {
 	background-color: #E5E5E5;
 	min-height: 40px;
 	border-radius: 8px;
-
+	max-width: 40%;
 }
 
-#buscaAdmForm {
+#buscaForm {
 	text-align: right;
 	border-radius: 10%;
 	max-height: 95vh;
@@ -95,6 +94,12 @@ section#temaPerfil {
 	padding-top: 1%;
 	padding-bottom: 1%;
 	
+}
+
+#square{
+	width: 45px;
+	height: 45px;
+	color: #0F7A2F;
 }
 
 img {
@@ -117,5 +122,3 @@ td{
 	width: 25px;
 	height: 25px;
 }
-
-/* Fim perfilAdm.ejs*/
