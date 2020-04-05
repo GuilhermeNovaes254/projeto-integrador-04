@@ -16,51 +16,74 @@
                 <div class="col-1"></div>
                 <div class="col-8" id='areaCinzaFormJogo'>
 
-
-
                     <div class="row">
                         <div class="col-1"></div>
                         <div class="col-10" id='areaCentralFormJogo'>
                             <h2>Informações Básicas</h2>
                             <form id="formCadJogo">
                                 <div class="form-group">
-                                    <label for="exampleFormControlInput1">Email address</label>
-                                    <input type="email" class="form-control" id="exampleFormControlInput1"
-                                        placeholder="name@example.com">
+                                    <label for="nomeJogo">Nome</label>
+                                    <input type="text" class="form-control" id="nomeJogo" name="nomeJogo" required>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label for="anoJogo">Ano</label>
+                                            <select class="form-control" id="anoJogo">
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label for="faixaEtaria">Faixa Etária</label>
+                                            <select class="form-control" id="faixaEtaria">
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-7">
+                                        <div class="form-group">
+                                            <label for="duracao">Duração</label>
+                                            <input type="number" class="form-control" id="duracao" name="duracao"
+                                                required>
+                                        </div>
+                                    </div>
+                                    <div class="col-5 nopadding">
+                                        <br>
+                                        <br>
+                                        minutos
+                                    </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleFormControlSelect1">Example select</label>
-                                    <select class="form-control" id="exampleFormControlSelect1">
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
+                                    <label for="descricaoJogo">Descrição</label>
+                                    <textarea style="resize: none" class="form-control" id="descricaoJogo"
+                                        rows="4"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="temaJogo">Tema</label>
+                                    <select class="form-control" id="temaJogo">
+                                        <option>Aventura</option>
+                                        <option>Civilização</option>
+                                        <option>Cultura Oriental</option>
+                                        <option>Cultura Pop</option>
+                                        <option>Fantasia</option>
+                                        <option>Faroeste</option>
+                                        <option>Ficção Científica</option>
+                                        <option>Guerra</option>
+                                        <option>História</option>
+                                        <option>Horror</option>
+                                        <option>Medieval</option>
+                                        <option>Mitologia</option>
+                                        <option>Luta</option>
+                                        <option>Policial</option>
+                                        <option>Política</option>
                                     </select>
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleFormControlSelect2">Example multiple select</label>
-                                    <select multiple class="form-control" id="exampleFormControlSelect2">
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleFormControlTextarea1">Example textarea</label>
-                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                                 </div>
                             </form>
                             <div class="col-1"></div>
                         </div>
                     </div>
-
-
-
-
-
                     <div class="row">
                         <div class="col-1"></div>
                         <div class="col-10" id='areaCentralFormJogo2'>
@@ -72,10 +95,26 @@
                                 </button>
                             </p>
                             <div class="collapse" id="collapseExample">
-                                <div class="card card-body">
-                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
-                                    richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson
-                                    cred nesciunt sapiente ea proident.
+                                <div class="card card-body cardQtdJogadores">
+                                    <form id="formCadJogo">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <div class="form-group">
+                                                    <label for="minJogadores">Mínimo</label>
+                                                    <input type="number" class="form-control" id="minJogadores"
+                                                        name="minJogadores" required>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="form-group">
+                                                    <label for="maxJogadores">Máximo</label>
+                                                    <input type="number" class="form-control" id="maxJogadores"
+                                                        name="maxJogadores" required>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+
                                 </div>
                             </div>
                         </div>
@@ -93,10 +132,57 @@
                                 </button>
                             </p>
                             <div class="collapse" id="collapseExample2">
-                                <div class="card card-body">
-                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
-                                    richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson
-                                    cred nesciunt sapiente ea proident.
+                                <div class="card card-body cardCarJogo">
+                                    <form id="formCadJogo">
+                                        <div class="form-group">
+                                            <label for="pesoJogo">Peso (Dificuldade)</label>
+                                            <select class="form-control" id="pesoJogo">
+                                                <option>Leve</option>
+                                                <option>Médio-Leve</option>
+                                                <option>Médio</option>
+                                                <option>Médio-Pesado</option>
+                                                <option>Pesado</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="dominioJogo">Domínio (Categoria)</label>
+                                            <select class="form-control" id="dominioJogo">
+                                                <option>Jogos 4X</option>
+                                                <option>Jogos Abstratos</option>
+                                                <option>Jogos Colecionáveis</option>
+                                                <option>Jogos Cooperativos</option>
+                                                <option>Jogos de Cartas</option>
+                                                <option>Jogos de Guerra</option>
+                                                <option>Jogos de Miniaturas</option>
+                                                <option>Jogos em Tempo Real</option>
+                                                <option>Jogos Estratégicos</option>
+                                                <option>Jogos Expert</option>
+                                                <option>Jogos Familiares</option>
+                                                <option>Jogos Festivos</option>
+                                                <option>Jogos Legacy</option>
+                                                <option>Jogos Temáticos</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="mecanicaJogo">Mecânica</label>
+                                            <select class="form-control" id="mecanicaJogo">
+                                                <option>Coleção de Componentes</option>
+                                                <option>Colecionar Cartas</option>
+                                                <option>Compra de Cartas</option>
+                                                <option>Construção de Baralho</option>
+                                                <option>Controle de Área</option>
+                                                <option>Rolagem de Dados</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="downtimeJogo">Downtime</label>
+                                            <select class="form-control" id="downtimeJogo">
+                                                <option>Baixo</option>
+                                                <option>Médio</option>
+                                                <option>Alto</option>
+                                            </select>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -114,10 +200,19 @@
                                 </button>
                             </p>
                             <div class="collapse" id="collapseExample3">
-                                <div class="card card-body">
-                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
-                                    richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson
-                                    cred nesciunt sapiente ea proident.
+                                <div class="card card-body cardCompJogo">
+                                    <form id="formCadJogo">
+                                    <div class="form-group">
+                                        <label for="tutorialJogo">Tutorial</label>
+                                        <textarea style="resize: none" class="form-control" id="tutorialJogo"
+                                            rows="4"></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="regrasJogo">Regras</label>
+                                        <textarea style="resize: none" class="form-control" id="regrasJogo"
+                                            rows="4"></textarea>
+                                    </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -149,5 +244,34 @@
 
     </div>
 </div>
+
+
+<script>
+    let date = new Date();
+    let min = 1900,
+        max = date.getFullYear(),
+        select = document.getElementById('anoJogo');
+
+    for (let i = min; i <= max; i++) {
+        let opt = document.createElement('option');
+        opt.value = i;
+        opt.innerHTML = i;
+        select.appendChild(opt);
+    }
+
+    select.value = new Date().getFullYear();
+
+    let min2 = 0,
+        max2 = 18,
+        select2 = document.getElementById('faixaEtaria');
+
+    for (let i = min2; i <= max2; i++) {
+        let opt = document.createElement('option');
+        opt.value = i;
+        opt.innerHTML = i;
+        select2.appendChild(opt);
+    }
+</script>
+
 
 <%- include('./partials/footer') %>

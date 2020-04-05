@@ -16,27 +16,28 @@ section#temaCadastroJogo {
 
 #areaCentralJogo {
 	background-color: #fff;
-	height: 1000px;
+	/*height: 1000px;*/
 	width: 100%;
 	border-radius: 15px;
 	text-align: left;
 	box-sizing: border-box;
+	padding: 30px 0px;
 }
 
 #areaCinzaFormJogo {
 	background-color: #E5E5E5;
-	height: 900px;
+	/*height: 900px;*/
 	width: 100%;
 	border-radius: 15px;
 	text-align: left;
   box-sizing: border-box;
   margin-top: 25px;
-  padding: 0px 0px;
+  padding: 30px 0px;
 }
 
 #areaCentralFormJogo {
 	background-color: #fff;
-	height: 600px;
+	height: 520px;
 	width: 100%;
 	border-radius: 15px;
 	text-align: left;
@@ -76,5 +77,27 @@ section#temaCadastroJogo {
 .mycolorbutton{
     background-color: white;
     text-align: left;
+}
+
+.nopadding{
+	padding: 0px 0px;
+}
+
+.cardQtdJogadores{
+	height: 100px;
+	padding: 0px 0px;
+	border: 0px;
+}
+
+.cardCarJogo{
+	height: 320px;
+	padding: 0px 0px;
+	border: 0px;
+}
+
+.cardCompJogo{
+	height: 320px;
+	padding: 0px 0px;
+	border: 0px;
 }
 /* Fim cadastroJOgo.ejs */
