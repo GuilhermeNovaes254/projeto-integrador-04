@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel='stylesheet' href='/css/reset.css' />
     <link rel='stylesheet' href='/css/fontface.css' />
+    <link rel='stylesheet' href='/css/animate.css' />
     <link rel='stylesheet' href='/css/style.css' />
     <link rel='stylesheet' href='/css/separados/cadastroJogo.css' />
 </head>
@@ -25,13 +26,26 @@
                         </div>
                     </div>
                     <nav class="o-header__container--menu">
+                        <input id="o-navbar" type='checkbox'>
+                        <label for="o-navbar">
+                            <div class="o-menu__link">
+                                <span>Perfil</span>  
+                            </div>
+                            <div class='o-menu'>
+                                <div class="o-menu__avatar">
+                                    <img src="images/fotos/avatar.jpg" alt="">
+                                    <span class='o-hamburger'></span>
+                                </div>
+                            </div>
+                        </label>
                         <ul>
-                            <li><a href="">Pagina de teste</a></li>
-                            <li>
-                                <a href="">Perfil </a>
-
-                            </li>
-                            
+                            <li><img class="o-hamburger--avatar" src="images/fotos/avatar.jpg" alt=""></li>
+                            <li><a href='#'>Editar Perfil</a></li>
+                            <!-- <li><a href='#'>Minha Pagina</a></li> -->
+                            <li><a href='#'>Meus Jogos</a></li>
+                            <li><a href='#'>Favoritos</a></li>
+                            <li><a href='#'>Amigos</a></li>
+                            <li><a href='#'>Sair</a></li>
                         </ul>
                     </nav>
                 </div>
