@@ -1,0 +1,64 @@
+/*
+#F22441   - Vermelho/Rosa
+#0F7A2F   - Verde
+#E5E5E5   - Cinza
+#FFFFFF   - Branco
+#181718   - Preto
+*/
+
+
+/* Início login.ejs  */
+
+body{
+	background-color: #e5e5e5;
+
+}
+
+
+#formElement {
+	background: #FFFFFF;
+	border: 1px solid #FFFFFF;
+	border-radius: 15px; 
+	align-content: center;
+}
+
+#button {
+	background-color: #181718;
+	align-content: center;
+	color: white;
+	border-color: #181718;
+	border-radius: 100px;
+	max-width: 200px;
+	box-sizing: border-box;
+}
+
+#container{
+	text-align: center;
+	box-sizing: border-box;
+	background-color: #ffffff;
+}
+
+#container2{
+	align-content: center;
+	text-align: center;
+	box-sizing: border-box;
+	background-color: #E5E5E5;
+}
+ 
+
+#botaoFechar {
+	padding-left: 100%;
+	padding-bottom: 20px;
+	box-sizing: border-box;
+}
+
+#imgLogin {
+	padding-bottom: 30px;
+	box-sizing: border-box;
+}
+
+.btn,
+.figura{
+	text-align: center;
+}
+/*Fim login.ejs*/

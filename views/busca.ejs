@@ -1,5 +1,5 @@
 <%- include('./partials/header') %>
-
+<link rel='stylesheet' href='/css/separados/busca.css' />
 <section id="tema"></section>
 <div class="container" id='containerTema'>
     <div class="row">
@@ -7,21 +7,109 @@
 
         <div class="col-8" id='areaCentral'>
             <div class="col-10" id=caixaDeBusca>
+
                 <label for="form-group">Buscar Por:</label>
                 <select class="form-group col-6">
                     <option>jogos</option>
-                  </select>
-                
+                    <option>jogos</option>
+                    <option>jogos</option>
+                </select>
+
+                <input class="form-group col-6" type="text" id="input2">
+                <button type="button" id="buscaJogo" ><img src="/images/icons/Lupa.png" alt="" srcset=""></button>
             </div>
-          
+            <div class="row">
+                <div class="col-4" id="filtroBuscaJogo">
+                    <h2>Filtros:</h2>
+                    <div class="checkbox">
+                        <label>
+                            <input type="radio">Cidades
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="radio">Tipos de jogos
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="radio">Idade
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="radio">Sexo
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- itensEncontrados -->
+
+            <div class="container">
+                <div class="row justify-content-end">
+                    <div class="col-4" id="avatar">
+                        <img width="144px" height="77px"  src="/images/fotos/laura.jpg" alt="" srcset="">
+                    </div>
+                    <div class="col-4">
+                        Mussum Ipsum, cacilds vidis litro abertis. Mauris nec dolor in eros commodo tempor.
+                    </div>
+                </div>
+                <div class="row justify-content-end">
+                    <div class="col-4" id="avatar">
+                        <img width="144px" height="77px" src="/images/fotos/avatar2.jpg" alt="" srcset="">
+                    </div>
+                    <div class="col-4">
+                        Mussum Ipsum, cacilds vidis litro abertis. Mauris nec dolor in eros commodo tempor.
+                    </div>
+                </div>
+                <div class="row justify-content-end">
+                    <div class="col-4"id="avatar">
+                        <img width="144px" height="77px" src="/images/fotos/avatar3.png" alt="" srcset="">
+                    </div>
+                    <div class="col-4">
+                        Mussum Ipsum, cacilds vidis litro abertis. Mauris nec dolor in eros commodo tempor.
+                    </div>
+                </div>
+                <div class="row justify-content-end">
+                    <div class="col-4"id="avatar">
+                        <img width="144px" height="77px" src="/images/fotos/avatar4.png" alt="" srcset="">
+                    </div>
+                    <div class="col-4">
+                        Mussum Ipsum, cacilds vidis litro abertis. Mauris nec dolor in eros commodo tempor.
+                    </div>
+                </div>
+                <div class="row justify-content-end">
+                    <div class="col-4"id="avatar">
+                        <img width="144px" height="77px" src="/images/fotos/avatar5.png" alt="" srcset="">
+                    </div>
+                    <div class="col-4">
+                        Mussum Ipsum, cacilds vidis litro abertis. Mauris nec dolor in eros commodo tempor.
+                    </div>
+                </div>
+                <div class="row justify-content-end">
+                    <div class="col-4"id="avatar">
+                        <img width="144px" height="77px" src="/images/fotos/avatar6.png" alt="" srcset="">
+                    </div>
+                    <div class="col-4">
+                        Mussum Ipsum, cacilds vidis litro abertis. Mauris nec dolor in eros commodo tempor.
+                    </div>
+                </div>
+
+            </div>
+            <div class="row justify-content-end">
+                <div class="col-2">
+                    <button id="entrar">Entrar</button>
+                </div>
+
+            </div>
+            <div class="col-2"></div>
+
         </div>
 
-        <div class="col-2"></div>
-        
     </div>
+
 </div>
-
-
 
 
 

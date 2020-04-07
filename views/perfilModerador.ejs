@@ -1,0 +1,114 @@
+<%- include('./partials/header') %>
+<link rel='stylesheet' href='/css/separados/perfilModerador.css' />
+<!--
+<div>
+    <img src="/images/heads/h1.jpg" id="fotoDePagina" alt='fotoDePagina' title="FotoDePagina" width=100% />
+</div>
+-->
+
+<section id="temaPerfil"></section>
+<div class="container" id='containerTema'>
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8" id='areaCentral'>
+
+            <div>
+                <h1 id="perfilAdmH1">ANÁLISE DE CONTEÚDO</h1>
+            </div>
+
+
+            <!-- Status Bar -->
+            <div class="container2">
+                <div class="row">
+                    <div class="col-sm" id="admCol1">
+                        <div>Aprovados</div>
+                        <h1>2.455</h3>
+                    </div>
+                    <div class="col-sm" id="admCol2">
+                        <div>Pendentes</div>
+                        <h1>1.455</h3>
+                    </div>
+                    <div class="col-sm" id="admCol3">
+                        <div>Rejeitados</div>
+                        <h1>55</h3>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Busca -->
+            <div id='busca'>
+                <form>
+                    <div class="form-group" id='buscaForm'>
+                        <input type="text" class="buscaForm" id="buscaForm" name="buscaForm"
+                            placeholder="Buscar">
+                    </div>
+                </form>
+            </div>
+
+
+            <!-- Jogos -->
+            <table class="table" id="table">
+                <thead>
+                    <tr>
+                        <th>Avatar</th>
+                        <th>Descrição</th>
+                        <th>Aprov</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="/images/fotos/avatar3.png" alt="Avatar"></td>
+                        <td id='descricao'>
+                            <p>ipsum dolor sit amet consectetur adipisicing elit.</p>
+                            <p>Lorem ipsum dolor sit amet con elit.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        </td>
+                        <td>
+                            <img id="like" src='/images/icons/like.png' alt="Like">
+                            <img id="like" src='/images/icons/dislike.png' alt="Dislike">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><img src="/images/fotos/avatar4.png" alt="Avatar"></td>
+                        <td id='descricao'>
+                            <p>ipsum dolor sit amet consectetur adipisicing elit.</p>
+                            <p>Lorem ipsum dolor sit amet con elit.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        </td>
+                        <td>
+                            <img id="like" src='/images/icons/like.png' alt="Like">
+                            <img id="like" src='/images/icons/dislike.png' alt="Dislike">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><img src='/images/fotos/avatar3.png' alt="Avatar"></td>
+                        <td id='descricao'>
+                            <p>ipsum dolor sit amet consectetur adipisicing elit.</p>
+                            <p>Lorem ipsum dolor sit amet con elit.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        </td>
+                        <td>
+                            <img id="like" src='/images/icons/like.png' alt="Like">
+                            <img id="like" src='/images/icons/dislike.png' alt="Dislike">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+
+
+
+
+        </div>
+
+        <div class="col-2"></div>
+
+    </div>
+</div>
+
+
+
+
+
+<%- include('./partials/footer') %>

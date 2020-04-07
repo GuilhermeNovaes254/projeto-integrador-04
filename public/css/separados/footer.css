@@ -1,0 +1,14 @@
+footer div {
+    height: 75px;
+    background-color: #181718;
+    font-size: 18pt;
+    font-family: 'Confortaa', arial, sans-serif;
+    color: #ffffff;
+    text-align: right;
+    padding-right: 15px;
+	box-sizing: border-box;
+    vertical-align: middle;
+    padding-bottom: 25px;
+    padding-top: 25px;
+
+}
