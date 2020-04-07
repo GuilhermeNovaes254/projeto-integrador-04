@@ -8,9 +8,7 @@
 <section id="temaCadastroJogo"></section>
 <div class="container" id='containerTema'>
     <div class="row">
-        <div class="col-2"></div>
-
-        <div class="col-8" id='areaCentralJogo'>
+        <div class="col-12" id='areaCentralJogo'>
             <h1 id='cadJogoH1'>Cadastro Jogo</h1>
             <div class="row">
                 <div class="col-1"></div>
@@ -214,14 +212,20 @@
 
                 </div>
                 <div class="col-3" id="addImg">
-                    <div>Foto Perfil Jogo</div>
-                    <br>
-                    <div class="image-upload">
-                        <label for="file-input">
-                            <img src="/images/icons/uploadphoto.svg" width="150px" />
-                        </label>
+                    <div class="row">
+                        <div class="col-2"></div>
+                        <div class="col-8">
+                            <div>Foto Perfil Jogo</div>
+                            <br>
+                            <div class="image-upload">
+                                <label for="file-input">
+                                    <img src="/images/icons/uploadphoto.svg" width="150px" />
+                                </label>
 
-                        <input id="file-input" type="file" />
+                                <input id="file-input" type="file" />
+                            </div>
+                        </div>
+                        <div class="col-2"></div>
                     </div>
                 </div>
             </div>
@@ -229,13 +233,11 @@
                 <div class="col-5"></div>
                 <div class="col-2 pt-5">
                     <button type="submit" id='botaoCadastrar'>Cadastrar</button>
-                </form>
+                    </form>
                 </div>
                 <div class="col-5"></div>
             </div>
         </div>
-
-        <div class="col-2"></div>
 
     </div>
 </div>
