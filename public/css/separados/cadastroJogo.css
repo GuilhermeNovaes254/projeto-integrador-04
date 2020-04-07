@@ -37,12 +37,11 @@ section#temaCadastroJogo {
 
 #areaCentralFormJogo {
 	background-color: #fff;
-	height: 520px;
+	height: 500px;
 	width: 100%;
 	border-radius: 15px;
 	text-align: left;
   box-sizing: border-box;
-  margin-top: 30px;
   padding: 30px;
 }
 
@@ -62,9 +61,6 @@ section#temaCadastroJogo {
 	text-align: center;
 }
 
-#formCadJogo{
-  padding: 30px 0px;
-}
 
 .image-upload>input {
 	display: none;
@@ -84,20 +80,30 @@ section#temaCadastroJogo {
 }
 
 .cardQtdJogadores{
-	height: 100px;
+	height: 90px;
 	padding: 0px 0px;
 	border: 0px;
 }
 
 .cardCarJogo{
-	height: 320px;
+	height: 305px;
 	padding: 0px 0px;
 	border: 0px;
 }
 
 .cardCompJogo{
-	height: 320px;
+	height: 305px;
 	padding: 0px 0px;
 	border: 0px;
+}
+
+#botaoCadastrar{
+	background-color: #f22441;
+	border-color: #f22441;
+	width: 150px;
+	height: 30px;
+	color: white;
+	border-radius: 100px;
+	text-align: center;
 }
 /* Fim cadastroJOgo.ejs */

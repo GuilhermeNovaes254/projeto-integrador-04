@@ -15,13 +15,13 @@
             <div class="row">
                 <div class="col-1"></div>
                 <div class="col-8" id='areaCinzaFormJogo'>
+                    <form>
+                        <div class="row">
+                            <div class="col-1"></div>
+                            <div class="col-10" id='areaCentralFormJogo'>
+                                <h2>Informações Básicas</h2>
 
-                    <div class="row">
-                        <div class="col-1"></div>
-                        <div class="col-10" id='areaCentralFormJogo'>
-                            <h2>Informações Básicas</h2>
-                            <form id="formCadJogo">
-                                <div class="form-group">
+                                <div class="form-group pt-3">
                                     <label for="nomeJogo">Nome</label>
                                     <input type="text" class="form-control" id="nomeJogo" name="nomeJogo" required>
                                 </div>
@@ -80,61 +80,57 @@
                                         <option>Política</option>
                                     </select>
                                 </div>
-                            </form>
-                            <div class="col-1"></div>
+                                <div class="col-1"></div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-1"></div>
-                        <div class="col-10" id='areaCentralFormJogo2'>
-                            <p>
-                                <button class="btn btn-lg btn-block mycolorbutton" type="button" data-toggle="collapse"
-                                    data-target="#collapseExample" aria-expanded="false"
-                                    aria-controls="collapseExample">
-                                    Quantidade Jogadores
-                                </button>
-                            </p>
-                            <div class="collapse" id="collapseExample">
-                                <div class="card card-body cardQtdJogadores">
-                                    <form id="formCadJogo">
+                        <div class="row">
+                            <div class="col-1"></div>
+                            <div class="col-10" id='areaCentralFormJogo2'>
+                                <p>
+                                    <button class="btn btn-lg btn-block mycolorbutton" type="button"
+                                        data-toggle="collapse" data-target="#collapseExample" aria-expanded="false"
+                                        aria-controls="collapseExample">
+                                        Quantidade Jogadores
+                                    </button>
+                                </p>
+                                <div class="collapse" id="collapseExample">
+                                    <div class="card card-body cardQtdJogadores">
                                         <div class="row">
                                             <div class="col-6">
-                                                <div class="form-group">
+                                                <div class="form-group pt-3">
                                                     <label for="minJogadores">Mínimo</label>
                                                     <input type="number" class="form-control" id="minJogadores"
                                                         name="minJogadores" required>
                                                 </div>
                                             </div>
                                             <div class="col-6">
-                                                <div class="form-group">
+                                                <div class="form-group pt-3">
                                                     <label for="maxJogadores">Máximo</label>
                                                     <input type="number" class="form-control" id="maxJogadores"
                                                         name="maxJogadores" required>
                                                 </div>
                                             </div>
                                         </div>
-                                    </form>
 
+                                    </div>
                                 </div>
                             </div>
+                            <div class="col-1"></div>
                         </div>
-                        <div class="col-1"></div>
-                    </div>
 
-                    <div class="row">
-                        <div class="col-1"></div>
-                        <div class="col-10" id='areaCentralFormJogo2'>
-                            <p>
-                                <button class="btn btn-lg btn-block mycolorbutton" type="button" data-toggle="collapse"
-                                    data-target="#collapseExample2" aria-expanded="false"
-                                    aria-controls="collapseExample">
-                                    Características do Jogo
-                                </button>
-                            </p>
-                            <div class="collapse" id="collapseExample2">
-                                <div class="card card-body cardCarJogo">
-                                    <form id="formCadJogo">
-                                        <div class="form-group">
+                        <div class="row">
+                            <div class="col-1"></div>
+                            <div class="col-10" id='areaCentralFormJogo2'>
+                                <p>
+                                    <button class="btn btn-lg btn-block mycolorbutton" type="button"
+                                        data-toggle="collapse" data-target="#collapseExample2" aria-expanded="false"
+                                        aria-controls="collapseExample">
+                                        Características do Jogo
+                                    </button>
+                                </p>
+                                <div class="collapse" id="collapseExample2">
+                                    <div class="card card-body cardCarJogo">
+                                        <div class="form-group pt-3">
                                             <label for="pesoJogo">Peso (Dificuldade)</label>
                                             <select class="form-control" id="pesoJogo">
                                                 <option>Leve</option>
@@ -182,42 +178,39 @@
                                                 <option>Alto</option>
                                             </select>
                                         </div>
-                                    </form>
+                                    </div>
                                 </div>
                             </div>
+                            <div class="col-1"></div>
                         </div>
-                        <div class="col-1"></div>
-                    </div>
 
-                    <div class="row">
-                        <div class="col-1"></div>
-                        <div class="col-10" id='areaCentralFormJogo2'>
-                            <p>
-                                <button class="btn btn-lg btn-block mycolorbutton" type="button" data-toggle="collapse"
-                                    data-target="#collapseExample3" aria-expanded="false"
-                                    aria-controls="collapseExample">
-                                    Informações Complementares
-                                </button>
-                            </p>
-                            <div class="collapse" id="collapseExample3">
-                                <div class="card card-body cardCompJogo">
-                                    <form id="formCadJogo">
-                                    <div class="form-group">
-                                        <label for="tutorialJogo">Tutorial</label>
-                                        <textarea style="resize: none" class="form-control" id="tutorialJogo"
-                                            rows="4"></textarea>
+                        <div class="row">
+                            <div class="col-1"></div>
+                            <div class="col-10" id='areaCentralFormJogo2'>
+                                <p>
+                                    <button class="btn btn-lg btn-block mycolorbutton" type="button"
+                                        data-toggle="collapse" data-target="#collapseExample3" aria-expanded="false"
+                                        aria-controls="collapseExample">
+                                        Informações Complementares
+                                    </button>
+                                </p>
+                                <div class="collapse" id="collapseExample3">
+                                    <div class="card card-body cardCompJogo">
+                                        <div class="form-group pt-3">
+                                            <label for="tutorialJogo">Tutorial</label>
+                                            <textarea style="resize: none" class="form-control" id="tutorialJogo"
+                                                rows="4"></textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="regrasJogo">Regras</label>
+                                            <textarea style="resize: none" class="form-control" id="regrasJogo"
+                                                rows="4"></textarea>
+                                        </div>
                                     </div>
-                                    <div class="form-group">
-                                        <label for="regrasJogo">Regras</label>
-                                        <textarea style="resize: none" class="form-control" id="regrasJogo"
-                                            rows="4"></textarea>
-                                    </div>
-                                    </form>
                                 </div>
                             </div>
+                            <div class="col-1"></div>
                         </div>
-                        <div class="col-1"></div>
-                    </div>
 
                 </div>
                 <div class="col-3" id="addImg">
@@ -231,13 +224,15 @@
                         <input id="file-input" type="file" />
                     </div>
                 </div>
-
-
-
-
             </div>
-
-
+            <div class="row">
+                <div class="col-5"></div>
+                <div class="col-2 pt-5">
+                    <button type="submit" id='botaoCadastrar'>Cadastrar</button>
+                </form>
+                </div>
+                <div class="col-5"></div>
+            </div>
         </div>
 
         <div class="col-2"></div>
