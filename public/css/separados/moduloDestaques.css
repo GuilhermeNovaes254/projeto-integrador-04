@@ -32,3 +32,36 @@ section#tema {
 #areaCentral .containerTabela{
 	text-align: center;
 }
+
+#avatar{
+	background-image: url('/images/fotos/avatar7.jpg ');
+	background-position: center;
+	background-repeat: no-repeat; 
+	background-size: cover;
+	border-radius: 50%;
+	width: 90px;
+	height: 90px;
+	align-content: center;
+	margin-left: 18px;
+	margin-bottom: 17.5px;
+	margin-top: 17.5px;
+}
+
+#highLights{
+	height: 120px;
+	width: 85px;
+	margin-bottom: 17.5px;
+	margin-top: 17.5px;
+}
+
+#descricao{
+	height: 390px;
+	width: 85px;
+	margin-bottom: 17.5px;
+	margin-top: 17.5px;
+	font-size: 11pt;
+}
+
+.redesSociais{
+
+}
