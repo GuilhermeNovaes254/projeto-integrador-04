@@ -1,4 +1,4 @@
-#tema {
+#temaBusca {
 	background-image: url('/images/heads/h2.jpg');
 	background-repeat: no-repeat;
 	background-position: center;
@@ -34,6 +34,7 @@
     background: #E9E9E9;
     padding-bottom:10px;
     border-radius: 15px;
+    height: 138px;
   }
 
  
@@ -48,7 +49,7 @@
 
 
 button#buscaJogo{
-    margin-left: 20px;
+    margin-right: 20px;
     width: 100px;
     border-radius: 15px;
     background-color: #F22441;
@@ -58,8 +59,15 @@ button#buscaJogo{
   .btn-sm{
     margin-left: 20px;
   }
+  #corpo{
+    border: solid black 1px;
+  }
   #filtroBuscaJogo{
     padding-left: 40px;
+  }
+
+  #profile{
+     margin: 10px; 
   }
 
   
