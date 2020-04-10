@@ -6,6 +6,7 @@ section#tema {
 	width: 100%;
 	height: 50vh;
 	/* viewport height */
+	box-sizing: border-box;
 }
 
 #cabecalho{
@@ -16,6 +17,7 @@ section#tema {
 	border: 1px solid #000000;
 	box-sizing: border-box;
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	box-sizing: border-box;
 }
 
 #areaCentral {
@@ -27,10 +29,12 @@ section#tema {
 	box-sizing: border-box;
 	margin-top: 185px;
 	padding-bottom: 5px;
+	box-sizing: border-box;
 }
 
 #areaCentral .containerTabela{
 	text-align: center;
+	box-sizing: border-box;
 }
 
 #avatar{
@@ -39,29 +43,33 @@ section#tema {
 	background-repeat: no-repeat; 
 	background-size: cover;
 	border-radius: 50%;
-	width: 90px;
+	width: 100px;
 	height: 90px;
 	align-content: center;
 	margin-left: 18px;
 	margin-bottom: 17.5px;
 	margin-top: 17.5px;
+	box-sizing: border-box;
 }
 
 #highLights{
 	height: 120px;
-	width: 85px;
+	width: 100%;
 	margin-bottom: 17.5px;
 	margin-top: 17.5px;
+	box-sizing: border-box;
 }
 
 #descricao{
 	height: 390px;
-	width: 85px;
+	width: 100%;
 	margin-bottom: 17.5px;
 	margin-top: 17.5px;
 	font-size: 11pt;
+	box-sizing: border-box;
 }
 
 .redesSociais{
-
+	height: 120px;
+	box-sizing: border-box;
 }
