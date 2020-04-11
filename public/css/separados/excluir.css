@@ -29,6 +29,13 @@ section#tema {
     box-sizing: border-box;
 }
 
+.form-group{
+    padding-left: 30px;
+    margin-bottom: 30px;
+    width: 200px;
+}
+
+
 #alerta {
     padding-left: 30px;
     font-weight: 500;
@@ -68,7 +75,7 @@ section#tema {
     
 }
 
-form{
+form {
     text-align: right;
     padding-right: 50vh;
 }

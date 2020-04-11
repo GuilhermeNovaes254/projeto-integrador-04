@@ -154,3 +154,34 @@ section#tema {
 	background-size:contain;
 }
 
+#botao {
+    box-sizing: border-box;
+    background-color: #f22441;
+    border-color: #f22441;
+    width: 150px;
+    height: 30px;
+    color: white;
+    border-radius: 100px;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 50px;
+    align-content: center;
+    
+}
+
+form{
+    text-align: right;
+    padding-right: 50vh;
+}
+
+#areaBotao{
+	background-color: #fff;
+	height: auto;
+	width: 100%;
+	border-radius: 0px 15px;
+	text-align: right;
+	margin-top: -20px;
+	padding-bottom: 5px;
+	box-sizing: border-box;
+	text-align: center;
+}
