@@ -10,7 +10,9 @@ section#tema {
 }
 
 #cabecalho{
-	height: 125px;	
+	min-height: 125px;
+	height: auto;	
+	max-height: 300px;
 	margin-bottom: -100px;
 	background-color: #fff;
 	border-radius: 15px;
@@ -37,11 +39,10 @@ section#tema {
 
 .containerTabela{
 	align-self: initial;
-	display: flex;
 	justify-content: space-around;
 	box-sizing: border-box;
 	margin: 20px;
-	margin-right: auto;
+	margin-right: 20px;
 	align-content: flex-start;
 	margin-bottom: 20px;
 }
@@ -49,6 +50,7 @@ section#tema {
 
 .containerJogo{
 	width: 200px;
+	margin: auto;
 }
 
 #estrelas{
@@ -85,7 +87,8 @@ section#tema {
 	background-size: cover;
 	border-radius: 50%;
 	width: 100px;
-	height: 90px;
+	height: 100px;
+	size: initial;
 	align-content: center;
 	margin-left: 18px;
 	margin-bottom: 17.5px;
@@ -105,9 +108,15 @@ section#tema {
 
 #highLights h3 {
 	color: #F22441;
-	font-weight: 500;
+	font-weight: 700;
 	height: 30px;
 	margin: 5px;
+	word-wrap:break-word;
+}
+
+#highLights h4 {
+	font-weight: 500;
+	height: 30px;
 	word-wrap:break-word;
 }
 
@@ -118,8 +127,8 @@ section#tema {
 	margin-top: 17.5px;
 	font-size: 11pt;
 	box-sizing: border-box;
+	font-weight: 500;
 }
-
 
 
 .redesSociais{
@@ -127,8 +136,8 @@ section#tema {
 	width: 100px;
 	box-sizing: border-box;
 	display: flex;
-	margin-right: 10px;
 	margin: auto;
+	margin-right: 10px;
 }
 
 #facebook{
