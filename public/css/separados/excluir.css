@@ -30,9 +30,11 @@ section#tema {
 }
 
 .form-group{
-    padding-left: 30px;
+    margin-left: 30px;
     margin-bottom: 30px;
-    width: 200px;
+    width: 250px;
+    height: 25px;
+    border: solid #312828 1px;
 }
 
 
