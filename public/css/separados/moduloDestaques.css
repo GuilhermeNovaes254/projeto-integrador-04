@@ -22,21 +22,61 @@ section#tema {
 
 #areaCentral {
 	background-color: #fff;
-	height: 1000px;
+	height: auto;
 	width: 100%;
 	border-radius: 15px;
-	text-align: left;
-	box-sizing: border-box;
+	text-align: center;
 	margin-top: 185px;
 	padding-bottom: 5px;
 	box-sizing: border-box;
+	display: flex;
+	text-align: center;
 }
 
-#areaCentral .containerTabela{
-	text-align: center;
-	box-sizing: border-box;
+
+
+.containerTabela{
+	align-self: initial;
 	display: flex;
+	justify-content: space-around;
+	box-sizing: border-box;
+	margin: 20px;
+	margin-right: auto;
+	align-content: flex-start;
+	margin-bottom: 20px;
 }
+
+
+.containerJogo{
+	width: 200px;
+}
+
+#estrelas{
+	align-content: center;
+	background-image: url('/images/icons/estrelas45.png');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	height: 18px;
+	background-size:contain;
+}
+
+#capaJogo{
+	background-image: url('/images/jogos/jogo_star_wars_legion.png');
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 100%;
+	height: 175px;
+	background-size:contain;
+}
+
+#nomeJogo{
+	padding-top: 10px;
+	width: 100%;
+	font-weight: 500;
+}
+
+
 
 #avatar{
 	background-image: url('/images/fotos/avatar7.jpg ');
@@ -72,7 +112,7 @@ section#tema {
 }
 
 #descricao{
-	height: 80px;
+	max-height: 80px;
 	width: 450px;
 	margin-bottom: 17.5px;
 	margin-top: 17.5px;
