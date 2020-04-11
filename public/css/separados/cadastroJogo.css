@@ -5,7 +5,7 @@
 }
 
 section#temaCadastroJogo {
-	background-image: url('/images/heads/h1.jpg');
+	background-image: url('/images/default/h1.jpg');
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
@@ -37,7 +37,6 @@ section#temaCadastroJogo {
 
 #areaCentralFormJogo {
 	background-color: #fff;
-	height: 500px;
 	width: 100%;
 	border-radius: 15px;
 	text-align: left;
@@ -73,6 +72,15 @@ section#temaCadastroJogo {
 .mycolorbutton{
     background-color: white;
     text-align: left;
+	box-shadow: none;
+	width: 100%;
+	max-width: 100%;
+	white-space: normal;
+}
+
+.btn.mycolorbutton:focus{
+	box-shadow: none;
+	background-color: white;
 }
 
 .nopadding{
@@ -98,6 +106,16 @@ section#temaCadastroJogo {
 }
 
 #botaoCadastrar{
+	background-color: #f22441;
+	border-color: #f22441;
+	width: 150px;
+	height: 30px;
+	color: white;
+	border-radius: 100px;
+	text-align: center;
+}
+
+#btnAltTema{
 	background-color: #f22441;
 	border-color: #f22441;
 	width: 150px;
