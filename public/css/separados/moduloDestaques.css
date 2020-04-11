@@ -83,28 +83,31 @@ section#tema {
 
 
 .redesSociais{
-	height: 35px;
+	height: 40px;
 	width: 100px;
 	box-sizing: border-box;
 	display: flex;
-	padding-right: 10px;
+	margin-right: 10px;
+	margin: auto;
 }
 
 #facebook{
-	background-image: url('/images/icons/Facebook.png');
+	background-image: url('/images/icons/Facebook.svg');
 }
 
 #twitter{
-	background-image: url('/images/icons/Twitter.png');
+	background-image: url('/images/icons/Twitter.svg');
+	
 }
 
 #googleplus{
-	background-image: url('/images/icons/Googleplus.png');
+	background-image: url('/images/icons/Googleplus.svg');
 }
 
 #facebook,
 #twitter,
 #googleplus{
+
 	width: 30px;
 	background-position: center;
 	background-repeat: no-repeat; 
