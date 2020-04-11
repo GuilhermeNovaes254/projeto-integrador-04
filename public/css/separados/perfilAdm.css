@@ -10,7 +10,7 @@ section#temaPerfil {
 
 #areaCentral {
 	background-color: #fff;
-	height: 1000px;
+	height: auto;
 	width: 100%;
 	border-radius: 15px;
 	text-align: left;
