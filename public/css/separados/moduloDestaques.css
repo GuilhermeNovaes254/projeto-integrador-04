@@ -10,7 +10,7 @@ section#tema {
 }
 
 #cabecalho{
-	min-height: 125px;
+	overflow-y: auto ;width:100%;
 	height: auto;	
 	max-height: 300px;
 	margin-bottom: -100px;
@@ -128,6 +128,8 @@ section#tema {
 	font-size: 11pt;
 	box-sizing: border-box;
 	font-weight: 500;
+	word-wrap: break-word;
+	
 }
 
 
