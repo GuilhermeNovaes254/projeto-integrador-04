@@ -34,7 +34,7 @@ section#temaPerfil {
 	margin-top: 5%;
 	margin-bottom: 5%;
 	background-color: #E5E5E5;
-	max-height: 200px;
+	max-height: 300px;
 	border-radius: 8px;
 }
 
@@ -81,19 +81,32 @@ section#temaPerfil {
 	margin-top: 5%;
 	margin-bottom: 5%;
 	background-color: #E5E5E5;
-	min-height: 40px;
+	min-height: 42px;
 	border-radius: 8px;
+	display: flex;
+}
+
+#busca div{
+	width: 100%;
+}
+
+.form-group{
+	width: initial;
+}
+
+#buscaFormDiv {
+	margin-bottom: 0px;
+
 }
 
 #buscaForm {
 	text-align: right;
-	border-radius: 10%;
-	max-height: 95vh;
-	padding-right: 5%;
-	padding-top: 1%;
-	padding-bottom: 1%;
-	border: 0px
+	min-width: 200px;
+	max-width: 300px;
+	display: flex;
+
 }
+
 
 #buscaFormTx{
 	text-align: right;
