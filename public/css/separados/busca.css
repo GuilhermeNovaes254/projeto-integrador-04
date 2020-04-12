@@ -65,21 +65,18 @@ button#buscaJogo{
   }
 
   .profile{
+    padding-left: 200px;
     display: flex;
-    justify-content:center;
+    justify-content:space-around;
     align-items: center;
-   
-    flex-wrap: wrap;
-    
     
   }
   
   
   #describ{
     text-align: left;
-    padding-left: 10px;
-    
-    
+    padding-right: 200px;
+  
   }
   #avatar{
     padding: 10px;
