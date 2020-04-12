@@ -67,19 +67,26 @@ button#buscaJogo{
   .profile{
     
     display: flex;
-    justify-content:center;
+    justify-content:flex-start;
     align-items: center;
     
   }
-  
+  .resultadoDeBusca{
+   display: flex;
+   justify-content: center;
+   
+  }
+  .group{
+    width: 400px;
+  }
   
   #describ{
     text-align: left;
-    
-  
+    margin:10px;
+    padding-left: 10px;
   }
   #avatar{
-    padding: 10px;
+    margin: 10px;
   }
 
   
