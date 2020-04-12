@@ -65,9 +65,9 @@ button#buscaJogo{
   }
 
   .profile{
-    padding-left: 200px;
+    
     display: flex;
-    justify-content:space-around;
+    justify-content:center;
     align-items: center;
     
   }
@@ -75,7 +75,7 @@ button#buscaJogo{
   
   #describ{
     text-align: left;
-    padding-right: 200px;
+    
   
   }
   #avatar{
@@ -85,8 +85,8 @@ button#buscaJogo{
   
   #avatar img{
    border-radius: 15px;
-   
-   
+  
+  
   }
 
   
