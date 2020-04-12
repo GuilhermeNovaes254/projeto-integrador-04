@@ -11,6 +11,10 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
 	font-family: 'Montserrat', arial, sans-serif;
 	background-color: #E5E5E5;
@@ -47,9 +51,6 @@ section#temaExcluir {
 	height: 50vh;
 	/* viewport height */
 }
-
-
-
 
 /* Inicio header.ejs */
 
@@ -239,5 +240,210 @@ input {
 
 /* Fim menu */
 
+/* Inicio landing */
 
+.o-header__container--login ul{
+  display: flex;
+  align-items: center;
+}
+  .o-header__container--login ul li {
+    margin-left: 15px;
+  }
+    .o-header__container--login ul li span{
+      color: #fff;
+      font-size: 16px;
+    }
 
+.c-banner-landing{
+  background-image: url('/images/bannerHome01.jpg');
+  background-size: cover;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  flex-direction: column;
+}
+
+  .c-banner-landing strong{
+    font-weight: bolder;
+  }
+
+  .c-banner-landing h1{
+    max-width: 850px;
+    font: 50px/65px 'Montserrat';
+    text-align: center;
+  }
+
+    @media(max-width:768px){
+      .c-banner-landing h1{
+        max-width: 400px;
+        font: 35px/45px 'Montserrat';
+      }
+    }
+
+  .c-banner-landing a{
+    background: #F22441;
+    border-radius: 35px;
+    font: bold 22px/28px 'Comfortaa';
+    letter-spacing: 1px;
+    color:#FFF;
+    padding: 15px 65px;
+    text-align: center;
+    text-decoration: none;
+    margin: 45px 0 0;
+  }
+    .c-banner-landing a:hover{
+      background: #000;
+    }
+
+.c-feature section {
+  font-size: 20px;
+  font-family: sans-serif;
+  font-weight: 200;
+  line-height: 2;
+  color: rgb(58, 58, 58);
+  padding: 12vh 0;
+  background-color: #fff;
+}
+
+  .c-feature section:nth-child(odd) {
+    background-color:#f5f5f5;
+  }  
+  .mytab section:nth-child(even) {
+    background-color:#fff;
+  } 
+
+  .c-feature h1{
+    font: 900 48px  'Montserrat';
+    text-align: center;
+    padding-bottom: 8vh;
+  }
+
+.u-header-landing{
+  min-height: 75px;
+  background: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+  .u-header-landing header {
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+  }
+
+.o-col-and-5{
+  width: calc(20% - 30px);
+}
+
+@media(min-width:769px) and (max-width:1080px){
+  .o-col-and-5{
+    width: calc(33.333333% - 30px);;
+  }
+}
+
+@media(min-width:601px) and (max-width:768px){
+  .o-col-and-5{
+    width: calc(50% - 30px);;
+  }
+}
+
+@media(max-width:600px){
+  .o-col-and-5{
+    width: 100%;
+  }
+}
+
+.o-sticky-menu{
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.u-sticky {
+  position: sticky;
+  bottom: 50px;
+}
+
+.o-sticky-menu{
+  background: #0F7A2F;
+}
+  .o-sticky-menu ul {
+    display: flex;
+    list-style: none;
+    width: 100%;
+    font-size: 18px;
+    min-height: 10vh;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 0;
+  }
+    .o-sticky-menu ul li{
+      height: 100%;
+    }
+      .o-sticky-menu ul li a{
+        color: #FFF;
+        text-decoration: none;
+        padding: 0 15px;
+        height: 100%;
+        line-height: 10vh;
+      }
+
+/* Fim landing */
+
+/* Inicio destaques */
+
+.o-highlights-five{
+  display: flex;
+}
+
+  .o-highlights-five__content{
+    background: #fff;
+    margin: 15px;
+    box-sizing: border-box;
+    padding: 25px;
+    border-radius: 50px;
+    box-shadow: 0 0 1px 0 hsla(0,0%,72%,0.7);
+  }
+
+  .o-highlights-five__content img{
+    height: auto;
+    width: 100%;
+  }
+
+  .o-highlights-five__header{
+    text-align: center;
+  }
+
+    .o-highlights-five__header h2{
+      font: bold 25px/28px 'Comfortaa';
+      padding: 15px 0;
+    }
+
+/* Fim destaques */
+
+/* componentes reutilizaveis */
+
+.o-btn--rounded{
+  color:#fff;
+  padding: 10px 35px;
+  border: 1px solid #fff;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: bolder;
+}
+
+  .o-btn--rounded:hover{
+    background: #fff;
+    color: #181718;
+  }
+
+@media (min-width: 768px) and (max-width:1080px){
+  body .container {
+      max-width: 850px;
+  }
+}
