@@ -17,14 +17,19 @@ body{
 
 #formElement {
 	background: #FFFFFF;
-	border: 1px solid #FFFFFF;
 	border-radius: 15px; 
 	align-content: center;
+
 }
 
 #button {
 	background-color: #181718;
+	height: 32px;
+	width: 168px;
+	font-size: 14pt;
 	align-content: center;
+	align-self: center;
+	text-align: center;
 	color: white;
 	border-color: #181718;
 	border-radius: 100px;
@@ -57,8 +62,12 @@ body{
 	box-sizing: border-box;
 }
 
-.btn,
+
 .figura{
+	text-align: center;
+}
+
+form {
 	text-align: center;
 }
 /*Fim login.ejs*/
