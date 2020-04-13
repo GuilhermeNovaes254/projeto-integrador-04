@@ -55,7 +55,7 @@ const homeController = {
   },
 
   perfilModerador: (req, res) => {
-    res.render('perfilModerador', {      
+    res.render('perfilModerador', {
       title: 'perfilModerador'
     });
   },
