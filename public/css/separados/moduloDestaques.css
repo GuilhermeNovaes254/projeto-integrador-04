@@ -196,3 +196,18 @@ form{
 	box-sizing: border-box;
 	text-align: center;
 }
+
+
+
+@media(max-width:400px) {
+	#avatar {
+		width: 0px;
+		height: 0px;
+	}
+
+	.redesSociais{
+		width: 0px;
+		height: 0px;
+	}
+}
+

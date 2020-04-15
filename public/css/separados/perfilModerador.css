@@ -122,6 +122,7 @@ td img {
 
 #table {
 	text-align: center;
+	width:100%;
 }
 
 td{
@@ -169,3 +170,27 @@ th {
 	text-align: right;
 }
 /* Fim perfilAdm.ejs*/
+
+
+@media(max-width:400px) {
+	td img {
+		border-radius: 50%;
+		width: 50px;
+		height: 50px;
+	}
+
+	tr th{
+		font-size: 0px;
+	}
+}
+
+@media(max-width:300px) {
+	td img {
+		border-radius: 50%;
+		width: 25px;
+		height: 25px;
+	}
+	#descricao{
+		font-size: 5pt;
+	}
+}
