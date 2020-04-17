@@ -1,0 +1,259 @@
+section#tema {
+	background-image: url('/images/heads/h3.jpg');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	width: 100%;
+	height: 50vh;
+	/* viewport height */
+	box-sizing: border-box;
+}
+
+#cabecalho{
+	overflow-y: auto ;width:100%;
+	height: auto;	
+	max-height: 300px;
+	margin-bottom: -100px;
+	background-color: #fff;
+	border-radius: 15px;
+	border: 1px solid #000000;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	box-sizing: border-box;
+	display: flex;
+}
+
+
+#avatar{
+	background-image: url('/images/fotos/avatar7.jpg ');
+	background-position: center;
+	background-repeat: no-repeat; 
+	background-size: cover;
+	border-radius: 50%;
+	width: 100px;
+	height: 100px;
+	size: initial;
+	align-content: center;
+	margin-left: 18px;
+	margin-bottom: 17.5px;
+	margin-top: 17.5px;
+	box-sizing: border-box;
+}
+
+#highLights{
+	height: 100px;
+	width: 200px;
+	margin-bottom: 17.5px;
+	margin-top: 17.5px;
+	box-sizing: border-box;
+	text-align: center;
+	vertical-align: middle;
+}
+
+#highLights h3 {
+	color: #F22441;
+	font-weight: 700;
+	height: 30px;
+	margin: 5px;
+	word-wrap:break-word;
+}
+
+#highLights h4 {
+	font-weight: 500;
+	height: 30px;
+	word-wrap:break-word;
+}
+
+#descricao{
+	max-height: 80px;
+	width: 450px;
+	margin-bottom: 17.5px;
+	margin-top: 17.5px;
+	font-size: 11pt;
+	box-sizing: border-box;
+	font-weight: 500;
+	word-wrap: break-word;
+	
+}
+
+
+.redesSociais{
+	height: 40px;
+	width: 100px;
+	box-sizing: border-box;
+	display: flex;
+	margin: auto;
+	margin-right: 10px;
+}
+
+#facebook{
+	background-image: url('/images/icons/Facebook.svg');
+}
+
+#twitter{
+	background-image: url('/images/icons/Twitter.svg');
+	
+}
+
+#googleplus{
+	background-image: url('/images/icons/Googleplus.svg');
+}
+
+#facebook,
+#twitter,
+#googleplus{
+
+	width: 30px;
+	background-position: center;
+	background-repeat: no-repeat; 
+	background-size:contain;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#areaCentralEditar {
+	background-color: #fff;
+	/*height: 1000px;*/
+	width: 100%;
+	border-radius: 15px;
+	text-align: left;
+	box-sizing: border-box;
+	padding: 30px 0px;
+	margin-top: 185px;
+}
+
+#areaCinzaFormEditar {
+	background-color: #E5E5E5;
+	/*height: 900px;*/
+	width: 100%;
+	border-radius: 15px;
+	text-align: left;
+  box-sizing: border-box;
+  margin-top: 25px;
+  padding: 30px 0px;
+}
+
+#areaCentralFormEditar {
+	background-color: #fff;
+	width: 100%;
+	border-radius: 15px;
+	text-align: left;
+  box-sizing: border-box;
+  padding: 30px;
+}
+
+#areaCentralFormEditar2 {
+	background-color: #fff;
+	width: 100%;
+	border-radius: 15px;
+	text-align: left;
+  box-sizing: border-box;
+  margin-top: 30px;
+}
+
+
+#cadEditarH1 {
+	padding: 30px 30px 0px;
+	box-sizing: border-box;
+	text-align: center;
+}
+
+
+.image-upload>input {
+	display: none;
+  }
+
+#addImg{
+	padding: 60px 20px;
+}
+
+.mycolorbutton{
+    background-color: white;
+    text-align: left;
+	box-shadow: none;
+	width: 100%;
+	max-width: 100%;
+	white-space: normal;
+}
+
+.btn.mycolorbutton:focus{
+	box-shadow: none;
+	background-color: white;
+}
+
+.nopadding{
+	padding: 0px 0px;
+}
+
+.nopaddingright{
+	padding: 0px 15px 0px 0px;
+}
+
+.nopaddingleft{
+	padding: 0px 0px 0px 15px;
+}
+
+.cardQtdJogadores{
+	height: 90px;
+	padding: 0px 0px;
+	border: 0px;
+}
+
+.cardCarJogo{
+	height: 305px;
+	padding: 0px 0px;
+	border: 0px;
+}
+
+.cardCompJogo{
+	height: 305px;
+	padding: 0px 0px;
+	border: 0px;
+}
+
+#botaoEditar{
+	background-color: #f22441;
+	border-color: #f22441;
+	width: 150px;
+	height: 30px;
+	color: white;
+	border-radius: 100px;
+	text-align: center;
+}
+
+#btnAltTema{
+	background-color: #f22441;
+	border-color: #f22441;
+	width: 150px;
+	height: 30px;
+	color: white;
+	border-radius: 100px;
+	text-align: center;
+	margin-top: -350px;
+
+}
+
+
+@media(max-width:400px) {
+	#avatar {
+		width: 0px;
+		height: 0px;
+	}
+
+	.redesSociais{
+		width: 0px;
+		height: 0px;
+	}
+}
+
