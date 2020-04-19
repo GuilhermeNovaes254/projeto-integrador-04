@@ -23,7 +23,7 @@ section#tema {
 }
 
 
-#avatar{
+#avatar1{
 	background-image: url('/images/fotos/avatar7.jpg ');
 	background-position: center;
 	background-repeat: no-repeat; 
@@ -246,7 +246,7 @@ section#tema {
 
 
 @media(max-width:400px) {
-	#avatar {
+	#avatar1 {
 		width: 0px;
 		height: 0px;
 	}
