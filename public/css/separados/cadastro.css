@@ -1,3 +1,13 @@
+body{
+  background: url('/images/bg-cadastro.jpg') no-repeat;
+  background-size: cover;
+}
+
+.container-cadastro{
+  margin: 100px auto 30px;
+  height: 80vh;
+}
+
 #areaCentralCadastro {
 	background-color: #fff;
 	border-radius: 15px 0px 0px 15px;
@@ -6,6 +16,12 @@
     padding: 15px;
     margin-top: 60px;
     margin-bottom: 60px;
+}
+
+#areaCentralCadastro input{
+  background-color: #e5e5e5;
+  border: 0;
+  padding: 25px 35px;
 }
 
 .areaCentralFoto {
@@ -116,9 +132,12 @@
 
 #botaoCadastro{
 	background-color: #f22441;
-	border-color: #f22441;
+  border-color: #f22441;
+  padding: 15px 25px;
+  border: 0;
+  cursor: pointer;
+  margin-bottom: 35px;
 	width: 150px;
-	height: 30px;
 	color: white;
 	border-radius: 100px;
 	text-align: center;
@@ -143,3 +162,4 @@
       margin-bottom: 60px;
   }
 }
+
