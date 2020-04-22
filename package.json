@@ -3,8 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon ./bin/www",
-    "start:dev": "nodemon app.js"
+    "start": "node ./bin/www"
   },
   "dependencies": {
     "bootstrap": "^4.4.1",
