@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "start": "nodemon ./bin/www"
+    "start:dev": "nodemon app.js"
   },
   "dependencies": {
     "bootstrap": "^4.4.1",
