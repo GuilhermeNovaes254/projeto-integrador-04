@@ -1,11 +1,13 @@
-.o-bg-transparent{
-  background: url('/images/bg-cadastro.jpg') no-repeat;
+.o-bg-transparent-2{
+
   background-size: cover;
 }
 
+.bkgverde{
+  background-color: #0F7A2F;
+}
 .container-cadastro{
   margin: 100px auto 30px;
-  height: 80vh;
 }
 
 #areaCentralCadastro {
