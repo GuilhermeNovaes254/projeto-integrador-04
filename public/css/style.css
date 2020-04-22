@@ -188,7 +188,7 @@ section#temaExcluir {
     bottom: -10px;
   }
 
-input {
+input[type=checkbox] {
   display: none;
 }
 
@@ -252,6 +252,11 @@ input {
     .o-header__container--login ul li span{
       color: #fff;
       font-size: 16px;
+    }
+    @media(max-width:480px){
+      .o-header__container--login ul li span{
+        font-size: 13px;
+      }
     }
 
 .c-banner-landing{
@@ -391,6 +396,12 @@ input {
         padding: 0 15px;
         height: 100%;
         line-height: 10vh;
+        font-size: 22px;
+      }
+      @media(max-width:600px){
+        .o-sticky-menu ul li a{
+          font-size: 13px;
+        }
       }
 
 /* Fim landing */

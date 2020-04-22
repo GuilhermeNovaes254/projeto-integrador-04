@@ -1,0 +1,93 @@
+.o-modal-container {
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+  .o-modal-container__box {
+    max-width: 400px;
+    min-height: 300px;
+    background: #fff;
+    padding: 25px;
+    border-radius: 25px;
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+    .o-modal-container__box form{
+      display: flex;
+      flex-direction: column;
+    }
+
+      .o-modal-container__box img{
+        align-self: center;
+        max-width: 80px;
+        height: auto;
+        border-radius: 50%;
+        margin: 10px 0 25px;
+      }
+
+      .o-modal-container__box input{
+        flex-basis: 100%;
+        border-radius: 25px;
+        border:0;
+        background-color: #eaeaea;
+        padding: 10px 25px;
+        margin: 10px 0;
+        outline: none;
+      }
+
+      .o-modal-container__box button,
+      .u-bt-provisional{
+        flex-basis: 100%;
+        max-width: 220px;
+        align-self: center;
+        border-radius: 25px;
+        border:0;
+        background-color: #181718;
+        color: #fff;
+        padding: 15px 35px;
+        margin: 25px 0 10px;
+        outline: none;
+        cursor: pointer;
+        min-width: 200px;
+      }
+
+      .u-bt-provisional{
+        text-decoration: none !important;
+        color: #fff !important;
+        padding: 15px 35px !important;
+      }
+
+    .o-modal-container--form a{
+      text-align: center;
+      padding-top: 10px;
+      font-size: 14px;
+    }
+
+      .o-modal-container--form a:hover{
+        color: #F22441;
+      }
+
+.js-modal-close{
+  position: absolute;
+  top: 18px;
+  right: 25px;
+  font-weight: bold;
+  font-family: Comfortaa;
+  font-size: 23px;
+  cursor: pointer;
+}
+
+.js-active-modal{
+  display: flex !important;
+}
