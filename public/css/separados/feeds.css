@@ -1,0 +1,39 @@
+.o-feeds-header{
+  min-height: 314px;
+  background: url('/images/bg-feeds.jpg') no-repeat;
+  background-size: cover;
+}
+
+.o-feeds-content-green h2,
+.o-feeds-content h2{
+  color: #ffffff;
+  font-size: 28px;
+  text-align: center;
+  padding: 35px 0;
+}
+
+.o-feeds-content h2{
+  font: 900 48px 'Montserrat';
+  text-align: center;
+  padding: 8vh 0;
+  color: #3A3A3A;
+  width: 100%;
+}
+
+@media(max-width:460px){
+  .o-feeds-header{
+    min-height: 190px !important;
+  }
+}
+
+.u-bg-green{
+  background-color: #007a23;
+  min-height: 60px;
+  align-self: center;
+}
+
+.u-bg-white{
+  margin-top: 65px;
+  padding-bottom: 65px;
+  background-color: #ffffff !important;
+}
