@@ -12,14 +12,12 @@
 
 .group{
     display: flex;
-    border: solid black 1px;
     flex-wrap:wrap;
     justify-content: center;
     margin-bottom: 20px;
 }
 
 .center{
-    border: solid black 1px;
     display: flex;
     justify-content: flex-start;
 }
@@ -35,7 +33,7 @@
     background-image: url('/images/jogos/jogo_arcadia_quest_riders.png');
     background-position: 50% 30%;
     background-repeat: no-repeat;
-    background-size: 132px 156px; 
+    background-size: 120px 130px; 
 	   
 }
 
@@ -47,6 +45,39 @@
     text-align: center;
     font-size: small;
 }
+
+.perfilj{
+    background-color: #fff;
+    border-radius: 15px;
+    width: 178px;
+    height: 478px;
+    margin-right: 15px;
+    padding: 10px;
+    background-image: url('/images/jogos/jogo_arcadia_quest_riders.png');
+    background-position: 50% 30%;
+    background-repeat: no-repeat;
+    background-size: 120px 130px; 
+}
+
+#estrelas{
+    margin-top: 30px;
+	align-content: center;
+	background-image: url('/images/icons/estrelas45.png');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	height: 18px;
+	background-size:contain;
+}
+#nomeJogo p{
+    margin-top: 150px;
+    font-weight: bolder;
+    font-size: medium;
+}
+
+
+
+
 .media {
     margin-top: 60px;
     display: flex;
@@ -59,7 +90,6 @@
     background-color: #E5E5E5;
     width: 130px;
     height: 33px;
-    border: solid black 1px;
     background-image: url('/images/icons/estrelas45.png');
     background-repeat: no-repeat;
     background-position: center;
@@ -80,11 +110,70 @@
 }
 
 .navjogo{
-    width: 560px;
+    width: 600px;
     height: 48px;
-    border: solid black 1px;
+    border-top: 3px solid #E5E5E5;
+    border-bottom: 3px solid #E5E5E5;
     margin: auto;
     margin-top: 20px;
+    display: flex;
+    
+    justify-content: space-around;
+    align-content: center;
+}
+.navjogo #dado{
+    background-image: url('/images/icons/dados1.png');
+    background-repeat: no-repeat;
+    width: 50px;
+}
+.navjogo #numd{
+    color: #0F7A2F;
+    align-self: center;
+    font-size: medium;
+    font-weight: bolder;
+}
+.navjogo #numc{
+    color:#F22441;
+    align-self: center;
+    font-size: small;
+    font-weight: bolder;
+}
+.navjogo #coracao{
+    background-image: url('/images/icons/coracao2.png');
+    background-size: 40px;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 50px;
+    
+}
+.navjogo #mais{
+    background-image: url('/images/icons/plus.png');
+    background-size: 30px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#avaliacao{
+    width: 196px;
+     background-color: #E5E5E5; 
+    font-size: small;
+    font-weight: bolder;
+    padding: 10px;
+    display: flex;
+    border: black solid 1px;
+    
+    
+}
+#star{
+    background-image: url('/images/icons/estrela0.png');
+    background-size:15px;
+    background-repeat: repeat-x;
+    width: 85px;
+}
+.navjogo button{
+    width: 50px;
+    height: 40px;
+    background-color: #fff;
+    border: none;
 }
 
 
@@ -109,7 +198,96 @@ font-size: medium;
     height: 118px;
     background-image: url('/images/jogos/Arcadia_unboxing.png');
     
-}   
+} 
+
+
+
+
+.comentarios{
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    width: 649px;
+    height: 478px;
+    margin-left: 15px;
+    justify-content: flex-start;
+    /* flex-wrap: wrap;  */
+    margin-bottom: 20px;
+   
+    
+}
+.comentario{
+    display: flex;
+    border-radius: 15px;
+    width: 649px;
+    margin-left: 15px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    
+    
+}
+
+.avatar{
+    background-image: url('/images/fotos/avatar7.jpg ');
+	background-position: center;
+	background-repeat: no-repeat; 
+	background-size: cover;
+	border-radius: 50%;
+	width: 80px;
+	height: 80px;
+	size: initial;
+	align-content: center;
+	margin-left: 18px;
+	margin-bottom: 17.5px;
+	margin-top: 17.5px;
+	box-sizing: border-box;
+}
+
+/* .comentar{
+    background-color: #fff;
+    border-radius: 15px;
+    width: 500px;
+    height: 60px;
+    align-content: center;
+    margin-top: 17.5px;
+} */
+.comentar textarea{
+    /* border: none; */
+    resize: none;
+    background-color: #fff;
+    border-radius: 15px;
+    width: 500px;
+    height: 60px;
+    align-content: center;
+    margin-top: 17.5px;
+    
+}
+.comentario button{
+    background-color:#F22441;
+    width: 100px;
+    margin-left: 570px;
+    margin-top: -10px;
+    border-radius: 15px;
+    color: #fff;
+    border:none
+
+    
+}
+.coment{
+    background-color: #fff;
+    border-radius: 15px;
+    width: 500px;
+    padding: 20px;
+    align-content: center;
+    font-size: small;
+    margin-top: 20px;
+}
+
+
+
+
+
 
 /* #areaCentral {
 	background-color: #fff;
