@@ -1,4 +1,4 @@
-#temaBusca {
+#temajogo {
 	background-image: url('/images/heads/h4.jpg');
 	background-repeat: no-repeat;
 	background-position: center;
@@ -10,80 +10,46 @@
 }
 
 
-.group{
+
+
+/* corpo */
+.corpo{
+
     display: flex;
-    flex-wrap:wrap;
+    flex-wrap: wrap;
     justify-content: center;
-    margin-bottom: 20px;
-}
-
-.center{
-    display: flex;
-    justify-content: flex-start;
+    margin-top: -100px;
 }
 
 
-.perfil{
+
+#perfil{
+
     background-color: #fff;
     border-radius: 15px;
     width: 178px;
     height: 478px;
-    margin-right: 15px;
-    padding: 10px;
+    /* margin-right: 15px; */
+    margin-left:20px;
+    padding: 20px;
     background-image: url('/images/jogos/jogo_arcadia_quest_riders.png');
     background-position: 50% 30%;
     background-repeat: no-repeat;
     background-size: 120px 130px; 
-	   
+    text-align: center;
 }
 
-.perfil h3{
-    margin-top: 30px;
-}
-.perfil p{
-    margin-top: 200px;
-    text-align: center;
+#perfil p{
+    margin-top: 180px;
     font-size: small;
 }
 
-.perfilj{
-    background-color: #fff;
-    border-radius: 15px;
-    width: 178px;
-    height: 478px;
-    margin-right: 15px;
-    padding: 10px;
-    background-image: url('/images/jogos/jogo_arcadia_quest_riders.png');
-    background-position: 50% 30%;
-    background-repeat: no-repeat;
-    background-size: 120px 130px; 
+#perfil h3{
+    margin-top: 20px;
 }
+.media{
+    margin-top: 40px;
 
-#estrelas{
-    margin-top: 30px;
-	align-content: center;
-	background-image: url('/images/icons/estrelas45.png');
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: cover;
-	height: 18px;
-	background-size:contain;
-}
-#nomeJogo p{
-    margin-top: 150px;
-    font-weight: bolder;
-    font-size: medium;
-}
-
-
-
-
-.media {
-    margin-top: 60px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size:medium;
 }
 
 .notas{
@@ -98,33 +64,33 @@
 }
 
 
-/* jogo  */
+#center{
+    display: flex;
+    flex-wrap: wrap;
 
-
-.jogo{
-    background-color: #fff;
-    border-radius: 15px;
-    width: 649px;
-    height: 478px;
-    margin-left: 15px;
+    justify-content: center;
+    text-align: center;
 }
 
+
+
+/* nav jogo */
 .navjogo{
-    width: 600px;
+    width: 90%;
     height: 48px;
     border-top: 3px solid #E5E5E5;
     border-bottom: 3px solid #E5E5E5;
     margin: auto;
     margin-top: 20px;
     display: flex;
-    
     justify-content: space-around;
     align-content: center;
+    flex-wrap: nowrap;
 }
 .navjogo #dado{
     background-image: url('/images/icons/dados1.png');
     background-repeat: no-repeat;
-    width: 50px;
+    width: 50px 
 }
 .navjogo #numd{
     color: #0F7A2F;
@@ -140,26 +106,25 @@
 }
 .navjogo #coracao{
     background-image: url('/images/icons/coracao2.png');
-    background-size: 40px;
     background-repeat: no-repeat;
     background-position: center;
-    width: 50px;
+    width: 20px;
     
 }
 .navjogo #mais{
     background-image: url('/images/icons/plus.png');
-    background-size: 30px;
+    /* background-size: 30px; */
     background-repeat: no-repeat;
     background-position: center;
 }
 #avaliacao{
-    width: 196px;
-     background-color: #E5E5E5; 
+    /* width: 196px; */
+    
     font-size: small;
     font-weight: bolder;
     padding: 10px;
     display: flex;
-    border: black solid 1px;
+    
     
     
 }
@@ -170,39 +135,106 @@
     width: 85px;
 }
 .navjogo button{
-    width: 50px;
+    width: 40px;
     height: 40px;
     background-color: #fff;
     border: none;
 }
 
 
-.corpo{
+
+#jogo{
+    
+    width: 650px;
+    text-align: left;
+    margin-left: 5vw;
     display: flex;
     flex-wrap: wrap;
-    padding: 30px;
+    background-color: #fff;
+    border-radius: 15px;
+    /* margin-right: 20vw; */
 }
 
-.texto{
-width: 350px;
-font-size: medium;
-}
-.texto h1{
-    margin-bottom: 30px;
+
+#texto{
+
+    font-size: medium;
+    width: 60%;
+    /* margin-top: -60px; */
 }
 
-.video{
-    margin-left: 20px;
-    margin-top: 80px;
-    width: 200px;
-    height: 118px;
+#texto p{
+    padding-top: 40px;
+}
+
+#video{
+    width: 249px;
+    height: 138px;
+
     background-image: url('/images/jogos/Arcadia_unboxing.png');
+    margin-top: 40px;
+}
+
+#jogo2{
+
+    background-color: #fff;
+    border-radius: 15px;
+    width: 178px;
+    align-content: center;
+    margin-top: 20px;
+    margin-left: 5%;
+    padding: 10px;
     
-} 
+    
+}
+#jogo2 h3{
+    padding: 10px;
+    font-weight: bolder;
+}
 
+#nomejogo{
+    padding: 20px;
+}
+#estrelas{
+    margin-top: 10px;
+	align-content: center;
+	background-image: url('/images/icons/estrelas45.png');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	height: 18px;
+	background-size:contain;
+}
+#capajogo1{
+    width: 120px;
+    height: 130px;
+    background-image: url('/images/jogos/jogo_arcadia_quest_riders.png');
+    align-content: center;
+    background-repeat: no-repeat;
+    background-size: cover 
+}
+#capajogo2{
+    width: 120px;
+    height: 130px;
+    align-content: center;
+    background-image: url('/images/jogos/jogo_arcadia_quest_riders.png');
+    background-repeat: no-repeat;
+    background-size: cover 
+}
 
+#resenha{
 
+    
+    width: 650px;
+    text-align: left;
+    margin-left: 5vw;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    border-radius: 15px;
+    box-sizing: border-box;
 
+}
 .comentarios{
     display: flex;
     flex-direction: column;
@@ -219,7 +251,7 @@ font-size: medium;
 .comentario{
     display: flex;
     border-radius: 15px;
-    width: 649px;
+    width: 620px;
     margin-left: 15px;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -285,18 +317,32 @@ font-size: medium;
 }
 
 
+@media only screen and (max-width: 923px){
+    .corpo{
+        flex-direction: column;
+    }
+    
+    #perfil{
+        width: 100vw;
+        margin: 0;
+        
+    }
+    #jogo{
+        width: 100vw;
+        margin: 0;
+    }
+    #jogo2{
+        width: 100vw;
+        margin: 0;
+        align-content: center;
+    }
 
-
-
-
-/* #areaCentral {
-	background-color: #fff;
-	height: 1000px;
-	width: 100%;
-	border-radius: 15px;
-	text-align: left;
-    box-sizing: border-box;
-    margin-top: -100px;
-    margin-bottom: 15px;
-
-} */
+    #resenha{
+        width: 100vw;
+        margin: 0;
+    }
+    #avatar{
+        width: 0;
+        height: 0;
+    }
+}
