@@ -1,0 +1,15 @@
+✔ Utilizar o framework express e padrão MVC;
+
+☐ Formulários e ações devem salvar as informações diretamente no banco de dados;
+
+☐ Criar a funcionalidade de autenticação de usuários (session e middlewares) e funcionalidade logout. Senhas precisam ser armazenadas criptografadas.
+
+☐ Tela de login deverá validar usuário e redireciona-lo para a página inicial interna.
+
+☐ Para um usuário já logado, a rota de login e de formulário de cadastro devem direcioná-lo para página inicial interna;
+
+☐ Deverá ser feita a validação do que está sendo salvo dentro do banco de dados, além de exibir mensagem de erro sempre que necessário. Produtos, clientes, serviços, etc deverão ser exibidos de forma dinâmica e de acordo com o que está armazenado dentro do banco de dados.
+
+☐ Incluir uma seção comum em todo o site, por exemplo, o cabeçalho. Se o usuário estiver logado, eles devem indicar seu nome de usuário. Se você não está logado, você deve ter um link para a página de login 
+
+☐ Utilizar Migration como versionamento do banco de dados. Ter alguma ferramenta de busca de alguma entidade (produtos, alunos, serviços, etc…)
