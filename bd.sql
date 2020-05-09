@@ -11,7 +11,7 @@ USE looders;
 -- Table `privilegio`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `privilegio` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `cargo` TINYINT(1) NOT NULL,
   `aprovado` TINYINT(1) NOT NULL,
   `privilegiocol` VARCHAR(45) NOT NULL DEFAULT 0,
@@ -24,7 +24,7 @@ ENGINE = InnoDB;
 -- Table `usuario`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `usuario` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(100) NOT NULL,
   `email` VARCHAR(200) NOT NULL,
   `senha` VARCHAR(250) NOT NULL,
@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `dataDeNascimento` DATE NULL,
   `tipoAp` TINYINT(1) NULL,
   `apelido` VARCHAR(100) NULL,
-  `genero` TINYINT(1) NULL DEFAULT NULL,
+  `genero` TINYINT(1) NULL DEFAULT N,
   `privilegio_id` INT NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE INDEX `email_UNIQUE` (`email` ASC) VISIBLE,
@@ -53,7 +53,7 @@ ENGINE = InnoDB;
 -- Table `tema`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `tema` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(200) NULL,
   PRIMARY KEY (`id`),
   UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE)
@@ -64,7 +64,7 @@ ENGINE = InnoDB;
 -- Table `dominio`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `dominio` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(80) NULL,
   PRIMARY KEY (`id`),
   UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE)
@@ -75,7 +75,7 @@ ENGINE = InnoDB;
 -- Table `mecanica`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mecanica` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(80) NULL,
   PRIMARY KEY (`id`),
   UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE)
@@ -86,7 +86,7 @@ ENGINE = InnoDB;
 -- Table `jogo`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `jogo` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(100) NOT NULL,
   `ano` YEAR(4) NULL,
   `descricao` VARCHAR(450) NOT NULL,
@@ -215,4 +215,3 @@ CREATE TABLE IF NOT EXISTS `joguei` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
-
