@@ -14,7 +14,7 @@ const Jogo = (sequelize, DataTypes) => {
                 allowNull: false
             },
             ano: {
-                type: DataTypes.YEAR(4),
+                type: DataTypes.INTEGER,
                 allowNull: true
             },
             descricao: {

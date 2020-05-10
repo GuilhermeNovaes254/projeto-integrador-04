@@ -217,3 +217,27 @@ CREATE TABLE IF NOT EXISTS `joguei` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
+
+
+-- -----------------------------------------------------
+-- Inserindo valores padrão para teste
+-- -----------------------------------------------------
+
+INSERT INTO tema
+	(nome)
+VALUES
+    ('Aventura'),
+	  ('Civilização'),
+	  ('Cultura Oriental'),
+    ('Cultura Pop'),
+    ('Fantasia'),
+    ('Faroeste'),
+    ('Ficção Científica'),
+    ('Guerra'),
+    ('História'),
+    ('Horror'),
+    ('Medieval'),
+    ('Mitologia'),
+    ('Luta'),
+    ('Policial'),
+    ('Política');

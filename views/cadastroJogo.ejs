@@ -65,21 +65,9 @@
                                     <label for="temaJogo">Tema</label>
                                     <select class="form-control" id="temaJogo">
                                         <option value="">Selecione</option>
-                                        <option>Aventura</option>
-                                        <option>Civilização</option>
-                                        <option>Cultura Oriental</option>
-                                        <option>Cultura Pop</option>
-                                        <option>Fantasia</option>
-                                        <option>Faroeste</option>
-                                        <option>Ficção Científica</option>
-                                        <option>Guerra</option>
-                                        <option>História</option>
-                                        <option>Horror</option>
-                                        <option>Medieval</option>
-                                        <option>Mitologia</option>
-                                        <option>Luta</option>
-                                        <option>Policial</option>
-                                        <option>Política</option>
+                                        <% for(tema of temas) { %>
+                                            <option><%= tema.nome %></option>
+                                        <% } %>
                                     </select>
                                 </div>
                                 <div class="col-1"></div>
