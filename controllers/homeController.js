@@ -1,4 +1,4 @@
-const { Dominio, Tema } = require('../models');
+const { Dominio, Tema, Mecanica } = require('../models');
 
 const homeController = {
 
@@ -23,10 +23,12 @@ const homeController = {
   cadastroJogo: async (req, res) => {
     var temas = await Tema.findAll();
     var dominios = await Dominio.findAll();
+    var mecanicas = await Mecanica.findAll();
     res.render('cadastroJogo', {
       title: 'Cadastro Jogo',
       temas,
-      dominios
+      dominios,
+      mecanicas
     });
   },
 

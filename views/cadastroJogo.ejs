@@ -145,12 +145,9 @@
                                             <label for="mecanicaJogo">Mecânica</label>
                                             <select class="form-control" id="mecanicaJogo">
                                                 <option value="">Selecione</option>
-                                                <option>Coleção de Componentes</option>
-                                                <option>Colecionar Cartas</option>
-                                                <option>Compra de Cartas</option>
-                                                <option>Construção de Baralho</option>
-                                                <option>Controle de Área</option>
-                                                <option>Rolagem de Dados</option>
+                                                <% for(mecanica of mecanicas) { %>
+                                                    <option><%= mecanica.nome %></option>
+                                                <% } %>
                                             </select>
                                         </div>
                                         <div class="form-group">

@@ -262,3 +262,15 @@ VALUES
     ('Jogos Festivos'),
     ('Jogos Legacy'),
     ('Jogos Temáticos');
+
+
+
+    INSERT INTO mecanica
+	(nome)
+VALUES
+    ('Coleção de Componentes'),
+	  ('Colecionar Cartas'),
+	  ('Compra de Cartas'),
+    ('Construção de Baralho'),
+    ('Controle de Área'),
+    ('Rolagem de Dados');
