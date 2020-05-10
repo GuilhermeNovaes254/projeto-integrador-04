@@ -42,7 +42,7 @@ const Jogo = (sequelize, DataTypes) => {
                 allowNull: true
             },
             regras:{
-                type: DataTypes.VARCHAR(450),
+                type: DataTypes.STRING(450),
                 allowNull: true
             },
             qntMax:{
@@ -88,7 +88,7 @@ const Jogo = (sequelize, DataTypes) => {
                 }
             },
             foto:{
-                type: DataTypes.VARCHAR(500),
+                type: DataTypes.STRING(500),
                 allowNull: true
             }
             
