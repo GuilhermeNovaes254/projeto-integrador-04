@@ -103,6 +103,7 @@ CREATE TABLE IF NOT EXISTS `jogo` (
   `tema_id` INT NOT NULL,
   `dominio_id` INT NOT NULL,
   `mecanica_id` INT NOT NULL,
+  `foto` VARCHAR(500) NULL,
   PRIMARY KEY (`id`),
   INDEX `fk_jogo_tema_idx` (`tema_id` ASC) VISIBLE,
   INDEX `fk_jogo_dominio1_idx` (`dominio_id` ASC) VISIBLE,
@@ -215,3 +216,4 @@ CREATE TABLE IF NOT EXISTS `joguei` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
+
