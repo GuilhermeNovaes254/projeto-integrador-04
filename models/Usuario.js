@@ -6,29 +6,62 @@ const Usuario = (sequelize, DataTypes) => {
                 type: DataTypes.INTEGER,
                 primaryKey: true,
                 autoIncrement: true,
-                allowNull:false
+                allowNull:false,
+                unique: true
             },
             nome: {
-                type: DataTypes.STRING,
+                type: DataTypes.STRING(100),
                 allowNull: false
             },
             email: {
-                type: DataTypes.STRING,
-                allowNull: false
+                type: DataTypes.STRING(200),
+                allowNull: false,
+                unique: true
             },
             senha: {
-                type: DataTypes.STRING,
+                type: DataTypes.STRING(250),
                 allowNull: false
+            },
+            foto:{
+                type: DataTypes.STRING(500)
+            },
+            descricao:{
+                type: DataTypes.STRING(500)
+            },
+            cidade:{
+                type: DataTypes.STRING(200)
+            },
+            estado:{
+                type: DataTypes.STRING(2)
+            },
+            dataDeNascimento:{
+                type: DataTypes.DATE
+            },
+            tipoAp:{
+                type: DataTypes.TINYINT(1)
+            },
+            apelido:{
+                type: DataTypes.STRING(100)
+            },
+            genero:{
+                type: DataTypes.TINYINT(1)
+            },
+            privilegio_id:  {
+                type: DataTypes.INTEGER,
+                allowNull: false,
+                references: {
+                model: "Privilegio", 
+                key: "id"
+                }
             }
         },{
-            tableName: "usuarios",
+            tableName: "usuario",
             timestamps: false
         }
 
     );
     usuario.associate = (models) => {
-        usuario.hasMany(models.Comentario, {foreignKey: 'usuarios_id', as:'comentarios'})
-        usuario.hasMany(models.Post, {foreignKey: 'usuarios_id', as:'posts'})
+        usuario.belongsTo(models.Privilegio, {foreignKey: 'privilegio_id', as:'privilegio'})
     }
     return usuario;
 }

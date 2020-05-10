@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `dataDeNascimento` DATE NULL,
   `tipoAp` TINYINT(1) NULL,
   `apelido` VARCHAR(100) NULL,
-  `genero` TINYINT(1) NULL DEFAULT N,
+  `genero` TINYINT(1) NULL,
   `privilegio_id` INT NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE INDEX `email_UNIQUE` (`email` ASC) VISIBLE,
