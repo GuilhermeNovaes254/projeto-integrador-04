@@ -3,6 +3,7 @@ CREATE SCHEMA IF NOT EXISTS looders;
 USE looders;
 
 -- MySQL Workbench Forward Engineering
+
 -- -----------------------------------------------------
 -- Schema looders
 -- -----------------------------------------------------
@@ -12,9 +13,8 @@ USE looders;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `privilegio` (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `cargo` TINYINT(1) NOT NULL,
-  `aprovado` TINYINT(1) NOT NULL,
-  `privilegiocol` VARCHAR(45) NOT NULL DEFAULT 0,
+  `cargo` TINYINT(1) NOT NULL DEFAULT 0,
+  `aprovado` TINYINT(1) NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`),
   UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE)
 ENGINE = InnoDB;

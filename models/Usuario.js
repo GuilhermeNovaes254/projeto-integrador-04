@@ -23,28 +23,36 @@ const Usuario = (sequelize, DataTypes) => {
                 allowNull: false
             },
             foto:{
-                type: DataTypes.STRING(500)
+                type: DataTypes.STRING(500),
+                allowNull: true
             },
             descricao:{
-                type: DataTypes.STRING(500)
+                type: DataTypes.STRING(500),
+                allowNull: true
             },
             cidade:{
-                type: DataTypes.STRING(200)
+                type: DataTypes.STRING(200),
+                allowNull: true
             },
             estado:{
-                type: DataTypes.STRING(2)
+                type: DataTypes.STRING(2),
+                allowNull: true
             },
             dataDeNascimento:{
-                type: DataTypes.DATE
+                type: DataTypes.DATE,
+                allowNull: true
             },
             tipoAp:{
-                type: DataTypes.TINYINT(1)
+                type: DataTypes.TINYINT(1),
+                allowNull: true
             },
             apelido:{
-                type: DataTypes.STRING(100)
+                type: DataTypes.STRING(100),
+                allowNull: true
             },
             genero:{
-                type: DataTypes.TINYINT(1)
+                type: DataTypes.TINYINT(1),
+                allowNull: true
             },
             privilegio_id:  {
                 type: DataTypes.INTEGER,
