@@ -241,3 +241,24 @@ VALUES
     ('Luta'),
     ('Policial'),
     ('Política');
+
+
+
+
+    INSERT INTO dominio
+	(nome)
+VALUES
+    ('Jogos 4X'),
+	  ('Jogos Abstratos'),
+	  ('Jogos Colecionáveis'),
+    ('Jogos Cooperativos'),
+    ('Jogos de Cartas'),
+    ('Jogos de Guerra'),
+    ('Jogos de Miniaturas'),
+    ('Jogos em Tempo Real'),
+    ('Jogos Estratégicos'),
+    ('Jogos Expert'),
+    ('Jogos Familiares'),
+    ('Jogos Festivos'),
+    ('Jogos Legacy'),
+    ('Jogos Temáticos');

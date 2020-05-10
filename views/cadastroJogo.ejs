@@ -136,20 +136,9 @@
                                             <label for="dominioJogo">Domínio (Categoria)</label>
                                             <select class="form-control" id="dominioJogo">
                                                 <option value="">Selecione</option>
-                                                <option>Jogos 4X</option>
-                                                <option>Jogos Abstratos</option>
-                                                <option>Jogos Colecionáveis</option>
-                                                <option>Jogos Cooperativos</option>
-                                                <option>Jogos de Cartas</option>
-                                                <option>Jogos de Guerra</option>
-                                                <option>Jogos de Miniaturas</option>
-                                                <option>Jogos em Tempo Real</option>
-                                                <option>Jogos Estratégicos</option>
-                                                <option>Jogos Expert</option>
-                                                <option>Jogos Familiares</option>
-                                                <option>Jogos Festivos</option>
-                                                <option>Jogos Legacy</option>
-                                                <option>Jogos Temáticos</option>
+                                                <% for(dominio of dominios) { %>
+                                                    <option><%= dominio.nome %></option>
+                                                <% } %>
                                             </select>
                                         </div>
                                         <div class="form-group">

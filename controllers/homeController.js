@@ -22,9 +22,11 @@ const homeController = {
 
   cadastroJogo: async (req, res) => {
     var temas = await Tema.findAll();
+    var dominios = await Dominio.findAll();
     res.render('cadastroJogo', {
       title: 'Cadastro Jogo',
-      temas
+      temas,
+      dominios
     });
   },
 
