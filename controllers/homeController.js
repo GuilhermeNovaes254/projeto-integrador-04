@@ -1,18 +1,36 @@
 const { Dominio, Tema, Mecanica } = require('../models');
+const {Usuario} = require('../models')
+const bcrypt = require('bcrypt')
 
 const homeController = {
-
+  
   index: (req, res) => {
     res.render('index', {
       title: 'Home'
     });
   },
 
-  login: (req, res) => {
-    res.render('login', {
-      title: 'Login'
-    });
-  },
+  login: async (req,res) => {
+    // Lendo as infos do Body
+    const {email,senha} = req.body;
+    // tentar carregar um usuario
+    const user = await Usuario.findOne({ where: { email }});
+    //Verifica se existe usarui com o e-mail passado
+    if(!user){
+        res.redirect('/login?error=1');
+    }
+    
+    // validar senha passada via post contra a guardada
+    if(!bcrypt.compareSync(senha, user.senha)){
+        res.redirect('/login?error=1');
+    }
+
+    // setar uma session com o usuario
+    req.session.usuario = user;
+
+    // redirecionar o suaurio para a rota '/home'
+    res.redirect('/home');
+},
 
   feeds: (req, res) => {
     res.render('feeds', {
