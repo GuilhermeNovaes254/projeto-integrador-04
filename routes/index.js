@@ -1,26 +1,27 @@
 var express = require('express');
 var router = express.Router();
 
-let homeController = require('../controllers/homeController');
+const homeController = require('../controllers/homeController');
+const autorizaLogin = require('../controllers/autorizaLoginController');
 const VerificaUsuarioLogado = require('../middlewares/VerificaUsuarioLogado')
 
 
 /* GET home page. */
 router.get('/', homeController.index);
-router.get('/login', homeController.login);
 router.get('/feeds', VerificaUsuarioLogado, homeController.feeds);
-router.get('/cadastroJogo', homeController.cadastroJogo);
-router.get('/perfil', homeController.perfil);
-router.get('/jogo', homeController.jogo);
-router.get('/busca', homeController.busca);
-router.get('/cadastro', homeController.cadastro);
-router.get('/perfilAdm', homeController.perfilAdm);
-router.get('/perfilModerador', homeController.perfilModerador);
-router.get('/moduloDestaques', homeController.moduloDestaques);
-router.get('/excluir', homeController.excluir);
-router.get('/editar', homeController.editar);
+router.get('/cadastroJogo',VerificaUsuarioLogado, homeController.cadastroJogo);
+router.get('/perfil', VerificaUsuarioLogado,homeController.perfil);
+router.get('/jogo',VerificaUsuarioLogado,homeController.jogo);
+router.get('/busca', VerificaUsuarioLogado,homeController.busca);
+router.get('/cadastro', VerificaUsuarioLogado,homeController.cadastro);
+router.get('/perfilAdm',VerificaUsuarioLogado, homeController.perfilAdm);
+router.get('/perfilModerador', VerificaUsuarioLogado,homeController.perfilModerador);
+router.get('/moduloDestaques', VerificaUsuarioLogado,homeController.moduloDestaques);
+router.get('/excluir', VerificaUsuarioLogado,homeController.excluir);
+
 
 /* POSTS */
-router.post('/login', homeController.login);
+router.post('/login', autorizaLogin.loginSession);
+
 
 module.exports = router;
