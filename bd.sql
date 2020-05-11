@@ -16,7 +16,8 @@ CREATE TABLE IF NOT EXISTS `privilegio` (
   `cargo` TINYINT(1) NOT NULL DEFAULT 0,
   `aprovado` TINYINT(1) NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`),
-  UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE)
+  UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE
+  )
 ENGINE = InnoDB;
 
 
@@ -274,3 +275,11 @@ VALUES
     ('Construção de Baralho'),
     ('Controle de Área'),
     ('Rolagem de Dados');
+
+INSERT INTO privilegio (id,cargo,aprovado)
+VALUES ('1','2','1');
+
+INSERT INTO usuario (nome, email, senha, privilegio_id)
+VALUES ('Guilherme Novaes','guilherme.novaes@gmail.com','$2b$10$hKXxuZe3vE4EBVAIdzvrxuL3OrynJQZBbRiZnEYfwrgC1A0LKsuYe','1');
+
+
