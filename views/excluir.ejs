@@ -1,10 +1,6 @@
 <%- include('./partials/header') %>
 <link rel='stylesheet' href='/css/separados/excluir.css' />
-<!--
-<div>
-    <img src="/images/heads/h1.jpg" id="fotoDePagina" alt='fotoDePagina' title="FotoDePagina" width=100% />
-</div>
--->
+
 <section id="tema"></section>
 
 <div class="container" id='containerTema'>
@@ -16,16 +12,14 @@
             <div id="pExclude">Para exclusão do usuário copie o texto abaixo na caixa de texto:</div>
 
             <div id='usuario'>Candy Daniele</div>
+            <div id="alerta">* Esta ação é irreversível</div>
             <div class="form-group" id='deleteUser'>
-                <form>
-                    <input type="text" class="deleteUser" id="deleteUserForm">
+                <form action='/excluir' method='POST'>
+                    <input type="text" class="deleteUser" id="deleteUserForm" name="nome">
+                    
+                    <button type="submit" id='botaoExcluir'>Prosseguir</button>
                 </form>
             </div>
-            <div id="alerta">* Esta ação é irreversível</div>
-            <form>
-                <button type="submit" id='botaoExcluir'>Prosseguir</button>
-            </form>
-
         </div>
 
 

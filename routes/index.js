@@ -36,5 +36,6 @@ router.post('/login', autorizaLogin.loginSession);
 
 // POSTS formulario
 router.post('/cadastro', formController.cadastroUsuario);
+router.post('/excluir', VerificaUsuarioLogado, formController.excluiUsuario)
 
 module.exports = router;
