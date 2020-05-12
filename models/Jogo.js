@@ -14,7 +14,7 @@ const Jogo = (sequelize, DataTypes) => {
                 allowNull: false
             },
             ano: {
-                type: DataTypes.INTEGER,
+                type: DataTypes.STRING(4),
                 allowNull: true
             },
             descricao: {
@@ -38,7 +38,7 @@ const Jogo = (sequelize, DataTypes) => {
                 allowNull: true
             },
             peso:{
-                type: DataTypes.TINYINT(2),
+                type: DataTypes.TINYINT(1),
                 allowNull: true
             },
             regras:{
@@ -54,7 +54,7 @@ const Jogo = (sequelize, DataTypes) => {
                 allowNull: true
             },
             notaJogo:{
-                type: DataTypes.TINYINT(2),
+                type: DataTypes.FLOAT,
                 allowNull: true
             },
             aprovado:{  

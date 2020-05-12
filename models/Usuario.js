@@ -19,7 +19,7 @@ const Usuario = (sequelize, DataTypes) => {
                 unique: true
             },
             senha: {
-                type: DataTypes.STRING(250),
+                type: DataTypes.STRING(256),
                 allowNull: false
             },
             foto:{
@@ -47,7 +47,7 @@ const Usuario = (sequelize, DataTypes) => {
                 allowNull: true
             },
             apelido:{
-                type: DataTypes.STRING(100),
+                type: DataTypes.STRING(20),
                 allowNull: true
             },
             genero:{
