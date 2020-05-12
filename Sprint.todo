@@ -19,3 +19,17 @@ Se o usuário estiver logado, eles devem indicar seu nome de usuário.
 Se você não está logado, você deve ter um link para a página de login 
 
 ☐ Utilizar Migration como versionamento do banco de dados. Ter alguma ferramenta de busca de alguma entidade (produtos, alunos, serviços, etc…)
+Colocar 'name' nos itens dos formulários de editar.ejs
+/***************************************************************************/
+
+Estado e cidade como tableas externas, se complementando.
+
+Avaliacao, mudar para decimal 
+
+Na tabela avaliação pro campo texto. para guardar comentarios
+
+UsuarioJogo. é necessario?
+
+
+Tabela Comentário = timestamp, jogo, usuario, texto
+

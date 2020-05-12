@@ -1,9 +1,7 @@
-const {
-    Usuario
-} = require('../models')
+const {Usuario} = require('../models')
 const bcrypt = require('bcrypt')
 
-const formsController = {
+const forms = {
 
     cadastroUsuario: async (req, res) => {
         let {
@@ -38,7 +36,7 @@ const formsController = {
         });
     },
 
-    excluiUsuario: async (req, res) => {
+    excluirUsuario: async (req, res) => {
         let {
             nome
         } = req.body;
@@ -66,8 +64,14 @@ const formsController = {
                 title: 'Home'
             });
         }
+    },
+
+    editarUsuario: (req,res) =>{
+
+
     }
 };
 
 
-module.exports = formsController;
+
+module.exports = forms

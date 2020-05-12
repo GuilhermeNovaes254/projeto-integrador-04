@@ -26,6 +26,7 @@ router.get('/busca', VerificaUsuarioLogado,homeController.busca);
 router.get('/moduloDestaques', VerificaUsuarioLogado,homeController.moduloDestaques);
 router.get('/excluir', VerificaUsuarioLogado,homeController.excluir);
 router.get('/semPrivilegio', VerificaUsuarioLogado,homeController.semPrivilegio);
+router.get('/editar', VerificaUsuarioLogado,homeController.editar);
 
 // Páginas Restritas
 router.get('/perfilModerador', VerificaMod, VerificaUsuarioLogado, homeController.perfilModerador);
@@ -36,6 +37,7 @@ router.post('/login', autorizaLogin.loginSession);
 
 // POSTS formulario
 router.post('/cadastro', formController.cadastroUsuario);
-router.post('/excluir', VerificaUsuarioLogado, formController.excluiUsuario)
+router.post('/excluir', VerificaUsuarioLogado, formController.excluirUsuario)
+router.post('/editar', VerificaUsuarioLogado, formController.editarUsuario);
 
 module.exports = router;

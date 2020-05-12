@@ -9,9 +9,7 @@ const VerificaModerador = async (req,res,next) => {
 
     const user = await Usuario.findOne({ where: {email} });
 
-    const perfil = await Privilegio.findOne({ where: {id : user.privilegio_id} });
-    //console.log(perfil)
-    if(perfil.cargo == 1 || perfil.aprovado != 1){
+    if(user.cargo == 1 || user.aprovado != 1){
         res.redirect('/semPrivilegio');
     }
 

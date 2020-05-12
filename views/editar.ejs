@@ -224,20 +224,16 @@
         let min = 1910,
             max = date.getFullYear(),
             select = document.getElementById('anoNasc');
-
         for (let i = min; i <= max; i++) {
             let opt = document.createElement('option');
             opt.value = i;
             opt.innerHTML = i;
             select.appendChild(opt);
         }
-
         select.value = new Date().getFullYear();
-
         let min2 = 1,
             max2 = 31,
             select2 = document.getElementById('diaNasc');
-
         for (let i = min2; i <= max2; i++) {
             let opt = document.createElement('option');
             opt.value = i;
