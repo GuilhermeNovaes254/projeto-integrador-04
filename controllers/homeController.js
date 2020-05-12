@@ -83,6 +83,11 @@ const homeController = {
     });
   },
 
+  semPrivilegio: (req, res) => {
+    res.render('semPrivilegio', {
+      title: 'Sem Privilégio'
+    });
+  },
 
 };
 
