@@ -16,8 +16,7 @@ CREATE TABLE IF NOT EXISTS `privilegio` (
   `cargo` TINYINT(1) NOT NULL DEFAULT 0,
   `aprovado` TINYINT(1) NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`),
-  UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE
-  )
+  UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE)
 ENGINE = InnoDB;
 
 
@@ -28,14 +27,14 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(100) NOT NULL,
   `email` VARCHAR(200) NOT NULL,
-  `senha` VARCHAR(250) NOT NULL,
+  `senha` VARCHAR(256) NOT NULL,
   `foto` VARCHAR(500) NULL,
   `descricao` VARCHAR(500) NULL,
   `cidade` VARCHAR(200) NULL,
   `estado` VARCHAR(2) NULL,
   `dataDeNascimento` DATE NULL,
   `tipoAp` TINYINT(1) NULL,
-  `apelido` VARCHAR(100) NULL,
+  `apelido` VARCHAR(20) NULL,
   `genero` TINYINT(1) NULL,
   `privilegio_id` INT NOT NULL,
   PRIMARY KEY (`id`),
@@ -55,7 +54,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `tema` (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `nome` VARCHAR(200) NULL,
+  `nome` VARCHAR(80) NULL,
   PRIMARY KEY (`id`),
   UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE)
 ENGINE = InnoDB;
@@ -89,17 +88,17 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `jogo` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(100) NOT NULL,
-  `ano` YEAR(4) NULL,
+  `ano` VARCHAR(4) NULL,
   `descricao` VARCHAR(450) NOT NULL,
   `faixaEtaria` TINYINT(2) NOT NULL,
   `duracao` TINYINT(3) NULL,
   `downtime` TINYINT(1) NULL,
   `tutorial` VARCHAR(450) NULL,
-  `peso` TINYINT(2) NULL,
+  `peso` TINYINT(1) NULL,
   `regras` VARCHAR(450) NULL,
   `qntMax` TINYINT(2) NULL,
   `qntMin` TINYINT(2) NULL,
-  `notaJogo` TINYINT(2) NULL,
+  `notaJogo` FLOAT NULL,
   `aprovado` TINYINT(1) NOT NULL DEFAULT 0,
   `tema_id` INT NOT NULL,
   `dominio_id` INT NOT NULL,
@@ -217,7 +216,6 @@ CREATE TABLE IF NOT EXISTS `joguei` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
-
 
 
 -- -----------------------------------------------------
