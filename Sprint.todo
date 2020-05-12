@@ -24,12 +24,3 @@ Colocar 'name' nos itens dos formulários de editar.ejs
 
 Estado e cidade como tableas externas, se complementando.
 
-Avaliacao, mudar para decimal 
-
-Na tabela avaliação pro campo texto. para guardar comentarios
-
-UsuarioJogo. é necessario?
-
-
-Tabela Comentário = timestamp, jogo, usuario, texto
-

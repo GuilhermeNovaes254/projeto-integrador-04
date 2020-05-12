@@ -1,12 +1,41 @@
--- MySQL Workbench Forward Engineering
+DROP SCHEMA if exists looders;
+CREATE SCHEMA IF NOT EXISTS looders;
+USE looders;
 
-SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
-SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
-SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
+-- MySQL Workbench Forward Engineering
 
 -- -----------------------------------------------------
 -- Schema looders
 -- -----------------------------------------------------
+
+-- -----------------------------------------------------
+-- Table `estado`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `estado` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `sigla` VARCHAR(2) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `cidade`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `cidade` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `cidade` VARCHAR(200) NOT NULL,
+  `estado_id` INT NOT NULL,
+  PRIMARY KEY (`id`, `estado_id`),
+  UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE,
+  INDEX `fk_cidade_estado1_idx` (`estado_id` ASC) VISIBLE,
+  CONSTRAINT `fk_cidade_estado1`
+    FOREIGN KEY (`estado_id`)
+    REFERENCES `estado` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
 
 -- -----------------------------------------------------
 -- Table `usuario`
@@ -18,17 +47,23 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `senha` VARCHAR(256) NOT NULL,
   `foto` VARCHAR(500) NULL,
   `descricao` VARCHAR(500) NULL,
-  `cidade` VARCHAR(200) NULL,
-  `estado` VARCHAR(2) NULL,
   `dataDeNascimento` DATE NULL,
   `tipoAp` TINYINT(1) NULL,
   `apelido` VARCHAR(20) NULL,
   `genero` TINYINT(1) NULL,
   `cargo` TINYINT(1) NOT NULL DEFAULT 0,
   `aprovado` TINYINT(1) NOT NULL DEFAULT 0,
-  PRIMARY KEY (`id`),
+  `cidade_id` INT NOT NULL,
+  `cidade_estado_id` INT NOT NULL,
+  PRIMARY KEY (`id`, `cidade_id`, `cidade_estado_id`),
   UNIQUE INDEX `email_UNIQUE` (`email` ASC) VISIBLE,
-  UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE)
+  UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE,
+  INDEX `fk_usuario_cidade1_idx` (`cidade_id` ASC, `cidade_estado_id` ASC) VISIBLE,
+  CONSTRAINT `fk_usuario_cidade1`
+    FOREIGN KEY (`cidade_id` , `cidade_estado_id`)
+    REFERENCES `cidade` (`id` , `estado_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
@@ -111,9 +146,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `usuarioJogo`
+-- Table `colecao`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `usuarioJogo` (
+CREATE TABLE IF NOT EXISTS `colecao` (
   `usuario_id` INT NOT NULL,
   `jogo_id` INT NOT NULL,
   PRIMARY KEY (`usuario_id`, `jogo_id`),
@@ -138,7 +173,7 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `avaliacao` (
   `usuario_id` INT NOT NULL,
   `jogo_id` INT NOT NULL,
-  `avaliacao` FLOAT NULL DEFAULT 0,
+  `avaliacao` DECIMAL NULL DEFAULT 0,
   PRIMARY KEY (`usuario_id`, `jogo_id`),
   INDEX `fk_usuario_has_jogo_jogo2_idx` (`jogo_id` ASC) VISIBLE,
   INDEX `fk_usuario_has_jogo_usuario2_idx` (`usuario_id` ASC) VISIBLE,
@@ -161,7 +196,6 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `favorito` (
   `usuario_id` INT NOT NULL,
   `jogo_id` INT NOT NULL,
-  `favorito` TINYINT(1) NULL DEFAULT 0,
   PRIMARY KEY (`usuario_id`, `jogo_id`),
   INDEX `fk_usuario_has_jogo_jogo2_idx` (`jogo_id` ASC) VISIBLE,
   INDEX `fk_usuario_has_jogo_usuario2_idx` (`usuario_id` ASC) VISIBLE,
@@ -184,7 +218,6 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `joguei` (
   `usuario_id` INT NOT NULL,
   `jogo_id` INT NOT NULL,
-  `joguei` TINYINT(1) NULL DEFAULT 0,
   PRIMARY KEY (`usuario_id`, `jogo_id`),
   INDEX `fk_usuario_has_jogo_jogo1_idx` (`jogo_id` ASC) VISIBLE,
   INDEX `fk_usuario_has_jogo_usuario1_idx` (`usuario_id` ASC) VISIBLE,
@@ -201,9 +234,31 @@ CREATE TABLE IF NOT EXISTS `joguei` (
 ENGINE = InnoDB;
 
 
-SET SQL_MODE=@OLD_SQL_MODE;
-SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
-SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+-- -----------------------------------------------------
+-- Table `comentario`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `comentario` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `texto` TEXT NOT NULL,
+  `data` DATE NOT NULL,
+  `usuario_id` INT NOT NULL,
+  `jogo_id` INT NOT NULL,
+  PRIMARY KEY (`id`, `usuario_id`, `jogo_id`),
+  UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE,
+  INDEX `fk_comentario_usuario1_idx` (`usuario_id` ASC) VISIBLE,
+  INDEX `fk_comentario_jogo1_idx` (`jogo_id` ASC) VISIBLE,
+  CONSTRAINT `fk_comentario_usuario1`
+    FOREIGN KEY (`usuario_id`)
+    REFERENCES `usuario` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_comentario_jogo1`
+    FOREIGN KEY (`jogo_id`)
+    REFERENCES `jogo` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
 
 -- -----------------------------------------------------
 -- Inserindo valores padrão para teste
@@ -260,6 +315,9 @@ VALUES
     ('Construção de Baralho'),
     ('Controle de Área'),
     ('Rolagem de Dados');
+
+
+
 
 INSERT INTO usuario (nome, email, senha, cargo,aprovado)
 VALUES ('Guilherme Novaes','guilherme.novaes@gmail.com','$2b$10$hKXxuZe3vE4EBVAIdzvrxuL3OrynJQZBbRiZnEYfwrgC1A0LKsuYe',0,1);
