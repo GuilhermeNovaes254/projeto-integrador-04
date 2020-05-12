@@ -11,7 +11,7 @@ const VerificaAdm = async (req,res,next) => {
 
     const perfil = await Privilegio.findOne({ where: {id : user.privilegio_id} });
     console.log(perfil)
-    if(perfil.cargo < 1 || perfil.aprovado != 1){
+    if(perfil.cargo < 2 || perfil.aprovado != 1){
         res.redirect('/semPrivilegio');
     }
 
@@ -20,3 +20,8 @@ const VerificaAdm = async (req,res,next) => {
 }
 
 module.exports = VerificaAdm;
+
+
+
+
+/* MUDAR ATRIBUICOES */ 

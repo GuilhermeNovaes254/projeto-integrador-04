@@ -12,10 +12,8 @@ const autorizaLogin = {
 
         // tentar carregar um usuario
         const user = await Usuario.findOne({
-            where: {
-                email
-            }
-        });
+            where: { email }
+       });
         //Verifica se existe usarui com o e-mail passado
         if (!user) {
             res.redirect('/login?error');
