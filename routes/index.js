@@ -1,30 +1,40 @@
 var express = require('express');
 var router = express.Router();
 
+// Controllers
 const homeController = require('../controllers/homeController');
 const autorizaLogin = require('../controllers/autorizaLoginController');
-const VerificaUsuarioLogado = require('../middlewares/VerificaUsuarioLogado')
-const VerificaAdm = require('../middlewares/VerificaAdm')
-const VerificaMod = require('../middlewares/VerificaModerador')
+const formController = require('../controllers/formsController');
 
-/* GET home page. */
+// Middlewares
+const VerificaUsuarioLogado = require('../middlewares/VerificaUsuarioLogado');
+const VerificaAdm = require('../middlewares/VerificaAdm');
+const VerificaMod = require('../middlewares/VerificaModerador');
+
+// Sem verificação 
 router.get('/', homeController.index);
+router.get('/cadastro',homeController.cadastro);
+router.get('/login/error', homeController.loginError);
+
+
+// Com verificação
 router.get('/feeds', VerificaUsuarioLogado, homeController.feeds);
 router.get('/cadastroJogo',VerificaUsuarioLogado, homeController.cadastroJogo);
 router.get('/perfil', VerificaUsuarioLogado,homeController.perfil);
 router.get('/jogo',VerificaUsuarioLogado,homeController.jogo);
 router.get('/busca', VerificaUsuarioLogado,homeController.busca);
-router.get('/cadastro', VerificaUsuarioLogado,homeController.cadastro);
 router.get('/moduloDestaques', VerificaUsuarioLogado,homeController.moduloDestaques);
 router.get('/excluir', VerificaUsuarioLogado,homeController.excluir);
 router.get('/semPrivilegio', VerificaUsuarioLogado,homeController.semPrivilegio);
 
-/* GET Páginas Restritas */
+// Páginas Restritas
 router.get('/perfilModerador', VerificaMod, VerificaUsuarioLogado, homeController.perfilModerador);
 router.get('/perfilAdm', VerificaAdm, VerificaUsuarioLogado, homeController.perfilAdm);
 
-/* POSTS */
+// POSTS 
 router.post('/login', autorizaLogin.loginSession);
 
+// POSTS formulario
+router.post('/cadastro', formController.cadastroUsuario);
 
 module.exports = router;

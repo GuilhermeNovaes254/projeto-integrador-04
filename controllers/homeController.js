@@ -1,6 +1,5 @@
 const { Dominio, Tema, Mecanica } = require('../models');
 const {Usuario} = require('../models')
-const bcrypt = require('bcrypt')
 
 const homeController = {
   
@@ -10,6 +9,14 @@ const homeController = {
     });
  
   },
+
+  loginError: (req, res) => {
+    res.render('loginError', {
+      title: 'Erro Login'
+    });
+ 
+  },
+
 
   feeds: (req, res) => {
     res.render('feeds', {

@@ -1,24 +1,12 @@
-DROP SCHEMA if exists looders;
-CREATE SCHEMA IF NOT EXISTS looders;
-USE looders;
-
 -- MySQL Workbench Forward Engineering
+
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
 
 -- -----------------------------------------------------
 -- Schema looders
 -- -----------------------------------------------------
-
--- -----------------------------------------------------
--- Table `privilegio`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `privilegio` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `cargo` TINYINT(1) NOT NULL DEFAULT 0,
-  `aprovado` TINYINT(1) NOT NULL DEFAULT 0,
-  PRIMARY KEY (`id`),
-  UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE)
-ENGINE = InnoDB;
-
 
 -- -----------------------------------------------------
 -- Table `usuario`
@@ -36,16 +24,11 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `tipoAp` TINYINT(1) NULL,
   `apelido` VARCHAR(20) NULL,
   `genero` TINYINT(1) NULL,
-  `privilegio_id` INT NOT NULL,
+  `cargo` TINYINT(1) NOT NULL DEFAULT 0,
+  `aprovado` TINYINT(1) NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`),
   UNIQUE INDEX `email_UNIQUE` (`email` ASC) VISIBLE,
-  INDEX `fk_usuario_privilegio1_idx` (`privilegio_id` ASC) VISIBLE,
-  UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE,
-  CONSTRAINT `fk_usuario_privilegio1`
-    FOREIGN KEY (`privilegio_id`)
-    REFERENCES `privilegio` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE)
 ENGINE = InnoDB;
 
 
@@ -218,6 +201,10 @@ CREATE TABLE IF NOT EXISTS `joguei` (
 ENGINE = InnoDB;
 
 
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
 -- -----------------------------------------------------
 -- Inserindo valores padrão para teste
 -- -----------------------------------------------------
@@ -274,10 +261,6 @@ VALUES
     ('Controle de Área'),
     ('Rolagem de Dados');
 
-INSERT INTO privilegio (id,cargo,aprovado)
-VALUES ('1','2','1');
-
-INSERT INTO usuario (nome, email, senha, privilegio_id)
-VALUES ('Guilherme Novaes','guilherme.novaes@gmail.com','$2b$10$hKXxuZe3vE4EBVAIdzvrxuL3OrynJQZBbRiZnEYfwrgC1A0LKsuYe','1');
-
+INSERT INTO usuario (nome, email, senha, cargo,aprovado)
+VALUES ('Guilherme Novaes','guilherme.novaes@gmail.com','$2b$10$hKXxuZe3vE4EBVAIdzvrxuL3OrynJQZBbRiZnEYfwrgC1A0LKsuYe',0,1);
 

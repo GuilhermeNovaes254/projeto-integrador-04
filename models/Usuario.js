@@ -54,13 +54,15 @@ const Usuario = (sequelize, DataTypes) => {
                 type: DataTypes.TINYINT(1),
                 allowNull: true
             },
-            privilegio_id:  {
-                type: DataTypes.INTEGER,
+            cargo: {
+                type: DataTypes.TINYINT(1),
                 allowNull: false,
-                references: {
-                model: "Privilegio", 
-                key: "id"
-                }
+                default:0
+            },
+            aprovado: {
+                type: DataTypes.TINYINT(1),
+                allowNull: false,
+                default:0
             }
         },{
             tableName: "usuario",
@@ -68,9 +70,7 @@ const Usuario = (sequelize, DataTypes) => {
         }
 
     );
-    usuario.associate = (models) => {
-        usuario.belongsTo(models.Privilegio, {foreignKey: 'privilegio_id', as:'privilegio'})
-    }
+
     return usuario;
 }
 
