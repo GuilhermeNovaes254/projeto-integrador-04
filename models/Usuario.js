@@ -30,14 +30,6 @@ const Usuario = (sequelize, DataTypes) => {
                 type: DataTypes.STRING(500),
                 allowNull: true
             },
-            cidade:{
-                type: DataTypes.STRING(200),
-                allowNull: true
-            },
-            estado:{
-                type: DataTypes.STRING(2),
-                allowNull: true
-            },
             dataDeNascimento:{
                 type: DataTypes.DATE,
                 allowNull: true
@@ -63,6 +55,22 @@ const Usuario = (sequelize, DataTypes) => {
                 type: DataTypes.TINYINT(1),
                 allowNull: false,
                 default:0
+            },
+            cidade_id:  {
+                type: DataTypes.INTEGER,
+                allowNull: false,
+                references: {
+                model: "Cidade", 
+                key: "id"
+                }
+            },
+            cidade_estado_id:  {
+                type: DataTypes.INTEGER,
+                allowNull: false,
+                references: {
+                model: "Cidade", 
+                key: "estado_id"
+                }
             }
         },{
             tableName: "usuario",
