@@ -79,6 +79,11 @@ const Usuario = (sequelize, DataTypes) => {
 
     );
 
+
+
+    usuario.associate = (models) => {
+        usuario.belongsTo(models.Cidade, {foreignKey: 'cidade_id', as:'cidade'})
+    }
     return usuario;
 }
 
