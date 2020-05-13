@@ -120,13 +120,13 @@ const forms = {
         if (avatar != '') {
             user.foto = '../public/images/avatar/' + avatar;
         }
-
-        // Formatação da data YYYY-MM-DD.
-        diaNasc = user.dataDeNascimento.substring(0, 4);
-        mesNasc = user.dataDeNascimento.substring(5, 7);
-        anoNasc = user.dataDeNascimento.substring(8, 10);
-        user.dataDeNascimento = anoNasc + '-' + mesNasc + '-' + diaNasc
-
+        if (diaNasc != 0 && mesNasc != 0 && anoNasc != 0) {
+            // Formatação da data YYYY-MM-DD.
+            diaNasc = user.dataDeNascimento.substring(0, 4);
+            mesNasc = user.dataDeNascimento.substring(5, 7);
+            anoNasc = user.dataDeNascimento.substring(8, 10);
+            user.dataDeNascimento = `${anoNasc}-${mesNasc}-${diaNasc}`
+        }
     }
 };
 
