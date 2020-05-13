@@ -10,6 +10,18 @@ module.exports = {
           nome:'Guilherme Novaes',
           email:'guilherme.novaes@gmail.com',
           senha:'$2b$10$hKXxuZe3vE4EBVAIdzvrxuL3OrynJQZBbRiZnEYfwrgC1A0LKsuYe',
+          cargo: 2,
+          aprovado: 1
+        },{
+          nome:'usuariopadrao',
+          email:'usuario@email.com',
+          senha:'$2b$10$hKXxuZe3vE4EBVAIdzvrxuL3OrynJQZBbRiZnEYfwrgC1A0LKsuYe',
+          cargo: 0,
+          aprovado: 1
+        },{
+          nome:'moderador',
+          email:'moderador@email.com',
+          senha:'$2b$10$hKXxuZe3vE4EBVAIdzvrxuL3OrynJQZBbRiZnEYfwrgC1A0LKsuYe',
           cargo: 0,
           aprovado: 1
         }
