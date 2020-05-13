@@ -1,4 +1,6 @@
-const {Usuario} = require('../models')
+const {
+    Usuario
+} = require('../models')
 const bcrypt = require('bcrypt')
 
 const forms = {
@@ -66,8 +68,64 @@ const forms = {
         }
     },
 
-    editarUsuario: (req,res) =>{
+    editarUsuario: (req, res) => {
+        let {
+            nomeJogo,
+            apelido,
+            genero,
+            estado,
+            cidade,
+            diaNasc,
+            mesNasc,
+            anoNasc,
+            tipoNivelAP,
+            descricaoJogo,
+            senha,
+            senha2,
+            avatar
+        } = req.body;
 
+        let id = req.session.usuario.id
+
+        const user = await Usuario.findOne({
+            where: {
+                id: id
+            }
+        });
+
+        if (nomeJogo != '') {
+            user.nome = nomeJogo;
+        }
+        if (apelido != '') {
+            user.apelido = apelido;
+        }
+        if (genero != '') {
+            user.genero = genero;
+        }
+        if (estado != '') {
+            user.cidade_estado_id = estado;
+        }
+        if (cidade != '') {
+            user.cidade_id = cidade;
+        }
+        if (tipoNivelAP != '') {
+            user.tipoAp = tipoNivelAP;
+        }
+        if (descricaoJogo != '') {
+            user.descricao = descricaoJogo;
+        }
+        if (senha != '' && senha == senha2) {
+            user.senha = bcrypt.hashSync(senha, 10);
+        }
+        if (avatar != '') {
+            user.foto = '../public/images/avatar/' + avatar;
+        }
+
+        // Formatação da data YYYY-MM-DD.
+        diaNasc = user.dataDeNascimento.substring(0, 4);
+        mesNasc = user.dataDeNascimento.substring(5, 7);
+        anoNasc = user.dataDeNascimento.substring(8, 10);
+        user.dataDeNascimento = anoNasc + '-' + mesNasc + '-' + diaNasc
 
     }
 };
