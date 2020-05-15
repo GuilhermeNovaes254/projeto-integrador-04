@@ -21,7 +21,7 @@ const homeController = {
 
   feeds: (req, res) => {
     res.render('feeds', {
-      title: 'Feeds',nomeUsuario: req.session.usuario.nome
+      title: 'Feeds',apelidoUsuario: req.session.usuario.apelido
     });
   },
 
@@ -30,7 +30,7 @@ const homeController = {
     var dominios = await Dominio.findAll();
     var mecanicas = await Mecanica.findAll();
     res.render('cadastroJogo', {
-      title: 'Cadastro Jogo',nomeUsuario: req.session.usuario.nome,
+      title: 'Cadastro Jogo',apelidoUsuario: req.session.usuario.apelido,
       temas,
       dominios,
       mecanicas
@@ -39,61 +39,62 @@ const homeController = {
 
   perfil: (req, res) => {
     res.render('perfil', {
-      title: 'perfil',nomeUsuario: req.session.usuario.nome
+      title: 'perfil',apelidoUsuario: req.session.usuario.apelido
     });
   },
 
   jogo: (req, res) => {
     res.render('jogo', {
-      title: 'jogo',nomeUsuario: req.session.usuario.nome
+      title: 'jogo',apelidoUsuario: req.session.usuario.apelido
     });
   },
 
   busca: (req, res) => {
     res.render('busca', {
-      title: 'busca',nomeUsuario: req.session.usuario.nome
+      title: 'busca',apelidoUsuario: req.session.usuario.apelido
     });
   },
 
   cadastro: (req, res) => {
     res.render('cadastro', {
-      title: 'cadastro',nomeUsuario: req.session.usuario.nome
+      title: 'cadastro',apelidoUsuario: req.session.usuario.apelido
     });
   },
 
   perfilAdm: (req, res) => {
     res.render('perfilAdm', {
-      title: 'perfilAdm',nomeUsuario: req.session.usuario.nome
+      title: 'perfilAdm',apelidoUsuario: req.session.usuario.apelido
     });
   },
 
   perfilModerador: (req, res) => {
     res.render('perfilModerador', {
-      title: 'perfilModerador',nomeUsuario: req.session.usuario.nome
+      title: 'perfilModerador',apelidoUsuario: req.session.usuario.apelido
     });
   },
 
   moduloDestaques: (req, res) => {
     res.render('moduloDestaques', {
-      title: 'moduloDestaques',nomeUsuario: req.session.usuario.nome
+      title: 'moduloDestaques',apelidoUsuario: req.session.usuario.apelido
     });
   },
 
   excluir: (req, res) => {
     res.render('excluir', {
-      title: 'excluir',nomeUsuario: req.session.usuario.nome
+      title: 'excluir',nomeUsuario: req.session.usuario.nome,
+      apelidoUsuario: req.session.usuario.apelido
     });
   },
 
   editar: (req, res) => {
     res.render('editar', {
-      title: 'editar',nomeUsuario: req.session.usuario.nome
+      title: 'editar',apelidoUsuario: req.session.usuario.apelido
     });
   },
 
   semPrivilegio: (req, res) => {
     res.render('semPrivilegio', {
-      title: 'Sem Privilégio',nomeUsuario: req.session.usuario.nome
+      title: 'Sem Privilégio',apelidoUsuario: req.session.usuario.apelido
     });
   },
 
