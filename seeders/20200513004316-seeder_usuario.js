@@ -11,19 +11,25 @@ module.exports = {
           email:'guilherme.novaes@gmail.com',
           senha:'$2b$10$hKXxuZe3vE4EBVAIdzvrxuL3OrynJQZBbRiZnEYfwrgC1A0LKsuYe',
           cargo: 2,
-          aprovado: 1
+          aprovado: 1,
+          cidade_id:16549,
+          cidade_estado_id:26
         },{
           nome:'usuariopadrao',
           email:'usuario@email.com',
           senha:'$2b$10$hKXxuZe3vE4EBVAIdzvrxuL3OrynJQZBbRiZnEYfwrgC1A0LKsuYe',
           cargo: 0,
-          aprovado: 1
+          aprovado: 1,
+          cidade_id:16549,
+          cidade_estado_id:26
         },{
           nome:'moderador',
           email:'moderador@email.com',
           senha:'$2b$10$hKXxuZe3vE4EBVAIdzvrxuL3OrynJQZBbRiZnEYfwrgC1A0LKsuYe',
           cargo: 0,
-          aprovado: 1
+          aprovado: 1,
+          cidade_id:16549,
+          cidade_estado_id:26
         }
 
       ], {});
