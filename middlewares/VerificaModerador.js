@@ -5,11 +5,13 @@ const VerificaModerador = async (req,res,next) => {
     // se session do usuário não estiver 
     
     
-    let  email = req.session.usuario.email;
+    //let  email = req.session.usuario.email;
+    let  cargo = req.session.usuario.cargo;
+    let  aprovado = req.session.usuario.aprovado;
 
-    const user = await Usuario.findOne({ where: {email} });
+    if(cargo == 0 || aprovado != 1){
+    
 
-    if(user.cargo == 1 || user.aprovado != 1){
         res.redirect('/semPrivilegio');
     }
 

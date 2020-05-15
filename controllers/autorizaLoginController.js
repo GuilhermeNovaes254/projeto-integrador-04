@@ -27,9 +27,11 @@ const autorizaLogin = {
 
         // setar uma session com o usuario
         req.session.usuario = user;
+        
 
         // redirecionar o suaurio para a rota '/feeds'*/
-        res.redirect('/feeds');
+        res.redirect('/feeds'      
+        );
     }
 
 

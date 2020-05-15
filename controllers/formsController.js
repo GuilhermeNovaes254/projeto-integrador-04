@@ -68,7 +68,7 @@ const forms = {
         }
     },
 
-    editarUsuario: (req, res) => {
+    editarUsuario: async (req, res) => {
         let {
             nomeJogo,
             apelido,
