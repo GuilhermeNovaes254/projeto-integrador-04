@@ -14,6 +14,7 @@ const autorizaLogin = {
         const user = await Usuario.findOne({
             where: { email }
        });
+       
         //Verifica se existe usarui com o e-mail passado
         if (!user) {
             res.redirect('/login/error');

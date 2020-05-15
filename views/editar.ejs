@@ -61,7 +61,7 @@
                                             <div class="col-12 col-sm-12 col-md-7 col-lg-7">
                                                 <div class="form-group">
                                                     <label for="genero">Gênero</label>
-                                                    <select class="form-control" id="genero">
+                                                    <select class="form-control" id="genero" name='genero'>
                                                         <option value="">Selecione</option>
                                                         <option>Outros</option>
                                                         <option>Feminino</option>
@@ -74,7 +74,7 @@
                                             <div class="col-12 col-sm-12 col-md-5 col-lg-5">
                                                 <div class="form-group">
                                                     <label for="estado">Estado</label>
-                                                    <select class="form-control" id="estado">
+                                                    <select class="form-control" id="estado" name='estado'>
                                                         <option value="">Selecione</option>
                                                         <option value="AC">AC</option>
                                                         <option value="AL">AL</option>
@@ -117,26 +117,27 @@
                                             <label for="dtNasc">Data de Nascimento</label>
                                             <div class="row tamanho">
                                                 <div class="col-3 col-sm-3 col-md-2 col-lg-2 nopaddingleft">
-                                                    <select class="form-control nopadding" id="diaNasc">
+                                                    <select class="form-control nopadding" id="diaNasc" name='diaNasc'>
                                                     </select>
                                                 </div>
                                                 <div class="col-5 col-sm-5 col-md-3 col-lg-3 nopadding">
-                                                    <select class="form-control nopadding" id="mesNasc">
-                                                        <option>Janeiro</option>
-                                                        <option>Fevereiro</option>
-                                                        <option>Março</option>
-                                                        <option>Abril</option>
-                                                        <option>Maio</option>
-                                                        <option>Junho</option>
-                                                        <option>Julho</option>
-                                                        <option>Agosto</option>
-                                                        <option>Setembro</option>
-                                                        <option>Outubro</option>
-                                                        <option>Novembro</option>
+                                                    <select class="form-control nopadding" id="mesNasc" name='mesNasc'>
+                                                        <option value="1">Janeiro</option>
+                                                        <option value="2">Fevereiro</option>
+                                                        <option value="3">Março</option>
+                                                        <option value="4">Abril</option>
+                                                        <option value="5">Maio</option>
+                                                        <option value="6">Junho</option>
+                                                        <option value="7">Julho</option>
+                                                        <option value="8">Agosto</option>
+                                                        <option value="9">Setembro</option>
+                                                        <option value="10">Outubro</option>
+                                                        <option value="11">Novembro</option>
+                                                        <option value="12">Dezembro</option>
                                                     </select>
                                                 </div>
                                                 <div class="col-4 col-sm-4 col-md-3 col-lg-3 nopaddingright">
-                                                    <select class="form-control nopadding" id="anoNasc">
+                                                    <select class="form-control nopadding" id="anoNasc" name='anoNasc'>
                                                     </select>
                                                 </div>
                                                 <div class="col-md-4 col-lg-4">
@@ -147,7 +148,7 @@
                                             <div class="col-12 col-sm-12 col-md-6 col-lg-6">
                                                 <div class="form-group">
                                                     <label for="tipoNivelAP">Tipo (Nível AP)</label>
-                                                    <select class="form-control" id="tipoNivelAP">
+                                                    <select class="form-control" id="tipoNivelAP" name='tipoNivelAP'>
                                                         <option value="">Selecione</option>
                                                         <option>Baixo</option>
                                                         <option>Médio</option>
@@ -160,19 +161,20 @@
                                         <div class="form-group">
                                             <label for="descricaoJogo">Descrição</label>
                                             <textarea style="resize: none" class="form-control" id="descricaoJogo"
-                                                rows="4"></textarea>
+                                                name='descricaoJogo' rows="4"></textarea>
                                         </div>
                                         <div class="row tamanho">
                                             <div class="col-12 col-sm-12 col-md-6 col-lg-6">
                                                 <div class="form-group">
                                                     <label for="senha">Senha</label>
-                                                    <input type="password" class="form-control" id="senha">
+                                                    <input type="password" class="form-control" id="senha" name='senha'>
                                                 </div>
                                             </div>
                                             <div class="col-12 col-sm-12 col-md-6 col-lg-6">
                                                 <div class="form-group">
                                                     <label for="senha2">Confirmar Senha</label>
-                                                    <input type="password" class="form-control" id="senha2">
+                                                    <input type="password" class="form-control" id="senha2"
+                                                        name='senha2'>
                                                 </div>
                                             </div>
                                         </div>
@@ -191,7 +193,7 @@
                                                 alt="Botão Adicionar Foto Perfil Jogo"
                                                 title="Clique para adionar a foto do perfil do jogo" />
                                         </label>
-                                        <input id="file-input" type="file" />
+                                        <input id="file-input" type="file" name='avatar' />
                                     </div>
                                 </div>
 
