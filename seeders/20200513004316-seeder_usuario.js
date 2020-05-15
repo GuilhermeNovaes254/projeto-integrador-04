@@ -13,7 +13,8 @@ module.exports = {
           cargo: 2,
           aprovado: 1,
           cidade_id:16549,
-          cidade_estado_id:26
+          cidade_estado_id:26,
+          apelido: 'GuiNovaes'
         },{
           nome:'usuariopadrao',
           email:'usuario@email.com',
@@ -21,7 +22,8 @@ module.exports = {
           cargo: 0,
           aprovado: 1,
           cidade_id:16549,
-          cidade_estado_id:26
+          cidade_estado_id:26,
+          apelido: 'User00'
         },{
           nome:'moderador',
           email:'moderador@email.com',
@@ -29,7 +31,8 @@ module.exports = {
           cargo: 0,
           aprovado: 1,
           cidade_id:16549,
-          cidade_estado_id:26
+          cidade_estado_id:26,
+          apelido: 'Mod00'
         }
 
       ], {});

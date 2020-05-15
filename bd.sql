@@ -49,7 +49,7 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `descricao` VARCHAR(500) NULL,
   `dataDeNascimento` DATE NULL,
   `tipoAp` TINYINT(1) NULL,
-  `apelido` VARCHAR(20) NULL,
+  `apelido` VARCHAR(20) NOT NULL,
   `genero` TINYINT(1) NULL,
   `cargo` TINYINT(1) NOT NULL DEFAULT 0,
   `aprovado` TINYINT(1) NOT NULL DEFAULT 0,
@@ -263,26 +263,6 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Inserindo valores padrão para teste
 -- -----------------------------------------------------
-INSERT INTO estado
-	(id,sigla)
-VALUES
-    (1,'AC'),(2,'AL'),(3,'AM'),(4,'AP'),(5,'BA'),(6,'CE'),(7,'DF'),(8,'ES'),
-(9,'GO'),(10,'MA'),(11,'MG'),(12,'MS'),(13,'MT'),(14,'PA'),(15,'PB'),(16,'PE'),
-(17,'PI'),(18,'PR'),(19,'RJ'),(20,'RN'),(21,'RS'),(22,'RO'),(23,'RR'),
-(24,'SC'),(25,'SE'),(26,'SP'),(27,'TO');
-
-
-INSERT INTO cidade
-	(estado_id,cidade)
-VALUES
-    (1, 'Potirendaba'),(4, 'Turiúba'),
-(2, 'Tarabai'),(4, 'Cordeirópolis'),
-(3, 'Magda'),(5, 'Cedral'),
-(4, 'Santos'),(6, 'Palmas');
-    
-
-
-
 
 INSERT INTO tema
 	(nome)
@@ -302,8 +282,15 @@ VALUES
     ('Luta'),
     ('Policial'),
     ('Política');
+    
+    INSERT INTO cidade
+	(cidade, estado_id)
+VALUES
+    (26,16549);
 
-
+    INSERT INTO estado (id,sigla)
+VALUES
+    (26,'SP');
 
 
     INSERT INTO dominio
@@ -339,8 +326,5 @@ VALUES
 
 
 
-INSERT INTO usuario (nome, email, senha, cargo,aprovado,cidade_id,cidade_estado_id)
-VALUES ('Guilherme Novaes','guilherme.novaes@gmail.com','$2b$10$hKXxuZe3vE4EBVAIdzvrxuL3OrynJQZBbRiZnEYfwrgC1A0LKsuYe',2,1,4,4),
-('usuariopadrao','usuario@email.com','$2b$10$hKXxuZe3vE4EBVAIdzvrxuL3OrynJQZBbRiZnEYfwrgC1A0LKsuYe',0,1,4,4),
-('moderador','moderador@email.com','$2b$10$hKXxuZe3vE4EBVAIdzvrxuL3OrynJQZBbRiZnEYfwrgC1A0LKsuYe',1,1,4,4);
-
+INSERT INTO usuario (nome, email, senha, cargo,aprovado,cidade_id,cidade_estado_id,apelido)
+VALUES ('Guilherme Novaes','guilherme.novaes@gmail.com','$2b$10$hKXxuZe3vE4EBVAIdzvrxuL3OrynJQZBbRiZnEYfwrgC1A0LKsuYe',0,1, 26,16549,'GuiNovaes);

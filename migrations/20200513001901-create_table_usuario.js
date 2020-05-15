@@ -43,7 +43,7 @@ module.exports = {
     },
     apelido:{
         type: Sequelize.STRING(20),
-        allowNull: true
+        allowNull: false
     },
     genero:{
         type: Sequelize.TINYINT(1),

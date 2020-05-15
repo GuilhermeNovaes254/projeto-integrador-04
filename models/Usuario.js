@@ -40,7 +40,7 @@ const Usuario = (sequelize, DataTypes) => {
             },
             apelido:{
                 type: DataTypes.STRING(20),
-                allowNull: true
+                allowNull: false
             },
             genero:{
                 type: DataTypes.TINYINT(1),
