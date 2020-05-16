@@ -88,3 +88,7 @@ const Usuario = (sequelize, DataTypes) => {
 }
 
 module.exports = Usuario;
+
+'Mussum Ipsum, cacilds vidis litro abertis. Mauris nec dolor in eros commodo tempor.'
+
+'Mussum Ipsum, cacilds vidis litro abertis. Casamentiss faiz malandris se pirulitá. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.'

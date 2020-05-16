@@ -18,4 +18,4 @@ etc deverão ser exibidos de forma dinâmica e de acordo com o que está armazen
 Se o usuário estiver logado, eles devem indicar seu nome de usuário.
 Se você não está logado, você deve ter um link para a página de login 
 
-☐ Utilizar Migration como versionamento do banco de dados. Ter alguma ferramenta de busca de alguma entidade (produtos, alunos, serviços, etc…)
+✔ Utilizar Migration como versionamento do banco de dados. Ter alguma ferramenta de busca de alguma entidade (produtos, alunos, serviços, etc…) @done(20-05-15 21:28)

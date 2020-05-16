@@ -326,5 +326,5 @@ VALUES
 
 
 
-INSERT INTO usuario (nome, email, senha, cargo,aprovado,cidade_id,cidade_estado_id,apelido)
-VALUES ('Guilherme Novaes','guilherme.novaes@gmail.com','$2b$10$hKXxuZe3vE4EBVAIdzvrxuL3OrynJQZBbRiZnEYfwrgC1A0LKsuYe',0,1, 26,16549,'GuiNovaes);
+INSERT INTO usuario (nome, email, senha, cargo,aprovado,cidade_id,cidade_estado_id,apelido, descricao)
+VALUES ('Guilherme Novaes','guilherme.novaes@gmail.com','$2b$10$hKXxuZe3vE4EBVAIdzvrxuL3OrynJQZBbRiZnEYfwrgC1A0LKsuYe',0,1, 26,16549,'GuiNovaes','Mussum Ipsum, cacilds vidis litro abertis. Mauris nec dolor in eros commodo tempor.');
