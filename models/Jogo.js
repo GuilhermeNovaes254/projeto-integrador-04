@@ -104,6 +104,7 @@ const Jogo = (sequelize, DataTypes) => {
         jogo.belongsTo(models.Mecanica, {foreignKey: 'mecanica_id', as:'mecanica'})
         jogo.belongsToMany(models.Usuario, {through: 'Favorito', foreignKey: 'jogo_id', as: 'favoritos_usuarios'})
         jogo.belongsToMany(models.Usuario, {through: 'Colecao', foreignKey: 'jogo_id', as: 'colecoes_usuarios'})
+        jogo.belongsToMany(models.Usuario, {through: 'Joguei', foreignKey: 'jogo_id', as: 'joguei_usuarios'})
     }
     return jogo;
 }
