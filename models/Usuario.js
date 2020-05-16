@@ -83,12 +83,10 @@ const Usuario = (sequelize, DataTypes) => {
 
     usuario.associate = (models) => {
         usuario.belongsTo(models.Cidade, {foreignKey: 'cidade_id', as:'cidade'})
+        usuario.belongsToMany(models.Jogo, {through: 'Favorito',
+            foreignKey: 'usuario_id', as: 'favoritos_jogos'})
     }
     return usuario;
 }
 
 module.exports = Usuario;
-
-'Mussum Ipsum, cacilds vidis litro abertis. Mauris nec dolor in eros commodo tempor.'
-
-'Mussum Ipsum, cacilds vidis litro abertis. Casamentiss faiz malandris se pirulitá. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.'
