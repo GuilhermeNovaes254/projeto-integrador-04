@@ -69,8 +69,7 @@ const homeController = {
 
     cadastro: (req, res) => {
         res.render('cadastro', {
-            title: 'cadastro',
-            apelidoUsuario: req.session.usuario.apelido
+            title: 'cadastro'
         });
     },
 
