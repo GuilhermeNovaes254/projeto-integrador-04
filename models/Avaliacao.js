@@ -19,7 +19,7 @@ const Avaliacao = (sequelize, DataTypes) => {
                 }
             },
             avaliacao: {
-              type: Sequelize.DECIMAL,
+              type: DataTypes.DECIMAL,
               default: 0
             }
         },{

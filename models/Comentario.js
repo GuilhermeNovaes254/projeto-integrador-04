@@ -9,11 +9,11 @@ const Comentario = (sequelize, DataTypes) => {
                 unique: true
             },
             texto: {
-                type: Sequelize.TEXT,
+                type: DataTypes.TEXT,
                 allowNull: false
             },
             data: {
-                type: Sequelize.DATE,
+                type: DataTypes.DATE,
                 allowNull: false
             },
             usuario_id: {
