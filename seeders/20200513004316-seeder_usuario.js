@@ -12,7 +12,7 @@ module.exports = {
           senha:'$2b$10$hKXxuZe3vE4EBVAIdzvrxuL3OrynJQZBbRiZnEYfwrgC1A0LKsuYe',
           cargo: 2,
           aprovado: 1,
-          cidade_id:16549,
+          cidade_id:5409,
           cidade_estado_id:26,
           apelido: 'GuiNovaes'
         },{
@@ -21,8 +21,8 @@ module.exports = {
           senha:'$2b$10$hKXxuZe3vE4EBVAIdzvrxuL3OrynJQZBbRiZnEYfwrgC1A0LKsuYe',
           cargo: 0,
           aprovado: 1,
-          cidade_id:16549,
-          cidade_estado_id:26,
+          cidade_id:2176,
+          cidade_estado_id:11,
           apelido: 'User00'
         },{
           nome:'moderador',
@@ -30,7 +30,7 @@ module.exports = {
           senha:'$2b$10$hKXxuZe3vE4EBVAIdzvrxuL3OrynJQZBbRiZnEYfwrgC1A0LKsuYe',
           cargo: 0,
           aprovado: 1,
-          cidade_id:16549,
+          cidade_id:5409,
           cidade_estado_id:26,
           apelido: 'Mod00'
         }
