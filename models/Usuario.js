@@ -58,7 +58,7 @@ const Usuario = (sequelize, DataTypes) => {
             },
             cidade_id:  {
                 type: DataTypes.INTEGER,
-                allowNull: false,
+                allowNull: true,
                 references: {
                 model: "Cidade", 
                 key: "id"
@@ -66,7 +66,7 @@ const Usuario = (sequelize, DataTypes) => {
             },
             cidade_estado_id:  {
                 type: DataTypes.INTEGER,
-                allowNull: false,
+                allowNull: true,
                 references: {
                 model: "Cidade", 
                 key: "estado_id"

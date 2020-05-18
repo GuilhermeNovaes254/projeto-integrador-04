@@ -61,7 +61,7 @@ module.exports = {
     },
     cidade_id: {
         type: Sequelize.INTEGER,
-        allowNull: false,
+        allowNull: true,
         references: {
           model: 'cidade',
           key: 'id'
@@ -71,7 +71,7 @@ module.exports = {
       },
       cidade_estado_id: {
         type: Sequelize.INTEGER,
-        allowNull: false,
+        allowNull: true,
         references: {
           model: 'cidade',
           key: 'estado_id'
