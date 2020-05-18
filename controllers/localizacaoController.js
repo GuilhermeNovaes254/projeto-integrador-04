@@ -15,7 +15,10 @@ const localizacao = {
         let cidade = await Cidade.findAll({
             where: {
                 estado_id: id
-            }
+            },
+            order: [
+                ['cidade', 'ASC']
+            ]
         });
 
     

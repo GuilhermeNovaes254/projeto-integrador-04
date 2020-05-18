@@ -72,42 +72,15 @@
                                                     <label for="estado">Estado</label>
                                                     <select class="form-control" id="estado" name='estado'>
                                                         <option value="">Selecione</option>
-                                                        <!--
-                                                        <option value="AC">AC</option>
-                                                        <option value="AL">AL</option>
-                                                        <option value="AM">AM</option>
-                                                        <option value="AP">AP</option>
-                                                        <option value="BA">BA</option>
-                                                        <option value="CE">CE</option>
-                                                        <option value="DF">DF</option>
-                                                        <option value="ES">ES</option>
-                                                        <option value="GO">GO</option>
-                                                        <option value="MA">MA</option>
-                                                        <option value="MG">MG</option>
-                                                        <option value="MS">MS</option>
-                                                        <option value="MT">MT</option>
-                                                        <option value="PA">PA</option>
-                                                        <option value="PB">PB</option>
-                                                        <option value="PE">PE</option>
-                                                        <option value="PI">PI</option>
-                                                        <option value="PR">PR</option>
-                                                        <option value="RJ">RJ</option>
-                                                        <option value="RN">RN</option>
-                                                        <option value="RS">RS</option>
-                                                        <option value="RO">RO</option>
-                                                        <option value="RR">RR</option>
-                                                        <option value="SC">SC</option>
-                                                        <option value="SE">SE</option>
-                                                        <option value="SP">SP</option>
-                                                        <option value="TO">TO</option>
-                                                        -->
                                                     </select>
                                                 </div>
                                             </div>
                                             <div class="col-12 col-sm-12 col-md-7 col-lg-7">
                                                 <div class="form-group">
                                                     <label for="cidade">Cidade</label>
-                                                    <input type="text" class="form-control" id="cidade" name="cidade">
+                                                    <select class="form-control" id="cidade" name='cidade'>
+                                                        <option value="">Selecione</option>
+                                                    </select>
                                                 </div>
                                             </div>
                                         </div>
@@ -237,17 +210,17 @@
 
 
 
-                    for (let estado of estados){
+                    for (let estado of estados) {
                         select.innerHTML += `<option value="${estado.id}">${estado.sigla}</option>`
                     }
 
-                } 
+                }
             };
 
             // Create and send a GET request
             // The first argument is the post type (GET, POST, PUT, DELETE, etc.)
             // The second argument is the endpoint URL
-            
+
             xhr.open('GET', 'http://localhost:5000/buscaEstado');
             xhr.send();
 
@@ -256,7 +229,10 @@
 
         buscaEstados();
 
-        function buscaCidades() {
+
+
+        function buscaCidades(estadoselecionado) {
+
 
 
             // Set up our HTTP request
@@ -268,20 +244,34 @@
                 // Process our return data
                 if (xhr.status >= 200 && xhr.status < 300) {
                     // Runs when the request is successful
-                    console.log(JSON.parse(xhr.responseText));
-                } else {
-                    // Runs when it's not
-                    console.log(JSON.parse(xhr.responseText));
+                    let cidades = JSON.parse(xhr.responseText);
+                    let select = document.getElementById('cidade');
+                    select.innerText = '';
+                    select.innerHTML = '<option value="">Selecione</option>';
+
+                    for (let cidade of cidades) {
+                        select.innerHTML += `<option value="${cidade.id}">${cidade.cidade}</option>`
+                    }
                 }
 
             };
-
             // Create and send a GET request
             // The first argument is the post type (GET, POST, PUT, DELETE, etc.)
             // The second argument is the endpoint URL
-            xhr.open('GET', 'http://localhost:5000/buscaCidade/26');
+            let url = 'http://localhost:5000/buscaCidade/' + estadoselecionado
+            xhr.open('GET', url);
             xhr.send();
         };
+
+        let selectestado = document.getElementById('estado');
+
+        let estadoselecionado = selectestado.addEventListener("change", function () {
+            buscaCidades(this.value);
+        });
+
+        console.log(estadoselecionado);
+
+        
 
 
         let date = new Date();
