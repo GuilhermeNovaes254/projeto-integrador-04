@@ -8,11 +8,12 @@ const forms = {
     cadastroUsuario: async (req, res) => {
         let {
             nome,
+            apelido,
             email,
             senha
         } = req.body;
 
-        if (nome.length < 3 || email.length < 10 || senha.length < 3) {
+        if (nome.length < 3 || apelido.length < 3 || email.length < 10 || senha.length < 3) {
             res.redirect('/login/error');
         }
 
@@ -20,6 +21,7 @@ const forms = {
         Usuario.create({
             nome: nome,
             email: email,
+            apelido: apelido,
             senha: bcrypt.hashSync(senha, 10),
             cargo: 0, //usuario comum
             aprovado: 1
