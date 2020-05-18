@@ -221,7 +221,7 @@
             // The first argument is the post type (GET, POST, PUT, DELETE, etc.)
             // The second argument is the endpoint URL
 
-            xhr.open('GET', 'http://localhost:5000/buscaEstado');
+            xhr.open('GET', '/buscaEstado');
             xhr.send();
 
             // 
@@ -258,7 +258,7 @@
             // Create and send a GET request
             // The first argument is the post type (GET, POST, PUT, DELETE, etc.)
             // The second argument is the endpoint URL
-            let url = 'http://localhost:5000/buscaCidade/' + estadoselecionado
+            let url = '/buscaCidade/' + estadoselecionado
             xhr.open('GET', url);
             xhr.send();
         };

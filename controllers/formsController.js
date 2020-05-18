@@ -88,7 +88,6 @@ const forms = {
         } = req.body;
 
         let id = req.session.usuario.id
-        console.log(estado)
 
         const user = await Usuario.findOne({
             where: {
