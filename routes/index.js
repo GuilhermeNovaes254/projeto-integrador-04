@@ -5,6 +5,7 @@ var router = express.Router();
 const homeController = require('../controllers/homeController');
 const autorizaLogin = require('../controllers/autorizaLoginController');
 const formController = require('../controllers/formsController');
+const localizacaoController = require('../controllers/localizacaoController');
 
 // Middlewares
 const VerificaUsuarioLogado = require('../middlewares/VerificaUsuarioLogado');
@@ -15,6 +16,8 @@ const VerificaMod = require('../middlewares/VerificaModerador');
 router.get('/', homeController.index);
 router.get('/cadastro',homeController.cadastro);
 router.get('/login/error', homeController.loginError);
+router.get('/buscaEstado', localizacaoController.buscaEstado);
+router.get('/buscaCidade/:id', localizacaoController.buscaCidade);
 
 
 // Com verificação
