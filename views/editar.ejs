@@ -72,6 +72,7 @@
                                                     <label for="estado">Estado</label>
                                                     <select class="form-control" id="estado" name='estado'>
                                                         <option value="">Selecione</option>
+                                                        <!--
                                                         <option value="AC">AC</option>
                                                         <option value="AL">AL</option>
                                                         <option value="AM">AM</option>
@@ -99,6 +100,7 @@
                                                         <option value="SE">SE</option>
                                                         <option value="SP">SP</option>
                                                         <option value="TO">TO</option>
+                                                        -->
                                                     </select>
                                                 </div>
                                             </div>
@@ -218,6 +220,70 @@
     </div>
 
     <script>
+        function buscaEstados() {
+            // Set up our HTTP request
+            var xhr = new XMLHttpRequest();
+
+            // Setup our listener to process completed requests
+            xhr.onload = function () {
+
+                // Process our return data
+                if (xhr.status >= 200 && xhr.status < 300) {
+                    // Runs when the request is successful
+                    let estados = JSON.parse(xhr.responseText);
+                    let select = document.getElementById('estado');
+                    select.innerText = '';
+                    select.innerHTML = '<option value="">Selecione</option>';
+
+
+
+                    for (let estado of estados){
+                        select.innerHTML += `<option value="${estado.id}">${estado.sigla}</option>`
+                    }
+
+                } 
+            };
+
+            // Create and send a GET request
+            // The first argument is the post type (GET, POST, PUT, DELETE, etc.)
+            // The second argument is the endpoint URL
+            
+            xhr.open('GET', 'http://localhost:5000/buscaEstado');
+            xhr.send();
+
+            // 
+        };
+
+        buscaEstados();
+
+        function buscaCidades() {
+
+
+            // Set up our HTTP request
+            var xhr = new XMLHttpRequest();
+
+            // Setup our listener to process completed requests
+            xhr.onload = function () {
+
+                // Process our return data
+                if (xhr.status >= 200 && xhr.status < 300) {
+                    // Runs when the request is successful
+                    console.log(JSON.parse(xhr.responseText));
+                } else {
+                    // Runs when it's not
+                    console.log(JSON.parse(xhr.responseText));
+                }
+
+            };
+
+            // Create and send a GET request
+            // The first argument is the post type (GET, POST, PUT, DELETE, etc.)
+            // The second argument is the endpoint URL
+            xhr.open('GET', 'http://localhost:5000/buscaCidade/26');
+            xhr.send();
+        };
+
+
         let date = new Date();
         let min = 1910,
             max = date.getFullYear(),
