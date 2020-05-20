@@ -1,78 +1,101 @@
 <%- include('./partials/header') %>
-<link rel='stylesheet' href='/css/separados/busca.css' />
+<link rel='stylesheet' href='/css/separados/busca.css'/>
 <section id="temaBusca"></section>
 <div class="container" id='containerTema'>
     <div class="row">
+
         <div class="col-12" id='areaCentralJogo'>
             <div class="row justify-content-center">
 
                 <form action='/dadosBusca' method="GET">
                     <div id="caixaDeBusca" class="col-10 ">
                         <div class="row justify-content-center ">
-                            <label for="form-group">
-                                Buscar Por:
-                            </label>
 
-                            <select class="form-group col-6" id="tipo" name="tipo">
-                                <option>Selecione</option>
-                                <option>Pessoa</option>
-                                <option>Jogo</option>
-                            </select>
+                            <div>
+                                <label for="form-group">
+                                    Buscar Por:
+                                </label>
+                            </div>
 
-                            <select class="form-group col-6" id="tema" name="tema">
-                                <option>Selecione</option>
-                                <option>Aventura</option>
-                                <option>Civilização</option>
-                                <option>Cultura Oriental</option>
-                                <option>Cultura Pop</option>
-                                <option>Fantasia</option>
-                                <option>Faroeste</option>
-                                <option>Ficção Científica</option>
-                                <option>Guerra</option>
-                                <option>História</option>
-                                <option>Horror</option>
-                                <option>Medieval</option>
-                                <option>Mitologia</option>
-                                <option>Luta</option>
-                                <option>Policial</option>
-                                <option>Política</option>
-                            </select>
+                            <div class="form-group col-6" >
+                                <select class="form-group col-6" id="tipo" name="tipo">
+                                    <option>Selecione</option>
+                                    <option value="pessoa">Usuário</option>
+                                    <option value="jogo">Jogo</option>
+                                </select>
+                            </div>
 
-                            <select class="form-group col-6" id="dominio" name="dominio">
-                                <option>Selecione</option>
-                                <option>Jogos 4X</option>
-                                <option>Jogos Abstratos</option>
-                                <option>Jogos Colecionáveis</option>
-                                <option>Jogos Cooperativos</option>
-                                <option>Jogos de Cartas</option>
-                                <option>Jogos de Guerra</option>
-                                <option>Jogos de Miniaturas</option>
-                                <option>Jogos em Tempo Real</option>
-                                <option>Jogos Estratégicos</option>
-                                <option>Jogos Expert</option>
-                                <option>Jogos Familiares</option>
-                                <option>Jogos Festivos</option>
-                                <option>Jogos Legacy</option>
-                                <option>Jogos Temáticos</option>
-                            </select>
+                            <div class="form-group col-6 buscaJogo" id=buscaUsuario>
+                                <input type="text" name="buscaUsuario" placeholder="Buscar" class=buscaUsuario>
+                            </div>
 
-                            <select class="form-group col-6" id="mecanica" name="mecanica">
-                                <option>Selecione</option>
-                                <option>Coleção de Componentes</option>
-                                <option>Colecionar Cartas</option>
-                                <option>Compra de Cartas</option>
-                                <option>Construção de Baralho</option>
-                                <option>Controle de Área</option>
-                                <option>Rolagem de Dados</option>
-                            </select>
+
+                            <div class="form-group col-6" id=buscaJogo>
+                                <div>
+
+                                    <div class="form-group col-6" id="tema" name="tema">
+                                        <select class="form-group col-6" id="tema" name="tema">
+                                            <option>Selecione</option>
+                                            <option>Aventura</option>
+                                            <option>Civilização</option>
+                                            <option>Cultura Oriental</option>
+                                            <option>Cultura Pop</option>
+                                            <option>Fantasia</option>
+                                            <option>Faroeste</option>
+                                            <option>Ficção Científica</option>
+                                            <option>Guerra</option>
+                                            <option>História</option>
+                                            <option>Horror</option>
+                                            <option>Medieval</option>
+                                            <option>Mitologia</option>
+                                            <option>Luta</option>
+                                            <option>Policial</option>
+                                            <option>Política</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group col-6" id="dominio" name="dominio">
+                                        <select class="form-group col-6" id="dominio" name="dominio">
+                                            <option>Selecione</option>
+                                            <option>Jogos 4X</option>
+                                            <option>Jogos Abstratos</option>
+                                            <option>Jogos Colecionáveis</option>
+                                            <option>Jogos Cooperativos</option>
+                                            <option>Jogos de Cartas</option>
+                                            <option>Jogos de Guerra</option>
+                                            <option>Jogos de Miniaturas</option>
+                                            <option>Jogos em Tempo Real</option>
+                                            <option>Jogos Estratégicos</option>
+                                            <option>Jogos Expert</option>
+                                            <option>Jogos Familiares</option>
+                                            <option>Jogos Festivos</option>
+                                            <option>Jogos Legacy</option>
+                                            <option>Jogos Temáticos</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group col-6" id="mecanica" name="mecanica">
+                                        <select class="form-group col-6" id="mecanica" name="mecanica">
+                                            <option>Selecione</option>
+                                            <option>Coleção de Componentes</option>
+                                            <option>Colecionar Cartas</option>
+                                            <option>Compra de Cartas</option>
+                                            <option>Construção de Baralho</option>
+                                            <option>Controle de Área</option>
+                                            <option>Rolagem de Dados</option>
+                                        </select>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                            <div class="row justify-content-end">
+                                <button type="button" id="busca"><img src="/images/icons/Lupa.png" alt=""
+                                        srcset=""></button>
+                            </div>
 
                         </div>
-                        <div class="row justify-content-end">
-                            <button type="button" id="buscaJogo"><img src="/images/icons/Lupa.png" alt=""
-                                    srcset=""></button>
-                        </div>
-                    </div>
-
                 </form>
             </div>
 
@@ -85,6 +108,7 @@
                         <div id="avatar">
                             <img width="144px" height="77px" src="/images/fotos/avatar2.jpg" alt="" srcset="">
                         </div>
+
                         <div id="describ">
                             <ul>
                                 <li>Margo Laurie</li>
@@ -99,6 +123,7 @@
                             <div id="avatar">
                                 <img width="144px" height="77px" src="/images/fotos/avatar4.png" alt="" srcset="">
                             </div>
+
                             <div id="describ">
                                 <ul>
                                     <li>Coloridas</li>
@@ -113,13 +138,15 @@
             </div>
             <div class="row justify-content-center">
                 <div class="col-">
-                    <button id="entrar">Mais</button>
+                    <button id="mais">Mais</button>
                 </div>
 
             </div>
 
         </div>
+
     </div>
 
-
-    <%- include('./partials/footer') %>
+</div>
+<script src="js/scriptBusca.js"></script>
+<%- include('./partials/footer') %>
