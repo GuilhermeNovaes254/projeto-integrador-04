@@ -1,28 +1,26 @@
 function tipo() {
 
-    let select = document.getElementsByName
-
-        console.log(select)
-
-        if (select == 'jogo') {
-
-            console.log('jogo')
+    let tipo = document.getElementById('tipo')
+    tipo.addEventListener('change',function(){
+        console.log(this.value)
+        
+        if (this.value == 'jogo') {
 
             let elementoJogo = document.getElementById('buscaJogo').style.visibility = "visible";
             let elementoUsuario = document.getElementById('buscaUsuario').style.visibility = "hidden";
 
         }
         
-        if (select == 'usuario') {
+        if (this.value == 'usuario') {
             // Abre barra de pesquisa para nome
-            // console.log('done')
-            let elementoJogo = document.getElementById('buscaJogo').style.visibility = "hidden";haha
+            let elementoJogo = document.getElementById('buscaJogo').style.visibility = "hidden";
             let elementoUsuario = document.getElementById('buscaUsuario').style.visibility = "visible";
 
             // consulta o banco que traz sobre as pessoas
 
         }
-    
+    })
+            
 }
 
 tipo()
