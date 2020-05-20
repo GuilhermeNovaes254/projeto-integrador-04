@@ -1,37 +1,45 @@
 const {
         Usuario,
-        Mecanica, 
+        Mecanica,
         Tema,
         Dominio,
         Jogo
-        } = require('../models')
+} = require('../models')
 
-        const buscaUsuario = {
+const buscaController = {
 
+        usuarios: (req, res) => {
 
-        };
-        
-        const buscaMecanica = {
-
-
-        };
-        
-        const buscaTema = {
+                const buscaUsuario = {
 
 
-        };
-        
-        const buscaDominio = {
+                };
+
+        },
+
+        jogos: (req, res) => {
+
+                const buscaMecanica = {
 
 
-        };
+                };
 
-        const buscaJogo = {
+                const buscaTema = {
 
 
-        };
-        
-        
-                                
+                };
 
-module.exports = buscaUsuario;
+                const buscaDominio = {
+
+
+                };
+
+                const buscaJogo = {
+
+
+                };
+
+        }
+}
+
+module.exports = buscaController;

@@ -6,6 +6,7 @@ const homeController = require('../controllers/homeController');
 const autorizaLogin = require('../controllers/autorizaLoginController');
 const formController = require('../controllers/formsController');
 const localizacaoController = require('../controllers/localizacaoController');
+const buscaController = require('../controllers/buscaController');
 
 // Middlewares
 const VerificaUsuarioLogado = require('../middlewares/VerificaUsuarioLogado');
@@ -18,6 +19,10 @@ router.get('/cadastro',homeController.cadastro);
 router.get('/login/error', homeController.loginError);
 router.get('/buscaEstado', localizacaoController.buscaEstado);
 router.get('/buscaCidade/:id', localizacaoController.buscaCidade);
+router.get('/buscaJogo', buscaController.jogos);
+router.get('/buscaUsuario', buscaController.usuarios);
+
+
 
 
 // Com verificação

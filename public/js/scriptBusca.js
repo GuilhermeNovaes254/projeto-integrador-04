@@ -11,12 +11,12 @@ function consultaJogo(tema, dominio, mecanica) {
 
 
 function buscarDados() {
-    let tipo
 
-    let usuario
-    let tema
-    let dominio
-    let mecanica
+    let tipo;
+    let usuario;
+    let tema;
+    let dominio;
+    let mecanica;
 
     document.getElementById("tipo").addEventListener('change', function () {
         tipo = document.getElementById("tipo").value;
@@ -67,8 +67,6 @@ function buscarDados() {
 };
 
 
-
-
 /*********************************************************/
 // Controle do Front End 
 
@@ -99,6 +97,7 @@ function tipo() { // Quando o tipo é selecionado
     })
 
 }
+
 
 tipo()
 buscarDados()
