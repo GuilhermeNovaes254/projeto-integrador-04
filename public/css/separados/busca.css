@@ -40,10 +40,13 @@
 
 #buscaUsuario {
   visibility: hidden;
+  height: 0;
+  
 }
 
 #buscaJogo {
   visibility: hidden;
+  height: 0;
 }
 
 button#busca {
@@ -58,11 +61,12 @@ button#busca {
 /* Aspecto dos menus do formulário */
 
 #tipo,
-#buscaUsuario,
-#dominio,
-#tema,
-#mecanica{
+#buscaUsuarioS,
+#dominioSelector,
+#temaSelector,
+#mecanicaSelector{
   max-width: 100%;
+  min-width: 100%;
 }
 
 label{

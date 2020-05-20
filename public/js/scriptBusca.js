@@ -1,57 +1,37 @@
 function buscarDados() {
+    let tema 
+    let dominio
+    let mecanica
 
-    document.getElementById('tipo').addEventListener('click', function () {
-        console.log(this.value)
-        if (this.value == 'jogo') {
+    document.getElementById('temaSelector').addEventListener('change', function(evt){
+        tema = document.getElementById("temaSelector").value;
+        console.log(tema)
+    });
 
-            document.getElementById('tipo').addEventListener('change', function () {
-                
-                
-                /*
-                // Set up our HTTP request
-                var xhr = new XMLHttpRequest();
+    document.getElementById('dominioSelector').addEventListener('change', function (evt) {
+        dominio = document.getElementById("dominioSelector").value;
+        console.log(dominio)
+    });
 
-                // Setup our listener to process completed requests
-                xhr.onclick = function () {
+    
+    document.getElementById('mecanicaSelector').addEventListener('change', function (evt) {
+        mecanica = document.getElementById("mecanicaSelector").value;
+        console.log(mecanica)
+    });
 
-                    // Process our return data
-                    if (xhr.status >= 200 && xhr.status < 300) {
-                        // Runs when the request is successful
-                        let cidades = JSON.parse(xhr.responseText);
-                        let select = document.getElementById('cidade');
-                        select.innerText = '';
-                        select.innerHTML = '<option value="">Selecione</option>';
 
-                        for (let cidade of cidades) {
-                            select.innerHTML += `<option value="${cidade.id}">${cidade.cidade}</option>`
-                        }
-                    }
+    document.getElementById('busca').addEventListener('click', function (evt) {
+        console.log("CLICADO")
 
-                };
-                // Create and send a GET request
-                // The first argument is the post type (GET, POST, PUT, DELETE, etc.)
-                // The second argument is the endpoint URL
-                let url = '/buscaCidade/' + estadoselecionado
-                xhr.open('GET', url);
-                xhr.send();
-                */
-            })
-        }
 
-        if (this.value == 'usuario') {
 
-            let campo = document.getElementById('campoUsuario').value
-            
-        }
+    });
 
-    })
 };
 
 
-function buscaJogoFunc() {
-
-}
-
+/*********************************************************/
+// Controle do Front End 
 
 function tipo() { // Quando o tipo é selecionado
 
@@ -60,15 +40,21 @@ function tipo() { // Quando o tipo é selecionado
 
         if (this.value == 'jogo') {
 
+            document.getElementById('buscaUsuario').style.height = "0px";
+
             document.getElementById('buscaJogo').style.visibility = "visible";
             document.getElementById('buscaUsuario').style.visibility = "hidden";
 
+            document.getElementById('buscaJogo').style.height = "auto";
         }
 
         if (this.value == 'usuario') {
+            document.getElementById('buscaJogo').style.height = "0px";
 
             document.getElementById('buscaJogo').style.visibility = "hidden";
             document.getElementById('buscaUsuario').style.visibility = "visible";
+
+            document.getElementById('buscaUsuario').style.height = "auto";
 
         }
     })
@@ -76,3 +62,4 @@ function tipo() { // Quando o tipo é selecionado
 }
 
 tipo()
+buscarDados()
