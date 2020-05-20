@@ -40,7 +40,8 @@ router.post('/login', autorizaLogin.loginSession);
 
 // POSTS formulario
 router.post('/cadastro', formController.cadastroUsuario);
-router.post('/excluir', VerificaUsuarioLogado, formController.excluirUsuario)
+router.post('/excluir', VerificaUsuarioLogado, formController.excluirUsuario);
 router.post('/editar', VerificaUsuarioLogado, formController.editarUsuario);
+router.post('/cadastroJogo', formController.cadastrarJogo);
 
 module.exports = router;
