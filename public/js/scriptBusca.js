@@ -1,9 +1,41 @@
+function consultaUsuario(usuario) {
+    console.log("Usuario FUNCAO")
+
+}
+
+
+function consultaJogo(tema, dominio, mecanica) {
+    console.log("JOGO FUNCAO")
+
+}
+
+
 function buscarDados() {
-    let tema 
+    let tipo
+
+    let usuario
+    let tema
     let dominio
     let mecanica
 
-    document.getElementById('temaSelector').addEventListener('change', function(evt){
+    document.getElementById("tipo").addEventListener('change', function () {
+        tipo = document.getElementById("tipo").value;
+    });
+
+    // Pega o valor do Campo Usuario
+    document.getElementById("campoUsuario").addEventListener('change', function (evt) {
+        usuario = document.getElementById("campoUsuario").value;
+        console.log(usuario)
+    });
+
+
+    // Pega os valores dos campos Jogos
+    document.getElementById('temaSelector').addEventListener('change', function (evt) {
+        tema = document.getElementById("temaSelector").value;
+        console.log(tema)
+    });
+
+    document.getElementById('temaSelector').addEventListener('change', function (evt) {
         tema = document.getElementById("temaSelector").value;
         console.log(tema)
     });
@@ -13,7 +45,7 @@ function buscarDados() {
         console.log(dominio)
     });
 
-    
+
     document.getElementById('mecanicaSelector').addEventListener('change', function (evt) {
         mecanica = document.getElementById("mecanicaSelector").value;
         console.log(mecanica)
@@ -21,13 +53,20 @@ function buscarDados() {
 
 
     document.getElementById('busca').addEventListener('click', function (evt) {
-        console.log("CLICADO")
 
+        //console.log("CLICADO")
 
+        if (tipo == 'usuario') {
+            consultaUsuario(usuario);
+        } else {
+            consultaJogo(tema, dominio, mecanica);
+        }
 
     });
 
 };
+
+
 
 
 /*********************************************************/
