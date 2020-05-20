@@ -6,15 +6,15 @@ function tipo() {
         
         if (this.value == 'jogo') {
 
-            let elementoJogo = document.getElementById('buscaJogo').style.visibility = "visible";
-            let elementoUsuario = document.getElementById('buscaUsuario').style.visibility = "hidden";
-
+            document.getElementById('buscaJogo').style.visibility = "visible";
+            document.getElementById('buscaUsuario').style.visibility = "hidden";
+            
         }
         
         if (this.value == 'usuario') {
             // Abre barra de pesquisa para nome
-            let elementoJogo = document.getElementById('buscaJogo').style.visibility = "hidden";
-            let elementoUsuario = document.getElementById('buscaUsuario').style.visibility = "visible";
+            document.getElementById('buscaJogo').style.visibility = "hidden";
+            document.getElementById('buscaUsuario').style.visibility = "visible";
 
             // consulta o banco que traz sobre as pessoas
 
