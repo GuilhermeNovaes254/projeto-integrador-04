@@ -1,4 +1,10 @@
 const {
+    Cidade,
+    Dominio,
+    Estado,
+    Jogo,
+    Mecanica,
+    Tema,
     Usuario
 } = require('../models')
 const bcrypt = require('bcrypt')
@@ -129,6 +135,10 @@ const forms = {
             anoNasc = user.dataDeNascimento.substring(8, 10);
             user.dataDeNascimento = `${anoNasc}-${mesNasc}-${diaNasc}`
         }
+    },
+
+    cadastrarJogo: async (req, res) => {
+
     }
 };
 
