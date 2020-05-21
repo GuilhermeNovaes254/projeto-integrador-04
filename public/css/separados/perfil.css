@@ -1,0 +1,61 @@
+.c-banner-perfil{
+  background: url(/images/heads/h3.jpg) center center no-repeat;
+  background-size: cover;
+  width: 100%;
+  min-height: 314px;
+}
+
+.c-photo{
+  width: 100%;
+  border-radius: 100px;
+  max-width: 120px;
+  max-height: 120px;
+}
+
+.c-perfil{
+  display: flex;
+  margin-top: -100px;
+  flex-direction: column;
+  margin-bottom: 80px;
+}
+  .c-perfil__left--content,
+  .c-perfil__right--content{
+    border-radius: 50px;
+    background: #fff;
+    box-sizing: border-box;
+    padding: 25px;
+  }
+
+  .c-perfil__left{
+    display: flex;
+    flex-direction: column;
+  }
+
+    .c-perfil__left--content{
+      
+    }
+
+    .c-perfil__left--description{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+  .c-perfil__right{
+    
+  }
+    @media(min-width:768px){
+
+      .c-perfil{
+        flex-direction: row;
+      }
+
+      .c-perfil__right{
+        flex-basis: 75%;
+      }
+      .c-perfil__left{
+        flex-basis: 25%;
+        min-width: 270px;
+        margin-right: 30px;
+      }
+    }
