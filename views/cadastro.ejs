@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,6 +8,7 @@
     <title>Looders - <%= title %></title>
     <%- include('./partials/head') %>
 </head>
+
 <body class="o-bg-transparent-2">
     <header class="container-fluid o-header u-header-landing">
         <div class="row bkgverde">
@@ -21,58 +23,78 @@
                         </div>
                     </div>
                     <nav class="o-header__container--login">
-                       <ul>
-                         <li><span>Já está na Looders?</span></li>
-                        <li>
-                          <span class="js-modal-login o-btn--rounded animate-grow">Entrar</span>
-                        </li>
-                      </ul>
+                        <ul>
+                            <li><span>Já está na Looders?</span></li>
+                            <li>
+                                <span class="js-modal-login o-btn--rounded animate-grow">Entrar</span>
+                            </li>
+                        </ul>
                     </nav>
                 </div>
             </div>
         </div>
     </header>
-<div class="container container-cadastro">
-    <div class="row">
-        <div class="col-12 col-sm-12 col-md-1 col-lg-2"></div>
-        <div class="col-12 col-sm-12 col-md-5 col-lg-4 text-center" id='areaCentralCadastro'>
-            <div class='figura'>
-                <img src="/images/icons/LogoVermelho.png" alt='Logo Looders' />
+    <div class="container container-cadastro">
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-1 col-lg-2"></div>
+            <div class="col-12 col-sm-12 col-md-5 col-lg-4 text-center" id='areaCentralCadastro'>
+                <div class='figura'>
+                    <img src="/images/icons/LogoVermelho.png" alt='Logo Looders' />
+                </div>
+                <br>
+                <br>
+                <form action='/cadastro' method='POST' name="f1">
+                    <div class="form-group">
+                        <input type="text" class="form-control inputCadastro" id="nomeUsuario" placeholder="Nome"
+                            name='nome'>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control inputCadastro" id="apelido" placeholder="Nome de Usuário"
+                            name='apelido'>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" onblur="validacaoEmail(f1.email)" class="form-control inputCadastro" id="emailUsuario" placeholder="E-mail"
+                            name='email'>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control inputCadastro" id="senhaUsuario" placeholder="Senha"
+                            name='senha'>
+                    </div>
+                    <br>
+                    <button type="submit" id='botaoCadastro'>Pronto!</button>
+                </form>
             </div>
-            <br>
-            <br>
-            <button class="botoes loginBtn loginBtn--facebook">
-                Login com Facebook
-              </button>
-              
-              <button class="botoes loginBtn loginBtn--google">
-                Login com Google
-              </button>
+            <div class="col-md-5 col-lg-4 areaCentralFoto">
 
-              <br>
-              <br>
-              <br>
-              <form>
-              <div class="form-group">
-              <input type="text" class="form-control inputCadastro" id="nomeUsuario" placeholder="Nome">
-              </div>
-              <div class="form-group">
-              <input type="email" class="form-control inputCadastro" id="emailUsuario" placeholder="E-mail">
-            </div>
-            <div class="form-group">
-              <input type="password" class="form-control inputCadastro" id="senhaUsuario" placeholder="Senha">
-            </div>
-            <br>
-            <button type="submit" id='botaoCadastro'>Pronto!</button>
-            </form>
-        </div>
-        <div class="col-md-5 col-lg-4 areaCentralFoto">
+                <div id="apresentacao"></div>
 
-            <div id="apresentacao"></div>
-           
+            </div>
+            <div class="col-12 col-sm-12 col-md-1 col-lg-2"></div>
         </div>
-        <div class="col-12 col-sm-12 col-md-1 col-lg-2"></div>
     </div>
-</div>
-<%- include('./partials/modal') %>
-<%- include('./partials/footer') %>
+
+    <script language="Javascript">
+        function validacaoEmail(field) {
+            usuario = field.value.substring(0, field.value.indexOf("@"));
+            dominio = field.value.substring(field.value.indexOf("@") + 1, field.value.length);
+
+            if ((usuario.length >= 1) &&
+                (dominio.length >= 3) &&
+                (usuario.search("@") == -1) &&
+                (dominio.search("@") == -1) &&
+                (usuario.search(" ") == -1) &&
+                (dominio.search(" ") == -1) &&
+                (dominio.search(".") != -1) &&
+                (dominio.indexOf(".") >= 1) &&
+                (dominio.lastIndexOf(".") < dominio.length - 1)) {
+                document.getElementById("msgemail").innerHTML = "E-mail válido";
+                alert("E-mail valido");
+            } else {
+                document.getElementById("msgemail").innerHTML = "<font color='red'>E-mail inválido </font>";
+                alert("E-mail invalido");
+            }
+        }
+    </script>
+
+    <%- include('./partials/modal') %>
+    <%- include('./partials/footer') %>

@@ -10,7 +10,7 @@ const Tema = (sequelize, DataTypes) => {
                 unique: true
             },
             nome: {
-                type: DataTypes.STRING(200),
+                type: DataTypes.STRING(80),
                 allowNull: true
             }
         },{

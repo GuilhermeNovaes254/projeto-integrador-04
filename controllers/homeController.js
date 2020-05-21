@@ -1,91 +1,162 @@
-const { Dominio, Tema, Mecanica } = require('../models');
+const {
+    Cidade,
+    Dominio,
+    Estado,
+    Jogo,
+    Mecanica,
+    Tema,
+    Usuario
+} = require('../models')
 
 const homeController = {
 
-  index: (req, res) => {
-    res.render('index', {
-      title: 'Home'
-    });
-  },
 
-  login: (req, res) => {
-    res.render('login', {
-      title: 'Login'
-    });
-  },
+    index: (req, res) => {
+        res.render('index', {
+            title: 'Home'
+        });
 
-  feeds: (req, res) => {
-    res.render('feeds', {
-      title: 'Feeds'
-    });
-  },
+    },
 
-  cadastroJogo: async (req, res) => {
-    var temas = await Tema.findAll();
-    var dominios = await Dominio.findAll();
-    var mecanicas = await Mecanica.findAll();
-    res.render('cadastroJogo', {
-      title: 'Cadastro Jogo',
-      temas,
-      dominios,
-      mecanicas
-    });
-  },
+    loginError: (req, res) => {
+        res.render('loginError', {
+            title: 'Erro Login'
+        });
 
-  perfil: (req, res) => {
-    res.render('perfil', {
-      title: 'perfil'
-    });
-  },
+    },
 
-  jogo: (req, res) => {
-    res.render('jogo', {
-      title: 'jogo'
-    });
-  },
 
-  busca: (req, res) => {
-    res.render('busca', {
-      title: 'busca'
-    });
-  },
+    feeds: (req, res) => {
+        res.render('feeds', {
+            title: 'Feeds',
+            apelidoUsuario: req.session.usuario.apelido
+        });
+    },
 
-  cadastro: (req, res) => {
-    res.render('cadastro', {
-      title: 'cadastro'
-    });
-  },
+    cadastroJogo: async (req, res) => {
+        var temas = await Tema.findAll();
+        var dominios = await Dominio.findAll();
+        var mecanicas = await Mecanica.findAll();
+        res.render('cadastroJogo', {
+            title: 'Cadastro Jogo',
+            apelidoUsuario: req.session.usuario.apelido,
+            temas,
+            dominios,
+            mecanicas
+        });
+    },
 
-  perfilAdm: (req, res) => {
-    res.render('perfilAdm', {
-      title: 'perfilAdm'
-    });
-  },
+    perfil: (req, res) => {
+        res.render('perfil', {
+            title: 'perfil',
+            apelidoUsuario: req.session.usuario.apelido
+        });
+    },
 
-  perfilModerador: (req, res) => {
-    res.render('perfilModerador', {
-      title: 'perfilModerador'
-    });
-  },
+    jogo: (req, res) => {
+        res.render('jogo', {
+            title: 'jogo',
+            apelidoUsuario: req.session.usuario.apelido
+        });
+    },
 
-  moduloDestaques: (req, res) => {
-    res.render('moduloDestaques', {
-      title: 'moduloDestaques'
-    });
-  },
+    busca: (req, res) => {
+        res.render('busca', {
+            title: 'busca',
+            apelidoUsuario: req.session.usuario.apelido
+        });
+    },
 
-  excluir: (req, res) => {
-    res.render('excluir', {
-      title: 'excluir'
-    });
-  },
+    cadastro: (req, res) => {
+        res.render('cadastro', {
+            title: 'cadastro'
+        });
+    },
 
-  editar: (req, res) => {
-    res.render('editar', {
-      title: 'editar'
-    });
-  },
+    perfilAdm: (req, res) => {
+        res.render('perfilAdm', {
+            title: 'perfilAdm',
+            apelidoUsuario: req.session.usuario.apelido
+        });
+    },
 
+    perfilModerador: (req, res) => {
+        res.render('perfilModerador', {
+            title: 'perfilModerador',
+            apelidoUsuario: req.session.usuario.apelido
+        });
+    },
+
+    moduloDestaques: async (req, res) => {
+
+        userInfo = req.session.usuario;
+
+        let cidade = await Cidade.findOne({
+            where: {
+                id: userInfo.cidade_id
+            }
+        });
+
+        let estado = await Estado.findOne({
+            where: {
+                id: cidade.estado_id
+            }
+        });
+
+
+        res.render('moduloDestaques', {
+
+            title: 'moduloDestaques',
+            apelidoUsuario: userInfo.apelido,
+            nomeUsuario: userInfo.nome,
+            descricaoUsuario: userInfo.descricao,
+            cidadeUsuario: cidade.cidade,
+            estadoUsuario: estado.sigla
+        });
+    },
+
+    excluir: (req, res) => {
+        res.render('excluir', {
+            title: 'excluir',
+            nomeUsuario: req.session.usuario.nome,
+            apelidoUsuario: req.session.usuario.apelido
+        });
+    },
+
+    editar: async (req, res) => {
+
+        userInfo = req.session.usuario;
+
+        let cidade = await Cidade.findOne({
+            where: {
+                id: userInfo.cidade_id
+            }
+        });
+
+        let estado = await Estado.findOne({
+            where: {
+                id: cidade.estado_id
+            }
+        });
+
+        res.render('editar', {
+            title: 'editar',
+
+            apelidoUsuario: userInfo.apelido,
+            nomeUsuario: userInfo.nome,
+            descricaoUsuario: userInfo.descricao,
+            cidadeUsuario: cidade.cidade,
+            estadoUsuario: estado.sigla
+        });
+
+    },
+
+    semPrivilegio: (req, res) => {
+        res.render('semPrivilegio', {
+            title: 'Sem Privilégio',
+            apelidoUsuario: req.session.usuario.apelido
+        });
+    },
 
 };
 

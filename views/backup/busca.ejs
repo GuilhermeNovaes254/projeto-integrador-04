@@ -1,0 +1,148 @@
+<%- include('./partials/header') %>
+<link rel='stylesheet' href='/css/separados/busca.css' />
+<section id="temaBusca"></section>
+<div class="container" id='containerTema'>
+    <div class="row">
+        <div class="col-12" id='areaCentralJogo'>
+            <div class="row justify-content-center">
+                <div id="caixaDeBusca" class="col-10 ">
+                    <div class="row justify-content-center ">
+                        <label for="form-group">
+                            Buscar Por:
+                        </label>
+                        <select class="form-group col-6">
+                            <option> Fantasia</option>
+                            <option>Ficção Cientifica</option>
+                            <option>Civilização</option>
+                            <option>Faroeste</option>
+                        </select>
+                        <select class="form-group col-6" id="input2">
+                            <option>Fantasia</option>
+                            <option>Ficção Cientifica</option>
+                            <option>Civilização</option>
+                            <option>Faroeste</option>
+                        </select>
+                    </div>
+                    <div class="row justify-content-end">
+                        <button type="button" id="buscaJogo"><img src="/images/icons/Lupa.png" alt=""
+                                srcset=""></button>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- filtro busca   -->
+
+
+            <div class="row">
+                <div class="col-4 " id="filtroBuscaJogo">
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Filtros:
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- resultado de busca -->
+
+            <div class="resultadoDeBusca">
+                <div class="group">
+                <div class="profile">
+                    <div id="avatar">
+                        <img width="144px" height="77px" src="/images/fotos/laura.jpg" alt="" srcset="">
+                    </div>
+                    <div id="describ">
+                        <ul>
+                            <li>Laura Schiffer</li>
+                            <li>28 anos</li>
+                            <li>RPG / Terror/ Cartas</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="profile">
+                    <div id="avatar">
+                        <img width="144px" height="77px" src="/images/fotos/avatar2.jpg" alt="" srcset="">
+                    </div>
+                    <div id="describ">
+                        <ul>
+                            <li>Margo Laurie</li>
+                            <li>28 anos</li>
+                            <li>Terror / Cartas/ RPG </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="profile">
+                    <div id="avatar">
+                        <img width="144px" height="77px" src="/images/fotos/avatar3.png" alt="" srcset="">
+                    </div>
+                    <div id="describ">
+                        <ul>
+                            <li>Master Checkers</li>
+                            <li>52.417 jogadores</li>
+                            <li>12.323 Gostaram</li>
+                        </ul>
+                    </div>
+                </div>
+                <div>
+                    <div class="profile">
+                        <div id="avatar">
+                            <img width="144px" height="77px" src="/images/fotos/avatar4.png" alt="" srcset="">
+                        </div>
+                        <div id="describ">
+                            <ul>
+                                <li>Coloridas</li>
+                                <li>10.527 jogadores</li>
+                                <li>986 Gostaram</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="profile">
+                        <div id="avatar">
+                            <img width="144px" height="77px" src="/images/fotos/avatar5.png" alt="" srcset="">
+                        </div>
+                        <div id="describ">
+                            <ul>
+                                <li>Juliana Cain</li>
+                                <li>24 anos</li>
+                                <li>RPG / Históricos</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="profile">
+                        <div id="avatar">
+                            <img width="144px" height="77px" src="/images/fotos/avatar6.png" alt="" srcset="">
+                        </div>
+                        <div id="describ">
+                            <ul>
+                                <li>Andreia Passaroli</li>
+                                <li>35 anos</li>
+                                <li>Cartas</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+                <div class="row justify-content-center">
+                    <div class="col-">
+                        <button id="entrar">Entrar</button>
+                    </div>
+
+                </div>
+            
+        </div>
+    </div>
+
+
+
+
+
+    <%- include('./partials/footer') %>

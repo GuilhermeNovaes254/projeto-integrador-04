@@ -241,6 +241,14 @@ input[type=checkbox] {
 /* Fim menu */
 
 /* Inicio landing */
+.o-header__container--nome-header{
+  display: flex;
+  align-items: center;
+  color: #FFF;
+}
+
+
+
 
 .o-header__container--login ul{
   display: flex;

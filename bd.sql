@@ -9,14 +9,31 @@ USE looders;
 -- -----------------------------------------------------
 
 -- -----------------------------------------------------
--- Table `privilegio`
+-- Table `estado`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `privilegio` (
+CREATE TABLE IF NOT EXISTS `estado` (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `cargo` TINYINT(1) NOT NULL DEFAULT 0,
-  `aprovado` TINYINT(1) NOT NULL DEFAULT 0,
+  `sigla` VARCHAR(2) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `cidade`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `cidade` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `cidade` VARCHAR(200) NOT NULL,
+  `estado_id` INT NOT NULL,
+  PRIMARY KEY (`id`, `estado_id`),
+  UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE,
+  INDEX `fk_cidade_estado1_idx` (`estado_id` ASC) VISIBLE,
+  CONSTRAINT `fk_cidade_estado1`
+    FOREIGN KEY (`estado_id`)
+    REFERENCES `estado` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
@@ -27,23 +44,24 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(100) NOT NULL,
   `email` VARCHAR(200) NOT NULL,
-  `senha` VARCHAR(250) NOT NULL,
+  `senha` VARCHAR(256) NOT NULL,
   `foto` VARCHAR(500) NULL,
   `descricao` VARCHAR(500) NULL,
-  `cidade` VARCHAR(200) NULL,
-  `estado` VARCHAR(2) NULL,
   `dataDeNascimento` DATE NULL,
   `tipoAp` TINYINT(1) NULL,
-  `apelido` VARCHAR(100) NULL,
+  `apelido` VARCHAR(20) NOT NULL,
   `genero` TINYINT(1) NULL,
-  `privilegio_id` INT NOT NULL,
-  PRIMARY KEY (`id`),
+  `cargo` TINYINT(1) NOT NULL DEFAULT 0,
+  `aprovado` TINYINT(1) NOT NULL DEFAULT 0,
+  `cidade_id` INT NOT NULL,
+  `cidade_estado_id` INT NOT NULL,
+  PRIMARY KEY (`id`, `cidade_id`, `cidade_estado_id`),
   UNIQUE INDEX `email_UNIQUE` (`email` ASC) VISIBLE,
-  INDEX `fk_usuario_privilegio1_idx` (`privilegio_id` ASC) VISIBLE,
   UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE,
-  CONSTRAINT `fk_usuario_privilegio1`
-    FOREIGN KEY (`privilegio_id`)
-    REFERENCES `privilegio` (`id`)
+  INDEX `fk_usuario_cidade1_idx` (`cidade_id` ASC, `cidade_estado_id` ASC) VISIBLE,
+  CONSTRAINT `fk_usuario_cidade1`
+    FOREIGN KEY (`cidade_id` , `cidade_estado_id`)
+    REFERENCES `cidade` (`id` , `estado_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -54,7 +72,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `tema` (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `nome` VARCHAR(200) NULL,
+  `nome` VARCHAR(80) NULL,
   PRIMARY KEY (`id`),
   UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE)
 ENGINE = InnoDB;
@@ -88,17 +106,17 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `jogo` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(100) NOT NULL,
-  `ano` YEAR(4) NULL,
+  `ano` VARCHAR(4) NULL,
   `descricao` VARCHAR(450) NOT NULL,
   `faixaEtaria` TINYINT(2) NOT NULL,
   `duracao` TINYINT(3) NULL,
   `downtime` TINYINT(1) NULL,
   `tutorial` VARCHAR(450) NULL,
-  `peso` TINYINT(2) NULL,
+  `peso` TINYINT(1) NULL,
   `regras` VARCHAR(450) NULL,
   `qntMax` TINYINT(2) NULL,
   `qntMin` TINYINT(2) NULL,
-  `notaJogo` TINYINT(2) NULL,
+  `notaJogo` FLOAT NULL,
   `aprovado` TINYINT(1) NOT NULL DEFAULT 0,
   `tema_id` INT NOT NULL,
   `dominio_id` INT NOT NULL,
@@ -128,9 +146,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `usuarioJogo`
+-- Table `colecao`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `usuarioJogo` (
+CREATE TABLE IF NOT EXISTS `colecao` (
   `usuario_id` INT NOT NULL,
   `jogo_id` INT NOT NULL,
   PRIMARY KEY (`usuario_id`, `jogo_id`),
@@ -155,7 +173,7 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `avaliacao` (
   `usuario_id` INT NOT NULL,
   `jogo_id` INT NOT NULL,
-  `avaliacao` FLOAT NULL DEFAULT 0,
+  `avaliacao` DECIMAL NULL DEFAULT 0,
   PRIMARY KEY (`usuario_id`, `jogo_id`),
   INDEX `fk_usuario_has_jogo_jogo2_idx` (`jogo_id` ASC) VISIBLE,
   INDEX `fk_usuario_has_jogo_usuario2_idx` (`usuario_id` ASC) VISIBLE,
@@ -178,7 +196,6 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `favorito` (
   `usuario_id` INT NOT NULL,
   `jogo_id` INT NOT NULL,
-  `favorito` TINYINT(1) NULL DEFAULT 0,
   PRIMARY KEY (`usuario_id`, `jogo_id`),
   INDEX `fk_usuario_has_jogo_jogo2_idx` (`jogo_id` ASC) VISIBLE,
   INDEX `fk_usuario_has_jogo_usuario2_idx` (`usuario_id` ASC) VISIBLE,
@@ -201,7 +218,6 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `joguei` (
   `usuario_id` INT NOT NULL,
   `jogo_id` INT NOT NULL,
-  `joguei` TINYINT(1) NULL DEFAULT 0,
   PRIMARY KEY (`usuario_id`, `jogo_id`),
   INDEX `fk_usuario_has_jogo_jogo1_idx` (`jogo_id` ASC) VISIBLE,
   INDEX `fk_usuario_has_jogo_usuario1_idx` (`usuario_id` ASC) VISIBLE,
@@ -217,6 +233,31 @@ CREATE TABLE IF NOT EXISTS `joguei` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
+
+-- -----------------------------------------------------
+-- Table `comentario`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `comentario` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `texto` TEXT NOT NULL,
+  `data` DATE NOT NULL,
+  `usuario_id` INT NOT NULL,
+  `jogo_id` INT NOT NULL,
+  PRIMARY KEY (`id`, `usuario_id`, `jogo_id`),
+  UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE,
+  INDEX `fk_comentario_usuario1_idx` (`usuario_id` ASC) VISIBLE,
+  INDEX `fk_comentario_jogo1_idx` (`jogo_id` ASC) VISIBLE,
+  CONSTRAINT `fk_comentario_usuario1`
+    FOREIGN KEY (`usuario_id`)
+    REFERENCES `usuario` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_comentario_jogo1`
+    FOREIGN KEY (`jogo_id`)
+    REFERENCES `jogo` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
@@ -241,8 +282,15 @@ VALUES
     ('Luta'),
     ('Policial'),
     ('Política');
+    
+    INSERT INTO cidade
+	(cidade, estado_id)
+VALUES
+    (26,16549);
 
-
+    INSERT INTO estado (id,sigla)
+VALUES
+    (26,'SP');
 
 
     INSERT INTO dominio
@@ -274,3 +322,9 @@ VALUES
     ('Construção de Baralho'),
     ('Controle de Área'),
     ('Rolagem de Dados');
+
+
+
+
+INSERT INTO usuario (nome, email, senha, cargo,aprovado,cidade_id,cidade_estado_id,apelido, descricao)
+VALUES ('Guilherme Novaes','guilherme.novaes@gmail.com','$2b$10$hKXxuZe3vE4EBVAIdzvrxuL3OrynJQZBbRiZnEYfwrgC1A0LKsuYe',0,1, 26,16549,'GuiNovaes','Mussum Ipsum, cacilds vidis litro abertis. Mauris nec dolor in eros commodo tempor.');

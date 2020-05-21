@@ -16,16 +16,12 @@
                 </div>
 
                 <div id="highLights">
-                    <h3>Candy Daniele</h3>
-                    <h4>Dani</h4>
-                    <h4>São Paulo</h4>
+                    <h3><%=nomeUsuario%></h3>
+                    <h4><%=apelidoUsuario%></h4>
+                    <h4><%=cidadeUsuario%>/<%=estadoUsuario%></h4>
                 </div>
 
-                <div id="descricao">
-                    Mussum Ipsum, cacilds vidis litro abertis. Admodum accumsan disputationi eu sit. Vide electram
-                    sadipscing et per. Per aumento de cachacis, eu reclamis. Paisis, filhis, espiritis santis.
-                    Cevadis im ampola pa arma uma pindureta.
-                </div>
+                <div id="descricao"><%=descricaoUsuario%></div>
 
                 <div class="redesSociais">
                     <div id='facebook'></div>
@@ -40,7 +36,7 @@
                     <div class="row">
                         <div class="col-0 col-sm-12 col-md-1 col-lg-1"></div>
                         <div class="col-12 col-sm-12 col-md-8 col-lg-8" id='areaCinzaFormEditar'>
-                            <form>
+                            <form action="/editar" method="POST">
                                 <div class="row">
                                     <div class="col-2 col-sm-2 col-md-1 col-lg-1"></div>
                                     <div class="col-8 col-sm-8 col-md-10 col-lg-10" id='areaCentralFormEditar'>
@@ -61,7 +57,7 @@
                                             <div class="col-12 col-sm-12 col-md-7 col-lg-7">
                                                 <div class="form-group">
                                                     <label for="genero">Gênero</label>
-                                                    <select class="form-control" id="genero">
+                                                    <select class="form-control" id="genero" name='genero'>
                                                         <option value="">Selecione</option>
                                                         <option>Outros</option>
                                                         <option>Feminino</option>
@@ -74,42 +70,17 @@
                                             <div class="col-12 col-sm-12 col-md-5 col-lg-5">
                                                 <div class="form-group">
                                                     <label for="estado">Estado</label>
-                                                    <select class="form-control" id="estado">
+                                                    <select class="form-control" id="estado" name='estado'>
                                                         <option value="">Selecione</option>
-                                                        <option value="AC">AC</option>
-                                                        <option value="AL">AL</option>
-                                                        <option value="AM">AM</option>
-                                                        <option value="AP">AP</option>
-                                                        <option value="BA">BA</option>
-                                                        <option value="CE">CE</option>
-                                                        <option value="DF">DF</option>
-                                                        <option value="ES">ES</option>
-                                                        <option value="GO">GO</option>
-                                                        <option value="MA">MA</option>
-                                                        <option value="MG">MG</option>
-                                                        <option value="MS">MS</option>
-                                                        <option value="MT">MT</option>
-                                                        <option value="PA">PA</option>
-                                                        <option value="PB">PB</option>
-                                                        <option value="PE">PE</option>
-                                                        <option value="PI">PI</option>
-                                                        <option value="PR">PR</option>
-                                                        <option value="RJ">RJ</option>
-                                                        <option value="RN">RN</option>
-                                                        <option value="RS">RS</option>
-                                                        <option value="RO">RO</option>
-                                                        <option value="RR">RR</option>
-                                                        <option value="SC">SC</option>
-                                                        <option value="SE">SE</option>
-                                                        <option value="SP">SP</option>
-                                                        <option value="TO">TO</option>
                                                     </select>
                                                 </div>
                                             </div>
                                             <div class="col-12 col-sm-12 col-md-7 col-lg-7">
                                                 <div class="form-group">
                                                     <label for="cidade">Cidade</label>
-                                                    <input type="text" class="form-control" id="cidade" name="cidade">
+                                                    <select class="form-control" id="cidade" name='cidade'>
+                                                        <option value="">Selecione</option>
+                                                    </select>
                                                 </div>
                                             </div>
                                         </div>
@@ -117,26 +88,27 @@
                                             <label for="dtNasc">Data de Nascimento</label>
                                             <div class="row tamanho">
                                                 <div class="col-3 col-sm-3 col-md-2 col-lg-2 nopaddingleft">
-                                                    <select class="form-control nopadding" id="diaNasc">
+                                                    <select class="form-control nopadding" id="diaNasc" name='diaNasc'>
                                                     </select>
                                                 </div>
                                                 <div class="col-5 col-sm-5 col-md-3 col-lg-3 nopadding">
-                                                    <select class="form-control nopadding" id="mesNasc">
-                                                        <option>Janeiro</option>
-                                                        <option>Fevereiro</option>
-                                                        <option>Março</option>
-                                                        <option>Abril</option>
-                                                        <option>Maio</option>
-                                                        <option>Junho</option>
-                                                        <option>Julho</option>
-                                                        <option>Agosto</option>
-                                                        <option>Setembro</option>
-                                                        <option>Outubro</option>
-                                                        <option>Novembro</option>
+                                                    <select class="form-control nopadding" id="mesNasc" name='mesNasc'>
+                                                        <option value="1">Janeiro</option>
+                                                        <option value="2">Fevereiro</option>
+                                                        <option value="3">Março</option>
+                                                        <option value="4">Abril</option>
+                                                        <option value="5">Maio</option>
+                                                        <option value="6">Junho</option>
+                                                        <option value="7">Julho</option>
+                                                        <option value="8">Agosto</option>
+                                                        <option value="9">Setembro</option>
+                                                        <option value="10">Outubro</option>
+                                                        <option value="11">Novembro</option>
+                                                        <option value="12">Dezembro</option>
                                                     </select>
                                                 </div>
                                                 <div class="col-4 col-sm-4 col-md-3 col-lg-3 nopaddingright">
-                                                    <select class="form-control nopadding" id="anoNasc">
+                                                    <select class="form-control nopadding" id="anoNasc" name='anoNasc'>
                                                     </select>
                                                 </div>
                                                 <div class="col-md-4 col-lg-4">
@@ -147,7 +119,7 @@
                                             <div class="col-12 col-sm-12 col-md-6 col-lg-6">
                                                 <div class="form-group">
                                                     <label for="tipoNivelAP">Tipo (Nível AP)</label>
-                                                    <select class="form-control" id="tipoNivelAP">
+                                                    <select class="form-control" id="tipoNivelAP" name='tipoNivelAP'>
                                                         <option value="">Selecione</option>
                                                         <option>Baixo</option>
                                                         <option>Médio</option>
@@ -160,19 +132,20 @@
                                         <div class="form-group">
                                             <label for="descricaoJogo">Descrição</label>
                                             <textarea style="resize: none" class="form-control" id="descricaoJogo"
-                                                rows="4"></textarea>
+                                                name='descricaoJogo' rows="4"></textarea>
                                         </div>
                                         <div class="row tamanho">
                                             <div class="col-12 col-sm-12 col-md-6 col-lg-6">
                                                 <div class="form-group">
                                                     <label for="senha">Senha</label>
-                                                    <input type="password" class="form-control" id="senha">
+                                                    <input type="password" class="form-control" id="senha" name='senha'>
                                                 </div>
                                             </div>
                                             <div class="col-12 col-sm-12 col-md-6 col-lg-6">
                                                 <div class="form-group">
                                                     <label for="senha2">Confirmar Senha</label>
-                                                    <input type="password" class="form-control" id="senha2">
+                                                    <input type="password" class="form-control" id="senha2"
+                                                        name='senha2'>
                                                 </div>
                                             </div>
                                         </div>
@@ -191,7 +164,7 @@
                                                 alt="Botão Adicionar Foto Perfil Jogo"
                                                 title="Clique para adionar a foto do perfil do jogo" />
                                         </label>
-                                        <input id="file-input" type="file" />
+                                        <input id="file-input" type="file" name='avatar' />
                                     </div>
                                 </div>
 
@@ -219,31 +192,6 @@
 
     </div>
 
-    <script>
-        let date = new Date();
-        let min = 1910,
-            max = date.getFullYear(),
-            select = document.getElementById('anoNasc');
-
-        for (let i = min; i <= max; i++) {
-            let opt = document.createElement('option');
-            opt.value = i;
-            opt.innerHTML = i;
-            select.appendChild(opt);
-        }
-
-        select.value = new Date().getFullYear();
-
-        let min2 = 1,
-            max2 = 31,
-            select2 = document.getElementById('diaNasc');
-
-        for (let i = min2; i <= max2; i++) {
-            let opt = document.createElement('option');
-            opt.value = i;
-            opt.innerHTML = i;
-            select2.appendChild(opt);
-        }
-    </script>
+    <script src="js/scriptEditar.js"></script>
 
     <%- include('./partials/footer') %>

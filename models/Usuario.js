@@ -19,7 +19,7 @@ const Usuario = (sequelize, DataTypes) => {
                 unique: true
             },
             senha: {
-                type: DataTypes.STRING(250),
+                type: DataTypes.STRING(256),
                 allowNull: false
             },
             foto:{
@@ -28,14 +28,6 @@ const Usuario = (sequelize, DataTypes) => {
             },
             descricao:{
                 type: DataTypes.STRING(500),
-                allowNull: true
-            },
-            cidade:{
-                type: DataTypes.STRING(200),
-                allowNull: true
-            },
-            estado:{
-                type: DataTypes.STRING(2),
                 allowNull: true
             },
             dataDeNascimento:{
@@ -47,19 +39,37 @@ const Usuario = (sequelize, DataTypes) => {
                 allowNull: true
             },
             apelido:{
-                type: DataTypes.STRING(100),
-                allowNull: true
+                type: DataTypes.STRING(20),
+                allowNull: false
             },
             genero:{
                 type: DataTypes.TINYINT(1),
                 allowNull: true
             },
-            privilegio_id:  {
-                type: DataTypes.INTEGER,
+            cargo: {
+                type: DataTypes.TINYINT(1),
                 allowNull: false,
+                default:0
+            },
+            aprovado: {
+                type: DataTypes.TINYINT(1),
+                allowNull: false,
+                default:0
+            },
+            cidade_id:  {
+                type: DataTypes.INTEGER,
+                allowNull: true,
                 references: {
-                model: "Privilegio", 
+                model: "Cidade", 
                 key: "id"
+                }
+            },
+            cidade_estado_id:  {
+                type: DataTypes.INTEGER,
+                allowNull: true,
+                references: {
+                model: "Cidade", 
+                key: "estado_id"
                 }
             }
         },{
@@ -68,8 +78,16 @@ const Usuario = (sequelize, DataTypes) => {
         }
 
     );
+
+
+
     usuario.associate = (models) => {
-        usuario.belongsTo(models.Privilegio, {foreignKey: 'privilegio_id', as:'privilegio'})
+        usuario.belongsTo(models.Cidade, {foreignKey: 'cidade_id', as:'cidade'})
+        usuario.belongsToMany(models.Jogo, {through: 'Favorito', foreignKey: 'usuario_id', as: 'favoritos_jogos'})
+        usuario.belongsToMany(models.Jogo, {through: 'Colecao', foreignKey: 'usuario_id', as: 'colecoes_jogos'})
+        usuario.belongsToMany(models.Jogo, {through: 'Joguei', foreignKey: 'usuario_id', as: 'joguei_jogos'})
+        usuario.belongsToMany(models.Jogo, {through: 'Avaliacao', foreignKey: 'usuario_id', as: 'avaliacoes_jogos'})
+        usuario.belongsToMany(models.Jogo, {through: 'Comentario', foreignKey: 'usuario_id', as: 'comentarios_jogos'})
     }
     return usuario;
 }

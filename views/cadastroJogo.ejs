@@ -16,7 +16,7 @@
             <div class="row">
                 <div class="col-0 col-sm-12 col-md-1 col-lg-1"></div>
                 <div class="col-12 col-sm-12 col-md-8 col-lg-8" id='areaCinzaFormJogo'>
-                    <form>
+                    <form action='/cadastroJogo' method='POST'>
                         <div class="row">
                             <div class="col-2 col-sm-2 col-md-1 col-lg-1"></div>
                             <div class="col-8 col-sm-8 col-md-10 col-lg-10" id='areaCentralFormJogo'>
@@ -66,7 +66,7 @@
                                     <select class="form-control" id="temaJogo">
                                         <option value="">Selecione</option>
                                         <% for(tema of temas) { %>
-                                            <option><%= tema.nome %></option>
+                                            <option value=<%= tema.id %>><%= tema.nome %></option>
                                         <% } %>
                                     </select>
                                 </div>
@@ -125,11 +125,11 @@
                                             <label for="pesoJogo">Peso (Dificuldade)</label>
                                             <select class="form-control" id="pesoJogo">
                                                 <option value="">Selecione</option>
-                                                <option>Leve</option>
-                                                <option>Médio-Leve</option>
-                                                <option>Médio</option>
-                                                <option>Médio-Pesado</option>
-                                                <option>Pesado</option>
+                                                <option value="1">Leve</option>
+                                                <option value="2">Médio-Leve</option>
+                                                <option value="3">Médio</option>
+                                                <option value="4">Médio-Pesado</option>
+                                                <option value="5">Pesado</option>
                                             </select>
                                         </div>
                                         <div class="form-group">
@@ -137,7 +137,7 @@
                                             <select class="form-control" id="dominioJogo">
                                                 <option value="">Selecione</option>
                                                 <% for(dominio of dominios) { %>
-                                                    <option><%= dominio.nome %></option>
+                                                    <option value=<%= dominio.id %>><%= dominio.nome %></option>
                                                 <% } %>
                                             </select>
                                         </div>
@@ -146,7 +146,7 @@
                                             <select class="form-control" id="mecanicaJogo">
                                                 <option value="">Selecione</option>
                                                 <% for(mecanica of mecanicas) { %>
-                                                    <option><%= mecanica.nome %></option>
+                                                    <option value=<%= mecanica.id %>><%= mecanica.nome %></option>
                                                 <% } %>
                                             </select>
                                         </div>
@@ -154,9 +154,9 @@
                                             <label for="downtimeJogo">Downtime</label>
                                             <select class="form-control" id="downtimeJogo">
                                                 <option value="">Selecione</option>
-                                                <option>Baixo</option>
-                                                <option>Médio</option>
-                                                <option>Alto</option>
+                                                <option value="1">Baixo</option>
+                                                <option value="2">Médio</option>
+                                                <option value="3">Alto</option>
                                             </select>
                                         </div>
                                     </div>
@@ -228,33 +228,6 @@
     </div>
 </div>
 
-
-<script>
-    let date = new Date();
-    let min = 1900,
-        max = date.getFullYear(),
-        select = document.getElementById('anoJogo');
-
-    for (let i = min; i <= max; i++) {
-        let opt = document.createElement('option');
-        opt.value = i;
-        opt.innerHTML = i;
-        select.appendChild(opt);
-    }
-
-    select.value = new Date().getFullYear();
-
-    let min2 = 0,
-        max2 = 18,
-        select2 = document.getElementById('faixaEtaria');
-
-    for (let i = min2; i <= max2; i++) {
-        let opt = document.createElement('option');
-        opt.value = i;
-        opt.innerHTML = i;
-        select2.appendChild(opt);
-    }
-</script>
-
+<script src="js/scriptCadastroJogo.js"></script>
 
 <%- include('./partials/footer') %>

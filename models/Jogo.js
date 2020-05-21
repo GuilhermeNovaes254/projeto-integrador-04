@@ -14,7 +14,7 @@ const Jogo = (sequelize, DataTypes) => {
                 allowNull: false
             },
             ano: {
-                type: DataTypes.INTEGER,
+                type: DataTypes.STRING(4),
                 allowNull: true
             },
             descricao: {
@@ -38,7 +38,7 @@ const Jogo = (sequelize, DataTypes) => {
                 allowNull: true
             },
             peso:{
-                type: DataTypes.TINYINT(2),
+                type: DataTypes.TINYINT(1),
                 allowNull: true
             },
             regras:{
@@ -54,7 +54,7 @@ const Jogo = (sequelize, DataTypes) => {
                 allowNull: true
             },
             notaJogo:{
-                type: DataTypes.TINYINT(2),
+                type: DataTypes.FLOAT,
                 allowNull: true
             },
             aprovado:{  
@@ -102,6 +102,11 @@ const Jogo = (sequelize, DataTypes) => {
         jogo.belongsTo(models.Tema, {foreignKey: 'tema_id', as:'tema'})
         jogo.belongsTo(models.Dominio, {foreignKey: 'dominio_id', as:'dominio'})
         jogo.belongsTo(models.Mecanica, {foreignKey: 'mecanica_id', as:'mecanica'})
+        jogo.belongsToMany(models.Usuario, {through: 'Favorito', foreignKey: 'jogo_id', as: 'favoritos_usuarios'})
+        jogo.belongsToMany(models.Usuario, {through: 'Colecao', foreignKey: 'jogo_id', as: 'colecoes_usuarios'})
+        jogo.belongsToMany(models.Usuario, {through: 'Joguei', foreignKey: 'jogo_id', as: 'joguei_usuarios'})
+        jogo.belongsToMany(models.Usuario, {through: 'Avaliacao', foreignKey: 'jogo_id', as: 'avaliacoes_usuarios'})
+        jogo.belongsToMany(models.Usuario, {through: 'Comentario', foreignKey: 'jogo_id', as: 'comentarios_usuarios'})
     }
     return jogo;
 }
