@@ -28,6 +28,7 @@ const forms = {
             nome: nome,
             email: email,
             apelido: apelido,
+            foto:'images/icons/PerfilVermelho.png',
             senha: bcrypt.hashSync(senha, 10),
             cargo: 0, //usuario comum
             aprovado: 1
@@ -42,7 +43,7 @@ const forms = {
         req.session.usuario = user;
 
         res.render('perfil', {
-            title: 'Perfil'
+            title: 'Perfil', apelidoUsuario:apelido, fotoUsuario:foto
         });
     },
 
