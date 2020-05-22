@@ -47,6 +47,6 @@ router.post('/login', autorizaLogin.loginSession);
 router.post('/cadastro', formController.cadastroUsuario);
 router.post('/excluir', VerificaUsuarioLogado, formController.excluirUsuario);
 router.post('/editar', VerificaUsuarioLogado, formController.editarUsuario);
-router.post('/cadastroJogo', formController.cadastrarJogo);
+router.post('/cadastroJogo', VerificaUsuarioLogado, formController.cadastrarJogo);
 
 module.exports = router;

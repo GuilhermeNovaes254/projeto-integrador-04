@@ -138,8 +138,10 @@ const forms = {
     },
 
     cadastrarJogo: async (req, res) => {
-
-    }
+        const { nomeJogo, anoJogo, faixaEtaria, duracao, descricaoJogo, 
+            temaJogo, minJogadores, maxJogadores, pesoJogo, dominioJogo, 
+            mecanicaJogo, downtimeJogo, tutorialJogo, regrasJogo } = req.body;
+            }
 };
 
 
