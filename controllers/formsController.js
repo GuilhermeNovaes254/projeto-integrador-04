@@ -138,10 +138,46 @@ const forms = {
     },
 
     cadastrarJogo: async (req, res) => {
-        const { nomeJogo, anoJogo, faixaEtaria, duracao, descricaoJogo, 
-            temaJogo, minJogadores, maxJogadores, pesoJogo, dominioJogo, 
-            mecanicaJogo, downtimeJogo, tutorialJogo, regrasJogo } = req.body;
-            }
+        const {
+            nomeJogo,
+            anoJogo,
+            faixaEtaria,
+            duracao,
+            descricaoJogo,
+            temaJogo,
+            minJogadores,
+            maxJogadores,
+            pesoJogo,
+            dominioJogo,
+            mecanicaJogo,
+            downtimeJogo,
+            tutorialJogo,
+            regrasJogo
+        } = req.body;
+
+        const jogo = await Jogo.create({
+            nome: nomeJogo,
+            ano: anoJogo,
+            descricao: descricaoJogo,
+            faixaEtaria: faixaEtaria,
+            duracao: duracao,
+            downtime: downtimeJogo,
+            tutorial: tutorialJogo,
+            peso: pesoJogo,
+            regras: regrasJogo,
+            qntMax: maxJogadores,
+            qntMin: minJogadores,
+            aprovado: 0,
+            tema_id: temaJogo,
+            dominio_id: dominioJogo,
+            mecanica_id: mecanicaJogo,
+
+        })
+
+        return res.redirect('/feeds');
+    }
+
+
 };
 
 
