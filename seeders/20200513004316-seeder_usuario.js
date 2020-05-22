@@ -14,7 +14,8 @@ module.exports = {
           aprovado: 1,
           cidade_id:5409,
           cidade_estado_id:26,
-          apelido: 'GuiNovaes'
+          apelido: 'GuiNovaes',
+          foto: 'images/icons/PerfilVermelho.png'
         },{
           nome:'usuariopadrao',
           email:'usuario@email.com',
@@ -23,7 +24,8 @@ module.exports = {
           aprovado: 1,
           cidade_id:2176,
           cidade_estado_id:11,
-          apelido: 'User00'
+          apelido: 'User00',
+          foto: 'images/icons/PerfilVermelho.png'
         },{
           nome:'moderador',
           email:'moderador@email.com',
@@ -32,7 +34,8 @@ module.exports = {
           aprovado: 1,
           cidade_id:5409,
           cidade_estado_id:26,
-          apelido: 'Mod00'
+          apelido: 'Mod00',
+          foto: 'images/icons/PerfilVermelho.png'
         }
 
       ], {});
