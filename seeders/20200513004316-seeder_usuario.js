@@ -15,7 +15,7 @@ module.exports = {
           cidade_id:5409,
           cidade_estado_id:26,
           apelido: 'GuiNovaes',
-          foto: 'images/icons/PerfilVermelho.png'
+          foto: 'images/guilherme.jpg'
         },{
           nome:'usuariopadrao',
           email:'usuario@email.com',

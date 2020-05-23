@@ -7,7 +7,7 @@
         <div class="col-12" id='areaCentralJogo'>
             <div class="row justify-content-center">
 
-                <form>
+                <form onsubmit="return false;">
                     <div id="caixaDeBusca" class="col-10 ">
                         <div class="row justify-content-center ">
 
@@ -26,7 +26,7 @@
                             </div>
 
                             <div class="row justify-content-end">
-                                <button type="button" id="busca" class='busca'><img src="/images/icons/Lupa.png" alt=""
+                                <button type="button" button.disabled = true id="busca" class='busca'><img src="/images/icons/Lupa.png" alt=""
                                         srcset=""></button>
                             </div>
 
@@ -41,7 +41,7 @@
 
                                     <div class="form-group col-6" id="tema" name="tema">
                                         <label id='rotulo'>Tema</label>
-                                        <select class="form-group col-6" id="temaSelector">
+                                        <select class="form-group col-6" id="temaSelector" name='jogo'>
                                             <option selected>Selecione</option>
                                             <option value='Aventura'>Aventura</option>
                                             <option value='Civilização'>Civilização</option>
@@ -63,7 +63,7 @@
 
                                     <div class="form-group col-6" id="dominio" name="dominio">
                                         <label id='rotulo'>Domínio</label>
-                                        <select class="form-group col-6" id="dominioSelector">
+                                        <select class="form-group col-6" id="dominioSelector" name='jogo'>
                                             <option selected>Selecione</option>
                                             <option value='Jogos 4x'>Jogos 4X</option>
                                             <option value='Jogos Abstratos'>Jogos Abstratos</option>
@@ -84,7 +84,7 @@
 
                                     <div class="form-group col-6" id="mecanica" name="mecanica">
                                         <label id='rotulo'>Mecânica</label>
-                                        <select class="form-group col-6" id="mecanicaSelector">
+                                        <select class="form-group col-6" id="mecanicaSelector" name='jogo'>
                                             <option selected>Selecione</option>
                                             <option value='Coleção de Componentes'>Coleção de Componentes</option>
                                             <option value='Colecionar Cartas'>Colecionar Cartas</option>
@@ -94,6 +94,8 @@
                                             <option value='Rolagem de Dados'>Rolagem de Dados</option>
                                         </select>
                                     </div>
+
+                                    
 
                                 </div>
                             </div>
@@ -151,5 +153,5 @@
     </div>
 
 </div>
-<script src="js/scriptBusca.js"></script>
+<script src="js/scriptBusca.js" ></script>
 <%- include('./partials/footer') %>

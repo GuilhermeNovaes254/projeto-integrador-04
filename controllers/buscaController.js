@@ -1,3 +1,6 @@
+const Sequelize = require('sequelize');
+const Op = Sequelize.Op;
+
 const {
         Usuario,
         Mecanica,
@@ -8,38 +11,29 @@ const {
 
 const buscaController = {
 
-        usuarios: (req, res) => {
-
-                const buscaUsuario = {
-
-
-                };
-
+        usuarios: async (req, res) => {
+                console.log("******** Busca Controller ********")
+                let {buscaUsuario} = req.params;
+                console.log(buscaUsuario)
+                
+                let user = await Usuario.findAll({
+                        where: {
+                                nome: {
+                                        [Op.iLike]: '%'+buscaUsuario+'%'
+                                }
+                        }
+                        // },
+                        // order: [
+                        //         ['nome', 'ASC']
+                        // ]
+                })
+                res.send(user);
         },
 
         jogos: (req, res) => {
 
-                const buscaMecanica = {
-
-
-                };
-
-                const buscaTema = {
-
-
-                };
-
-                const buscaDominio = {
-
-
-                };
-
-                const buscaJogo = {
-
-
-                };
-
         }
+
 }
 
 module.exports = buscaController;
