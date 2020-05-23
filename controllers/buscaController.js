@@ -12,14 +12,15 @@ const {
 const buscaController = {
 
         usuarios: async (req, res) => {
+
                 console.log("******** Busca Controller ********")
-                let {buscaUsuario} = req.params;
-                console.log(buscaUsuario)
+                let {item} = req.params;
+                console.log(item)
                 
                 let user = await Usuario.findAll({
                         where: {
                                 nome: {
-                                        [Op.iLike]: '%'+buscaUsuario+'%'
+                                        [Op.like]: '%'+item+'%'
                                 }
                         }
                         // },

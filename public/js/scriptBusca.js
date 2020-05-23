@@ -1,5 +1,5 @@
 function consultaUsuario(usuario) {
-
+    
     var xhr = new XMLHttpRequest();
 
     // Setup our listener to process completed requests
@@ -17,8 +17,11 @@ function consultaUsuario(usuario) {
     };
     // Create and send a GET request
     // The first argument is the post type (GET, POST, PUT, DELETE, etc.)
-    // The second argument is the endpoint URL
-    let url = '/buscaUsuario?buscaUsuario=' + usuario
+    // The second argument is the endpoint URL[
+    
+    
+    let url = '/buscaUsuario/' + usuario
+    console.log(url)
     xhr.open('GET', url);
     xhr.send();
 
@@ -33,47 +36,52 @@ function consultaJogo(tema, dominio, mecanica) {
 
 function buscarDados() {
 
-    let tipo;
-    let usuario;
-    let tema;
-    let dominio;
-    let mecanica;
+    var tipo;
+    var usuario;
+    var tema;
+    var dominio;
+    var mecanica;
 
     document.getElementById("tipo").addEventListener('change', function () {
         tipo = document.getElementById("tipo").value;
     });
 
-    //Pega o valor do Campo Usuario
-    document.getElementById("campoUsuario").addEventListener('change', function (evt) {
-        usuario = document.getElementById("campoUsuario").value;
-        //console.log(usuario)
-    });
+    // //Pega o valor do Campo Usuario
+    // document.getElementById("campoUsuario").addEventListener('change', function (evt) {
+    //     usuario = document.getElementById("campoUsuario").value;
+    //     //console.log(usuario)
+    // });
 
 
-    //Pega os valores dos campos Jogos
-    document.getElementById('temaSelector').addEventListener('change', function (evt) {
-        tema = document.getElementById("temaSelector").value;
-        console.log(tema)
-    });
+    // //Pega os valores dos campos Jogos
+    // document.getElementById('temaSelector').addEventListener('change', function (evt) {
+    //     tema = document.getElementById("temaSelector").value;
+    //     console.log(tema)
+    // });
 
-    document.getElementById('dominioSelector').addEventListener('change', function (evt) {
-        dominio = document.getElementById("dominioSelector").value;
-        console.log(dominio)
-    });
+    // document.getElementById('dominioSelector').addEventListener('change', function (evt) {
+    //     dominio = document.getElementById("dominioSelector").value;
+    //     console.log(dominio)
+    // });
 
 
-    document.getElementById('mecanicaSelector').addEventListener('change', function (evt) {
-        console.log(typeof (mecanica))
-        mecanica = document.getElementById("mecanicaSelector").value;
-        console.log(mecanica)
-        console.log(typeof (mecanica))
-    });
+    // document.getElementById('mecanicaSelector').addEventListener('change', function (evt) {
+    //     console.log(typeof (mecanica))
+    //     mecanica = document.getElementById("mecanicaSelector").value;
+    //     console.log(mecanica)
+    //     console.log(typeof (mecanica))
+    // });
 
 
     document.getElementById('busca').addEventListener('click', function (evt) {
 
+        usuario = document.getElementById("campoUsuario").value;
+
+        tema = document.getElementById("temaSelector").value;
+        dominio = document.getElementById("dominioSelector").value;
+        mecanica = document.getElementById("mecanicaSelector").value;
         // console.log('aqui = ' + tipo)
-        // console.log('aqui = ' + usuario)
+        console.log('aqui = ' + usuario)
         // console.log('aqui = ' + tema)
         // console.log('aqui = ' + dominio)
         // console.log('aqui = ' + mecanica);

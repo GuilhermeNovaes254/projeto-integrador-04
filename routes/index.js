@@ -20,7 +20,7 @@ router.get('/login/error', homeController.loginError);
 router.get('/buscaEstado', localizacaoController.buscaEstado);
 router.get('/buscaCidade/:id', localizacaoController.buscaCidade);
 router.get('/buscaJogo', buscaController.jogos);
-router.get('/buscaUsuario', buscaController.usuarios);
+router.get('/buscaUsuario/:item', buscaController.usuarios);
 
 
 
