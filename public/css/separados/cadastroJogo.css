@@ -115,7 +115,7 @@ section#temaCadastroJogo {
 	text-align: center;
 }
 
-#btnAltTema{
+#btnAltTema2{
 	background-color: #f22441;
 	border-color: #f22441;
 	width: 150px;
@@ -123,6 +123,13 @@ section#temaCadastroJogo {
 	color: white;
 	border-radius: 100px;
 	text-align: center;
+	border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+}
+
+#inputFileTemaJogo{
+	display: none;
 }
 
 /* Fim cadastroJOgo.ejs */
