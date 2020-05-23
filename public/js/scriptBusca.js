@@ -1,25 +1,21 @@
+var xhr = new XMLHttpRequest();
+
+// Setup our listener to process completed requests
+xhr.onload = function () {
+
+    // Process our return data
+    if (xhr.status >= 200 && xhr.status < 300) {
+        // Runs when the request is successful
+        var resposta = JSON.parse(xhr.responseText);
+        console.log(resposta)
+    } else {
+        console.log('erro na Api')
+    }
+
+};
+
 function consultaUsuario(usuario) {
-    
-    var xhr = new XMLHttpRequest();
 
-    // Setup our listener to process completed requests
-    xhr.onload = function () {
-
-        // Process our return data
-        if (xhr.status >= 200 && xhr.status < 300) {
-            // Runs when the request is successful
-            var resposta = JSON.parse(xhr.responseText);
-            console.log(resposta)
-        }else{
-            console.log('erro na Api')
-        }
-
-    };
-    // Create and send a GET request
-    // The first argument is the post type (GET, POST, PUT, DELETE, etc.)
-    // The second argument is the endpoint URL[
-    
-    
     let url = '/buscaUsuario/' + usuario
     console.log(url)
     xhr.open('GET', url);
@@ -29,7 +25,11 @@ function consultaUsuario(usuario) {
 
 
 function consultaJogo(tema, dominio, mecanica) {
-    console.log("JOGO FUNCAO")
+
+    let url = '/buscaJogo/' + tema + '/' + dominio + '/' + mecanica
+    console.log(url)
+    xhr.open('GET', url);
+    xhr.send();
 
 }
 
@@ -80,14 +80,13 @@ function buscarDados() {
         tema = document.getElementById("temaSelector").value;
         dominio = document.getElementById("dominioSelector").value;
         mecanica = document.getElementById("mecanicaSelector").value;
+
         // console.log('aqui = ' + tipo)
-        console.log('aqui = ' + usuario)
-        // console.log('aqui = ' + tema)
-        // console.log('aqui = ' + dominio)
-        // console.log('aqui = ' + mecanica);
+        // console.log('aqui = ' + usuario)
+        console.log('aqui = ' + typeof(tema))
+        console.log('aqui = ' + typeof(dominio))
+        console.log('aqui = ' + typeof(mecanica));
 
-
-        console.log("CLICADO")
         if (tipo == 'usuario') {
             consultaUsuario(usuario);
         } else {
