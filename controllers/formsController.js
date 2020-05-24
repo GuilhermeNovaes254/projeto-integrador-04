@@ -23,12 +23,13 @@ const forms = {
             res.redirect('/login/error');
         }
 
+        let fotoAvatar ='images/icons/PerfilVermelho.png'
 
         Usuario.create({
             nome: nome,
             email: email,
             apelido: apelido,
-            foto:'images/icons/PerfilVermelho.png',
+            foto: fotoAvatar,
             senha: bcrypt.hashSync(senha, 10),
             cargo: 0, //usuario comum
             aprovado: 1
@@ -43,7 +44,7 @@ const forms = {
         req.session.usuario = user;
 
         res.render('perfil', {
-            title: 'Perfil', apelidoUsuario:apelido, fotoUsuario:foto
+            title: 'Perfil', apelidoUsuario:apelido, fotoUsuario:fotoAvatar
         });
     },
 

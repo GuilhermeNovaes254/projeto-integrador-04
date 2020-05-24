@@ -50,7 +50,9 @@ const buscaController = {
                         // Não está funcionando
                         var jogoTema = Jogo.findByPk(tema, {
                                 include: ["tema"]
-                        }).the(jogo => console.log(jogo.tema_id.nome))
+                        }).then(jogo => console.log(jogo.tema_id.nome)).catch(error => {
+                                return res.status(400).json(error)
+                        })
 
                 }
 
