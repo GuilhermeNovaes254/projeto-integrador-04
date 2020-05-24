@@ -23,9 +23,7 @@ const localizacao = {
 
     
         res.send(cidade);
-}
-
-
+    }
 
 };
 

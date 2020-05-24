@@ -94,6 +94,10 @@ label{
 
 }
 
+#foto{
+  max-width: 140px;
+}
+
 .resultadoDeBusca {
   display: flex;
   justify-content: center;

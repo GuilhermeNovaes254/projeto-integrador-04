@@ -1,3 +1,6 @@
+const Sequelize = require('sequelize');
+const Op = Sequelize.Op;
+
 const {
         Usuario,
         Mecanica,
@@ -8,38 +11,68 @@ const {
 
 const buscaController = {
 
-        usuarios: (req, res) => {
+        usuarios: async (req, res) => {
 
-                const buscaUsuario = {
+                let {
+                        item
+                } = req.params;
+
+                let user = await Usuario.findAll({
+                        where: {
+                                nome: {
+                                        [Op.like]: '%' + item + '%'
+                                }
+                        },
+                        order: [
+                                ['nome', 'ASC']
+                        ]
+                }).then(users => {
+                        return res.status(200).json(users)
+                }).catch(error => {
+                        return res.status(400).json(error)
+                })
 
 
-                };
-
+                res.send(user);
         },
 
-        jogos: (req, res) => {
+        jogos: async (req, res) => {
 
-                const buscaMecanica = {
-
-
-                };
-
-                const buscaTema = {
-
-
-                };
-
-                const buscaDominio = {
+                let {
+                        tema,
+                        dominio,
+                        mecanica
+                } = req.params;
 
 
-                };
+                if (tema != 0) {
 
-                const buscaJogo = {
+                        // Não está funcionando
+                        var jogoTema = Jogo.findByPk(tema, {
+                                include: ["tema"]
+                        }).then(jogo => console.log(jogo.tema_id.nome)).catch(error => {
+                                return res.status(400).json(error)
+                        })
+
+                }
 
 
-                };
+                if (dominio != 0) {
+
+
+                }
+
+
+                if (mecanica != 0) {
+
+
+                }
+
+                res.send(jogoTema);
+
 
         }
+
 }
 
 module.exports = buscaController;

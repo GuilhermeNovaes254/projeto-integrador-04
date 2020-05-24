@@ -23,11 +23,13 @@ const forms = {
             res.redirect('/login/error');
         }
 
+        let fotoAvatar ='images/icons/PerfilVermelho.png'
 
         Usuario.create({
             nome: nome,
             email: email,
             apelido: apelido,
+            foto: fotoAvatar,
             senha: bcrypt.hashSync(senha, 10),
             cargo: 0, //usuario comum
             aprovado: 1
@@ -42,7 +44,7 @@ const forms = {
         req.session.usuario = user;
 
         res.render('perfil', {
-            title: 'Perfil'
+            title: 'Perfil', apelidoUsuario:apelido, fotoUsuario:fotoAvatar
         });
     },
 
@@ -138,8 +140,49 @@ const forms = {
     },
 
     cadastrarJogo: async (req, res) => {
+        const {
+            nomeJogo,
+            anoJogo,
+            faixaEtaria,
+            duracao,
+            descricaoJogo,
+            temaJogo,
+            minJogadores,
+            maxJogadores,
+            pesoJogo,
+            dominioJogo,
+            mecanicaJogo,
+            downtimeJogo,
+            tutorialJogo,
+            regrasJogo
+        } = req.body;
 
+        let {files} = req;
+        const foto = files[0].originalname
+
+        const jogo = await Jogo.create({
+            nome: nomeJogo,
+            ano: anoJogo,
+            descricao: descricaoJogo,
+            faixaEtaria: faixaEtaria,
+            duracao: duracao,
+            downtime: downtimeJogo,
+            tutorial: tutorialJogo,
+            peso: pesoJogo,
+            regras: regrasJogo,
+            qntMax: maxJogadores,
+            qntMin: minJogadores,
+            aprovado: 0,
+            tema_id: temaJogo,
+            dominio_id: dominioJogo,
+            mecanica_id: mecanicaJogo,
+            foto
+        })
+
+        return res.redirect('/feeds');
     }
+
+
 };
 
 

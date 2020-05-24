@@ -27,9 +27,18 @@ const homeController = {
 
 
     feeds: (req, res) => {
+
+        fotoUsuario = 'images/icons/PerfilVermelho.png'
+
+        if(req.session.usuario.foto != 'images/icons/PerfilVermelho.png'){
+            fotoUsuario = req.session.usuario.foto
+        }
+
         res.render('feeds', {
             title: 'Feeds',
-            apelidoUsuario: req.session.usuario.apelido
+            apelidoUsuario: req.session.usuario.apelido,
+            fotoUsuario
+
         });
     },
 
@@ -37,33 +46,68 @@ const homeController = {
         var temas = await Tema.findAll();
         var dominios = await Dominio.findAll();
         var mecanicas = await Mecanica.findAll();
+
+        fotoUsuario = 'images/icons/PerfilVermelho.png'
+
+        if(req.session.usuario.foto != 'images/icons/PerfilVermelho.png'){
+            fotoUsuario = req.session.usuario.foto,
+            fotoUsuario
+        }
+
         res.render('cadastroJogo', {
             title: 'Cadastro Jogo',
             apelidoUsuario: req.session.usuario.apelido,
             temas,
             dominios,
-            mecanicas
+            mecanicas,
+            fotoUsuario
         });
     },
 
     perfil: (req, res) => {
+
+        fotoUsuario = 'images/icons/PerfilVermelho.png'
+
+        if(req.session.usuario.foto != 'images/icons/PerfilVermelho.png'){
+            fotoUsuario = req.session.usuario.foto,
+            fotoUsuario
+        }
+
         res.render('perfil', {
             title: 'perfil',
-            apelidoUsuario: req.session.usuario.apelido
+            apelidoUsuario: req.session.usuario.apelido,
+            fotoUsuario
         });
     },
 
     jogo: (req, res) => {
+
+        fotoUsuario = 'images/icons/PerfilVermelho.png'
+
+        if(req.session.usuario.foto != 'images/icons/PerfilVermelho.png'){
+            fotoUsuario = req.session.usuario.foto,
+            fotoUsuario
+        }
+
         res.render('jogo', {
             title: 'jogo',
-            apelidoUsuario: req.session.usuario.apelido
+            apelidoUsuario: req.session.usuario.apelido,
+            fotoUsuario
         });
     },
 
     busca: (req, res) => {
+
+        fotoUsuario = 'images/icons/PerfilVermelho.png'
+
+        if(req.session.usuario.foto != 'images/icons/PerfilVermelho.png'){
+            fotoUsuario = req.session.usuario.foto
+        }
+
         res.render('busca', {
             title: 'busca',
-            apelidoUsuario: req.session.usuario.apelido
+            apelidoUsuario: req.session.usuario.apelido,
+            fotoUsuario
         });
     },
 
@@ -75,22 +119,44 @@ const homeController = {
     },
 
     perfilAdm: (req, res) => {
+
+        fotoUsuario = 'images/icons/PerfilVermelho.png'
+
+        if(req.session.usuario.foto != 'images/icons/PerfilVermelho.png'){
+            fotoUsuario = req.session.usuario.foto
+        }
+
         res.render('perfilAdm', {
             title: 'perfilAdm',
-            apelidoUsuario: req.session.usuario.apelido
+            apelidoUsuario: req.session.usuario.apelido,
+            fotoUsuario
         });
     },
 
     perfilModerador: (req, res) => {
+
+        fotoUsuario = 'images/icons/PerfilVermelho.png'
+
+        if(req.session.usuario.foto != 'images/icons/PerfilVermelho.png'){
+            fotoUsuario = req.session.usuario.foto
+        }
+
         res.render('perfilModerador', {
             title: 'perfilModerador',
-            apelidoUsuario: req.session.usuario.apelido
+            apelidoUsuario: req.session.usuario.apelido,
+            fotoUsuario
         });
     },
 
     moduloDestaques: async (req, res) => {
 
         userInfo = req.session.usuario;
+
+        fotoUsuario = 'images/icons/PerfilVermelho.png'
+
+        if(req.session.usuario.foto != 'images/icons/PerfilVermelho.png'){
+            fotoUsuario = req.session.usuario.foto
+        }
 
         let cidade = await Cidade.findOne({
             where: {
@@ -112,21 +178,36 @@ const homeController = {
             nomeUsuario: userInfo.nome,
             descricaoUsuario: userInfo.descricao,
             cidadeUsuario: cidade.cidade,
-            estadoUsuario: estado.sigla
+            estadoUsuario: estado.sigla,
+            fotoUsuario
         });
     },
 
     excluir: (req, res) => {
+
+        fotoUsuario = 'images/icons/PerfilVermelho.png'
+
+        if(req.session.usuario.foto != 'images/icons/PerfilVermelho.png'){
+            fotoUsuario = req.session.usuario.foto
+        }
+
         res.render('excluir', {
             title: 'excluir',
             nomeUsuario: req.session.usuario.nome,
-            apelidoUsuario: req.session.usuario.apelido
+            apelidoUsuario: req.session.usuario.apelido,
+            fotoUsuario
         });
     },
 
     editar: async (req, res) => {
 
         userInfo = req.session.usuario;
+
+        fotoUsuario = 'images/icons/PerfilVermelho.png'
+
+        if(req.session.usuario.foto != 'images/icons/PerfilVermelho.png'){
+            fotoUsuario = req.session.usuario.foto
+        }
 
         let cidade = await Cidade.findOne({
             where: {
@@ -147,15 +228,24 @@ const homeController = {
             nomeUsuario: userInfo.nome,
             descricaoUsuario: userInfo.descricao,
             cidadeUsuario: cidade.cidade,
-            estadoUsuario: estado.sigla
+            estadoUsuario: estado.sigla,
+            fotoUsuario
         });
 
     },
 
     semPrivilegio: (req, res) => {
+
+        fotoUsuario = 'images/icons/PerfilVermelho.png'
+
+        if(req.session.usuario.foto != 'images/icons/PerfilVermelho.png'){
+            fotoUsuario = req.session.usuario.foto
+        }
+
         res.render('semPrivilegio', {
             title: 'Sem Privilégio',
-            apelidoUsuario: req.session.usuario.apelido
+            apelidoUsuario: req.session.usuario.apelido,
+            fotoUsuario
         });
     },
 

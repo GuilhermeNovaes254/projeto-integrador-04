@@ -8,7 +8,10 @@
 <section id="temaCadastroJogo"></section>
 <div class="container" id='containerTema'>
     <div class="text-right">
-    <button type="submit" id='btnAltTema'>Alterar Tema</button>
+        <label id='btnAltTema2'>
+            <input type="file" id='inputFileTemaJogo' name='fotoTemaJogo' />
+            Alterar Tema
+        </label>
     </div>
     <div class="row">
         <div class="col-12" id='areaCentralJogo'>
@@ -16,7 +19,7 @@
             <div class="row">
                 <div class="col-0 col-sm-12 col-md-1 col-lg-1"></div>
                 <div class="col-12 col-sm-12 col-md-8 col-lg-8" id='areaCinzaFormJogo'>
-                    <form action='/cadastroJogo' method='POST'>
+                    <form action='/cadastroJogo' method='POST' enctype="multipart/form-data">
                         <div class="row">
                             <div class="col-2 col-sm-2 col-md-1 col-lg-1"></div>
                             <div class="col-8 col-sm-8 col-md-10 col-lg-10" id='areaCentralFormJogo'>
@@ -30,14 +33,14 @@
                                     <div class="col-6">
                                         <div class="form-group">
                                             <label for="anoJogo">Ano</label>
-                                            <select class="form-control" id="anoJogo">
+                                            <select class="form-control" id="anoJogo" name="anoJogo">
                                             </select>
                                         </div>
                                     </div>
                                     <div class="col-6">
                                         <div class="form-group">
                                             <label for="faixaEtaria">Faixa Etária</label>
-                                            <select class="form-control" id="faixaEtaria">
+                                            <select class="form-control" id="faixaEtaria" name="faixaEtaria" required>
                                             </select>
                                         </div>
                                     </div>
@@ -46,8 +49,7 @@
                                     <div class="col-7">
                                         <div class="form-group">
                                             <label for="duracao">Duração</label>
-                                            <input type="number" class="form-control" id="duracao" name="duracao"
-                                                required>
+                                            <input type="number" class="form-control" id="duracao" name="duracao">
                                         </div>
                                     </div>
                                     <div class="col-5 nopadding">
@@ -58,15 +60,15 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="descricaoJogo">Descrição</label>
-                                    <textarea style="resize: none" class="form-control" id="descricaoJogo"
-                                        rows="4"></textarea>
+                                    <textarea style="resize: none" class="form-control" id="descricaoJogo" rows="4"
+                                        name="descricaoJogo" required></textarea>
                                 </div>
                                 <div class="form-group">
                                     <label for="temaJogo">Tema</label>
-                                    <select class="form-control" id="temaJogo">
+                                    <select class="form-control" id="temaJogo" name="temaJogo">
                                         <option value="">Selecione</option>
                                         <% for(tema of temas) { %>
-                                            <option value=<%= tema.id %>><%= tema.nome %></option>
+                                        <option value=<%= tema.id %>><%= tema.nome %></option>
                                         <% } %>
                                     </select>
                                 </div>
@@ -91,14 +93,14 @@
                                                 <div class="form-group pt-3">
                                                     <label for="minJogadores">Mínimo</label>
                                                     <input type="number" class="form-control" id="minJogadores"
-                                                        name="minJogadores" required>
+                                                        name="minJogadores">
                                                 </div>
                                             </div>
                                             <div class="col-6">
                                                 <div class="form-group pt-3">
                                                     <label for="maxJogadores">Máximo</label>
                                                     <input type="number" class="form-control" id="maxJogadores"
-                                                        name="maxJogadores" required>
+                                                        name="maxJogadores">
                                                 </div>
                                             </div>
                                         </div>
@@ -123,7 +125,7 @@
                                     <div class="card card-body cardCarJogo">
                                         <div class="form-group pt-3">
                                             <label for="pesoJogo">Peso (Dificuldade)</label>
-                                            <select class="form-control" id="pesoJogo">
+                                            <select class="form-control" id="pesoJogo" name="pesoJogo">
                                                 <option value="">Selecione</option>
                                                 <option value="1">Leve</option>
                                                 <option value="2">Médio-Leve</option>
@@ -134,25 +136,25 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="dominioJogo">Domínio (Categoria)</label>
-                                            <select class="form-control" id="dominioJogo">
+                                            <select class="form-control" id="dominioJogo" name="dominioJogo">
                                                 <option value="">Selecione</option>
                                                 <% for(dominio of dominios) { %>
-                                                    <option value=<%= dominio.id %>><%= dominio.nome %></option>
+                                                <option value=<%= dominio.id %>><%= dominio.nome %></option>
                                                 <% } %>
                                             </select>
                                         </div>
                                         <div class="form-group">
                                             <label for="mecanicaJogo">Mecânica</label>
-                                            <select class="form-control" id="mecanicaJogo">
+                                            <select class="form-control" id="mecanicaJogo" name="mecanicaJogo">
                                                 <option value="">Selecione</option>
                                                 <% for(mecanica of mecanicas) { %>
-                                                    <option value=<%= mecanica.id %>><%= mecanica.nome %></option>
+                                                <option value=<%= mecanica.id %>><%= mecanica.nome %></option>
                                                 <% } %>
                                             </select>
                                         </div>
                                         <div class="form-group">
                                             <label for="downtimeJogo">Downtime</label>
-                                            <select class="form-control" id="downtimeJogo">
+                                            <select class="form-control" id="downtimeJogo" name="downtimeJogo">
                                                 <option value="">Selecione</option>
                                                 <option value="1">Baixo</option>
                                                 <option value="2">Médio</option>
@@ -180,12 +182,12 @@
                                         <div class="form-group pt-3">
                                             <label for="tutorialJogo">Tutorial</label>
                                             <textarea style="resize: none" class="form-control" id="tutorialJogo"
-                                                rows="4"></textarea>
+                                                rows="4" name="tutorialJogo"></textarea>
                                         </div>
                                         <div class="form-group">
                                             <label for="regrasJogo">Regras</label>
-                                            <textarea style="resize: none" class="form-control" id="regrasJogo"
-                                                rows="4"></textarea>
+                                            <textarea style="resize: none" class="form-control" id="regrasJogo" rows="4"
+                                                name="regrasJogo"></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -201,9 +203,11 @@
                             <br>
                             <div class="image-upload">
                                 <label for="file-input">
-                                    <img src="/images/default/uploadphoto.svg" width="50%" alt="Botão Adicionar Foto Perfil Jogo" title="Clique para adionar a foto do perfil do jogo"/>
+                                    <img src="/images/default/uploadphoto.svg" width="50%"
+                                        alt="Botão Adicionar Foto Perfil Jogo"
+                                        title="Clique para adionar a foto do perfil do jogo" />
                                 </label>
-                                <input id="file-input" type="file" />
+                                <input id="file-input" type="file" name='fotoPerfilJogo' />
                             </div>
                         </div>
 

@@ -39,6 +39,10 @@ section#tema {
 	box-sizing: border-box;
 }
 
+#avatarEnd{
+	font-size: 0px;
+}
+
 #highLights{
 	height: 100px;
 	width: 200px;

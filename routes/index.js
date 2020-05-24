@@ -1,5 +1,18 @@
 var express = require('express');
 var router = express.Router();
+const multer = require('multer');
+const path = require('path');
+
+var storage = multer.diskStorage({
+    destination: function (res, file, cb) {
+        cb(null, path.join('uploads'))
+    },
+    filename: function (req, file, cb) {
+        cb(null, file.originalname)
+    }
+})
+
+var upload = multer({ storage: storage })
 
 // Controllers
 const homeController = require('../controllers/homeController');
@@ -19,9 +32,8 @@ router.get('/cadastro',homeController.cadastro);
 router.get('/login/error', homeController.loginError);
 router.get('/buscaEstado', localizacaoController.buscaEstado);
 router.get('/buscaCidade/:id', localizacaoController.buscaCidade);
-router.get('/buscaJogo', buscaController.jogos);
-router.get('/buscaUsuario', buscaController.usuarios);
-
+router.get('/buscaJogo/:tema/:mecanica/:dominio', buscaController.jogos);
+router.get('/buscaUsuario/:item', buscaController.usuarios);
 
 
 
@@ -47,6 +59,6 @@ router.post('/login', autorizaLogin.loginSession);
 router.post('/cadastro', formController.cadastroUsuario);
 router.post('/excluir', VerificaUsuarioLogado, formController.excluirUsuario);
 router.post('/editar', VerificaUsuarioLogado, formController.editarUsuario);
-router.post('/cadastroJogo', formController.cadastrarJogo);
+router.post('/cadastroJogo', VerificaUsuarioLogado, upload.any(), formController.cadastrarJogo);
 
 module.exports = router;

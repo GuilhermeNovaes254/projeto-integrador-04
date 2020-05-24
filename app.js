@@ -26,7 +26,7 @@ app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  next(createError(404));
+  res.status(404).send('Sorry cant find that! - 404');
 });
 
 app.use((req, res) => {
