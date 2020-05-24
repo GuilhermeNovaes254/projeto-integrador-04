@@ -8,8 +8,8 @@
 <section id="temaCadastroJogo"></section>
 <div class="container" id='containerTema'>
     <div class="text-right">
-        <label class="custom-file-upload" id='btnAltTema2'>
-            <input type="file" id='inputFileTemaJogo'/>
+        <label id='btnAltTema2'>
+            <input type="file" id='inputFileTemaJogo' name='FotoTemaJogo' />
             Alterar Tema
         </label>
     </div>
@@ -60,15 +60,15 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="descricaoJogo">Descrição</label>
-                                    <textarea style="resize: none" class="form-control" id="descricaoJogo"
-                                        rows="4" name="descricaoJogo" required></textarea>
+                                    <textarea style="resize: none" class="form-control" id="descricaoJogo" rows="4"
+                                        name="descricaoJogo" required></textarea>
                                 </div>
                                 <div class="form-group">
                                     <label for="temaJogo">Tema</label>
                                     <select class="form-control" id="temaJogo" name="temaJogo">
                                         <option value="">Selecione</option>
                                         <% for(tema of temas) { %>
-                                            <option value=<%= tema.id %>><%= tema.nome %></option>
+                                        <option value=<%= tema.id %>><%= tema.nome %></option>
                                         <% } %>
                                     </select>
                                 </div>
@@ -139,7 +139,7 @@
                                             <select class="form-control" id="dominioJogo" name="dominioJogo">
                                                 <option value="">Selecione</option>
                                                 <% for(dominio of dominios) { %>
-                                                    <option value=<%= dominio.id %>><%= dominio.nome %></option>
+                                                <option value=<%= dominio.id %>><%= dominio.nome %></option>
                                                 <% } %>
                                             </select>
                                         </div>
@@ -148,7 +148,7 @@
                                             <select class="form-control" id="mecanicaJogo" name="mecanicaJogo">
                                                 <option value="">Selecione</option>
                                                 <% for(mecanica of mecanicas) { %>
-                                                    <option value=<%= mecanica.id %>><%= mecanica.nome %></option>
+                                                <option value=<%= mecanica.id %>><%= mecanica.nome %></option>
                                                 <% } %>
                                             </select>
                                         </div>
@@ -186,8 +186,8 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="regrasJogo">Regras</label>
-                                            <textarea style="resize: none" class="form-control" id="regrasJogo"
-                                                rows="4" name="regrasJogo"></textarea>
+                                            <textarea style="resize: none" class="form-control" id="regrasJogo" rows="4"
+                                                name="regrasJogo"></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -203,9 +203,11 @@
                             <br>
                             <div class="image-upload">
                                 <label for="file-input">
-                                    <img src="/images/default/uploadphoto.svg" width="50%" alt="Botão Adicionar Foto Perfil Jogo" title="Clique para adionar a foto do perfil do jogo"/>
+                                    <img src="/images/default/uploadphoto.svg" width="50%"
+                                        alt="Botão Adicionar Foto Perfil Jogo"
+                                        title="Clique para adionar a foto do perfil do jogo" />
                                 </label>
-                                <input id="file-input" type="file" />
+                                <input id="file-input" type="file" name='FotoPerfilJogo' />
                             </div>
                         </div>
 
