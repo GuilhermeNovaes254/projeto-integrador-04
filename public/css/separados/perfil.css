@@ -10,6 +10,8 @@
   border-radius: 100px;
   max-width: 120px;
   max-height: 120px;
+  border: 5px solid #0F7A2F;
+  box-sizing: content-box;
 }
 
 .c-perfil{
@@ -23,7 +25,8 @@
     border-radius: 50px;
     background: #fff;
     box-sizing: border-box;
-    padding: 25px;
+    padding: 35px 25px;
+    margin-bottom: 25px;
   }
 
   .c-perfil__left{
@@ -32,8 +35,78 @@
   }
 
     .c-perfil__left--content{
-      
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 142.5%;
+      letter-spacing: -0.005em;
+      color: #000000;
+      font-family: 'Comfortaa', arial, sans-serif;
     }
+
+      .c-perfil__left--content h2{
+        font-style: normal;
+        font-weight: bold;
+        font-size: 18px;
+        font-family: 'Montserrat', arial, sans-serif;
+        padding: 15px 0 0 0;
+        line-height: 23px;
+        letter-spacing: -0.015em;
+        color: #F22441;
+      }
+
+      .c-perfil__left--content h3{
+        font-style: normal;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 18px;
+        letter-spacing: -0.015em;
+        color: #181718;
+        padding: 15px 0;
+        font-family: 'Montserrat', arial, sans-serif;
+      }
+
+      .c-perfil__left--content h4{
+        font-style: normal;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 18px;
+        letter-spacing: -0.015em;
+        color: #181718;
+        font-family: 'Montserrat', arial, sans-serif;
+        padding: 5px 0 15px 0;
+      }
+
+      .c-perfil__left--content h5{
+        background: #f22441;
+        background: -moz-linear-gradient(left,  #f22441 0%, #f22441 35%, #efa0ab 100%);
+        background: -webkit-linear-gradient(left,  #f22441 0%,#f22441 35%,#efa0ab 100%);
+        background: linear-gradient(to right,  #f22441 0%,#f22441 35%,#efa0ab 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f22441', endColorstr='#efa0ab',GradientType=1 );
+        color: #fff;
+        border-radius: 50px;
+        padding: 15px;
+        display: flex;
+        font-family: 'Montserrat', arial, sans-serif;
+        align-items: center;
+        font-size: 23px;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+      }
+
+      .c-perfil__left--content h5 i{
+          padding: 0 20px;
+        }
+
+      .c-perfil__left--content .c-social-perfil{
+        display: flex;
+        justify-content: space-evenly;
+        width: 80%;
+      }
+
+        .c-perfil__left--content .c-social-perfil i{
+          font-size: 22px;
+        }
 
     .c-perfil__left--description{
       display: flex;
@@ -44,6 +117,29 @@
   .c-perfil__right{
     
   }
+
+    .c-perfil__right h2.c-perfil__right--title{
+      background: #f22441;
+      background: -moz-linear-gradient(left,  #f22441 0%, #f22441 35%, #efa0ab 100%);
+      background: -webkit-linear-gradient(left,  #f22441 0%,#f22441 35%,#efa0ab 100%);
+      background: linear-gradient(to right,  #f22441 0%,#f22441 35%,#efa0ab 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f22441', endColorstr='#efa0ab',GradientType=1 );
+      color: #fff;
+      border-radius: 50px;
+      padding: 15px;
+      display: flex;
+      font-family: 'Montserrat', arial, sans-serif;
+      align-items: center;
+      font-size: 23px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+      .c-perfil__right h2.c-perfil__right--title i{
+        font-size: 30px;
+        padding: 0 20px;
+      }
+
     @media(min-width:768px){
 
       .c-perfil{
