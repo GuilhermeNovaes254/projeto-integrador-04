@@ -1,5 +1,18 @@
 var express = require('express');
 var router = express.Router();
+const multer = require('multer');
+const path = require('path');
+
+var storage = multer.diskStorage({
+    destination: function (res, file, cb) {
+        cb(null, path.join('uploads'))
+    },
+    filename: function (req, file, cb) {
+        cb(null, file.originalname)
+    }
+})
+
+var upload = multer({ storage: storage })
 
 // Controllers
 const homeController = require('../controllers/homeController');
@@ -46,6 +59,6 @@ router.post('/login', autorizaLogin.loginSession);
 router.post('/cadastro', formController.cadastroUsuario);
 router.post('/excluir', VerificaUsuarioLogado, formController.excluirUsuario);
 router.post('/editar', VerificaUsuarioLogado, formController.editarUsuario);
-router.post('/cadastroJogo', VerificaUsuarioLogado, formController.cadastrarJogo);
+router.post('/cadastroJogo', VerificaUsuarioLogado, upload.any(), formController.cadastrarJogo);
 
 module.exports = router;
