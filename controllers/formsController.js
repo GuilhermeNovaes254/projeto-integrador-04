@@ -156,6 +156,9 @@ const forms = {
             regrasJogo
         } = req.body;
 
+        let {files} = req;
+        const foto = files[0].originalname
+
         const jogo = await Jogo.create({
             nome: nomeJogo,
             ano: anoJogo,
@@ -172,7 +175,7 @@ const forms = {
             tema_id: temaJogo,
             dominio_id: dominioJogo,
             mecanica_id: mecanicaJogo,
-
+            foto
         })
 
         return res.redirect('/feeds');
