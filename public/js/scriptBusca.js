@@ -52,6 +52,7 @@ function consultaJogo(tema, dominio, mecanica) {
 
             var resposta = JSON.parse(xhr.responseText);
             console.log(resposta)
+            
            /* let table = document.getElementById("table");
 
             table.innerText = '';
@@ -82,6 +83,7 @@ function consultaJogo(tema, dominio, mecanica) {
 */
         } else {
             console.log('erro na Api')
+            console.log('TESTE')
         }
 
     };

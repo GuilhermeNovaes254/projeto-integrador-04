@@ -29,7 +29,7 @@ const buscaController = {
                 }).then(users => {
                         return res.status(200).json(users)
                 }).catch(error => {
-                        return res.status(200).json(error)
+                        return res.status(400).json(error)
                 })
 
 
@@ -37,69 +37,38 @@ const buscaController = {
         },
 
         jogos: async (req, res) => {
-                console.log('**** Passei no BuscaController ****')
+
                 let {
-                        tema, dominio,mecanica
+                        tema,
+                        dominio,
+                        mecanica
                 } = req.params;
 
-                console.log('passei no BuscaController')
-                
-                if(tema != 0){
-                        var temaData = await Tema.findOne({
-                                where: {
-                                        nome: tema
-                                }
-                        })
-                }
 
-                if(dominio != 0){
-                        var dominioData = await Dominio.findOne({
-                                where: {
-                                        nome: tema
-                                }
-                        })
-                }
+                if (tema != 0) {
 
-                if(mecanica != 0){
-                        let mecanicaData = await Mecanica.findOne({
-                                where: {
-                                        nome: tema
-                                }
-                        })
+                        // Não está funcionando
+                        var jogoTema = Jogo.findByPk(tema, {
+                                include: ["tema"]
+                        }).the(jogo => console.log(jogo.tema_id.nome))
+
                 }
 
 
-                let jogoTema = await Jogo.findAll({
-                        where: {
-                                tema_id: temaData
-                        },
-                        order: [
-                                ['nome', 'ASC']
-                        ]
-                });
+                if (dominio != 0) {
 
-                let jogoDomino = await Jogo.findAll({
-                        where: {
-                                dominio_id: dominioData
-                        },
-                        order: [
-                                ['nome', 'ASC']
-                        ]
-                });
 
-                let jogoMecanica = await Jogo.findAll({
-                        where: {
-                                mecanica_id: mecanicaData
-                        },
-                        order: [
-                                ['nome', 'ASC']
-                        ]
-                });
+                }
 
-                
+
+                if (mecanica != 0) {
+
+
+                }
+
                 res.send(jogoTema);
 
-                
+
         }
 
 }
