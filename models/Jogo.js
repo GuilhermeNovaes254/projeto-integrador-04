@@ -90,6 +90,10 @@ const Jogo = (sequelize, DataTypes) => {
             foto:{
                 type: DataTypes.STRING(500),
                 allowNull: true
+            },
+            fotoTema:{
+                type: DataTypes.STRING(500),
+                allowNull: true
             }
             
         },{

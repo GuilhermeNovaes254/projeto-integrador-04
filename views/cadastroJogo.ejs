@@ -7,19 +7,19 @@
 -->
 <section id="temaCadastroJogo"></section>
 <div class="container" id='containerTema'>
-    <div class="text-right">
-        <label id='btnAltTema2'>
-            <input type="file" id='inputFileTemaJogo' name='fotoTemaJogo' />
-            Alterar Tema
-        </label>
-    </div>
-    <div class="row">
-        <div class="col-12" id='areaCentralJogo'>
-            <h1 id='cadJogoH1'>Cadastro Jogo</h1>
-            <div class="row">
-                <div class="col-0 col-sm-12 col-md-1 col-lg-1"></div>
-                <div class="col-12 col-sm-12 col-md-8 col-lg-8" id='areaCinzaFormJogo'>
-                    <form action='/cadastroJogo' method='POST' enctype="multipart/form-data">
+    <form action='/cadastroJogo' method='POST' enctype="multipart/form-data">
+        <div class="text-right">
+            <label id='btnAltTema2'>
+                <input type="file" id='inputFileTemaJogo' name='fotoTemaJogo' />
+                Alterar Tema
+            </label>
+        </div>
+        <div class="row">
+            <div class="col-12" id='areaCentralJogo'>
+                <h1 id='cadJogoH1'>Cadastro Jogo</h1>
+                <div class="row">
+                    <div class="col-0 col-sm-12 col-md-1 col-lg-1"></div>
+                    <div class="col-12 col-sm-12 col-md-8 col-lg-8" id='areaCinzaFormJogo'>
                         <div class="row">
                             <div class="col-2 col-sm-2 col-md-1 col-lg-1"></div>
                             <div class="col-8 col-sm-8 col-md-10 col-lg-10" id='areaCentralFormJogo'>
@@ -195,41 +195,33 @@
                             <div class="col-2 col-sm-2 col-md-1 col-lg-1"></div>
                         </div>
 
-                </div>
-                <div class="col-0 col-sm-12 col-md-3 col-lg-3" id="addImg">
-                    <div class="row">
-                        <div class="col-12 text-center">
-                            <div>Foto Perfil Jogo</div>
-                            <br>
-                            <div class="image-upload">
-                                <label for="file-input">
-                                    <img src="/images/default/uploadphoto.svg" width="50%"
-                                        alt="Botão Adicionar Foto Perfil Jogo"
-                                        title="Clique para adionar a foto do perfil do jogo" />
-                                </label>
-                                <input id="file-input" type="file" name='fotoPerfilJogo' />
+                    </div>
+                    <div class="col-0 col-sm-12 col-md-3 col-lg-3" id="addImg">
+                        <div class="row">
+                            <div class="col-12 text-center">
+                                <div>Foto Perfil Jogo</div>
+                                <br>
+                                <div class="image-upload">
+                                    <label for="file-input">
+                                        <img src="/images/default/uploadphoto.svg" width="50%"
+                                            alt="Botão Adicionar Foto Perfil Jogo"
+                                            title="Clique para adionar a foto do perfil do jogo" />
+                                    </label>
+                                    <input id="file-input" type="file" name='fotoPerfilJogo' />
+                                </div>
                             </div>
-                        </div>
 
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 pt-5 text-center">
+                        <button type="submit" id='botaoCadastrar'>Cadastrar</button>
                     </div>
                 </div>
             </div>
-
-
-
-
-
-
-
-            <div class="row">
-                <div class="col-12 pt-5 text-center">
-                    <button type="submit" id='botaoCadastrar'>Cadastrar</button>
-                    </form>
-                </div>
-            </div>
         </div>
-
-    </div>
+    </form>
 </div>
 
 <script src="js/scriptCadastroJogo.js"></script>

@@ -23,7 +23,7 @@ const forms = {
             res.redirect('/login/error');
         }
 
-        let fotoAvatar ='images/icons/PerfilVermelho.png'
+        let fotoAvatar = 'images/icons/PerfilVermelho.png'
 
         Usuario.create({
             nome: nome,
@@ -44,7 +44,9 @@ const forms = {
         req.session.usuario = user;
 
         res.render('perfil', {
-            title: 'Perfil', apelidoUsuario:apelido, fotoUsuario:fotoAvatar
+            title: 'Perfil',
+            apelidoUsuario: apelido,
+            fotoUsuario: fotoAvatar
         });
     },
 
@@ -157,9 +159,24 @@ const forms = {
             regrasJogo
         } = req.body;
 
-        let {files} = req;
-        const foto = files[0].originalname
+        let {
+            files
+        } = req;
 
+        let foto = '';
+        let fotoTema = '';
+
+        for (let file of files) { 
+            if(file.fieldname == 'fotoTemaJogo'){
+                fotoTema = file.originalname
+            }
+            if(file.fieldname == 'fotoPerfilJogo'){
+                foto = file.originalname
+            }
+        }
+
+
+        console.log(fotoTema);
         const jogo = await Jogo.create({
             nome: nomeJogo,
             ano: anoJogo,
@@ -176,7 +193,8 @@ const forms = {
             tema_id: temaJogo,
             dominio_id: dominioJogo,
             mecanica_id: mecanicaJogo,
-            foto
+            foto,
+            fotoTema
         })
 
         return res.redirect('/feeds');

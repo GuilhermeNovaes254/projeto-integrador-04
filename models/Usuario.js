@@ -71,6 +71,10 @@ const Usuario = (sequelize, DataTypes) => {
                 model: "Cidade", 
                 key: "estado_id"
                 }
+            },
+            fotoTema:{
+                type: DataTypes.STRING(500),
+                allowNull: true
             }
         },{
             tableName: "usuario",
