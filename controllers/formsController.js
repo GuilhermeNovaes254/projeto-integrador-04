@@ -175,8 +175,6 @@ const forms = {
             }
         }
 
-
-        console.log(fotoTema);
         const jogo = await Jogo.create({
             nome: nomeJogo,
             ano: anoJogo,
