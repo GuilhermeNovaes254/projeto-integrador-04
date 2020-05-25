@@ -245,7 +245,14 @@ section#tema {
 	border-radius: 100px;
 	text-align: center;
 	margin-top: -350px;
+	border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
 
+}
+
+#inputFileTema{
+	display: none;
 }
 
 
