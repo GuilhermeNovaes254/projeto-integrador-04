@@ -76,7 +76,12 @@ const homeController = {
         res.render('perfil', {
             title: 'perfil',
             apelidoUsuario: req.session.usuario.apelido,
-            fotoUsuario
+            fotoUsuario,
+            nomeUsuario : req.session.usuario.nome,
+            apelidoUsuario : req.session.usuario.apelido,
+            descricaoUsuario : req.session.usuario.descricao,
+            cidadeUsuario : req.session.usuario.cidade,
+            estadoUsuario : req.session.usuario.estado
         });
     },
 
