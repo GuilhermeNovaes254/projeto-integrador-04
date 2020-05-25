@@ -99,3 +99,24 @@ for (let i = min2; i <= max2; i++) {
     opt.innerHTML = i;
     select2.appendChild(opt);
 }
+
+
+
+//carregar foto selecionada para perfil
+let fotoPerfil = document.getElementById('file-input');
+let imgFotoPerfil = document.getElementById('imgFotoPerfil');
+
+fotoPerfil.addEventListener('change', function (evt) {
+
+    var tgt = evt.target || window.event.srcElement,
+        files = tgt.files;
+
+    // FileReader support
+    if (FileReader && files && files.length) {
+        var fr = new FileReader();
+        fr.onload = function () {
+            imgFotoPerfil.src = fr.result;
+        }
+        fr.readAsDataURL(files[0]);
+    }
+})

@@ -23,6 +23,9 @@ for (let i = min2; i <= max2; i++) {
     select2.appendChild(opt);
 }
 
+
+
+//carregar foto selecionada para perfil e tema
 let fotoPerfil = document.getElementById('file-input');
 let imgFotoPerfil = document.getElementById('imgFotoPerfil');
 let fotoTema = document.getElementById('inputFileTemaJogo');
