@@ -48,9 +48,13 @@ const buscaController = {
                 if (tema != 0) {
 
                         // Não está funcionando
-                        var jogoTema = Jogo.findByPk(tema, {
-                                include: ["tema"]
-                        }).then(jogo => console.log(jogo.tema_id.nome)).catch(error => {
+                        var jogoTema = await Jogo.findAll({
+                                where: {
+                                    tema_id: tema
+                                }
+                        }).then(temas => {
+                                return res.status(200).json(temas)
+                        }).catch(error => {
                                 return res.status(400).json(error)
                         })
 

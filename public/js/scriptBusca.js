@@ -16,7 +16,7 @@ function consultaUsuario(usuario) {
             let cabecalho = "<table id='table'>";
 
             if (resposta.length == 0) {
-                table.innerHTML = table.innerHTML + "<h2>Sem dados</h2>"
+                table.innerHTML = table.innerHTML + "<h2>Não foram encontrados dados</h2>"
             }
 
             for (let i = 1; i <= resposta.length; i++) {
@@ -51,9 +51,10 @@ function consultaJogo(tema, dominio, mecanica) {
         if (xhr.status >= 200 && xhr.status < 300) {
 
             var resposta = JSON.parse(xhr.responseText);
-            console.log(resposta)
-            
-           /* let table = document.getElementById("table");
+
+            console.log("Retornou Algo")
+
+            let table = document.getElementById("table");
 
             table.innerText = '';
             table.innerHTML = '';
@@ -63,27 +64,77 @@ function consultaJogo(tema, dominio, mecanica) {
                 table.innerHTML = table.innerHTML + "<h2>Sem dados</h2>"
             }
 
-            
             for (let i = 1; i <= resposta.length; i++) {
 
                 let temaQuery;
                 let dominioQuery;
                 let mecanicaQuery;
 
-                let tabela1 = "<tr><img id='foto' src=" + resposta[0].foto + "></tr>";
-                let tabela2 = "<li>Nome: " + resposta[0].nome + "</li>";
-                let tabela3 = "<li>Faixa Etária: " + resposta[0].faixaEtaria + "</li>";
-                let tabela4 = "<li>Tema: " + temaQuery + "</li>";
-                let tabela5 = "<li>Domínio: " + dominioQuery + "</li>";
-                let tabela6 = "<li>Mecânica: " + mecanicaQuery + "</li>";
-                table.innerHTML = table.innerHTML + cabecalho + tabela1 + tabela2 + tabela3 + tabela4 + tabela5 + tabela6
+                table.innerHTML = table.innerHTML + cabecalho
+
+                if (resposta[0].foto != null) {
+                    let tabela1 = "<tr><img id='foto' src=" + resposta[0].foto + "></tr>";
+                    table.innerHTML = table.innerHTML + tabela1
+                }
+
+                let tabela3 = "<li>Nome: " + resposta[0].nome + "</li>";
+                table.innerHTML = table.innerHTML + tabela3
+
+                if (resposta[0].ano != null) {
+                    let tabela4 = "<li>Ano: " + resposta[0].ano + "</li>";
+                    table.innerHTML = table.innerHTML + tabela4
+                }
+
+                if (resposta[0].faixaEtaria != null) {
+                    let tabela5 = "<li>Faixa Etária: " + resposta[0].faixaEtaria + "</li>";
+                    table.innerHTML = table.innerHTML + tabela5
+                }
+
+                if (resposta[0].duracao != null) {
+                    let tabela6 = "<li>Duração: " + resposta[0].duracao + "</li>";
+                    table.innerHTML = table.innerHTML + tabela6
+                }
+
+                if (resposta[0].downtime != null) {
+                    let tabela7 = "<li>Downtime: " + resposta[0].downtime + "</li>";
+                    table.innerHTML = table.innerHTML + tabela7
+                }
+
+                if (resposta[0].notaJogo != null) {
+                    let tabela8 = "<li>Nota Jogo: " + resposta[0].notaJogo + "</li>";
+                    table.innerHTML = table.innerHTML + tabela8
+                }
+
+                if (resposta[0].qntMax != null) {
+                    let tabela9 = "<li>Máximo Jogadores: " + resposta[0].qntMax + "</li>";
+                    table.innerHTML = table.innerHTML + tabela9
+                }
+
+                if (resposta[0].qntMin != null) {
+                    let tabela10 = "<li>Mínimo Jogadores: " + resposta[0].qntMin + "</li>";
+                    table.innerHTML = table.innerHTML + tabela10
+                }
+
+                /*
+                let tabela11 = "<li>Tema: " + temaQuery + "</li>";
+                let tabela12 = "<li>Domínio: " + dominioQuery + "</li>";
+                let tabela13 = "<li>Mecânica: " + mecanicaQuery + "</li>";
+                table.innerHTML = table.innerHTML + tabela11 + tabela12 + tabela13
+                */
+
+               if (resposta[0].descricao != null) {
+                let tabela14 = "<li>Descrição: " + resposta[0].descricao + "</li>";
+                table.innerHTML = table.innerHTML + tabela14
+            }
+
+
+
 
             }
             table.innerHTML = table.innerHTML + "</table>"
-*/
+
         } else {
             console.log('erro na Api')
-            console.log('TESTE')
         }
 
     };
