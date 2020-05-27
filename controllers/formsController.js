@@ -8,6 +8,11 @@ const {
     Usuario
 } = require('../models')
 const bcrypt = require('bcrypt')
+const {
+    check,
+    validationResult,
+    body
+} = require('express-validator');
 
 const forms = {
 
@@ -142,60 +147,69 @@ const forms = {
     },
 
     cadastrarJogo: async (req, res) => {
-        const {
-            nomeJogo,
-            anoJogo,
-            faixaEtaria,
-            duracao,
-            descricaoJogo,
-            temaJogo,
-            minJogadores,
-            maxJogadores,
-            pesoJogo,
-            dominioJogo,
-            mecanicaJogo,
-            downtimeJogo,
-            tutorialJogo,
-            regrasJogo
-        } = req.body;
+        let listOfErrors = validationResult(req);
 
-        let {
-            files
-        } = req;
+        if (listOfErrors.isEmpty()) {
+            const {
+                nomeJogo,
+                anoJogo,
+                faixaEtaria,
+                duracao,
+                descricaoJogo,
+                temaJogo,
+                minJogadores,
+                maxJogadores,
+                pesoJogo,
+                dominioJogo,
+                mecanicaJogo,
+                downtimeJogo,
+                tutorialJogo,
+                regrasJogo
+            } = req.body;
 
-        let foto = '';
-        let fotoTema = '';
+            let {
+                files
+            } = req;
 
-        for (let file of files) { 
-            if(file.fieldname == 'fotoTemaJogo'){
-                fotoTema = file.originalname
+            let foto = '';
+            let fotoTema = '';
+
+            for (let file of files) {
+                if (file.fieldname == 'fotoTemaJogo') {
+                    fotoTema = file.originalname
+                }
+                if (file.fieldname == 'fotoPerfilJogo') {
+                    foto = file.originalname
+                }
             }
-            if(file.fieldname == 'fotoPerfilJogo'){
-                foto = file.originalname
-            }
+
+            const jogo = await Jogo.create({
+                nome: nomeJogo,
+                ano: anoJogo,
+                descricao: descricaoJogo,
+                faixaEtaria: faixaEtaria,
+                duracao: duracao,
+                downtime: downtimeJogo,
+                tutorial: tutorialJogo,
+                peso: pesoJogo,
+                regras: regrasJogo,
+                qntMax: maxJogadores,
+                qntMin: minJogadores,
+                aprovado: 0,
+                tema_id: temaJogo,
+                dominio_id: dominioJogo,
+                mecanica_id: mecanicaJogo,
+                foto,
+                fotoTema
+            })
+
+            return res.redirect('/feeds');
+
+
+        }else {
+            //fazer depois
+            return res.send("Erro");
         }
-
-        const jogo = await Jogo.create({
-            nome: nomeJogo,
-            ano: anoJogo,
-            descricao: descricaoJogo,
-            faixaEtaria: faixaEtaria,
-            duracao: duracao,
-            downtime: downtimeJogo,
-            tutorial: tutorialJogo,
-            peso: pesoJogo,
-            regras: regrasJogo,
-            qntMax: maxJogadores,
-            qntMin: minJogadores,
-            aprovado: 0,
-            tema_id: temaJogo,
-            dominio_id: dominioJogo,
-            mecanica_id: mecanicaJogo,
-            foto,
-            fotoTema
-        })
-
-        return res.redirect('/feeds');
     }
 
 

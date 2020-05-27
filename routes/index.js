@@ -2,6 +2,11 @@ var express = require('express');
 var router = express.Router();
 const multer = require('multer');
 const path = require('path');
+const {
+    check,
+    validationResult,
+    body
+} = require('express-validator');
 
 var storage = multer.diskStorage({
     destination: function (res, file, cb) {
@@ -12,7 +17,9 @@ var storage = multer.diskStorage({
     }
 })
 
-var upload = multer({ storage: storage })
+var upload = multer({
+    storage: storage
+})
 
 // Controllers
 const homeController = require('../controllers/homeController');
@@ -28,7 +35,7 @@ const VerificaMod = require('../middlewares/VerificaModerador');
 
 // Sem verificação 
 router.get('/', homeController.index);
-router.get('/cadastro',homeController.cadastro);
+router.get('/cadastro', homeController.cadastro);
 router.get('/login/error', homeController.loginError);
 router.get('/buscaEstado', localizacaoController.buscaEstado);
 router.get('/buscaCidade/:id', localizacaoController.buscaCidade);
@@ -39,14 +46,14 @@ router.get('/buscaUsuario/:item', buscaController.usuarios);
 
 // Com verificação
 router.get('/feeds', VerificaUsuarioLogado, homeController.feeds);
-router.get('/cadastroJogo',VerificaUsuarioLogado, homeController.cadastroJogo);
-router.get('/perfil', VerificaUsuarioLogado,homeController.perfil);
-router.get('/jogo',VerificaUsuarioLogado,homeController.jogo);
-router.get('/busca', VerificaUsuarioLogado,homeController.busca);
-router.get('/moduloDestaques', VerificaUsuarioLogado,homeController.moduloDestaques);
-router.get('/excluir', VerificaUsuarioLogado,homeController.excluir);
-router.get('/semPrivilegio', VerificaUsuarioLogado,homeController.semPrivilegio);
-router.get('/editar', VerificaUsuarioLogado,homeController.editar);
+router.get('/cadastroJogo', VerificaUsuarioLogado, homeController.cadastroJogo);
+router.get('/perfil', VerificaUsuarioLogado, homeController.perfil);
+router.get('/jogo', VerificaUsuarioLogado, homeController.jogo);
+router.get('/busca', VerificaUsuarioLogado, homeController.busca);
+router.get('/moduloDestaques', VerificaUsuarioLogado, homeController.moduloDestaques);
+router.get('/excluir', VerificaUsuarioLogado, homeController.excluir);
+router.get('/semPrivilegio', VerificaUsuarioLogado, homeController.semPrivilegio);
+router.get('/editar', VerificaUsuarioLogado, homeController.editar);
 
 // Páginas Restritas
 router.get('/perfilModerador', VerificaMod, VerificaUsuarioLogado, homeController.perfilModerador);
@@ -59,6 +66,12 @@ router.post('/login', autorizaLogin.loginSession);
 router.post('/cadastro', formController.cadastroUsuario);
 router.post('/excluir', VerificaUsuarioLogado, formController.excluirUsuario);
 router.post('/editar', VerificaUsuarioLogado, formController.editarUsuario);
-router.post('/cadastroJogo', VerificaUsuarioLogado, upload.any(), formController.cadastrarJogo);
+router.post('/cadastroJogo', VerificaUsuarioLogado, upload.any(), [
+        check("nomeJogo").isLength({min:2}),
+        check("temaJogo").isEmpty(),
+        check("dominioJogo".isEmpty()),
+        check("mecanicaJogo".isEmpty())
+    ],
+    formController.cadastrarJogo);
 
 module.exports = router;
