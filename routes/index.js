@@ -68,9 +68,14 @@ router.post('/excluir', VerificaUsuarioLogado, formController.excluirUsuario);
 router.post('/editar', VerificaUsuarioLogado, formController.editarUsuario);
 router.post('/cadastroJogo', VerificaUsuarioLogado, upload.any(), [
         check("nomeJogo").isLength({min:2}),
-        check("temaJogo").isEmpty(),
-        check("dominioJogo".isEmpty()),
-        check("mecanicaJogo".isEmpty())
+        check("temaJogo").isLength({min:1}),
+        check("dominioJogo").isLength({min:1}),
+        check("mecanicaJogo").isLength({min:1}),
+        check("duracao").toInt(),
+        check("downtimeJogo").toInt(),
+        check("pesoJogo").toInt(),
+        check("maxJogadores").toInt(),
+        check("minJogadores").toInt()
     ],
     formController.cadastrarJogo);
 
