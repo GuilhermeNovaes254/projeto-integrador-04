@@ -9,6 +9,7 @@ const {
         Jogo
 } = require('../models')
 
+
 const buscaController = {
 
         usuarios: async (req, res) => {
@@ -37,46 +38,55 @@ const buscaController = {
         },
 
         jogos: async (req, res) => {
-
+              try {  
                 let {
                         tema,
                         dominio,
                         mecanica
-                } = req.params;
+                } = req.query;
 
-
+                let  resTema = []
+                let  resDominio = []
+                let  resMecanica = []
+                               
                 if (tema != 0) {
 
-                        // Não está funcionando
-                        var jogoTema = await Jogo.findAll({
+                        resTema = await Jogo.findAll({
                                 where: {
-                                    tema_id: tema
+                                        tema_id: tema
                                 }
-                        }).then(temas => {
-                                return res.status(200).json(temas)
-                        }).catch(error => {
-                                return res.status(400).json(error)
                         })
 
                 }
 
 
                 if (dominio != 0) {
-
-
+                        
+                        resDominio = await Jogo.findAll({
+                                where: {
+                                        dominio_id: dominio
+                                }
+                        })
                 }
-
 
                 if (mecanica != 0) {
 
+                        resMecanica = await Jogo.findAll({
+                                where: {
+                                        mecanica_id: mecanica
+                                }
+                        })
 
                 }
 
-                res.send(jogoTema);
+                res.send({resTema, resDominio, resMecanica});
 
-
+                }catch(error){
+                        res.status(401)
+                }
         }
 
+        
 }
 
 module.exports = buscaController;

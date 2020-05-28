@@ -39,7 +39,7 @@ router.get('/cadastro', homeController.cadastro);
 router.get('/login/error', homeController.loginError);
 router.get('/buscaEstado', localizacaoController.buscaEstado);
 router.get('/buscaCidade/:id', localizacaoController.buscaCidade);
-router.get('/buscaJogo/:tema/:mecanica/:dominio', buscaController.jogos);
+router.get('/buscaJogo', buscaController.jogos);
 router.get('/buscaUsuario/:item', buscaController.usuarios);
 
 

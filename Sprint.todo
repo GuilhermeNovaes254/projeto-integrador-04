@@ -19,3 +19,13 @@
 ✔ Utilizar Migration como versionamento do banco de dados. @done(20-05-18 10:53)
 
 ☐ Ter alguma ferramenta de busca de alguma entidade (produtos, alunos, serviços, etc…)
+
+------------------------------------------------------------------------
+Falta terminar
+
+
+✔ Tela busca não está trazendo resultados de diferentes filtros. @done(20-05-28 20:03)
+
+☐ Filtrar resultados iguais resultantes da busca.
+ 
+☐ Alterar ids para nome em Tema, domínio e Mecanica.
