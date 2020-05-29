@@ -38,55 +38,100 @@ const buscaController = {
         },
 
         jogos: async (req, res) => {
-              try {  
-                let {
-                        tema,
-                        dominio,
-                        mecanica
-                } = req.query;
+                try {
+                        let {
+                                tema,
+                                dominio,
+                                mecanica
+                        } = req.query;
 
-                let  resTema = []
-                let  resDominio = []
-                let  resMecanica = []
-                               
-                if (tema != 0) {
+                        let busca = []
 
-                        resTema = await Jogo.findAll({
-                                where: {
-                                        tema_id: tema
-                                }
-                        })
+                        if (tema == 0 && dominio != 0 && mecanica != 0) {
+                                busca = await Jogo.findAll({
+                                        where: {
+                                                [Op.and]: [{
 
-                }
+                                                        dominio_id: dominio
+                                                }, {
+                                                        mecanica_id: mecanica
+                                                }]
+                                        }
+                                })
+                        }
+
+                        if (tema != 0 && dominio == 0 && mecanica != 0) {
+                                busca = await Jogo.findAll({
+                                        where: {
+                                                [Op.and]: [{
+                                                        tema_id: tema
+                                                }, {
+                                                        mecanica_id: mecanica
+                                                }]
+                                        }
+                                })
+                        }
+
+                        if (tema != 0 && dominio != 0 && mecanica == 0) {
+                                busca = await Jogo.findAll({
+                                        where: {
+                                                [Op.and]: [{
+                                                        tema_id: tema
+                                                }, {
+                                                        dominio_id: dominio
+                                                }]
+                                        }
+                                })
+                        }
+
+                        if (tema == 0 && dominio != 0 && mecanica == 0) {
+                                busca = await Jogo.findAll({
+                                        where: {
+                                                dominio_id: dominio
+                                        }
+                                })
+                        }
 
 
-                if (dominio != 0) {
-                        
-                        resDominio = await Jogo.findAll({
-                                where: {
-                                        dominio_id: dominio
-                                }
-                        })
-                }
+                        if (tema == 0 && dominio == 0 && mecanica != 0) {
+                                busca = await Jogo.findAll({
+                                        where: {
+                                                mecanica_id: mecanica
+                                        }
+                                })
+                        }
 
-                if (mecanica != 0) {
 
-                        resMecanica = await Jogo.findAll({
-                                where: {
-                                        mecanica_id: mecanica
-                                }
-                        })
+                        if (tema != 0 && dominio == 0 && mecanica == 0) {
+                                busca = await Jogo.findAll({
+                                        where: {
+                                                tema_id: tema
+                                        }
+                                })
+                        }
 
-                }
+                        if (tema != 0 && dominio != 0 && mecanica != 0) {
+                                busca = await Jogo.findAll({
+                                        where: {
+                                                [Op.and]: [{
+                                                        tema_id: tema
+                                                }, {
+                                                        dominio_id: dominio
+                                                }, {
+                                                        mecanica_id: mecanica
+                                                }]
+                                        }
+                                })
+                        }
 
-                res.send({resTema, resDominio, resMecanica});
+                        res.send(busca)
 
-                }catch(error){
+                } catch (error) {
                         res.status(401)
                 }
         }
 
-        
+
 }
 
 module.exports = buscaController;

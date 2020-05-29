@@ -27,6 +27,7 @@ const autorizaLogin = require('../controllers/autorizaLoginController');
 const formController = require('../controllers/formsController');
 const localizacaoController = require('../controllers/localizacaoController');
 const buscaController = require('../controllers/buscaController');
+const parametrosJogoController = require('../controllers/parametrosJogoController')
 
 // Middlewares
 const VerificaUsuarioLogado = require('../middlewares/VerificaUsuarioLogado');
@@ -41,7 +42,9 @@ router.get('/buscaEstado', localizacaoController.buscaEstado);
 router.get('/buscaCidade/:id', localizacaoController.buscaCidade);
 router.get('/buscaJogo', buscaController.jogos);
 router.get('/buscaUsuario/:item', buscaController.usuarios);
-
+router.get('/tema', parametrosJogoController.tema);
+router.get('/dominio', parametrosJogoController.dominio);
+router.get('/mecanica', parametrosJogoController.mecanica);
 
 
 // Com verificação
