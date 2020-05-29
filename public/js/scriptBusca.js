@@ -53,11 +53,11 @@ async function consultaJogo(tema, dominio, mecanica) {
         if (xhr.status >= 200 && xhr.status < 300) {
 
             var respostas = await JSON.parse(xhr.responseText);
-            
+
             let table = document.getElementById("table");
 
             table.innerText = '';
-            
+
 
             if (respostas.length == []) {
                 table.innerHTML = "<table id='table'>";
@@ -66,7 +66,7 @@ async function consultaJogo(tema, dominio, mecanica) {
             } else {
 
                 for (let i = 0; i < respostas.length; i++) {
-                    
+
                     table.innerHTML = table.innerHTML + "<table id='table'>";
 
                     if (respostas[i].foto != null) {
@@ -149,9 +149,9 @@ async function consultaJogo(tema, dominio, mecanica) {
                     }
 
                     table.innerHTML = table.innerHTML + "</table><div id='separador'></div>"
-                    
+
                 }
-                
+
             }
         } else {
             console.log('erro na Api')
@@ -178,15 +178,20 @@ function buscarDados() {
 
     document.getElementById("tipo").addEventListener('change', function () {
         tipo = document.getElementById("tipo").value;
+
     });
+
 
     document.getElementById('busca').addEventListener('click', function (evt) {
 
         usuario = document.getElementById("campoUsuario").value;
 
-        tema = document.getElementById("temaSelector").value;
-        dominio = document.getElementById("dominioSelector").value;
-        mecanica = document.getElementById("mecanicaSelector").value;
+        if (tipo == 'jogo') {
+            tema = document.getElementById("temaSelector").value;
+            dominio = document.getElementById("dominioSelector").value;
+            mecanica = document.getElementById("mecanicaSelector").value;
+        }
+
 
         if (tipo == 'usuario') {
             consultaUsuario(usuario);
@@ -202,13 +207,41 @@ function buscarDados() {
 /*********************************************************/
 // Controle do Front End 
 
-function tipoSelector() { // Quando o tipo é selecionado
+async function tipoSelector() { // Quando o tipo é selecionado
 
     document.getElementById('tipo').addEventListener('change', function () {
         console.log(this.value)
 
         if (this.value == 'jogo') {
 
+           
+            //Faz requisição Fetch em cada parametro 
+            async function consultaApi(param) {
+
+                let url = '/'+ param +'/todos'
+                let promise =  await fetch(url)
+                let nome = param +'Selector'
+                console.log(nome)
+                let selector = document.getElementById(nome);
+                
+                let promiseJson = await promise.json()
+                console.log(promiseJson)
+
+                selector.innerText = '';
+                selector.innerHTML = ''
+                selector.innerHTML = selector.innerHTML + '<option value=0>Selecionar</option>'
+
+                for(let item of promiseJson ){
+                     selector.innerHTML = selector.innerHTML + `<option value= ${item.id}>${item.nome}</option>` 
+                }
+
+            }
+
+            consultaApi('tema')
+            consultaApi('dominio')
+            consultaApi('mecanica')
+
+     
             document.getElementById('buscaUsuario').style.height = "0px";
 
             document.getElementById('buscaJogo').style.visibility = "visible";

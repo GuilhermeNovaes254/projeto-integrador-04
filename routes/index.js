@@ -45,6 +45,9 @@ router.get('/buscaUsuario/:item', buscaController.usuarios);
 router.get('/tema', parametrosJogoController.tema);
 router.get('/dominio', parametrosJogoController.dominio);
 router.get('/mecanica', parametrosJogoController.mecanica);
+router.get('/tema/todos', parametrosJogoController.temaTodos);
+router.get('/dominio/todos', parametrosJogoController.dominioTodos);
+router.get('/mecanica/todos', parametrosJogoController.mecanicaTodos);
 
 
 // Com verificação
