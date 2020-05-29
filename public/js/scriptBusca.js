@@ -8,7 +8,7 @@ function consultaUsuario(usuario) {
         if (xhr.status >= 200 && xhr.status < 300) {
             // Runs when the request is successful
             var resposta = JSON.parse(xhr.responseText);
-            console.log(resposta.length)
+            // console.log(resposta.length)
             let table = document.getElementById("table");
 
             table.innerText = '';
@@ -26,7 +26,7 @@ function consultaUsuario(usuario) {
                 let tabela1 = "<tr><img id='foto' src=" + resposta[i].foto + "></tr>";
                 let tabela2 = "<li>Nome: " + resposta[i].nome + "</li>";
                 let tabela3 = "<li>Apelido: " + resposta[i].apelido + "</li>";
-                table.innerHTML = table.innerHTML + cabecalho + tabela1 + tabela2 + tabela3
+                table.innerHTML = table.innerHTML + cabecalho + tabela1 + tabela2 + tabela3 + "</table><div id='separador'></div>"
 
             }
 
@@ -45,28 +45,29 @@ function consultaUsuario(usuario) {
 }
 
 
-function consultaJogo(tema, dominio, mecanica) {
+async function consultaJogo(tema, dominio, mecanica) {
 
-    xhr.onload = function () {
+    xhr.onload = async function () {
         table.innerText = "";
 
         if (xhr.status >= 200 && xhr.status < 300) {
 
-            var respostas = JSON.parse(xhr.responseText);
-            console.log(respostas)
+            var respostas = await JSON.parse(xhr.responseText);
+            
             let table = document.getElementById("table");
 
             table.innerText = '';
-            table.innerHTML = "<table id='table'>";
+            
 
-            table.innerHTML = "<table id='table'>"
             if (respostas.length == []) {
+                table.innerHTML = "<table id='table'>";
                 table.innerHTML = table.innerHTML + "<h2>Não foram encontrados dados</h2>"
                 table.innerHTML = table.innerHTML + "</table>"
             } else {
 
-
                 for (let i = 0; i < respostas.length; i++) {
+                    
+                    table.innerHTML = table.innerHTML + "<table id='table'>";
 
                     if (respostas[i].foto != null) {
                         let tabela1 = "<tr><img id='foto' src=" + respostas[i].foto + "></tr>";
@@ -111,23 +112,34 @@ function consultaJogo(tema, dominio, mecanica) {
                         table.innerHTML = table.innerHTML + tabela10
                     }
 
+                    /*************************/
+                    // Tema
+                    let tabela11 = ''
+                    let urlFetch = '/tema?id=' + respostas[i].tema_id
+                    var promise = await fetch(urlFetch)
 
-                   /* let urlFetch = '/tema?id=' + respostas[i].tema_id
-                    fetch(urlFetch, {
-                            method: 'get' // opcional 
-                        })
-                        .then(function (response) {
-                            // use a resposta 
-                        })
-                        .catch(function (err) {
-                            console.error(err);
-                        });
-*/
-                    let tabela11 = "<li>Tema: " + respostas[i].tema_id + "</li>";
-                    table.innerHTML = table.innerHTML + tabela11
+                    tabela11 = await promise.json();
+                    let tema = await tabela11.nome
 
-                    let tabela12 = "<li>Domínio: " + respostas[i].dominio_id + "</li>";
-                    let tabela13 = "<li>Mecânica: " + respostas[i].mecanica_id + "</li>";
+                    // Dominio
+                    let tabela12 = ''
+                    urlFetch = '/dominio?id=' + respostas[i].dominio_id
+                    promise = await fetch(urlFetch)
+
+                    tabela12 = await promise.json();
+                    let dominio = await tabela12.nome
+
+                    // Mecanica
+                    let tabela13 = ''
+                    urlFetch = '/mecanica?id=' + respostas[i].mecanica_id
+                    promise = await fetch(urlFetch)
+
+                    tabela13 = await promise.json();
+                    let mecanica = await tabela13.nome
+
+                    tabela11 = "<li>Tema: " + tema + "</li>";
+                    tabela12 = "<li>Domínio: " + dominio + "</li>";
+                    tabela13 = "<li>Mecânica: " + mecanica + "</li>";
                     table.innerHTML = table.innerHTML + tabela11 + tabela12 + tabela13
 
 
@@ -136,9 +148,10 @@ function consultaJogo(tema, dominio, mecanica) {
                         table.innerHTML = table.innerHTML + tabela14
                     }
 
-
+                    table.innerHTML = table.innerHTML + "</table><div id='separador'></div>"
+                    
                 }
-                table.innerHTML = table.innerHTML + "</table>"
+                
             }
         } else {
             console.log('erro na Api')

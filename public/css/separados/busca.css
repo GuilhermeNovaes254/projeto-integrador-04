@@ -58,6 +58,10 @@ button#busca {
   height: 25px;
 }
 
+#separador{
+  height: 20px;
+}
+
 /* Aspecto dos menus do formulário */
 
 #tipo,

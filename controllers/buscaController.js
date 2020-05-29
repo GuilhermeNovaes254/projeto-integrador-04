@@ -3,9 +3,6 @@ const Op = Sequelize.Op;
 
 const {
         Usuario,
-        Mecanica,
-        Tema,
-        Dominio,
         Jogo
 } = require('../models')
 
