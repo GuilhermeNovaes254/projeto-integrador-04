@@ -73,15 +73,18 @@ router.post('/cadastro', formController.cadastroUsuario);
 router.post('/excluir', VerificaUsuarioLogado, formController.excluirUsuario);
 router.post('/editar', VerificaUsuarioLogado, formController.editarUsuario);
 router.post('/cadastroJogo', VerificaUsuarioLogado, upload.any(), [
-        check("nomeJogo").isLength({min:2}),
-        check("temaJogo").isLength({min:1}),
-        check("dominioJogo").isLength({min:1}),
-        check("mecanicaJogo").isLength({min:1}),
-        check("duracao").toInt(),
+        check("nomeJogo").isLength({min:2, max:100}),
+        check("descricaoJogo").isLength({max:450}),
+        check("duracao").toInt().isLength({max:3}),
         check("downtimeJogo").toInt(),
+        check("tutorialJogo").isLength({max:450}),
         check("pesoJogo").toInt(),
-        check("maxJogadores").toInt(),
-        check("minJogadores").toInt()
+        check("regrasJogo").isLength({max:450}),
+        check("maxJogadores").toInt().isLength({max:2}),
+        check("minJogadores").toInt().isLength({max:2}),
+        check("temaJogo").toInt().isLength({min:1}),
+        check("dominioJogo").toInt().isLength({min:1}),
+        check("mecanicaJogo").toInt().isLength({min:1}),
     ],
     formController.cadastrarJogo);
 
