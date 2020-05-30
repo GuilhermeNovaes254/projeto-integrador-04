@@ -73,18 +73,28 @@ router.post('/cadastro', formController.cadastroUsuario);
 router.post('/excluir', VerificaUsuarioLogado, formController.excluirUsuario);
 router.post('/editar', VerificaUsuarioLogado, formController.editarUsuario);
 router.post('/cadastroJogo', VerificaUsuarioLogado, upload.any(), [
-        check("nomeJogo").isLength({min:2, max:100}),
-        check("descricaoJogo").isLength({max:450}),
-        check("duracao").toInt().isLength({max:3}),
+        check("nomeJogo").isLength({min:2, max:100})
+        .withMessage("O nome do Jogo deve conter no mínimo 2 e no máximo 100 caracteres!"),
+        check("descricaoJogo").isLength({max:450})
+        .withMessage("A descrição do Jogo deve conter no máximo 450 caracteres!"),
+        check("duracao").toInt().isLength({max:3})
+        .withMessage("A duração do Jogo deve conter no máximo 3 caracteres!"),
         check("downtimeJogo").toInt(),
-        check("tutorialJogo").isLength({max:450}),
+        check("tutorialJogo").isLength({max:450})
+        .withMessage("O tutorial do Jogo deve conter no máximo 450 caracteres!"),
         check("pesoJogo").toInt(),
-        check("regrasJogo").isLength({max:450}),
-        check("maxJogadores").toInt().isLength({max:2}),
-        check("minJogadores").toInt().isLength({max:2}),
-        check("temaJogo").toInt().isLength({min:1}),
-        check("dominioJogo").toInt().isLength({min:1}),
-        check("mecanicaJogo").toInt().isLength({min:1}),
+        check("regrasJogo").isLength({max:450})
+        .withMessage("As regras do Jogo deve conter no máximo 450 caracteres!"),
+        check("maxJogadores").toInt().isLength({max:2})
+        .withMessage("A quantidade máxima de jogadores deve conter no máximo 2 caracteres!"),
+        check("minJogadores").toInt().isLength({max:2})
+        .withMessage("A quantidade mínima de jogadores deve conter no máximo 2 caracteres!"),
+        check("temaJogo").toInt().isLength({min:1})
+        .withMessage("Tema é obrigatório!"),
+        check("dominioJogo").toInt().isLength({min:1})
+        .withMessage("Domínio é obrigatório!"),
+        check("mecanicaJogo").toInt().isLength({min:1})
+        .withMessage("Mecânica é obrigatório!"),
     ],
     formController.cadastrarJogo);
 

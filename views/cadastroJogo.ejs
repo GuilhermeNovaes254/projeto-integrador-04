@@ -205,14 +205,26 @@
                                     <label for="file-input">
                                         <img src="/images/default/uploadphoto.svg" width="50%"
                                             alt="Botão Adicionar Foto Perfil Jogo"
-                                            title="Clique para adionar a foto do perfil do jogo"
-                                            id="imgFotoPerfil" />
+                                            title="Clique para adionar a foto do perfil do jogo" id="imgFotoPerfil" />
                                     </label>
                                     <input id="file-input" type="file" name='fotoPerfilJogo' />
                                 </div>
                             </div>
 
                         </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 pt-5 text-center">
+                        <% if(typeof(errors) != "undefined"){ %>
+                        <p style="color:red">ERRO:</p>
+                        <ul>
+                            <% errors.forEach((error)=>{ %>
+                            <li><%= error.msg %></li>
+                            <% }) %>
+                        </ul>
+
+                        <% } %>
                     </div>
                 </div>
                 <div class="row">

@@ -147,6 +147,17 @@ const forms = {
     },
 
     cadastrarJogo: async (req, res) => {
+        var temas = await Tema.findAll();
+        var dominios = await Dominio.findAll();
+        var mecanicas = await Mecanica.findAll();
+
+        fotoUsuario = 'images/icons/PerfilVermelho.png'
+
+        if(req.session.usuario.foto != 'images/icons/PerfilVermelho.png'){
+            fotoUsuario = req.session.usuario.foto,
+            fotoUsuario
+        }
+
         let listOfErrors = validationResult(req);
 
         if (listOfErrors.isEmpty()) {
@@ -207,8 +218,14 @@ const forms = {
 
 
         }else {
-            //fazer depois
-            return res.send("Erro");
+            return res.render("cadastroJogo",  {errors:listOfErrors.errors,
+                title: 'Cadastro Jogo',
+                apelidoUsuario: req.session.usuario.apelido,
+                temas,
+                dominios,
+                mecanicas,
+                fotoUsuario
+            })
         }
     }
 
