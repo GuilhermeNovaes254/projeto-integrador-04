@@ -6,8 +6,8 @@ const {
     Mecanica,
     Tema,
     Usuario
-} = require('../models')
-const bcrypt = require('bcrypt')
+} = require('../models');
+const bcrypt = require('bcrypt');
 const {
     check,
     validationResult,
