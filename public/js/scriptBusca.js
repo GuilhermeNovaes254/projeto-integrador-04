@@ -45,7 +45,7 @@ function consultaUsuario(usuario) {
 }
 
 
-async function consultaJogo(tema, dominio, mecanica) {
+async function consultaJogo(tema, dominio, mecanica, nome) {
 
     xhr.onload = async function () {
         table.innerText = "";
@@ -160,8 +160,8 @@ async function consultaJogo(tema, dominio, mecanica) {
     };
 
 
-    let url = '/buscaJogo?tema=' + tema + '&dominio=' + dominio + '&mecanica=' + mecanica
-    console.log(url)
+    let url = '/buscaJogo?tema=' + tema + '&dominio=' + dominio + '&mecanica=' + mecanica + '&nome=' + nome
+   
     xhr.open('GET', url);
     xhr.send();
 
@@ -175,6 +175,7 @@ function buscarDados() {
     var tema;
     var dominio;
     var mecanica;
+    var nome;
 
     document.getElementById("tipo").addEventListener('change', function () {
         tipo = document.getElementById("tipo").value;
@@ -187,6 +188,7 @@ function buscarDados() {
         usuario = document.getElementById("campoUsuario").value;
 
         if (tipo == 'jogo') {
+            nome = document.getElementById("campoJogo").value;
             tema = document.getElementById("temaSelector").value;
             dominio = document.getElementById("dominioSelector").value;
             mecanica = document.getElementById("mecanicaSelector").value;
@@ -197,7 +199,7 @@ function buscarDados() {
             consultaUsuario(usuario);
 
         } else {
-            consultaJogo(tema, dominio, mecanica);
+            consultaJogo(tema, dominio, mecanica, nome);
         }
 
     })
@@ -241,7 +243,7 @@ async function tipoSelector() { // Quando o tipo é selecionado
             consultaApi('dominio')
             consultaApi('mecanica')
 
-     
+           
             document.getElementById('buscaUsuario').style.height = "0px";
 
             document.getElementById('buscaJogo').style.visibility = "visible";
@@ -251,6 +253,8 @@ async function tipoSelector() { // Quando o tipo é selecionado
         }
 
         if (this.value == 'usuario') {
+
+
             document.getElementById('buscaJogo').style.height = "0px";
 
             document.getElementById('buscaJogo').style.visibility = "hidden";

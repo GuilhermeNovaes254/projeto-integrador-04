@@ -36,7 +36,8 @@ const buscaController = {
 
         jogos: async (req, res) => {
                 try {
-                        let {
+                        let {   
+                                nome,
                                 tema,
                                 dominio,
                                 mecanica
@@ -44,70 +45,14 @@ const buscaController = {
 
                         let busca = []
 
-                        // if (tema == 0 && dominio != 0 && mecanica != 0) {
-                        //         busca = await Jogo.findAll({
-                        //                 where: {
-                        //                         [Op.and]: [{
-
-                        //                                 dominio_id: dominio
-                        //                         }, {
-                        //                                 mecanica_id: mecanica
-                        //                         }]
-                        //                 }
-                        //         })
-                        // }
-
-                        // if (tema != 0 && dominio == 0 && mecanica != 0) {
-                        //         busca = await Jogo.findAll({
-                        //                 where: {
-                        //                         [Op.and]: [{
-                        //                                 tema_id: tema
-                        //                         }, {
-                        //                                 mecanica_id: mecanica
-                        //                         }]
-                        //                 }
-                        //         })
-                        // }
-
-                        // if (tema != 0 && dominio != 0 && mecanica == 0) {
-                        //         busca = await Jogo.findAll({
-                        //                 where: {
-                        //                         [Op.and]: [{
-                        //                                 tema_id: tema
-                        //                         }, {
-                        //                                 dominio_id: dominio
-                        //                         }]
-                        //                 }
-                        //         })
-                        // }
-
-                        // if (tema == 0 && dominio != 0 && mecanica == 0) {
-                        //         busca = await Jogo.findAll({
-                        //                 where: {
-                        //                         dominio_id: dominio
-                        //                 }
-                        //         })
-                        // }
-
-
-                        // if (tema == 0 && dominio == 0 && mecanica != 0) {
-                        //         busca = await Jogo.findAll({
-                        //                 where: {
-                        //                         mecanica_id: mecanica
-                        //                 }
-                        //         })
-                        // }
-
-
-                        // if (tema != 0 && dominio == 0 && mecanica == 0) {
-                        //         busca = await Jogo.findAll({
-                        //                 where: {
-                        //                         tema_id: tema
-                        //                 }
-                        //         })
-                        // }
 
                         let whereClause ={};
+
+                        if (nome != '') {
+                                whereClause['nome'] = { 
+                                  $like$ : '%' + nome + '%'
+                                };
+                        }
 
                         if(tema != 0){
                                 whereClause['tema_id'] = tema;
@@ -124,6 +69,9 @@ const buscaController = {
                         console.log(whereClause);
                         // if (tema != 0 && dominio != 0 && mecanica != 0) {
                                 busca = await Jogo.findAll({
+                                        order: [
+                                                ['nome', 'ASC']
+                                              ],
                                         where: whereClause
                                 })
                         // }

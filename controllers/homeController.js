@@ -2,10 +2,8 @@ const {
     Cidade,
     Dominio,
     Estado,
-    Jogo,
     Mecanica,
     Tema,
-    Usuario
 } = require('../models')
 
 const homeController = {
