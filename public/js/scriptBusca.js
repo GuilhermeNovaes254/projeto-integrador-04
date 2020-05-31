@@ -8,7 +8,6 @@ function consultaUsuario(usuario) {
         if (xhr.status >= 200 && xhr.status < 300) {
             // Runs when the request is successful
             var resposta = JSON.parse(xhr.responseText);
-            // console.log(resposta.length)
             let table = document.getElementById("table");
 
             table.innerText = '';

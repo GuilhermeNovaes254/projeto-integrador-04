@@ -59,7 +59,6 @@ const forms = {
         let {
             nome
         } = req.body;
-        console.log(nome)
         const user = await Usuario.findOne({
             where: {
                 nome: nome

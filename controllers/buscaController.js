@@ -58,7 +58,6 @@ const buscaController = {
                         let whereClause = {};
 
                         if (nome != '') {
-                                console.log("daniele");
                                 whereClause['nome'] = {
                                         [Op.like]: '%' + nome + '%'
                                 };
@@ -76,15 +75,12 @@ const buscaController = {
                                 whereClause['mecanica_id'] = mecanica;
                         }
 
-                        console.log(whereClause);
-                        // if (tema != 0 && dominio != 0 && mecanica != 0) {
                         busca = await Jogo.findAll({
                                 order: [
                                         ['nome', 'ASC']
                                 ],
                                 where: whereClause
                         })
-                        // }
 
                         res.send(busca)
 
