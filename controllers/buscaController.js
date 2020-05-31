@@ -49,8 +49,9 @@ const buscaController = {
                         let whereClause ={};
 
                         if (nome != '') {
+                                console.log("daniele");
                                 whereClause['nome'] = { 
-                                  $like$ : '%' + nome + '%'
+                                  [Op.like]: '%' + nome + '%'
                                 };
                         }
 
