@@ -61,7 +61,6 @@ section#tema {
 }
 
 
-
 #botaoExcluir {
     box-sizing: border-box;
     background-color: #f22441;
@@ -72,13 +71,16 @@ section#tema {
     border-radius: 100px;
     align-items: center;
     text-align: center;
+    margin-top: 20px;
+    margin-left: 150px;
     margin-bottom: 50px;
     align-content: center;
     
 }
 
 form {
-    text-align: right;
-    padding-right: 50vh;
+    margin-left: 30px;
+    text-align: left;
+    max-width: 300px;
 }
 /*Fim excluir.ejs */
