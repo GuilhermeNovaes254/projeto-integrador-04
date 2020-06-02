@@ -33,6 +33,7 @@ const formController = require('../controllers/formsController');
 const localizacaoController = require('../controllers/localizacaoController');
 const buscaController = require('../controllers/buscaController');
 const parametrosJogoController = require('../controllers/parametrosJogoController')
+const aprovaPerfis = require('../controllers/aprovaPerfis')
 
 // Middlewares
 const VerificaUsuarioLogado = require('../middlewares/VerificaUsuarioLogado');
@@ -53,6 +54,8 @@ router.get('/mecanica', parametrosJogoController.mecanica);
 router.get('/tema/todos', parametrosJogoController.temaTodos);
 router.get('/dominio/todos', parametrosJogoController.dominioTodos);
 router.get('/mecanica/todos', parametrosJogoController.mecanicaTodos);
+router.get('/aprovaAdm',aprovaPerfis.perfilAdm)
+router.get('/aprovaMod',aprovaPerfis.perfilModerador)
 
 
 // Com verificação
