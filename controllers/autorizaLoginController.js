@@ -30,7 +30,7 @@ const autorizaLogin = {
         
 
         // redirecionar o suaurio para a rota '/feeds'*/
-        res.redirect('/busca')   
+        res.redirect('/perfilAdm')   
     }
 
 

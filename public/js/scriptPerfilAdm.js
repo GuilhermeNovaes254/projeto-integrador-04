@@ -8,6 +8,7 @@ async function listaPessoas(){
         if (xhr.status >= 200 && xhr.status < 300) {
             // Runs when the request is successful
             var resposta = JSON.parse(xhr.responseText);
+            console.log(resposta)
             let tbody = document.getElementsByTagName("tbody");
 
             tbody.innerText = '';
@@ -17,7 +18,7 @@ async function listaPessoas(){
 
                 tbody.innerHTML += '<tr>'
                 tbody.innerHTML += '<td><img src='+ resposta[i].foto +'alt="Avatar"></td>'
-                tbody.innerHTML += '<td>'+esposta[i].descricao +'</td>'
+                tbody.innerHTML += '<td>'+resposta[i].descricao +'</td>'
                 tbody.innerHTML += '<td>'
                 tbody.innerHTML += '<img id="lapisVerde" src="/images/icons/lapisVerde.png" alt="lapisVerde">'
                 tbody.innerHTML += '<img id="lapisVerde" src="/images/icons/Xis.png" alt="Xis">'
@@ -39,3 +40,5 @@ async function listaPessoas(){
     xhr.send();
 
 }
+
+document.addEventListener("onload", listaPessoas());

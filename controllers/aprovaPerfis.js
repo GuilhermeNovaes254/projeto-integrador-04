@@ -1,5 +1,3 @@
-const Sequelize = require('sequelize');
-
 const {
         Usuario,
         Jogo
@@ -13,17 +11,21 @@ const aprovaPerfis = {
                 let busca = [];
 
                 let whereClause = {};
-
+                
                 whereClause['aprovado'] = 0;
 
-                whereClause['cargo'] = 1;
+                whereClause['cargo'] = 1;   
+                console.log(whereClause)
 
                 busca = await Usuario.findAll({
                     order: [
                             ['nome', 'ASC']
                     ],
                     where: whereClause
+
+                
             })
+            res.send(busca)
 
             }catch(error) {
                 res.status(401)
@@ -43,6 +45,7 @@ const aprovaPerfis = {
                     order:[['nome','ASC']],
                     where: whereClause
                 })
+                res.send(busca)
 
             }catch(error) {
                 res.status(401)
