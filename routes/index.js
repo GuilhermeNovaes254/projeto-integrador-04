@@ -55,6 +55,7 @@ router.get('/tema/todos', parametrosJogoController.temaTodos);
 router.get('/dominio/todos', parametrosJogoController.dominioTodos);
 router.get('/mecanica/todos', parametrosJogoController.mecanicaTodos);
 router.get('/aprovaAdm',aprovaPerfis.perfilAdm)
+router.get('/adm/conta',aprovaPerfis.listaNumUsuarios)
 router.get('/aprovaMod',aprovaPerfis.perfilModerador)
 
 
@@ -70,8 +71,10 @@ router.get('/semPrivilegio', VerificaUsuarioLogado, homeController.semPrivilegio
 router.get('/editar', VerificaUsuarioLogado, homeController.editar);
 
 // Páginas Restritas
-router.get('/perfilModerador', VerificaMod, VerificaUsuarioLogado, homeController.perfilModerador);
-router.get('/perfilAdm', VerificaAdm, VerificaUsuarioLogado, homeController.perfilAdm);
+// router.get('/perfilModerador', VerificaMod, VerificaUsuarioLogado, homeController.perfilModerador);
+// router.get('/perfilAdm', VerificaAdm, VerificaUsuarioLogado, homeController.perfilAdm);
+router.get('/perfilModerador', VerificaUsuarioLogado, homeController.perfilModerador);
+router.get('/perfilAdm', VerificaUsuarioLogado, homeController.perfilAdm);
 
 // POSTS 
 router.post('/login', autorizaLogin.loginSession);

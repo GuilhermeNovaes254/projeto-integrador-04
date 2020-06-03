@@ -75,6 +75,10 @@ const buscaController = {
                                 whereClause['mecanica_id'] = mecanica;
                         }
 
+                        if (mecanica != 0) {
+                                whereClause['mecanica_id'] = mecanica;
+                        }
+
                         busca = await Jogo.findAll({
                                 order: [
                                         ['nome', 'ASC']

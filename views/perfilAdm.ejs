@@ -13,15 +13,15 @@
                 <div class="row">
                     <div class="col-sm" id="admCol1">
                         <div>Aprovados</div>
-                        <h1>2.455</h1>
+                        <h1  id='numAprovados'>2.455</h1>
                     </div>
                     <div class="col-sm" id="admCol2">
-                        <div>Pendentes</div>
-                        <h1>34.455</h1>
+                        <div > Pendentes</div>
+                        <h1 id='numPendentes'>34.455</h1>
                     </div>
                     <div class="col-sm" id="admCol3">
-                        <div>Rejeitados</div>
-                        <h1>455</h1>
+                        <div >Rejeitados</div>
+                        <h1 id='numRejeitados'>455</h1>
                     </div>
                 </div>
             </div>
@@ -30,21 +30,28 @@
             <table class="table" id="table">
                 <thead>
                     <tr>
-                        <th>Avatar</th>
-                        <th>Descrição</th>
+                        <th>Usuário</th>
+                        <th>Apelido</th>
                         <th>Aprovação</th>
                     </tr>
                 </thead>
-                <tbody>
-
+                <tbody id='dinamico'>
+                    <!-- <tr>
+                        <td><img src='/images/icons/lapisVerde.png' alt="Avatar"></td>
+                        <td>Descricao</td>'
+                        <td>
+                            <img id="lapisVerde" src="/images/icons/lapisVerde.png" alt="lapisVerde">
+                            <img id="lapisVerde" src="/images/icons/Xis.png" alt="Xis">
+                        </td>
+                    </tr> -->
                 </tbody>
             </table>
 
-            <div id='areaBotao'>
+            <!-- <div id='areaBotao'>
                 <form>
                     <button type="submit" id='botao'>Próximo</button>
                 </form>
-            </div>
+            </div> -->
         </div>
 
 
