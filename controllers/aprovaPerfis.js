@@ -42,8 +42,6 @@ const aprovaPerfis = {
 
             whereClause['aprovado'] = 0;
 
-
-
             busca = await Jogo.findAll({
                 order: [
                     ['nome', 'ASC']
@@ -93,7 +91,41 @@ const aprovaPerfis = {
         }
     },
 
-    listaNumJogos: async (req, res) => {},
+    listaNumJogos: async (req, res) => {
+        try {
+            let {estado} = req.query
+            let busca = []
+            console.log(estado)
+            let whereClause = {}
+
+            if (estado == 'pendente') {
+                whereClause['aprovado'] = 0;
+                busca = await Jogo.findAll({
+                    where: whereClause
+                })
+            }
+
+            if (estado == 'aprovado') {
+                whereClause['aprovado'] = 1;
+                busca = await Jogo.findAll({
+                    where: whereClause
+                })
+            }
+
+            if (estado == 'negado') {
+                whereClause['aprovado'] = 2;
+                busca = await Jogo.findAll({
+                    where: whereClause
+                })
+            }
+
+            busca
+            res.send(busca)
+
+        } catch (error) {
+            res.status(401)
+        }
+    },
 
 
 }

@@ -21,15 +21,15 @@
                 <div class="row">
                     <div class="col-sm" id="admCol1">
                         <div>Aprovados</div>
-                        <h1>2.455</h1>
+                        <h1 id='numAprovados'>2.455</h1>
                     </div>
                     <div class="col-sm" id="admCol2">
                         <div>Pendentes</div>
-                        <h1>1.455</h1>
+                        <h1 id='numPendentes'>1.455</h1>
                     </div>
                     <div class="col-sm" id="admCol3">
                         <div>Rejeitados</div>
-                        <h1>55</h1>
+                        <h1 id='numRejeitados'>55</h1>
                     </div>
                 </div>
             </div>
@@ -52,12 +52,12 @@
                 <thead>
                     <tr>
                         <th>   Avatar</th>
-                        <th>Descrição</th>
+                        <th>Nome</th>
                         <th>Aprovação   </th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
+                    <!-- <tr>
                         <td><img src="/images/fotos/avatar3.png" alt="Avatar"></td>
                         <td id='descricao'>
                             <p>ipsum dolor sit amet consectetur adipisicing elit.</p>
@@ -68,40 +68,18 @@
                             <img id="like" src='/images/icons/like.png' alt="Like">
                             <img id="like" src='/images/icons/dislike.png' alt="Dislike">
                         </td>
-                    </tr>
-                    <tr>
-                        <td><img src="/images/fotos/avatar4.png" alt="Avatar"></td>
-                        <td id='descricao'>
-                            <p>ipsum dolor sit amet consectetur adipisicing elit.</p>
-                            <p>Lorem ipsum dolor sit amet con elit.</p>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                        </td>
-                        <td>
-                            <img id="like" src='/images/icons/like.png' alt="Like">
-                            <img id="like" src='/images/icons/dislike.png' alt="Dislike">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><img src='/images/fotos/avatar3.png' alt="Avatar"></td>
-                        <td id='descricao'>
-                            <p>ipsum dolor sit amet consectetur adipisicing elit.</p>
-                            <p>Lorem ipsum dolor sit amet con elit.</p>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                        </td>
-                        <td>
-                            <img id="like" src='/images/icons/like.png' alt="Like">
-                            <img id="like" src='/images/icons/dislike.png' alt="Dislike">
-                        </td>
-                    </tr>
+                    </tr> -->
+
+
                 </tbody>
             </table>
 
 
-            <div id='areaBotao'>
+            <!-- <div id='areaBotao'>
                 <form>
                     <button type="submit" id='botao'>Próximo</button>
                 </form>
-            </div>
+            </div> -->
 
 
         </div>
@@ -112,4 +90,5 @@
 
 
 
+<script src='./js/scriptModerador.js'></script>
 <%- include('./partials/footer') %>

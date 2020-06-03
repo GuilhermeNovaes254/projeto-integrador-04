@@ -63,6 +63,8 @@ const buscaController = {
                                 };
                         }
 
+                        whereClause['aprovado'] = 1;
+
                         if (tema != 0) {
                                 whereClause['tema_id'] = tema;
                         }
