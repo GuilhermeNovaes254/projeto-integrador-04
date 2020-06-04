@@ -40,7 +40,7 @@ async function listaPessoas() {
 
                     y1.innerHTML = '<p>' + resposta[i].nome + '</p>'
                     y2.innerHTML = '<p>' + resposta[i].apelido + '</p>'
-                    y3.innerHTML = '<img id="lapisVerde" src="/images/icons/lapisVerde.png" alt="lapisVerde"></img><img id="lapisVerde" src="/images/icons/Xis.png" alt="Xis" >'
+                    y3.innerHTML = `<button type="button" id="botaoAprova" onclick='aprova(${resposta[i].id})'><img id="lapisVerde" src="/images/icons/lapisVerde.png" alt="lapisVerde"></img></button><button type="button" id="botaoAprova" onclick='aprova(${resposta[i].id})'><img id="lapisVerde" src="/images/icons/Xis.png" alt="Xis" ></button>`
 
                     x.appendChild(y1)
                     x.appendChild(y2)
@@ -94,3 +94,15 @@ window.addEventListener("load", function (event) {
     conta();
   
 });
+
+function aprova(id) {
+    fetch('/aprovaAdm/aprova?id=' + id)
+        .then(res=>console.log(res.status))
+        .then(location.reload(true))
+}
+
+function nega(id) {
+    fetch('/aprovaAdm/nega?id=' + id)
+    .then(res=>console.log(res.status))
+    .then(location.reload(true))
+}
