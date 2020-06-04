@@ -1,4 +1,5 @@
 let date = new Date();
+let formData = JSON.parse(formDataEnv);
 let min = 1900,
     max = date.getFullYear(),
     select = document.getElementById('anoJogo');
@@ -8,21 +9,31 @@ for (let i = min; i <= max; i++) {
     opt.value = i;
     opt.innerHTML = i;
     select.appendChild(opt);
-}
+};
 
 select.value = new Date().getFullYear();
+
+
+if (typeof(formData.anoJogo) != "undefined") {
+    select.value = formData.anoJogo;
+};
+
 
 let min2 = 0,
     max2 = 18,
     select2 = document.getElementById('faixaEtaria');
 
 for (let i = min2; i <= max2; i++) {
-    let opt = document.createElement('option');
-    opt.value = i;
-    opt.innerHTML = i;
-    select2.appendChild(opt);
-}
+    let opt2 = document.createElement('option');
+    opt2.value = i;
+    opt2.innerHTML = i;
+    select2.appendChild(opt2);
+};
 
+
+if (typeof(formData.faixaEtaria) != "undefined") {
+    select2.value = formData.faixaEtaria;
+};
 
 
 //carregar foto selecionada para perfil e tema

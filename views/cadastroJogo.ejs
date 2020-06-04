@@ -27,7 +27,7 @@
 
                                 <div class="form-group pt-3">
                                     <label for="nomeJogo">Nome</label>
-                                    <input type="text" class="form-control" id="nomeJogo" name="nomeJogo" required>
+                                        <input type="text" class="form-control" id="nomeJogo" name="nomeJogo" required value=<%= formData.nomeJogo %>>
                                 </div>
                                 <div class="row tamanho">
                                     <div class="col-6">
@@ -49,7 +49,8 @@
                                     <div class="col-7">
                                         <div class="form-group">
                                             <label for="duracao">Duração</label>
-                                            <input type="number" class="form-control" id="duracao" name="duracao">
+                                            <input type="number" class="form-control" id="duracao" name="duracao" value=<%= formData.duracao %>>
+                                            
                                         </div>
                                     </div>
                                     <div class="col-5 nopadding">
@@ -61,7 +62,7 @@
                                 <div class="form-group">
                                     <label for="descricaoJogo">Descrição</label>
                                     <textarea style="resize: none" class="form-control" id="descricaoJogo" rows="4"
-                                        name="descricaoJogo" required></textarea>
+                                        name="descricaoJogo" required><%= formData.descricaoJogo %></textarea>
                                 </div>
                                 <div class="form-group">
                                     <label for="temaJogo">Tema</label>
@@ -93,14 +94,14 @@
                                                 <div class="form-group pt-3">
                                                     <label for="minJogadores">Mínimo</label>
                                                     <input type="number" class="form-control" id="minJogadores"
-                                                        name="minJogadores">
+                                                        name="minJogadores" value=<%= formData.minJogadores %>>
                                                 </div>
                                             </div>
                                             <div class="col-6">
                                                 <div class="form-group pt-3">
                                                     <label for="maxJogadores">Máximo</label>
                                                     <input type="number" class="form-control" id="maxJogadores"
-                                                        name="maxJogadores">
+                                                        name="maxJogadores" value=<%= formData.maxJogadores %>>
                                                 </div>
                                             </div>
                                         </div>
@@ -216,7 +217,6 @@
                 </div>
                 <div class="row">
                     <div class="col-12 pt-5 text-center" id="erro">
-                        <%  console.log(typeof(errors)) %>
                         <% if(typeof(errors) != "undefined"){ %>
 
                         <p style="color:red">ERRO:</p>
@@ -239,6 +239,10 @@
     </form>
 </div>
 
+<script>
+     var formDataEnv = '<%- JSON.stringify(formData) %>'; 
+</script>
+       
 <script src="js/scriptCadastroJogo.js"></script>
 
 <%- include('./partials/footer') %>

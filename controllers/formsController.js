@@ -223,7 +223,8 @@ const forms = {
                 temas,
                 dominios,
                 mecanicas,
-                fotoUsuario
+                fotoUsuario,
+                formData: req.body
             })
         }
     }
