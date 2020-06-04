@@ -1,4 +1,3 @@
-
 let xhr = new XMLHttpRequest();
 
 async function listaPessoas() {
@@ -33,7 +32,7 @@ async function listaPessoas() {
 
             } else {
                 for (let i = 0; i < resposta.length; i++) {
-                    console.log('oi')
+
                     let x = document.createElement("TR");
                     let y1 = document.createElement("TD");
                     let y2 = document.createElement("TD");
@@ -41,7 +40,7 @@ async function listaPessoas() {
 
                     y1.innerHTML = '<p>' + resposta[i].foto + '</p>'
                     y2.innerHTML = '<p>' + resposta[i].nome + '</p>'
-                    y3.innerHTML = `<img id="like" src='/images/icons/like.png' alt="Like"><img id="like" src='/images/icons/dislike.png' alt="Dislike">`
+                    y3.innerHTML = `<button type="button" id="botaoAprova" onclick='aprova(${resposta[i].id})'><img id="like" src='/images/icons/like.png' alt="Like"></button><button type="button" id="botaoNega" onclick='nega(${resposta[i].id})'><img id="like" src='/images/icons/dislike.png' alt="Dislike"></button>`
 
                     x.appendChild(y1)
                     x.appendChild(y2)
@@ -68,31 +67,44 @@ async function listaPessoas() {
 
 function conta() {
     fetch('/mod/conta?estado=aprovado')
-    .then(resposta=>resposta.json())
-    .then(res=>{
-        let divAprovados = document.getElementById('numAprovados')
-        divAprovados.innerText = res.length 
-    })
-    
+        .then(resposta => resposta.json())
+        .then(res => {
+            let divAprovados = document.getElementById('numAprovados')
+            divAprovados.innerText = res.length
+        })
+
     fetch('/mod/conta?estado=pendente')
-    .then(resposta=>resposta.json())
-    .then(res=>{
-        let divPendentes = document.getElementById('numPendentes')
-        divPendentes.innerText = res.length 
-    })
+        .then(resposta => resposta.json())
+        .then(res => {
+            let divPendentes = document.getElementById('numPendentes')
+            divPendentes.innerText = res.length
+        })
 
     fetch('/mod/conta?estado=negado')
-    .then(resposta=>resposta.json())
-    .then(res=>{
-        let divNegados = document.getElementById('numRejeitados')
-        divNegados.innerText = res.length 
-    })
-      
+        .then(resposta => resposta.json())
+        .then(res => {
+            let divNegados = document.getElementById('numRejeitados')
+            divNegados.innerText = res.length
+        })
+
 
 }
+
 
 window.addEventListener("load", function (event) {
     listaPessoas();
     conta();
-  
+
 });
+
+function aprova(id) {
+    fetch('/aprovaMod/aprova?id=' + id)
+        .then(res=>console.log(res.status))
+        .then(location.reload(true))
+}
+
+function nega(id) {
+    fetch('/aprovaMod/nega?id=' + id)
+    .then(res=>console.log(res.status))
+    .then(location.reload(true))
+}
