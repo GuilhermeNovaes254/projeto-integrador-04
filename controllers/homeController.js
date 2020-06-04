@@ -58,7 +58,8 @@ const homeController = {
             temas,
             dominios,
             mecanicas,
-            fotoUsuario
+            fotoUsuario,
+            formData: req.body
         });
     },
 
