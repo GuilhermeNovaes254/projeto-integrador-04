@@ -27,7 +27,7 @@
 
                                 <div class="form-group pt-3">
                                     <label for="nomeJogo">Nome</label>
-                                        <input type="text" class="form-control" id="nomeJogo" name="nomeJogo" required value=<%= formData.nomeJogo %>>
+                                    <input type="text" class="form-control" id="nomeJogo" name="nomeJogo" required value=<%= formData.nomeJogo %>>
                                 </div>
                                 <div class="row tamanho">
                                     <div class="col-6">
@@ -49,8 +49,9 @@
                                     <div class="col-7">
                                         <div class="form-group">
                                             <label for="duracao">Duração</label>
-                                            <input type="number" class="form-control" id="duracao" name="duracao" value=<%= formData.duracao %>>
-                                            
+                                            <input type="number" class="form-control" id="duracao" name="duracao"
+                                                value=<%= formData.duracao %>>
+
                                         </div>
                                     </div>
                                     <div class="col-5 nopadding">
@@ -215,6 +216,13 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="row">
+                    <div class="col-12 pt-5 text-center">
+                        <button type="submit" id='botaoCadastrar'>Cadastrar</button>
+                    </div>
+                </div>
+
                 <div class="row">
                     <div class="col-12 pt-5 text-center" id="erro">
                         <% if(typeof(errors) != "undefined"){ %>
@@ -229,20 +237,15 @@
                         <% } %>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-12 pt-5 text-center">
-                        <button type="submit" id='botaoCadastrar'>Cadastrar</button>
-                    </div>
-                </div>
             </div>
         </div>
     </form>
 </div>
 
 <script>
-     var formDataEnv = '<%- JSON.stringify(formData) %>'; 
+    var formDataEnv = '<%- JSON.stringify(formData) %>';
 </script>
-       
+
 <script src="js/scriptCadastroJogo.js"></script>
 
 <%- include('./partials/footer') %>

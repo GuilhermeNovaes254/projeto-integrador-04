@@ -1,5 +1,6 @@
 let date = new Date();
 let formData = JSON.parse(formDataEnv);
+
 let min = 1900,
     max = date.getFullYear(),
     select = document.getElementById('anoJogo');
@@ -72,21 +73,3 @@ fotoTema.addEventListener('change', function (evt) {
         fr.readAsDataURL(files[0]);
     }
 })
-
-
-
-// let form = document.getElementById('form');
-// let diverro = document.getElementById('erro');
-// const onFormSubmit = (evt) => {
-    
-//     if (typeof(errors) != undefined) {
-//         //evt.preventDefault();
-//         diverro.innerHTML = `<p style="color:red">ERRO:</p><ul>`;
-//         errors.forEach((error) => {
-//             console.log("entrou");
-//             diverro.innerHTML += `<li>${error.msg}</li>`;
-//         })
-//         diverro.innerHTML += `</ul>`;
-//     }
-// };
-// form.addEventListener('submit', onFormSubmit);
