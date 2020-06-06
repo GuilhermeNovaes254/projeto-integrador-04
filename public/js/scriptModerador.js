@@ -11,7 +11,7 @@ async function listaPessoas() {
             //console.log(resposta.length)
             //let tbody = document.getElementById('dinamico');
             let tbody = document.getElementById('table').getElementsByTagName('tbody')[0]
-
+            tbody.innerHTML = ''
 
             if (resposta.length == 0) {
                 let x = document.createElement("TR");
@@ -97,14 +97,20 @@ window.addEventListener("load", function (event) {
 
 });
 
-function aprova(id) {
+async function aprova(id) {
     fetch('/aprovaMod/aprova?id=' + id)
-        .then(res=>console.log(res.status))
-        .then(location.reload(true))
+        .then(listaPessoas())
+        .then(conta())
+  
 }
 
-function nega(id) {
-    fetch('/aprovaMod/nega?id=' + id)
-    .then(res=>console.log(res.status))
-    .then(location.reload(true))
+async function nega(id) {
+
+    console.log(id)
+
+    fetch('/aprovaAdm/nega?id=' + id)
+        .then(conta())
+        .then(listaPessoas())
+
+    
 }

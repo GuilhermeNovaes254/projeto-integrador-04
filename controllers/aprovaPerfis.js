@@ -64,10 +64,9 @@ const aprovaPerfis = {
                 })
             }
 
-            busca
             res.send(busca)
 
-        } catch (error) {
+        } catch (error) { 
             res.status(401)
         }
     },
@@ -78,16 +77,17 @@ const aprovaPerfis = {
             let {
                 id
             } = req.query
+            let whereClause = {}
+            
+            whereClause['id'] = id
 
-            Usuario.update({
+            await Usuario.update({
                 aprovado: 1
             }, {
-                where: {
-                    id: id
-                }
+                where: whereClause
             })
 
-            res.status(200)
+            res('Aprovado')
 
         } catch (error) {
             res.status(401)
@@ -100,13 +100,15 @@ const aprovaPerfis = {
             let {
                 id
             } = req.query
+            let whereClause = {}
+            console.log('****************')
+            console.log('id = ' + id +' ************')
+            whereClause['id'] = id
 
-            Usuario.update({
+            await Usuario.update({
                 aprovado: 2
             }, {
-                where: {
-                    id: id
-                }
+                where: whereClause
             })
 
             res.status(200)
@@ -117,7 +119,7 @@ const aprovaPerfis = {
     },
 
 
-    //**** JOGOS ****
+    //  **** JOGOS ****
     perfilModerador: async (req, res) => {
         try {
             let busca = []
@@ -138,7 +140,6 @@ const aprovaPerfis = {
             res.status(401)
         }
     },
-
 
 
     listaNumJogos: async (req, res) => {
@@ -171,7 +172,6 @@ const aprovaPerfis = {
                 })
             }
 
-
             res.send(busca)
 
         } catch (error) {
@@ -185,7 +185,7 @@ const aprovaPerfis = {
                 id
             } = req.query
 
-            Jogo.update({
+            await Jogo.update({
                 aprovado: 1
             }, {
                 where: {
@@ -207,9 +207,9 @@ const aprovaPerfis = {
                 id
             } = req.query
 
-            Jogo.update({
+            await Jogo.update({
                 aprovado: 2
-            }, {
+            },{
                 where: {
                     id: id
                 }
@@ -221,11 +221,6 @@ const aprovaPerfis = {
             res.status(401)
         }
     },
-
-
-
-
-
 
 }
 

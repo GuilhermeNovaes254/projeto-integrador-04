@@ -11,13 +11,17 @@ async function listaPessoas() {
             //console.log(resposta.length)
             //let tbody = document.getElementById('dinamico');
             let tbody = document.getElementById('table').getElementsByTagName('tbody')[0]
+            console.log(tbody)
 
-
+            // for (let i = 0; i < tbody.rows.length; i++) {
+            //     tbody.removeChild(tbody.childNodes[i])
+            // }
+            tbody.innerHTML = ''
             if (resposta.length == 0) {
-                let x = document.createElement("TR");
-                let y1 = document.createElement("TD");
-                let y2 = document.createElement("TD");
-                let y3 = document.createElement("TD");
+                x = document.createElement("TR");
+                y1 = document.createElement("TD");
+                y2 = document.createElement("TD");
+                y3 = document.createElement("TD");
 
                 y1.innerHTML = '<p>  </p>'
                 y2.innerHTML = '<p>Sem ações necessárias</p>'
@@ -33,10 +37,10 @@ async function listaPessoas() {
             } else {
                 for (let i = 0; i < resposta.length; i++) {
 
-                    let x = document.createElement("TR");
-                    let y1 = document.createElement("TD");
-                    let y2 = document.createElement("TD");
-                    let y3 = document.createElement("TD");
+                    x = document.createElement("TR");
+                    y1 = document.createElement("TD");
+                    y2 = document.createElement("TD");
+                    y3 = document.createElement("TD");
 
                     y1.innerHTML = '<p>' + resposta[i].nome + '</p>'
                     y2.innerHTML = '<p>' + resposta[i].apelido + '</p>'
@@ -66,43 +70,50 @@ async function listaPessoas() {
 
 function conta() {
     fetch('/adm/conta?estado=aprovado')
-    .then(resposta=>resposta.json())
-    .then(res=>{
-        let divAprovados = document.getElementById('numAprovados')
-        divAprovados.innerText = res.length 
-    })
-    
+        .then(resposta => resposta.json())
+        .then(res => {
+            let divAprovados = document.getElementById('numAprovados')
+            divAprovados.innerText = res.length
+        })
+
     fetch('/adm/conta?estado=pendente')
-    .then(resposta=>resposta.json())
-    .then(res=>{
-        let divPendentes = document.getElementById('numPendentes')
-        divPendentes.innerText = res.length 
-    })
+        .then(resposta => resposta.json())
+        .then(res => {
+            let divPendentes = document.getElementById('numPendentes')
+            divPendentes.innerText = res.length
+        })
 
     fetch('/adm/conta?estado=negado')
-    .then(resposta=>resposta.json())
-    .then(res=>{
-        let divNegados = document.getElementById('numRejeitados')
-        divNegados.innerText = res.length 
-    })
-      
+        .then(resposta => resposta.json())
+        .then(res => {
+            let divNegados = document.getElementById('numRejeitados')
+            divNegados.innerText = res.length
+        })
+
 
 }
 
 window.addEventListener("load", function (event) {
     listaPessoas();
     conta();
-  
+
 });
 
-function aprova(id) {
+async function aprova(id) {
+
+    console.log(id)
+
     fetch('/aprovaAdm/aprova?id=' + id)
-        .then(res=>console.log(res.status))
-        .then(location.reload(true))
+        .then(conta())
+        .then(listaPessoas())
+
 }
 
-function nega(id) {
+async function nega(id) {
+
+    console.log(id)
+
     fetch('/aprovaAdm/nega?id=' + id)
-    .then(res=>console.log(res.status))
-    .then(location.reload(true))
+        .then(conta())
+        .then(listaPessoas())
 }
