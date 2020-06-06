@@ -158,7 +158,6 @@ const forms = {
         }
 
         let listOfErrors = validationResult(req);
-        console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
 
         if (listOfErrors.isEmpty()) {
             const {
