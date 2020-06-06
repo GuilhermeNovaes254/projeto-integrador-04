@@ -87,7 +87,7 @@ const aprovaPerfis = {
                 where: whereClause
             })
 
-            res('Aprovado')
+            return res.redirect('/perfilAdm')
 
         } catch (error) {
             res.status(401)
@@ -111,7 +111,8 @@ const aprovaPerfis = {
                 where: whereClause
             })
 
-            res.status(200)
+            return res.redirect('/perfilAdm')
+
 
         } catch (error) {
             res.status(401)

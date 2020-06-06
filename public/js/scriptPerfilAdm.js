@@ -44,7 +44,14 @@ async function listaPessoas() {
 
                     y1.innerHTML = '<p>' + resposta[i].nome + '</p>'
                     y2.innerHTML = '<p>' + resposta[i].apelido + '</p>'
-                    y3.innerHTML = `<button type="button" id="botaoAprova" onclick='aprova(${resposta[i].id})'><img id="lapisVerde" src="/images/icons/lapisVerde.png" alt="lapisVerde"></img></button><button type="button" id="botaoAprova" onclick='aprova(${resposta[i].id})'><img id="lapisVerde" src="/images/icons/Xis.png" alt="Xis" ></button>`
+                    y3.innerHTML = `<a href='/aprovaAdm/aprova?id=${resposta[i].id}' id="botaoAprova">
+                                        <img id="lapisVerde" src="/images/icons/lapisVerde.png" alt="lapisVerde">
+                                    </a>
+                
+                                    <a href='/aprovaAdm/nega?id=${resposta[i].id}' id="botaoAprova">
+                                        <img id="lapisVerde" src="/images/icons/Xis.png" alt="Xis" >
+                                    </a>`
+                                       
 
                     x.appendChild(y1)
                     x.appendChild(y2)
