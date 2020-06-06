@@ -175,6 +175,8 @@ const aprovaPerfis = {
 
             res.send(busca)
 
+            
+
         } catch (error) {
             res.status(401)
         }
@@ -194,7 +196,7 @@ const aprovaPerfis = {
                 }
             })
 
-            res.status(200)
+            return res.redirect('/perfilModerador')
 
         } catch (error) {
             res.status(401)
@@ -216,7 +218,7 @@ const aprovaPerfis = {
                 }
             })
 
-            res.status(200)
+            return res.redirect('/perfilModerador')
 
         } catch (error) {
             res.status(401)

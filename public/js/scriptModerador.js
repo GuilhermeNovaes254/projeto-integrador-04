@@ -40,7 +40,15 @@ async function listaPessoas() {
 
                     y1.innerHTML = '<p>' + resposta[i].foto + '</p>'
                     y2.innerHTML = '<p>' + resposta[i].nome + '</p>'
-                    y3.innerHTML = `<button type="button" id="botaoAprova" onclick='aprova(${resposta[i].id})'><img id="like" src='/images/icons/like.png' alt="Like"></button><button type="button" id="botaoNega" onclick='nega(${resposta[i].id})'><img id="like" src='/images/icons/dislike.png' alt="Dislike"></button>`
+                    y3.innerHTML = `<a href='/aprovaMod/aprova?id=${resposta[i].id}' id="botaoAprova">
+                                        <img id="like" src='/images/icons/like.png' alt="OK">
+                                    </a>
+
+                                    <a href='/aprovaMod/nega?id=${resposta[i].id}' id="botaoAprova">
+                                        <img id="like" src='/images/icons/dislike.png' alt="NOK" >
+                                    </a>`
+                    
+
 
                     x.appendChild(y1)
                     x.appendChild(y2)
@@ -90,27 +98,8 @@ function conta() {
 
 }
 
-
 window.addEventListener("load", function (event) {
     listaPessoas();
     conta();
 
 });
-
-async function aprova(id) {
-    fetch('/aprovaMod/aprova?id=' + id)
-        .then(listaPessoas())
-        .then(conta())
-  
-}
-
-async function nega(id) {
-
-    console.log(id)
-
-    fetch('/aprovaAdm/nega?id=' + id)
-        .then(conta())
-        .then(listaPessoas())
-
-    
-}

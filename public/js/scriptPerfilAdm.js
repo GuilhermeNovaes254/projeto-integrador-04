@@ -105,22 +105,3 @@ window.addEventListener("load", function (event) {
     conta();
 
 });
-
-async function aprova(id) {
-
-    console.log(id)
-
-    fetch('/aprovaAdm/aprova?id=' + id)
-        .then(conta())
-        .then(listaPessoas())
-
-}
-
-async function nega(id) {
-
-    console.log(id)
-
-    fetch('/aprovaAdm/nega?id=' + id)
-        .then(conta())
-        .then(listaPessoas())
-}
