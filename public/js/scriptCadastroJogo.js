@@ -27,7 +27,11 @@ let min2 = 0,
 for (let i = min2; i <= max2; i++) {
     let opt2 = document.createElement('option');
     opt2.value = i;
-    opt2.innerHTML = i;
+    if(i === 0){
+        opt2.innerHTML = "Livre";
+    }else{
+        opt2.innerHTML = i;
+    }
     select2.appendChild(opt2);
 };
 
