@@ -1,6 +1,14 @@
 let date = new Date();
 let formData = JSON.parse(formDataEnv);
 
+//variaveis DOM
+let selectTema = document.getElementById('temaJogo');
+let selectPeso = document.getElementById('pesoJogo');
+let selectDominio = document.getElementById('dominioJogo');
+let selectMecanica = document.getElementById('mecanicaJogo');
+let selectDownTime = document.getElementById('downtimeJogo');
+
+//preenchendo campo anoJogo
 let min = 1900,
     max = date.getFullYear(),
     select = document.getElementById('anoJogo');
@@ -20,6 +28,8 @@ if (typeof(formData.anoJogo) != "undefined") {
 };
 
 
+
+//preenchendo campo faixaEtaria
 let min2 = 0,
     max2 = 18,
     select2 = document.getElementById('faixaEtaria');
@@ -39,6 +49,29 @@ for (let i = min2; i <= max2; i++) {
 if (typeof(formData.faixaEtaria) != "undefined") {
     select2.value = formData.faixaEtaria;
 };
+
+//populando manualmente outros combos
+if (typeof(formData.temaJogo) != "undefined") {
+    selectTema.value = formData.temaJogo;
+};
+
+if (typeof(formData.pesoJogo) != "undefined") {
+    selectPeso.value = formData.pesoJogo;
+};
+
+if (typeof(formData.dominioJogo) != "undefined") {
+    selectDominio.value = formData.dominioJogo;
+};
+
+if (typeof(formData.mecanicaJogo) != "undefined") {
+    selectMecanica.value = formData.mecanicaJogo;
+};
+
+if (typeof(formData.downtimeJogo) != "undefined") {
+    selectDownTime.value = formData.downtimeJogo;
+};
+
+
 
 
 //carregar foto selecionada para perfil e tema
