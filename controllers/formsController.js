@@ -149,12 +149,27 @@ const forms = {
         var temas = await Tema.findAll();
         var dominios = await Dominio.findAll();
         var mecanicas = await Mecanica.findAll();
+        let foto = '';
+        let fotoTema = '';
 
         fotoUsuario = 'images/icons/PerfilVermelho.png'
 
         if(req.session.usuario.foto != 'images/icons/PerfilVermelho.png'){
             fotoUsuario = req.session.usuario.foto,
             fotoUsuario
+        }
+
+        let {
+            files
+        } = req;
+
+        for (let file of files) {
+            if (file.fieldname == 'fotoTemaJogo') {
+                fotoTema = file.originalname
+            }
+            if (file.fieldname == 'fotoPerfilJogo') {
+                foto = file.originalname
+            }
         }
 
         let listOfErrors = validationResult(req);
@@ -176,22 +191,6 @@ const forms = {
                 tutorialJogo,
                 regrasJogo
             } = req.body;
-
-            let {
-                files
-            } = req;
-
-            let foto = '';
-            let fotoTema = '';
-
-            for (let file of files) {
-                if (file.fieldname == 'fotoTemaJogo') {
-                    fotoTema = file.originalname
-                }
-                if (file.fieldname == 'fotoPerfilJogo') {
-                    foto = file.originalname
-                }
-            }
 
             const jogo = await Jogo.create({
                 nome: nomeJogo,
@@ -224,7 +223,9 @@ const forms = {
                 dominios,
                 mecanicas,
                 fotoUsuario,
-                formData: req.body
+                formData: req.body,
+                foto,
+                fotoTema
             })
         }
     }

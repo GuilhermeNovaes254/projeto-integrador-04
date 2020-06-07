@@ -35,6 +35,10 @@ const buscaController = require('../controllers/buscaController');
 const parametrosJogoController = require('../controllers/parametrosJogoController')
 const aprovaPerfis = require('../controllers/aprovaPerfis')
 
+//API busca imagem
+const imagemController = require('../controllers/imagemController');
+router.get('/buscaImagem/:nomeImagem', imagemController.buscaImagem);
+
 // Middlewares
 const VerificaUsuarioLogado = require('../middlewares/VerificaUsuarioLogado');
 const VerificaAdm = require('../middlewares/VerificaAdm');

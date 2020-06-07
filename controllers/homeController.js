@@ -44,6 +44,8 @@ const homeController = {
         var temas = await Tema.findAll();
         var dominios = await Dominio.findAll();
         var mecanicas = await Mecanica.findAll();
+        let foto;
+        let fotoTema;
 
         fotoUsuario = 'images/icons/PerfilVermelho.png'
 
@@ -59,7 +61,9 @@ const homeController = {
             dominios,
             mecanicas,
             fotoUsuario,
-            formData: req.body
+            formData: req.body,
+            foto,
+            fotoTema
         });
     },
 

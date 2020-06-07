@@ -1,5 +1,7 @@
 let date = new Date();
 let formData = JSON.parse(formDataEnv);
+let foto1 = formFoto;
+let fotoTema1 = formFotoTema;
 
 //variaveis DOM
 let selectTema = document.getElementById('temaJogo');
@@ -7,6 +9,10 @@ let selectPeso = document.getElementById('pesoJogo');
 let selectDominio = document.getElementById('dominioJogo');
 let selectMecanica = document.getElementById('mecanicaJogo');
 let selectDownTime = document.getElementById('downtimeJogo');
+let fotoPerfil = document.getElementById('file-input');
+let imgFotoPerfil = document.getElementById('imgFotoPerfil');
+let fotoTema = document.getElementById('inputFileTemaJogo');
+let imgFotoTema = document.getElementById('temaCadastroJogo');
 
 //preenchendo campo anoJogo
 let min = 1900,
@@ -72,14 +78,7 @@ if (typeof(formData.downtimeJogo) != "undefined") {
 };
 
 
-
-
-//carregar foto selecionada para perfil e tema
-let fotoPerfil = document.getElementById('file-input');
-let imgFotoPerfil = document.getElementById('imgFotoPerfil');
-let fotoTema = document.getElementById('inputFileTemaJogo');
-let imgFotoTema = document.getElementById('temaCadastroJogo');
-
+//carregar foto selecionada para perfil
 fotoPerfil.addEventListener('change', function (evt) {
 
     var tgt = evt.target || window.event.srcElement,
@@ -95,7 +94,7 @@ fotoPerfil.addEventListener('change', function (evt) {
     }
 })
 
-
+//carregar foto selecionada para tema
 fotoTema.addEventListener('change', function (evt) {
 
     var tgt = evt.target || window.event.srcElement,
@@ -110,3 +109,13 @@ fotoTema.addEventListener('change', function (evt) {
         fr.readAsDataURL(files[0]);
     }
 })
+
+
+//populando manualmente fotos
+if (typeof(foto1) != "undefined" && foto1.length > 0) {
+    imgFotoPerfil.src = '/buscaImagem/' + foto1;
+};
+
+if (typeof(fotoTema1) != "undefined" && fotoTema1.length > 0) {
+    imgFotoTema.style.backgroundImage = "url('" + '/buscaImagem/' + fotoTema1 + "')"
+};
