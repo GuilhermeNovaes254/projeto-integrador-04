@@ -13,6 +13,8 @@ let fotoPerfil = document.getElementById('file-input');
 let imgFotoPerfil = document.getElementById('imgFotoPerfil');
 let fotoTema = document.getElementById('inputFileTemaJogo');
 let imgFotoTema = document.getElementById('temaCadastroJogo');
+let imagemPerfil = document.getElementById('imagemPerfil');
+let imagemTema = document.getElementById('imagemTema');
 
 //preenchendo campo anoJogo
 let min = 1900,
@@ -114,8 +116,10 @@ fotoTema.addEventListener('change', function (evt) {
 //populando manualmente fotos
 if (typeof(foto1) != "undefined" && foto1.length > 0) {
     imgFotoPerfil.src = '/buscaImagem/' + foto1;
+    imagemPerfil.value = foto1;
 };
 
 if (typeof(fotoTema1) != "undefined" && fotoTema1.length > 0) {
     imgFotoTema.style.backgroundImage = "url('" + '/buscaImagem/' + fotoTema1 + "')"
+    imagemTema.value = fotoTema1;
 };

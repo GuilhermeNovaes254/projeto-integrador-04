@@ -189,8 +189,18 @@ const forms = {
                 mecanicaJogo,
                 downtimeJogo,
                 tutorialJogo,
-                regrasJogo
+                regrasJogo,
+                imagemTema,
+                imagemPerfil
             } = req.body;
+
+            if(fotoTema.length < 1){
+                fotoTema = imagemTema;
+            }
+            
+            if(foto.length < 1){
+                foto = imagemPerfil;
+            }
 
             const jogo = await Jogo.create({
                 nome: nomeJogo,
