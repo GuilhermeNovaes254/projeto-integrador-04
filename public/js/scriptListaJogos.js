@@ -26,7 +26,7 @@ async function listaJogos() {
                     highFive1.innerHTML += `<div class="o-highlights__content o-highlights-five__content o-col-and-5 animate-float-shadow" data-aos="fade-up" data-aos-duration="1000">`
                     highFive1.innerHTML += `<div class="o-highlights__header o-highlights-five__header" >`
                     highFive1.innerHTML += `<h2>${resposta[i].nome}</h2>`
-                    highFive1.innerHTML += `<a href='/jogo/${resposta[i].id}'><img src="${resposta[i].foto}" alt="${resposta[i].nome}"></a>`
+                    highFive1.innerHTML += `<a href='/jogo?jogo=${resposta[i].id}'><img src="${resposta[i].foto}" alt="${resposta[i].nome}"></a>`
                     highFive1.innerHTML += `</div>`
                     highFive1.innerHTML += `<div class="o-highlights__description o-highlights-five__description"></div>`
                     highFive1.innerHTML += `</div>`
@@ -36,7 +36,7 @@ async function listaJogos() {
                     highFive2.innerHTML += `<div class="o-highlights__content o-highlights-five__content o-col-and-5 animate-float-shadow" data-aos="fade-up" data-aos-duration="1000">`
                     highFive2.innerHTML += `<div class="o-highlights__header o-highlights-five__header" >`
                     highFive2.innerHTML += `<h2>${resposta[i].nome}</h2>`
-                    highFive2.innerHTML += `<a href='/jogo/${resposta[i].id}'><img src="${resposta[i].foto}" alt="${resposta[i].nome}"></a>`
+                    highFive2.innerHTML += `<a href='/jogo?jogo=${resposta[i].id}'><img src="${resposta[i].foto}" alt="${resposta[i].nome}"></a>`
                     highFive2.innerHTML += `</div>`
                     highFive2.innerHTML += `<div class="o-highlights__description o-highlights-five__description"></div>`
                     highFive2.innerHTML += `</div>`
@@ -46,7 +46,7 @@ async function listaJogos() {
                     highFive3.innerHTML += `<div class="o-highlights__content o-highlights-five__content o-col-and-5 animate-float-shadow" data-aos="fade-up" data-aos-duration="1000">`
                     highFive3.innerHTML += `<div class="o-highlights__header o-highlights-five__header" >`
                     highFive3.innerHTML += `<h2>${resposta[i].nome}</h2>`
-                    highFive3.innerHTML += `<a href='/jogo/${resposta[i].id}'><img src="${resposta[i].foto}" alt="${resposta[i].nome}"></a>`
+                    highFive3.innerHTML += `<a href='/jogo?jogo=${resposta[i].id}'><img src="${resposta[i].foto}" alt="${resposta[i].nome}"></a>`
                     highFive3.innerHTML += `</div>`
                     highFive3.innerHTML += `<div class="o-highlights__description o-highlights-five__description"></div>`
                     highFive3.innerHTML += `</div>`
