@@ -59,23 +59,23 @@ if (typeof(formData.faixaEtaria) != "undefined") {
 };
 
 //populando manualmente outros combos
-if (typeof(formData.temaJogo) != "undefined") {
+if (typeof(formData.temaJogo) != "undefined" && formData.temaJogo != null) {
     selectTema.value = formData.temaJogo;
 };
 
-if (typeof(formData.pesoJogo) != "undefined") {
+if (typeof(formData.pesoJogo) != "undefined" && formData.pesoJogo != null) {
     selectPeso.value = formData.pesoJogo;
 };
 
-if (typeof(formData.dominioJogo) != "undefined") {
+if (typeof(formData.dominioJogo) != "undefined" && formData.dominioJogo != null) {
     selectDominio.value = formData.dominioJogo;
 };
 
-if (typeof(formData.mecanicaJogo) != "undefined") {
+if (typeof(formData.mecanicaJogo) != "undefined" && formData.mecanicaJogo != null) {
     selectMecanica.value = formData.mecanicaJogo;
 };
 
-if (typeof(formData.downtimeJogo) != "undefined") {
+if (typeof(formData.downtimeJogo) != "undefined" && formData.downtimeJogo != null) {
     selectDownTime.value = formData.downtimeJogo;
 };
 
