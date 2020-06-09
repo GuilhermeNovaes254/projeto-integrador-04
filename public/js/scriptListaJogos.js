@@ -7,57 +7,29 @@ async function listaJogos() {
 
             let resposta = await JSON.parse(xhr.responseText);
 
-            let highFive1 = document.getElementById('highlights-five1')
-            let highFive2 = document.getElementById('highlights-five2')
-            let highFive3 = document.getElementById('highlights-five3')
+            let highFive = document.getElementsByClassName('row o-highlights o-highlights-five')
 
-            highFive1.innerHTML = ''
-            highFive1.innerText = ''
+            for (let j = 0; j < 3; j++) {
+                highFive[j].innerHTML = ''
+                highFive[j].innerText = ''
+            }
 
-            highFive2.innerHTML = ''
-            highFive2.innerText = ''
+            for (let j = 0; j < 3; j++) {
+                for (let i = 0; i < resposta.length; i++) {
 
-            highFive3.innerHTML = ''
-            highFive3.innerText = ''
-
-            for (let i = 0; i < resposta.length; i++) {
-
-                if (i < 10) {
-                    highFive1.innerHTML += `<div class="o-highlights__content o-highlights-five__content o-col-and-5 animate-float-shadow" data-aos="fade-up" data-aos-duration="1000">`
-                    highFive1.innerHTML += `<div class="o-highlights__header o-highlights-five__header" >`
-                    highFive1.innerHTML += `<h2>${resposta[i].nome}</h2>`
-                    highFive1.innerHTML += `<a href='/jogo?jogo=${resposta[i].id}'><img src="${resposta[i].foto}" alt="${resposta[i].nome}"></a>`
-                    highFive1.innerHTML += `</div>`
-                    highFive1.innerHTML += `<div class="o-highlights__description o-highlights-five__description"></div>`
-                    highFive1.innerHTML += `</div>`
+                    highFive[j].innerHTML += `<div class="o-highlights__content o-highlights-five__content o-col-and-5 animate-float-shadow" data-aos="fade-up" data-aos-duration="1000">`
+                    highFive[j].innerHTML += `<div class="o-highlights__header o-highlights-five__header" >`
+                    highFive[j].innerHTML += `<h2>${resposta[i].nome}</h2>`
+                    highFive[j].innerHTML += `<a href='/jogo?jogo=${resposta[i].id}'><img src="${resposta[i].foto}" alt="${resposta[i].nome}"></a>`
+                    highFive[j].innerHTML += `</div>`
+                    highFive[j].innerHTML += `<div class="o-highlights__description o-highlights-five__description"></div>`
+                    highFive[j].innerHTML += `</div>`
                 }
-
-                if (i > 10 && i < 20 ) {
-                    highFive2.innerHTML += `<div class="o-highlights__content o-highlights-five__content o-col-and-5 animate-float-shadow" data-aos="fade-up" data-aos-duration="1000">`
-                    highFive2.innerHTML += `<div class="o-highlights__header o-highlights-five__header" >`
-                    highFive2.innerHTML += `<h2>${resposta[i].nome}</h2>`
-                    highFive2.innerHTML += `<a href='/jogo?jogo=${resposta[i].id}'><img src="${resposta[i].foto}" alt="${resposta[i].nome}"></a>`
-                    highFive2.innerHTML += `</div>`
-                    highFive2.innerHTML += `<div class="o-highlights__description o-highlights-five__description"></div>`
-                    highFive2.innerHTML += `</div>`
-                }
-
-                if (i > 20 && i < 30 ) {
-                    highFive3.innerHTML += `<div class="o-highlights__content o-highlights-five__content o-col-and-5 animate-float-shadow" data-aos="fade-up" data-aos-duration="1000">`
-                    highFive3.innerHTML += `<div class="o-highlights__header o-highlights-five__header" >`
-                    highFive3.innerHTML += `<h2>${resposta[i].nome}</h2>`
-                    highFive3.innerHTML += `<a href='/jogo?jogo=${resposta[i].id}'><img src="${resposta[i].foto}" alt="${resposta[i].nome}"></a>`
-                    highFive3.innerHTML += `</div>`
-                    highFive3.innerHTML += `<div class="o-highlights__description o-highlights-five__description"></div>`
-                    highFive3.innerHTML += `</div>`
-                }
-
-
             }
         }
     };
 
-    let url = '/buscaJogo/lista?limite=30'
+    let url = '/buscaJogo/lista?limite=10'
 
     xhr.open('GET', url);
     xhr.send();
