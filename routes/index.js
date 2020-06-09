@@ -69,6 +69,8 @@ router.get('/aprovaMod',aprovaPerfis.perfilModerador)
 router.get('/aprovaMod/aprova',aprovaPerfis.aprovaJogo)
 router.get('/aprovaMod/nega',aprovaPerfis.negaJogo)
 
+router.get('/buscaJogo/lista', buscaController.listaJogos)
+
 // Com verificação
 router.get('/feeds', VerificaUsuarioLogado, homeController.feeds);
 router.get('/cadastroJogo', VerificaUsuarioLogado, homeController.cadastroJogo);
@@ -81,10 +83,10 @@ router.get('/semPrivilegio', VerificaUsuarioLogado, homeController.semPrivilegio
 router.get('/editar', VerificaUsuarioLogado, homeController.editar);
 
 // Páginas Restritas
-// router.get('/perfilModerador', VerificaMod, VerificaUsuarioLogado, homeController.perfilModerador);
-// router.get('/perfilAdm', VerificaAdm, VerificaUsuarioLogado, homeController.perfilAdm);
-router.get('/perfilModerador', VerificaUsuarioLogado, homeController.perfilModerador);
-router.get('/perfilAdm', VerificaUsuarioLogado, homeController.perfilAdm);
+router.get('/perfilModerador', VerificaMod, VerificaUsuarioLogado, homeController.perfilModerador);
+router.get('/perfilAdm', VerificaAdm, VerificaUsuarioLogado, homeController.perfilAdm);
+// router.get('/perfilModerador', VerificaUsuarioLogado, homeController.perfilModerador);
+// router.get('/perfilAdm', VerificaUsuarioLogado, homeController.perfilAdm);
 
 
 // POSTS 
