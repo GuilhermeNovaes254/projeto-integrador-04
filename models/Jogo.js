@@ -88,8 +88,9 @@ const Jogo = (sequelize, DataTypes) => {
                 }
             },
             foto:{
-                type: DataTypes.STRING(500),
-                allowNull: true
+                type: DataTypes.STRING(1000),
+                allowNull: true,
+                default:'./images/default/jogoDefault.png'
             },
             fotoTema:{
                 type: DataTypes.STRING(500),
