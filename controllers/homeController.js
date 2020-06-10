@@ -1,6 +1,7 @@
 const {
     Cidade,
     Dominio,
+    Jogo,
     Estado,
     Mecanica,
     Tema,
