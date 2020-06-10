@@ -86,7 +86,7 @@ const forms = {
 
     editarUsuario: async (req, res) => {
         let {
-            nomeJogo,
+            nomeUser,
             apelido,
             genero,
             estado,
@@ -95,7 +95,7 @@ const forms = {
             mesNasc,
             anoNasc,
             tipoNivelAP,
-            descricaoJogo,
+            descricaoUser,
             senha,
             senha2,
             avatar
@@ -109,8 +109,8 @@ const forms = {
             }
         });
 
-        if (nomeJogo != '') {
-            user.nome = nomeJogo;
+        if (nomeUser != '') {
+            user.nome = nomeUser;
         }
         if (apelido != '') {
             user.apelido = apelido;
@@ -127,8 +127,8 @@ const forms = {
         if (tipoNivelAP != '') {
             user.tipoAp = tipoNivelAP;
         }
-        if (descricaoJogo != '') {
-            user.descricao = descricaoJogo;
+        if (descricaoUser != '') {
+            user.descricao = descricaoUser;
         }
         if (senha != '' && senha == senha2) {
             user.senha = bcrypt.hashSync(senha, 10);
