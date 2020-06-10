@@ -1,3 +1,4 @@
+@import "http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css";
 #temajogo {
 	background-image: url('/images/default/h1.jpg');
 	background-repeat: no-repeat;
@@ -12,6 +13,9 @@
 h1,h3{
     font-weight: bold;
 }
+h3{
+    color: #F22441;
+}
 
 /* corpo */
 .corpo{
@@ -23,7 +27,7 @@ h1,h3{
 }
 
 #fotoJogo{
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     margin-top: 20px;
     background-image: url('/images/default/jogoDefault.png');
     background-position: center;
@@ -96,6 +100,27 @@ h1,h3{
     align-content: center;
     flex-wrap: nowrap;
 }
+
+.navjogo #iconeEstrela{
+    color: #f1c40f;
+    font-size: 30px;
+    text-align: center;
+}
+
+.navjogo #nota{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.navjogo #notaJogo{
+    color: #313131;
+    align-self: center;
+    font-size: medium;
+    font-weight: bolder;
+}
+
+
 .navjogo #dado{
     background-image: url('/images/icons/dados1.png');
     background-repeat: no-repeat;
@@ -170,6 +195,30 @@ h1,h3{
     margin-right: 0px;
 }
 
+.rating {
+    unicode-bidi: bidi-override;
+    direction: rtl;
+    flex-direction: row;
+    display: flex;
+    box-sizing: border-box;
+}
+
+.rating>a {
+    display: inline-block;
+    position: relative;
+    padding: 5px;
+    width: 15px;
+    font-size: 30px;
+    color: #313131;
+    content: "\2605";
+}
+
+.rating>a:hover:before,
+.rating>a:hover~a:before {
+    content: "\2605";
+    position: absolute;
+    color: #f1c40f;
+}
 
 
 #jogo{
@@ -201,8 +250,8 @@ h1,h3{
 
 
 #nomejogo{
-    margin-bottom: 10px;
-    margin-top: 10px;
+    margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 
@@ -270,6 +319,12 @@ h1,h3{
     align-items: center;
     
     
+}
+
+#apelidoComentario a{
+    font-weight: 600;
+    color: #F22441;
+    font-size: medium;
 }
 
 .avatar{
