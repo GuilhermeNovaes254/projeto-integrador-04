@@ -86,7 +86,7 @@ const forms = {
 
     editarUsuario: async (req, res) => {
         let {
-            nomeJogo,
+            nomeUser,
             apelido,
             genero,
             estado,
@@ -109,8 +109,8 @@ const forms = {
             }
         });
 
-        if (nomeJogo != '') {
-            user.nome = nomeJogo;
+        if (nomeUser != '') {
+            user.nome = nomeUser;
         }
         if (apelido != '') {
             user.apelido = apelido;
