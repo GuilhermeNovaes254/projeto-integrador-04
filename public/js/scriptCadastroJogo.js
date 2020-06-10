@@ -15,6 +15,7 @@ let fotoTema = document.getElementById('inputFileTemaJogo');
 let imgFotoTema = document.getElementById('temaCadastroJogo');
 let imagemPerfil = document.getElementById('imagemPerfil');
 let imagemTema = document.getElementById('imagemTema');
+let form = document.getElementById('form');
 
 //preenchendo campo anoJogo
 let min = 1900,
@@ -125,3 +126,10 @@ if (typeof(fotoTema1) != "undefined" && fotoTema1.length > 0) {
     imgFotoTema.style.backgroundImage = "url('" + '/buscaImagem/' + fotoTema1 + "')"
     imagemTema.value = fotoTema1;
 };
+
+const onFormSubmit = (evt) => {
+    if (typeof(formData) != undefined) {
+        alert("Jogo cadastrado com sucesso, aguarde a aprovação do moderador!")
+    }
+};
+form.addEventListener('submit', onFormSubmit); 
