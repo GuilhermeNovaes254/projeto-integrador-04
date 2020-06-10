@@ -28,18 +28,11 @@ function buscaEstados() {
 
     xhr.open('GET', '/buscaEstado');
     xhr.send();
-
-    // 
 };
 
 buscaEstados();
 
-
-
 function buscaCidades(estadoselecionado) {
-
-
-
     // Set up our HTTP request
     var xhr = new XMLHttpRequest();
 
@@ -73,10 +66,6 @@ let selectestado = document.getElementById('estado');
 let estadoselecionado = selectestado.addEventListener("change", function () {
     buscaCidades(this.value);
 });
-
-console.log(estadoselecionado);
-
-
 
 
 let date = new Date();
