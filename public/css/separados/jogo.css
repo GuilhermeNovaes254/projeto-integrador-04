@@ -40,6 +40,12 @@ h1,h3{
     border-radius: 15px;
 	width: 180px;
     height: auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: center;
+    align-items: center;
 }
 
 #lateral p{
@@ -211,8 +217,8 @@ h1,h3{
 	background-size:contain;
 }
 #capajogo1{
-    width: 160px;
-    height: 160px;
+    width: 140px;
+    height: 140px;
     background-image: url('/images/default/jogoDefault.png');
     align-content: center;
     background-repeat: no-repeat;
@@ -223,8 +229,8 @@ h1,h3{
 #capajogo2{
     margin-bottom: 10px;
     margin-top: 10px;
-    width: 160px;
-    height: 160px;
+    width: 140px;
+    height: 140px;
     align-content: center;
     background-image: url('/images/default/jogoDefault.png');
     background-repeat: no-repeat;
