@@ -122,19 +122,19 @@ h3{
 
 
 .navjogo #dado{
-    background-image: url('/images/icons/dados1.png');
+    background-image: url('/images/icons/dadosVerde.svg');
     background-repeat: no-repeat;
-    width: 50px 
+    width: 30px;
 }
 .navjogo #dadoButton{
-    background-image: url('/images/icons/dados1.png');
+    background-image: url('/images/icons/dadosVermelho.svg');
     background-repeat: no-repeat;
-    width: 50px 
+    width: 30px 
 }
 .navjogo #dadoButton:hover{
-    background-image: url('/images/icons/dados1.png');
+    background-image: url('/images/icons/dadosVermelho.svg');
     background-repeat: no-repeat;
-    width: 50px;
+    width: 30px;
     filter: opacity(30%);
 
 }
@@ -151,30 +151,24 @@ h3{
     font-weight: bolder;
 }
 .navjogo #coracao{
-    background-image: url('/images/icons/coracao2.png');
+    background-image: url('/images/icons/coracaoVermelho.svg');
     background-repeat: no-repeat;
     background-position: center;
-    width: 20px;    
+    width: 30px;
 }
 .navjogo #coracaoButton{
-    background-image: url('/images/icons/coracao2.png');
+    background-image: url('/images/icons/coracaoVerde.svg');
     background-repeat: no-repeat;
     background-position: center;
-    width: 20px;    
+    width: 30px; 
 }
 .navjogo #coracaoButton:hover{
-    background-image: url('/images/icons/coracao2.png');
+    background-image: url('/images/icons/coracaoVermelho.svg');
     background-repeat: no-repeat;
     background-position: center;
-    width: 20px;
     filter: opacity(30%);   
 }
-.navjogo #mais{
-    background-image: url('/images/icons/plus.png');
-    /* background-size: 30px; */
-    background-repeat: no-repeat;
-    background-position: center;
-}
+
 #avaliacao{
     /* width: 196px; */
     
