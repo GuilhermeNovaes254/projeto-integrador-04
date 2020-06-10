@@ -95,7 +95,7 @@ const forms = {
             mesNasc,
             anoNasc,
             tipoNivelAP,
-            descricaoJogo,
+            descricaoUser,
             senha,
             senha2,
             avatar
@@ -127,8 +127,8 @@ const forms = {
         if (tipoNivelAP != '') {
             user.tipoAp = tipoNivelAP;
         }
-        if (descricaoJogo != '') {
-            user.descricao = descricaoJogo;
+        if (descricaoUser != '') {
+            user.descricao = descricaoUser;
         }
         if (senha != '' && senha == senha2) {
             user.senha = bcrypt.hashSync(senha, 10);
