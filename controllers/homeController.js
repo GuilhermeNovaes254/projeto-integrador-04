@@ -77,7 +77,7 @@ const homeController = {
             fotoUsuario
         }
 
-        res.render('perfil', {
+        res.render('Perfil', {
             title: 'perfil',
             apelidoUsuario: req.session.usuario.apelido,
             fotoUsuario,

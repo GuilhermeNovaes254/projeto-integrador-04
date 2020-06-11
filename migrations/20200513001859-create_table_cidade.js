@@ -22,9 +22,7 @@ module.exports = {
         references: {
           model: 'estado',
           key: 'id'
-        },
-        onUpdate: 'CASCADE',
-        onDelete: 'CASCADE'
+        }
       }
       });
   },

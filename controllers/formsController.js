@@ -51,7 +51,12 @@ const forms = {
         res.render('perfil', {
             title: 'Perfil',
             apelidoUsuario: apelido,
-            fotoUsuario: fotoAvatar
+            fotoUsuario: fotoAvatar,
+            nomeUsuario : nome,
+            descricaoUsuario : "",
+            cidadeUsuario : "",
+            estadoUsuario : ""
+            
         });
     },
 
@@ -144,20 +149,27 @@ const forms = {
             if (senha != '' && senha == senha2) {
                 senhaEncript = bcrypt.hashSync(senha, 10);
             }
-
-            const user = await Usuario.update({
+            
+            let updateUser = {
                 nome: nomeUser,
                 apelido,
                 genero,
-                cidade_estado_id: estado,
-                cidade_id: cidade,
                 dataDeNascimento,
                 tipoAp: tipoNivelAP,
                 descricao: descricaoUser,
                 senha: senhaEncript,
                 foto,
                 fotoTema
-            },{
+            }
+
+            if(!isNaN(cidade)){
+                updateUser = {...updateUser, cidade_id:cidade};
+            }
+            if(!isNaN(estado)){
+                updateUser = {...updateUser, cidade_estado_id:estado};
+            }       
+
+            const user = await Usuario.update(updateUser,{
                 where: {
                     id: id
                 }

@@ -6,8 +6,15 @@ const {
     Favorito,
     Comentario,
     Colecao,
-    Avaliacao
-} = require('../models')
+    Avaliacao,
+    Jogo
+} = require('../models');
+const {
+    usuarios
+} = require('./buscaController');
+const {
+    jogo
+} = require('./homeController');
 
 
 
@@ -16,26 +23,27 @@ const jogoController = {
     // Funcoes de conta **************************
     contaAvalicao: async (req, res) => {
         try {
+
             let {
-                id
+                jogo
             } = req.query
-            
-            let soma = 0 
+
+            let soma = 0
             let quantidade = 0
             let valor = 0
 
             whereClause = {}
-            whereClause['jogo_id'] = id
+            whereClause['jogo_id'] = jogo
 
             quantidade = await Avaliacao.count({
                 where: whereClause
             });
-            
-            soma = await Avaliacao.sum('avaliacao',{
+
+            soma = await Avaliacao.sum('avaliacao', {
                 where: whereClause
             });
 
-            valor = (soma/quantidade).toFixed(1);
+            valor = (soma / quantidade).toFixed(1);
             console.log(valor)
             //res.send(valor)
 
@@ -43,91 +51,230 @@ const jogoController = {
             res.status(401)
         }
     },
-    
-        contaJaJoguei: async (req, res) => {
-            try {
+
+    contaJaJoguei: async (req, res) => {
+        try {
+
+            let {
+                jogo
+            } = req.query
+
+            let quantidade = 0
+            let usuarioId = req.session.usuario.id
+            console.log(jogo)
+            whereClause = {}
+            whereClause['jogo_id'] = jogo
+            whereClause['usuario_id'] = usuariosId
+
+            quantidade = await Joguei.count({
+                where: whereClause
+            });
+
+            console.log(quantidade)
+            //res.send(quantidade)
+
+        } catch (error) {
+            res.status(401)
+        }
+    },
+
+    contaFavorito: async (req, res) => {
+        try {
+
+            let {
+                jogo
+            } = req.query
+
+            let quantidade = 0
+            let usuarioId = req.session.usuario.id
+
+            whereClause = {}
+            whereClause['jogo_id'] = jogo
+            whereClause['usuario_id'] = usuarioId
+
+            quantidade = await Favorito.count({
+                where: whereClause
+            });
+
+            console.log(quantidade)
+            //res.send(quantidade)
+
+        } catch (error) {
+            res.status(401)
+        }
+    },
+
+    // Funcoes de carregar dados **************************
+    carregaJogoId: async (req, res) => {
+        try {
+
+            let {
+                jogo
+            } = req.query
+
+            let busca = {}
+            whereClause = {}
+            whereClause['id'] = jogo
+
+            busca = await Jogo.findOne({
+                where: whereClause
+            });
+
+           res.send(busca)
+
+        } catch (error) {
+            res.status(401)
+        }
+    },
+
+    carregaJogosRelac: async (req, res) => {
+        try {
+
+            let {
+                jogo
+            } = req.query
+
+            let jogoBase = {}
+            whereClause = {}
+            whereClause['id'] = jogo
+
+            jogoBase = await Jogo.findOne({
+                where: whereClause
+            });
+
+            let tema = jogoBase.tema_id
+
+            whereClause = {}
+            whereClause['tema_id'] = tema
 
 
-            } catch (error) {
-                res.status(401)
-            }
-        },
-
-        contaFavorito: async (req, res) => {
-            try {
+            let jogosIndicados = await Jogo.findAll({
+                where: whereClause,
+                limit: 5
+            });
 
 
-            } catch (error) {
-                res.status(401)
-            }
-        },
-
-        // Funcoes de carregar dados **************************
-        carregaJogoId: async (req, res) => {
-            try {
+            res.send(jogosIndicados)
 
 
-            } catch (error) {
-                res.status(401)
-            }
-        },
+        } catch (error) {
+            res.status(401)
+        }
+    },
 
-        carregaJogosRelac: async (req, res) => {
-            try {
+    carregaComentario: async (req, res) => {
+        try {
 
+            let {
+                jogo
+            } = req.query
 
-            } catch (error) {
-                res.status(401)
-            }
-        },
+            whereClause = {}
+            whereClause['jogo_id'] = jogo
 
-        carregaComentario: async (req, res) => {
-            try {
+            let busca = await Comentario.findAll({
+                where: whereClause,
+                order: [
+                    ['id', 'DESC']
+                ]
+            });
 
+            res.send(busca)
 
-            } catch (error) {
-                res.status(401)
-            }
-        },
-
-
-        // Funcoes de postar dados **************************
-        postaComentario: async (req, res) => {
-            try {
-
-
-            } catch (error) {
-                res.status(401)
-            }
-        },
-
-        postaAvaliacao: async (req, res) => {
-            try {
+        } catch (error) {
+            res.status(401)
+        }
+    },
 
 
-            } catch (error) {
-                res.status(401)
-            }
-        },
+    // Funcoes de postar dados **************************
+    postaComentario: async (req, res) => {
+        try {
 
-        postaJaJoguei: async (req, res) => {
-            try {
+            let {
+                comentario,
+                jogo
+            } = req.body
+
+            let usuarioId = req.session.usuario.id
+
+            const ts = new Date();
+            let dataHora = ts.toLocaleString();
+
+            Comentario.create({
+                texto: comentario,
+                data: dataHora,
+                usuario_id: usuarioId,
+                jogo_id: jogo,
+            });
 
 
-            } catch (error) {
-                res.status(401)
-            }
-        },
+        } catch (error) {
+            res.status(401)
+        }
+    },
 
-        postaAmei: async (req, res) => {
-            try {
+    postaAvaliacao: async (req, res) => {
+        try {
+
+            let {
+                jogo,
+                nota
+            } = req.body;
+
+            let usuarioId = req.session.usuario.id
+
+            Comentario.create({
+                usuario_id: usuarioId,
+                jogo_id: jogo,
+                avaliacao: nota
+            });
 
 
-            } catch (error) {
-                res.status(401)
-            }
-        },
-    
+        } catch (error) {
+            res.status(401)
+        }
+    },
+
+    postaJaJoguei: async (req, res) => {
+        try {
+
+            let {
+                jogo
+            } = req.body;
+
+            let usuarioId = req.session.usuario.id
+
+            Joguei.create({
+                usuario_id: usuarioId,
+                jogo_id: jogo
+            });
+
+
+        } catch (error) {
+            res.status(401)
+        }
+    },
+
+    postaAmei: async (req, res) => { //Favorito
+        try {
+
+            let {
+                jogo
+            } = req.body;
+
+            let usuarioId = req.session.usuario.id
+
+            Favorito.create({
+                usuario_id: usuarioId,
+                jogo_id: jogo
+            });
+
+        } catch (error) {
+            res.status(401)
+        }
+    },
+
 
 };
 

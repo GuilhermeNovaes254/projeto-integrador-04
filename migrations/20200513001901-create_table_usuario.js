@@ -64,9 +64,7 @@ module.exports = {
           references: {
             model: 'cidade',
             key: 'id'
-          },
-          onUpdate: 'CASCADE',
-          onDelete: 'CASCADE'
+          }
         },
         cidade_estado_id: {
           type: Sequelize.INTEGER,
@@ -74,9 +72,7 @@ module.exports = {
           references: {
             model: 'cidade',
             key: 'estado_id'
-          },
-          onUpdate: 'CASCADE',
-          onDelete: 'CASCADE'
+          }
         }
       });
   },
