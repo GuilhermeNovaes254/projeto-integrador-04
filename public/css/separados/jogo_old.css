@@ -1,0 +1,402 @@
+@import "http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css";
+#temajogo {
+	background-image: url('/images/default/h1.jpg');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	width: 100%;
+    height: 50vh;
+    
+	/* viewport height */
+}
+
+h1,h3{
+    font-weight: bold;
+}
+h3{
+    color: #F22441;
+}
+
+/* corpo */
+.corpo{
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: -100px;
+}
+
+#fotoJogo{
+    margin-bottom: 20px;
+    margin-top: 20px;
+    background-image: url('/images/default/jogoDefault.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover ;
+    text-align: center;
+	width: 160px;
+	height: 160px;
+}
+
+#lateral{
+
+    background-color: #fff;
+    border-radius: 15px;
+	width: 180px;
+    height: auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: center;
+    align-items: center;
+}
+
+#lateral p{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: small;
+}
+
+#lateral h3{
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+.media{
+    margin-top: 40px;
+
+}
+
+.notas{
+    background-color: #E5E5E5;
+    width: 130px;
+    height: 33px;
+    background-image: url('/images/icons/estrelas45.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 5px;
+    
+}
+
+
+#center{
+    height: auto;
+    justify-content: center;
+    text-align: justify;
+}
+
+
+
+/* nav jogo */
+.navjogo{
+    width: 90%;
+    height: 48px;
+    border-top: 3px solid #E5E5E5;
+    border-bottom: 3px solid #E5E5E5;
+    margin: auto;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    flex-wrap: nowrap;
+}
+
+.navjogo #iconeEstrela{
+    color: #f1c40f;
+    font-size: 30px;
+    text-align: center;
+}
+
+.navjogo #nota{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.navjogo #notaJogo{
+    color: #313131;
+    align-self: center;
+    font-size: medium;
+    font-weight: bolder;
+}
+
+
+.navjogo #dado{
+    background-image: url('/images/icons/dadosVerde.svg');
+    background-repeat: no-repeat;
+    width: 30px;
+}
+.navjogo #dadoButton{
+    background-image: url('/images/icons/dadosVermelho.svg');
+    background-repeat: no-repeat;
+    width: 30px 
+}
+.navjogo #dadoButton:hover{
+    background-image: url('/images/icons/dadosVermelho.svg');
+    background-repeat: no-repeat;
+    width: 30px;
+    filter: opacity(30%);
+
+}
+.navjogo #numd{
+    color: #0F7A2F;
+    align-self: center;
+    font-size: medium;
+    font-weight: bolder;
+}
+.navjogo #numc{
+    color:#F22441;
+    align-self: center;
+    font-size: small;
+    font-weight: bolder;
+}
+.navjogo #coracao{
+    background-image: url('/images/icons/coracaoVermelho.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 30px;
+}
+.navjogo #coracaoButton{
+    background-image: url('/images/icons/coracaoVerde.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 30px; 
+}
+.navjogo #coracaoButton:hover{
+    background-image: url('/images/icons/coracaoVermelho.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: opacity(30%);   
+}
+
+#avaliacao{
+    /* width: 196px; */
+    
+    font-size: small;
+    font-weight: bolder;
+    padding: 10px;
+    display: flex;
+    
+    
+    
+}
+
+.navjogo button{
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    border: none;
+    margin-right: 0px;
+}
+
+.rating {
+    unicode-bidi: bidi-override;
+    direction: rtl;
+    flex-direction: row;
+    display: flex;
+    box-sizing: border-box;
+}
+
+.rating>a {
+    display: inline-block;
+    position: relative;
+    padding: 5px;
+    width: 15px;
+    font-size: 30px;
+    color: #313131;
+    content: "\2605";
+}
+
+.rating>a:hover:before,
+.rating>a:hover~a:before {
+    content: "\2605";
+    position: absolute;
+    color: #f1c40f;
+}
+
+
+#jogo{
+    
+    width: 650px;
+    text-align: left;
+    margin-left: 5vw;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #fff;
+    border-radius: 15px;
+    /* margin-right: 20vw; */
+}
+
+
+#texto{
+    font-size: medium;
+    width: 90%;
+    
+    padding-top: 30px;
+    padding-left: 10%;
+    padding-right: 30px;
+    margin-bottom: 20px;
+}
+
+#texto #descricoes{
+    padding-top: 40px;
+}
+
+
+#nomejogo{
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+
+#estrelas{
+    margin-top: 10px;
+	align-content: center;
+	background-image: url('/images/icons/estrelas45.png');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	height: 18px;
+	background-size:contain;
+}
+#capajogo1{
+    width: 140px;
+    height: 140px;
+    background-image: url('/images/default/jogoDefault.png');
+    align-content: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+#capajogo2{
+    margin-bottom: 10px;
+    margin-top: 10px;
+    width: 140px;
+    height: 140px;
+    align-content: center;
+    background-image: url('/images/default/jogoDefault.png');
+    background-repeat: no-repeat;
+    background-size: cover 
+}
+
+#resenha{
+    width: 100vw;
+    text-align: left;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    border-radius: 15px;
+    box-sizing: border-box;
+
+}
+.comentarios{
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    width: 600px;
+    height: 478px;
+    margin-left: 15px;
+    justify-content: flex-start;
+    /* flex-wrap: wrap;  */
+    margin-bottom: 20px;
+   
+    
+}
+.comentario{
+    display: flex;
+    border-radius: 15px;
+    width: 620px;
+    margin-left: 15px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    
+    
+}
+
+#apelidoComentario a{
+    font-weight: 600;
+    color: #F22441;
+    font-size: medium;
+}
+
+.avatar{
+    background-image: url('/images/fotos/avatar7.jpg ');
+	background-position: center;
+	background-repeat: no-repeat; 
+	background-size: cover;
+	border-radius: 50%;
+	width: 80px;
+	height: 80px;
+	size: initial;
+	align-content: center;
+	margin-left: 18px;
+	margin-bottom: 17.5px;
+	margin-top: 17.5px;
+	box-sizing: border-box;
+}
+
+
+.comentar textarea{
+    /* border: none; */
+    resize: none;
+    background-color: #fff;
+    border-radius: 15px;
+    width: 500px;
+    height: 60px;
+    align-content: center;
+    margin-top: 17.5px;
+    
+}
+.comentario button{
+    background-color:#F22441;
+    width: 100px;
+    margin-left: 545px;
+    margin-top: -10px;
+    border-radius: 15px;
+    color: #fff;
+    border:none
+
+    
+}
+.coment{
+    background-color: #fff;
+    border-radius: 15px;
+    width: 500px;
+    padding: 20px;
+    align-content: center;
+    font-size: small;
+    margin-top: 20px;
+}
+
+
+@media only screen and (max-width: 923px){
+    .corpo{
+        flex-direction: column;
+    }
+    
+    #lateral{
+        width: 100vw;
+        margin-left: 5%;
+        
+    }
+    #jogo{
+        width: 100vw;
+        margin: 0;
+    }
+    #jogo2{
+        width: 100vw;
+        margin: 0;
+        align-content: center;
+    }
+
+    #resenha{
+        width: 100vw;
+        margin: 0;
+    }
+    #avatar{
+        width: 0;
+        height: 0;
+    }
+}
