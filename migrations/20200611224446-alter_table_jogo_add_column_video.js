@@ -3,13 +3,13 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.addColumn(
-      'usuario', 'video', {
+      'jogo', 'video', {
           type: Sequelize.STRING(500),
           allowNull: true
       });
   },
 
   down: (queryInterface, Sequelize) => {
-    return queryInterface.removeColumn('usuario', 'video');
+    return queryInterface.removeColumn('jogo', 'video');
   }
 };
