@@ -404,8 +404,8 @@ module.exports = {
         },
         {
           id: 40,
-          nome: "Okan Özdenak",
-          apelido: "OkanÖzdenak",
+          nome: "Okan Ozdenak",
+          apelido: "OkanOzdenak",
           email: "okan.ozdenak@example.com",
           foto: "https://randomuser.me/api/portraits/men/6.jpg",
           descricao: "Descricao",
@@ -470,8 +470,8 @@ module.exports = {
         },
         {
           id: 46,
-          nome: "Sebastian Øvergaard",
-          apelido: "SebastianØvergaard",
+          nome: "Sebastian Overgaard",
+          apelido: "SebastianOvergaard",
           email: "sebastian.overgaard@example.com",
           foto: "https://randomuser.me/api/portraits/men/9.jpg",
           descricao: "Descricao",
@@ -505,12 +505,6 @@ module.exports = {
   },
 
   down: (queryInterface, Sequelize) => {
-    /*
-      Add reverting commands here.
-      Return a promise to correctly handle asynchronicity.
-
-      Example:
-      return queryInterface.bulkDelete('People', null, {});
-    */
+    return queryInterface.bulkDelete('usuario', null, {});
   }
 };
