@@ -31,7 +31,7 @@ const autorizaLogin = {
 
         // redirecionar o suaurio para a rota '/feeds'*/
         // res.redirect('/feeds')
-        res.redirect('/jogo?id=1')
+        res.redirect('/feeds')
     }
 
 
