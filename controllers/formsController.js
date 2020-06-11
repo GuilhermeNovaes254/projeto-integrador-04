@@ -51,7 +51,12 @@ const forms = {
         res.render('perfil', {
             title: 'Perfil',
             apelidoUsuario: apelido,
-            fotoUsuario: fotoAvatar
+            fotoUsuario: fotoAvatar,
+            nomeUsuario : nome,
+            descricaoUsuario : "",
+            cidadeUsuario : "",
+            estadoUsuario : ""
+            
         });
     },
 
