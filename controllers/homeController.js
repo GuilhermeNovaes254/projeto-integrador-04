@@ -128,21 +128,6 @@ const homeController = {
         });
     },
 
-    perfilAdm: (req, res) => {
-
-        fotoUsuario = 'images/icons/PerfilVermelho.png'
-
-        if(req.session.usuario.foto != 'images/icons/PerfilVermelho.png'){
-            fotoUsuario = req.session.usuario.foto
-        }
-
-        res.render('perfilAdm', {
-            title: 'perfilAdm',
-            apelidoUsuario: req.session.usuario.apelido,
-            fotoUsuario
-        });
-    },
-
     perfilModerador: (req, res) => {
 
         fotoUsuario = 'images/icons/PerfilVermelho.png'

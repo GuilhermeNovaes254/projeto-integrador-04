@@ -10,7 +10,7 @@ module.exports = {
           email: "alice.sullivan@example.com",
           foto: "https://randomuser.me/api/portraits/women/93.jpg",
           descricao: "Descricao",
-          cargo: 2,
+          cargo: 1,
           aprovado: 0,
           senha: '$2b$10$hKXxuZe3vE4EBVAIdzvrxuL3OrynJQZBbRiZnEYfwrgC1A0LKsuYe'
         },
@@ -21,7 +21,7 @@ module.exports = {
           email: "ben.reid@example.com",
           foto: "https://randomuser.me/api/portraits/men/98.jpg",
           descricao: "Descricao",
-          cargo: 2,
+          cargo: 1,
           aprovado: 0,
           senha: '$2b$10$hKXxuZe3vE4EBVAIdzvrxuL3OrynJQZBbRiZnEYfwrgC1A0LKsuYe'
         },
@@ -32,7 +32,7 @@ module.exports = {
           email: "dominic.bergeron@example.com",
           foto: "https://randomuser.me/api/portraits/men/79.jpg",
           descricao: "Descricao",
-          cargo: 2,
+          cargo: 1,
           aprovado: 0,
           senha: '$2b$10$hKXxuZe3vE4EBVAIdzvrxuL3OrynJQZBbRiZnEYfwrgC1A0LKsuYe'
         },
@@ -43,7 +43,7 @@ module.exports = {
           email: "etienne.legall@example.com",
           foto: "https://randomuser.me/api/portraits/men/9.jpg",
           descricao: "Descricao",
-          cargo: 2,
+          cargo: 1,
           aprovado: 0,
           senha: '$2b$10$hKXxuZe3vE4EBVAIdzvrxuL3OrynJQZBbRiZnEYfwrgC1A0LKsuYe'
         },
@@ -54,7 +54,7 @@ module.exports = {
           email: "glen.shaw@example.com",
           foto: "https://randomuser.me/api/portraits/men/14.jpg",
           descricao: "Descricao",
-          cargo: 2,
+          cargo: 1,
           aprovado: 0,
           senha: '$2b$10$hKXxuZe3vE4EBVAIdzvrxuL3OrynJQZBbRiZnEYfwrgC1A0LKsuYe'
         },
@@ -65,7 +65,7 @@ module.exports = {
           email: "joy.dasilva@example.com",
           foto: "https://randomuser.me/api/portraits/women/61.jpg",
           descricao: "Descricao",
-          cargo: 3,
+          cargo: 1,
           aprovado: 0,
           senha: '$2b$10$hKXxuZe3vE4EBVAIdzvrxuL3OrynJQZBbRiZnEYfwrgC1A0LKsuYe'
         },
@@ -76,7 +76,7 @@ module.exports = {
           email: "kelly.powell@example.com",
           foto: "https://randomuser.me/api/portraits/women/68.jpg",
           descricao: "Descricao",
-          cargo: 3,
+          cargo: 1,
           aprovado: 0,
           senha: '$2b$10$hKXxuZe3vE4EBVAIdzvrxuL3OrynJQZBbRiZnEYfwrgC1A0LKsuYe'
         },
@@ -87,7 +87,7 @@ module.exports = {
           email: "addison.roy@example.com",
           foto: "https://randomuser.me/api/portraits/women/12.jpg",
           descricao: "Descricao",
-          cargo: 2,
+          cargo: 1,
           aprovado: 1,
           senha: '$2b$10$hKXxuZe3vE4EBVAIdzvrxuL3OrynJQZBbRiZnEYfwrgC1A0LKsuYe',
           senha: '$2b$10$hKXxuZe3vE4EBVAIdzvrxuL3OrynJQZBbRiZnEYfwrgC1A0LKsuYe'
@@ -99,7 +99,7 @@ module.exports = {
           email: "agenor.carvalho@example.com",
           foto: "https://randomuser.me/api/portraits/men/89.jpg",
           descricao: "Descricao",
-          cargo: 2,
+          cargo: 1,
           aprovado: 1,
           senha: '$2b$10$hKXxuZe3vE4EBVAIdzvrxuL3OrynJQZBbRiZnEYfwrgC1A0LKsuYe',
           senha: '$2b$10$hKXxuZe3vE4EBVAIdzvrxuL3OrynJQZBbRiZnEYfwrgC1A0LKsuYe'
@@ -111,7 +111,7 @@ module.exports = {
           email: "ariane.french@example.com",
           foto: "https://randomuser.me/api/portraits/women/54.jpg",
           descricao: "Descricao",
-          cargo: 2,
+          cargo: 1,
           aprovado: 1,
           senha: '$2b$10$hKXxuZe3vE4EBVAIdzvrxuL3OrynJQZBbRiZnEYfwrgC1A0LKsuYe',
           senha: '$2b$10$hKXxuZe3vE4EBVAIdzvrxuL3OrynJQZBbRiZnEYfwrgC1A0LKsuYe'
@@ -123,7 +123,7 @@ module.exports = {
           email: "charles.carroll@example.com",
           foto: "https://randomuser.me/api/portraits/men/97.jpg",
           descricao: "Descricao",
-          cargo: 2,
+          cargo: 1,
           aprovado: 1,
           senha: '$2b$10$hKXxuZe3vE4EBVAIdzvrxuL3OrynJQZBbRiZnEYfwrgC1A0LKsuYe'
         },
@@ -134,7 +134,7 @@ module.exports = {
           email: "daniel.hughes@example.com",
           foto: "https://randomuser.me/api/portraits/men/48.jpg",
           descricao: "Descricao",
-          cargo: 2,
+          cargo: 1,
           aprovado: 1,
           senha: '$2b$10$hKXxuZe3vE4EBVAIdzvrxuL3OrynJQZBbRiZnEYfwrgC1A0LKsuYe'
         },
@@ -145,7 +145,7 @@ module.exports = {
           email: "delores.hall@example.com",
           foto: "https://randomuser.me/api/portraits/women/61.jpg",
           descricao: "Descricao",
-          cargo: 2,
+          cargo: 1,
           aprovado: 1,
           senha: '$2b$10$hKXxuZe3vE4EBVAIdzvrxuL3OrynJQZBbRiZnEYfwrgC1A0LKsuYe'
         },
@@ -156,7 +156,7 @@ module.exports = {
           email: "edin.ingvaldsen@example.com",
           foto: "https://randomuser.me/api/portraits/men/48.jpg",
           descricao: "Descricao",
-          cargo: 2,
+          cargo: 1,
           aprovado: 1,
           senha: '$2b$10$hKXxuZe3vE4EBVAIdzvrxuL3OrynJQZBbRiZnEYfwrgC1A0LKsuYe'
         },
@@ -507,4 +507,4 @@ module.exports = {
   down: (queryInterface, Sequelize) => {
     return queryInterface.bulkDelete('usuario', null, {});
   }
-};
+}; 

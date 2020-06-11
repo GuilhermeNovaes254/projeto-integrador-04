@@ -33,7 +33,7 @@ const formController = require('../controllers/formsController');
 const localizacaoController = require('../controllers/localizacaoController');
 const buscaController = require('../controllers/buscaController');
 const parametrosJogoController = require('../controllers/parametrosJogoController')
-const aprovaPerfis = require('../controllers/aprovaPerfis')
+const perfisController = require('../controllers/perfisController')
 const elementosJogos = require('../controllers/jogoController')
 
 //API busca imagem
@@ -60,15 +60,14 @@ router.get('/tema/todos', parametrosJogoController.temaTodos);
 router.get('/dominio/todos', parametrosJogoController.dominioTodos);
 router.get('/mecanica/todos', parametrosJogoController.mecanicaTodos);
 
-router.get('/aprovaAdm',aprovaPerfis.perfilAdm)
-router.get('/adm/conta',aprovaPerfis.listaNumUsuarios)
-router.get('/aprovaAdm/aprova',aprovaPerfis.aprovaUsuario)
-router.get('/aprovaAdm/nega',aprovaPerfis.negaUsuario)
+router.get('/aprovaAdm',perfisController.perfilAdm)
+router.get('/adm/conta',perfisController.listaNumUsuarios)
 
-router.get('/mod/conta',aprovaPerfis.listaNumJogos)
-router.get('/aprovaMod',aprovaPerfis.perfilModerador)
-router.get('/aprovaMod/aprova',aprovaPerfis.aprovaJogo)
-router.get('/aprovaMod/nega',aprovaPerfis.negaJogo)
+
+router.get('/mod/conta',perfisController.listaNumJogos)
+router.get('/aprovaMod',perfisController.perfilModerador)
+router.get('/aprovaMod/aprova',perfisController.aprovaJogo)
+router.get('/aprovaMod/nega',perfisController.negaJogo)
 
 router.get('/buscaJogo/lista', buscaController.listaJogos)
 
@@ -101,7 +100,9 @@ router.get('/editar', VerificaUsuarioLogado, homeController.editar);
 
 // Páginas Restritas
 router.get('/perfilModerador', VerificaMod, VerificaUsuarioLogado, homeController.perfilModerador);
-router.get('/perfilAdm', VerificaAdm, VerificaUsuarioLogado, homeController.perfilAdm);
+router.get('/perfilAdm', VerificaAdm, VerificaUsuarioLogado, perfisController.perfilAdm);
+router.get('/perfilAdm/aprovaModerador/:id', VerificaAdm, VerificaUsuarioLogado, perfisController.aprovaModerador);
+router.get('/perfilAdm/reprovaModerador/:id', VerificaAdm, VerificaUsuarioLogado, perfisController.reprovaModerador);
 // router.get('/perfilModerador', VerificaUsuarioLogado, homeController.perfilModerador);
 // router.get('/perfilAdm', VerificaUsuarioLogado, homeController.perfilAdm);
 

@@ -13,15 +13,15 @@
                 <div class="row">
                     <div class="col-sm" id="admCol1">
                         <div>Aprovados</div>
-                        <h1  id='numAprovados'></h1>
+                        <h1 id='numAprovados'><%= countStatus.aprovados %></h1>
                     </div>
                     <div class="col-sm" id="admCol2">
-                        <div > Pendentes</div>
-                        <h1 id='numPendentes'></h1>
+                        <div> Pendentes</div>
+                        <h1 id='numPendentes'><%= countStatus.pendentes %></h1>
                     </div>
                     <div class="col-sm" id="admCol3">
-                        <div >Rejeitados</div>
-                        <h1 id='numRejeitados'></h1>
+                        <div>Rejeitados</div>
+                        <h1 id='numRejeitados'><%= countStatus.negados %></h1>
                     </div>
                 </div>
             </div>
@@ -36,22 +36,21 @@
                     </tr>
                 </thead>
                 <tbody id='dinamico'>
-                    <!-- <tr>
-                        <td><img src='/images/icons/lapisVerde.png' alt="Avatar"></td>
-                        <td>Descricao</td>'
+                    <% for(let usuario of pendentes) { %>
+                    <tr>
+                        <td><%= usuario.nome %></td>
+                        <td><%= usuario.apelido %></td>
                         <td>
-                            <img id="lapisVerde" src="/images/icons/lapisVerde.png" alt="lapisVerde">
-                            <img id="lapisVerde" src="/images/icons/Xis.png" alt="Xis">
+                            <a href="/perfilAdm/aprovaModerador/<%= usuario.id %>"><img id="lapisVerde"
+                                    src="/images/icons/lapisVerde.png" alt="lapisVerde"></a>
+                            <a href="/perfilAdm/reprovaModerador/<%= usuario.id %>"><img id="lapisVerde"
+                                    src="/images/icons/Xis.png" alt="Xis"></a>
+                            </form>
                         </td>
-                    </tr> -->
+                    </tr>
+                    <% } %>
                 </tbody>
             </table>
-
-            <!-- <div id='areaBotao'>
-                <form>
-                    <button type="submit" id='botao'>Próximo</button>
-                </form>
-            </div> -->
         </div>
 
 
