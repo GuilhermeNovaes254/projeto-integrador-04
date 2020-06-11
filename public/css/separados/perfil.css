@@ -94,7 +94,7 @@
         letter-spacing: 0.5px;
       }
 
-      .c-perfil__left--content h5 i{
+        .c-perfil__left--content h5 i{
           padding: 0 20px;
         }
 
@@ -133,6 +133,7 @@
       font-size: 23px;
       font-weight: 600;
       letter-spacing: 0.5px;
+      margin-bottom: 35px;
     }
 
       .c-perfil__right h2.c-perfil__right--title i{
@@ -155,3 +156,118 @@
         margin-right: 30px;
       }
     }
+
+.c-perfil__right--coments{
+  background: transparent;
+  padding-top: 10px;
+}
+
+  .c-perfil__right--coments a.c-bt-default{
+    margin-top: 55px;
+    display: block;
+  }
+
+.c-coments{
+  display: flex;
+  margin: 15px 0;
+}
+
+  .c-coments__photo{
+    flex-basis: 15%;
+  }
+/*     .c-coments__photo:hover img{
+      border: 2px solid #fff;
+    } */
+
+    .c-coments__photo img{
+      border-radius: 100px;
+      max-width: 75px;
+      margin-top: 35px;
+      margin-right: 35px;
+      border: 2px solid #fff;
+    }
+
+    .c-coments__photo h4{
+      max-width: 75px;
+      text-align: center;
+      padding: 5px 0;
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 18px;
+      letter-spacing: -0.015em;
+      color: #F22441;
+      font-family: 'Montserrat', arial, sans-serif;
+    }
+
+  .c-coments__box{
+    flex-basis: 85%;
+    border-radius: 50px;
+    background: #fff;
+    box-sizing: border-box;
+    padding: 20px 35px 35px;
+  }
+
+    .c-coments__box p{
+      font-size: 15px;
+      line-height: 22px;
+    }
+
+  .c-coments__features{
+    display: flex;
+    justify-content: flex-end;
+    padding-bottom: 10px;
+  }
+
+    .c-coments__features i{
+      font-size: 33px;
+      margin-right: 10px;
+    }
+    
+    .c-coments__features strong{
+      cursor: pointer;
+      display: contents;
+    }
+
+    .c-coments__features div{
+      margin-right: 20px;
+      padding: 10px 10px;
+      align-items: center;
+      display: flex;
+    }
+
+    .c-coments__features--evaluation{
+      border-radius: 10px;
+      color: #fff;
+      font-weight: 900;
+      align-self: center;
+    }
+
+    .c-coments__features--players{
+
+    }
+
+      .c-coments__features--players .ion-ios-game-controller-a{
+        color: green;
+      }
+
+    .c-coments__features--likes{
+
+    }
+
+      .c-coments__features--likes .ion-ios-heart{
+        color: red;
+      }
+
+.js-note-red{
+  background: #F22441;
+}
+
+.js-note-yellow{
+  background: #EFC11D;
+}
+
+.js-note-green{
+  background: #0F7A2F;
+}
+    
+

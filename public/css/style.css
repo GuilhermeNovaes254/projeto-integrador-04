@@ -41,6 +41,15 @@ h2 {
 	box-sizing: border-box;
 }
 
+.c-bt-default{
+  transition: color .25s ease,background .25s ease;
+}
+
+  .c-bt-default:hover{
+    text-decoration: none;
+    color:#fff;
+    background: #181718;
+  }
 
 section#temaExcluir {
 	background-image: url('/images/heads/h1.jpg');
@@ -295,7 +304,8 @@ input[type=checkbox] {
       }
     }
 
-  .c-banner-landing a{
+  .c-banner-landing a,
+  .c-bt-default{
     background: #F22441;
     border-radius: 35px;
     font: bold 22px/28px 'Comfortaa';
