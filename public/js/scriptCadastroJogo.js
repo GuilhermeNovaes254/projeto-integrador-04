@@ -15,6 +15,7 @@ let fotoTema = document.getElementById('inputFileTemaJogo');
 let imgFotoTema = document.getElementById('temaCadastroJogo');
 let imagemPerfil = document.getElementById('imagemPerfil');
 let imagemTema = document.getElementById('imagemTema');
+let form = document.getElementById('form');
 
 //preenchendo campo anoJogo
 let min = 1900,
@@ -59,23 +60,23 @@ if (typeof(formData.faixaEtaria) != "undefined") {
 };
 
 //populando manualmente outros combos
-if (typeof(formData.temaJogo) != "undefined") {
+if (typeof(formData.temaJogo) != "undefined" && formData.temaJogo != null) {
     selectTema.value = formData.temaJogo;
 };
 
-if (typeof(formData.pesoJogo) != "undefined") {
+if (typeof(formData.pesoJogo) != "undefined" && formData.pesoJogo != null) {
     selectPeso.value = formData.pesoJogo;
 };
 
-if (typeof(formData.dominioJogo) != "undefined") {
+if (typeof(formData.dominioJogo) != "undefined" && formData.dominioJogo != null) {
     selectDominio.value = formData.dominioJogo;
 };
 
-if (typeof(formData.mecanicaJogo) != "undefined") {
+if (typeof(formData.mecanicaJogo) != "undefined" && formData.mecanicaJogo != null) {
     selectMecanica.value = formData.mecanicaJogo;
 };
 
-if (typeof(formData.downtimeJogo) != "undefined") {
+if (typeof(formData.downtimeJogo) != "undefined" && formData.downtimeJogo != null) {
     selectDownTime.value = formData.downtimeJogo;
 };
 
@@ -91,6 +92,8 @@ fotoPerfil.addEventListener('change', function (evt) {
         var fr = new FileReader();
         fr.onload = function () {
             imgFotoPerfil.src = fr.result;
+            imgFotoPerfil.width = "150";
+            imgFotoPerfil.height = "150";
         }
         fr.readAsDataURL(files[0]);
     }
@@ -123,3 +126,10 @@ if (typeof(fotoTema1) != "undefined" && fotoTema1.length > 0) {
     imgFotoTema.style.backgroundImage = "url('" + '/buscaImagem/' + fotoTema1 + "')"
     imagemTema.value = fotoTema1;
 };
+
+const onFormSubmit = (evt) => {
+    if (typeof(formData) != undefined) {
+        alert("Jogo cadastrado com sucesso, aguarde a aprovação do moderador!")
+    }
+};
+form.addEventListener('submit', onFormSubmit); 

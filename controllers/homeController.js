@@ -1,6 +1,7 @@
 const {
     Cidade,
     Dominio,
+    Jogo,
     Estado,
     Mecanica,
     Tema,
@@ -90,17 +91,19 @@ const homeController = {
 
     jogo: (req, res) => {
 
+        let {id} = req.query;
+
         fotoUsuario = 'images/icons/PerfilVermelho.png'
 
         if(req.session.usuario.foto != 'images/icons/PerfilVermelho.png'){
             fotoUsuario = req.session.usuario.foto,
             fotoUsuario
         }
-
+        
         res.render('jogo', {
             title: 'jogo',
             apelidoUsuario: req.session.usuario.apelido,
-            fotoUsuario
+            fotoUsuario, id
         });
     },
 

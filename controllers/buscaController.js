@@ -93,8 +93,29 @@ const buscaController = {
                 } catch (error) {
                         res.status(401)
                 }
-        }
+        },
+        
+                listaJogos: async (req, res) => {
+                        try {
+                                let {limite} = req.query
 
+                                limite = parseInt(limite)
+
+                                let busca = []
+               
+                                busca = await Jogo.findAll({
+                                        limit: limite,
+                                        order: [
+                                                ['id', 'DESC']
+                                        ]
+                                })
+                
+                                res.send(busca)
+        
+                        } catch (error) {
+                                res.status(401)
+                        }
+                },
 
 }
 

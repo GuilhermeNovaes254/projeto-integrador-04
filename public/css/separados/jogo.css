@@ -1,5 +1,6 @@
+@import "http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css";
 #temajogo {
-	background-image: url('/images/heads/h4.jpg');
+	background-image: url('/images/default/h1.jpg');
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
@@ -9,8 +10,12 @@
 	/* viewport height */
 }
 
-
-
+h1,h3{
+    font-weight: bold;
+}
+h3{
+    color: #F22441;
+}
 
 /* corpo */
 .corpo{
@@ -21,31 +26,41 @@
     margin-top: -100px;
 }
 
+#fotoJogo{
+    margin-bottom: 20px;
+    margin-top: 20px;
+    background-image: url('/images/default/jogoDefault.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover ;
+    text-align: center;
+	width: 160px;
+	height: 160px;
+}
 
-
-#perfil{
+#lateral{
 
     background-color: #fff;
     border-radius: 15px;
-    width: 178px;
-    height: 478px;
-    /* margin-right: 15px; */
-    margin-left:20px;
-    padding: 20px;
-    background-image: url('/images/jogos/jogo_arcadia_quest_riders.png');
-    background-position: 50% 30%;
-    background-repeat: no-repeat;
-    background-size: 120px 130px; 
+	width: 180px;
+    height: auto;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: center;
+    align-items: center;
 }
 
-#perfil p{
-    margin-top: 180px;
+#lateral p{
+    margin-top: 20px;
+    margin-bottom: 20px;
     font-size: small;
 }
 
-#perfil h3{
-    margin-top: 20px;
+#lateral h3{
+    margin-bottom: 10px;
+    margin-top: 10px;
 }
 .media{
     margin-top: 40px;
@@ -65,11 +80,9 @@
 
 
 #center{
-    display: flex;
-    flex-wrap: wrap;
-
+    height: auto;
     justify-content: center;
-    text-align: center;
+    text-align: justify;
 }
 
 
@@ -87,10 +100,43 @@
     align-content: center;
     flex-wrap: nowrap;
 }
+
+.navjogo #iconeEstrela{
+    color: #f1c40f;
+    font-size: 30px;
+    text-align: center;
+}
+
+.navjogo #nota{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.navjogo #notaJogo{
+    color: #313131;
+    align-self: center;
+    font-size: medium;
+    font-weight: bolder;
+}
+
+
 .navjogo #dado{
-    background-image: url('/images/icons/dados1.png');
+    background-image: url('/images/icons/dadosVerde.svg');
     background-repeat: no-repeat;
-    width: 50px 
+    width: 30px;
+}
+.navjogo #dadoButton{
+    background-image: url('/images/icons/dadosVermelho.svg');
+    background-repeat: no-repeat;
+    width: 30px 
+}
+.navjogo #dadoButton:hover{
+    background-image: url('/images/icons/dadosVermelho.svg');
+    background-repeat: no-repeat;
+    width: 30px;
+    filter: opacity(30%);
+
 }
 .navjogo #numd{
     color: #0F7A2F;
@@ -105,18 +151,24 @@
     font-weight: bolder;
 }
 .navjogo #coracao{
-    background-image: url('/images/icons/coracao2.png');
+    background-image: url('/images/icons/coracaoVermelho.svg');
     background-repeat: no-repeat;
     background-position: center;
-    width: 20px;
-    
+    width: 30px;
 }
-.navjogo #mais{
-    background-image: url('/images/icons/plus.png');
-    /* background-size: 30px; */
+.navjogo #coracaoButton{
+    background-image: url('/images/icons/coracaoVerde.svg');
     background-repeat: no-repeat;
     background-position: center;
+    width: 30px; 
 }
+.navjogo #coracaoButton:hover{
+    background-image: url('/images/icons/coracaoVermelho.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: opacity(30%);   
+}
+
 #avaliacao{
     /* width: 196px; */
     
@@ -128,19 +180,39 @@
     
     
 }
-#star{
-    background-image: url('/images/icons/estrela0.png');
-    background-size:15px;
-    background-repeat: repeat-x;
-    width: 85px;
-}
+
 .navjogo button{
     width: 40px;
     height: 40px;
     background-color: #fff;
     border: none;
+    margin-right: 0px;
 }
 
+.rating {
+    unicode-bidi: bidi-override;
+    direction: rtl;
+    flex-direction: row;
+    display: flex;
+    box-sizing: border-box;
+}
+
+.rating>a {
+    display: inline-block;
+    position: relative;
+    padding: 5px;
+    width: 15px;
+    font-size: 30px;
+    color: #313131;
+    content: "\2605";
+}
+
+.rating>a:hover:before,
+.rating>a:hover~a:before {
+    content: "\2605";
+    position: absolute;
+    color: #f1c40f;
+}
 
 
 #jogo{
@@ -157,43 +229,26 @@
 
 
 #texto{
-
     font-size: medium;
-    width: 60%;
-    /* margin-top: -60px; */
+    width: 90%;
+    
+    padding-top: 30px;
+    padding-left: 10%;
+    padding-right: 30px;
+    margin-bottom: 20px;
 }
 
-#texto p{
+#texto #descricoes{
     padding-top: 40px;
 }
 
-#video{
-    width: 249px;
-    height: 138px;
-
-    background-image: url('/images/jogos/Arcadia_unboxing.png');
-    margin-top: 40px;
-}
-
-#jogo2{
-
-    background-color: #fff;
-    border-radius: 15px;
-    width: 178px;
-    align-content: center;
-    margin-left: 5%;
-    padding: 10px;
-    
-    
-}
-#jogo2 h3{
-    padding: 10px;
-    font-weight: bolder;
-}
 
 #nomejogo{
-    padding: 20px;
+    margin-bottom: 20px;
+    margin-top: 20px;
 }
+
+
 #estrelas{
     margin-top: 10px;
 	align-content: center;
@@ -205,28 +260,29 @@
 	background-size:contain;
 }
 #capajogo1{
-    width: 120px;
-    height: 130px;
-    background-image: url('/images/jogos/jogo_arcadia_quest_riders.png');
+    width: 140px;
+    height: 140px;
+    background-image: url('/images/default/jogoDefault.png');
     align-content: center;
     background-repeat: no-repeat;
-    background-size: cover 
+    background-size: cover;
+    margin-bottom: 10px;
+    margin-top: 10px;
 }
 #capajogo2{
-    width: 120px;
-    height: 130px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    width: 140px;
+    height: 140px;
     align-content: center;
-    background-image: url('/images/jogos/jogo_arcadia_quest_riders.png');
+    background-image: url('/images/default/jogoDefault.png');
     background-repeat: no-repeat;
     background-size: cover 
 }
 
 #resenha{
-
-    
-    width: 650px;
+    width: 100vw;
     text-align: left;
-    margin-left: 5vw;
     display: flex;
     flex-wrap: wrap;
     margin-top: 20px;
@@ -238,7 +294,7 @@
     display: flex;
     flex-direction: column;
     border-radius: 15px;
-    width: 649px;
+    width: 600px;
     height: 478px;
     margin-left: 15px;
     justify-content: flex-start;
@@ -259,6 +315,12 @@
     
 }
 
+#apelidoComentario a{
+    font-weight: 600;
+    color: #F22441;
+    font-size: medium;
+}
+
 .avatar{
     background-image: url('/images/fotos/avatar7.jpg ');
 	background-position: center;
@@ -275,14 +337,7 @@
 	box-sizing: border-box;
 }
 
-/* .comentar{
-    background-color: #fff;
-    border-radius: 15px;
-    width: 500px;
-    height: 60px;
-    align-content: center;
-    margin-top: 17.5px;
-} */
+
 .comentar textarea{
     /* border: none; */
     resize: none;
@@ -297,7 +352,7 @@
 .comentario button{
     background-color:#F22441;
     width: 100px;
-    margin-left: 570px;
+    margin-left: 545px;
     margin-top: -10px;
     border-radius: 15px;
     color: #fff;
@@ -321,9 +376,9 @@
         flex-direction: column;
     }
     
-    #perfil{
+    #lateral{
         width: 100vw;
-        margin: 0;
+        margin-left: 5%;
         
     }
     #jogo{

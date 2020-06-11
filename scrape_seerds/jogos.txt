@@ -1,54 +1,50 @@
-<Element 'boardgames' at 0x02D5C960>
-<Element 'boardgames' at 0x02F82C58>
-<Element 'boardgames' at 0x02FA76B8>
-<Element 'boardgames' at 0x02FAFD70>
-<Element 'boardgames' at 0x02F82C58>
-<Element 'boardgames' at 0x02F86A78>
-<Element 'boardgames' at 0x02FB8F28>
-<Element 'boardgames' at 0x02FB1AC8>
-<Element 'boardgames' at 0x02D455F0>
-<Element 'boardgames' at 0x02FA5050>
-<Element 'boardgames' at 0x02FA5370>
-<Element 'boardgames' at 0x02FA5118>
-<Element 'boardgames' at 0x02FAFCD0>
-<Element 'boardgames' at 0x02FB5ED8>
-<Element 'boardgames' at 0x02FB5D70>
-<Element 'boardgames' at 0x02FEEF50>
-<Element 'boardgames' at 0x02FEEF78>
-<Element 'boardgames' at 0x02FD10A0>
-<Element 'boardgames' at 0x02D5C9D8>
-<Element 'boardgames' at 0x02D5CA50>
-<Element 'boardgames' at 0x02D457F8>
-<Element 'boardgames' at 0x02D4C5F0>
-<Element 'boardgames' at 0x02D5C960>
-<Element 'boardgames' at 0x02D5CE60>
-<Element 'boardgames' at 0x02FAC190>
-<Element 'boardgames' at 0x02D451E0>
-<Element 'boardgames' at 0x02D5CE60>
-<Element 'boardgames' at 0x02D453C0>
-<Element 'boardgames' at 0x02F86D48>
-<Element 'boardgames' at 0x02F86CD0>
-<Element 'boardgames' at 0x02FB1780>
-<Element 'boardgames' at 0x02FD1C80>
-<Element 'boardgames' at 0x02FD15F0>
-<Element 'boardgames' at 0x02D45A78>
-<Element 'boardgames' at 0x02D5C9D8>
-<Element 'boardgames' at 0x02FB12D0>
-<Element 'boardgames' at 0x02D317F8>
-<Element 'boardgames' at 0x02FD1DC0>
-<Element 'boardgames' at 0x02FD1460>
-<Element 'boardgames' at 0x02FA72D0>
-<Element 'boardgames' at 0x02F86C80>
-<Element 'boardgames' at 0x02F86BE0>
-<Element 'boardgames' at 0x02D45348>
-<Element 'boardgames' at 0x02D451B8>
-<Element 'boardgames' at 0x02D45528>
-<Element 'boardgames' at 0x02FB8528>
-<Element 'boardgames' at 0x02FB8E10>
-<Element 'boardgames' at 0x02D45988>
-<Element 'boardgames' at 0x02D45348>
-<Element 'boardgames' at 0x02FE4FA0>
-<Element 'boardgames' at 0x02FE4E38>
-<Element 'boardgames' at 0x02FC6190>
-<Element 'boardgames' at 0x02FE4078>
-<Element 'boardgames' at 0x02FE44D8>
+{'id': 4, 'ano': '1998', 'qntMin': '2', 'qntMax': '4', 'duracao': '90', 'faixaEtaria': '13', 'nome': 'El Caballero', 'descricao': 'Descricao', 'foto': 'https://cf.geekdo-images.com/thumb/img/vh6QNbi9pJO4rkdMFdeqkDDKPtQ=/fit-in/200x150/pic1731731.jpg', 'aprovado': 1, 'tema_id': 'TEMA', 'dominio_id': 'DOMINIO', 'mecanica_id': 'MECANICA'}
+{'id': 5, 'ano': '1999', 'qntMin': '2', 'qntMax': '2', 'duracao': '5', 'faixaEtaria': '10', 'nome': 'Button Broccoli', 'descricao': 'Descricao', 'foto': 'Button Men BROM', 'aprovado': 1, 'tema_id': 'TEMA', 'dominio_id': 'DOMINIO', 'mecanica_id': 'MECANICA'}
+{'id': 6, 'ano': '1975', 'qntMin': '2', 'qntMax': '2', 'duracao': '30', 'faixaEtaria': '8', 'nome': 'Bison', 'descricao': 'Descricao', 'foto': 'Büffeljagd', 'aprovado': 1, 'tema_id': 'TEMA', 'dominio_id': 'DOMINIO', 'mecanica_id': 'MECANICA'}
+{'id': 7, 'ano': '1980', 'qntMin': '2', 'qntMax': '4', 'duracao': '30', 'faixaEtaria': '9', 'nome': 'BASTA', 'descricao': 'Descricao', 'foto': 'Sans Arrêt', 'aprovado': 1, 'tema_id': 'TEMA', 'dominio_id': 'DOMINIO', 'mecanica_id': 'MECANICA'}
+{'id': 8, 'ano': '1800', 'qntMin': '2', 'qntMax': '6', 'duracao': '30', 'faixaEtaria': '8', 'nome': "Animal House Liar's Dice", 'descricao': 'Descricao', 'foto': 'Bluff', 'aprovado': 1, 'tema_id': 'TEMA', 'dominio_id': 'DOMINIO', 'mecanica_id': 'MECANICA'}
+{'id': 9, 'ano': '1999', 'qntMin': '2', 'qntMax': '5', 'duracao': '60', 'faixaEtaria': '10', 'nome': 'Big City', 'descricao': 'Descricao', 'foto': 'https://cf.geekdo-images.com/original/img/Vvk_hiBdVGLQAhE3EJecqMm-deg=/0x0/pic1043072.jpg', 'aprovado': 1, 'tema_id': 'TEMA', 'dominio_id': 'DOMINIO', 'mecanica_id': 'MECANICA'}
+{'id': 10, 'ano': '1993', 'qntMin': '2', 'qntMax': '2', 'duracao': '240', 'faixaEtaria': '12', 'nome': 'Bobby Lee: The Civil War in Virginia 1861-1865', 'descricao': 'Descricao', 'foto': 'https://cf.geekdo-images.com/original/img/c1JQySSvFf86EDP3f2OTmQ76a2o=/0x0/pic365542.jpg', 'aprovado': 1, 'tema_id': 'TEMA', 'dominio_id': 'DOMINIO', 'mecanica_id': 'MECANICA'}
+{'id': 11, 'ano': '1994', 'qntMin': '3', 'qntMax': '6', 'duracao': '60', 'faixaEtaria': '12', 'nome': 'Affare Fatto!', 'descricao': 'Descricao', 'foto': 'Kohle, Kie$ & Knete', 'aprovado': 1, 'tema_id': 'TEMA', 'dominio_id': 'DOMINIO', 'mecanica_id': 'MECANICA'}
+{'id': 12, 'ano': '1990', 'qntMin': '2', 'qntMax': '6', 'duracao': '45', 'faixaEtaria': '12', 'nome': 'Adel Verpflichtet', 'descricao': 'Descricao', 'foto': 'Fair Means or Foul', 'aprovado': 1, 'tema_id': 'TEMA', 'dominio_id': 'DOMINIO', 'mecanica_id': 'MECANICA'}
+{'id': 13, 'ano': '1997', 'qntMin': '2', 'qntMax': '2', 'duracao': '60', 'faixaEtaria': '10', 'nome': 'Caesar & Cleopatra', 'descricao': 'Descricao', 'foto': 'Cesar y Cleopatra', 'aprovado': 1, 'tema_id': 'TEMA', 'dominio_id': 'DOMINIO', 'mecanica_id': 'MECANICA'}
+{'id': 14, 'ano': '1999', 'qntMin': '3', 'qntMax': '5', 'duracao': '45', 'faixaEtaria': '12', 'nome': 'Cap Horn', 'descricao': 'Descricao', 'foto': 'This is a sailing game where players are racing around Cape Horn.  Each turn a player may move their boat by using the wind markers that are placed out on the board.  The trick is other players can impede your progress by playing their wind markers to slow you down.  First person to hit 3 way-points wins.  You can also win by hitting 2 way-points and then crossing the finish line.<br/><br/>', 'aprovado': 1, 'tema_id': 'TEMA', 'dominio_id': 'DOMINIO', 'mecanica_id': 'MECANICA'}
+{'id': 15, 'ano': '1903', 'qntMin': '3', 'qntMax': '8', 'duracao': '90', 'faixaEtaria': '7', 'nome': 'Ben 10 Pit', 'descricao': 'Descricao', 'foto': 'Cambio', 'aprovado': 1, 'tema_id': 'TEMA', 'dominio_id': 'DOMINIO', 'mecanica_id': 'MECANICA'}
+{'id': 16, 'ano': '1995', 'qntMin': '2', 'qntMax': '8', 'duracao': '30', 'faixaEtaria': '6', 'nome': 'Avus', 'descricao': 'Descricao', 'foto': 'PitchCar', 'aprovado': 1, 'tema_id': 'TEMA', 'dominio_id': 'DOMINIO', 'mecanica_id': 'MECANICA'}
+{'id': 17, 'ano': '1475', 'qntMin': '2', 'qntMax': '2', 'duracao': '60', 'faixaEtaria': '6', 'nome': 'Ajax Chessmen', 'descricao': 'Descricao', 'foto': 'All American Chessmen', 'aprovado': 1, 'tema_id': 'TEMA', 'dominio_id': 'DOMINIO', 'mecanica_id': 'MECANICA'}
+{'id': 18, 'ano': '1991', 'qntMin': '2', 'qntMax': '8', 'duracao': '480', 'faixaEtaria': '12', 'nome': 'Advanced Civilization', 'descricao': 'Descricao', 'foto': 'https://cf.geekdo-images.com/original/img/nJ0WykZGJuKOcSBTPsAHJjkmzwI=/0x0/pic87459.jpg', 'aprovado': 1, 'tema_id': 'TEMA', 'dominio_id': 'DOMINIO', 'mecanica_id': 'MECANICA'}
+{'id': 19, 'ano': '1989', 'qntMin': '2', 'qntMax': '4', 'duracao': '30', 'faixaEtaria': '13', 'nome': 'À la carte', 'descricao': 'Descricao', 'foto': 'Lo Chef Pasticcione', 'aprovado': 1, 'tema_id': 'TEMA', 'dominio_id': 'DOMINIO', 'mecanica_id': 'MECANICA'}
+{'id': 20, 'ano': '1996', 'qntMin': '2', 'qntMax': '2', 'duracao': '200', 'faixaEtaria': '12', 'nome': 'Annibale: Roma contro Cartagine', 'descricao': 'Descricao', 'foto': 'Hannibal: Rome vs. Carthage', 'aprovado': 1, 'tema_id': 'TEMA', 'dominio_id': 'DOMINIO', 'mecanica_id': 'MECANICA'}
+{'id': 21, 'ano': '1990', 'qntMin': '2', 'qntMax': '6', 'duracao': '60', 'faixaEtaria': '14', 'nome': 'De Bellis Antiquitatis', 'descricao': 'Descricao', 'foto': 'DBA', 'aprovado': 1, 'tema_id': 'TEMA', 'dominio_id': 'DOMINIO', 'mecanica_id': 'MECANICA'}
+{'id': 22, 'ano': '1996', 'qntMin': '2', 'qntMax': '5', 'duracao': '30', 'faixaEtaria': '10', 'nome': 'Campanile', 'descricao': 'Descricao', 'foto': 'https://cf.geekdo-images.com/original/img/Tgg9UXycbzI7YY4Ww4dPluuQ0Z8=/0x0/pic578060.jpg', 'aprovado': 1, 'tema_id': 'TEMA', 'dominio_id': 'DOMINIO', 'mecanica_id': 'MECANICA'}
+{'id': 23, 'ano': '1991', 'qntMin': '2', 'qntMax': '6', 'duracao': '90', 'faixaEtaria': '10', 'nome': 'Candidate', 'descricao': 'Descricao', 'foto': 'https://cf.geekdo-images.com/original/img/NwzGMAbV-M9kmgumoLLnmJ8E4YI=/0x0/pic56252.jpg', 'aprovado': 1, 'tema_id': 'TEMA', 'dominio_id': 'DOMINIO', 'mecanica_id': 'MECANICA'}
+{'id': 24, 'ano': '1000', 'qntMin': '2', 'qntMax': '2', 'duracao': '20', 'faixaEtaria': '8', 'nome': 'Bacha Chal', 'descricao': 'Descricao', 'foto': 'Bagha-Chall', 'aprovado': 1, 'tema_id': 'TEMA', 'dominio_id': 'DOMINIO', 'mecanica_id': 'MECANICA'}
+{'id': 25, 'ano': '1993', 'qntMin': '3', 'qntMax': '6', 'duracao': '60', 'faixaEtaria': '12', 'nome': 'Capone', 'descricao': 'Descricao', 'foto': 'https://cf.geekdo-images.com/thumb/img/xVtceJwYKzBK55VdOxJiZ9f7B5Q=/fit-in/200x150/pic192718.jpg', 'aprovado': 1, 'tema_id': 'TEMA', 'dominio_id': 'DOMINIO', 'mecanica_id': 'MECANICA'}
+{'id': 26, 'ano': '1985', 'qntMin': '2', 'qntMax': '4', 'duracao': '60', 'faixaEtaria': '8', 'nome': 'Advance to Boardwalk', 'descricao': 'Descricao', 'foto': 'Baue auf der Schlossallee', 'aprovado': 1, 'tema_id': 'TEMA', 'dominio_id': 'DOMINIO', 'mecanica_id': 'MECANICA'}
+{'id': 27, 'ano': '1994', 'qntMin': '3', 'qntMax': '5', 'duracao': '20', 'faixaEtaria': '7', 'nome': 'Blazing Camels', 'descricao': 'Descricao', 'foto': 'Rupsen Race', 'aprovado': 1, 'tema_id': 'TEMA', 'dominio_id': 'DOMINIO', 'mecanica_id': 'MECANICA'}
+{'id': 28, 'ano': '1986', 'qntMin': '2', 'qntMax': '7', 'duracao': '360', 'faixaEtaria': '14', 'nome': "1830: Ferrovie e Capitani d'Industria", 'descricao': 'Descricao', 'foto': '1830: The Game of Railroads and Robber Barons', 'aprovado': 1, 'tema_id': 'TEMA', 'dominio_id': 'DOMINIO', 'mecanica_id': 'MECANICA'}
+{'id': 29, 'ano': '1995', 'qntMin': '3', 'qntMax': '6', 'duracao': '300', 'faixaEtaria': '14', 'nome': '1856: Railroading in Upper Canada from 1856', 'descricao': 'Descricao', 'foto': 'https://cf.geekdo-images.com/original/img/izkCLPnIW0BYA1epXfUzmstE3EU=/0x0/pic159311.jpg', 'aprovado': 1, 'tema_id': 'TEMA', 'dominio_id': 'DOMINIO', 'mecanica_id': 'MECANICA'}
+{'id': 30, 'ano': '1990', 'qntMin': '2', 'qntMax': '5', 'duracao': '30', 'faixaEtaria': '8', 'nome': 'Asterix: Das Kartenspiel', 'descricao': 'Descricao', 'foto': 'https://cf.geekdo-images.com/thumb/img/fNy8r9G6pe7nryvNmmcP7Fw-l1w=/fit-in/200x150/pic249626.jpg', 'aprovado': 1, 'tema_id': 'TEMA', 'dominio_id': 'DOMINIO', 'mecanica_id': 'MECANICA'}
+{'id': 31, 'ano': '1992', 'qntMin': '2', 'qntMax': '6', 'duracao': '45', 'faixaEtaria': '10', 'nome': '$timmt $o!', 'descricao': 'Descricao', 'foto': 'Alhambra Bonn', 'aprovado': 1, 'tema_id': 'TEMA', 'dominio_id': 'DOMINIO', 'mecanica_id': 'MECANICA'}
+{'id': 32, 'ano': '1997', 'qntMin': '3', 'qntMax': '6', 'duracao': '45', 'faixaEtaria': '10', 'nome': 'Canyon', 'descricao': 'Descricao', 'foto': 'https://cf.geekdo-images.com/original/img/SNIQis4-ao6_gNnLI2r7TWqtchM=/0x0/pic70466.jpg', 'aprovado': 1, 'tema_id': 'TEMA', 'dominio_id': 'DOMINIO', 'mecanica_id': 'MECANICA'}
+{'id': 33, 'ano': '1979', 'qntMin': '2', 'qntMax': '4', 'duracao': '90', 'faixaEtaria': '8', 'nome': 'Campionato Italiano', 'descricao': 'Descricao', 'foto': 'Homas Tour', 'aprovado': 1, 'tema_id': 'TEMA', 'dominio_id': 'DOMINIO', 'mecanica_id': 'MECANICA'}
+{'id': 34, 'ano': '1996', 'qntMin': '2', 'qntMax': '8', 'duracao': '15', 'faixaEtaria': '4', 'nome': 'Barnyard Buddies', 'descricao': 'Descricao', 'foto': 'Big Top', 'aprovado': 1, 'tema_id': 'TEMA', 'dominio_id': 'DOMINIO', 'mecanica_id': 'MECANICA'}
+{'id': 35, 'ano': '1989', 'qntMin': '2', 'qntMax': '6', 'duracao': '30', 'faixaEtaria': '12', 'nome': 'Ave Caesar', 'descricao': 'Descricao', 'foto': 'Ave Cesare', 'aprovado': 1, 'tema_id': 'TEMA', 'dominio_id': 'DOMINIO', 'mecanica_id': 'MECANICA'}
+{'id': 36, 'ano': '1987', 'qntMin': '2', 'qntMax': '2', 'duracao': '30', 'faixaEtaria': '7', 'nome': 'Abalone', 'descricao': 'Descricao', 'foto': 'Abalone Mini', 'aprovado': 1, 'tema_id': 'TEMA', 'dominio_id': 'DOMINIO', 'mecanica_id': 'MECANICA'}
+{'id': 37, 'ano': '1988', 'qntMin': '2', 'qntMax': '6', 'duracao': '120', 'faixaEtaria': '10', 'nome': 'Buck Rogers: Battle for the 25th Century Game', 'descricao': 'Descricao', 'foto': 'https://cf.geekdo-images.com/original/img/5g1sjG5fA28i9H4RvVpPuvgDb-Y=/0x0/pic694341.jpg', 'aprovado': 1, 'tema_id': 'TEMA', 'dominio_id': 'DOMINIO', 'mecanica_id': 'MECANICA'}
+{'id': 38, 'ano': '1999', 'qntMin': '2', 'qntMax': '2', 'duracao': '45', 'faixaEtaria': '10', 'nome': 'Battle Cry', 'descricao': 'Descricao', 'foto': 'https://cf.geekdo-images.com/original/img/Kka6gXQqPvVlB5VzCy2dLHShCVA=/0x0/pic21060.jpg', 'aprovado': 1, 'tema_id': 'TEMA', 'dominio_id': 'DOMINIO', 'mecanica_id': 'MECANICA'}
+{'id': 39, 'ano': '1996', 'qntMin': '2', 'qntMax': '8', 'duracao': '60', 'faixaEtaria': '8', 'nome': 'Battle Cattle', 'descricao': 'Descricao', 'foto': 'Has been published in 3 editions thus far. Aldo Ghiozzi helmed the second edition. W. Jason Peck joined the design team for 3rd edition.<br/><br/>Description for the 2nd edition:<br/><br/>Battle Cattle: Second Edition Expansion in a world of swords and sorcery.<br/><br/>Gather all the cud available as your Angus Wizard prepares to fire a Magic Moo-ssile! Have your Corriente Pailadin last a little longer by Laying On Hooves! Animate dead cow carcasses with your Jersey Necowmancer!<br/><br/>Description for the 3rd edition:<br/><br/>I MOO YOU A THIRD TIME!&quot;<br/><br/>Moo-ve over people &lsquo;cause the cows are comin&rsquo; home and they&rsquo;re packin&rsquo;! The udder devastation continues with a new evolution of Battle Cattle. Battle Cattle: Third Edition brings you the realism you&rsquo;ve been licking your chops for! Use these new and revised tabletop miniatures rules to play realistic Battle Cattle combat parallel to the cows from the Official Battle Cattle miniatures line (sold separately).<br/><br/>Also included are more cow breeds, weapons, modifications and accessories. 48 pages of perfect bound rules in a traditional 8.5&rdquo; x 11&rdquo; book with one full color pasture battlefield and full color cow chips to play&hellip;(You meant cow CHITS, right? You&rsquo;re not really putting cow dung in the game, are you?)&hellip;Mooooo&hellip;<br/><br/>', 'aprovado': 1, 'tema_id': 'TEMA', 'dominio_id': 'DOMINIO', 'mecanica_id': 'MECANICA'}
+{'id': 40, 'ano': '1954', 'qntMin': '2', 'qntMax': '6', 'duracao': '45', 'faixaEtaria': '8', 'nome': '1000 Bornes', 'descricao': 'Descricao', 'foto': '1000 Kilométer', 'aprovado': 1, 'tema_id': 'TEMA', 'dominio_id': 'DOMINIO', 'mecanica_id': 'MECANICA'}
+{'id': 41, 'ano': '1997', 'qntMin': '2', 'qntMax': '4', 'duracao': '15', 'faixaEtaria': '8', 'nome': 'Bloqueio', 'descricao': 'Descricao', 'foto': 'Mini-Bloqueio 2 cores', 'aprovado': 1, 'tema_id': 'TEMA', 'dominio_id': 'DOMINIO', 'mecanica_id': 'MECANICA'}
+{'id': 42, 'ano': '1983', 'qntMin': '2', 'qntMax': '2', 'duracao': '240', 'faixaEtaria': '12', 'nome': 'Bull Run: The First Major Battle of the American Civil War', 'descricao': 'Descricao', 'foto': 'https://cf.geekdo-images.com/original/img/QqngXw0raDkMlVs9aW9ICQ262IA=/0x0/pic244567.jpg', 'aprovado': 1, 'tema_id': 'TEMA', 'dominio_id': 'DOMINIO', 'mecanica_id': 'MECANICA'}
+{'id': 43, 'ano': '1999', 'qntMin': '2', 'qntMax': '4', 'duracao': '60', 'faixaEtaria': '12', 'nome': 'Cabale', 'descricao': 'Descricao', 'foto': 'https://cf.geekdo-images.com/original/img/Ab7sCAI9oeH-Mn5UAOycjJy8-O8=/0x0/pic220251.jpg', 'aprovado': 1, 'tema_id': 'TEMA', 'dominio_id': 'DOMINIO', 'mecanica_id': 'MECANICA'}
+{'id': 44, 'ano': '1993', 'qntMin': '2', 'qntMax': '2', 'duracao': '300', 'faixaEtaria': '0', 'nome': 'Caesar in Gallia: Conquest on the Ancient Frontier', 'descricao': 'Descricao', 'foto': 'https://cf.geekdo-images.com/original/img/D8_mIlOgE6tNmazej5TvybChNRo=/0x0/pic477919.jpg', 'aprovado': 1, 'tema_id': 'TEMA', 'dominio_id': 'DOMINIO', 'mecanica_id': 'MECANICA'}
+{'id': 45, 'ano': '2000', 'qntMin': '2', 'qntMax': '2', 'duracao': '0', 'faixaEtaria': '0', 'nome': '5th Year Cwali', 'descricao': 'Descricao', 'foto': 'Loosely based on the classic mathematical puzzle, The Towers of Hanoi.  The major difference is that there are five fields to build on, and you take all discs on top of a disc when moving a lower disc.  Both colors may occupy a space, but a larger disc may never be on top of a smaller disc.<br/><br/>Later, this game was given away at Essen 2001.<br/><br/>', 'aprovado': 1, 'tema_id': 'TEMA', 'dominio_id': 'DOMINIO', 'mecanica_id': 'MECANICA'}
+{'id': 46, 'ano': '2000', 'qntMin': '2', 'qntMax': '4', 'duracao': '60', 'faixaEtaria': '0', 'nome': 'Auction America: The Trivia Game for Any Collector', 'descricao': 'Descricao', 'foto': 'https://cf.geekdo-images.com/original/img/IQsKP120DBmrFUCyd1D_Rjytaws=/0x0/pic449320.jpg', 'aprovado': 1, 'tema_id': 'TEMA', 'dominio_id': 'DOMINIO', 'mecanica_id': 'MECANICA'}
+{'id': 47, 'ano': '2000', 'qntMin': '2', 'qntMax': '4', 'duracao': '180', 'faixaEtaria': '12', 'nome': "Camlyn's Destiny", 'descricao': 'Descricao', 'foto': 'https://cf.geekdo-images.com/original/img/MzgTMWYAEWUUtCv0KAkRe22LqUE=/0x0/pic466505.jpg', 'aprovado': 1, 'tema_id': 'TEMA', 'dominio_id': 'DOMINIO', 'mecanica_id': 'MECANICA'}
+{'id': 48, 'ano': '2000', 'qntMin': '2', 'qntMax': '5', 'duracao': '45', 'faixaEtaria': '7', 'nome': 'Carcassonne', 'descricao': 'Descricao', 'foto': 'Domínio de Carcassonne', 'aprovado': 1, 'tema_id': 'TEMA', 'dominio_id': 'DOMINIO', 'mecanica_id': 'MECANICA'}
+{'id': 49, 'ano': '2000', 'qntMin': '2', 'qntMax': '5', 'duracao': '45', 'faixaEtaria': '10', 'nome': 'Camelot', 'descricao': 'Descricao', 'foto': "Take on the role of a knight and join the prestigious tournaments at the king's court. Use your cards to win the jousting competitions, and to fight with your sword, axe or morning-star. Rally your squires, gain the support of a maiden, and play action cards against your opponents.<br/><br/>Clever use of action cards can change the type of tournament that is in progress. One card will 'unhorse' you, forcing everyone still in the jousting competition to switch to a weapon battle of the action card holder&rsquo;s choice.<br/><br/>Other actions cause you to drop whatever other weapon you are using and resort to hand-to-hand battles in which the player with the most cards- not the highest point total- will win a token. Depending on the number of players in the game, the first player to win four or five different tournaments becomes the overall victor.<br/><br/>There is a lot more strategy involved in the game than first meets the eye.<br/><br/>Re-implements:<br/><br/>    Attacke<br/><br/><br/><br/><br/>", 'aprovado': 1, 'tema_id': 'TEMA', 'dominio_id': 'DOMINIO', 'mecanica_id': 'MECANICA'}
+{'id': 50, 'ano': '1990', 'qntMin': '3', 'qntMax': '5', 'duracao': '45', 'faixaEtaria': '12', 'nome': 'Caravane', 'descricao': 'Descricao', 'foto': 'Karavane', 'aprovado': 1, 'tema_id': 'TEMA', 'dominio_id': 'DOMINIO', 'mecanica_id': 'MECANICA'}
+{'id': 51, 'ano': '1993', 'qntMin': '2', 'qntMax': '4', 'duracao': '60', 'faixaEtaria': '8', 'nome': 'Alhambra Kertjei', 'descricao': 'Descricao', 'foto': 'The Gardens of the Alhambra', 'aprovado': 1, 'tema_id': 'TEMA', 'dominio_id': 'DOMINIO', 'mecanica_id': 'MECANICA'}
+{'id': 52, 'ano': '2000', 'qntMin': '1', 'qntMax': '2', 'duracao': '60', 'faixaEtaria': '12', 'nome': 'Al Cabohne', 'descricao': 'Descricao', 'foto': 'https://cf.geekdo-images.com/thumb/img/it6SscQFKDDmGGfVYm4E1GIv3kg=/fit-in/200x150/pic19358.jpg', 'aprovado': 1, 'tema_id': 'TEMA', 'dominio_id': 'DOMINIO', 'mecanica_id': 'MECANICA'}
+{'id': 53, 'ano': '1995', 'qntMin': '3', 'qntMax': '4', 'duracao': '45', 'faixaEtaria': '12', 'nome': 'Canaletto', 'descricao': 'Descricao', 'foto': 'https://cf.geekdo-images.com/original/img/jnpFAbLsndWvzqMIRhS7oXPvx6Q=/0x0/pic3138470.jpg', 'aprovado': 1, 'tema_id': 'TEMA', 'dominio_id': 'DOMINIO', 'mecanica_id': 'MECANICA'}
