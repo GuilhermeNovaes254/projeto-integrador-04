@@ -101,48 +101,36 @@ const forms = {
             avatar
         } = req.body;
 
+        let dataDeNascimento = anoNasc+"-"+mesNasc+"-"+diaNasc;
+        let senhaEncript;
+
         let id = req.session.usuario.id
 
-        const user = await Usuario.findOne({
+        if (senha != '' && senha == senha2) {
+            senhaEncript = bcrypt.hashSync(senha, 10);
+        }
+
+        const user = await Usuario.update({
+            nome: nomeUser,
+            apelido,
+            genero,
+            cidade_estado_id: estado,
+            cidade_id: cidade,
+            dataDeNascimento,
+            tipoAp: tipoNivelAP,
+            descricao: descricaoUser,
+            senha: senhaEncript
+        },{
             where: {
                 id: id
             }
         });
+        return res.redirect('/feeds');
 
-        if (nomeUser != '') {
-            user.nome = nomeUser;
-        }
-        if (apelido != '') {
-            user.apelido = apelido;
-        }
-        if (genero != '') {
-            user.genero = genero;
-        }
-        if (estado != '') {
-            user.cidade_estado_id = estado;
-        }
-        if (cidade != '') {
-            user.cidade_id = cidade;
-        }
-        if (tipoNivelAP != '') {
-            user.tipoAp = tipoNivelAP;
-        }
-        if (descricaoUser != '') {
-            user.descricao = descricaoUser;
-        }
-        if (senha != '' && senha == senha2) {
-            user.senha = bcrypt.hashSync(senha, 10);
-        }
-        if (avatar != '') {
-            user.foto = '../public/images/avatar/' + avatar;
-        }
-        if (diaNasc != 0 && mesNasc != 0 && anoNasc != 0) {
-            // Formatação da data YYYY-MM-DD.
-            diaNasc = user.dataDeNascimento.substring(0, 4);
-            mesNasc = user.dataDeNascimento.substring(5, 7);
-            anoNasc = user.dataDeNascimento.substring(8, 10);
-            user.dataDeNascimento = `${anoNasc}-${mesNasc}-${diaNasc}`
-        }
+        // if (avatar != '') {
+        //     user.foto = '../public/images/avatar/' + avatar;
+        // }
+
     },
 
     cadastrarJogo: async (req, res) => {
