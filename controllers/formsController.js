@@ -101,6 +101,22 @@ const forms = {
             avatar
         } = req.body;
 
+        let {
+            files
+        } = req;
+
+        let foto = '';
+        let fotoTema = '';
+
+        for (let file of files) { 
+            if(file.fieldname == 'fotoTema'){
+                fotoTema = file.originalname
+            }
+            if(file.fieldname == 'avatar'){
+                foto = file.originalname
+            }
+        }
+
         let dataDeNascimento = anoNasc+"-"+mesNasc+"-"+diaNasc;
         let senhaEncript;
 
@@ -119,7 +135,9 @@ const forms = {
             dataDeNascimento,
             tipoAp: tipoNivelAP,
             descricao: descricaoUser,
-            senha: senhaEncript
+            senha: senhaEncript,
+            foto,
+            fotoTema
         },{
             where: {
                 id: id

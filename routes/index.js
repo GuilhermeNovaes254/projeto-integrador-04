@@ -112,7 +112,7 @@ router.post('/login', autorizaLogin.loginSession);
 // POSTS formulario
 router.post('/cadastro', formController.cadastroUsuario);
 router.post('/excluir', VerificaUsuarioLogado, formController.excluirUsuario);
-router.post('/editar', VerificaUsuarioLogado, formController.editarUsuario);
+router.post('/editar', VerificaUsuarioLogado, upload.any(), formController.editarUsuario);
 router.post('/cadastroJogo', VerificaUsuarioLogado, upload.any(), [
         check("nomeJogo").isLength({
             min: 2,
