@@ -178,6 +178,10 @@ router.post('/cadastroJogo', VerificaUsuarioLogado, upload.any(), [
             min: 1
         })
         .withMessage("Mecânica é obrigatório!"),
+        check("video").isLength({
+            max: 500
+        })
+        .withMessage("O link do Jogo deve conter no máximo 500 caracteres!"),
         body("nomeJogo").custom(value => {
                 return Jogo.findOne({
                     where: {

@@ -249,7 +249,8 @@ const forms = {
                 tutorialJogo,
                 regrasJogo,
                 imagemTema,
-                imagemPerfil
+                imagemPerfil,
+                video
             } = req.body;
 
             if(fotoTema.length < 1){
@@ -277,7 +278,8 @@ const forms = {
                 dominio_id: dominioJogo,
                 mecanica_id: mecanicaJogo,
                 foto,
-                fotoTema
+                fotoTema,
+                video
             })
 
             return res.redirect('/feeds');
