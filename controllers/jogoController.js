@@ -9,7 +9,7 @@ let {
 
 const jogoController = {
 
-    // Funcoes de conta
+    // Funcoes de conta **************************
     contaAvalicao: (req,res) => {
 
     },
@@ -22,7 +22,7 @@ const jogoController = {
 
     },
 
-    // Funcoes de carregar dados
+    // Funcoes de carregar dados **************************
     carregaJogoId: (req,res) => {
 
     },
@@ -31,15 +31,30 @@ const jogoController = {
 
     },
 
-    // Funcoes de postar dados
+    carregaComentario: (req,res) => {
+
+    },
+
+
+
+    // Funcoes de postar dados **************************
     postaComentario: (req,res) => {
 
     },
 
     postaAvaliacao: (req,res) => {
 
-    }
-    
+    },
+
+    postaJaJoguei: (req,res) => {
+
+    },
+
+    postaAmei: (req,res) => {
+
+    },
+
+
 };
 
 module.exports = jogoController

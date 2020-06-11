@@ -34,7 +34,7 @@ const localizacaoController = require('../controllers/localizacaoController');
 const buscaController = require('../controllers/buscaController');
 const parametrosJogoController = require('../controllers/parametrosJogoController')
 const aprovaPerfis = require('../controllers/aprovaPerfis')
-const elementosJogos = require('../controllers/')
+const elementosJogos = require('../controllers/jogoController')
 
 //API busca imagem
 const imagemController = require('../controllers/imagemController');
@@ -72,6 +72,19 @@ router.get('/aprovaMod/nega',aprovaPerfis.negaJogo)
 
 router.get('/buscaJogo/lista', buscaController.listaJogos)
 
+// Tela Jogo--Sem verificaxao
+router.get('/jogo/elementos/avaliacao', elementosJogos.contaAvalicao)
+router.get('/jogo/elementos/joguei', elementosJogos.contaJaJoguei)
+router.get('/jogo/elementos/favorito', elementosJogos.contaFavorito)
+router.get('/jogo/elementos/jogoid', elementosJogos.carregaJogoId)
+router.get('/jogo/elementos/jogosRelacionados', elementosJogos.carregaJogosRelac)
+router.get('/jogo/elementos/comentario', elementosJogos.carregaComentario)
+
+// Tela Jogo--Com verificacao
+router.post('/jogo/elementos/comentario', VerificaUsuarioLogado, elementosJogos.postaComentario)
+router.post('/jogo/elementos/avaliacao', VerificaUsuarioLogado, elementosJogos.postaAvaliacao)
+router.post('/jogo/elementos/joguei', VerificaUsuarioLogado, elementosJogos.postaJaJoguei)
+router.post('/jogo/elementos/amei', VerificaUsuarioLogado, elementosJogos.postaAmei)
 
 
 // Com verificação
