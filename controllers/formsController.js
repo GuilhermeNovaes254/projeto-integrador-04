@@ -85,28 +85,19 @@ const forms = {
     },
 
     editarUsuario: async (req, res) => {
-        let {
-            nomeUser,
-            apelido,
-            genero,
-            estado,
-            cidade,
-            diaNasc,
-            mesNasc,
-            anoNasc,
-            tipoNivelAP,
-            descricaoUser,
-            senha,
-            senha2,
-            avatar
-        } = req.body;
+        let foto = '';
+        let fotoTema = '';
+
+        fotoUsuario = 'images/icons/PerfilVermelho.png'
+
+        if(req.session.usuario.foto != 'images/icons/PerfilVermelho.png'){
+            fotoUsuario = req.session.usuario.foto,
+            fotoUsuario
+        }
 
         let {
             files
         } = req;
-
-        let foto = '';
-        let fotoTema = '';
 
         for (let file of files) { 
             if(file.fieldname == 'fotoTema'){
@@ -117,37 +108,86 @@ const forms = {
             }
         }
 
-        let dataDeNascimento = anoNasc+"-"+mesNasc+"-"+diaNasc;
-        let senhaEncript;
+        let listOfErrors = validationResult(req);
 
-        let id = req.session.usuario.id
+        if (listOfErrors.isEmpty()) {
+            let {
+                nomeUser,
+                apelido,
+                genero,
+                estado,
+                cidade,
+                diaNasc,
+                mesNasc,
+                anoNasc,
+                tipoNivelAP,
+                descricaoUser,
+                senha,
+                senha2,
+                imagemTema,
+                imagemPerfil
+            } = req.body;
 
-        if (senha != '' && senha == senha2) {
-            senhaEncript = bcrypt.hashSync(senha, 10);
-        }
-
-        const user = await Usuario.update({
-            nome: nomeUser,
-            apelido,
-            genero,
-            cidade_estado_id: estado,
-            cidade_id: cidade,
-            dataDeNascimento,
-            tipoAp: tipoNivelAP,
-            descricao: descricaoUser,
-            senha: senhaEncript,
-            foto,
-            fotoTema
-        },{
-            where: {
-                id: id
+            if(fotoTema.length < 1){
+                fotoTema = imagemTema;
             }
-        });
-        return res.redirect('/feeds');
+            
+            if(foto.length < 1){
+                foto = imagemPerfil;
+            }
 
-        // if (avatar != '') {
-        //     user.foto = '../public/images/avatar/' + avatar;
-        // }
+            let dataDeNascimento = anoNasc+"-"+mesNasc+"-"+diaNasc;
+            let senhaEncript;
+
+            let id = req.session.usuario.id
+
+            if (senha != '' && senha == senha2) {
+                senhaEncript = bcrypt.hashSync(senha, 10);
+            }
+
+            const user = await Usuario.update({
+                nome: nomeUser,
+                apelido,
+                genero,
+                cidade_estado_id: estado,
+                cidade_id: cidade,
+                dataDeNascimento,
+                tipoAp: tipoNivelAP,
+                descricao: descricaoUser,
+                senha: senhaEncript,
+                foto,
+                fotoTema
+            },{
+                where: {
+                    id: id
+                }
+            });
+            return res.redirect('/feeds');
+        } else {
+            let cidade = await Cidade.findOne({
+                where: {
+                    id: req.session.usuario.id
+                }
+            });
+    
+            let estado = await Estado.findOne({
+                where: {
+                    id: req.session.usuario.id
+                }
+            });
+            return res.render("editar",  {errors:listOfErrors.errors,
+                title: 'Atualizar Informações',
+                apelidoUsuario: req.session.usuario.apelido,
+                nomeUsuario: req.session.usuario.nome,
+                descricaoUsuario: req.session.usuario.descricao,
+                fotoUsuario,
+                formData: req.body,
+                foto,
+                fotoTema,
+                cidadeUsuario: cidade.cidade,
+                estadoUsuario: estado.sigla,
+                })
+        }
 
     },
 

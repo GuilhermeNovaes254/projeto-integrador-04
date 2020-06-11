@@ -182,6 +182,19 @@
                                 <button type="submit" id='botaoEditar'>Atualizar</button>
                             </div>
                         </div>
+
+                        <div class="row">
+                            <div class="col-12 pt-5 text-center">
+                                <% if(typeof(errors) != "undefined"){ %>
+                                <p style="color:red">ERRO:</p>
+                                <ul>
+                                    <% errors.forEach((error)=>{ %>
+                                    <li><%= error.msg %></li>
+                                    <% }) %>
+                                </ul>
+                                <% } %>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

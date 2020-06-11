@@ -111,7 +111,27 @@ router.post('/login', autorizaLogin.loginSession);
 // POSTS formulario
 router.post('/cadastro', formController.cadastroUsuario);
 router.post('/excluir', VerificaUsuarioLogado, formController.excluirUsuario);
-router.post('/editar', VerificaUsuarioLogado, upload.any(), formController.editarUsuario);
+router.post('/editar', VerificaUsuarioLogado, upload.any(), [
+    check("nomeUser").isLength({
+        min: 2,
+        max: 100
+    })
+    .withMessage("Nome deve conter no mínimo 2 e no máximo 100 caracteres!"),
+    check("apelido").isLength({
+        min: 2,
+        max: 20
+    })
+    .withMessage("Apelido deve conter no mínimo 2 e no máximo 20 caracteres!"),
+    check("genero").toInt(),
+    check("estado").toInt(),
+    check("cidade").toInt(),
+    check("tipoNivelAP").toInt(),
+    check("descricaoUser").isLength({
+        max: 500
+    })
+    .withMessage("Descrição deve conter no máximo 500 caracteres!")
+],formController.editarUsuario);
+
 router.post('/cadastroJogo', VerificaUsuarioLogado, upload.any(), [
         check("nomeJogo").isLength({
             min: 2,

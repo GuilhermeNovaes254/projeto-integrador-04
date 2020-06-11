@@ -232,7 +232,7 @@ const homeController = {
         });
 
         res.render('editar', {
-            title: 'editar',
+            title: 'Atualizar Informações',
 
             apelidoUsuario: userInfo.apelido,
             nomeUsuario: userInfo.nome,
