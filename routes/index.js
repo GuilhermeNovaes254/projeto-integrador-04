@@ -34,6 +34,7 @@ const localizacaoController = require('../controllers/localizacaoController');
 const buscaController = require('../controllers/buscaController');
 const parametrosJogoController = require('../controllers/parametrosJogoController')
 const aprovaPerfis = require('../controllers/aprovaPerfis')
+const elementosJogos = require('../controllers/')
 
 //API busca imagem
 const imagemController = require('../controllers/imagemController');
@@ -70,6 +71,8 @@ router.get('/aprovaMod/aprova',aprovaPerfis.aprovaJogo)
 router.get('/aprovaMod/nega',aprovaPerfis.negaJogo)
 
 router.get('/buscaJogo/lista', buscaController.listaJogos)
+
+
 
 // Com verificação
 router.get('/feeds', VerificaUsuarioLogado, homeController.feeds);
