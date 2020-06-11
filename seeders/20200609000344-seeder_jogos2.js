@@ -222,7 +222,7 @@ module.exports = {
           qntMax: "4",
           duracao: "30",
           faixaEtaria: "13",
-          nome: "�lacarte",
+          nome: "Alacarte",
           descricao: "Descricao",
           aprovado: 1,
           tema_id: 14,
