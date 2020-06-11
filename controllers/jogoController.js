@@ -1,4 +1,7 @@
-let {
+const Sequelize = require('sequelize');
+const Op = Sequelize.Op;
+
+const {
     Joguei,
     Favorito,
     Comentario,
@@ -7,53 +10,124 @@ let {
 } = require('../models')
 
 
+
 const jogoController = {
 
     // Funcoes de conta **************************
-    contaAvalicao: (req,res) => {
+    contaAvalicao: async (req, res) => {
+        try {
+            let {
+                id
+            } = req.query
+            
+            let soma = 0 
+            let quantidade = 0
+            let valor = 0
 
+            whereClause = {}
+            whereClause['jogo_id'] = id
+
+            quantidade = await Avaliacao.count({
+                where: whereClause
+            });
+            
+            soma = await Avaliacao.sum('avaliacao',{
+                where: whereClause
+            });
+
+            valor = (soma/quantidade).toFixed(1);
+            console.log(valor)
+            //res.send(valor)
+
+        } catch (error) {
+            res.status(401)
+        }
     },
-
-    contaJaJoguei: (req,res) => {
-
-    },
-
-    contaFavorito: (req,res) => {
-
-    },
-
-    // Funcoes de carregar dados **************************
-    carregaJogoId: (req,res) => {
-
-    },
-
-    carregaJogosRelac: (req,res) => {
-
-    },
-
-    carregaComentario: (req,res) => {
-
-    },
+    
+        contaJaJoguei: async (req, res) => {
+            try {
 
 
+            } catch (error) {
+                res.status(401)
+            }
+        },
 
-    // Funcoes de postar dados **************************
-    postaComentario: (req,res) => {
+        contaFavorito: async (req, res) => {
+            try {
 
-    },
 
-    postaAvaliacao: (req,res) => {
+            } catch (error) {
+                res.status(401)
+            }
+        },
 
-    },
+        // Funcoes de carregar dados **************************
+        carregaJogoId: async (req, res) => {
+            try {
 
-    postaJaJoguei: (req,res) => {
 
-    },
+            } catch (error) {
+                res.status(401)
+            }
+        },
 
-    postaAmei: (req,res) => {
+        carregaJogosRelac: async (req, res) => {
+            try {
 
-    },
 
+            } catch (error) {
+                res.status(401)
+            }
+        },
+
+        carregaComentario: async (req, res) => {
+            try {
+
+
+            } catch (error) {
+                res.status(401)
+            }
+        },
+
+
+        // Funcoes de postar dados **************************
+        postaComentario: async (req, res) => {
+            try {
+
+
+            } catch (error) {
+                res.status(401)
+            }
+        },
+
+        postaAvaliacao: async (req, res) => {
+            try {
+
+
+            } catch (error) {
+                res.status(401)
+            }
+        },
+
+        postaJaJoguei: async (req, res) => {
+            try {
+
+
+            } catch (error) {
+                res.status(401)
+            }
+        },
+
+        postaAmei: async (req, res) => {
+            try {
+
+
+            } catch (error) {
+                res.status(401)
+            }
+        },
+    
 
 };
 

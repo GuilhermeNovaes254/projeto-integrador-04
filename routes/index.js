@@ -72,6 +72,7 @@ router.get('/aprovaMod/nega',aprovaPerfis.negaJogo)
 
 router.get('/buscaJogo/lista', buscaController.listaJogos)
 
+// Tela Jogo
 // Tela Jogo--Sem verificaxao
 router.get('/jogo/elementos/avaliacao', elementosJogos.contaAvalicao)
 router.get('/jogo/elementos/joguei', elementosJogos.contaJaJoguei)
