@@ -10,7 +10,7 @@
 /* .c-banner-jogo:before{
   content: '';
   background: url(/images/jogos/bg-highlights680.png) center center no-repeat;
-  position: absolute;
+  position: absolute; 
   top: 0;
   width: 100%;
   height: 680px;

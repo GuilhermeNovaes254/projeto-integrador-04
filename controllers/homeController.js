@@ -92,7 +92,7 @@ const homeController = {
     jogo: (req, res) => {
 
         let {
-            id
+            jogo
         } = req.query;
 
         fotoUsuario = 'images/icons/PerfilVermelho.png'
@@ -104,10 +104,7 @@ const homeController = {
 
         res.render('jogo', {
             title: 'jogo',
-            apelidoUsuario: req.session.usuario.apelido,
-            fotoUsuario,
-            id,
-            idUsuario: req.session.usuario.id
+            jogo
         });
     },
 

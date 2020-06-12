@@ -38,9 +38,9 @@ app.use('/users', usersRouter);
 
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  res.status(404).send('Sorry cant find that! - 404');
-});
+// app.use(function(req, res, next) {
+//   res.status(404).send('Sorry cant find that! - 404');
+// });
 
 app.use((req, res) => {
   res.status(404).render('404', { title: 'Pagina não encontrada' });
