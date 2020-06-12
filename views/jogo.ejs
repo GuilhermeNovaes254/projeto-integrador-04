@@ -16,7 +16,7 @@
   </div>
   <div class="c-jogo__right">
     <div class="c-jogo__right--fav c-jogo__right--content" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
-      <h2 class="c-jogo__right--title">
+      <h2 id='rated' class="c-jogo__right--title">
         <a href="javascript:void(0)" onclick="Avaliar(1)">
           <img src="../images/star0.png" id="s1">
         </a>
@@ -47,6 +47,8 @@
 
 <script>
   var jogoId = '<%=jogo%>';
+  var userId = '<%USUARIO.id%>';
 </script>
+<script src="js/gameRating.js"></script> 
 <script src='js/scriptTelaJogo.js'></script>
 <%- include('./partials/footer') %>

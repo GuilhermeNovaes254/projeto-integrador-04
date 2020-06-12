@@ -1,6 +1,7 @@
 var xhr = new XMLHttpRequest();
 
 let id = jogoId;
+let user = userId;
 
 // 'Joguei',
 //     usuario_id
@@ -42,7 +43,7 @@ async function carregaElementos() {
 
             nome.innerText = resposta.nome
             descricao.innerText = resposta.descricao
-            console.log(banner)
+    
             if(resposta.fotoTema != null){
                 banner[0].style.backgroundImage = `url(${resposta.fotoTema} )`;
             }else{
@@ -55,19 +56,65 @@ async function carregaElementos() {
             
 
             if( resposta.video != null){
-                linkYt.innerHTML = ''
                 linkYt.innerHTML = `<iframe width="560" height="315" src=${resposta.video} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
             }else{
                 linkYt.innerHTML = '<h2>Não há vídeo</h2>'
             }
 
         }
+        carregaAvaliacao();
     }
     
     let url = `/jogo/elementos/jogoid?jogo=${id}`
     xhr.open('GET', url);
     xhr.send();
 
+
 }
 
-carregaElementos()
+  
+async function carregaAvaliacao() {
+    xhr.onload = function () {
+
+        // Process our return data
+        if (xhr.status >= 200 && xhr.status < 300) {
+            // Runs when the request is successful
+            let resposta = JSON.parse(xhr.responseText);
+            console.log(resposta);
+            Avaliar(resposta.avaliacao);
+        }
+    }
+    
+    let url = `/jogo/elementos/avaliacao/carrega?jogo=${jogoId}`
+    xhr.open('GET', url);
+    xhr.send();
+
+
+}
+
+async function leEstrelas(){
+    
+    document.getElementById("rated").addEventListener('click', function () {
+        nota = document.getElementById("rating").textContent
+        console.log(nota)
+
+        xhr.onload = function () {
+
+            // Process our return data
+            if (xhr.status >= 200 && xhr.status < 300) {
+                console.log('Atribuido')
+    
+            }else{console.log('Erro')}
+        }
+
+
+        let url = `/jogo/elementos/avaliacao/${jogoId}/${nota}`
+        xhr.open('POST', url);
+        xhr.send();
+    });
+
+}
+
+
+carregaElementos();
+leEstrelas();

@@ -120,7 +120,7 @@ const jogoController = {
                 where: whereClause
             });
 
-           res.send(busca)
+            res.send(busca)
 
         } catch (error) {
             res.status(401)
@@ -220,17 +220,35 @@ const jogoController = {
             let {
                 jogo,
                 nota
-            } = req.body;
+            } = req.params;
+
 
             let usuarioId = req.session.usuario.id
 
-            Comentario.create({
-                usuario_id: usuarioId,
-                jogo_id: jogo,
-                avaliacao: nota
+            whereClause = {}
+            whereClause['jogo_id'] = jogo
+            whereClause['usuario_id'] = usuarioId
+
+            let existe = await Avaliacao.count({
+                where: whereClause
             });
 
-
+            if (existe == 0) {
+                await Avaliacao.create({
+                    usuario_id: parseInt(usuarioId),
+                    jogo_id: parseInt(jogo),
+                    avaliacao:parseFloat(nota)
+                });
+                console.log("criada")
+            } else {
+                await Avaliacao.update({
+                    avaliacao: parseFloat(nota)
+                }, {
+                    where: whereClause
+                });
+                console.log('nota Atribuida')
+            }
+            res.status(200)
         } catch (error) {
             res.status(401)
         }
@@ -269,6 +287,31 @@ const jogoController = {
                 usuario_id: usuarioId,
                 jogo_id: jogo
             });
+
+        } catch (error) {
+            res.status(401)
+        }
+    },
+
+    carregaAvaliacao: async (req, res) => {
+        try {
+
+            let {
+                jogo
+            } = req.query;
+
+            console.log(jogo)
+            let usuarioId = req.session.usuario.id
+
+            whereClause = {}
+            whereClause['jogo_id'] = jogo
+            whereClause['usuario_id'] = usuarioId
+
+            let avaliacao = await Avaliacao.findOne({
+                where: whereClause
+            })
+            console.log(avaliacao)
+            res.send(avaliacao)
 
         } catch (error) {
             res.status(401)
