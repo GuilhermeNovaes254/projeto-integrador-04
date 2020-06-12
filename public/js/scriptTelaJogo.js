@@ -80,9 +80,9 @@ async function carregaAvaliacao() {
         if (xhr.status >= 200 && xhr.status < 300) {
             // Runs when the request is successful
             let resposta = JSON.parse(xhr.responseText);
-            console.log(resposta);
-            Avaliar(resposta.avaliacao);
-        }
+            console.log(resposta.avaliacao);
+            Avaliar(parseInt(resposta.avaliacao)+1);
+        }else{'problema no carrega'}
     }
     
     let url = `/jogo/elementos/avaliacao/carrega?jogo=${jogoId}`
