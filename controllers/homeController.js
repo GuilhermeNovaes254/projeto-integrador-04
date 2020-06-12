@@ -29,7 +29,7 @@ const homeController = {
 
         fotoUsuario = 'images/icons/PerfilVermelho.png'
 
-        if(req.session.usuario.foto != 'images/icons/PerfilVermelho.png'){
+        if (req.session.usuario.foto != 'images/icons/PerfilVermelho.png') {
             fotoUsuario = req.session.usuario.foto
         }
 
@@ -51,9 +51,9 @@ const homeController = {
 
         fotoUsuario = 'images/icons/PerfilVermelho.png'
 
-        if(req.session.usuario.foto != 'images/icons/PerfilVermelho.png'){
+        if (req.session.usuario.foto != 'images/icons/PerfilVermelho.png') {
             fotoUsuario = req.session.usuario.foto,
-            fotoUsuario
+                fotoUsuario
         }
 
         res.render('cadastroJogo', {
@@ -74,39 +74,42 @@ const homeController = {
 
         fotoUsuario = 'images/icons/PerfilVermelho.png'
 
-        if(req.session.usuario.foto != 'images/icons/PerfilVermelho.png'){
+        if (req.session.usuario.foto != 'images/icons/PerfilVermelho.png') {
             fotoUsuario = req.session.usuario.foto,
-            fotoUsuario
+                fotoUsuario
         }
 
         res.render('Perfil', {
             title: 'perfil',
             apelidoUsuario: req.session.usuario.apelido,
             fotoUsuario,
-            nomeUsuario : req.session.usuario.nome,
-            apelidoUsuario : req.session.usuario.apelido,
-            descricaoUsuario : req.session.usuario.descricao,
-            cidadeUsuario : req.session.usuario.cidade,
-            estadoUsuario : req.session.usuario.estado,
+            nomeUsuario: req.session.usuario.nome,
+            apelidoUsuario: req.session.usuario.apelido,
+            descricaoUsuario: req.session.usuario.descricao,
+            cidadeUsuario: req.session.usuario.cidade,
+            estadoUsuario: req.session.usuario.estado,
             idUsuario: req.session.usuario.id
         });
     },
 
     jogo: (req, res) => {
 
-        let {id} = req.query;
+        let {
+            id
+        } = req.query;
 
         fotoUsuario = 'images/icons/PerfilVermelho.png'
 
-        if(req.session.usuario.foto != 'images/icons/PerfilVermelho.png'){
+        if (req.session.usuario.foto != 'images/icons/PerfilVermelho.png') {
             fotoUsuario = req.session.usuario.foto,
-            fotoUsuario
+                fotoUsuario
         }
-        
+
         res.render('jogo', {
             title: 'jogo',
             apelidoUsuario: req.session.usuario.apelido,
-            fotoUsuario, id,
+            fotoUsuario,
+            id,
             idUsuario: req.session.usuario.id
         });
     },
@@ -115,7 +118,7 @@ const homeController = {
 
         fotoUsuario = 'images/icons/PerfilVermelho.png'
 
-        if(req.session.usuario.foto != 'images/icons/PerfilVermelho.png'){
+        if (req.session.usuario.foto != 'images/icons/PerfilVermelho.png') {
             fotoUsuario = req.session.usuario.foto
         }
 
@@ -137,7 +140,7 @@ const homeController = {
 
         fotoUsuario = 'images/icons/PerfilVermelho.png'
 
-        if(req.session.usuario.foto != 'images/icons/PerfilVermelho.png'){
+        if (req.session.usuario.foto != 'images/icons/PerfilVermelho.png') {
             fotoUsuario = req.session.usuario.foto
         }
 
@@ -155,21 +158,27 @@ const homeController = {
 
         fotoUsuario = 'images/icons/PerfilVermelho.png'
 
-        if(req.session.usuario.foto != 'images/icons/PerfilVermelho.png'){
+        if (req.session.usuario.foto != 'images/icons/PerfilVermelho.png') {
             fotoUsuario = req.session.usuario.foto
         }
-
-        let cidade = await Cidade.findOne({
-            where: {
-                id: userInfo.cidade_id
-            }
-        });
-
-        let estado = await Estado.findOne({
-            where: {
-                id: cidade.estado_id
-            }
-        });
+        if (userInfo.cidade_id != null) {
+            let cidade = await Cidade.findOne({
+                where: {
+                    id: userInfo.cidade_id
+                }
+            });
+        } else {
+            cidade = '-'
+        }
+        if (cidade.estado_id != null) {
+            let estado = await Estado.findOne({
+                where: {
+                    id: cidade.estado_id
+                }
+            });
+        } else {
+            estado = '-'
+        }
 
 
         res.render('moduloDestaques', {
@@ -189,7 +198,7 @@ const homeController = {
 
         fotoUsuario = 'images/icons/PerfilVermelho.png'
 
-        if(req.session.usuario.foto != 'images/icons/PerfilVermelho.png'){
+        if (req.session.usuario.foto != 'images/icons/PerfilVermelho.png') {
             fotoUsuario = req.session.usuario.foto
         }
 
@@ -208,21 +217,27 @@ const homeController = {
 
         fotoUsuario = 'images/icons/PerfilVermelho.png'
 
-        if(req.session.usuario.foto != 'images/icons/PerfilVermelho.png'){
+        if (req.session.usuario.foto != 'images/icons/PerfilVermelho.png') {
             fotoUsuario = req.session.usuario.foto
         }
 
-        let cidade = await Cidade.findOne({
-            where: {
-                id: userInfo.cidade_id
-            }
-        });
+        if (userInfo.cidade_id != null) {
+            let cidade = await Cidade.findOne({
+                where: {
+                    id: userInfo.cidade_id
+                }
+            });
+        }
 
-        let estado = await Estado.findOne({
-            where: {
-                id: cidade.estado_id
-            }
-        });
+        if (cidade.estado_id != null) {
+            let estado = await Estado.findOne({
+                where: {
+                    id: cidade.estado_id
+                }
+            });
+        } else {
+            estado = '-'
+        }
 
         res.render('editar', {
             title: 'Atualizar Informações',
@@ -242,7 +257,7 @@ const homeController = {
 
         fotoUsuario = 'images/icons/PerfilVermelho.png'
 
-        if(req.session.usuario.foto != 'images/icons/PerfilVermelho.png'){
+        if (req.session.usuario.foto != 'images/icons/PerfilVermelho.png') {
             fotoUsuario = req.session.usuario.foto
         }
 
