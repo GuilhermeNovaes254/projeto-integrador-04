@@ -39,7 +39,12 @@
                             <li><a href='/perfil?id=<%=USUARIO.id%>'>Perfil</a></li>
                             <li><a href='/editar'>Editar Perfil</a></li>
                             <!-- <li><a href='#'>Minha Pagina</a></li> -->
-                           
+                            <%if( (USUARIO.cargo == 1 || USUARIO.cargo == 2 ) && USUARIO.aprovado == 1){%>
+                            <li><a href='/perfilModerador'>Moderação</a></li>
+                            <%}%>
+                            <%if( USUARIO.cargo == 2  && USUARIO.aprovado == 1){%>
+                            <li><a href='/perfilAdm'>Administração</a></li>
+                            <%}%>
                             <li><a href='/moduloDestaques'>Meus Jogos</a></li>
                             <li><a href='/moduloDestaques'>Favoritos</a></li>
                             <li><a href='/cadastroJogo'>Cadastrar Jogo</a></li>
