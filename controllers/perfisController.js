@@ -21,7 +21,6 @@ const aprovaPerfis = {
                 }
             });
 
-            //if (moderadores) {
             const pendentes = moderadores.filter(moderador => moderador.aprovado == 0);
             const countPendente = pendentes.length;
             const countAprovado = moderadores.filter(moderador => moderador.aprovado == 1).length;

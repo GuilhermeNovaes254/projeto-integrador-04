@@ -30,7 +30,7 @@ const forms = {
 
         let fotoAvatar = 'images/icons/PerfilVermelho.png'
 
-        Usuario.create({
+        await Usuario.create({
             nome: nome,
             email: email,
             apelido: apelido,
@@ -48,16 +48,18 @@ const forms = {
 
         req.session.usuario = user;
 
-        res.render('perfil', {
-            title: 'Perfil',
-            apelidoUsuario: apelido,
-            fotoUsuario: fotoAvatar,
-            nomeUsuario : nome,
-            descricaoUsuario : "",
-            cidadeUsuario : "",
-            estadoUsuario : ""
+        // res.render('perfil', {
+        //     title: 'Perfil',
+        //     apelidoUsuario: apelido,
+        //     fotoUsuario: fotoAvatar,
+        //     nomeUsuario : nome,
+        //     descricaoUsuario : "",
+        //     cidadeUsuario : "",
+        //     estadoUsuario : ""
             
-        });
+        // });
+
+        return res.redirect('/feeds');
     },
 
     excluirUsuario: async (req, res) => {
