@@ -161,17 +161,21 @@ const homeController = {
         if (req.session.usuario.foto != 'images/icons/PerfilVermelho.png') {
             fotoUsuario = req.session.usuario.foto
         }
+
+        let cidade
         if (userInfo.cidade_id != null) {
-            let cidade = await Cidade.findOne({
+            cidade = await Cidade.findOne({
                 where: {
                     id: userInfo.cidade_id
                 }
             });
         } else {
             cidade = '-'
-        }
+        }      
+
+        let estado
         if (cidade.estado_id != null) {
-            let estado = await Estado.findOne({
+            estado = await Estado.findOne({
                 where: {
                     id: cidade.estado_id
                 }
@@ -221,16 +225,20 @@ const homeController = {
             fotoUsuario = req.session.usuario.foto
         }
 
+        let cidade
         if (userInfo.cidade_id != null) {
-            let cidade = await Cidade.findOne({
+            cidade = await Cidade.findOne({
                 where: {
                     id: userInfo.cidade_id
                 }
             });
+        }else {
+            cidade = '-'
         }
-
+        
+        let estado = ''
         if (cidade.estado_id != null) {
-            let estado = await Estado.findOne({
+            estado = await Estado.findOne({
                 where: {
                     id: cidade.estado_id
                 }
