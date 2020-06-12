@@ -2,12 +2,22 @@
   background: url(/images/leaguewallpaper.jpg) center center no-repeat;
   background-size: cover;
   width: 100%;
-  min-height: 314px;
+  min-height: 550px;
   box-sizing: content-box;
   position: relative;
 }
 
-.c-banner-jogo:before{
+/* .c-banner-jogo:before{
+  content: '';
+  background: url(/images/jogos/bg-highlights680.png) center center no-repeat;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 680px;
+  display: block;
+} */
+
+.c-banner-jogo:after{
   content: '';
   position: absolute;
   bottom: -700px;
