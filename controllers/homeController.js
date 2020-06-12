@@ -34,10 +34,7 @@ const homeController = {
         }
 
         res.render('feeds', {
-            title: 'Feeds',
-            apelidoUsuario: req.session.usuario.apelido,
-            fotoUsuario,
-            idUsuario: req.session.usuario.id
+            title: 'Feeds'
 
         });
     },
@@ -79,7 +76,7 @@ const homeController = {
                 fotoUsuario
         }
 
-        res.render('Perfil', {
+        res.render('perfil', {
             title: 'perfil',
             apelidoUsuario: req.session.usuario.apelido,
             fotoUsuario,

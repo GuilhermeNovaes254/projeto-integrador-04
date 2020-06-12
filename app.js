@@ -18,11 +18,24 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(session({secret:'segredos'}))
+
+
+// faz com que a session fique disponivel em todas as paginas
+app.use(function (req, res, next) {
+  res.locals.USUARIO = req.session.usuario;
+
+
+  next();
+});
+
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+
+
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -30,7 +43,7 @@ app.use(function(req, res, next) {
 });
 
 app.use((req, res) => {
-  res.status(404).render('erro', { title: 'Pagina não encontrada' });
+  res.status(404).render('404', { title: 'Pagina não encontrada' });
 });
 
 // error handler

@@ -203,6 +203,7 @@ const forms = {
                 })
         }
 
+        res.locals.USUARIO = req.session.usuario;
     },
 
     cadastrarJogo: async (req, res) => {
