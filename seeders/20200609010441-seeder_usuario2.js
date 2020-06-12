@@ -507,4 +507,4 @@ module.exports = {
   down: (queryInterface, Sequelize) => {
     return queryInterface.bulkDelete('usuario', null, {});
   }
-}; 
+};

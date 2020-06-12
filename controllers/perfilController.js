@@ -13,9 +13,19 @@ const {
 
 const perfilController = {
 
-    infoUsuario:{
-        
-    }    
+    infoUsuario: (req,res) => {
+
+    },
+
+    listaFavorito: (req,res) => {
+
+    },
+
+    listaComentario: (req,res) => {
+
+    },
+
+    
 
 };
 

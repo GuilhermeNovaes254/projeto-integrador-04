@@ -36,7 +36,8 @@ const homeController = {
         res.render('feeds', {
             title: 'Feeds',
             apelidoUsuario: req.session.usuario.apelido,
-            fotoUsuario
+            fotoUsuario,
+            idUsuario: req.session.usuario.id
 
         });
     },
@@ -64,7 +65,8 @@ const homeController = {
             fotoUsuario,
             formData: req.body,
             foto,
-            fotoTema
+            fotoTema,
+            idUsuario: req.session.usuario.id
         });
     },
 
@@ -85,7 +87,8 @@ const homeController = {
             apelidoUsuario : req.session.usuario.apelido,
             descricaoUsuario : req.session.usuario.descricao,
             cidadeUsuario : req.session.usuario.cidade,
-            estadoUsuario : req.session.usuario.estado
+            estadoUsuario : req.session.usuario.estado,
+            idUsuario: req.session.usuario.id
         });
     },
 
@@ -103,7 +106,8 @@ const homeController = {
         res.render('jogo', {
             title: 'jogo',
             apelidoUsuario: req.session.usuario.apelido,
-            fotoUsuario, id
+            fotoUsuario, id,
+            idUsuario: req.session.usuario.id
         });
     },
 
@@ -118,7 +122,8 @@ const homeController = {
         res.render('busca', {
             title: 'busca',
             apelidoUsuario: req.session.usuario.apelido,
-            fotoUsuario
+            fotoUsuario,
+            idUsuario: req.session.usuario.id
         });
     },
 
@@ -139,7 +144,8 @@ const homeController = {
         res.render('perfilModerador', {
             title: 'perfilModerador',
             apelidoUsuario: req.session.usuario.apelido,
-            fotoUsuario
+            fotoUsuario,
+            idUsuario: req.session.usuario.id
         });
     },
 
@@ -174,7 +180,8 @@ const homeController = {
             descricaoUsuario: userInfo.descricao,
             cidadeUsuario: cidade.cidade,
             estadoUsuario: estado.sigla,
-            fotoUsuario
+            fotoUsuario,
+            idUsuario: req.session.usuario.id
         });
     },
 
@@ -190,7 +197,8 @@ const homeController = {
             title: 'excluir',
             nomeUsuario: req.session.usuario.nome,
             apelidoUsuario: req.session.usuario.apelido,
-            fotoUsuario
+            fotoUsuario,
+            idUsuario: req.session.usuario.id
         });
     },
 
@@ -224,7 +232,8 @@ const homeController = {
             descricaoUsuario: userInfo.descricao,
             cidadeUsuario: cidade.cidade ? cidade.cidade : '',
             estadoUsuario: estado.sigla ? estado.sigla : '',
-            fotoUsuario
+            fotoUsuario,
+            idUsuario: req.session.usuario.id
         });
 
     },
@@ -240,7 +249,8 @@ const homeController = {
         res.render('semPrivilegio', {
             title: 'Sem Privilégio',
             apelidoUsuario: req.session.usuario.apelido,
-            fotoUsuario
+            fotoUsuario,
+            idUsuario: req.session.usuario.id
         });
     },
 
