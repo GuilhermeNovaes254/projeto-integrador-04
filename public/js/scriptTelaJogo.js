@@ -43,28 +43,28 @@ async function carregaElementos() {
 
             nome.innerText = resposta.nome
             descricao.innerText = resposta.descricao
-    
-            if(resposta.fotoTema != null){
+
+            if (resposta.fotoTema != null) {
                 banner[0].style.backgroundImage = `url(${resposta.fotoTema} )`;
-            }else{
+            } else {
                 banner[0].style.backgroundImage = `url('images/default/h1.jpg')`
             }
-            
+
 
             headPage.innerHTML = ''
             headPage.innerHTML += `<img  class="c-photo-game" src=${resposta.foto} alt="">`
-            
 
-            if( resposta.video != null){
+
+            if (resposta.video != null) {
                 linkYt.innerHTML = `<iframe width="560" height="315" src=${resposta.video} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
-            }else{
+            } else {
                 linkYt.innerHTML = '<h2>Não há vídeo</h2>'
             }
 
         }
         carregaAvaliacao();
     }
-    
+
     let url = `/jogo/elementos/jogoid?jogo=${id}`
     xhr.open('GET', url);
     xhr.send();
@@ -72,19 +72,24 @@ async function carregaElementos() {
 
 }
 
-  
+
 async function carregaAvaliacao() {
     xhr.onload = function () {
 
         // Process our return data
         if (xhr.status >= 200 && xhr.status < 300) {
             // Runs when the request is successful
-            let resposta = JSON.parse(xhr.responseText);
-            console.log(resposta.avaliacao);
-            Avaliar(parseInt(resposta.avaliacao)+1);
-        }else{'problema no carrega'}
+            if (xhr.responseText != 0) {
+                let resposta = JSON.parse(xhr.responseText);
+
+                console.log(resposta);
+                Avaliar(parseInt(resposta.avaliacao) + 1);
+            }
+        } else {
+            'problema no carrega'
+        }
     }
-    
+
     let url = `/jogo/elementos/avaliacao/carrega?jogo=${jogoId}`
     xhr.open('GET', url);
     xhr.send();
@@ -92,8 +97,8 @@ async function carregaAvaliacao() {
 
 }
 
-async function leEstrelas(){
-    
+async function leEstrelas() {
+
     document.getElementById("rated").addEventListener('click', function () {
         nota = document.getElementById("rating").textContent
         console.log(nota)
@@ -103,8 +108,10 @@ async function leEstrelas(){
             // Process our return data
             if (xhr.status >= 200 && xhr.status < 300) {
                 console.log('Atribuido')
-    
-            }else{console.log('Erro')}
+
+            } else {
+                console.log('Erro')
+            }
         }
 
 

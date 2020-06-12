@@ -310,9 +310,12 @@ const jogoController = {
             let avaliacao = await Avaliacao.findOne({
                 where: whereClause
             })
-            console.log(avaliacao)
-            res.send(avaliacao)
-
+            
+            if(avaliaca != null){
+                res.send(avaliacao)
+            }else{
+            res.send(0)
+        }
         } catch (error) {
             res.status(401)
         }
