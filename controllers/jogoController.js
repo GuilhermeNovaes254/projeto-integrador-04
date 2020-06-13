@@ -171,7 +171,8 @@ const jogoController = {
 
             whereClause = {}
             whereClause['jogo_id'] = jogo
-
+            console.log("*******************************************************")
+            console.log(jogo)
             let busca = await Comentario.findAll({
                 where: whereClause,
                 order: [
@@ -179,7 +180,7 @@ const jogoController = {
                 ]
             });
 
-            res.send(busca)
+            res.status(200).send(busca)
 
         } catch (error) {
             res.status(401)
@@ -201,7 +202,7 @@ const jogoController = {
             const ts = new Date();
             let dataHora = ts.toLocaleString();
 
-            Comentario.create({
+            await Comentario.create({
                 texto: comentario,
                 data: dataHora,
                 usuario_id: usuarioId,
@@ -248,7 +249,7 @@ const jogoController = {
                 });
                 console.log('nota Atribuida')
             }
-            res.status(200)
+            res.status(200).send('OK')
         } catch (error) {
             res.status(401)
         }
@@ -263,7 +264,7 @@ const jogoController = {
 
             let usuarioId = req.session.usuario.id
 
-            Joguei.create({
+            await Joguei.create({
                 usuario_id: usuarioId,
                 jogo_id: jogo
             });
@@ -283,7 +284,7 @@ const jogoController = {
 
             let usuarioId = req.session.usuario.id
 
-            Favorito.create({
+            await Favorito.create({
                 usuario_id: usuarioId,
                 jogo_id: jogo
             });
@@ -311,11 +312,10 @@ const jogoController = {
                 where: whereClause
             })
             
-            if(avaliaca != null){
-                res.send(avaliacao)
-            }else{
-            res.send(0)
-        }
+
+            res.send(avaliacao)
+
+        
         } catch (error) {
             res.status(401)
         }

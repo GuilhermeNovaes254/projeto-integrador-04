@@ -3,37 +3,44 @@ var xhr = new XMLHttpRequest();
 let id = jogoId;
 let user = userId;
 
-// 'Joguei',
-//     usuario_id
-//     jogo_id
+async function carregaComentarios() {
 
-// 'Favorito',
-//     usuario_id
-//     jogo_id 
+    // let url = `/jogo/elementos/comentario?jogo=${jogoId}`
+    // fetch(url, {
+    //     method: 'GET'
+    // })
+    // .then((resposta) => resposta.json())
+    // .then((resposta) => {
+    //     console.log(resposta)
+    // })
 
-// 'Comentario',
-//     id
-//     texto
-//     data
-//     usuario_id
-//     jogo_id
 
-// 'Colecao',
-//     usuario_id
-//     jogo_id
+}
 
-// 'Avaliacao',
-//     usuario_id
-//     jogo_id
-//     avaliacao
+async function carregaAvaliacao() {
+
+
+    let url = `/jogo/elementos/avaliacao/carrega?jogo=${jogoId}`
+    fetch(url, {
+            method: 'GET'
+        })
+        .then((resposta) => resposta.json())
+        .then((resposta) => {
+            console.log('Carrega' + resposta)
+            Avaliar(parseInt(resposta.avaliacao) + 1);
+        })
+
+}
 
 async function carregaElementos() {
-    xhr.onload = function () {
 
-        // Process our return data
-        if (xhr.status >= 200 && xhr.status < 300) {
-            // Runs when the request is successful
-            let resposta = JSON.parse(xhr.responseText);
+
+    let url = `/jogo/elementos/jogoid?jogo=${id}`
+    fetch(url, {
+            method: 'GET'
+        })
+        .then((resposta) => resposta.json())
+        .then((resposta) => {
 
             let banner = document.getElementsByClassName('c-banner-jogo')
             let headPage = document.getElementById("headPage");
@@ -50,9 +57,13 @@ async function carregaElementos() {
                 banner[0].style.backgroundImage = `url('images/default/h1.jpg')`
             }
 
-
-            headPage.innerHTML = ''
-            headPage.innerHTML += `<img  class="c-photo-game" src=${resposta.foto} alt="">`
+            if (resposta.foto != null) {
+                headPage.innerHTML = ''
+                headPage.innerHTML += `<img  class="c-photo-game" src=${resposta.foto} alt="">`
+            } else {
+                headPage.innerHTML = ''
+                headPage.innerHTML +=`<img  class="c-photo-game" src='images/default/jogoDefault.jpg' alt="">`
+            }
 
 
             if (resposta.video != null) {
@@ -61,66 +72,31 @@ async function carregaElementos() {
                 linkYt.innerHTML = '<h2>Não há vídeo</h2>'
             }
 
-        }
-        carregaAvaliacao();
-    }
 
-    let url = `/jogo/elementos/jogoid?jogo=${id}`
-    xhr.open('GET', url);
-    xhr.send();
+            carregaComentarios();
+            carregaAvaliacao();
 
-
+        })
 }
 
-
-async function carregaAvaliacao() {
-    xhr.onload = function () {
-
-        // Process our return data
-        if (xhr.status >= 200 && xhr.status < 300) {
-            // Runs when the request is successful
-            if (xhr.responseText != 0) {
-                let resposta = JSON.parse(xhr.responseText);
-
-                console.log(resposta);
-                Avaliar(parseInt(resposta.avaliacao) + 1);
-            }
-        } else {
-            'problema no carrega'
-        }
-    }
-
-    let url = `/jogo/elementos/avaliacao/carrega?jogo=${jogoId}`
-    xhr.open('GET', url);
-    xhr.send();
-
-
-}
 
 async function leEstrelas() {
 
     document.getElementById("rated").addEventListener('click', function () {
         nota = document.getElementById("rating").textContent
-        console.log(nota)
-
-        xhr.onload = function () {
-
-            // Process our return data
-            if (xhr.status >= 200 && xhr.status < 300) {
-                console.log('Atribuido')
-
-            } else {
-                console.log('Erro')
-            }
-        }
-
+        //console.log(nota)
 
         let url = `/jogo/elementos/avaliacao/${jogoId}/${nota}`
-        xhr.open('POST', url);
-        xhr.send();
+        fetch(url, {
+                method: 'POST'
+            })
+            .then((resposta) => console.log(resposta.statusText))
+
     });
 
 }
+
+
 
 
 carregaElementos();
