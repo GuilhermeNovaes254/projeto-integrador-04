@@ -5,14 +5,44 @@ let user = userId;
 
 async function carregaComentarios() {
 
-    // let url = `/jogo/elementos/comentario?jogo=${jogoId}`
-    // fetch(url, {
-    //     method: 'GET'
-    // })
-    // .then((resposta) => resposta.json())
-    // .then((resposta) => {
-    //     console.log(resposta)
-    // })
+    let url = `/jogo/elementos/comentario?jogo=${jogoId}`
+    fetch(url, {
+            method: 'GET'
+        })
+        .then((resposta) => resposta.json())
+        .then((resposta) => {
+
+
+
+            let comentario = document.getElementById('comentarios');
+            comentario.innerHTML = '';
+
+            for (let i = 0; i < resposta.length; i++) {
+                let urlUsuario = `/busca/usuario?id=${resposta[i].usuario_id}`
+                fetch(urlUsuario).then((usuario) => usuario.json())
+                    .then((usuario) => {
+
+                        comentario.innerHTML += `<div class="c-coments">
+                                        <div class="c-coments__photo">`
+
+                        if (usuario.foto != null) {
+                            comentario.innerHTML += `<img src=${usuario.foto} alt=""></img>`
+                        } else {
+                            comentario.innerHTML += `<img src='images/icons/PerfilVermelho.png' alt=""></img>`
+                        }
+
+                        comentario.innerHTML += `<h4>${usuario.apelido}</h4>
+                                                </div><div class="c-coments__box animate-bubble-float-left">
+                                                <div class="c-coments__box--header"><h3></h3>
+                                                <div class="c-coments__features"><div class="c-coments__features--players">`
+                                                
+                        comentario.innerHTML += `<strong><i class="icon ion-ios-game-controller-a-outline"></i>742</strong></div>
+                                                <div class="c-coments__features--likes"><strong><i class="icon ion-ios-heart-outline"></i>550</strong>
+                                                </div><div class="c-coments__features--evaluation js-note-yellow">
+                                                <span>3.0</span></div></div></div><p>${resposta[i].texto}</p></div></div>`
+                    })
+            }
+        })
 
 
 }
@@ -26,7 +56,6 @@ async function carregaAvaliacao() {
         })
         .then((resposta) => resposta.json())
         .then((resposta) => {
-            console.log('Carrega' + resposta)
             Avaliar(parseInt(resposta.avaliacao) + 1);
         })
 
@@ -62,7 +91,7 @@ async function carregaElementos() {
                 headPage.innerHTML += `<img  class="c-photo-game" src=${resposta.foto} alt="">`
             } else {
                 headPage.innerHTML = ''
-                headPage.innerHTML +=`<img  class="c-photo-game" src='images/default/jogoDefault.jpg' alt="">`
+                headPage.innerHTML += `<img  class="c-photo-game" src='images/default/jogoDefault.jpg' alt="">`
             }
 
 
