@@ -13,7 +13,7 @@ module.exports = {
   down: (queryInterface, Sequelize) => {
     return queryInterface.changeColumn(
       'jogo', 'foto', {
-        type: Sequelize.STRING(1000),
+        type: Sequelize.STRING(500),
         allowNull: true
       });
   }

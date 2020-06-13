@@ -25,6 +25,7 @@ const Usuario = (sequelize, DataTypes) => {
             foto:{
                 type: DataTypes.STRING(500),
                 allowNull: true
+                default:'./images/default/jogoDefault.png'
             },
             descricao:{
                 type: DataTypes.STRING(500),

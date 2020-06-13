@@ -26,7 +26,7 @@ const Jogo = (sequelize, DataTypes) => {
                 allowNull: false
             },
             duracao:{
-                type: DataTypes.TINYINT(3),
+                type: DataTypes.INTEGER,
                 allowNull: true
             },
             downtime:{
