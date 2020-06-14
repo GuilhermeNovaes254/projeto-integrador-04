@@ -191,8 +191,8 @@ const homeController = {
             apelidoUsuario: userInfo.apelido,
             nomeUsuario: userInfo.nome,
             descricaoUsuario: userInfo.descricao,
-            cidadeUsuario: cidade.cidade,
-            estadoUsuario: estado.sigla,
+            cidadeUsuario: cidade.cidade ? cidade.cidade : '',
+            estadoUsuario: estado.sigla ? estado.sigla : '',
             fotoUsuario,
             idUsuario: req.session.usuario.id
         });

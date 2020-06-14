@@ -178,17 +178,31 @@ const forms = {
             });
             return res.redirect('/feeds');
         } else {
-            let cidade = await Cidade.findOne({
-                where: {
-                    id: req.session.usuario.id
-                }
-            });
-    
-            let estado = await Estado.findOne({
-                where: {
-                    id: req.session.usuario.id
-                }
-            });
+
+
+
+            let cidade;
+            if (req.session.usuario.cidade != null && typeof(req.session.usuario.cidade) != "undefined") {
+                cidade = await Cidade.findOne({
+                    where: {
+                        id: req.session.usuario.cidade
+                    }
+                });
+            } else {
+                cidade = '-'
+            }
+            
+            let estado;
+            if (req.session.usuario.estado != null && typeof(req.session.usuario.estado) != "undefined") {
+                estado = await Estado.findOne({
+                    where: {
+                        id: req.session.usuario.estado
+                    }
+                });
+            } else {
+                estado = '-'
+            }
+        
             return res.render("editar",  {errors:listOfErrors.errors,
                 title: 'Atualizar Informações',
                 apelidoUsuario: req.session.usuario.apelido,
@@ -198,8 +212,8 @@ const forms = {
                 formData: req.body,
                 foto,
                 fotoTema,
-                cidadeUsuario: cidade.cidade,
-                estadoUsuario: estado.sigla,
+                cidadeUsuario: cidade.cidade ? cidade.cidade : '',
+                estadoUsuario: estado.sigla ? estado.sigla : '',
                 formData: req.body
                 })
         }
