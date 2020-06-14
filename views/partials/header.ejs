@@ -28,13 +28,13 @@
                             </div>
                             <div class='o-menu'>
                                 <div class="o-menu__avatar">
-                                    <img src= <%=USUARIO.foto%> alt="">
+                                    <img src= '/buscaImagem/<%= USUARIO.foto %>' alt="">
                                     <span class='o-hamburger'></span>
                                 </div>
                             </div>
                         </label>
                         <ul>
-                            <li><img class="o-hamburger--avatar" src= <%=USUARIO.foto%> alt=""></li>
+                            <li><img class="o-hamburger--avatar" src= '/buscaImagem/<%= USUARIO.foto %>' alt=""></li>
                             
                             <li><a href='/perfil?id=<%=USUARIO.id%>'>Perfil</a></li>
                             <li><a href='/editar'>Editar Perfil</a></li>
