@@ -27,28 +27,27 @@
     <div></div>
     <div></div>
   </div>
-  <%- include('./partials/highlights-five') %>
+  <%- include('./partials/highlights-five', {jogos}) %>
 
 </div>
+
 </div>
 <div class="container-fluid u-bg-white">
-  <div class="row">
-    <main class="container">
-      <div class="row o-feeds-content">
-        <h2>Jogos Indicados para Você</h2>
-      </div>
-    </main>
-    <%- include('./partials/highlights-five') %>
+  <main class="container">
+    <div class="row o-feeds-content">
+      <h2>Jogos Indicados para Você</h2>
+    </div>
+  </main>
+  <%- include('./partials/highlights-five', {jogos : jogosIndicados }) %>
 </div>
+
 <div class="container-fluid">
-  <div class="row">
     <main class="container">
       <div class="row o-feeds-content">
         <h2>Adicionados Recentemente</h2>
       </div>
     </main>
-    <%- include('./partials/highlights-five') %>
-  </div>
+    <%- include('./partials/highlights-five', {jogos : jogosRecentes }) %>
 </div>
 
 <script src="js/scriptListaJogos.js"></script>

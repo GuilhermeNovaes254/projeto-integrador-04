@@ -1,18 +1,24 @@
 const {
     Cidade,
     Dominio,
-    Jogo,
     Estado,
     Mecanica,
     Tema,
+    Comentario,
+    Usuario
 } = require('../models')
+const busca = require('./buscaController');
 
 const homeController = {
 
 
-    index: (req, res) => {
+    index: async (req, res) => {
+
+        const jogos = await busca.listaJogos(10)
+
         res.render('index', {
-            title: 'Home'
+            title: 'Home',
+            jogos
         });
 
     },
@@ -25,17 +31,25 @@ const homeController = {
     },
 
 
-    feeds: (req, res) => {
+    feeds: async (req, res) => {
 
         fotoUsuario = 'images/icons/PerfilVermelho.png'
+
+        const jogos = await busca.listaJogos(10);
+        const jogosRecentes = await busca.listaJogos(2);
+        const jogosIndicados = await busca.listaJogos(1);
+
+        console.log(jogos);
 
         if (req.session.usuario.foto != 'images/icons/PerfilVermelho.png') {
             fotoUsuario = req.session.usuario.foto
         }
 
         res.render('feeds', {
-            title: 'Feeds'
-
+            title: 'Feeds',
+            jogos,
+            jogosRecentes,
+            jogosIndicados
         });
     },
 
@@ -67,7 +81,7 @@ const homeController = {
         });
     },
 
-    perfil: (req, res) => {
+    perfil: async (req, res) => {
 
         fotoUsuario = 'images/icons/PerfilVermelho.png'
 
@@ -75,6 +89,19 @@ const homeController = {
             fotoUsuario = req.session.usuario.foto,
                 fotoUsuario
         }
+
+        let whereClause = {};
+        whereClause['usuario_id'] = req.session.usuario.id;
+        const comentarios = await Comentario.findAll({
+            order: [
+                ['data', 'ASC']
+            ],
+             where: whereClause, 
+             include: [{
+                model: Usuario,
+                as: 'usuario'
+                }]
+        });
 
         res.render('perfil', {
             title: 'perfil',
@@ -85,28 +112,11 @@ const homeController = {
             descricaoUsuario: req.session.usuario.descricao,
             cidadeUsuario: req.session.usuario.cidade,
             estadoUsuario: req.session.usuario.estado,
-            idUsuario: req.session.usuario.id
+            idUsuario: req.session.usuario.id,
+            comentarios
         });
     },
 
-    jogo: (req, res) => {
-
-        let {
-            jogo
-        } = req.query;
-
-        fotoUsuario = 'images/icons/PerfilVermelho.png'
-
-        if (req.session.usuario.foto != 'images/icons/PerfilVermelho.png') {
-            fotoUsuario = req.session.usuario.foto,
-                fotoUsuario
-        }
-
-        res.render('jogo', {
-            title: 'jogo',
-            jogo
-        });
-    },
 
     busca: (req, res) => {
 

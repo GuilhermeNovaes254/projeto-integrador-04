@@ -4,7 +4,7 @@
 <main class="container c-perfil">
   <div class="c-perfil__left">
     <div class="c-perfil__left--description c-perfil__left--content" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
-      <img class="c-photo" src=<%=fotoUsuario%> alt="">
+      <img class="c-photo" src='/buscaImagem/<%= USUARIO.foto %>' alt="">
       <h2><%=nomeUsuario%></h2>
       <h4><%=apelidoUsuario%></h4>
       <p><%=descricaoUsuario%></p>
@@ -14,9 +14,6 @@
         <i class="icon ion-social-twitter"></i>
         <i class="icon ion-social-google"></i>
       </div>
-    </div>
-    <div class="c-perfil__left--news c-perfil__left--content" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
-      <h5><i class="icon ion-happy"></i> Amigos</h5>
     </div>
   </div>
   <div class="c-perfil__right">
