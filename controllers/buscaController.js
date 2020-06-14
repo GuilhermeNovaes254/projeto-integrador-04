@@ -3,7 +3,8 @@ const Op = Sequelize.Op;
 
 const {
         Usuario,
-        Jogo
+        Jogo,
+        Favorito
 } = require('../models')
 
 
@@ -94,29 +95,49 @@ const buscaController = {
                         res.status(401)
                 }
         },
-        
-        listaJogos: async (limit) => {
+
+        listaJogos: async (limite) => {
                 try {
-                        // let {limite} = req.query
-
-                        //limite = parseInt(limite)
-                        console.log(limit)
-
                         let busca = []
-        
+
                         busca = await Jogo.findAll({
-                                limit: limit,
+                                limit: limite,
                                 order: [
                                         ['id', 'DESC']
                                 ]
                         })
-        
+
                         return busca;
 
                 } catch (error) {
                         return null;
                 }
         },
+
+        listaJogosFavoritos: async (limite, idUsuario) => {
+                try {
+                        const favoritos = await Favorito.findAll({
+                                limit: limite,
+                                where: {
+                                        usuario_id: idUsuario
+                                },
+                                include: [{
+                                        model: Jogo,
+                                        as: 'jogo'
+                                }]
+                        });
+
+                        let jogosFavoritos = [];
+                        for (let favorito of favoritos) {
+                                jogosFavoritos.push(favorito.jogo);
+                        }
+
+                        return jogosFavoritos;
+                } catch (error) {
+                        return null;
+                }
+        },
+
         dadosUsuario: async (req, res) => {
                 try {
                         let {
@@ -130,7 +151,7 @@ const buscaController = {
                         });
 
                         res.send(usuario)
-                        
+
                 } catch (error) {
                         res.status(401)
                 }
