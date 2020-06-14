@@ -13,6 +13,7 @@ let selectGenero = document.getElementById('genero');
 let selectNivelAp = document.getElementById('tipoNivelAP');
 let imagemPerfil = document.getElementById('imagemPerfil');
 let imagemTema = document.getElementById('imagemTema');
+let selectCidade = document.getElementById('cidade');
 
 function buscaEstados() {
     // Set up our HTTP request
@@ -72,8 +73,8 @@ function buscaCidades(estadoselecionado) {
             }
 
             if (typeof(formData.cidade) != "undefined" && formData.cidade != null) {
-                select.value = formData.cidade;
-            };
+                select.value = formData.cidade
+            }
         }
 
     };
@@ -89,6 +90,9 @@ let estadoselecionado = selectestado.addEventListener("change", function () {
     buscaCidades(this.value);
 });
 
+if (typeof(formData.estado) != "undefined" && formData.estado != null) {
+    buscaCidades(formData.estado);
+}
 
 let date = new Date();
 let min = 1910,
