@@ -1,10 +1,10 @@
 <%- include('./partials/header') %>
 
-<section class="c-banner-perfil"></section>
+<section class="c-banner-perfil" style="background-image: url('/buscaImagem/<%= temaUsuario %>');"></section>
 <main class="container c-perfil">
   <div class="c-perfil__left">
     <div class="c-perfil__left--description c-perfil__left--content" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
-      <img class="c-photo" src='/buscaImagem/<%= USUARIO.foto %>' alt="">
+      <img class="c-photo" src='/buscaImagem/<%= fotoUsuario %>' alt="">
       <h2><%=nomeUsuario%></h2>
       <h4><%=apelidoUsuario%></h4>
       <p><%=descricaoUsuario%></p>
