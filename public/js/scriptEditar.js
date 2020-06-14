@@ -141,7 +141,7 @@ if (typeof(formData.diaNasc) != "undefined" && formData.diaNasc != null) {
     select2.value = formData.diaNasc;
 }else{
     if (typeof(diaNasc) != "undefined" && diaNasc != null && diaNasc != ""){
-        select2.value = diaNasc;
+        select2.value = parseInt(diaNasc);
     }
 };
 
@@ -150,7 +150,7 @@ if (typeof(formData.mesNasc) != "undefined" && formData.mesNasc != null) {
     selectMesNasc.value = formData.mesNasc;
 }else{
     if (typeof(mesNasc) != "undefined" && mesNasc != null && mesNasc != ""){
-        selectMesNasc.value = mesNasc;
+        selectMesNasc.value = parseInt(mesNasc);
     }
 };
 
