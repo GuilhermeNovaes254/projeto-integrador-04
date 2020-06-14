@@ -18,6 +18,8 @@ module.exports = {
           tema_id: 15,
           dominio_id: 11,
           mecanica_id: 4,
+        foto:'not-found-image.jpg',
+        fotoTema:'h1.jpg'
         },
         {
           id: 5,
@@ -31,7 +33,9 @@ module.exports = {
           aprovado: 1,
           tema_id: 9,
           dominio_id: 12,
-          mecanica_id: 3
+          mecanica_id: 3,
+          foto:'not-found-image.jpg',
+          fotoTema:'h1.jpg'
         },
         {
           id: 6,
@@ -45,7 +49,9 @@ module.exports = {
           aprovado: 1,
           tema_id: 7,
           dominio_id: 11,
-          mecanica_id: 1
+          mecanica_id: 1,
+          foto:'not-found-image.jpg',
+          fotoTema:'h1.jpg'
         },
         {
           id: 7,
@@ -60,6 +66,8 @@ module.exports = {
           tema_id: 11,
           dominio_id: 10,
           mecanica_id: 1,
+          foto:'not-found-image.jpg',
+          fotoTema:'h1.jpg'
         },
         {
           id: 8,
@@ -74,6 +82,8 @@ module.exports = {
           tema_id: 1,
           dominio_id: 10,
           mecanica_id: 1,
+          foto:'not-found-image.jpg',
+          fotoTema:'h1.jpg'
         },
         {
           id: 9,
@@ -88,6 +98,8 @@ module.exports = {
           tema_id: 2,
           dominio_id: 1,
           mecanica_id: 5,
+          foto:'not-found-image.jpg',
+          fotoTema:'h1.jpg'
         },
         {
           id: 10,
@@ -102,6 +114,8 @@ module.exports = {
           tema_id: 12,
           dominio_id: 14,
           mecanica_id: 2,
+          foto:'not-found-image.jpg',
+          fotoTema:'h1.jpg'
         },
         {
           id: 11,
@@ -116,6 +130,8 @@ module.exports = {
           tema_id: 9,
           dominio_id: 10,
           mecanica_id: 6,
+          foto:'not-found-image.jpg',
+          fotoTema:'h1.jpg'
         },
         {
           id: 12,
@@ -130,6 +146,8 @@ module.exports = {
           tema_id: 7,
           dominio_id: 4,
           mecanica_id: 6,
+          foto:'not-found-image.jpg',
+          fotoTema:'h1.jpg'
         },
         {
           id: 13,
@@ -144,6 +162,8 @@ module.exports = {
           tema_id: 13,
           dominio_id: 11,
           mecanica_id: 6,
+          foto:'not-found-image.jpg',
+          fotoTema:'h1.jpg'
         },
         {
           id: 14,
@@ -158,6 +178,8 @@ module.exports = {
           tema_id: 6,
           dominio_id: 6,
           mecanica_id: 5,
+          foto:'not-found-image.jpg',
+          fotoTema:'h1.jpg'
         },
         {
           id: 15,
@@ -172,6 +194,8 @@ module.exports = {
           tema_id: 7,
           dominio_id: 2,
           mecanica_id: 1,
+          foto:'not-found-image.jpg',
+          fotoTema:'h1.jpg'
         },
         {
           id: 16,
@@ -186,6 +210,8 @@ module.exports = {
           tema_id: 14,
           dominio_id: 5,
           mecanica_id: 5,
+          foto:'not-found-image.jpg',
+          fotoTema:'h1.jpg'
         },
         {
           id: 17,
@@ -200,6 +226,8 @@ module.exports = {
           tema_id: 11,
           dominio_id: 6,
           mecanica_id: 3,
+          foto:'not-found-image.jpg',
+          fotoTema:'h1.jpg'
         },
         {
           id: 18,
@@ -214,6 +242,8 @@ module.exports = {
           tema_id: 2,
           dominio_id: 9,
           mecanica_id: 1,
+          foto:'not-found-image.jpg',
+          fotoTema:'h1.jpg'
         },
         {
           id: 19,
@@ -228,6 +258,8 @@ module.exports = {
           tema_id: 14,
           dominio_id: 2,
           mecanica_id: 1,
+          foto:'not-found-image.jpg',
+          fotoTema:'h1.jpg'
         },
         {
           id: 20,
@@ -242,6 +274,8 @@ module.exports = {
           tema_id: 10,
           dominio_id: 2,
           mecanica_id: 3,
+          foto:'not-found-image.jpg',
+          fotoTema:'h1.jpg'
         },
         {
           id: 21,
@@ -256,6 +290,8 @@ module.exports = {
           tema_id: 3,
           dominio_id: 1,
           mecanica_id: 5,
+          foto:'not-found-image.jpg',
+          fotoTema:'h1.jpg'
         },
         {
           id: 22,
@@ -270,6 +306,8 @@ module.exports = {
           tema_id: 8,
           dominio_id: 2,
           mecanica_id: 6,
+          foto:'not-found-image.jpg',
+          fotoTema:'h1.jpg'
         },
         {
           id: 23,
@@ -284,6 +322,8 @@ module.exports = {
           tema_id: 3,
           dominio_id: 9,
           mecanica_id: 1,
+          foto:'not-found-image.jpg',
+          fotoTema:'h1.jpg'
         },
         {
           id: 24,
@@ -298,6 +338,8 @@ module.exports = {
           tema_id: 15,
           dominio_id: 14,
           mecanica_id: 5,
+          foto:'not-found-image.jpg',
+          fotoTema:'h1.jpg'
         },
         {
           id: 25,
@@ -312,6 +354,8 @@ module.exports = {
           tema_id: 10,
           dominio_id: 2,
           mecanica_id: 1,
+          foto:'not-found-image.jpg',
+          fotoTema:'h1.jpg'
         },
         {
           id: 26,
@@ -326,6 +370,8 @@ module.exports = {
           tema_id: 12,
           dominio_id: 2,
           mecanica_id: 4,
+          foto:'not-found-image.jpg',
+          fotoTema:'h1.jpg'
         },
         {
           id: 27,
@@ -340,6 +386,8 @@ module.exports = {
           tema_id: 15,
           dominio_id: 11,
           mecanica_id: 5,
+          foto:'not-found-image.jpg',
+          fotoTema:'h1.jpg'
         },
         {
           id: 28,
@@ -354,6 +402,8 @@ module.exports = {
           tema_id: 6,
           dominio_id: 3,
           mecanica_id: 4,
+          foto:'not-found-image.jpg',
+          fotoTema:'h1.jpg'
         },
         {
           id: 29,
@@ -368,6 +418,8 @@ module.exports = {
           tema_id: 15,
           dominio_id: 1,
           mecanica_id: 5,
+          foto:'not-found-image.jpg',
+          fotoTema:'h1.jpg'
         },
         {
           id: 30,
@@ -382,6 +434,8 @@ module.exports = {
           tema_id: 9,
           dominio_id: 2,
           mecanica_id: 5,
+          foto:'not-found-image.jpg',
+          fotoTema:'h1.jpg'
         },
         {
           id: 31,
@@ -396,6 +450,8 @@ module.exports = {
           tema_id: 2,
           dominio_id: 5,
           mecanica_id: 6,
+          foto:'not-found-image.jpg',
+          fotoTema:'h1.jpg'
         },
         {
           id: 32,
@@ -410,6 +466,8 @@ module.exports = {
           tema_id: 9,
           dominio_id: 2,
           mecanica_id: 3,
+          foto:'not-found-image.jpg',
+          fotoTema:'h1.jpg'
         },
         {
           id: 33,
@@ -424,6 +482,8 @@ module.exports = {
           tema_id: 6,
           dominio_id: 5,
           mecanica_id: 6,
+          foto:'not-found-image.jpg',
+          fotoTema:'h1.jpg'
         },
         {
           id: 34,
@@ -438,6 +498,8 @@ module.exports = {
           tema_id: 10,
           dominio_id: 14,
           mecanica_id: 5,
+          foto:'not-found-image.jpg',
+          fotoTema:'h1.jpg'
         },
         {
           id: 35,
@@ -452,6 +514,8 @@ module.exports = {
           tema_id: 5,
           dominio_id: 14,
           mecanica_id: 6,
+          foto:'not-found-image.jpg',
+          fotoTema:'h1.jpg'
         },
         {
           id: 36,
@@ -466,6 +530,8 @@ module.exports = {
           tema_id: 12,
           dominio_id: 14,
           mecanica_id: 1,
+          foto:'not-found-image.jpg',
+          fotoTema:'h1.jpg'
         },
         {
           id: 37,
@@ -480,6 +546,8 @@ module.exports = {
           tema_id: 8,
           dominio_id: 10,
           mecanica_id: 2,
+          foto:'not-found-image.jpg',
+          fotoTema:'h1.jpg'
         },
         {
           id: 38,
@@ -494,6 +562,8 @@ module.exports = {
           tema_id: 9,
           dominio_id: 12,
           mecanica_id: 3,
+          foto:'not-found-image.jpg',
+          fotoTema:'h1.jpg'
         },
         {
           id: 39,
@@ -508,6 +578,8 @@ module.exports = {
           tema_id: 12,
           dominio_id: 14,
           mecanica_id: 5,
+          foto:'not-found-image.jpg',
+          fotoTema:'h1.jpg'
         },
         {
           id: 40,
@@ -522,6 +594,8 @@ module.exports = {
           tema_id: 3,
           dominio_id: 5,
           mecanica_id: 1,
+          foto:'not-found-image.jpg',
+          fotoTema:'h1.jpg'
         },
         {
           id: 41,
@@ -536,6 +610,8 @@ module.exports = {
           tema_id: 5,
           dominio_id: 9,
           mecanica_id: 3,
+          foto:'not-found-image.jpg',
+          fotoTema:'h1.jpg'
         },
         {
           id: 42,
@@ -550,6 +626,8 @@ module.exports = {
           tema_id: 12,
           dominio_id: 1,
           mecanica_id: 6,
+          foto:'not-found-image.jpg',
+          fotoTema:'h1.jpg'
         },
         {
           id: 43,
@@ -564,6 +642,8 @@ module.exports = {
           tema_id: 1,
           dominio_id: 8,
           mecanica_id: 4,
+          foto:'not-found-image.jpg',
+          fotoTema:'h1.jpg'
         },
         {
           id: 44,
@@ -578,6 +658,8 @@ module.exports = {
           tema_id: 14,
           dominio_id: 6,
           mecanica_id: 2,
+          foto:'not-found-image.jpg',
+          fotoTema:'h1.jpg'
         },
         {
           id: 45,
@@ -592,6 +674,8 @@ module.exports = {
           tema_id: 7,
           dominio_id: 5,
           mecanica_id: 6,
+          foto:'not-found-image.jpg',
+          fotoTema:'h1.jpg'
         },
         {
           id: 46,
@@ -606,6 +690,8 @@ module.exports = {
           tema_id: 1,
           dominio_id: 12,
           mecanica_id: 6,
+          foto:'not-found-image.jpg',
+          fotoTema:'h1.jpg'
         },
         {
           id: 47,
@@ -620,6 +706,8 @@ module.exports = {
           tema_id: 7,
           dominio_id: 7,
           mecanica_id: 1,
+          foto:'not-found-image.jpg',
+          fotoTema:'h1.jpg'
         },
         {
           id: 48,
@@ -634,6 +722,8 @@ module.exports = {
           tema_id: 5,
           dominio_id: 3,
           mecanica_id: 2,
+          foto:'foto jogo.png',
+          fotoTema:'foto tema.png'
         },
         {
           id: 49,
@@ -648,6 +738,8 @@ module.exports = {
           tema_id: 1,
           dominio_id: 3,
           mecanica_id: 4,
+          foto:'not-found-image.jpg',
+          fotoTema:'h1.jpg'
         },
         {
           id: 50,
@@ -662,6 +754,8 @@ module.exports = {
           tema_id: 3,
           dominio_id: 6,
           mecanica_id: 3,
+          foto:'not-found-image.jpg',
+          fotoTema:'h1.jpg'
         },
         {
           id: 51,
@@ -676,6 +770,8 @@ module.exports = {
           tema_id: 10,
           dominio_id: 9,
           mecanica_id: 5,
+          foto:'not-found-image.jpg',
+          fotoTema:'h1.jpg'
         },
         {
           id: 52,
@@ -690,6 +786,8 @@ module.exports = {
           tema_id: 13,
           dominio_id: 1,
           mecanica_id: 6,
+          foto:'not-found-image.jpg',
+          fotoTema:'h1.jpg'
         },
         {
           id: 53,
@@ -704,6 +802,8 @@ module.exports = {
           tema_id: 12,
           dominio_id: 14,
           mecanica_id: 4,
+          foto:'not-found-image.jpg',
+          fotoTema:'h1.jpg'
         }
 
 
