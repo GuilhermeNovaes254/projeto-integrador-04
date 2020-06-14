@@ -126,6 +126,7 @@ const homeController = {
         }
 
         const jogosFavoritos = await busca.listaJogosFavoritos(6,usuario.id);
+        const jogosColecao = await busca.listaJogosColecao(6,usuario.id);
 
         
         res.render('perfil', {
@@ -139,7 +140,8 @@ const homeController = {
             estadoUsuario: estado ? estado.sigla : '',
             idUsuario: usuario.id,
             comentarios,
-            jogosFavoritos
+            jogosFavoritos,
+            jogosColecao
         });
     },
 
