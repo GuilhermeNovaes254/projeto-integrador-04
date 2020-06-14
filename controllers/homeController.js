@@ -280,7 +280,7 @@ const homeController = {
         }
         let diaNasc, mesNasc, anoNasc;
         if (userInfo.dataDeNascimento != null){
-            diaNasc = userInfo.dataDeNascimento.slice(6,8);
+            diaNasc = userInfo.dataDeNascimento.slice(8,10);
             mesNasc = userInfo.dataDeNascimento.slice(5,7);
             anoNasc = userInfo.dataDeNascimento.slice(0,4);
         }

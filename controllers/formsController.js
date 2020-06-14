@@ -205,7 +205,7 @@ const forms = {
 
             let diaNasc, mesNasc, anoNasc;
             if (req.session.usuario.dataDeNascimento != null){
-                diaNasc = req.session.usuario.dataDeNascimento.slice(6,8);
+                diaNasc = req.session.usuario.dataDeNascimento.slice(8,10);
                 mesNasc = req.session.usuario.dataDeNascimento.slice(5,7);
                 anoNasc = req.session.usuario.dataDeNascimento.slice(0,4);
             }
