@@ -200,6 +200,7 @@ const forms = {
                 fotoTema,
                 cidadeUsuario: cidade.cidade,
                 estadoUsuario: estado.sigla,
+                formData: req.body
                 })
         }
 

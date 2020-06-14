@@ -1,3 +1,19 @@
+let formData = JSON.parse(formDataEnv);
+let foto1 = formFoto;
+let fotoTema1 = formFotoTema;
+
+//variaveis DOM
+let fotoPerfil = document.getElementById('file-input');
+let imgFotoPerfil = document.getElementById('imgFotoPerfil');
+let fotoTema = document.getElementById('inputFileTema');
+let imgFotoTema = document.getElementById('tema');
+let selectestado = document.getElementById('estado');
+let selectMesNasc = document.getElementById('mesNasc');
+let selectGenero = document.getElementById('genero');
+let selectNivelAp = document.getElementById('tipoNivelAP');
+let imagemPerfil = document.getElementById('imagemPerfil');
+let imagemTema = document.getElementById('imagemTema');
+
 function buscaEstados() {
     // Set up our HTTP request
     var xhr = new XMLHttpRequest();
@@ -18,6 +34,10 @@ function buscaEstados() {
             for (let estado of estados) {
                 select.innerHTML += `<option value="${estado.id}">${estado.sigla}</option>`
             }
+
+            if (typeof(formData.estado) != "undefined" && formData.estado != null) {
+                select.value = formData.estado;
+            };
 
         }
     };
@@ -50,6 +70,10 @@ function buscaCidades(estadoselecionado) {
             for (let cidade of cidades) {
                 select.innerHTML += `<option value="${cidade.id}">${cidade.cidade}</option>`
             }
+
+            if (typeof(formData.cidade) != "undefined" && formData.cidade != null) {
+                select.value = formData.cidade;
+            };
         }
 
     };
@@ -60,8 +84,6 @@ function buscaCidades(estadoselecionado) {
     xhr.open('GET', url);
     xhr.send();
 };
-
-let selectestado = document.getElementById('estado');
 
 let estadoselecionado = selectestado.addEventListener("change", function () {
     buscaCidades(this.value);
@@ -79,24 +101,39 @@ for (let i = min; i <= max; i++) {
     select.appendChild(opt);
 }
 select.value = new Date().getFullYear();
+
+if (typeof(formData.anoNasc) != "undefined" && formData.anoNasc != null) {
+    select.value = formData.anoNasc;
+};
+
+
 let min2 = 1,
     max2 = 31,
     select2 = document.getElementById('diaNasc');
 for (let i = min2; i <= max2; i++) {
-    let opt = document.createElement('option');
-    opt.value = i;
-    opt.innerHTML = i;
+    let opt2 = document.createElement('option');
+    opt2.value = i;
+    opt2.innerHTML = i;
     select2.appendChild(opt);
 }
+if (typeof(formData.diaNasc) != "undefined" && formData.diaNasc != null) {
+    select2.value = formData.diaNasc;
+};
 
+//populando manualmente outros combos
+if (typeof(formData.mesNasc) != "undefined" && formData.mesNasc != null) {
+    selectMesNasc.value = formData.mesNasc;
+};
 
+if (typeof(formData.genero) != "undefined"  && formData.genero != null) {
+    selectGenero.value = formData.genero;
+};
+
+if (typeof(formData.tipoNivelAP) != "undefined" && formData.tipoNivelAP != null) {
+    selectNivelAp.value = formData.tipoNivelAP;
+};
 
 //carregar foto selecionada para perfil e tema
-let fotoPerfil = document.getElementById('file-input');
-let imgFotoPerfil = document.getElementById('imgFotoPerfil');
-let fotoTema = document.getElementById('inputFileTema');
-let imgFotoTema = document.getElementById('tema');
-
 fotoPerfil.addEventListener('change', function (evt) {
 
     var tgt = evt.target || window.event.srcElement,
@@ -126,3 +163,14 @@ fotoTema.addEventListener('change', function (evt) {
         fr.readAsDataURL(files[0]);
     }
 })
+
+//populando manualmente fotos
+if (typeof(foto1) != "undefined" && foto1.length > 0) {
+    imgFotoPerfil.src = '/buscaImagem/' + foto1;
+    imagemPerfil.value = foto1;
+};
+
+if (typeof(fotoTema1) != "undefined" && fotoTema1.length > 0) {
+    imgFotoTema.style.backgroundImage = "url('" + '/buscaImagem/' + fotoTema1 + "')"
+    imagemTema.value = fotoTema1;
+};

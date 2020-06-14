@@ -260,7 +260,10 @@ const homeController = {
             cidadeUsuario: cidade.cidade ? cidade.cidade : '',
             estadoUsuario: estado.sigla ? estado.sigla : '',
             fotoUsuario,
-            idUsuario: req.session.usuario.id
+            idUsuario: req.session.usuario.id,
+            formData: req.body,
+            foto,
+            fotoTema
         });
 
     },
