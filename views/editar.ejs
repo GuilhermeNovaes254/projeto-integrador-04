@@ -47,15 +47,25 @@
 
                                         <div class="form-group pt-3">
                                             <label for="nomeUser">Nome</label>
-                                            <input type="text" class="form-control" id="nomeUser" name="nomeUser"
+                                            <% if(formData.nomeUser != null){ %>
+                                                <input type="text" class="form-control" id="nomeUser" name="nomeUser"
                                                 required value=<%= formData.nomeUser %>>
+                                            <% }else{ %>
+                                                <input type="text" class="form-control" id="nomeUser" name="nomeUser"
+                                                required value=<%= nomeUsuario %>>
+                                            <% } %>
                                         </div>
                                         <div class="row tamanho">
                                             <div class="col-12 col-sm-12 col-md-5 col-lg-5">
                                                 <div class="form-group">
                                                     <label for="apelido">Apelido</label>
+                                                    <% if(formData.apelido != null){ %>
                                                     <input type="text" class="form-control" id="apelido" name="apelido"
                                                     required value=<%= formData.apelido %>>
+                                                    <% }else{ %>
+                                                        <input type="text" class="form-control" id="apelido" name="apelido"
+                                                        required value=<%= apelidoUsuario %>>
+                                                    <% } %>
                                                 </div>
                                             </div>
                                             <div class="col-12 col-sm-12 col-md-7 col-lg-7">
@@ -135,8 +145,13 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="descricaoUser">Descrição</label>
-                                            <textarea style="resize: none" class="form-control" id="descricaoUser"
-                                                name='descricaoUser' rows="4"><%= formData.descricaoUser %></textarea>
+                                            <% if(formData.descricaoUser != null){ %>
+                                                <textarea style="resize: none" class="form-control" id="descricaoUser"
+                                                    name='descricaoUser' rows="4"><%= formData.descricaoUser %></textarea>
+                                            <% }else{ %>
+                                                <textarea style="resize: none" class="form-control" id="descricaoUser"
+                                                    name='descricaoUser' rows="4"><%= descricaoUsuario %></textarea>
+                                            <% } %>
                                         </div>
                                         <div class="row tamanho">
                                             <div class="col-12 col-sm-12 col-md-6 col-lg-6">
@@ -207,8 +222,15 @@
     var formDataEnv = '<%- JSON.stringify(formData) %>';
     var formFoto = '<%- foto %>';
     var formFotoTema = '<%- fotoTema %>';
+    var formGenero = '<%- genero %>';
+    var formEstado = '<%- estado %>';
+    var formCidade = '<%- cidade %>';
+    var formDiaNasc = '<%- diaNasc %>';
+    var formMesNasc = '<%- mesNasc %>';
+    var formAnoNasc = '<%- anoNasc %>';
+    var formNivelAp= '<%- nivelAp %>';
 </script>
-
+    
 <script src="js/scriptEditar.js"></script>
 <script src='js/fotoPerfil.js' onload></script>
 <%- include('./partials/footer') %>
