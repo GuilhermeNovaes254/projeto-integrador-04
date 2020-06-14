@@ -3,7 +3,8 @@
 <section class="c-banner-perfil" style="background-image: url('/buscaImagem/<%= temaUsuario %>');"></section>
 <main class="container c-perfil">
   <div class="c-perfil__left">
-    <div class="c-perfil__left--description c-perfil__left--content" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+    <div class="c-perfil__left--description c-perfil__left--content" data-aos="fade-up" data-aos-duration="1000"
+      data-aos-delay="200">
       <img class="c-photo" src='/buscaImagem/<%= fotoUsuario %>' alt="">
       <h2><%=nomeUsuario%></h2>
       <h4><%=apelidoUsuario%></h4>
@@ -12,14 +13,27 @@
     </div>
   </div>
   <div class="c-perfil__right">
-    <div class="c-perfil__right--fav c-perfil__right--content" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+    <div class="c-perfil__right--fav c-perfil__right--content" data-aos="fade-up" data-aos-duration="1000"
+      data-aos-delay="400">
       <h2 class="c-perfil__right--title"><i class="icon ion-ios-heart"></i> Favoritos</h2>
       <%- include('./partials/highlights-three', {jogos : jogosFavoritos}) %>
     </div>
-    <div class="c-perfil__right--evaluation c-perfil__right--content" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
-      <h2 class="c-perfil__right--title"><i class="icon ion-android-star-half"></i> Avaliações</h2>
+    <div class="c-perfil__right--fav c-perfil__right--content" data-aos="fade-up" data-aos-duration="1000"
+      data-aos-delay="400">
+      <h2 class="c-perfil__right--title"><i class="icon ion-ios-albums"></i> Coleção</h2>
+      <%- include('./partials/highlights-three', {jogos : jogosColecao}) %>
+      <div style="padding: 15px; align-content: right;">
+        <% if(jogosColecao.length > 0) { %>
+        <a href="#" class="c-bt-default" style="background-color:black;">Ver mais</a>
+        <% }%>
+      </div>
     </div>
-    <div class="c-perfil__right--coments c-perfil__right--content" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+    <div class="c-perfil__right--evaluation c-perfil__right--content" data-aos="fade-up" data-aos-duration="1000"
+      data-aos-delay="200" style="background-color: transparent; padding-bottom: 0;">
+      <h2 class="c-perfil__right--title"><i class="icon ion-android-star-half"></i> Avaliações </h2>
+    </div>
+    <div class="c-perfil__right--coments c-perfil__right--content" data-aos="fade-up" data-aos-duration="1000"
+      data-aos-delay="200">
       <%- include('./partials/coments') %>
     </div>
   </div>
