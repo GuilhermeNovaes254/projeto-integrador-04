@@ -92,7 +92,7 @@ router.post('/jogo/elementos/amei', VerificaUsuarioLogado, elementosJogos.postaA
 router.get('/feeds', VerificaUsuarioLogado, homeController.feeds);
 router.get('/cadastroJogo', VerificaUsuarioLogado, homeController.cadastroJogo);
 router.get('/perfil', VerificaUsuarioLogado, homeController.perfil);
-router.get('/jogo', VerificaUsuarioLogado, homeController.jogo);
+router.get('/jogo', VerificaUsuarioLogado, elementosJogos.jogo);
 router.get('/busca', VerificaUsuarioLogado, homeController.busca);
 router.get('/moduloDestaques', VerificaUsuarioLogado, homeController.moduloDestaques);
 router.get('/excluir', VerificaUsuarioLogado, homeController.excluir);

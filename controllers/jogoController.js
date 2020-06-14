@@ -7,18 +7,68 @@ const {
     Comentario,
     Colecao,
     Avaliacao,
-    Jogo
+    Jogo,
+    Usuario
 } = require('../models');
-const {
-    usuarios
-} = require('./buscaController');
-const {
-    jogo
-} = require('./homeController');
-
-
 
 const jogoController = {
+
+    jogo: async (req, res) => {
+
+        let { id } = req.query;
+
+        let whereClause = {};
+        whereClause['id'] = id;
+
+
+        const jogo = await Jogo.findOne({
+            raw: true,
+            order: [
+                ['nome', 'ASC']
+            ],
+            where: whereClause
+        });
+
+        //TODO: ajustar jogoRelacionados
+        // let jogoRelacionados = await Jogo.findAll({
+        //     limit: 5,
+        //     raw: true,
+        //     order: [
+        //         ['nome', 'ASC']
+        //     ],
+        //     where: {
+        //         nome: { $not: jogo.nome },
+        //         tema_id: jogo.tema_id,
+        //     }
+        // });
+
+        let whereClauseComentario = {};
+        whereClauseComentario['jogo_id'] = jogo.id;
+        const comentarios = await Comentario.findAll({
+            order: [
+                ['data', 'ASC']
+            ],
+             where: whereClauseComentario, 
+             include: [{
+                model: Usuario,
+                as: 'usuario'
+                }]
+        });
+
+
+        fotoUsuario = 'images/icons/PerfilVermelho.png'
+
+        if (req.session.usuario.foto != 'images/icons/PerfilVermelho.png') {
+            fotoUsuario = req.session.usuario.foto,
+                fotoUsuario
+        }
+
+        res.render('jogo', {
+            title: 'jogo',
+            jogo,
+            comentarios
+        });
+    },
 
     // Funcoes de conta **************************
     contaAvalicao: async (req, res) => {
@@ -311,11 +361,11 @@ const jogoController = {
             let avaliacao = await Avaliacao.findOne({
                 where: whereClause
             })
-            
+
 
             res.send(avaliacao)
 
-        
+
         } catch (error) {
             res.status(401)
         }
