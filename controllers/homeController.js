@@ -37,9 +37,6 @@ const homeController = {
 
         const jogos = await busca.listaJogos(10);
         const jogosRecentes = await busca.listaJogos(2);
-        const jogosIndicados = await busca.listaJogos(1);
-
-        console.log(jogos);
 
         if (req.session.usuario.foto != 'images/icons/PerfilVermelho.png') {
             fotoUsuario = req.session.usuario.foto
@@ -48,8 +45,7 @@ const homeController = {
         res.render('feeds', {
             title: 'Feeds',
             jogos,
-            jogosRecentes,
-            jogosIndicados
+            jogosRecentes
         });
     },
 
