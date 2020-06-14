@@ -114,7 +114,7 @@ for (let i = min2; i <= max2; i++) {
     let opt2 = document.createElement('option');
     opt2.value = i;
     opt2.innerHTML = i;
-    select2.appendChild(opt);
+    select2.appendChild(opt2);
 }
 if (typeof(formData.diaNasc) != "undefined" && formData.diaNasc != null) {
     select2.value = formData.diaNasc;
