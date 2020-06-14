@@ -17,44 +17,36 @@ const jogoController = {
 
         let { id } = req.query;
 
-        let whereClause = {};
-        whereClause['id'] = id;
-
-
         const jogo = await Jogo.findOne({
             raw: true,
             order: [
                 ['nome', 'ASC']
             ],
-            where: whereClause
+            where: {
+                id
+            }
         });
 
-        //TODO: ajustar jogoRelacionados
-        // let jogoRelacionados = await Jogo.findAll({
-        //     limit: 5,
-        //     raw: true,
-        //     order: [
-        //         ['nome', 'ASC']
-        //     ],
-        //     where: {
-        //         nome: { $not: jogo.nome },
-        //         tema_id: jogo.tema_id,
-        //     }
-        // });
+        let jogosRelacionados = await Jogo.findAll({
+            limit: 5,
+            where: {
+                id: { [Op.ne] : jogo.id },
+                tema_id: jogo.tema_id
+            }
+        });
 
-        let whereClauseComentario = {};
-        whereClauseComentario['jogo_id'] = jogo.id;
         const comentarios = await Comentario.findAll({
             order: [
                 ['data', 'ASC']
             ],
-             where: whereClauseComentario, 
+             where: {
+                jogo_id: jogo.id
+             }, 
              include: [{
                 model: Usuario,
                 as: 'usuario'
                 }]
         });
-
 
         fotoUsuario = 'images/icons/PerfilVermelho.png'
 
@@ -66,7 +58,8 @@ const jogoController = {
         res.render('jogo', {
             title: 'jogo',
             jogo,
-            comentarios
+            comentarios,
+            jogosRelacionados
         });
     },
 

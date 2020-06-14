@@ -122,6 +122,20 @@
         letter-spacing: 0.5px;
       }
 
+      .c-jogo__left--content h6{
+        background: #0F7A2F;
+        color: #fff;
+        border-radius: 50px;
+        padding: 5px;
+        padding-left: 20px;
+        display: flex;
+        font-family: 'Montserrat', arial, sans-serif;
+        align-items: center;
+        font-size: 18px;
+        font-weight: 400;
+        letter-spacing: 0.5px;
+      }
+
         .c-jogo__left--content h5 i{
           padding: 0 20px;
         }
