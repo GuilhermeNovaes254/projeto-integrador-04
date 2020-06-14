@@ -144,6 +144,8 @@ fotoPerfil.addEventListener('change', function (evt) {
         var fr = new FileReader();
         fr.onload = function () {
             imgFotoPerfil.src = fr.result;
+            imgFotoPerfil.width = "150";
+            imgFotoPerfil.height = "150";
         }
         fr.readAsDataURL(files[0]);
     }
