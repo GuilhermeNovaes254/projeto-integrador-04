@@ -24,7 +24,7 @@
   width: 100%;
   height: 700px;
   display: block;
-  background: #fff;
+  background: #E5E5E5;
 }
 
 .c-photo-game{
@@ -48,6 +48,10 @@
     margin-bottom: 25px;
   }
 
+  .c-jogo__right--content{
+    border-radius: 15px;
+  }
+
   .c-jogo__description{
     padding: 35px 25px 55px;
   }
@@ -67,7 +71,7 @@
       font-weight: 400;
       line-height: 142.5%;
       letter-spacing: -0.005em;
-      color: #ffffff;
+      color: black;
       font-family: 'Comfortaa', arial, sans-serif;
     }
 
@@ -78,7 +82,7 @@
         font-family: 'Montserrat', arial, sans-serif;
         line-height: 32px;
         letter-spacing: -0.015em;
-        color: #fff;
+        color: black;
         text-transform: uppercase;
         padding-bottom: 20px;
       }
@@ -138,14 +142,45 @@
       align-items: center;
       padding: 0;
       min-height: 300px;
-      background-color:#F22441;
-      border-bottom: 12px solid #d6132d;
+      background-color: white;
+      /* border-bottom: 12px solid #d6132d; */
       box-shadow: 0 0 35px 0 hsla(0,0%,73%,.8);
     }
+
+  .game-name{
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f22441', endColorstr='#efa0ab',GradientType=1 );
+    color: #222;
+    display: flex;
+    font-family: 'Montserrat', arial, sans-serif;
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-bottom: 20px;
+  }  
+  .game-detail{
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f22441', endColorstr='#efa0ab',GradientType=1 );
+    color: #222;
+    display: flex;
+    font-family: 'Montserrat', arial, sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+  }  
+
+  .game-detail-content{
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f22441', endColorstr='#efa0ab',GradientType=1 );
+    color: #222;
+    display: flex;
+    font-size: 18px;
+    letter-spacing: 0.5px;
+    margin-bottom: 15px;
+  }
 
   .c-jogo__right{
     margin-top: 130px;
   }
+  
 
     .c-jogo__right h2.c-jogo__right--title{
       /* background: #f22441;
