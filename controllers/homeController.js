@@ -79,6 +79,8 @@ const homeController = {
 
     perfil: async (req, res) => {
 
+        let { id } = req.params;
+
         fotoUsuario = 'images/icons/PerfilVermelho.png'
 
         if (req.session.usuario.foto != 'images/icons/PerfilVermelho.png') {
@@ -86,29 +88,53 @@ const homeController = {
                 fotoUsuario
         }
 
-        let whereClause = {};
-        whereClause['usuario_id'] = req.session.usuario.id;
         const comentarios = await Comentario.findAll({
             order: [
                 ['data', 'ASC']
             ],
-             where: whereClause, 
-             include: [{
+            where: {
+                usuario_id: id
+            },
+            include: [{
                 model: Usuario,
                 as: 'usuario'
-                }]
+            }]
         });
+
+        const usuario = await Usuario.findOne({
+            where: {
+                id: id
+            }
+        });
+
+        let cidade;
+        if (usuario.cidade_id != null) {
+             cidade = await Cidade.findOne({
+                where: {
+                    id: usuario.cidade_id
+                }
+            });
+        }
+
+        let estado;
+        if (usuario.cidade_estado_id != null) {
+            estado = await Estado.findOne({
+                where: {
+                    id: usuario.cidade_estado_id
+                }
+            });
+        }
 
         res.render('perfil', {
             title: 'perfil',
-            apelidoUsuario: req.session.usuario.apelido,
-            fotoUsuario,
-            nomeUsuario: req.session.usuario.nome,
-            apelidoUsuario: req.session.usuario.apelido,
-            descricaoUsuario: req.session.usuario.descricao,
-            cidadeUsuario: req.session.usuario.cidade,
-            estadoUsuario: req.session.usuario.estado,
-            idUsuario: req.session.usuario.id,
+            apelidoUsuario: usuario.apelido,
+            fotoUsuario: usuario.foto,
+            temaUsuario: usuario.fotoTema,
+            nomeUsuario: usuario.nome,
+            descricaoUsuario: usuario.descricao,
+            cidadeUsuario: cidade ? cidade.cidade : '',
+            estadoUsuario: estado ? estado.sigla : '',
+            idUsuario: usuario.id,
             comentarios
         });
     },
@@ -171,7 +197,7 @@ const homeController = {
             });
         } else {
             cidade = '-'
-        }      
+        }
 
         let estado
         if (cidade.estado_id != null) {
@@ -232,10 +258,10 @@ const homeController = {
                     id: userInfo.cidade_id
                 }
             });
-        }else {
+        } else {
             cidade = '-'
         }
-        
+
         let estado = ''
         if (cidade.estado_id != null) {
             estado = await Estado.findOne({
