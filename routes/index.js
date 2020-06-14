@@ -53,6 +53,7 @@ router.get('/buscaEstado', localizacaoController.buscaEstado);
 router.get('/buscaCidade/:id', localizacaoController.buscaCidade);
 router.get('/buscaJogo', buscaController.jogos);
 router.get('/buscaUsuario/:item', buscaController.usuarios);
+router.get('/busca/usuario',buscaController.dadosUsuario);
 router.get('/tema', parametrosJogoController.tema);
 router.get('/dominio', parametrosJogoController.dominio);
 router.get('/mecanica', parametrosJogoController.mecanica);

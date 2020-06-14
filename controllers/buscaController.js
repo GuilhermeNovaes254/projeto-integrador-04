@@ -95,28 +95,46 @@ const buscaController = {
                 }
         },
         
-                listaJogos: async (limit) => {
-                        try {
-                                // let {limite} = req.query
+        listaJogos: async (limit) => {
+                try {
+                        // let {limite} = req.query
 
-                                //limite = parseInt(limite)
-                                console.log(limit)
+                        //limite = parseInt(limite)
+                        console.log(limit)
 
-                                let busca = []
-               
-                                busca = await Jogo.findAll({
-                                        limit: limit,
-                                        order: [
-                                                ['id', 'DESC']
-                                        ]
-                                })
-                
-                                return busca;
+                        let busca = []
         
-                        } catch (error) {
-                                return null;
-                        }
+                        busca = await Jogo.findAll({
+                                limit: limit,
+                                order: [
+                                        ['id', 'DESC']
+                                ]
+                        })
+        
+                        return busca;
+
+                } catch (error) {
+                        return null;
                 }
+        },
+        dadosUsuario: async (req, res) => {
+                try {
+                        let {
+                                id
+                        } = req.query
+
+                        let usuario = await Usuario.findOne({
+                                where: {
+                                        id
+                                }
+                        });
+
+                        res.send(usuario)
+                        
+                } catch (error) {
+                        res.status(401)
+                }
+        }
 
 }
 
