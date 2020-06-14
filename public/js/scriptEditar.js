@@ -1,6 +1,13 @@
 let formData = JSON.parse(formDataEnv);
 let foto1 = formFoto;
 let fotoTema1 = formFotoTema;
+let genero = formGenero;
+let estado = formEstado;
+let cidade = formCidade;
+let diaNasc = formDiaNasc;
+let mesNasc = formMesNasc;
+let anoNasc = formAnoNasc;
+let nivelAp = formNivelAp;
 
 //variaveis DOM
 let fotoPerfil = document.getElementById('file-input');
@@ -38,6 +45,8 @@ function buscaEstados() {
 
             if (typeof(formData.estado) != "undefined" && formData.estado != null) {
                 select.value = formData.estado;
+            }else{
+                select.value = estado;
             };
 
         }
@@ -74,6 +83,8 @@ function buscaCidades(estadoselecionado) {
 
             if (typeof(formData.cidade) != "undefined" && formData.cidade != null) {
                 select.value = formData.cidade
+            }else{
+                select.value = cidade;
             }
         }
 
@@ -92,6 +103,8 @@ let estadoselecionado = selectestado.addEventListener("change", function () {
 
 if (typeof(formData.estado) != "undefined" && formData.estado != null) {
     buscaCidades(formData.estado);
+}else{
+    buscaCidades(estado);
 }
 
 let date = new Date();
@@ -108,6 +121,10 @@ select.value = new Date().getFullYear();
 
 if (typeof(formData.anoNasc) != "undefined" && formData.anoNasc != null) {
     select.value = formData.anoNasc;
+}else{
+    if (typeof(anoNasc) != "undefined" && anoNasc != null && anoNasc != ""){
+        select.value = anoNasc;
+    }
 };
 
 
@@ -122,19 +139,31 @@ for (let i = min2; i <= max2; i++) {
 }
 if (typeof(formData.diaNasc) != "undefined" && formData.diaNasc != null) {
     select2.value = formData.diaNasc;
+}else{
+    if (typeof(diaNasc) != "undefined" && diaNasc != null && diaNasc != ""){
+        select2.value = diaNasc;
+    }
 };
 
 //populando manualmente outros combos
 if (typeof(formData.mesNasc) != "undefined" && formData.mesNasc != null) {
     selectMesNasc.value = formData.mesNasc;
+}else{
+    if (typeof(mesNasc) != "undefined" && mesNasc != null && mesNasc != ""){
+        selectMesNasc.value = mesNasc;
+    }
 };
 
 if (typeof(formData.genero) != "undefined"  && formData.genero != null) {
     selectGenero.value = formData.genero;
+}else{
+    selectGenero.value = genero;
 };
 
 if (typeof(formData.tipoNivelAP) != "undefined" && formData.tipoNivelAP != null) {
     selectNivelAp.value = formData.tipoNivelAP;
+}else{
+    selectNivelAp.value = nivelAp;
 };
 
 //carregar foto selecionada para perfil e tema

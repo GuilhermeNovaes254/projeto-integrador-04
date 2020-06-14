@@ -176,16 +176,24 @@ const forms = {
                     id: id
                 }
             });
+
+            const userAtualizado = await Usuario.findOne({
+                where: {
+                    id: id
+                }
+            });
+
+            req.session.usuario = userAtualizado;
             return res.redirect('/feeds');
         } else {
 
 
 
             let cidade;
-            if (req.session.usuario.cidade != null && typeof(req.session.usuario.cidade) != "undefined") {
+            if (req.session.usuario.cidade_id != null && typeof(req.session.usuario.cidade_id) != "undefined") {
                 cidade = await Cidade.findOne({
                     where: {
-                        id: req.session.usuario.cidade
+                        id: req.session.usuario.cidade_id
                     }
                 });
             } else {
@@ -193,21 +201,35 @@ const forms = {
             }
             
             let estado;
-            if (req.session.usuario.estado != null && typeof(req.session.usuario.estado) != "undefined") {
+            if (req.session.usuario.cidade_estado_id != null && typeof(req.session.usuario.cidade_estado_id) != "undefined") {
                 estado = await Estado.findOne({
                     where: {
-                        id: req.session.usuario.estado
+                        id: req.session.usuario.cidade_estado_id
                     }
                 });
             } else {
                 estado = '-'
             }
-        
+
+            let diaNasc, mesNasc, anoNasc;
+            if (req.session.usuario.dataDeNascimento != null){
+                diaNasc = req.session.usuario.dataDeNascimento.slice(8,10);
+                mesNasc = req.session.usuario.dataDeNascimento.slice(5,7);
+                anoNasc = req.session.usuario.dataDeNascimento.slice(0,4);
+            }
+
             return res.render("editar",  {errors:listOfErrors.errors,
                 title: 'Atualizar Informações',
                 apelidoUsuario: req.session.usuario.apelido,
                 nomeUsuario: req.session.usuario.nome,
                 descricaoUsuario: req.session.usuario.descricao,
+                genero: req.session.usuario.genero,
+                estado: req.session.usuario.cidade_estado_id,
+                cidade: req.session.usuario.cidade_id,
+                diaNasc,
+                mesNasc,
+                anoNasc,
+                nivelAp: req.session.usuario.tipoAp,
                 fotoUsuario,
                 formData: req.body,
                 foto,

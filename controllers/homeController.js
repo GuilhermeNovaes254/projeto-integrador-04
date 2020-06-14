@@ -271,19 +271,30 @@ const homeController = {
         }
 
         let estado = ''
-        if (cidade.estado_id != null) {
+        if (userInfo.cidade_estado_id != null) {
             estado = await Estado.findOne({
                 where: {
-                    id: cidade.estado_id
+                    id: userInfo.cidade_estado_id
                 }
             });
         } else {
             estado = '-'
         }
-
+        let diaNasc, mesNasc, anoNasc;
+        if (userInfo.dataDeNascimento != null){
+            diaNasc = userInfo.dataDeNascimento.slice(8,10);
+            mesNasc = userInfo.dataDeNascimento.slice(5,7);
+            anoNasc = userInfo.dataDeNascimento.slice(0,4);
+        }
         res.render('editar', {
             title: 'Atualizar Informações',
-
+            genero: userInfo.genero,
+            estado: userInfo.cidade_estado_id,
+            cidade: userInfo.cidade_id,
+            diaNasc,
+            mesNasc,
+            anoNasc,
+            nivelAp: userInfo.tipoAp,
             apelidoUsuario: userInfo.apelido,
             nomeUsuario: userInfo.nome,
             descricaoUsuario: userInfo.descricao,

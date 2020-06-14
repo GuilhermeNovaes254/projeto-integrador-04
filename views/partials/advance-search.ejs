@@ -1,0 +1,63 @@
+<div class="c-search">
+  <form class="c-search-form c-input" autocomplete="off" data-controller="search-form" action="#" method="post">   
+
+    <div class="c-search-form__inline-filters" tabindex="1">
+      <div class="c-search-form__inline-filters__current">Todos os&nbsp;<span>Jogos</span></div>
+      <div class="c-search-form__inline-filters__arrow">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+          id="Layer_1" x="0px" y="0px" viewBox="0 0 7.2 4" style="enable-background:new 0 0 7.2 4;"
+          xml:space="preserve">
+          <path
+            d="M3.1,3.8L0.1,1C0,0.9,0,0.7,0.1,0.6l0.5-0.5C0.7,0,0.9,0,1,0.1l2.4,2.2c0.1,0.1,0.3,0.1,0.5,0c0,0,0,0,0,0l2.4-2.2  C6.3,0,6.5,0,6.7,0.1l0.5,0.4c0.1,0.1,0.1,0.3,0,0.4L4.1,3.8C3.8,4.1,3.4,4.1,3.1,3.8z">
+          </path>
+        </svg>
+      </div>
+
+      <ul class="c-search-form__inline-filters__options"><!-- js-is-open -->
+        <li class="c-search-form__inline-filters__item c-search-form__inline-filters__item--games"
+          data-selected="Todos os jogos" data-search-selected="Buscar jogos...">
+          <div class="c-input c-input--checkbox">
+            <input type="radio" name="content" id="search-form_content_games" value="games" class="search-form_content--radio" checked="checked">
+            <label for="search-form_content_games">Jogos</label>
+          </div>
+        </li>
+        <li class="c-search-form__inline-filters__item c-search-form__inline-filters__item--photo"
+          data-selected="Todos os usuarios" data-search-selected="Buscar usuarios...">
+          <div class="c-input c-input--checkbox">
+            <input type="radio" name="content" id="search-form_content_usuarios" value="photo" class="search-form_content--radio">
+            <label for="search-form_content_usuarios">Usuarios</label>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="c-search__wrapper">
+      
+      <!-- input para jogos -->
+      <input type="text" name="search" id="advance-search-games"
+        class="c-input__field c-input__field--text c-search-form__input" 
+        placeholder="Buscar jogos..."
+        tabindex="1" 
+        style="width: 122px;">
+      <!-- input para jogos -->
+
+      <!-- input para usuarios -->
+      <input type="text" name="search" id="advance-search-users"
+        class="c-input__field c-input__field--text c-search-form__input" 
+        placeholder="Buscar usuarios..."
+        tabindex="1" 
+        style="width: 122px;">
+      <!-- input para usuarios -->
+
+      <button name="button" type="submit" class="c-search-form__submit" title="Busca">
+        <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 14.39 14.39">
+          <title>busca</title>
+          <path
+            d="M14,12.32,10.81,9.09a5.87,5.87,0,1,0-1.72,1.72L12.32,14A1.23,1.23,0,0,0,14,14,1.23,1.23,0,0,0,14,12.32ZM2.43,5.88A3.45,3.45,0,1,1,5.88,9.33,3.46,3.46,0,0,1,2.43,5.88Z">
+          </path>
+        </svg>
+      </button>
+    </div>
+
+  </form>
+</div>

@@ -2,14 +2,17 @@
 
 <div class="container-fluid">
   <div class="row o-feeds-header">
-    <!--     <h2>Bem Vindo ao Looders!</h2> -->
+
+    <%- include('./partials/advance-search') %>
+
   </div>
 </div>
+
 <div class="container-fluid u-bg-green">
   <div class="row">
     <main class="container">
       <div class="row o-feeds-content-green">
-        <h2>Bem Vindo ao Looders!</h2>
+        <%- include('./partials/trending-searches') %>
       </div>
     </main>
   </div>
@@ -33,13 +36,24 @@
 
 </div>
 <div class="container-fluid u-bg-white">
-  <main class="container">
-    <div class="row o-feeds-content">
-      <h2>Adicionados Recentemente</h2>
+  <div class="row">
+    <main class="container">
+      <div class="row o-feeds-content">
+        <h2>Jogos Indicados para Você</h2>
+      </div>
+    </main>
+    <%- include('./partials/highlights-five') %>
+  </div>
+  <div class="container-fluid">
+    <div class="row">
+      <main class="container">
+        <div class="row o-feeds-content">
+          <h2>Adicionados Recentemente</h2>
+        </div>
+      </main>
+      <%- include('./partials/highlights-five', {jogos : jogosRecentes, flagClicavel : true }) %>
     </div>
-  </main>
-  <%- include('./partials/highlights-five', {jogos : jogosRecentes, flagClicavel : true }) %>
-</div>
+  </div>
 
-<script src="js/scriptListaJogos.js"></script>
-<%- include('./partials/footer') %>
+  <script src="js/scriptListaJogos.js"></script>
+  <%- include('./partials/footer') %>
