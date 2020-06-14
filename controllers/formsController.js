@@ -176,6 +176,14 @@ const forms = {
                     id: id
                 }
             });
+
+            const userAtualizado = await Usuario.findOne({
+                where: {
+                    id: id
+                }
+            });
+
+            req.session.usuario = userAtualizado;
             return res.redirect('/feeds');
         } else {
 
