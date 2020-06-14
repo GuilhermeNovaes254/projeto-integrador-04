@@ -2,7 +2,9 @@
   <% for(let jogo of jogos) { %>
   <div class="o-highlights__content o-highlights-five__content o-col-and-5 animate-float-shadow" data-aos="fade-up"
     data-aos-duration="1000">
+    <% if(flagClicavel) { %>
     <a href="/jogo?id=<%= jogo.id %>">
+      <% } %>
       <div class="o-highlights__header o-highlights-five__header">
         <h2><%= jogo.nome %></h2>
         <img src="/buscaImagem/<%= jogo.foto %>" alt="">
