@@ -15,7 +15,8 @@ module.exports = {
           cidade_id:5409,
           cidade_estado_id:26,
           apelido: 'GuiNovaes',
-          foto: 'images/guilherme.jpg'
+          foto: 'default_adm.jpg',
+          fotoTema: 'dom.maksoud-12.jpg'
         },{
           nome:'usuariopadrao',
           email:'usuario@email.com',
@@ -25,7 +26,8 @@ module.exports = {
           cidade_id:2176,
           cidade_estado_id:11,
           apelido: 'User00',
-          foto: 'images/icons/PerfilVermelho.png'
+          foto: 'not-found-image.jpg',
+          fotoTema: 'h3.jpg'
         },{
           nome:'moderador',
           email:'moderador@email.com',
@@ -35,7 +37,8 @@ module.exports = {
           cidade_id:5409,
           cidade_estado_id:26,
           apelido: 'Mod00',
-          foto: 'images/icons/PerfilVermelho.png'
+          foto: 'not-found-image.jpg',
+          fotoTema: 'h3.jpg'
         }
 
       ], {});

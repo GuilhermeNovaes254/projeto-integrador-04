@@ -1,28 +1,20 @@
 <%- include('./partials/header') %>
 
-<section class="c-banner-perfil"></section>
+<section class="c-banner-perfil" style="background-image: url('/buscaImagem/<%= temaUsuario %>');"></section>
 <main class="container c-perfil">
   <div class="c-perfil__left">
     <div class="c-perfil__left--description c-perfil__left--content" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
-      <img class="c-photo" src=<%=fotoUsuario%> alt="">
+      <img class="c-photo" src='/buscaImagem/<%= fotoUsuario %>' alt="">
       <h2><%=nomeUsuario%></h2>
       <h4><%=apelidoUsuario%></h4>
       <p><%=descricaoUsuario%></p>
       <h3><%=cidadeUsuario%> - <%=estadoUsuario%></h3>
-      <div class="c-social-perfil">
-        <i class="icon ion-social-facebook"></i>
-        <i class="icon ion-social-twitter"></i>
-        <i class="icon ion-social-google"></i>
-      </div>
-    </div>
-    <div class="c-perfil__left--news c-perfil__left--content" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
-      <h5><i class="icon ion-happy"></i> Amigos</h5>
     </div>
   </div>
   <div class="c-perfil__right">
     <div class="c-perfil__right--fav c-perfil__right--content" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
       <h2 class="c-perfil__right--title"><i class="icon ion-ios-heart"></i> Favoritos</h2>
-      <%- include('./partials/highlights-three') %>
+      <%- include('./partials/highlights-three', {jogos : jogosFavoritos}) %>
     </div>
     <div class="c-perfil__right--evaluation c-perfil__right--content" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
       <h2 class="c-perfil__right--title"><i class="icon ion-android-star-half"></i> Avaliações</h2>

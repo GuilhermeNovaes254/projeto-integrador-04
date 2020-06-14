@@ -1,47 +1,28 @@
-<div class="c-coments">
-  <div class="c-coments__photo">
-    <img src="../images/fotos/avatar.jpg" alt="">
-    <h4>Andre</h4>
-  </div>
-  <div class="c-coments__box animate-bubble-float-left">
-    <div class="c-coments__box--header">
-      <h3></h3>
-      <div class="c-coments__features">
-        <div class="c-coments__features--players">
-          <strong><i class="icon ion-ios-game-controller-a-outline"></i>742</strong>
-        </div>
-        <div class="c-coments__features--likes">
-          <strong><i class="icon ion-ios-heart-outline"></i>550</strong>
-        </div>
-        <div class="c-coments__features--evaluation js-note-yellow">
-          <span>3.0</span>
+<div id='comentarios'>
+  <% for(let comentario of comentarios) { %>
+  <div class="c-coments">
+    <div class="c-coments__photo">
+      <img src="/buscaImagem/<%= comentario.usuario.foto  %>" alt="">
+      <h4><%= comentario.usuario.apelido  %></h4>
+    </div>
+    <div class="c-coments__box animate-bubble-float-left">
+      <div class="c-coments__box--header">
+        <h3></h3>
+        <div class="c-coments__features">
+          <div class="c-coments__features--players">
+            <strong><i class="icon ion-ios-game-controller-a-outline"></i>742</strong>
+          </div>
+          <div class="c-coments__features--likes">
+            <strong><i class="icon ion-ios-heart-outline"></i>550</strong>
+          </div>
+          <div class="c-coments__features--evaluation js-note-yellow">
+            <span>3.0</span>
+          </div>
         </div>
       </div>
+      <p><%= comentario.texto %></p>
     </div>
-    <p>In sed imperdiet est. Aliquam erat volutpat. Suspendisse porta ante ligula, sed convallis leo congue nec. Nulla vel augue eros. Proin pretium, nunc vitae interdum elementum, ex nibh aliquet dui, et hendrerit libero magna nec diam. Cras gravida augue turpis, in interdum risus feugiat quis.</p>
   </div>
-</div>
-<div class="c-coments">
-  <div class="c-coments__photo">
-    <img src="../images/fotos/avatar.jpg" alt="">
-    <h4>Andre</h4>
-  </div>
-  <div class="c-coments__box animate-bubble-float-left">
-    <div class="c-coments__box--header">
-      <h3></h3>
-      <div class="c-coments__features">
-        <div class="c-coments__features--players">
-          <strong><i class="icon ion-ios-game-controller-a"></i>742</strong>
-        </div>
-        <div class="c-coments__features--likes">
-          <strong><i class="icon ion-ios-heart"></i>550</strong>
-        </div>
-        <div class="c-coments__features--evaluation js-note-green">
-          <span>5.0</span>
-        </div>
-      </div>
-    </div>
-    <p>In sed imperdiet est. Aliquam erat volutpat. Suspendisse porta ante ligula, sed convallis leo congue nec. Nulla vel augue eros. Proin pretium, nunc vitae interdum elementum, ex nibh aliquet dui, et hendrerit libero magna nec diam. Cras gravida augue turpis, in interdum risus feugiat quis.</p>
-  </div>
+  <% } %>
 </div>
 <a href="#" class="c-bt-default">Ver mais</a>

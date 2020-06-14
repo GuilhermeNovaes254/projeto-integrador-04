@@ -53,6 +53,7 @@ router.get('/buscaEstado', localizacaoController.buscaEstado);
 router.get('/buscaCidade/:id', localizacaoController.buscaCidade);
 router.get('/buscaJogo', buscaController.jogos);
 router.get('/buscaUsuario/:item', buscaController.usuarios);
+router.get('/busca/usuario',buscaController.dadosUsuario);
 router.get('/tema', parametrosJogoController.tema);
 router.get('/dominio', parametrosJogoController.dominio);
 router.get('/mecanica', parametrosJogoController.mecanica);
@@ -79,10 +80,11 @@ router.get('/jogo/elementos/favorito', elementosJogos.contaFavorito)
 router.get('/jogo/elementos/jogoid', elementosJogos.carregaJogoId)
 router.get('/jogo/elementos/jogosRelacionados', elementosJogos.carregaJogosRelac)
 router.get('/jogo/elementos/comentario', elementosJogos.carregaComentario)
+router.get('/jogo/elementos/avaliacao/carrega', elementosJogos.carregaAvaliacao)
 
 // Tela Jogo--Com verificacao
 router.post('/jogo/elementos/comentario', VerificaUsuarioLogado, elementosJogos.postaComentario)
-router.post('/jogo/elementos/avaliacao', VerificaUsuarioLogado, elementosJogos.postaAvaliacao)
+router.post('/jogo/elementos/avaliacao/:jogo/:nota', VerificaUsuarioLogado, elementosJogos.postaAvaliacao)
 router.post('/jogo/elementos/joguei', VerificaUsuarioLogado, elementosJogos.postaJaJoguei)
 router.post('/jogo/elementos/amei', VerificaUsuarioLogado, elementosJogos.postaAmei)
 
@@ -90,8 +92,8 @@ router.post('/jogo/elementos/amei', VerificaUsuarioLogado, elementosJogos.postaA
 // Com verificação
 router.get('/feeds', VerificaUsuarioLogado, homeController.feeds);
 router.get('/cadastroJogo', VerificaUsuarioLogado, homeController.cadastroJogo);
-router.get('/perfil', VerificaUsuarioLogado, homeController.perfil);
-router.get('/jogo', VerificaUsuarioLogado, homeController.jogo);
+router.get('/perfil/:id', VerificaUsuarioLogado, homeController.perfil);
+router.get('/jogo', VerificaUsuarioLogado, elementosJogos.jogo);
 router.get('/busca', VerificaUsuarioLogado, homeController.busca);
 router.get('/moduloDestaques', VerificaUsuarioLogado, homeController.moduloDestaques);
 router.get('/excluir', VerificaUsuarioLogado, homeController.excluir);

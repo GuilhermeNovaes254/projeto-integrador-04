@@ -12,12 +12,14 @@ module.exports = {
           qntMax: "4",
           duracao: "90",
           faixaEtaria: "13",
-          nome: "ElCaballero",
+          nome: "El Caballero",
           descricao: "Descricao",
           aprovado: 1,
           tema_id: 15,
           dominio_id: 11,
           mecanica_id: 4,
+        foto:'not-found-image.jpg',
+        fotoTema:'h1.jpg'
         },
         {
           id: 5,
@@ -26,12 +28,14 @@ module.exports = {
           qntMax: "2",
           duracao: "5",
           faixaEtaria: "10",
-          nome: "ButtonBroccoli",
+          nome: "Button Broccoli",
           descricao: "Descricao",
           aprovado: 1,
           tema_id: 9,
           dominio_id: 12,
-          mecanica_id: 3
+          mecanica_id: 3,
+          foto:'not-found-image.jpg',
+          fotoTema:'h1.jpg'
         },
         {
           id: 6,
@@ -45,7 +49,9 @@ module.exports = {
           aprovado: 1,
           tema_id: 7,
           dominio_id: 11,
-          mecanica_id: 1
+          mecanica_id: 1,
+          foto:'not-found-image.jpg',
+          fotoTema:'h1.jpg'
         },
         {
           id: 7,
@@ -60,6 +66,8 @@ module.exports = {
           tema_id: 11,
           dominio_id: 10,
           mecanica_id: 1,
+          foto:'not-found-image.jpg',
+          fotoTema:'h1.jpg'
         },
         {
           id: 8,
@@ -68,12 +76,14 @@ module.exports = {
           qntMax: "6",
           duracao: "30",
           faixaEtaria: "8",
-          nome: "AnimalHouseLiarsDice",
+          nome: "Animal House Liars Dice",
           descricao: "Descricao",
           aprovado: 1,
           tema_id: 1,
           dominio_id: 10,
           mecanica_id: 1,
+          foto:'not-found-image.jpg',
+          fotoTema:'h1.jpg'
         },
         {
           id: 9,
@@ -82,12 +92,14 @@ module.exports = {
           qntMax: "5",
           duracao: "60",
           faixaEtaria: "10",
-          nome: "BigCity",
+          nome: "Big City",
           descricao: "Descricao",
           aprovado: 1,
           tema_id: 2,
           dominio_id: 1,
           mecanica_id: 5,
+          foto:'not-found-image.jpg',
+          fotoTema:'h1.jpg'
         },
         {
           id: 10,
@@ -96,12 +108,14 @@ module.exports = {
           qntMax: "2",
           duracao: "240",
           faixaEtaria: "12",
-          nome: "BobbyLee:TheCivilWarinVirginia1861-1865",
+          nome: "Bobby Lee: The Civil War  in Virginia 1861-1865",
           descricao: "Descricao",
           aprovado: 1,
           tema_id: 12,
           dominio_id: 14,
           mecanica_id: 2,
+          foto:'not-found-image.jpg',
+          fotoTema:'h1.jpg'
         },
         {
           id: 11,
@@ -110,12 +124,14 @@ module.exports = {
           qntMax: "6",
           duracao: "60",
           faixaEtaria: "12",
-          nome: "AffareFatto!",
+          nome: "Affare Fatto!",
           descricao: "Descricao",
           aprovado: 1,
           tema_id: 9,
           dominio_id: 10,
           mecanica_id: 6,
+          foto:'not-found-image.jpg',
+          fotoTema:'h1.jpg'
         },
         {
           id: 12,
@@ -124,12 +140,14 @@ module.exports = {
           qntMax: "6",
           duracao: "45",
           faixaEtaria: "12",
-          nome: "AdelVerpflichtet",
+          nome: "Adel Verpflichtet",
           descricao: "Descricao",
           aprovado: 1,
           tema_id: 7,
           dominio_id: 4,
           mecanica_id: 6,
+          foto:'not-found-image.jpg',
+          fotoTema:'h1.jpg'
         },
         {
           id: 13,
@@ -138,12 +156,14 @@ module.exports = {
           qntMax: "2",
           duracao: "60",
           faixaEtaria: "10",
-          nome: "Caesar&Cleopatra",
+          nome: "Caesar & Cleopatra",
           descricao: "Descricao",
           aprovado: 1,
           tema_id: 13,
           dominio_id: 11,
           mecanica_id: 6,
+          foto:'not-found-image.jpg',
+          fotoTema:'h1.jpg'
         },
         {
           id: 14,
@@ -152,12 +172,14 @@ module.exports = {
           qntMax: "5",
           duracao: "45",
           faixaEtaria: "12",
-          nome: "CapHorn",
+          nome: "Cap Horn",
           descricao: "Descricao",
           aprovado: 1,
           tema_id: 6,
           dominio_id: 6,
           mecanica_id: 5,
+          foto:'not-found-image.jpg',
+          fotoTema:'h1.jpg'
         },
         {
           id: 15,
@@ -166,12 +188,14 @@ module.exports = {
           qntMax: "8",
           duracao: "90",
           faixaEtaria: "7",
-          nome: "Ben10Pit",
+          nome: "Ben10 Pit",
           descricao: "Descricao",
           aprovado: 1,
           tema_id: 7,
           dominio_id: 2,
           mecanica_id: 1,
+          foto:'not-found-image.jpg',
+          fotoTema:'h1.jpg'
         },
         {
           id: 16,
@@ -186,6 +210,8 @@ module.exports = {
           tema_id: 14,
           dominio_id: 5,
           mecanica_id: 5,
+          foto:'not-found-image.jpg',
+          fotoTema:'h1.jpg'
         },
         {
           id: 17,
@@ -194,12 +220,14 @@ module.exports = {
           qntMax: "2",
           duracao: "60",
           faixaEtaria: "6",
-          nome: "AjaxChessmen",
+          nome: "Ajax Chessmen",
           descricao: "Descricao",
           aprovado: 1,
           tema_id: 11,
           dominio_id: 6,
           mecanica_id: 3,
+          foto:'not-found-image.jpg',
+          fotoTema:'h1.jpg'
         },
         {
           id: 18,
@@ -208,12 +236,14 @@ module.exports = {
           qntMax: "8",
           duracao: "480",
           faixaEtaria: "12",
-          nome: "AdvancedCivilization",
+          nome: "Advanced Civilization",
           descricao: "Descricao",
           aprovado: 1,
           tema_id: 2,
           dominio_id: 9,
           mecanica_id: 1,
+          foto:'not-found-image.jpg',
+          fotoTema:'h1.jpg'
         },
         {
           id: 19,
@@ -228,6 +258,8 @@ module.exports = {
           tema_id: 14,
           dominio_id: 2,
           mecanica_id: 1,
+          foto:'not-found-image.jpg',
+          fotoTema:'h1.jpg'
         },
         {
           id: 20,
@@ -236,12 +268,14 @@ module.exports = {
           qntMax: "2",
           duracao: "200",
           faixaEtaria: "12",
-          nome: "Annibale:RomacontroCartagine",
+          nome: "Annibale:Roma contro Cartagine",
           descricao: "Descricao",
           aprovado: 1,
           tema_id: 10,
           dominio_id: 2,
           mecanica_id: 3,
+          foto:'not-found-image.jpg',
+          fotoTema:'h1.jpg'
         },
         {
           id: 21,
@@ -250,12 +284,14 @@ module.exports = {
           qntMax: "6",
           duracao: "60",
           faixaEtaria: "14",
-          nome: "DeBellisAntiquitatis",
+          nome: "De Bellis Antiquitatis",
           descricao: "Descricao",
           aprovado: 1,
           tema_id: 3,
           dominio_id: 1,
           mecanica_id: 5,
+          foto:'not-found-image.jpg',
+          fotoTema:'h1.jpg'
         },
         {
           id: 22,
@@ -270,6 +306,8 @@ module.exports = {
           tema_id: 8,
           dominio_id: 2,
           mecanica_id: 6,
+          foto:'not-found-image.jpg',
+          fotoTema:'h1.jpg'
         },
         {
           id: 23,
@@ -284,6 +322,8 @@ module.exports = {
           tema_id: 3,
           dominio_id: 9,
           mecanica_id: 1,
+          foto:'not-found-image.jpg',
+          fotoTema:'h1.jpg'
         },
         {
           id: 24,
@@ -292,12 +332,14 @@ module.exports = {
           qntMax: "2",
           duracao: "20",
           faixaEtaria: "8",
-          nome: "BachaChal",
+          nome: "Bacha Chal",
           descricao: "Descricao",
           aprovado: 1,
           tema_id: 15,
           dominio_id: 14,
           mecanica_id: 5,
+          foto:'not-found-image.jpg',
+          fotoTema:'h1.jpg'
         },
         {
           id: 25,
@@ -312,6 +354,8 @@ module.exports = {
           tema_id: 10,
           dominio_id: 2,
           mecanica_id: 1,
+          foto:'not-found-image.jpg',
+          fotoTema:'h1.jpg'
         },
         {
           id: 26,
@@ -320,12 +364,14 @@ module.exports = {
           qntMax: "4",
           duracao: "60",
           faixaEtaria: "8",
-          nome: "AdvancetoBoardwalk",
+          nome: "Advance to Boardwalk",
           descricao: "Descricao",
           aprovado: 1,
           tema_id: 12,
           dominio_id: 2,
           mecanica_id: 4,
+          foto:'not-found-image.jpg',
+          fotoTema:'h1.jpg'
         },
         {
           id: 27,
@@ -334,12 +380,14 @@ module.exports = {
           qntMax: "5",
           duracao: "20",
           faixaEtaria: "7",
-          nome: "BlazingCamels",
+          nome: "Blazing Camels",
           descricao: "Descricao",
           aprovado: 1,
           tema_id: 15,
           dominio_id: 11,
           mecanica_id: 5,
+          foto:'not-found-image.jpg',
+          fotoTema:'h1.jpg'
         },
         {
           id: 28,
@@ -348,12 +396,14 @@ module.exports = {
           qntMax: "7",
           duracao: "360",
           faixaEtaria: "14",
-          nome: "1830:FerrovieeCapitanidIndustria",
+          nome: "1830: Ferroviee Capitan id Industria",
           descricao: "Descricao",
           aprovado: 1,
           tema_id: 6,
           dominio_id: 3,
           mecanica_id: 4,
+          foto:'not-found-image.jpg',
+          fotoTema:'h1.jpg'
         },
         {
           id: 29,
@@ -362,12 +412,14 @@ module.exports = {
           qntMax: "6",
           duracao: "300",
           faixaEtaria: "14",
-          nome: "1856:RailroadinginUpperCanadafrom1856",
+          nome: "1856: Railroadingin Upper Canada from 1856",
           descricao: "Descricao",
           aprovado: 1,
           tema_id: 15,
           dominio_id: 1,
           mecanica_id: 5,
+          foto:'not-found-image.jpg',
+          fotoTema:'h1.jpg'
         },
         {
           id: 30,
@@ -376,12 +428,14 @@ module.exports = {
           qntMax: "5",
           duracao: "30",
           faixaEtaria: "8",
-          nome: "Asterix:DasKartenspiel",
+          nome: "Asterix: Das Kartenspiel",
           descricao: "Descricao",
           aprovado: 1,
           tema_id: 9,
           dominio_id: 2,
           mecanica_id: 5,
+          foto:'not-found-image.jpg',
+          fotoTema:'h1.jpg'
         },
         {
           id: 31,
@@ -390,12 +444,14 @@ module.exports = {
           qntMax: "6",
           duracao: "45",
           faixaEtaria: "10",
-          nome: "AlhambraBonn",
+          nome: "Alhambra Bonn",
           descricao: "Descricao",
           aprovado: 1,
           tema_id: 2,
           dominio_id: 5,
           mecanica_id: 6,
+          foto:'not-found-image.jpg',
+          fotoTema:'h1.jpg'
         },
         {
           id: 32,
@@ -410,6 +466,8 @@ module.exports = {
           tema_id: 9,
           dominio_id: 2,
           mecanica_id: 3,
+          foto:'not-found-image.jpg',
+          fotoTema:'h1.jpg'
         },
         {
           id: 33,
@@ -418,12 +476,14 @@ module.exports = {
           qntMax: "4",
           duracao: "90",
           faixaEtaria: "8",
-          nome: "CampionatoItaliano",
+          nome: "Campionato Italiano",
           descricao: "Descricao",
           aprovado: 1,
           tema_id: 6,
           dominio_id: 5,
           mecanica_id: 6,
+          foto:'not-found-image.jpg',
+          fotoTema:'h1.jpg'
         },
         {
           id: 34,
@@ -432,12 +492,14 @@ module.exports = {
           qntMax: "8",
           duracao: "15",
           faixaEtaria: "4",
-          nome: "BarnyardBuddies",
+          nome: "Barnyard Buddies",
           descricao: "Descricao",
           aprovado: 1,
           tema_id: 10,
           dominio_id: 14,
           mecanica_id: 5,
+          foto:'not-found-image.jpg',
+          fotoTema:'h1.jpg'
         },
         {
           id: 35,
@@ -446,12 +508,14 @@ module.exports = {
           qntMax: "6",
           duracao: "30",
           faixaEtaria: "12",
-          nome: "AveCaesar",
+          nome: "Ave Caesar",
           descricao: "Descricao",
           aprovado: 1,
           tema_id: 5,
           dominio_id: 14,
           mecanica_id: 6,
+          foto:'not-found-image.jpg',
+          fotoTema:'h1.jpg'
         },
         {
           id: 36,
@@ -466,6 +530,8 @@ module.exports = {
           tema_id: 12,
           dominio_id: 14,
           mecanica_id: 1,
+          foto:'not-found-image.jpg',
+          fotoTema:'h1.jpg'
         },
         {
           id: 37,
@@ -474,12 +540,14 @@ module.exports = {
           qntMax: "6",
           duracao: "120",
           faixaEtaria: "10",
-          nome: "BuckRogers:Battleforthe25thCenturyGame",
+          nome: "Buck Rogers: Battle for the 25th Century Game",
           descricao: "Descricao",
           aprovado: 1,
           tema_id: 8,
           dominio_id: 10,
           mecanica_id: 2,
+          foto:'not-found-image.jpg',
+          fotoTema:'h1.jpg'
         },
         {
           id: 38,
@@ -488,12 +556,14 @@ module.exports = {
           qntMax: "2",
           duracao: "45",
           faixaEtaria: "10",
-          nome: "BattleCry",
+          nome: "Battle Cry",
           descricao: "Descricao",
           aprovado: 1,
           tema_id: 9,
           dominio_id: 12,
           mecanica_id: 3,
+          foto:'not-found-image.jpg',
+          fotoTema:'h1.jpg'
         },
         {
           id: 39,
@@ -502,12 +572,14 @@ module.exports = {
           qntMax: "8",
           duracao: "60",
           faixaEtaria: "8",
-          nome: "BattleCattle",
+          nome: "Battle Cattle",
           descricao: "Descricao",
           aprovado: 1,
           tema_id: 12,
           dominio_id: 14,
           mecanica_id: 5,
+          foto:'not-found-image.jpg',
+          fotoTema:'h1.jpg'
         },
         {
           id: 40,
@@ -516,12 +588,14 @@ module.exports = {
           qntMax: "6",
           duracao: "45",
           faixaEtaria: "8",
-          nome: "1000Bornes",
+          nome: "1000 Bornes",
           descricao: "Descricao",
           aprovado: 1,
           tema_id: 3,
           dominio_id: 5,
           mecanica_id: 1,
+          foto:'not-found-image.jpg',
+          fotoTema:'h1.jpg'
         },
         {
           id: 41,
@@ -536,6 +610,8 @@ module.exports = {
           tema_id: 5,
           dominio_id: 9,
           mecanica_id: 3,
+          foto:'not-found-image.jpg',
+          fotoTema:'h1.jpg'
         },
         {
           id: 42,
@@ -544,12 +620,14 @@ module.exports = {
           qntMax: "2",
           duracao: "240",
           faixaEtaria: "12",
-          nome: "BullRun:TheFirstMajorBattleoftheAmericanCivilWar",
+          nome: "BullRun: The First Major Battle of the American CivilWar",
           descricao: "Descricao",
           aprovado: 1,
           tema_id: 12,
           dominio_id: 1,
           mecanica_id: 6,
+          foto:'not-found-image.jpg',
+          fotoTema:'h1.jpg'
         },
         {
           id: 43,
@@ -564,6 +642,8 @@ module.exports = {
           tema_id: 1,
           dominio_id: 8,
           mecanica_id: 4,
+          foto:'not-found-image.jpg',
+          fotoTema:'h1.jpg'
         },
         {
           id: 44,
@@ -572,12 +652,14 @@ module.exports = {
           qntMax: "2",
           duracao: "300",
           faixaEtaria: "0",
-          nome: "CaesarinGallia:ConquestontheAncientFrontier",
+          nome: "Caesar in Gallia: Conquest on the Ancient Frontier",
           descricao: "Descricao",
           aprovado: 1,
           tema_id: 14,
           dominio_id: 6,
           mecanica_id: 2,
+          foto:'not-found-image.jpg',
+          fotoTema:'h1.jpg'
         },
         {
           id: 45,
@@ -586,12 +668,14 @@ module.exports = {
           qntMax: "2",
           duracao: "0",
           faixaEtaria: "0",
-          nome: "5thYearCwali",
+          nome: "5th Year Cwali",
           descricao: "Descricao",
           aprovado: 1,
           tema_id: 7,
           dominio_id: 5,
           mecanica_id: 6,
+          foto:'not-found-image.jpg',
+          fotoTema:'h1.jpg'
         },
         {
           id: 46,
@@ -600,12 +684,14 @@ module.exports = {
           qntMax: "4",
           duracao: "60",
           faixaEtaria: "0",
-          nome: "AuctionAmerica:TheTriviaGameforAnyCollector",
+          nome: "Auction America: The Trivia Game for Any Collector",
           descricao: "Descricao",
           aprovado: 1,
           tema_id: 1,
           dominio_id: 12,
           mecanica_id: 6,
+          foto:'not-found-image.jpg',
+          fotoTema:'h1.jpg'
         },
         {
           id: 47,
@@ -614,12 +700,14 @@ module.exports = {
           qntMax: "4",
           duracao: "180",
           faixaEtaria: "12",
-          nome: "CamlynsDestiny",
+          nome: "Camlyns Destiny",
           descricao: "Descricao",
           aprovado: 1,
           tema_id: 7,
           dominio_id: 7,
           mecanica_id: 1,
+          foto:'not-found-image.jpg',
+          fotoTema:'h1.jpg'
         },
         {
           id: 48,
@@ -634,6 +722,8 @@ module.exports = {
           tema_id: 5,
           dominio_id: 3,
           mecanica_id: 2,
+          foto:'foto jogo.png',
+          fotoTema:'foto tema.png'
         },
         {
           id: 49,
@@ -648,6 +738,8 @@ module.exports = {
           tema_id: 1,
           dominio_id: 3,
           mecanica_id: 4,
+          foto:'not-found-image.jpg',
+          fotoTema:'h1.jpg'
         },
         {
           id: 50,
@@ -662,6 +754,8 @@ module.exports = {
           tema_id: 3,
           dominio_id: 6,
           mecanica_id: 3,
+          foto:'not-found-image.jpg',
+          fotoTema:'h1.jpg'
         },
         {
           id: 51,
@@ -670,12 +764,14 @@ module.exports = {
           qntMax: "4",
           duracao: "60",
           faixaEtaria: "8",
-          nome: "AlhambraKertjei",
+          nome: "Alhambra Kertjei",
           descricao: "Descricao",
           aprovado: 1,
           tema_id: 10,
           dominio_id: 9,
           mecanica_id: 5,
+          foto:'not-found-image.jpg',
+          fotoTema:'h1.jpg'
         },
         {
           id: 52,
@@ -684,12 +780,14 @@ module.exports = {
           qntMax: "2",
           duracao: "60",
           faixaEtaria: "12",
-          nome: "AlCabohne",
+          nome: "Al Cabohne",
           descricao: "Descricao",
           aprovado: 1,
           tema_id: 13,
           dominio_id: 1,
           mecanica_id: 6,
+          foto:'not-found-image.jpg',
+          fotoTema:'h1.jpg'
         },
         {
           id: 53,
@@ -704,6 +802,8 @@ module.exports = {
           tema_id: 12,
           dominio_id: 14,
           mecanica_id: 4,
+          foto:'not-found-image.jpg',
+          fotoTema:'h1.jpg'
         }
 
 

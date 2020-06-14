@@ -7,18 +7,61 @@ const {
     Comentario,
     Colecao,
     Avaliacao,
-    Jogo
+    Jogo,
+    Usuario
 } = require('../models');
-const {
-    usuarios
-} = require('./buscaController');
-const {
-    jogo
-} = require('./homeController');
-
-
 
 const jogoController = {
+
+    jogo: async (req, res) => {
+
+        let { id } = req.query;
+
+        const jogo = await Jogo.findOne({
+            raw: true,
+            order: [
+                ['nome', 'ASC']
+            ],
+            where: {
+                id
+            }
+        });
+
+        let jogosRelacionados = await Jogo.findAll({
+            limit: 5,
+            where: {
+                id: { [Op.ne] : jogo.id },
+                tema_id: jogo.tema_id
+            }
+        });
+
+        const comentarios = await Comentario.findAll({
+            order: [
+                ['data', 'ASC']
+            ],
+             where: {
+                jogo_id: jogo.id
+             }, 
+             include: [{
+                model: Usuario,
+                as: 'usuario'
+                }]
+        });
+
+        fotoUsuario = 'images/icons/PerfilVermelho.png'
+
+        if (req.session.usuario.foto != 'images/icons/PerfilVermelho.png') {
+            fotoUsuario = req.session.usuario.foto,
+                fotoUsuario
+        }
+
+        res.render('jogo', {
+            title: 'jogo',
+            jogo,
+            comentarios,
+            jogosRelacionados
+        });
+    },
 
     // Funcoes de conta **************************
     contaAvalicao: async (req, res) => {
@@ -120,7 +163,7 @@ const jogoController = {
                 where: whereClause
             });
 
-           res.send(busca)
+            res.send(busca)
 
         } catch (error) {
             res.status(401)
@@ -171,7 +214,8 @@ const jogoController = {
 
             whereClause = {}
             whereClause['jogo_id'] = jogo
-
+            console.log("*******************************************************")
+            console.log(jogo)
             let busca = await Comentario.findAll({
                 where: whereClause,
                 order: [
@@ -179,7 +223,7 @@ const jogoController = {
                 ]
             });
 
-            res.send(busca)
+            res.status(200).send(busca)
 
         } catch (error) {
             res.status(401)
@@ -201,7 +245,7 @@ const jogoController = {
             const ts = new Date();
             let dataHora = ts.toLocaleString();
 
-            Comentario.create({
+            await Comentario.create({
                 texto: comentario,
                 data: dataHora,
                 usuario_id: usuarioId,
@@ -220,17 +264,35 @@ const jogoController = {
             let {
                 jogo,
                 nota
-            } = req.body;
+            } = req.params;
+
 
             let usuarioId = req.session.usuario.id
 
-            Comentario.create({
-                usuario_id: usuarioId,
-                jogo_id: jogo,
-                avaliacao: nota
+            whereClause = {}
+            whereClause['jogo_id'] = jogo
+            whereClause['usuario_id'] = usuarioId
+
+            let existe = await Avaliacao.count({
+                where: whereClause
             });
 
-
+            if (existe == 0) {
+                await Avaliacao.create({
+                    usuario_id: parseInt(usuarioId),
+                    jogo_id: parseInt(jogo),
+                    avaliacao:parseFloat(nota)
+                });
+                console.log("criada")
+            } else {
+                await Avaliacao.update({
+                    avaliacao: parseFloat(nota)
+                }, {
+                    where: whereClause
+                });
+                console.log('nota Atribuida')
+            }
+            res.status(200).send('OK')
         } catch (error) {
             res.status(401)
         }
@@ -245,7 +307,7 @@ const jogoController = {
 
             let usuarioId = req.session.usuario.id
 
-            Joguei.create({
+            await Joguei.create({
                 usuario_id: usuarioId,
                 jogo_id: jogo
             });
@@ -265,10 +327,37 @@ const jogoController = {
 
             let usuarioId = req.session.usuario.id
 
-            Favorito.create({
+            await Favorito.create({
                 usuario_id: usuarioId,
                 jogo_id: jogo
             });
+
+        } catch (error) {
+            res.status(401)
+        }
+    },
+
+    carregaAvaliacao: async (req, res) => {
+        try {
+
+            let {
+                jogo
+            } = req.query;
+
+            console.log(jogo)
+            let usuarioId = req.session.usuario.id
+
+            whereClause = {}
+            whereClause['jogo_id'] = jogo
+            whereClause['usuario_id'] = usuarioId
+
+            let avaliacao = await Avaliacao.findOne({
+                where: whereClause
+            })
+
+
+            res.send(avaliacao)
+
 
         } catch (error) {
             res.status(401)

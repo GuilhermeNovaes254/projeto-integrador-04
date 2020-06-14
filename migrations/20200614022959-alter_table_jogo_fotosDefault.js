@@ -6,7 +6,7 @@ module.exports = {
       'jogo', 'foto', {
         type: Sequelize.STRING(500),
         allowNull: true,
-        default:'./images/icons/PerfilVermelho.png'
+        default:'not-found-image.jpg'
       });
   },
 

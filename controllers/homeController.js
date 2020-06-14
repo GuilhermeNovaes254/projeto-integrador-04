@@ -1,18 +1,24 @@
 const {
     Cidade,
     Dominio,
-    Jogo,
     Estado,
     Mecanica,
     Tema,
+    Comentario,
+    Usuario
 } = require('../models')
+const busca = require('./buscaController');
 
 const homeController = {
 
 
-    index: (req, res) => {
+    index: async (req, res) => {
+
+        const jogos = await busca.listaJogos(10)
+
         res.render('index', {
-            title: 'Home'
+            title: 'Home',
+            jogos
         });
 
     },
@@ -25,9 +31,12 @@ const homeController = {
     },
 
 
-    feeds: (req, res) => {
+    feeds: async (req, res) => {
 
         fotoUsuario = 'images/icons/PerfilVermelho.png'
+
+        const jogos = await busca.listaJogos(10);
+        const jogosRecentes = await busca.listaJogos(2);
 
         if (req.session.usuario.foto != 'images/icons/PerfilVermelho.png') {
             fotoUsuario = req.session.usuario.foto
@@ -35,10 +44,8 @@ const homeController = {
 
         res.render('feeds', {
             title: 'Feeds',
-            apelidoUsuario: req.session.usuario.apelido,
-            fotoUsuario,
-            idUsuario: req.session.usuario.id
-
+            jogos,
+            jogosRecentes
         });
     },
 
@@ -70,7 +77,9 @@ const homeController = {
         });
     },
 
-    perfil: (req, res) => {
+    perfil: async (req, res) => {
+
+        let { id } = req.params;
 
         fotoUsuario = 'images/icons/PerfilVermelho.png'
 
@@ -79,40 +88,61 @@ const homeController = {
                 fotoUsuario
         }
 
-        res.render('Perfil', {
+        const comentarios = await Comentario.findAll({
+            order: [
+                ['data', 'ASC']
+            ],
+            where: {
+                usuario_id: id
+            },
+            include: [{
+                model: Usuario,
+                as: 'usuario'
+            }]
+        });
+
+        const usuario = await Usuario.findOne({
+            where: {
+                id: id
+            }
+        });
+
+        let cidade;
+        if (usuario.cidade_id != null) {
+            cidade = await Cidade.findOne({
+                where: {
+                    id: usuario.cidade_id
+                }
+            });
+        }
+
+        let estado;
+        if (usuario.cidade_estado_id != null) {
+            estado = await Estado.findOne({
+                where: {
+                    id: usuario.cidade_estado_id
+                }
+            });
+        }
+
+        const jogosFavoritos = await busca.listaJogosFavoritos(6,usuario.id);
+
+        
+        res.render('perfil', {
             title: 'perfil',
-            apelidoUsuario: req.session.usuario.apelido,
-            fotoUsuario,
-            nomeUsuario: req.session.usuario.nome,
-            apelidoUsuario: req.session.usuario.apelido,
-            descricaoUsuario: req.session.usuario.descricao,
-            cidadeUsuario: req.session.usuario.cidade,
-            estadoUsuario: req.session.usuario.estado,
-            idUsuario: req.session.usuario.id
+            apelidoUsuario: usuario.apelido,
+            fotoUsuario: usuario.foto,
+            temaUsuario: usuario.fotoTema,
+            nomeUsuario: usuario.nome,
+            descricaoUsuario: usuario.descricao,
+            cidadeUsuario: cidade ? cidade.cidade : '',
+            estadoUsuario: estado ? estado.sigla : '',
+            idUsuario: usuario.id,
+            comentarios,
+            jogosFavoritos
         });
     },
 
-    jogo: (req, res) => {
-
-        let {
-            id
-        } = req.query;
-
-        fotoUsuario = 'images/icons/PerfilVermelho.png'
-
-        if (req.session.usuario.foto != 'images/icons/PerfilVermelho.png') {
-            fotoUsuario = req.session.usuario.foto,
-                fotoUsuario
-        }
-
-        res.render('jogo', {
-            title: 'jogo',
-            apelidoUsuario: req.session.usuario.apelido,
-            fotoUsuario,
-            id,
-            idUsuario: req.session.usuario.id
-        });
-    },
 
     busca: (req, res) => {
 
@@ -171,7 +201,7 @@ const homeController = {
             });
         } else {
             cidade = '-'
-        }      
+        }
 
         let estado
         if (cidade.estado_id != null) {
@@ -191,8 +221,8 @@ const homeController = {
             apelidoUsuario: userInfo.apelido,
             nomeUsuario: userInfo.nome,
             descricaoUsuario: userInfo.descricao,
-            cidadeUsuario: cidade.cidade,
-            estadoUsuario: estado.sigla,
+            cidadeUsuario: cidade.cidade ? cidade.cidade : '',
+            estadoUsuario: estado.sigla ? estado.sigla : '',
             fotoUsuario,
             idUsuario: req.session.usuario.id
         });
@@ -218,6 +248,8 @@ const homeController = {
     editar: async (req, res) => {
 
         userInfo = req.session.usuario;
+        let foto;
+        let fotoTema;
 
         fotoUsuario = 'images/icons/PerfilVermelho.png'
 
@@ -232,31 +264,45 @@ const homeController = {
                     id: userInfo.cidade_id
                 }
             });
-        }else {
+        } else {
             cidade = '-'
         }
-        
+
         let estado = ''
-        if (cidade.estado_id != null) {
+        if (userInfo.cidade_estado_id != null) {
             estado = await Estado.findOne({
                 where: {
-                    id: cidade.estado_id
+                    id: userInfo.cidade_estado_id
                 }
             });
         } else {
             estado = '-'
         }
-
+        let diaNasc, mesNasc, anoNasc;
+        if (userInfo.dataDeNascimento != null){
+            diaNasc = userInfo.dataDeNascimento.slice(8,10);
+            mesNasc = userInfo.dataDeNascimento.slice(5,7);
+            anoNasc = userInfo.dataDeNascimento.slice(0,4);
+        }
         res.render('editar', {
             title: 'Atualizar Informações',
-
+            genero: userInfo.genero,
+            estado: userInfo.cidade_estado_id,
+            cidade: userInfo.cidade_id,
+            diaNasc,
+            mesNasc,
+            anoNasc,
+            nivelAp: userInfo.tipoAp,
             apelidoUsuario: userInfo.apelido,
             nomeUsuario: userInfo.nome,
             descricaoUsuario: userInfo.descricao,
             cidadeUsuario: cidade.cidade ? cidade.cidade : '',
             estadoUsuario: estado.sigla ? estado.sigla : '',
             fotoUsuario,
-            idUsuario: req.session.usuario.id
+            idUsuario: req.session.usuario.id,
+            formData: req.body,
+            foto,
+            fotoTema
         });
 
     },

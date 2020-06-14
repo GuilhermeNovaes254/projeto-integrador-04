@@ -11,7 +11,9 @@ module.exports = {
         aprovado: 1,
         tema_id: 4,
         dominio_id: 5,
-        mecanica_id: 3
+        mecanica_id: 3,
+        foto:'not-found-image.jpg',
+        fotoTema:'h1.jpg'
       }, {
         id: 2,
         nome: 'Banco Imobiliário',
@@ -20,7 +22,9 @@ module.exports = {
         aprovado: 1,
         tema_id: 15,
         dominio_id: 9,
-        mecanica_id: 1
+        mecanica_id: 1,
+        foto:'not-found-image.jpg',
+        fotoTema:'h1.jpg'
       }, {
         id: 3,
         nome: 'Detetive',
@@ -29,7 +33,9 @@ module.exports = {
         aprovado: 1,
         tema_id: 5,
         dominio_id: 14,
-        mecanica_id: 3
+        mecanica_id: 3,
+        foto:'not-found-image.jpg',
+        fotoTema:'h1.jpg'
       }], {});
 
   },

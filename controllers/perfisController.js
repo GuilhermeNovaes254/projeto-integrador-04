@@ -36,7 +36,8 @@ const aprovaPerfis = {
                 title: 'perfilAdm',
                 apelidoUsuario: req.session.usuario.apelido,
                 countStatus,
-                pendentes
+                pendentes,
+                idUsuario: req.session.usuario.id
             });
 
         } catch{

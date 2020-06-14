@@ -3,7 +3,8 @@ const Op = Sequelize.Op;
 
 const {
         Usuario,
-        Jogo
+        Jogo,
+        Favorito
 } = require('../models')
 
 
@@ -94,28 +95,67 @@ const buscaController = {
                         res.status(401)
                 }
         },
-        
-                listaJogos: async (req, res) => {
-                        try {
-                                let {limite} = req.query
 
-                                limite = parseInt(limite)
+        listaJogos: async (limite) => {
+                try {
+                        let busca = []
 
-                                let busca = []
-               
-                                busca = await Jogo.findAll({
-                                        limit: limite,
-                                        order: [
-                                                ['id', 'DESC']
-                                        ]
-                                })
-                
-                                res.send(busca)
-        
-                        } catch (error) {
-                                res.status(401)
+                        busca = await Jogo.findAll({
+                                limit: limite,
+                                order: [
+                                        ['id', 'DESC']
+                                ]
+                        })
+
+                        return busca;
+
+                } catch (error) {
+                        return null;
+                }
+        },
+
+        listaJogosFavoritos: async (limite, idUsuario) => {
+                try {
+                        const favoritos = await Favorito.findAll({
+                                limit: limite,
+                                where: {
+                                        usuario_id: idUsuario
+                                },
+                                include: [{
+                                        model: Jogo,
+                                        as: 'jogo'
+                                }]
+                        });
+
+                        let jogosFavoritos = [];
+                        for (let favorito of favoritos) {
+                                jogosFavoritos.push(favorito.jogo);
                         }
-                },
+
+                        return jogosFavoritos;
+                } catch (error) {
+                        return null;
+                }
+        },
+
+        dadosUsuario: async (req, res) => {
+                try {
+                        let {
+                                id
+                        } = req.query
+
+                        let usuario = await Usuario.findOne({
+                                where: {
+                                        id
+                                }
+                        });
+
+                        res.send(usuario)
+
+                } catch (error) {
+                        res.status(401)
+                }
+        }
 
 }
 

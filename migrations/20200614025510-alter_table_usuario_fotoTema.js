@@ -3,16 +3,16 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.changeColumn(
-      'jogo', 'foto', {
+      'usuario', 'fotoTema', {
         type: Sequelize.STRING(500),
         allowNull: true,
-        default:'./images/icons/PerfilVermelho.png'
+        default:'h3.jpg'
       });
   },
 
   down: (queryInterface, Sequelize) => {
     return queryInterface.changeColumn(
-      'jogo', 'foto', {
+      'usuario', 'fotoTema', {
         type: Sequelize.STRING(500),
         allowNull: true
       });

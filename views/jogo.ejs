@@ -1,22 +1,34 @@
 <%- include('./partials/header') %>
 
-<section class="c-banner-jogo"></section>
+<section class="c-banner-jogo" style="background-image: url('buscaImagem/<%= jogo.fotoTema %>');"></section>
 <main class="container c-jogo">
   <div class="c-jogo__left">
-    <div class="c-jogo__left--description c-jogo__left--content" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
-      <img class="c-photo-game" src="images/game01.jpg" alt="">
+    <div class="c-jogo__left--description c-jogo__left--content" data-aos="fade-up" data-aos-duration="1000"
+      data-aos-delay="200">
+      <div id='headPage'><img class="c-photo-game" src="buscaImagem/<%= jogo.foto %>" alt=""></div>
       <div class="c-jogo__description">
-        <h2>League of Legends Box</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam porttitor tortor eros, at rhoncus magna euismod sit amet.</p>
-      </div>      
+        <h2 id='jogoNome'><%= jogo.nome %></h2>
+        <p id='jogoDescricao'><%= jogo.descricao %></p>
+      </div>
     </div>
-    <div class="c-jogo__left--news c-jogo__left--content" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+    <div class="c-jogo__left--news c-jogo__left--content" data-aos="fade-up" data-aos-duration="1000"
+      data-aos-delay="200">
       <h5>Confira os Jogos Relacionados</h5>
+      <ol>
+        <% for(let jogoRelacionado of jogosRelacionados) { %>
+        <li>
+          <a href="/jogo?id=<%= jogoRelacionado.id %>">
+            <h6><%= jogoRelacionado.nome %></h6>
+          </a>
+        </li>
+        <% } %>
+      </ol>
     </div>
   </div>
-  <div class="c-jogo__right">
-    <div class="c-jogo__right--fav c-jogo__right--content" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
-      <h2 class="c-jogo__right--title">
+  <div class="c-jogo__right" style="margin-top: 0px;">
+    <div class="c-jogo__right--fav c-jogo__right--content" data-aos="fade-up" data-aos-duration="1000"
+      data-aos-delay="400">
+      <h2 id='rated' class="c-jogo__right--title">
         <a href="javascript:void(0)" onclick="Avaliar(1)">
           <img src="../images/star0.png" id="s1">
         </a>
@@ -33,20 +45,35 @@
           <img src="../images/star0.png" id="s5"></a>
         <p id="rating">0</p>
       </h2>
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/aR-KAldshAE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <div>
+        <h1 class="game-name"><%= jogo.nome %> (<%= jogo.ano %>)</h1>
+        <h6 class="game-detail">Descrição:</h6>
+        <p class="game-detail-content"><%= jogo.descricao %></p>
+        <h6 class="game-detail">Ano de lançamento:</h6>
+        <p class="game-detail-content"><%= jogo.ano %></p>
+        <h6 class="game-detail">Faixa etária:</h6>
+        <p class="game-detail-content"><%= jogo.faixaEtaria %></p>
+        <h6 class="game-detail">Duração:</h6>
+        <h6 class="game-detail-content"><%= jogo.faixaEtaria %></h6>
+
+      </div>
+      <!-- <div id='jogolinkYoutube'><iframe  width="560" height="315" src="https://www.youtube.com/embed/aR-KAldshAE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div> -->
     </div>
-    <div class="c-jogo__right--evaluation c-jogo__right--content" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
-      <h2 class="c-jogo__right--title"><i class="icon ion-android-star-half"></i> Avaliações</h2>
+    <div class="c-jogo__right--evaluation c-jogo__right--content"
+      style="background-color: transparent; padding-bottom: 0;" data-aos="fade-up" data-aos-duration="1000"
+      data-aos-delay="200">
+      <h2 class="c-jogo__right--title" style="background-color: white;"><i class="icon ion-android-star-half"></i>
+        Avaliações</h2>
     </div>
-    <div class="c-jogo__right--coments c-jogo__right--content" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
-      <%- include('./partials/coments') %>
+    <div class="c-jogo__right--coments c-jogo__right--content" data-aos="fade-up" data-aos-duration="1000"
+      data-aos-delay="200">
+      <%- include('./partials/coments', {comentarios}) %>
     </div>
   </div>
 
 </main>
 
-<script>
-  var jogoId = '<%-id%>';
-</script>
+
+<script src="js/gameRating.js"></script>
 <script src='js/scriptTelaJogo.js'></script>
 <%- include('./partials/footer') %>

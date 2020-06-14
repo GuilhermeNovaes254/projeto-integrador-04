@@ -4,7 +4,7 @@
   <div class="row o-feeds-header">
 
     <%- include('./partials/advance-search') %>
-    
+
   </div>
 </div>
 
@@ -30,9 +30,10 @@
     <div></div>
     <div></div>
   </div>
-  <%- include('./partials/highlights-five') %>
+  <%- include('./partials/highlights-five', {jogos, flagClicavel : true}) %>
 
 </div>
+
 </div>
 <div class="container-fluid u-bg-white">
   <div class="row">
@@ -50,7 +51,7 @@
           <h2>Adicionados Recentemente</h2>
         </div>
       </main>
-      <%- include('./partials/highlights-five') %>
+      <%- include('./partials/highlights-five', {jogos : jogosRecentes, flagClicavel : true }) %>
     </div>
   </div>
 
