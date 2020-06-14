@@ -109,7 +109,7 @@ const homeController = {
 
         let cidade;
         if (usuario.cidade_id != null) {
-             cidade = await Cidade.findOne({
+            cidade = await Cidade.findOne({
                 where: {
                     id: usuario.cidade_id
                 }
@@ -125,6 +125,9 @@ const homeController = {
             });
         }
 
+        const jogosFavoritos = await busca.listaJogosFavoritos(6,usuario.id);
+
+        
         res.render('perfil', {
             title: 'perfil',
             apelidoUsuario: usuario.apelido,
@@ -135,7 +138,8 @@ const homeController = {
             cidadeUsuario: cidade ? cidade.cidade : '',
             estadoUsuario: estado ? estado.sigla : '',
             idUsuario: usuario.id,
-            comentarios
+            comentarios,
+            jogosFavoritos
         });
     },
 
