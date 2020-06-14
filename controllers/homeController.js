@@ -218,6 +218,8 @@ const homeController = {
     editar: async (req, res) => {
 
         userInfo = req.session.usuario;
+        let foto;
+        let fotoTema;
 
         fotoUsuario = 'images/icons/PerfilVermelho.png'
 
