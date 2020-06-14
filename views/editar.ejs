@@ -3,7 +3,7 @@
 <section id="tema" style="background-image: url('/buscaImagem/<%= USUARIO.fotoTema %>');"></section>
 
 <div class="container" id='containerTema'>
-    <form id="form" action='/editar' method='POST' enctype="multipart/form-data">
+    <form id="form" action='/editar' method='POST' enctype="multipart/form-data"id ="form">
         <div class="row">
             <div class="col-md-12 ">
                 <div class="text-right">
@@ -48,14 +48,14 @@
                                         <div class="form-group pt-3">
                                             <label for="nomeUser">Nome</label>
                                             <input type="text" class="form-control" id="nomeUser" name="nomeUser"
-                                                required>
+                                                required value=<%= formData.nomeUser %>>
                                         </div>
                                         <div class="row tamanho">
                                             <div class="col-12 col-sm-12 col-md-5 col-lg-5">
                                                 <div class="form-group">
                                                     <label for="apelido">Apelido</label>
                                                     <input type="text" class="form-control" id="apelido" name="apelido"
-                                                    required>
+                                                    required value=<%= formData.apelido %>>
                                                 </div>
                                             </div>
                                             <div class="col-12 col-sm-12 col-md-7 col-lg-7">
@@ -136,7 +136,7 @@
                                         <div class="form-group">
                                             <label for="descricaoUser">Descrição</label>
                                             <textarea style="resize: none" class="form-control" id="descricaoUser"
-                                                name='descricaoUser' rows="4"></textarea>
+                                                name='descricaoUser' rows="4"><%= formData.descricaoUser %></textarea>
                                         </div>
                                         <div class="row tamanho">
                                             <div class="col-12 col-sm-12 col-md-6 col-lg-6">
@@ -184,7 +184,7 @@
                         </div>
 
                         <div class="row">
-                            <div class="col-12 pt-5 text-center">
+                            <div class="col-12 pt-5 text-center" id="erro">
                                 <% if(typeof(errors) != "undefined"){ %>
                                 <p style="color:red">ERRO:</p>
                                 <ul>
@@ -195,11 +195,19 @@
                                 <% } %>
                             </div>
                         </div>
+                        <input type="hidden" id="imagemPerfil" name="imagemPerfil">
+                        <input type="hidden" id="imagemTema" name="imagemTema">
                     </div>
                 </div>
             </div>
     </form>
 </div>
+
+<script>
+    var formDataEnv = '<%- JSON.stringify(formData) %>';
+    var formFoto = '<%- foto %>';
+    var formFotoTema = '<%- fotoTema %>';
+</script>
 
 <script src="js/scriptEditar.js"></script>
 <script src='js/fotoPerfil.js' onload></script>
