@@ -4,7 +4,8 @@ const Op = Sequelize.Op;
 const {
         Usuario,
         Jogo,
-        Favorito
+        Favorito,
+        Colecao
 } = require('../models')
 
 
@@ -133,6 +134,30 @@ const buscaController = {
                         }
 
                         return jogosFavoritos;
+                } catch (error) {
+                        return null;
+                }
+        },
+
+        listaJogosColecao: async (limite, idUsuario) => {
+                try {
+                        const colecao = await Colecao.findAll({
+                                limit: limite,
+                                where: {
+                                        usuario_id: idUsuario
+                                },
+                                include: [{
+                                        model: Jogo,
+                                        as: 'jogo'
+                                }]
+                        });
+
+                        let jogosColecao = [];
+                        for (let jogoColecao of colecao) {
+                                jogosColecao.push(jogoColecao.jogo);
+                        }
+
+                        return jogosColecao;
                 } catch (error) {
                         return null;
                 }
