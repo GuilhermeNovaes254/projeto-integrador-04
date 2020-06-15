@@ -8,6 +8,8 @@ let diaNasc = formDiaNasc;
 let mesNasc = formMesNasc;
 let anoNasc = formAnoNasc;
 let nivelAp = formNivelAp;
+let fotoTemaCad = formFotoTemaCad;
+let fotoCad = formFotoCad;
 
 //variaveis DOM
 let fotoPerfil = document.getElementById('file-input');
@@ -203,9 +205,13 @@ fotoTema.addEventListener('change', function (evt) {
 if (typeof(foto1) != "undefined" && foto1.length > 0) {
     imgFotoPerfil.src = '/buscaImagem/' + foto1;
     imagemPerfil.value = foto1;
-};
+}else{
+    imagemPerfil.value = fotoCad; 
+}
 
 if (typeof(fotoTema1) != "undefined" && fotoTema1.length > 0) {
     imgFotoTema.style.backgroundImage = "url('" + '/buscaImagem/' + fotoTema1 + "')"
     imagemTema.value = fotoTema1;
+}else{
+    imagemTema.value = fotoTemaCad;
 };
