@@ -1,13 +1,19 @@
 <div id='comentarios'>
   <% for(let comentario of comentarios) { %>
   <div class="c-coments">
-    <div class="c-coments__photo">
-      <img src="/buscaImagem/<%= comentario.usuario.foto  %>" alt="">
-      <h4><%= comentario.usuario.apelido  %></h4>
-    </div>
+    <a href="/perfil/<%= comentario.usuario.id  %>">
+      <div class="c-coments__photo">
+        <img src="/buscaImagem/<%= comentario.usuario.foto  %>" alt="">
+        <h4><%= comentario.usuario.apelido  %></h4>
+      </div>
+    </a>
     <div class="c-coments__box animate-bubble-float-left">
       <div class="c-coments__box--header">
-        <h3></h3>
+        <% if(flagPerfilUsuario) { %>
+        <a href="/jogo?id=<%= comentario.jogo.id  %>">
+          <h3><%= comentario.jogo.nome  %></h3>
+        </a>
+        <% } %>
         <div class="c-coments__features">
           <div class="c-coments__features--players">
             <strong><i class="icon ion-ios-game-controller-a-outline"></i>742</strong>
