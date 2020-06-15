@@ -5,7 +5,8 @@ const {
     Mecanica,
     Tema,
     Comentario,
-    Usuario
+    Usuario,
+    Jogo
 } = require('../models')
 const busca = require('./buscaController');
 
@@ -98,6 +99,9 @@ const homeController = {
             include: [{
                 model: Usuario,
                 as: 'usuario'
+            },{
+                model: Jogo,
+                as: 'jogo'
             }]
         });
 
