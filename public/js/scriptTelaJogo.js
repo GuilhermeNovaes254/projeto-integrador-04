@@ -1,25 +1,47 @@
-// var xhr = new XMLHttpRequest();
-
-// let id = jogoId;
-// let user = userId;
-
 async function carregaComentarios(jogoId) {
     let qtdComentarios = document.getElementsByClassName('c-coments');
     let indice = qtdComentarios[qtdComentarios.length - 1].id;
     let url = `/jogo/elementos/comentario?jogo=${jogoId}&indice=${indice}`;
 
-    fetch(url, {method: 'GET'})
+    fetch(url, { method: 'GET' })
         .then((resposta) => resposta.text())
         .then((comentarios) => {
-            console.log(comentarios);
             document.getElementById('comentarios').insertAdjacentHTML('beforeend', comentarios);
-            var count = document.getElementById('count').value;
-            if(count <= 5){
-                document.getElementById("verMais").style.display = "none";
+            
+            let qtdRestantes = document.getElementsByClassName('countRestantes');
+            let indiceRestantes = qtdRestantes[qtdRestantes.length - 1].value;
+            if (indiceRestantes <= 5) {
+                 document.getElementById("verMais").style.display = "none";
             }
         })
 }
 
+async function postaComentario(message) {
+
+    const comentario = {
+        texto: message,
+        jogo: document.getElementById('jogoId').value
+    };
+
+    let url = `/jogo/elementos/comentario`;
+    fetch(url,
+        {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(comentario)
+        })
+        .then((resposta) => resposta.text())
+        .then((comentario) => {
+            document.getElementById('comentarios').insertAdjacentHTML('afterbegin', comentario);
+            let elemento = document.getElementById('no-data');
+            if(elemento){
+                comentariosExiste.style.display = "none"
+            }
+        });
+}
 
 // async function carregaAvaliacao() {
 
@@ -35,8 +57,6 @@ async function carregaComentarios(jogoId) {
 //         })
 
 // }
-
-
 
 
 // async function leEstrelas() {
