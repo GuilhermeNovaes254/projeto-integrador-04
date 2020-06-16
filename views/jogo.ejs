@@ -2,6 +2,7 @@
 
 <section class="c-banner-jogo" style="background-image: url('buscaImagem/<%= jogo.fotoTema %>');"></section>
 <main class="container c-jogo">
+  <input type="hidden" id="jogoId" value="<%= jogo.id %>">
   <div class="c-jogo__left">
     <div class="c-jogo__left--description c-jogo__left--content" data-aos="fade-up" data-aos-duration="1000"
       data-aos-delay="200">
@@ -71,7 +72,7 @@
         <%- include('./partials/coments', {comentarios, flagPerfilUsuario : false}) %>
       </div>
       <% if(comentarios.length == 0) { %>
-        <p style="text-align: center;">Este jogo ainda não possui avaliações</p>
+        <p id="no-data" style="text-align: center;">Este jogo ainda não possui avaliações</p>
       <%} else if(countComentarios > 6) {%>
         <a id="verMais" style="color: white;" class="c-bt-default" onclick="carregaComentarios('<%= jogo.id %>')">Ver mais</a>
       <%}%>
