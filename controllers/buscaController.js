@@ -180,8 +180,19 @@ const buscaController = {
                 } catch (error) {
                         res.status(401)
                 }
-        }
+        },
 
+        dadosUsuarioController: async (idUsuario) => {
+
+                let usuario = await Usuario.findOne({
+                        where: {
+                                id:idUsuario
+                        }
+                });
+
+                return usuario
+
+        }
 }
 
 module.exports = buscaController;
