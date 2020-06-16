@@ -29,7 +29,7 @@
 
 .c-photo-game{
   width: 100%;
-  border-radius: 50px 50px 0 0;
+  border-radius: 25px 25px 0 0;
   box-sizing: content-box;
 }
 
@@ -41,7 +41,7 @@
 }
   .c-jogo__left--content,
   .c-jogo__right--content{
-    border-radius: 50px;
+    border-radius: 25px;
     background: #fff;
     box-sizing: border-box;
     padding: 35px 25px;
@@ -54,6 +54,7 @@
 
   .c-jogo__description{
     padding: 35px 25px 55px;
+    width: 100%;
   }
 
   .c-jogo__left{
@@ -304,6 +305,37 @@
       line-height: 22px;
     }
 
+.c-coments__box--header{
+  display: flex;
+  justify-content: space-between;
+}
+
+@media(max-width:600px){
+  .c-coments__box--header{
+    flex-direction: column;
+  }
+}
+
+  .c-coments__info{
+    display: flex;
+    flex-direction: column;
+  }
+
+@media(max-width:600px){
+  .c-coments__info{
+    padding-bottom: 15px;
+  }
+}
+
+    .c-coments__info h4{
+      font-weight: 900;
+      padding-top: 10px;
+    }
+
+    .c-coments__info h3{
+      font-size: 13px;
+    }
+
   .c-coments__features{
     display: flex;
     justify-content: flex-end;
@@ -368,6 +400,30 @@
       .c-coments__features--likes .ion-ios-heart{
         color: red;
       }
+
+.c-write{
+  display: none;
+}
+
+  .c-write img{
+    margin-top: 0;
+  }
+
+  .c-write .c-coments__box {
+    padding:20px;
+  }
+
+.js-activeWrite{
+  display: flex;
+}
+
+.js-hiddenEl{
+  display: none;
+}
+
+.js-spaceComment{
+  padding-bottom: 10px;
+}
 
 .js-note-red{
   background: #F22441;
