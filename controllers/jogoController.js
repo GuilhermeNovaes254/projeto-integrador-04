@@ -197,29 +197,25 @@ const jogoController = {
                 jogo
             } = req.body
 
-
-            let usuarioId = req.session.usuario.id;
             const ts = new Date();
             let dataHora = ts.toLocaleString();
 
-            let comentarioCriado;
-            await Comentario.create({
+            let comentario = {
                 texto,
                 data: dataHora,
-                usuario_id: usuarioId,
+                usuario_id: req.session.usuario.id,
                 jogo_id: jogo,
-            }).then(function (result) {
-                comentarioCriado = result;
-            });
-
-
-            comentarioCriado.usuario = await Usuario.findOne({
-                where: {
-                    id: comentarioCriado.usuario_id
+                usuario: {
+                    id: req.session.usuario.id,
+                    nome: req.session.usuario.nome,
+                    foto: req.session.usuario.foto,
+                    apelido: req.session.usuario.apelido,
                 }
-            });
+            };
 
-            res.render('./partials/coments', { layout: false, comentarios: [comentarioCriado], flagPerfilUsuario: false });
+            await Comentario.create(comentario);
+
+            res.render('./partials/coments', { layout: false, comentarios: [comentario], flagPerfilUsuario: false });
 
         } catch (error) {
             res.status(401)
