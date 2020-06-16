@@ -29,7 +29,7 @@
 
 .c-photo-game{
   width: 100%;
-  border-radius: 50px 50px 0 0;
+  border-radius: 25px 25px 0 0;
   box-sizing: content-box;
 }
 
@@ -41,7 +41,7 @@
 }
   .c-jogo__left--content,
   .c-jogo__right--content{
-    border-radius: 50px;
+    border-radius: 25px;
     background: #fff;
     box-sizing: border-box;
     padding: 35px 25px;
@@ -54,6 +54,7 @@
 
   .c-jogo__description{
     padding: 35px 25px 55px;
+    width: 100%;
   }
 
   .c-jogo__left{
@@ -368,6 +369,22 @@
       .c-coments__features--likes .ion-ios-heart{
         color: red;
       }
+
+.c-write{
+  display: none;
+}
+
+  .c-write img{
+    margin-top: 0;
+  }
+
+  .c-write .c-coments__box {
+    padding:20px;
+  }
+
+.js-activeWrite{
+  display: flex;
+}
 
 .js-note-red{
   background: #F22441;

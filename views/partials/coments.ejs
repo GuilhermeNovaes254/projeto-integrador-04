@@ -1,6 +1,19 @@
+
+<div class="c-coments c-write" id="">
+  <a href="">
+    <div class="c-coments__photo ">
+      <img src="buscaImagem/not-found-image.jpg" alt="">
+    </div>
+  </a>
+  <div class="c-coments__box animate-grow-shadow">
+    <p><textarea name="" id="" cols="30" rows="10"></textarea></p>
+  </div>
+</div>
+
 <% if(typeof(countComentario) != "undefined") { countComentario  %>
   <input id="count" type="hidden" value="<%= countComentario  %>">
 <% } %>
+
 <% for(let comentario of comentarios) { %>
 <div class="c-coments" id="<%= comentario.id  %>">
   <a href="/perfil/<%= comentario.usuario.id  %>">
