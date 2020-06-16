@@ -1,5 +1,5 @@
-<% if(typeof(countComentario) != "undefined") { countComentario  %>
-  <input id="count" type="hidden" value="<%= countComentario  %>">
+<% if(typeof(countRestantes) != "undefined") { countRestantes  %>
+  <input class="countRestantes" type="hidden" value="<%= countRestantes  %>">
 <% } %>
 <% for(let comentario of comentarios) { %>
 <div class="c-coments" id="<%= comentario.id  %>">
