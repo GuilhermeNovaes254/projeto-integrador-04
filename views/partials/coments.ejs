@@ -1,34 +1,34 @@
-<div id='comentarios'>
-  <% for(let comentario of comentarios) { %>
-  <div class="c-coments">
-    <a href="/perfil/<%= comentario.usuario.id  %>">
-      <div class="c-coments__photo">
-        <img src="/buscaImagem/<%= comentario.usuario.foto  %>" alt="">
-        <h4><%= comentario.usuario.apelido  %></h4>
-      </div>
-    </a>
-    <div class="c-coments__box animate-bubble-float-left">
-      <div class="c-coments__box--header">
-        <% if(flagPerfilUsuario) { %>
-        <a href="/jogo?id=<%= comentario.jogo.id  %>">
-          <h3><%= comentario.jogo.nome  %></h3>
-        </a>
-        <% } %>
-        <div class="c-coments__features">
-          <div class="c-coments__features--players">
-            <strong><i class="icon ion-ios-game-controller-a-outline"></i>742</strong>
-          </div>
-          <div class="c-coments__features--likes">
-            <strong><i class="icon ion-ios-heart-outline"></i>550</strong>
-          </div>
-          <div class="c-coments__features--evaluation js-note-yellow">
-            <span>3.0</span>
-          </div>
+<% if(typeof(countComentario) != "undefined") { countComentario  %>
+  <input id="count" type="hidden" value="<%= countComentario  %>">
+<% } %>
+<% for(let comentario of comentarios) { %>
+<div class="c-coments" id="<%= comentario.id  %>">
+  <a href="/perfil/<%= comentario.usuario.id  %>">
+    <div class="c-coments__photo">
+      <img src="/buscaImagem/<%= comentario.usuario.foto  %>" alt="">
+      <h4><%= comentario.usuario.apelido  %></h4>
+    </div>
+  </a>
+  <div class="c-coments__box animate-bubble-float-left">
+    <div class="c-coments__box--header">
+      <% if(flagPerfilUsuario) { %>
+      <a href="/jogo?id=<%= comentario.jogo.id  %>">
+        <h3><%= comentario.jogo.nome  %></h3>
+      </a>
+      <% } %>
+      <div class="c-coments__features">
+        <div class="c-coments__features--players">
+          <strong><i class="icon ion-ios-game-controller-a-outline"></i>742</strong>
+        </div>
+        <div class="c-coments__features--likes">
+          <strong><i class="icon ion-ios-heart-outline"></i>550</strong>
+        </div>
+        <div class="c-coments__features--evaluation js-note-yellow">
+          <span>3.0</span>
         </div>
       </div>
-      <p><%= comentario.texto %></p>
     </div>
+    <p><%= comentario.texto %></p>
   </div>
-  <% } %>
 </div>
-<a href="#" class="c-bt-default">Ver mais</a>
+<% } %>
