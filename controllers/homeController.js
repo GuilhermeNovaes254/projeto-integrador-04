@@ -191,15 +191,20 @@ const homeController = {
 
     moduloDestaques: async (req, res) => {
 
-        let{id} = req.query
+        let{id, tipo} = req.query
 
         const usuario = await busca.dadosUsuarioController(id)
         const estado = await local.buscaEstadoController(usuario.cidade_estado_id)
         const cidade = await local.buscaCidadeController(usuario.cidade_id)
-        const jogos = await busca.listaJogosColecao(9,id)
+       
         fotoUsuario = 'images/icons/PerfilVermelho.png'
 
-        
+        let jogos;
+        if(tipo == 1){
+            jogos = await busca.listaJogosColecao(9,id)
+        }else{
+            jogos = await busca.listaJogosFavoritos(9,id)
+        }
 
         if (usuario.foto != 'images/icons/PerfilVermelho.png') {
             fotoUsuario = usuario.foto
