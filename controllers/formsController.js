@@ -301,6 +301,14 @@ const forms = {
                 foto = imagemPerfil;
             }
 
+            if(fotoTema === ""){
+                fotoTema = 'h1.jpg';
+            }
+
+            if(foto === ""){
+                foto = 'not-found-image.jpg';
+            }
+
             const jogo = await Jogo.create({
                 nome: nomeJogo,
                 ano: anoJogo,
