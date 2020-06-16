@@ -9,6 +9,7 @@ const {
     Jogo
 } = require('../models')
 const busca = require('./buscaController');
+const local = require('./localizacaoController')
 
 const homeController = {
 
@@ -190,47 +191,46 @@ const homeController = {
 
     moduloDestaques: async (req, res) => {
 
-        userInfo = req.session.usuario;
+        let{id} = req.query
 
+        const usuario = await busca.dadosUsuarioController(id)
+        const estado = await local.buscaEstadoController(usuario.cidade_estado_id)
+        const cidade = await local.buscaCidadeController(usuario.cidade_id)
+        const jogos = await busca.listaJogosColecao(9,id)
         fotoUsuario = 'images/icons/PerfilVermelho.png'
 
-        if (req.session.usuario.foto != 'images/icons/PerfilVermelho.png') {
-            fotoUsuario = req.session.usuario.foto
+        
+
+        if (usuario.foto != 'images/icons/PerfilVermelho.png') {
+            fotoUsuario = usuario.foto
         }
 
-        let cidade
-        if (userInfo.cidade_id != null) {
-            cidade = await Cidade.findOne({
-                where: {
-                    id: userInfo.cidade_id
-                }
-            });
-        } else {
-            cidade = '-'
+        let CIDADE
+        if (cidade == null){
+            CIDADE = ''
+        }else{
+            CIDADE = cidade.cidade
         }
 
-        let estado
-        if (cidade.estado_id != null) {
-            estado = await Estado.findOne({
-                where: {
-                    id: cidade.estado_id
-                }
-            });
-        } else {
-            estado = '-'
+        let ESTADO
+        if (estado == null){
+            ESTADO = ''
+        }else{
+            ESTADO = estado.sigla
         }
-
-
+        
         res.render('moduloDestaques', {
 
             title: 'moduloDestaques',
-            apelidoUsuario: userInfo.apelido,
-            nomeUsuario: userInfo.nome,
-            descricaoUsuario: userInfo.descricao,
-            cidadeUsuario: cidade.cidade ? cidade.cidade : '',
-            estadoUsuario: estado.sigla ? estado.sigla : '',
-            fotoUsuario,
-            idUsuario: req.session.usuario.id
+            cidadeUsuario: CIDADE,
+            estadoUsuario: ESTADO,
+            jogos,
+            fotoTemaUsuario: usuario.fotoTema,
+            fotoUsuario: usuario.foto,
+            nomeUsuario: usuario.nome,
+            apelidoUsuario: usuario.apelido,
+            descricaoUsuario: usuario.descricao
+
         });
     },
 

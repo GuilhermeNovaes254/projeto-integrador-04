@@ -45,8 +45,7 @@
                             <%if( USUARIO.cargo == 2  && USUARIO.aprovado == 1){%>
                             <li><a href='/perfilAdm'>Administração</a></li>
                             <%}%>
-                            <li><a href='/moduloDestaques'>Meus Jogos</a></li>
-                            <li><a href='/moduloDestaques'>Favoritos</a></li>
+                            <li><a href='/moduloDestaques?id=<%=USUARIO.id%>'>Favoritos</a></li>
                             <li><a href='/cadastroJogo'>Cadastrar Jogo</a></li>
                             <li><a href='/busca'>Buscar</a></li>
                             <li><a href='/excluir'>Excluir</a></li>
