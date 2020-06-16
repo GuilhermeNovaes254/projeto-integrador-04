@@ -8,8 +8,8 @@
 .c-photo{
   width: 100%;
   border-radius: 100px;
-  max-width: 120px;
-  max-height: 120px;
+  width: 100px;
+  height: 100px;
   border: 5px solid #0F7A2F;
   box-sizing: content-box;
 }

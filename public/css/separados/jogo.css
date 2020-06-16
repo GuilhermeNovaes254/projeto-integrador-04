@@ -305,6 +305,37 @@
       line-height: 22px;
     }
 
+.c-coments__box--header{
+  display: flex;
+  justify-content: space-between;
+}
+
+@media(max-width:600px){
+  .c-coments__box--header{
+    flex-direction: column;
+  }
+}
+
+  .c-coments__info{
+    display: flex;
+    flex-direction: column;
+  }
+
+@media(max-width:600px){
+  .c-coments__info{
+    padding-bottom: 15px;
+  }
+}
+
+    .c-coments__info h4{
+      font-weight: 900;
+      padding-top: 10px;
+    }
+
+    .c-coments__info h3{
+      font-size: 13px;
+    }
+
   .c-coments__features{
     display: flex;
     justify-content: flex-end;
@@ -384,6 +415,14 @@
 
 .js-activeWrite{
   display: flex;
+}
+
+.js-hiddenEl{
+  display: none;
+}
+
+.js-spaceComment{
+  padding-bottom: 10px;
 }
 
 .js-note-red{

@@ -176,6 +176,7 @@ section#temaExcluir {
 
   .o-hamburger--avatar{
     border-radius: 50%;
+    max-width: 120px;
   }
 
   .o-hamburger:after,
@@ -233,8 +234,8 @@ input[type=checkbox] {
   }
 
 .o-menu__avatar img{
-  max-width: 60px;
-  height: auto;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
 }
 
