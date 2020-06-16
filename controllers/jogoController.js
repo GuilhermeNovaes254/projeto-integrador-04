@@ -30,22 +30,27 @@ const jogoController = {
         let jogosRelacionados = await Jogo.findAll({
             limit: 5,
             where: {
-                id: { [Op.ne] : jogo.id },
+                id: { [Op.ne]: jogo.id },
                 tema_id: jogo.tema_id
             }
         });
 
-        const comentarios = await Comentario.findAll({
+        let comentarios, countComentarios;
+        await Comentario.findAndCountAll({
+            limit: 6,
             order: [
-                ['data', 'ASC']
+                ['data', 'DESC']
             ],
-             where: {
+            where: {
                 jogo_id: jogo.id
-             }, 
-             include: [{
+            },
+            include: [{
                 model: Usuario,
                 as: 'usuario'
-                }]
+            }]
+        }).then(result => {
+            comentarios = result.rows;
+            countComentarios = result.count;
         });
 
         fotoUsuario = 'images/icons/PerfilVermelho.png'
@@ -59,7 +64,8 @@ const jogoController = {
             title: 'jogo',
             jogo,
             comentarios,
-            jogosRelacionados
+            jogosRelacionados,
+            countComentarios
         });
     },
 
@@ -209,21 +215,30 @@ const jogoController = {
         try {
 
             let {
-                jogo
+                jogo,
+                indice
             } = req.query
 
-            whereClause = {}
-            whereClause['jogo_id'] = jogo
-            console.log("*******************************************************")
-            console.log(jogo)
-            let busca = await Comentario.findAll({
-                where: whereClause,
+            let comentarios, countComentarios;
+            await Comentario.findAndCountAll({
+                limit: 5,
                 order: [
-                    ['id', 'DESC']
-                ]
+                    ['data', 'DESC']
+                ],
+                where: {
+                    jogo_id: jogo,
+                    id: { [Op.lt]: indice }
+                },
+                include: [{
+                    model: Usuario,
+                    as: 'usuario'
+                }]
+            }).then(result => {
+                comentarios = result.rows;
+                countComentarios = result.count;
             });
 
-            res.status(200).send(busca)
+            res.render('./partials/coments', { layout: false, comentarios: comentarios, flagPerfilUsuario: false, countComentario: countComentarios});
 
         } catch (error) {
             res.status(401)
@@ -281,7 +296,7 @@ const jogoController = {
                 await Avaliacao.create({
                     usuario_id: parseInt(usuarioId),
                     jogo_id: parseInt(jogo),
-                    avaliacao:parseFloat(nota)
+                    avaliacao: parseFloat(nota)
                 });
                 console.log("criada")
             } else {
