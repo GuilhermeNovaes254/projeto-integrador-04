@@ -1,5 +1,6 @@
 const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
+const colorThief = require('colorthief');
 
 const {
     Joguei,
@@ -53,19 +54,22 @@ const jogoController = {
             countComentarios = result.count;
         });
 
-        fotoUsuario = 'images/icons/PerfilVermelho.png'
 
-        if (req.session.usuario.foto != 'images/icons/PerfilVermelho.png') {
-            fotoUsuario = req.session.usuario.foto,
-                fotoUsuario
-        }
+        let dominantColor = await colorThief.getColor(`http://localhost:5000/buscaImagem/${jogo.fotoTema}`);
+
+        dominantColor.map(value => {
+            if (value < 200) {
+                value = 200
+            }
+        }).join(', ');
 
         res.render('jogo', {
             title: 'jogo',
             jogo,
             comentarios,
             jogosRelacionados,
-            countComentarios
+            countComentarios,
+            dominantColor
         });
     },
 
