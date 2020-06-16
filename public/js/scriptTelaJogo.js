@@ -1,3 +1,18 @@
+const comentario = document.getElementById('comentario-texto');
+comentario.addEventListener('keyup', function () {
+    if (this.value.length > 0) {
+        document.getElementById('posta-comentario').disabled = false;
+    } else {
+        document.getElementById('posta-comentario').disabled = true
+    }
+});
+
+const btnComentario = document.getElementById('posta-comentario');
+btnComentario.addEventListener('click', function () {
+    document.getElementById('spinner').className = "spinner-border spinner-border-sm";
+    postaComentario();
+});
+
 async function carregaComentarios(jogoId) {
     let qtdComentarios = document.getElementsByClassName('c-coments');
     let indice = qtdComentarios[qtdComentarios.length - 1].id;
@@ -7,7 +22,6 @@ async function carregaComentarios(jogoId) {
         .then((resposta) => resposta.text())
         .then((comentarios) => {
             document.getElementById('comentarios').insertAdjacentHTML('beforeend', comentarios);
-            
             let qtdRestantes = document.getElementsByClassName('countRestantes');
             let indiceRestantes = qtdRestantes[qtdRestantes.length - 1].value;
             if (indiceRestantes <= 5) {
@@ -36,13 +50,18 @@ async function postaComentario() {
         .then((resposta) => resposta.text())
         .then((comentario) => {
             document.getElementById('comentario-texto').value = ''
+            document.getElementById('posta-comentario').disabled = true;
             document.getElementById('coment-box').insertAdjacentHTML('afterend', comentario);
             let elemento = document.getElementById('no-data');
-            if(elemento){
+            if (elemento) {
                 comentariosExiste.style.display = "none"
             }
+            document.getElementById('spinner').className = '';
         });
 }
+
+
+
 
 // async function carregaAvaliacao() {
 
