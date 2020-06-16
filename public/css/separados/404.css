@@ -1,0 +1,55 @@
+
+section#temaPerfil {
+	background-image: url('/images/heads/404.jpg');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	width: 100%;
+	height: 50vh;
+	/* viewport height */
+}
+body{
+	background-color: #e3e3e3;
+}
+
+
+#areaCentral {
+	background-color: #fff;
+	height: auto;
+	width: 100%;
+	border-radius: 15px;
+	display: flex;
+	text-align: center;
+	align-items: center;
+	align-self: center;
+	box-sizing: border-box;
+	margin-top: -60px;
+	margin-bottom: 100px;
+	min-height: 50px;
+}
+
+
+
+
+@media(max-width:400px) {
+	td img {
+		border-radius: 50%;
+		width: 50px;
+		height: 50px;
+	}
+
+	tr th{
+		font-size: 0px;
+	}
+}
+
+@media(max-width:300px) {
+	td img {
+		border-radius: 50%;
+		width: 25px;
+		height: 25px;
+	}
+	#descricao{
+		font-size: 5pt;
+	}
+}

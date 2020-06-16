@@ -111,7 +111,24 @@ router.get('/perfilAdm/reprovaModerador/:id', VerificaAdm, VerificaUsuarioLogado
 router.post('/login', autorizaLogin.loginSession);
 
 // POSTS formulario
-router.post('/cadastro', formController.cadastroUsuario);
+router.post('/cadastro',[
+    check("nome").isLength({
+        min: 2,
+        max: 100
+    })
+    .withMessage("Nome deve conter no mínimo 2 e no máximo 100 caracteres!"),
+    check("apelido").isLength({
+        min: 2,
+        max: 20
+    })
+    .withMessage("Apelido deve conter no mínimo 2 e no máximo 20 caracteres!"),
+    check("senha").isLength({
+        min: 6
+    })
+    .withMessage("Senha deve conter no mínimo 6 caracteres!"),
+    check("email").isEmail()
+    .withMessage("E-mail inválido!")
+], formController.cadastroUsuario);
 router.post('/excluir', VerificaUsuarioLogado, formController.excluirUsuario);
 router.post('/editar', VerificaUsuarioLogado, upload.any(), [
     check("nomeUser").isLength({

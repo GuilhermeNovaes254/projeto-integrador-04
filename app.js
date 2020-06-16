@@ -16,8 +16,17 @@ app.set('view engine', 'ejs');
 
 app.use(logger('dev'));
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(session({secret:'segredos'}))
+app.use(express.urlencoded({
+  extended: false
+}));
+app.use(session({
+  secret: 'segredos',
+  resave: true,
+  saveUninitialized: true,
+  cookie: {
+    maxAge: 3600000
+  }
+}))
 
 
 // faz com que a session fique disponivel em todas as paginas
@@ -43,11 +52,13 @@ app.use('/users', usersRouter);
 // });
 
 app.use((req, res) => {
-  res.status(404).render('404', { title: 'Pagina não encontrada' });
+  res.status(404).render('404', {
+    title: 'Pagina não encontrada'
+  });
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};

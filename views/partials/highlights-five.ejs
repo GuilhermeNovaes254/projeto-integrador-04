@@ -1,18 +1,24 @@
 <div class="row o-highlights o-highlights-five" id="highlights-five">
   <% for(let jogo of jogos) { %>
-  <div class="o-highlights__content o-highlights-five__content o-col-and-5 animate-float-shadow"
-    style="padding: 0; display: flex; flex-direction: column; width: 300px; box-shadow: 0 0 35px 0 hsla(0,0%,73%,.8);"
+  <div class="o-highlights__content o-highlights-five__content o-col-and-5"
+    style="padding: 0; display: flex; width: 300px; box-shadow: 0 0 35px 0 hsla(0,0%,73%,.8);"
     data-aos="fade-up" data-aos-duration="1000">
-    <% if(flagClicavel) { %>
-    <a href="/jogo?id=<%= jogo.id %>">
-      <% } %>
-      <div class="o-highlights__header o-highlights-five__header" style="border-radius: 50px 50px 0 0; box-sizing: content-box; overflow: hidden; height: 300px;">
-        <img src="/buscaImagem/<%= jogo.foto %>" alt="" style="height: auto;">
-      </div>
-      <div class="o-highlights__description o-highlights-five__description" style="padding: 20px 20px 20px; min-height: 120px; max-height: 120px;">
-        <h2><%= jogo.nome %></h2>
-      </div>
-    </a>
+    <div class="o-highlights_content-animate animate-grow-shadow">
+      <% if(flagClicavel) { %>
+        <a href="/jogo?id=<%= jogo.id %>">
+          <% } %>
+          <div class="o-highlights__header o-highlights-five__header">
+            <img src="/buscaImagem/<%= jogo.foto %>" alt="" style="height: auto;">
+          </div>
+          <div class="o-highlights__description o-highlights-five__description">
+            <h2><%= jogo.nome %></h2>
+          </div>
+        </a>
+    </div>
+    
   </div>
   <% } %>
+  <script>
+    console.log(jogo);
+  </script>
 </div>

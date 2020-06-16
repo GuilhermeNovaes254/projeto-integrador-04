@@ -17,49 +17,44 @@ const {
 const forms = {
 
     cadastroUsuario: async (req, res) => {
-        let {
-            nome,
-            apelido,
-            email,
-            senha
-        } = req.body;
+        let listOfErrors = validationResult(req);
+        if (listOfErrors.isEmpty()) {
+            const {
+                nome,
+                apelido,
+                email,
+                senha
+            } = req.body;
 
-        if (nome.length < 3 || apelido.length < 3 || email.length < 10 || senha.length < 3) {
-            res.redirect('/login/error');
+            let foto = 'PerfilVermelho.png'
+            let fotoTema = 'h3.jpg'
+
+            await Usuario.create({
+                nome: nome,
+                email: email,
+                apelido: apelido,
+                foto,
+                fotoTema,
+                senha: bcrypt.hashSync(senha, 10),
+                cargo: 0, //usuario comum
+                aprovado: 1
+            });
+
+            const user = await Usuario.findOne({
+                where: {
+                    email
+                }
+            });
+
+            req.session.usuario = user;
+
+            return res.redirect('/feeds');
+        }else{
+            return res.render("cadastro", {errors:listOfErrors.errors,
+                title: 'Cadastro',
+                formData: req.body
+            })
         }
-
-        let fotoAvatar = 'images/icons/PerfilVermelho.png'
-
-        await Usuario.create({
-            nome: nome,
-            email: email,
-            apelido: apelido,
-            foto: fotoAvatar,
-            senha: bcrypt.hashSync(senha, 10),
-            cargo: 0, //usuario comum
-            aprovado: 1
-        });
-
-        const user = await Usuario.findOne({
-            where: {
-                email
-            }
-        });
-
-        req.session.usuario = user;
-
-        // res.render('perfil', {
-        //     title: 'Perfil',
-        //     apelidoUsuario: apelido,
-        //     fotoUsuario: fotoAvatar,
-        //     nomeUsuario : nome,
-        //     descricaoUsuario : "",
-        //     cidadeUsuario : "",
-        //     estadoUsuario : ""
-            
-        // });
-
-        return res.redirect('/feeds');
     },
 
     excluirUsuario: async (req, res) => {
@@ -299,6 +294,14 @@ const forms = {
             
             if(foto.length < 1){
                 foto = imagemPerfil;
+            }
+
+            if(fotoTema === ""){
+                fotoTema = 'h1.jpg';
+            }
+
+            if(foto === ""){
+                foto = 'not-found-image.jpg';
             }
 
             const jogo = await Jogo.create({
