@@ -11,7 +11,9 @@
     <header class="container-fluid o-header">
         <% if(typeof(dominantColor) != "undefined") { %>
         <div class="row" style="background-color: rgb(<%= dominantColor %>);">
-        <% } %>
+        <% } else {%>
+        <div class="row">
+        <% } %>    
             <div class="container">
                 <div class="row o-header__container">
                     <div class="o-header__container--logo">
