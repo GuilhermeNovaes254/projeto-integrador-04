@@ -177,10 +177,10 @@ const jogoController = {
                 }]
             }).then(result => {
                 comentarios = result.rows;
-                countComentarios = result.count;
+                countRestantes = result.count;
             });
 
-            res.render('./partials/coments', { layout: false, comentarios: comentarios, flagPerfilUsuario: false, countComentario: countComentarios});
+            res.render('./partials/coments', { layout: false, comentarios: comentarios, flagPerfilUsuario: false, countRestantes });
 
         } catch (error) {
             res.status(401)
@@ -193,22 +193,33 @@ const jogoController = {
         try {
 
             let {
-                comentario,
+                texto,
                 jogo
             } = req.body
 
-            let usuarioId = req.session.usuario.id
 
+            let usuarioId = req.session.usuario.id;
             const ts = new Date();
             let dataHora = ts.toLocaleString();
 
+            let comentarioCriado;
             await Comentario.create({
-                texto: comentario,
+                texto,
                 data: dataHora,
                 usuario_id: usuarioId,
                 jogo_id: jogo,
+            }).then(function (result) {
+                comentarioCriado = result;
             });
 
+
+            comentarioCriado.usuario = await Usuario.findOne({
+                where: {
+                    id: comentarioCriado.usuario_id
+                }
+            });
+
+            res.render('./partials/coments', { layout: false, comentarios: [comentarioCriado], flagPerfilUsuario: false });
 
         } catch (error) {
             res.status(401)
