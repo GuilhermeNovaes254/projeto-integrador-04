@@ -153,64 +153,6 @@ const jogoController = {
         }
     },
 
-    // Funcoes de carregar dados **************************
-    carregaJogoId: async (req, res) => {
-        try {
-
-            let {
-                jogo
-            } = req.query
-
-            let busca = {}
-            whereClause = {}
-            whereClause['id'] = jogo
-
-            busca = await Jogo.findOne({
-                where: whereClause
-            });
-
-            res.send(busca)
-
-        } catch (error) {
-            res.status(401)
-        }
-    },
-
-    carregaJogosRelac: async (req, res) => {
-        try {
-
-            let {
-                jogo
-            } = req.query
-
-            let jogoBase = {}
-            whereClause = {}
-            whereClause['id'] = jogo
-
-            jogoBase = await Jogo.findOne({
-                where: whereClause
-            });
-
-            let tema = jogoBase.tema_id
-
-            whereClause = {}
-            whereClause['tema_id'] = tema
-
-
-            let jogosIndicados = await Jogo.findAll({
-                where: whereClause,
-                limit: 5
-            });
-
-
-            res.send(jogosIndicados)
-
-
-        } catch (error) {
-            res.status(401)
-        }
-    },
-
     carregaComentario: async (req, res) => {
         try {
 
