@@ -1,15 +1,15 @@
-
-<div class="c-coments c-write" id="">
+<div class="c-coments c-write" id="coment-box">
   <a href="">
     <div class="c-coments__photo ">
-      <img src="buscaImagem/not-found-image.jpg" alt="">
+      <img src="buscaImagem/<%= USUARIO.foto  %>" alt="">
     </div>
   </a>
   <div class="c-coments__box">
-    <p><textarea name="" id="" cols="30" rows="10"></textarea></p>
+    <p><textarea name="" id="comentario-texto" cols="30" rows="10"></textarea></p>
+    <button type="button" id="posta-comentario">Posta Comentário</button>
   </div>
 </div>
-
+<div>
 <% if(typeof(countRestantes) != "undefined") { %>
   <input class="countRestantes" type="hidden" value="<%= countRestantes  %>">
 <% } %>
@@ -29,10 +29,10 @@
           <p>
             <h3>Comentou em <a href="/jogo?id=<%= comentario.jogo.id  %>">
               <%= comentario.jogo.nome  %></a></h3>
-            
           </p>
         <% } %>
       </div>
+      <% if(flagPerfilUsuario) { %>
       <div class="c-coments__features">
         <div class="c-coments__features--players">
           <strong><i class="icon ion-ios-game-controller-a-outline"></i>742</strong>
@@ -44,8 +44,10 @@
           <span>3.0</span>
         </div>
       </div>
+      <% } %>
     </div>
     <p><%= comentario.texto %></p>
   </div>
 </div>
 <% } %>
+</div>

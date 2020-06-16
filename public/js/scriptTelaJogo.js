@@ -11,15 +11,15 @@ async function carregaComentarios(jogoId) {
             let qtdRestantes = document.getElementsByClassName('countRestantes');
             let indiceRestantes = qtdRestantes[qtdRestantes.length - 1].value;
             if (indiceRestantes <= 5) {
-                 document.getElementById("verMais").style.display = "none";
+                document.getElementById("verMais").style.display = "none";
             }
         })
 }
 
-async function postaComentario(message) {
+async function postaComentario() {
 
     const comentario = {
-        texto: message,
+        texto: document.getElementById('comentario-texto').value,
         jogo: document.getElementById('jogoId').value
     };
 
@@ -35,7 +35,8 @@ async function postaComentario(message) {
         })
         .then((resposta) => resposta.text())
         .then((comentario) => {
-            document.getElementById('comentarios').insertAdjacentHTML('afterbegin', comentario);
+            document.getElementById('comentario-texto').value = ''
+            document.getElementById('coment-box').insertAdjacentHTML('afterend', comentario);
             let elemento = document.getElementById('no-data');
             if(elemento){
                 comentariosExiste.style.display = "none"
