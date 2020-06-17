@@ -1,4 +1,4 @@
-import { tns } from "../../node_modules/tiny-slider/src/tiny-slider";
+import { tns } from "tiny-slider/dist/min/tiny-slider";
 
 var slider = tns({
   container: '.my-slider',

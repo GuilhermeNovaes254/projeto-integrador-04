@@ -42,3 +42,12 @@
   padding-bottom: 65px;
   background-color: #ffffff !important;
 }
+
+.u-bg-white{
+  margin-top: 65px;
+  padding-bottom: 65px;
+  background: url('/images/bgdashboarding.jpg') center center no-repeat;
+  background-size: cover;
+  min-height: 900px;
+  color:#fff
+}
