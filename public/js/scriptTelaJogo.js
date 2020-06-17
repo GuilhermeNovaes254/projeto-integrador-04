@@ -61,6 +61,12 @@ async function postaComentario() {
 }
 
 
+function alteraCorElementos(){
+    document.querySelector('.c-jogo__left--news').style.background = `rgb(${dominantColor})`;
+    document.getElementById('posta-comentario').style.background = `rgb(${dominantColor})`;
+    document.querySelector('header').style.background = `rgb(${dominantColor})`;
+    document.querySelector('footer').style.background = `rgb(${dominantColor})`;
+}
 
 
 // async function carregaAvaliacao() {
@@ -98,3 +104,4 @@ async function postaComentario() {
 
 // carregaElementos();
 // leEstrelas();
+alteraCorElementos();
