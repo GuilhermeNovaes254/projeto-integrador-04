@@ -16,7 +16,7 @@ btnComentario.addEventListener('click', function () {
 
 const btnFavoritar = document.getElementById('favoritar');
 btnFavoritar.addEventListener('click', function () {
-    favoritaJogo();
+    adicionaFavorito();
 });
 //#endregion
 
@@ -68,10 +68,10 @@ async function postaComentario() {
         });
 }
 
-async function favoritaJogo() {
+async function adicionaFavorito() {
     const jogo = document.getElementById('jogoId').value;
 
-    let url = `/jogo/acao/favoritaJogo`;
+    let url = `/jogo/acao/adicionaFavorito`;
     fetch(url,
         {
             method: 'POST',

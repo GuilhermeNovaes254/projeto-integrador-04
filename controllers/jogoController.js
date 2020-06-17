@@ -279,7 +279,7 @@ const jogoController = {
     },
 
 
-    favoritaJogo: async (req, res) => {
+    adicionaFavorito: async (req, res) => {
         try {
 
             let {
