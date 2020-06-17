@@ -60,6 +60,25 @@ async function postaComentario() {
         });
 }
 
+async function favoritaJogo() {
+    const jogo = document.getElementById('jogoId').value
+
+    let url = `/jogo/elementos/amei`;
+    fetch(url,
+        {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({jogo})
+        })
+        .then((resposta) => resposta.text())
+        .then((comentario) => {
+            
+        });
+}
+
 
 function alteraCorElementos(){
     document.querySelector('.c-jogo__left--news').style.background = `rgb(${dominantColor})`;

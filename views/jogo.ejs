@@ -45,6 +45,13 @@
         <a href="javascript:void(0)" onclick="Avaliar(5)">
           <img src="../images/star0.png" id="s5"></a>
         <p id="rating">0</p>
+        
+        <% if(favorito) { %>
+          <p>Desfavoritar</p>
+        <% } else { %>  
+          <p>Favoritar</p>
+        <% } %>  
+        
       </h2>
       <div>
         <h1 class="game-name"><%= jogo.nome %> (<%= jogo.ano %>)</h1>
