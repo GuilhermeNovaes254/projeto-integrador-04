@@ -54,18 +54,25 @@ const jogoController = {
             countComentarios = result.count;
         });
 
+        let existe;
+        await Favorito.count({
+            where: {
+                jogo_id: 48,//id,
+                usuario_id: 1//req.session.usuario.id
+            }
+        }).then(result => {
+            existe = result;
+        });
 
         let dominantColor = await colorThief.getColor(`http://localhost:5000/buscaImagem/${jogo.fotoTema}`);
 
         dominantColor = dominantColor.map(value => {
             if (value > 200) {
                 return 190;
-            } else{
+            } else {
                 return value;
             }
         }).join(', ');
-
-        console.log(dominantColor);
 
         res.render('jogo', {
             title: 'jogo',
@@ -73,7 +80,8 @@ const jogoController = {
             comentarios,
             jogosRelacionados,
             countComentarios,
-            dominantColor
+            dominantColor,
+            favorito: existe > 0 ? true : false
         });
     },
 
@@ -299,10 +307,28 @@ const jogoController = {
 
             let usuarioId = req.session.usuario.id
 
-            await Favorito.create({
-                usuario_id: usuarioId,
-                jogo_id: jogo
+            let verifica = await Favorito.findOne({
+                where: {
+                    jogo_id: jogo,
+                    usuario_id: usuarioId
+                }
             });
+
+            if (verifica == null) {
+                await Favorito.create({
+                    usuario_id: usuarioId,
+                    jogo_id: jogo
+                });
+            } else {
+                await Favorito.destroy({
+                    where: {
+                        jogo_id: jogo,
+                        usuario_id: usuarioId
+                    }
+                });
+            }
+
+
 
         } catch (error) {
             res.status(401)
