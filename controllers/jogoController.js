@@ -57,8 +57,8 @@ const jogoController = {
         let existe;
         await Favorito.count({
             where: {
-                jogo_id: 48,//id,
-                usuario_id: 1//req.session.usuario.id
+                jogo_id: id,
+                usuario_id: req.session.usuario.id
             }
         }).then(result => {
             existe = result;
@@ -304,31 +304,35 @@ const jogoController = {
             let {
                 jogo
             } = req.body;
-
-            let usuarioId = req.session.usuario.id
-
-            let verifica = await Favorito.findOne({
+            
+            let existe;
+            await Favorito.count({
                 where: {
                     jogo_id: jogo,
-                    usuario_id: usuarioId
+                    usuario_id: req.session.usuario.id
                 }
+            }).then((resposta) => {
+                existe = resposta;
             });
 
-            if (verifica == null) {
+            if (existe == 0) {
                 await Favorito.create({
-                    usuario_id: usuarioId,
+                    usuario_id: req.session.usuario.id,
                     jogo_id: jogo
+                }).then(() => {
+                    res.status(200).send(true);
                 });
+
             } else {
                 await Favorito.destroy({
                     where: {
                         jogo_id: jogo,
-                        usuario_id: usuarioId
+                        usuario_id: req.session.usuario.id
                     }
+                }).then(() => {
+                    res.status(200).send(false);
                 });
             }
-
-
 
         } catch (error) {
             res.status(401)

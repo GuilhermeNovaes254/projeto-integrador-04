@@ -13,6 +13,11 @@ btnComentario.addEventListener('click', function () {
     postaComentario();
 });
 
+const btnFavoritar = document.getElementById('favoritar');
+btnFavoritar.addEventListener('click', function () {
+    favoritaJogo();
+});
+
 async function carregaComentarios(jogoId) {
     let qtdComentarios = document.getElementsByClassName('c-coments');
     let indice = qtdComentarios[qtdComentarios.length - 1].id;
@@ -71,20 +76,25 @@ async function favoritaJogo() {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({jogo})
+            body: JSON.stringify({ jogo })
         })
         .then((resposta) => resposta.text())
-        .then((comentario) => {
-            
+        .then((favorito) => {
+            console.log(favorito);
+            if (favorito == "true") {
+                btnFavoritar.innerText = 'Desfavoritar';
+            } else if (favorito == "false") {
+                btnFavoritar.innerText = 'Favoritar';
+            }
         });
 }
 
 
-function alteraCorElementos(){
+function alteraCorElementos() {
     document.querySelector('.c-jogo__left--news').style.background = `rgb(${dominantColor})`;
     document.getElementById('posta-comentario').style.background = `rgb(${dominantColor})`;
     document.querySelector('header').style.background = `rgb(${dominantColor})`;
-    document.querySelector('footer div').style.background =  `rgb(${dominantColor})`;
+    document.querySelector('footer div').style.background = `rgb(${dominantColor})`;
 }
 
 
