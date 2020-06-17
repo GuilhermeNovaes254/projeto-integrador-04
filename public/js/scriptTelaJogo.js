@@ -84,7 +84,7 @@ function alteraCorElementos(){
     document.querySelector('.c-jogo__left--news').style.background = `rgb(${dominantColor})`;
     document.getElementById('posta-comentario').style.background = `rgb(${dominantColor})`;
     document.querySelector('header').style.background = `rgb(${dominantColor})`;
-    document.querySelector('footer').style.background = `rgb(${dominantColor})`;
+    document.querySelector('footer div').style.background =  `rgb(${dominantColor})`;
 }
 
 
