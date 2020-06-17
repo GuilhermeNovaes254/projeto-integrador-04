@@ -81,11 +81,10 @@ router.get('/jogo/elementos/comentario', elementosJogos.carregaComentario)
 router.get('/jogo/elementos/avaliacao/carrega', elementosJogos.carregaAvaliacao)
 
 // Tela Jogo--Com verificacao
-router.post('/jogo/elementos/comentario', VerificaUsuarioLogado, elementosJogos.postaComentario)
 router.post('/jogo/elementos/avaliacao/:jogo/:nota', VerificaUsuarioLogado, elementosJogos.postaAvaliacao)
 router.post('/jogo/elementos/joguei', VerificaUsuarioLogado, elementosJogos.postaJaJoguei)
 router.post('/jogo/acao/favoritaJogo', VerificaUsuarioLogado, elementosJogos.favoritaJogo)
-
+router.post('/jogo/acao/postaComentario', VerificaUsuarioLogado, elementosJogos.postaComentario)
 
 // Com verificação
 router.get('/feeds', VerificaUsuarioLogado, homeController.feeds);
