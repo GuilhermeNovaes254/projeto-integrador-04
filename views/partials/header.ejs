@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,13 +8,10 @@
     <title>Looders - <%= title %></title>
     <%- include('./head') %>
 </head>
+
 <body>
     <header class="container-fluid o-header">
-        <% if(typeof(dominantColor) != "undefined") { %>
-        <div class="row" style="background-color: rgb(<%= dominantColor %>);">
-        <% } else {%>
         <div class="row">
-        <% } %>    
             <div class="container">
                 <div class="row o-header__container">
                     <div class="o-header__container--logo">
@@ -28,18 +26,18 @@
                         <input id="o-navbar" type='checkbox'>
                         <label for="o-navbar">
                             <div class="o-menu__link">
-                                <span><%=USUARIO.apelido%></span>  
+                                <span><%=USUARIO.apelido%></span>
                             </div>
                             <div class='o-menu'>
                                 <div class="o-menu__avatar">
-                                    <img src= '/buscaImagem/<%= USUARIO.foto %>' alt="">
+                                    <img src='/buscaImagem/<%= USUARIO.foto %>' alt="">
                                     <span class='o-hamburger'></span>
                                 </div>
                             </div>
                         </label>
                         <ul>
-                            <li><img class="o-hamburger--avatar" src= '/buscaImagem/<%= USUARIO.foto %>' alt=""></li>
-                            
+                            <li><img class="o-hamburger--avatar" src='/buscaImagem/<%= USUARIO.foto %>' alt=""></li>
+
                             <li><a href='/perfil/<%=USUARIO.id%>'>Perfil</a></li>
                             <li><a href='/editar'>Editar Perfil</a></li>
                             <!-- <li><a href='#'>Minha Pagina</a></li> -->
@@ -61,4 +59,3 @@
             </div>
         </div>
     </header>
-

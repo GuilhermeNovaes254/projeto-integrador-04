@@ -57,11 +57,15 @@ const jogoController = {
 
         let dominantColor = await colorThief.getColor(`http://localhost:5000/buscaImagem/${jogo.fotoTema}`);
 
-        dominantColor.map(value => {
-            if (value < 200) {
-                value = 200
+        dominantColor = dominantColor.map(value => {
+            if (value > 200) {
+                return 190;
+            } else{
+                return value;
             }
         }).join(', ');
+
+        console.log(dominantColor);
 
         res.render('jogo', {
             title: 'jogo',
