@@ -168,8 +168,11 @@ const homeController = {
     },
 
     cadastro: (req, res) => {
+        var errors;
         res.render('cadastro', {
-            title: 'cadastro'
+            title: 'Cadastro',
+            formData: req.body,
+            errors
         });
     },
 
