@@ -22,7 +22,7 @@ var upload = multer({
 })
 
 const {
-    Jogo
+    Jogo, Usuario
 } = require('../models');
 
 
@@ -127,7 +127,18 @@ router.post('/cadastro',[
     })
     .withMessage("Senha deve conter no mínimo 6 caracteres!"),
     check("email").isEmail()
-    .withMessage("E-mail inválido!")
+    .withMessage("E-mail inválido!"),
+    body("email").custom(value => {
+        return Usuario.findOne({
+            where: {
+                email: value
+            }
+        }).then(usuario => {
+            if (usuario){
+                return Promise.reject("E-mail informado já está cadastrado!")
+            }
+        });
+    })
 ], formController.cadastroUsuario);
 router.post('/excluir', VerificaUsuarioLogado, formController.excluirUsuario);
 router.post('/editar', VerificaUsuarioLogado, upload.any(), [
