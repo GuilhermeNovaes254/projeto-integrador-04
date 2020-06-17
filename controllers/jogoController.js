@@ -54,14 +54,24 @@ const jogoController = {
             countComentarios = result.count;
         });
 
-        let existe;
+        let contaFavorito;
         await Favorito.count({
             where: {
                 jogo_id: id,
                 usuario_id: req.session.usuario.id
             }
         }).then(result => {
-            existe = result;
+            contaFavorito = result;
+        });
+
+        let contaColecao;
+        await Colecao.count({
+            where: {
+                jogo_id: id,
+                usuario_id: req.session.usuario.id
+            }
+        }).then(result => {
+            contaColecao = result;
         });
 
         let dominantColor = await colorThief.getColor(`http://localhost:5000/buscaImagem/${jogo.fotoTema}`);
@@ -81,7 +91,8 @@ const jogoController = {
             jogosRelacionados,
             countComentarios,
             dominantColor,
-            favorito: existe > 0 ? true : false
+            favorito: contaFavorito > 0 ? true : false,
+            colecao: contaColecao > 0 ? true : false
         });
     },
 
