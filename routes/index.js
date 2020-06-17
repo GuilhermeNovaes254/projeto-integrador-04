@@ -83,6 +83,7 @@ router.get('/jogo/elementos/avaliacao/carrega', elementosJogos.carregaAvaliacao)
 router.post('/jogo/elementos/avaliacao/:jogo/:nota', VerificaUsuarioLogado, elementosJogos.postaAvaliacao)
 router.post('/jogo/elementos/joguei', VerificaUsuarioLogado, elementosJogos.postaJaJoguei)
 router.post('/jogo/acao/favoritaJogo', VerificaUsuarioLogado, elementosJogos.favoritaJogo)
+router.post('/jogo/acao/adicionaColecao', VerificaUsuarioLogado, elementosJogos.adicionaColecao) 
 router.post('/jogo/acao/postaComentario', VerificaUsuarioLogado, elementosJogos.postaComentario)
 router.get('/jogo/acao/carregaComentario', elementosJogos.carregaComentario)
 
