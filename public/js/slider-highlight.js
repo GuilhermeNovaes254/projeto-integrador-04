@@ -1,19 +1,21 @@
-import { tns } from "tiny-slider/dist/min/tiny-slider";
+window.addEventListener('load', () => {
+    
+  const glide = new Glide('.glide', {
+     type: "carousel",
+      touchAngle: 45,
+      focusAt: 2,
+       startAt: 2,
+       perView: 5,
+       keyboard: true,
+       gap: 50,
+       autoplay: false,
+       peek: {
+       before: 100,
+       after: 50
+    },
+    
+  })
+  
+  glide.mount()
 
-var slider = tns({
-  container: '.my-slider',
-  items: 1,
-  responsive: {
-    640: {
-      edgePadding: 20,
-      gutter: 20,
-      items: 2
-    },
-    700: {
-      gutter: 30
-    },
-    900: {
-      items: 3
-    }
-  }
-});
+})
