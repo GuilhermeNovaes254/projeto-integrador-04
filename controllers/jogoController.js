@@ -278,27 +278,8 @@ const jogoController = {
         }
     },
 
-    postaJaJoguei: async (req, res) => {
-        try {
 
-            let {
-                jogo
-            } = req.body;
-
-            let usuarioId = req.session.usuario.id
-
-            await Joguei.create({
-                usuario_id: usuarioId,
-                jogo_id: jogo
-            });
-
-
-        } catch (error) {
-            res.status(401)
-        }
-    },
-
-    postaAmei: async (req, res) => { //Favorito
+    favoritaJogo: async (req, res) => {
         try {
 
             let {
@@ -333,6 +314,26 @@ const jogoController = {
                     res.status(200).send(false);
                 });
             }
+
+        } catch (error) {
+            res.status(401)
+        }
+    },
+
+    postaJaJoguei: async (req, res) => {
+        try {
+
+            let {
+                jogo
+            } = req.body;
+
+            let usuarioId = req.session.usuario.id
+
+            await Joguei.create({
+                usuario_id: usuarioId,
+                jogo_id: jogo
+            });
+
 
         } catch (error) {
             res.status(401)

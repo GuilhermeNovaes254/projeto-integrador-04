@@ -84,7 +84,7 @@ router.get('/jogo/elementos/avaliacao/carrega', elementosJogos.carregaAvaliacao)
 router.post('/jogo/elementos/comentario', VerificaUsuarioLogado, elementosJogos.postaComentario)
 router.post('/jogo/elementos/avaliacao/:jogo/:nota', VerificaUsuarioLogado, elementosJogos.postaAvaliacao)
 router.post('/jogo/elementos/joguei', VerificaUsuarioLogado, elementosJogos.postaJaJoguei)
-router.post('/jogo/elementos/amei', VerificaUsuarioLogado, elementosJogos.postaAmei)
+router.post('/jogo/acao/favoritaJogo', VerificaUsuarioLogado, elementosJogos.favoritaJogo)
 
 
 // Com verificação

@@ -68,7 +68,7 @@ async function postaComentario() {
 async function favoritaJogo() {
     const jogo = document.getElementById('jogoId').value
 
-    let url = `/jogo/elementos/amei`;
+    let url = `/jogo/acao/favoritaJogo`;
     fetch(url,
         {
             method: 'POST',
