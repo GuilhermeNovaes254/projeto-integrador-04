@@ -204,7 +204,7 @@ const jogoController = {
     },
 
 
-    // Funcoes de postar dados **************************
+    // Ações
     postaComentario: async (req, res) => {
         try {
 
@@ -306,6 +306,47 @@ const jogoController = {
 
             } else {
                 await Favorito.destroy({
+                    where: {
+                        jogo_id: jogo,
+                        usuario_id: req.session.usuario.id
+                    }
+                }).then(() => {
+                    res.status(200).send(false);
+                });
+            }
+
+        } catch (error) {
+            res.status(401)
+        }
+    },
+
+    adicionaColecao: async (req, res) => {
+        try {
+
+            let {
+                jogo
+            } = req.body;
+            
+            let existeColecao;
+            await Colecao.count({
+                where: {
+                    jogo_id: jogo,
+                    usuario_id: req.session.usuario.id
+                }
+            }).then((resposta) => {
+                existeColecao = resposta;
+            });
+
+            if (existeColecao == 0) {
+                await Colecao.create({
+                    usuario_id: req.session.usuario.id,
+                    jogo_id: jogo
+                }).then(() => {
+                    res.status(200).send(true);
+                });
+
+            } else {
+                await Colecao.destroy({
                     where: {
                         jogo_id: jogo,
                         usuario_id: req.session.usuario.id
