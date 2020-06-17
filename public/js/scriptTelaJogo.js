@@ -1,3 +1,4 @@
+//#region EventListeners
 const comentario = document.getElementById('comentario-texto');
 comentario.addEventListener('keyup', function () {
     if (this.value.length > 0) {
@@ -17,11 +18,13 @@ const btnFavoritar = document.getElementById('favoritar');
 btnFavoritar.addEventListener('click', function () {
     favoritaJogo();
 });
+//#endregion
 
+//#region ActionRequests
 async function carregaComentarios(jogoId) {
     let qtdComentarios = document.getElementsByClassName('c-coments');
     let indice = qtdComentarios[qtdComentarios.length - 1].id;
-    let url = `/jogo/elementos/comentario?jogo=${jogoId}&indice=${indice}`;
+    let url = `/jogo/acao/carregaComentario?jogo=${jogoId}&indice=${indice}`;
 
     fetch(url, { method: 'GET' })
         .then((resposta) => resposta.text())
@@ -88,16 +91,9 @@ async function favoritaJogo() {
             }
         });
 }
+//#endregion
 
-
-function alteraCorElementos() {
-    document.querySelector('.c-jogo__left--news').style.background = `rgb(${dominantColor})`;
-    document.getElementById('posta-comentario').style.background = `rgb(${dominantColor})`;
-    document.querySelector('header').style.background = `rgb(${dominantColor})`;
-    document.querySelector('footer div').style.background = `rgb(${dominantColor})`;
-}
-
-
+//#region TO_DO
 // async function carregaAvaliacao() {
 
 
@@ -133,4 +129,13 @@ function alteraCorElementos() {
 
 // carregaElementos();
 // leEstrelas();
+//#endregion TO_DO
+
+function alteraCorElementos() {
+    document.querySelector('.c-jogo__left--news').style.background = `rgb(${dominantColor})`;
+    document.getElementById('posta-comentario').style.background = `rgb(${dominantColor})`;
+    document.querySelector('header').style.background = `rgb(${dominantColor})`;
+    document.querySelector('footer div').style.background = `rgb(${dominantColor})`;
+}
+
 alteraCorElementos();
