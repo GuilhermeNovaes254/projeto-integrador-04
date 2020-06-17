@@ -18,13 +18,18 @@ const btnFavoritar = document.getElementById('favoritar');
 btnFavoritar.addEventListener('click', function () {
     adicionaFavorito();
 });
+
+const btnColecionar = document.getElementById('colecao');
+btnColecionar.addEventListener('click', function () {
+    adicionaColecao();
+});
 //#endregion
 
 //#region ActionRequests
-async function carregaComentarios(jogoId) {
+async function carregaComentarios() {
     let qtdComentarios = document.getElementsByClassName('c-coments');
     let indice = qtdComentarios[qtdComentarios.length - 1].id;
-    let url = `/jogo/acao/carregaComentario?jogo=${jogoId}&indice=${indice}`;
+    let url = `/jogo/acao/carregaComentario?jogo=${jogo}&indice=${indice}`;
 
     fetch(url, { method: 'GET' })
         .then((resposta) => resposta.text())
@@ -42,7 +47,7 @@ async function postaComentario() {
 
     const comentario = {
         texto: document.getElementById('comentario-texto').value,
-        jogo: document.getElementById('jogoId').value
+        jogo
     };
 
     let url = `/jogo/acao/postaComentario`;
@@ -69,8 +74,6 @@ async function postaComentario() {
 }
 
 async function adicionaFavorito() {
-    const jogo = document.getElementById('jogoId').value;
-
     let url = `/jogo/acao/adicionaFavorito`;
     fetch(url,
         {
@@ -88,6 +91,28 @@ async function adicionaFavorito() {
                 btnFavoritar.innerText = 'Desfavoritar';
             } else if (favorito == "false") {
                 btnFavoritar.innerText = 'Favoritar';
+            }
+        });
+}
+
+async function adicionaColecao() {
+    let url = `/jogo/acao/adicionaColecao`;
+    fetch(url,
+        {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ jogo })
+        })
+        .then((resposta) => resposta.text())
+        .then((colecao) => {
+            console.log(colecao);
+            if (colecao == "true") {
+                btnColecionar.innerText = 'Retira coleção';
+            } else if (colecao == "false") {
+                btnColecionar.innerText = 'Adiciona coleção';
             }
         });
 }
@@ -137,5 +162,7 @@ function alteraCorElementos() {
     document.querySelector('header').style.background = `rgb(${dominantColor})`;
     document.querySelector('footer div').style.background = `rgb(${dominantColor})`;
 }
+
+const jogo = document.getElementById('jogoId').value;
 
 alteraCorElementos();

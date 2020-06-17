@@ -179,7 +179,8 @@ const jogoController = {
             res.status(401)
         }
     },
-
+    
+    // Ações
     carregaComentario: async (req, res) => {
         try {
 
@@ -215,7 +216,7 @@ const jogoController = {
     },
 
 
-    // Ações
+
     postaComentario: async (req, res) => {
         try {
 
@@ -296,7 +297,7 @@ const jogoController = {
             let {
                 jogo
             } = req.body;
-            
+
             let existe;
             await Favorito.count({
                 where: {
@@ -337,7 +338,7 @@ const jogoController = {
             let {
                 jogo
             } = req.body;
-            
+
             let existeColecao;
             await Colecao.count({
                 where: {
