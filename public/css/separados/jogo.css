@@ -62,9 +62,9 @@
     flex-direction: column;
   }
 
-    .c-jogo__left--news{
+    /* .c-jogo__left--news{
       background: #0F7A2F;
-    }
+    } */
 
     .c-jogo__left--content{
       font-size: 14px;
@@ -111,7 +111,7 @@
       }
 
       .c-jogo__left--content h5{
-        background: #0F7A2F;
+        /* background: #0F7A2F; */
         color: #fff;
         border-radius: 50px;
         padding: 15px;
@@ -124,7 +124,7 @@
       }
 
       .c-jogo__left--content h6{
-        background: #0F7A2F;
+        /* background: #0F7A2F; */
         color: #fff;
         border-radius: 50px;
         padding: 5px;
