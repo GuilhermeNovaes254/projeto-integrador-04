@@ -66,6 +66,10 @@
       background: #0F7A2F;
     } */
 
+    .c-jogo__left--news a{
+      text-decoration: none;
+    }
+
     .c-jogo__left--content{
       font-size: 14px;
       font-style: normal;
@@ -114,13 +118,15 @@
         /* background: #0F7A2F; */
         color: #fff;
         border-radius: 50px;
-        padding: 15px;
+        padding: 15px 5px;
         display: flex;
         font-family: 'Montserrat', arial, sans-serif;
         align-items: center;
-        font-size: 23px;
+        font-size: 18px;
         font-weight: 600;
         letter-spacing: 0.5px;
+        text-transform: uppercase;
+        line-height: 26px;
       }
 
       .c-jogo__left--content h6{
@@ -128,7 +134,7 @@
         color: #fff;
         border-radius: 50px;
         padding: 5px;
-        padding-left: 20px;
+        /* padding-left: 20px; */
         display: flex;
         font-family: 'Montserrat', arial, sans-serif;
         align-items: center;
@@ -254,6 +260,8 @@
 
   .c-coments__photo{
     flex-basis: 15%;
+    display: flex;
+    align-items: center;
   }
 
 @media(max-width:600px){
@@ -269,7 +277,6 @@
     .c-coments__photo img{
       border-radius: 100px;
       max-width: 75px;
-      margin-top: 35px;
       margin-right: 35px;
       border: 2px solid #fff;
     }
@@ -409,9 +416,54 @@
     margin-top: 0;
   }
 
+  .c-write .c-coments__photo {
+    margin-bottom: 15px;
+  }
+
   .c-write .c-coments__box {
     padding:20px;
+    background: #f1f1f1;
+    margin-bottom: 35px;
+    text-align: right;
+    border-radius: 32px;
+    position: relative;
   }
+
+    .c-write .c-coments__box:before{
+      position: absolute;
+      z-index: -1;
+      content: '';
+      top: calc(50% - 15px);
+      left: -23px;
+      border-style: solid;
+      border-width: 25px 25px 25px 0;
+      border-color: transparent #f1f1f1 transparent transparent;
+      -webkit-transition-duration: 0.3s;
+      transition-duration: 0.3s;
+      -webkit-transition-property: transform;
+      transition-property: transform;
+    }
+
+    .c-write .c-coments__box button{
+      border-radius: 20px;
+      padding: 8px 25px;
+      transition: color .25s ease,background .25s ease;
+      margin-top: 2px;
+    }
+
+      .c-write .c-coments__box button:hover{
+        background: #181718 !important;
+      }
+
+    .c-write .c-coments__box textarea{
+      width: 100%;
+      min-height: 120px;
+      outline: none;
+      padding: 20px;
+      border: 0;
+      border-radius: 25px;
+      resize: none;
+    }
 
 .js-activeWrite{
   display: flex;
