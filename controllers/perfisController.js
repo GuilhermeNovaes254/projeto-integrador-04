@@ -33,7 +33,7 @@ const aprovaPerfis = {
             }
 
             res.render('perfilAdm', {
-                title: 'perfilAdm',
+                title: 'Perfil Adm',
                 apelidoUsuario: req.session.usuario.apelido,
                 countStatus,
                 pendentes,

@@ -85,7 +85,7 @@ const jogoController = {
         }).join(', ');
 
         res.render('jogo', {
-            title: 'jogo',
+            title: 'Jogo',
             jogo,
             comentarios,
             jogosRelacionados,

@@ -129,7 +129,7 @@ const homeController = {
 
 
         res.render('perfil', {
-            title: 'perfil',
+            title: 'Perfil',
             apelidoUsuario: usuario.apelido,
             fotoUsuario: usuario.foto,
             temaUsuario: usuario.fotoTema,
@@ -154,7 +154,7 @@ const homeController = {
         }
 
         res.render('busca', {
-            title: 'busca',
+            title: 'Busca',
             apelidoUsuario: req.session.usuario.apelido,
             fotoUsuario,
             idUsuario: req.session.usuario.id
@@ -179,7 +179,7 @@ const homeController = {
         }
 
         res.render('perfilModerador', {
-            title: 'perfilModerador',
+            title: 'Perfil Moderador',
             apelidoUsuario: req.session.usuario.apelido,
             fotoUsuario,
             idUsuario: req.session.usuario.id
@@ -223,7 +223,7 @@ const homeController = {
 
         res.render('moduloDestaques', {
 
-            title: 'moduloDestaques',
+            title: 'Módulo Destaques',
             cidadeUsuario: CIDADE,
             estadoUsuario: ESTADO,
             jogos,
@@ -245,7 +245,7 @@ const homeController = {
         }
 
         res.render('excluir', {
-            title: 'excluir',
+            title: 'Excluir',
             nomeUsuario: req.session.usuario.nome,
             apelidoUsuario: req.session.usuario.apelido,
             fotoUsuario,

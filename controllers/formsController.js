@@ -179,7 +179,7 @@ const forms = {
             });
 
             req.session.usuario = userAtualizado;
-            return res.redirect('/feeds');
+            return res.redirect('/perfil/'+id);
         } else {
 
 
