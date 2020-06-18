@@ -101,11 +101,11 @@ const buscaController = {
                 try {
                         let busca = []
 
-                        
-
-
                         busca = await Jogo.findAll({
                                 limit: limite,
+                                where: {
+                                        aprovado: 1
+                                },
                                 order: [
                                         ['id', 'DESC']
                                 ],
