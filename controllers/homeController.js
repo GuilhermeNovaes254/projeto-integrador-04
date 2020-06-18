@@ -37,8 +37,8 @@ const homeController = {
 
         fotoUsuario = 'images/icons/PerfilVermelho.png'
 
-        const jogos = await busca.listaJogos(10);
-        const jogosRecentes = await busca.listaJogos(2);
+        const jogos = await busca.listaJogos(10, ['notaJogo', 'DESC']);
+        const jogosRecentes = await busca.listaJogos(10, ['id', 'DESC']);
 
         if (req.session.usuario.foto != 'images/icons/PerfilVermelho.png') {
             fotoUsuario = req.session.usuario.foto
@@ -100,7 +100,7 @@ const homeController = {
             include: [{
                 model: Usuario,
                 as: 'usuario'
-            },{
+            }, {
                 model: Jogo,
                 as: 'jogo'
             }]
@@ -130,10 +130,10 @@ const homeController = {
             });
         }
 
-        const jogosFavoritos = await busca.listaJogosFavoritos(6,usuario.id);
-        const jogosColecao = await busca.listaJogosColecao(6,usuario.id);
+        const jogosFavoritos = await busca.listaJogosFavoritos(6, usuario.id);
+        const jogosColecao = await busca.listaJogosColecao(6, usuario.id);
 
-        
+
         res.render('perfil', {
             title: 'perfil',
             apelidoUsuario: usuario.apelido,
@@ -194,19 +194,19 @@ const homeController = {
 
     moduloDestaques: async (req, res) => {
 
-        let{id, tipo} = req.query
+        let { id, tipo } = req.query
 
         const usuario = await busca.dadosUsuarioController(id)
         const estado = await local.buscaEstadoController(usuario.cidade_estado_id)
         const cidade = await local.buscaCidadeController(usuario.cidade_id)
-       
+
         fotoUsuario = 'images/icons/PerfilVermelho.png'
 
         let jogos;
-        if(tipo == 1){
-            jogos = await busca.listaJogosColecao(9,id)
-        }else{
-            jogos = await busca.listaJogosFavoritos(9,id)
+        if (tipo == 1) {
+            jogos = await busca.listaJogosColecao(9, id)
+        } else {
+            jogos = await busca.listaJogosFavoritos(9, id)
         }
 
         if (usuario.foto != 'images/icons/PerfilVermelho.png') {
@@ -214,19 +214,19 @@ const homeController = {
         }
 
         let CIDADE
-        if (cidade == null){
+        if (cidade == null) {
             CIDADE = ''
-        }else{
+        } else {
             CIDADE = cidade.cidade
         }
 
         let ESTADO
-        if (estado == null){
+        if (estado == null) {
             ESTADO = ''
-        }else{
+        } else {
             ESTADO = estado.sigla
         }
-        
+
         res.render('moduloDestaques', {
 
             title: 'moduloDestaques',
@@ -293,10 +293,10 @@ const homeController = {
             estado = '-'
         }
         let diaNasc, mesNasc, anoNasc;
-        if (userInfo.dataDeNascimento != null){
-            diaNasc = userInfo.dataDeNascimento.slice(8,10);
-            mesNasc = userInfo.dataDeNascimento.slice(5,7);
-            anoNasc = userInfo.dataDeNascimento.slice(0,4);
+        if (userInfo.dataDeNascimento != null) {
+            diaNasc = userInfo.dataDeNascimento.slice(8, 10);
+            mesNasc = userInfo.dataDeNascimento.slice(5, 7);
+            anoNasc = userInfo.dataDeNascimento.slice(0, 4);
         }
         res.render('editar', {
             title: 'Atualizar Informações',
