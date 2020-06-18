@@ -26,8 +26,8 @@ module.exports = {
           cidade_id:2176,
           cidade_estado_id:11,
           apelido: 'User00',
-          foto: 'not-found-image.jpg',
-          fotoTema: 'h3.jpg'
+          foto: 'ProfileDefault.png',
+          fotoTema: 'ProfileDefaultTema.jpg'
         },{
           nome:'moderador',
           email:'moderador@email.com',
@@ -37,8 +37,8 @@ module.exports = {
           cidade_id:5409,
           cidade_estado_id:26,
           apelido: 'Mod00',
-          foto: 'not-found-image.jpg',
-          fotoTema: 'h3.jpg'
+          foto: 'ProfileDefault.png',
+          fotoTema: 'ProfileDefaultTema.jpg'
         }
 
       ], {});

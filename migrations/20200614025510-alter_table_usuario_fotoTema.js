@@ -6,7 +6,7 @@ module.exports = {
       'usuario', 'fotoTema', {
         type: Sequelize.STRING(500),
         allowNull: true,
-        default:'h3.jpg'
+        default:'ProfileDefaultTema.jpg'
       });
   },
 
