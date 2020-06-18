@@ -85,7 +85,7 @@ const jogoController = {
         }).join(', ');
 
         res.render('jogo', {
-            title: 'jogo',
+            title: 'Jogo',
             jogo,
             comentarios,
             jogosRelacionados,
@@ -128,56 +128,31 @@ const jogoController = {
         }
     },
 
-    contaJaJoguei: async (req, res) => {
-        try {
-
-            let {
-                jogo
-            } = req.query
-
+    contaJaJoguei: async (id) => {
+      
             let quantidade = 0
-            let usuarioId = req.session.usuario.id
-            console.log(jogo)
             whereClause = {}
-            whereClause['jogo_id'] = jogo
-            whereClause['usuario_id'] = usuariosId
+            whereClause['usuario_id'] = id
 
             quantidade = await Joguei.count({
                 where: whereClause
             });
 
-            console.log(quantidade)
-            //res.send(quantidade)
+            return quantidade;
 
-        } catch (error) {
-            res.status(401)
-        }
     },
 
-    contaFavorito: async (req, res) => {
-        try {
-
-            let {
-                jogo
-            } = req.query
+    contaFavorito: async (id) => {
 
             let quantidade = 0
-            let usuarioId = req.session.usuario.id
-
             whereClause = {}
-            whereClause['jogo_id'] = jogo
-            whereClause['usuario_id'] = usuarioId
+            whereClause['usuario_id'] = id
 
             quantidade = await Favorito.count({
                 where: whereClause
             });
 
-            console.log(quantidade)
-            //res.send(quantidade)
-
-        } catch (error) {
-            res.status(401)
-        }
+            return quantidade;
     },
     
     // Ações

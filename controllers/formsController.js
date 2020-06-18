@@ -26,8 +26,8 @@ const forms = {
                 senha
             } = req.body;
 
-            let foto = 'PerfilVermelho.png'
-            let fotoTema = 'h3.jpg'
+            let foto = 'ProfileDefault.png'
+            let fotoTema = 'ProfileDefaultTema.jpg'
 
             await Usuario.create({
                 nome: nome,
@@ -89,13 +89,6 @@ const forms = {
     editarUsuario: async (req, res) => {
         let foto = '';
         let fotoTema = '';
-
-        fotoUsuario = 'images/icons/PerfilVermelho.png'
-
-        if(req.session.usuario.foto != 'images/icons/PerfilVermelho.png'){
-            fotoUsuario = req.session.usuario.foto,
-            fotoUsuario
-        }
 
         let {
             files
@@ -179,7 +172,7 @@ const forms = {
             });
 
             req.session.usuario = userAtualizado;
-            return res.redirect('/feeds');
+            return res.redirect('/perfil/'+id);
         } else {
 
 
@@ -225,7 +218,6 @@ const forms = {
                 mesNasc,
                 anoNasc,
                 nivelAp: req.session.usuario.tipoAp,
-                fotoUsuario,
                 formData: req.body,
                 foto,
                 fotoTema,
@@ -244,13 +236,6 @@ const forms = {
         var mecanicas = await Mecanica.findAll();
         let foto = '';
         let fotoTema = '';
-
-        fotoUsuario = 'images/icons/PerfilVermelho.png'
-
-        if(req.session.usuario.foto != 'images/icons/PerfilVermelho.png'){
-            fotoUsuario = req.session.usuario.foto,
-            fotoUsuario
-        }
 
         let {
             files
@@ -297,11 +282,11 @@ const forms = {
             }
 
             if(fotoTema === ""){
-                fotoTema = 'h1.jpg';
+                fotoTema = 'GameDefaultTema.png';
             }
 
             if(foto === ""){
-                foto = 'not-found-image.jpg';
+                foto = 'GameDefault.png';
             }
 
             const jogo = await Jogo.create({
@@ -335,7 +320,6 @@ const forms = {
                 temas,
                 dominios,
                 mecanicas,
-                fotoUsuario,
                 formData: req.body,
                 foto,
                 fotoTema

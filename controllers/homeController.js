@@ -9,7 +9,8 @@ const {
     Jogo
 } = require('../models')
 const busca = require('./buscaController');
-const local = require('./localizacaoController')
+const local = require('./localizacaoController');
+const jogoCtrl = require('./jogoController');
 
 const homeController = {
 
@@ -25,24 +26,21 @@ const homeController = {
 
     },
 
-    loginError: (req, res) => {
-        res.render('loginError', {
-            title: 'Erro Login'
+    loginError: async (req, res) => {
+
+        const jogos = await busca.listaJogos(10);
+        
+        res.render('index', {
+            title: 'Home',
+            jogos
         });
 
     },
 
 
     feeds: async (req, res) => {
-
-        fotoUsuario = 'images/icons/PerfilVermelho.png'
-
         const jogos = await busca.listaJogos(10, ['notaJogo', 'DESC']);
         const jogosRecentes = await busca.listaJogos(10, ['id', 'DESC']);
-
-        if (req.session.usuario.foto != 'images/icons/PerfilVermelho.png') {
-            fotoUsuario = req.session.usuario.foto
-        }
 
         res.render('feeds', {
             title: 'Feeds',
@@ -58,20 +56,12 @@ const homeController = {
         let foto;
         let fotoTema;
 
-        fotoUsuario = 'images/icons/PerfilVermelho.png'
-
-        if (req.session.usuario.foto != 'images/icons/PerfilVermelho.png') {
-            fotoUsuario = req.session.usuario.foto,
-                fotoUsuario
-        }
-
         res.render('cadastroJogo', {
             title: 'Cadastro Jogo',
             apelidoUsuario: req.session.usuario.apelido,
             temas,
             dominios,
             mecanicas,
-            fotoUsuario,
             formData: req.body,
             foto,
             fotoTema,
@@ -129,7 +119,7 @@ const homeController = {
 
 
         res.render('perfil', {
-            title: 'perfil',
+            title: 'Perfil',
             apelidoUsuario: usuario.apelido,
             fotoUsuario: usuario.foto,
             temaUsuario: usuario.fotoTema,
@@ -147,16 +137,9 @@ const homeController = {
 
     busca: (req, res) => {
 
-        fotoUsuario = 'images/icons/PerfilVermelho.png'
-
-        if (req.session.usuario.foto != 'images/icons/PerfilVermelho.png') {
-            fotoUsuario = req.session.usuario.foto
-        }
-
         res.render('busca', {
-            title: 'busca',
+            title: 'Busca',
             apelidoUsuario: req.session.usuario.apelido,
-            fotoUsuario,
             idUsuario: req.session.usuario.id
         });
     },
@@ -172,16 +155,9 @@ const homeController = {
 
     perfilModerador: (req, res) => {
 
-        fotoUsuario = 'images/icons/PerfilVermelho.png'
-
-        if (req.session.usuario.foto != 'images/icons/PerfilVermelho.png') {
-            fotoUsuario = req.session.usuario.foto
-        }
-
         res.render('perfilModerador', {
-            title: 'perfilModerador',
+            title: 'Perfil Moderador',
             apelidoUsuario: req.session.usuario.apelido,
-            fotoUsuario,
             idUsuario: req.session.usuario.id
         });
     },
@@ -193,18 +169,15 @@ const homeController = {
         const usuario = await busca.dadosUsuarioController(id)
         const estado = await local.buscaEstadoController(usuario.cidade_estado_id)
         const cidade = await local.buscaCidadeController(usuario.cidade_id)
+        const favoritos = await jogoCtrl.contaJaJoguei(id)
+        const jogados = await jogoCtrl.contaFavorito(id)
 
-        fotoUsuario = 'images/icons/PerfilVermelho.png'
 
         let jogos;
         if (tipo == 1) {
-            jogos = await busca.listaJogosColecao(9, id)
+            jogos = await busca.listaJogosColecao(100, id)
         } else {
-            jogos = await busca.listaJogosFavoritos(9, id)
-        }
-
-        if (usuario.foto != 'images/icons/PerfilVermelho.png') {
-            fotoUsuario = usuario.foto
+            jogos = await busca.listaJogosFavoritos(100, id)
         }
 
         let CIDADE
@@ -223,7 +196,7 @@ const homeController = {
 
         res.render('moduloDestaques', {
 
-            title: 'moduloDestaques',
+            title: 'Módulo Destaques',
             cidadeUsuario: CIDADE,
             estadoUsuario: ESTADO,
             jogos,
@@ -231,24 +204,19 @@ const homeController = {
             fotoUsuario: usuario.foto,
             nomeUsuario: usuario.nome,
             apelidoUsuario: usuario.apelido,
-            descricaoUsuario: usuario.descricao
+            descricaoUsuario: usuario.descricao,
+            favoritos,
+            jogados
 
         });
     },
 
     excluir: (req, res) => {
 
-        fotoUsuario = 'images/icons/PerfilVermelho.png'
-
-        if (req.session.usuario.foto != 'images/icons/PerfilVermelho.png') {
-            fotoUsuario = req.session.usuario.foto
-        }
-
         res.render('excluir', {
-            title: 'excluir',
+            title: 'Excluir',
             nomeUsuario: req.session.usuario.nome,
             apelidoUsuario: req.session.usuario.apelido,
-            fotoUsuario,
             idUsuario: req.session.usuario.id
         });
     },
@@ -258,12 +226,6 @@ const homeController = {
         userInfo = req.session.usuario;
         let foto;
         let fotoTema;
-
-        fotoUsuario = 'images/icons/PerfilVermelho.png'
-
-        if (req.session.usuario.foto != 'images/icons/PerfilVermelho.png') {
-            fotoUsuario = req.session.usuario.foto
-        }
 
         let cidade
         if (userInfo.cidade_id != null) {
@@ -306,7 +268,6 @@ const homeController = {
             descricaoUsuario: userInfo.descricao,
             cidadeUsuario: cidade.cidade ? cidade.cidade : '',
             estadoUsuario: estado.sigla ? estado.sigla : '',
-            fotoUsuario,
             idUsuario: req.session.usuario.id,
             formData: req.body,
             foto,
@@ -317,16 +278,9 @@ const homeController = {
 
     semPrivilegio: (req, res) => {
 
-        fotoUsuario = 'images/icons/PerfilVermelho.png'
-
-        if (req.session.usuario.foto != 'images/icons/PerfilVermelho.png') {
-            fotoUsuario = req.session.usuario.foto
-        }
-
         res.render('semPrivilegio', {
             title: 'Sem Privilégio',
             apelidoUsuario: req.session.usuario.apelido,
-            fotoUsuario,
             idUsuario: req.session.usuario.id
         });
     },

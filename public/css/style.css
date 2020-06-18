@@ -56,7 +56,7 @@ h2 {
   }
 
 section#temaExcluir {
-	background-image: url('/images/heads/h1.jpg');
+	background-image: url('/images/heads/ProfileDefaultTema.jpg');
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
@@ -320,6 +320,7 @@ input[type=checkbox] {
     text-align: center;
     text-decoration: none;
     margin: 45px 0 0;
+    cursor: pointer;
   }
     .c-banner-landing a:hover{
       background: #000;
@@ -457,6 +458,7 @@ input[type=checkbox] {
 .o-highlights{
   display: flex;
   justify-content: center;
+  padding: 15px;
 }
 
   .o-highlights__content{
@@ -468,6 +470,7 @@ input[type=checkbox] {
 /*     box-shadow: 0 0 1px 0 hsla(0,0%,72%,0.7); */
     border: 1px solid #e5e5e5;
     outline: none;
+    margin-bottom: 40px;
   }
 
   .o-highlights__content img{

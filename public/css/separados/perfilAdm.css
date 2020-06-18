@@ -119,7 +119,7 @@ td img {
 
 #table {
 	text-align: center;
-	
+	width: auto;
 }
 
 td {
@@ -171,24 +171,38 @@ form{
 
 
 @media(max-width:400px) {
-	td img {
-		border-radius: 50%;
-		width: 50px;
-		height: 50px;
-	}
 
 	tr th{
 		font-size: 0px;
 	}
+
+	#table{
+		width: 100%;
+		font-size: 14px;
+		display: table-row-group;
+		vertical-align: middle;
+		border-color: inherit;
+	}
+
+	#lapisVerde{
+		width: 29px;
+		height: 29px;
+	}
 }
 
 @media(max-width:300px) {
-	td img {
-		border-radius: 50%;
+
+	#table{
+		width: 100%;
+		font-size: 10px;
+		display: table-row-group;
+		vertical-align: middle;
+		border-color: inherit;
+
+	}
+	#lapisVerde{
 		width: 25px;
 		height: 25px;
 	}
-	#descricao{
-		font-size: 5pt;
-	}
+	
 }
