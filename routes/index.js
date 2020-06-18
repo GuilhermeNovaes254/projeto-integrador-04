@@ -70,7 +70,6 @@ router.get('/aprovaMod',perfisController.perfilModerador)
 router.get('/aprovaMod/aprova',perfisController.aprovaJogo)
 router.get('/aprovaMod/nega',perfisController.negaJogo)
 
-router.get('/buscaJogo/lista', buscaController.listaJogos)
 
 // Tela Jogo
 // Tela Jogo--Sem verificaxao
