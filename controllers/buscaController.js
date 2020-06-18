@@ -100,16 +100,13 @@ const buscaController = {
         listaJogos: async (limite, orderBy) => {
                 try {
                         let busca = []
-
+                        
                         busca = await Jogo.findAll({
                                 limit: limite,
                                 where: {
                                         aprovado: 1
                                 },
-                                order: [
-                                        ['id', 'DESC']
-                                ],
-                                order: [orderBy]
+                                order : orderBy ? [orderBy] : null
                         })
 
                         return busca;
