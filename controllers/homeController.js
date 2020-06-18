@@ -9,7 +9,8 @@ const {
     Jogo
 } = require('../models')
 const busca = require('./buscaController');
-const local = require('./localizacaoController')
+const local = require('./localizacaoController');
+const jogoCtrl = require('./jogoController');
 
 const homeController = {
 
@@ -197,6 +198,9 @@ const homeController = {
         const usuario = await busca.dadosUsuarioController(id)
         const estado = await local.buscaEstadoController(usuario.cidade_estado_id)
         const cidade = await local.buscaCidadeController(usuario.cidade_id)
+        const favoritos = await jogoCtrl.contaJaJoguei(id)
+        const jogados = await jogoCtrl.contaFavorito(id)
+
 
         fotoUsuario = 'images/icons/PerfilVermelho.png'
 
@@ -235,7 +239,9 @@ const homeController = {
             fotoUsuario: usuario.foto,
             nomeUsuario: usuario.nome,
             apelidoUsuario: usuario.apelido,
-            descricaoUsuario: usuario.descricao
+            descricaoUsuario: usuario.descricao,
+            favoritos,
+            jogados
 
         });
     },
