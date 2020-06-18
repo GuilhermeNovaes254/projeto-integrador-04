@@ -2822,7 +2822,7 @@
   position: absolute;
   z-index: -1;
   content: '';
-  top: calc(31% - 10px);
+  top: calc(50% - 25px);
   left: -15px;
   border-style: solid;
   border-width: 25px 25px 25px 0;
@@ -2835,7 +2835,7 @@
 
 @media(max-width:480px){
   .animate-bubble-float-left:before {
-    top: calc(15% - 10px);
+    top: calc(50% - 25px);
   }
 }
 

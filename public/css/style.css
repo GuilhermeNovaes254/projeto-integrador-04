@@ -320,6 +320,7 @@ input[type=checkbox] {
     text-align: center;
     text-decoration: none;
     margin: 45px 0 0;
+    cursor: pointer;
   }
     .c-banner-landing a:hover{
       background: #000;
