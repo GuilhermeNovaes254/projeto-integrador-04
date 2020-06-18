@@ -169,8 +169,8 @@ const homeController = {
         const usuario = await busca.dadosUsuarioController(id)
         const estado = await local.buscaEstadoController(usuario.cidade_estado_id)
         const cidade = await local.buscaCidadeController(usuario.cidade_id)
-        const favoritos = await jogoCtrl.contaJaJoguei(id)
-        const jogados = await jogoCtrl.contaFavorito(id)
+        const favoritos = await jogoCtrl.contaFavorito(id)
+        const jogados = await jogoCtrl.contaJaJoguei(id)
 
 
         let jogos;
