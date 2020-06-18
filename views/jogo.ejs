@@ -59,6 +59,44 @@
         <% } %> 
         
       </h2>
+
+      <section class="wrapper">
+        <ul class="tabs">
+          <li class="active">Colors</li>
+          <li>Favorite movies</li>
+          <li>About</li>
+        </ul>
+      
+        <ul class="tab__content">
+          <li class="active">
+            <div class="content__wrapper">
+              <h2 class="text-color">Pick a color</h2>
+              
+              <ul class="colors">
+                <li data-color="#2ecc71"></li>
+                <li data-color="#D64A4B"></li>
+                <li data-color="#8e44ad"></li>
+                <li class="active-color" data-color="#46a1de"></li>
+                <li data-color="#bdc3c7"></li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <div class="content__wrapper">
+              <h2 class="text-color">Her</h2>
+              
+              <img src="http://lewihussey.com/codepen-img/her.jpg">
+            </div>
+          </li>
+          <li>
+            <div class="content__wrapper">
+              <h2 class="text-color">About</h2>
+              
+              <p>Created by <a class="text-color" href="http://lewihussey.com" target="_blank">Lewi Hussey</a></p>
+            </div>
+          </li>
+        </ul>
+      </section>
       <div>
         <h1 class="game-name"><%= jogo.nome %> (<%= jogo.ano %>)</h1>
         <h6 class="game-detail">Descrição:</h6>
