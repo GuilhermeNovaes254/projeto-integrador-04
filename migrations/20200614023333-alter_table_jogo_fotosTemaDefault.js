@@ -6,7 +6,7 @@ module.exports = {
       'jogo', 'fotoTema', {
         type: Sequelize.STRING(500),
         allowNull: true,
-        default:'h1.jpg'
+        default:'GameDefaultTema.png'
       });
   },
 

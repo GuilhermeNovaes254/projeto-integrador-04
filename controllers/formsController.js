@@ -27,7 +27,7 @@ const forms = {
             } = req.body;
 
             let foto = 'PerfilVermelho.png'
-            let fotoTema = 'h3.jpg'
+            let fotoTema = 'ProfileDefaultTema.jpg'
 
             await Usuario.create({
                 nome: nome,
@@ -297,11 +297,11 @@ const forms = {
             }
 
             if(fotoTema === ""){
-                fotoTema = 'h1.jpg';
+                fotoTema = 'GameDefaultTema.png';
             }
 
             if(foto === ""){
-                foto = 'not-found-image.jpg';
+                foto = 'GameDefault.png';
             }
 
             const jogo = await Jogo.create({

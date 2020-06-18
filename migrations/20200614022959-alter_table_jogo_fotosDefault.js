@@ -6,7 +6,7 @@ module.exports = {
       'jogo', 'foto', {
         type: Sequelize.STRING(500),
         allowNull: true,
-        default:'not-found-image.jpg'
+        default:'GameDefault.png'
       });
   },
 
