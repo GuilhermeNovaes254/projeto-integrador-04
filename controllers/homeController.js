@@ -16,7 +16,7 @@ const homeController = {
 
     index: async (req, res) => {
 
-        const jogos = await busca.listaJogos(10)
+        const jogos = await busca.listaJogos(10);
 
         res.render('index', {
             title: 'Home',
@@ -83,13 +83,6 @@ const homeController = {
 
         let { id } = req.params;
 
-        fotoUsuario = 'images/icons/PerfilVermelho.png'
-
-        if (req.session.usuario.foto != 'images/icons/PerfilVermelho.png') {
-            fotoUsuario = req.session.usuario.foto,
-                fotoUsuario
-        }
-
         const comentarios = await Comentario.findAll({
             order: [
                 ['data', 'ASC']
@@ -97,6 +90,7 @@ const homeController = {
             where: {
                 usuario_id: id
             },
+            order: [['id', 'DESC']],
             include: [{
                 model: Usuario,
                 as: 'usuario'
