@@ -26,7 +26,7 @@ const forms = {
                 senha
             } = req.body;
 
-            let foto = 'PerfilVermelho.png'
+            let foto = 'ProfileDefault.png'
             let fotoTema = 'ProfileDefaultTema.jpg'
 
             await Usuario.create({
