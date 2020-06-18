@@ -38,8 +38,8 @@ async function listaPessoas() {
                     let y2 = document.createElement("TD");
                     let y3 = document.createElement("TD");
 
-                    y1.innerHTML = '<p>' + resposta[i].foto + '</p>'
-                    y2.innerHTML = '<p>' + resposta[i].nome + '</p>'
+                    y1.innerHTML = `<a href='/jogo?id=${resposta[i].id}'>${resposta[i].nome}</a>`
+                    y2.innerHTML = '<p>' + resposta[i].descricao + '</p>'
                     y3.innerHTML = `<a href='/aprovaMod/aprova?id=${resposta[i].id}' id="botaoAprova">
                                         <img id="like" src='/images/icons/like.png' alt="OK">
                                     </a>

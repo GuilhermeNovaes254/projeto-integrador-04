@@ -198,9 +198,9 @@ const homeController = {
 
         let jogos;
         if (tipo == 1) {
-            jogos = await busca.listaJogosColecao(9, id)
+            jogos = await busca.listaJogosColecao(100, id)
         } else {
-            jogos = await busca.listaJogosFavoritos(9, id)
+            jogos = await busca.listaJogosFavoritos(100, id)
         }
 
         if (usuario.foto != 'images/icons/PerfilVermelho.png') {
