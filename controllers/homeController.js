@@ -34,15 +34,8 @@ const homeController = {
 
 
     feeds: async (req, res) => {
-
-        fotoUsuario = 'images/icons/PerfilVermelho.png'
-
         const jogos = await busca.listaJogos(10, ['notaJogo', 'DESC']);
         const jogosRecentes = await busca.listaJogos(10, ['id', 'DESC']);
-
-        if (req.session.usuario.foto != 'images/icons/PerfilVermelho.png') {
-            fotoUsuario = req.session.usuario.foto
-        }
 
         res.render('feeds', {
             title: 'Feeds',
@@ -58,20 +51,12 @@ const homeController = {
         let foto;
         let fotoTema;
 
-        fotoUsuario = 'images/icons/PerfilVermelho.png'
-
-        if (req.session.usuario.foto != 'images/icons/PerfilVermelho.png') {
-            fotoUsuario = req.session.usuario.foto,
-                fotoUsuario
-        }
-
         res.render('cadastroJogo', {
             title: 'Cadastro Jogo',
             apelidoUsuario: req.session.usuario.apelido,
             temas,
             dominios,
             mecanicas,
-            fotoUsuario,
             formData: req.body,
             foto,
             fotoTema,
@@ -147,16 +132,9 @@ const homeController = {
 
     busca: (req, res) => {
 
-        fotoUsuario = 'images/icons/PerfilVermelho.png'
-
-        if (req.session.usuario.foto != 'images/icons/PerfilVermelho.png') {
-            fotoUsuario = req.session.usuario.foto
-        }
-
         res.render('busca', {
             title: 'Busca',
             apelidoUsuario: req.session.usuario.apelido,
-            fotoUsuario,
             idUsuario: req.session.usuario.id
         });
     },
@@ -172,16 +150,9 @@ const homeController = {
 
     perfilModerador: (req, res) => {
 
-        fotoUsuario = 'images/icons/PerfilVermelho.png'
-
-        if (req.session.usuario.foto != 'images/icons/PerfilVermelho.png') {
-            fotoUsuario = req.session.usuario.foto
-        }
-
         res.render('perfilModerador', {
             title: 'Perfil Moderador',
             apelidoUsuario: req.session.usuario.apelido,
-            fotoUsuario,
             idUsuario: req.session.usuario.id
         });
     },
@@ -194,17 +165,11 @@ const homeController = {
         const estado = await local.buscaEstadoController(usuario.cidade_estado_id)
         const cidade = await local.buscaCidadeController(usuario.cidade_id)
 
-        fotoUsuario = 'images/icons/PerfilVermelho.png'
-
         let jogos;
         if (tipo == 1) {
             jogos = await busca.listaJogosColecao(9, id)
         } else {
             jogos = await busca.listaJogosFavoritos(9, id)
-        }
-
-        if (usuario.foto != 'images/icons/PerfilVermelho.png') {
-            fotoUsuario = usuario.foto
         }
 
         let CIDADE
@@ -238,17 +203,10 @@ const homeController = {
 
     excluir: (req, res) => {
 
-        fotoUsuario = 'images/icons/PerfilVermelho.png'
-
-        if (req.session.usuario.foto != 'images/icons/PerfilVermelho.png') {
-            fotoUsuario = req.session.usuario.foto
-        }
-
         res.render('excluir', {
             title: 'Excluir',
             nomeUsuario: req.session.usuario.nome,
             apelidoUsuario: req.session.usuario.apelido,
-            fotoUsuario,
             idUsuario: req.session.usuario.id
         });
     },
@@ -258,12 +216,6 @@ const homeController = {
         userInfo = req.session.usuario;
         let foto;
         let fotoTema;
-
-        fotoUsuario = 'images/icons/PerfilVermelho.png'
-
-        if (req.session.usuario.foto != 'images/icons/PerfilVermelho.png') {
-            fotoUsuario = req.session.usuario.foto
-        }
 
         let cidade
         if (userInfo.cidade_id != null) {
@@ -306,7 +258,6 @@ const homeController = {
             descricaoUsuario: userInfo.descricao,
             cidadeUsuario: cidade.cidade ? cidade.cidade : '',
             estadoUsuario: estado.sigla ? estado.sigla : '',
-            fotoUsuario,
             idUsuario: req.session.usuario.id,
             formData: req.body,
             foto,
@@ -317,16 +268,9 @@ const homeController = {
 
     semPrivilegio: (req, res) => {
 
-        fotoUsuario = 'images/icons/PerfilVermelho.png'
-
-        if (req.session.usuario.foto != 'images/icons/PerfilVermelho.png') {
-            fotoUsuario = req.session.usuario.foto
-        }
-
         res.render('semPrivilegio', {
             title: 'Sem Privilégio',
             apelidoUsuario: req.session.usuario.apelido,
-            fotoUsuario,
             idUsuario: req.session.usuario.id
         });
     },

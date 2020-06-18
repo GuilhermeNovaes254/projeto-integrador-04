@@ -90,13 +90,6 @@ const forms = {
         let foto = '';
         let fotoTema = '';
 
-        fotoUsuario = 'images/icons/PerfilVermelho.png'
-
-        if(req.session.usuario.foto != 'images/icons/PerfilVermelho.png'){
-            fotoUsuario = req.session.usuario.foto,
-            fotoUsuario
-        }
-
         let {
             files
         } = req;
@@ -225,7 +218,6 @@ const forms = {
                 mesNasc,
                 anoNasc,
                 nivelAp: req.session.usuario.tipoAp,
-                fotoUsuario,
                 formData: req.body,
                 foto,
                 fotoTema,
@@ -244,13 +236,6 @@ const forms = {
         var mecanicas = await Mecanica.findAll();
         let foto = '';
         let fotoTema = '';
-
-        fotoUsuario = 'images/icons/PerfilVermelho.png'
-
-        if(req.session.usuario.foto != 'images/icons/PerfilVermelho.png'){
-            fotoUsuario = req.session.usuario.foto,
-            fotoUsuario
-        }
 
         let {
             files
@@ -335,7 +320,6 @@ const forms = {
                 temas,
                 dominios,
                 mecanicas,
-                fotoUsuario,
                 formData: req.body,
                 foto,
                 fotoTema
