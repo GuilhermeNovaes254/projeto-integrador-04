@@ -25,9 +25,13 @@ const homeController = {
 
     },
 
-    loginError: (req, res) => {
-        res.render('loginError', {
-            title: 'Erro Login'
+    loginError: async (req, res) => {
+
+        const jogos = await busca.listaJogos(10);
+        
+        res.render('index', {
+            title: 'Home',
+            jogos
         });
 
     },
