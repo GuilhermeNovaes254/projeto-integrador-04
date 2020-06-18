@@ -97,15 +97,19 @@ const buscaController = {
                 }
         },
 
-        listaJogos: async (limite) => {
+        listaJogos: async (limite, orderBy) => {
                 try {
                         let busca = []
+
+                        
+
 
                         busca = await Jogo.findAll({
                                 limit: limite,
                                 order: [
                                         ['id', 'DESC']
-                                ]
+                                ],
+                                order: [orderBy]
                         })
 
                         return busca;
@@ -186,7 +190,7 @@ const buscaController = {
 
                 let usuario = await Usuario.findOne({
                         where: {
-                                id:idUsuario
+                                id: idUsuario
                         }
                 });
 
