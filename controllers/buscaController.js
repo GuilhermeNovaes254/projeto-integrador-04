@@ -118,7 +118,8 @@ const buscaController = {
 
         listaJogosFavoritos: async (limite, idUsuario) => {
                 try {
-                        const favoritos = await Favorito.findAll({
+                        let favoritos, countFavoritos; 
+                        await Favorito.findAndCountAll({
                                 limit: limite,
                                 where: {
                                         usuario_id: idUsuario
@@ -127,6 +128,9 @@ const buscaController = {
                                         model: Jogo,
                                         as: 'jogo'
                                 }]
+                        }).then(result => {
+                                favoritos = result.rows;
+                                countFavoritos = result.count;
                         });
 
                         let jogosFavoritos = [];
@@ -134,7 +138,7 @@ const buscaController = {
                                 jogosFavoritos.push(favorito.jogo);
                         }
 
-                        return jogosFavoritos;
+                        return {jogosFavoritos, countFavoritos};
                 } catch (error) {
                         return null;
                 }
