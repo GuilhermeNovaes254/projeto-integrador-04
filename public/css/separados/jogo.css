@@ -1,10 +1,17 @@
+@import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
+
 .c-banner-jogo{
   background: url(/images/leaguewallpaper.jpg) center center no-repeat;
   background-size: cover;
   width: 100%;
-  min-height: 550px;
+  min-height: 450px;
   box-sizing: content-box;
   position: relative;
+  -webkit-transform: skewY(-2.2deg);
+  transform: skewY(-2.2deg);
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+  z-index: -1;
 }
 
 /* .c-banner-jogo:before{
@@ -31,6 +38,8 @@
   width: 100%;
   border-radius: 25px 25px 0 0;
   box-sizing: content-box;
+  min-height: 280px;
+  background-size: cover !important;
 }
 
 .c-jogo{
@@ -55,6 +64,9 @@
   .c-jogo__description{
     padding: 35px 25px 55px;
     width: 100%;
+    border-radius: 0 0 25px 25px;
+    color: #fff;
+    border-bottom: 5px solid rgba(0, 0, 0, 0.1);
   }
 
   .c-jogo__left{
@@ -87,7 +99,7 @@
         font-family: 'Montserrat', arial, sans-serif;
         line-height: 32px;
         letter-spacing: -0.015em;
-        color: black;
+        color: #fff;
         text-transform: uppercase;
         padding-bottom: 20px;
       }
@@ -489,4 +501,84 @@
   background: #0F7A2F;
 }
     
+/* avaliacao */
+.c-rating { 
+  border: none;
+  float: left;
+}
 
+.c-rating > input { display: none; } 
+.c-rating > label:before { 
+  margin: 5px;
+  margin-top: 6px;
+  font-size: 1.2em;
+  font-family: FontAwesome;
+  display: inline-block;
+  content: "\f005";
+  cursor: pointer;
+}
+
+.c-rating > .half:before { 
+  content: "\f089";
+  position: absolute;
+}
+
+.c-rating > label { 
+  color: #ddd; 
+ float: right; 
+}
+
+.c-rating > input:checked ~ label,
+.c-rating:not(:checked) > label:hover, 
+.c-rating:not(:checked) > label:hover ~ label { color: #FFD700;  } 
+
+.c-rating > input:checked + label:hover, 
+.c-rating > input:checked ~ label:hover,
+.c-rating > label:hover ~ input:checked ~ label, 
+.c-rating > input:checked ~ label:hover ~ label { color: #FFED85;  } 
+
+a[data-tooltip] {
+  position: relative;
+}
+a[data-tooltip]::before,
+a[data-tooltip]::after {
+  position: absolute;
+  display: none;
+  opacity: 0.85;
+}
+a[data-tooltip]::before {
+
+  content: attr(data-tooltip);
+  background: #000;
+  color: #fff;
+  font-size: 13px;
+  padding: 5px;
+  border-radius: 5px;
+  white-space: nowrap;
+  text-decoration: none;
+}
+a[data-tooltip]::after {
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  content: '';
+}
+
+a[data-tooltip]:hover::before,
+a[data-tooltip]:hover::after {
+  display: block;
+}
+
+a[data-tooltip][data-placement="top"]::before {
+  bottom: 100%;
+  left: 0;
+  margin-bottom: 40px;
+  min-width: 100%;
+}
+a[data-tooltip][data-placement="top"]::after {
+  border-top-color: #222;
+  border-bottom: none;
+  bottom: 65px;
+  left: calc(50% - 5px);
+  margin-bottom: 4px;
+}

@@ -134,7 +134,7 @@ const jogoController = {
             whereClause = {}
             whereClause['usuario_id'] = id
 
-            quantidade = await Joguei.count({
+            quantidade = await Colecao.count({
                 where: whereClause
             });
 
