@@ -114,7 +114,7 @@ const homeController = {
             });
         }
 
-        const jogosFavoritos = await busca.listaJogosFavoritos(6, usuario.id);
+        const {jogosFavoritos, countFavoritos} = await busca.listaJogosFavoritos(6, usuario.id);
         const jogosColecao = await busca.listaJogosColecao(6, usuario.id);
 
 
@@ -130,6 +130,7 @@ const homeController = {
             idUsuario: usuario.id,
             comentarios,
             jogosFavoritos,
+            countFavoritos,
             jogosColecao
         });
     },
@@ -199,7 +200,7 @@ const homeController = {
             title: 'Módulo Destaques',
             cidadeUsuario: CIDADE,
             estadoUsuario: ESTADO,
-            jogos,
+            jogos: tipo == 1 ? jogos : jogos.jogosFavoritos,
             fotoTemaUsuario: usuario.fotoTema,
             fotoUsuario: usuario.foto,
             nomeUsuario: usuario.nome,
