@@ -115,7 +115,7 @@ const homeController = {
         }
 
         const {jogosFavoritos, countFavoritos} = await busca.listaJogosFavoritos(6, usuario.id);
-        const jogosColecao = await busca.listaJogosColecao(6, usuario.id);
+        const {jogosColecao, countColecao}  = await busca.listaJogosColecao(6, usuario.id);
 
 
         res.render('perfil', {
@@ -131,7 +131,8 @@ const homeController = {
             comentarios,
             jogosFavoritos,
             countFavoritos,
-            jogosColecao
+            jogosColecao,
+            countColecao
         });
     },
 
@@ -200,7 +201,7 @@ const homeController = {
             title: 'Módulo Destaques',
             cidadeUsuario: CIDADE,
             estadoUsuario: ESTADO,
-            jogos: tipo == 1 ? jogos : jogos.jogosFavoritos,
+            jogos: tipo == 1 ? jogos.jogosColecao : jogos.jogosFavoritos,
             fotoTemaUsuario: usuario.fotoTema,
             fotoUsuario: usuario.foto,
             nomeUsuario: usuario.nome,
