@@ -146,7 +146,8 @@ const buscaController = {
 
         listaJogosColecao: async (limite, idUsuario) => {
                 try {
-                        const colecao = await Colecao.findAll({
+                        let colecao, countColecao;
+                        await Colecao.findAndCountAll({
                                 limit: limite,
                                 where: {
                                         usuario_id: idUsuario
@@ -155,6 +156,9 @@ const buscaController = {
                                         model: Jogo,
                                         as: 'jogo'
                                 }]
+                        }).then(result => {
+                                colecao = result.rows;
+                                countColecao = result.count;
                         });
 
                         let jogosColecao = [];
@@ -162,7 +166,7 @@ const buscaController = {
                                 jogosColecao.push(jogoColecao.jogo);
                         }
 
-                        return jogosColecao;
+                        return {jogosColecao, countColecao};
                 } catch (error) {
                         return null;
                 }
