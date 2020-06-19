@@ -26,8 +26,8 @@
       <h2 class="c-perfil__right--title"><i class="icon ion-ios-albums"></i> Coleção</h2>
       <%- include('./partials/highlights-three', {jogos : jogosColecao}) %>
       <div style="padding: 15px; align-content: right;">
-        <% if(jogosColecao.length > 6) { %>
-        <a href="#" class="c-bt-default">Ver mais</a>
+        <% if(countColecao > 6) { %>
+          <a href="/moduloDestaques?id=<%=idUsuario%>&tipo=1" class="c-bt-default">Ver mais</a>
         <% }%>
       </div>
     </div>
