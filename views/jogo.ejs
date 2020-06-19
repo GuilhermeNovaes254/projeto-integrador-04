@@ -6,8 +6,8 @@
   <div class="c-jogo__left">
     <div class="c-jogo__left--description c-jogo__left--content" data-aos="fade-up" data-aos-duration="1000"
       data-aos-delay="200">
-      <div id='headPage'><img class="c-photo-game" src="buscaImagem/<%= jogo.foto %>" alt=""></div>
-      <div class="c-jogo__description">
+      <div class='c-photo-game' id='headPage' style="background: url('buscaImagem/<%= jogo.foto %>') center center no-repeat; min-height: 280px;"></div>
+      <div class="c-jogo__description c-category-<%= jogo.tema_id %>">
         <h2 id='jogoNome'><%= jogo.nome %></h2>
         <p id='jogoDescricao'><%= jogo.descricao %></p>
       </div>

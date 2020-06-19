@@ -12,7 +12,7 @@ async function listaJogos() {
 
             if(highFive){
                 highFive.forEach(sliderCard => {
-                    for (let i = 0; i < resposta.length; i++) {
+                    for (let i = 0; i < qntSliders; i++) {
                         sliderCard.innerHTML += `<div class="o-highlights__content o-highlights-five__content o-col-and-5 animate-float-shadow" data-aos="fade-up" data-aos-duration="1000">
                         <div class="o-highlights__header o-highlights-five__header" >
                           <h2>${resposta[i].nome}</h2>
