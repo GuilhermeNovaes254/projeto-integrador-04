@@ -30,33 +30,20 @@
     <div class="c-jogo__right--fav c-jogo__right--content" data-aos="fade-up" data-aos-duration="1000"
       data-aos-delay="400">
       <h2 id='rated' class="c-jogo__right--title">
-        <a href="javascript:void(0)" onclick="Avaliar(1)">
-          <img src="../images/star0.png" id="s1">
-        </a>
-        <a href="javascript:void(0)" onclick="Avaliar(2)">
-          <img src="../images/star0.png" id="s2">
-        </a>
-        <a href="javascript:void(0)" onclick="Avaliar(3)">
-          <img src="../images/star0.png" id="s3">
-        </a>
-        <a href="javascript:void(0)" onclick="Avaliar(4)">
-          <img src="../images/star0.png" id="s4">
-        </a>
-        <a href="javascript:void(0)" onclick="Avaliar(5)">
-          <img src="../images/star0.png" id="s5"></a>
-        <p id="rating">0</p>
         
         <% if(favorito) { %>
-          <button type="button" id="favoritar" class="btn btn-secondary">Desfavoritar</button>
+          <a href="#" id="favoritar" class="btn btn-secondary" data-tooltip="Desfavoritar" data-placement="top">Desfavoritar</a>
         <% } else { %>  
-          <button type="button" id="favoritar" class="btn btn-secondary">Favoritar</button>
+          <a href="#" id="favoritar" class="btn btn-secondary" data-tooltip="Favoritar" data-placement="top">Favoritar</a>
         <% } %>  
 
         <% if(colecao) { %>
-          <button type="button" id="colecao" class="btn btn-primary">Retira coleção</button>
+          <a href="#" id="colecao" class="btn btn-primary" data-tooltip="Remover da sua coleção" data-placement="top">Retira coleção</a>
         <% } else { %>  
-          <button type="button" id="colecao" class="btn btn-primary">Adiciona coleção</button>
+          <a href="#" id="colecao" class="btn btn-primary" data-tooltip="Adicionar a sua coleção" data-placement="top">Adiciona coleção</a>
         <% } %> 
+
+        <%- include('./partials/rating') %>
         
       </h2>
       <div>
@@ -98,6 +85,6 @@
 <%- include('./partials/footer') %>
 
 <script> const dominantColor = "<%= dominantColor %>";</script>
-<script src="js/gameRating.js"></script>
+<script src="js/gamec-rating.js"></script>
 <script src='js/scriptTelaJogo.js'></script>
 

@@ -7,9 +7,7 @@
       <% if(flagClicavel) { %>
         <a href="/jogo?id=<%= jogo.id %>">
           <% } %>
-          <div class="o-highlights__header o-highlights-five__header">
-            <img src="/buscaImagem/<%= jogo.foto %>" alt="" style="height: auto;">
-          </div>
+          <div class="o-highlights__header o-highlights-five__header" style="background: url('/buscaImagem/<%= jogo.foto %>') center center no-repeat;"></div>
           <div class="o-highlights__description o-highlights-five__description">
             <h2><%= jogo.nome %></h2>
           </div>
