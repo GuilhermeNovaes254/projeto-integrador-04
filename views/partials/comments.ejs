@@ -1,8 +1,8 @@
-<div class="c-coments c-write" id="coment-box">
-  <div class="c-coments__photo ">
+<div class="c-comments c-write" id="coment-box">
+  <div class="c-comments__photo ">
     <img src="buscaImagem/<%= USUARIO.foto  %>" alt="">
   </div>
-  <div class="c-coments__box">
+  <div class="c-comments__box">
     <p><textarea name="" id="comentario-texto" placeholder="Digite um comentário"></textarea></p>
     <% if(typeof(dominantColor) != "undefined") { %>
     <button type="button" class="btn" style="color: white;" id="posta-comentario" disabled>
@@ -18,17 +18,17 @@
   <% } %>
 
   <% for(let comentario of comentarios) { %>
-  <div class="c-coments" id="<%= comentario.comentario_id  %>">
+  <div class="c-comments" id="<%= comentario.comentario_id  %>">
 
-    <div class="c-coments__photo">
+    <div class="c-comments__photo">
       <a href="/perfil/<%= comentario.usuario_id  %>">
         <img src="/buscaImagem/<%= comentario.usuario_foto  %>" alt="">
       </a>
     </div>
 
-    <div class="c-coments__box animate-bubble-float-left">
-      <div class="c-coments__box--header">
-        <div class="c-coments__info">
+    <div class="c-comments__box animate-bubble-float-left">
+      <div class="c-comments__box--header">
+        <div class="c-comments__info">
           <h4><%= comentario.usuario_apelido  %></h4>
           <% if(flagPerfilUsuario) { %>
           <p>
@@ -37,19 +37,19 @@
           </p>
           <% } %>
         </div>
-        <div class="c-coments__features">
+        <div class="c-comments__features">
           <!-- <% if(!flagPerfilUsuario) { %>
             <% } %>
-          <div class="c-coments__features--players">
+          <div class="c-comments__features--players">
             <strong><i class="icon ion-ios-game-controller-a-outline"></i></strong>
           </div> -->
           <% if(comentario.favorito != null) { %>
-          <div class="c-coments__features--likes">
+          <div class="c-comments__features--likes">
             <strong><i class="icon ion-ios-heart"></i></strong>
           </div>
           <% } %>
           <% if(comentario.avaliacao != null) { %>
-          <div class="c-coments__features--evaluation js-note-yellow">
+          <div class="c-comments__features--evaluation js-note-yellow">
             <span><%= comentario.avaliacao %></span>
           </div>
           <% } %>
