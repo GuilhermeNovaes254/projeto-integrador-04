@@ -217,7 +217,7 @@ const jogoController = {
 
             const comentarios = await db.query(query, { type: Sequelize.QueryTypes.SELECT });
 
-            res.render('./partials/coments', { layout: false, comentarios: comentarios, flagPerfilUsuario: false, countRestantes });
+            res.render('./partials/comments', { layout: false, comentarios: comentarios, flagPerfilUsuario: false, countRestantes });
 
         } catch (error) {
             res.status(401)
@@ -268,7 +268,7 @@ const jogoController = {
                 jogo_id: jogo
             }
 
-            res.render('./partials/coments', { layout: false, comentarios: [resposta], flagPerfilUsuario: false });
+            res.render('./partials/comments', { layout: false, comentarios: [resposta], flagPerfilUsuario: false });
 
         } catch (error) {
             res.status(401)

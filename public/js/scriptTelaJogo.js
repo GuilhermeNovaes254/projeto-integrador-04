@@ -27,7 +27,7 @@ btnColecionar.addEventListener('click', function () {
 
 //#region ActionRequests
 async function carregaComentarios() {
-    let qtdComentarios = document.getElementsByClassName('c-coments');
+    let qtdComentarios = document.getElementsByClassName('c-comments');
     let indice = qtdComentarios[qtdComentarios.length - 1].id;
     let url = `/jogo/acao/carregaComentario?jogo=${jogo}&indice=${indice}`;
 

@@ -35,7 +35,7 @@
         <a href="#" id="favoritar" class="btn btn-secondary" data-tooltip="Desfavoritar"
           data-placement="top"><%= favorito ? 'Desfavoritar' : 'Favoritar'  %></a>
         <a href="#" id="colecao" class="btn btn-primary" data-tooltip="Remover da sua coleção"
-          data-placement="top"><%= colecao ? 'Retira coleção' : 'Adiciona coleçã'  %></a>
+          data-placement="top"><%= colecao ? 'Retira coleção' : 'Adiciona coleção'  %></a>
 
         <%- include('./partials/rating') %>
 
@@ -60,10 +60,10 @@
       <h2 class="c-jogo__right--title" style="background-color: white;"><i class="icon ion-android-star-half"></i>
         Avaliações</h2>
     </div>
-    <div class="c-jogo__right--coments c-jogo__right--content" data-aos="fade-up" data-aos-duration="1000"
+    <div class="c-jogo__right--comments c-jogo__right--content" data-aos="fade-up" data-aos-duration="1000"
       data-aos-delay="200">
       <div id="comentarios">
-        <%- include('./partials/coments', {comentarios, flagPerfilUsuario : false}) %>
+        <%- include('./partials/comments', {comentarios, flagPerfilUsuario : false}) %>
       </div>
       <% if(comentarios.length == 0) { %>
       <p id="no-data" style="text-align: center;">Este jogo ainda não possui avaliações</p>
@@ -79,6 +79,6 @@
 
 <%- include('./partials/footer') %>
 
-      <script> const dominantColor = "<%= dominantColor %>";</script>
-      <script src="js/gamec-rating.js"></script>
-      <script src='js/scriptTelaJogo.js'></script>
+<script> const dominantColor = "<%= dominantColor %>";</script>
+<script src="js/gamec-rating.js"></script>
+<script src='js/scriptTelaJogo.js'></script>

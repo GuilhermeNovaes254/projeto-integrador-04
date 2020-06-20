@@ -6,7 +6,7 @@ if(page.split('?')[0] == 'jogo'){
   let writeComment = document.querySelector('.c-write');
   writeComment.classList.add('js-activeWrite');
 
-  let spaceComment = document.querySelectorAll('.c-coments__box--header');
+  let spaceComment = document.querySelectorAll('.c-comments__box--header');
 
   spaceComment.forEach(el => {
     el.classList.add('js-spaceComment');
