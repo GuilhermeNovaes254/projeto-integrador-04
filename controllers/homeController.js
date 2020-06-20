@@ -11,6 +11,9 @@ const {
 const busca = require('./buscaController');
 const local = require('./localizacaoController');
 const jogoCtrl = require('./jogoController');
+const Sequelize = require('sequelize')
+const config = require('../config/database');
+const db = new Sequelize(config)
 
 const homeController = {
 
@@ -29,7 +32,7 @@ const homeController = {
     loginError: async (req, res) => {
 
         const jogos = await busca.listaJogos(10);
-        
+
         res.render('index', {
             title: 'Home',
             jogos
@@ -73,22 +76,44 @@ const homeController = {
 
         let { id } = req.params;
 
-        const comentarios = await Comentario.findAll({
-            order: [
-                ['data', 'ASC']
-            ],
-            where: {
-                usuario_id: id
-            },
-            order: [['id', 'DESC']],
-            include: [{
-                model: Usuario,
-                as: 'usuario'
-            }, {
-                model: Jogo,
-                as: 'jogo'
-            }]
-        });
+        // const comentarios = await Comentario.findAll({
+        //     order: [
+        //         ['data', 'ASC']
+        //     ],
+        //     where: {
+        //         usuario_id: id
+        //     },
+        //     order: [['id', 'DESC']],
+        //     include: [{
+        //         model: Usuario,
+        //         as: 'usuario'
+        //     }, {
+        //         model: Jogo,
+        //         as: 'jogo'
+        //     }]
+        // });
+
+        const query = `
+            SELECT 
+                c.id AS comentario_id,
+                c.texto AS comentario_texto, 
+                DATE_FORMAT(c.data, "%d/%m/%Y %H:%i") AS comentario_data,
+                u.id AS usuario_id,
+                u.foto AS usuario_foto,
+                u.apelido AS usuario_apelido,
+                j.id AS jogo_id,
+                j.nome AS jogo_nome,
+                TRIM(a.avaliacao / 2)+0 AS avaliacao,
+                f.usuario_id AS favorito
+            FROM comentario c
+            INNER JOIN jogo j ON c.jogo_id = j.id
+            INNER JOIN usuario u ON c.usuario_id = u.id
+            LEFT JOIN avaliacao a ON a.usuario_id = c.usuario_id AND a.jogo_id = c.jogo_id
+            LEFT JOIN favorito f ON f.usuario_id = f.usuario_id AND f.jogo_id = c.jogo_id
+            WHERE c.usuario_id = ${id}`;
+
+        let comentarios = await db.query(query, { type: Sequelize.QueryTypes.SELECT });
+        console.log(comentarios);
 
         const usuario = await Usuario.findOne({
             where: {
@@ -114,8 +139,8 @@ const homeController = {
             });
         }
 
-        const {jogosFavoritos, countFavoritos} = await busca.listaJogosFavoritos(6, usuario.id);
-        const {jogosColecao, countColecao}  = await busca.listaJogosColecao(6, usuario.id);
+        const { jogosFavoritos, countFavoritos } = await busca.listaJogosFavoritos(6, usuario.id);
+        const { jogosColecao, countColecao } = await busca.listaJogosColecao(6, usuario.id);
 
 
         res.render('perfil', {
