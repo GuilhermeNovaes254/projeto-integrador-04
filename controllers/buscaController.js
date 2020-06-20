@@ -53,7 +53,7 @@ const buscaController = {
                                 dominio,
                                 mecanica
                         } = req.query;
-
+                        console.log('oioi')
                         let busca = []
 
 
@@ -90,7 +90,14 @@ const buscaController = {
                                 where: whereClause
                         })
 
-                        res.send(busca)
+                        console.log(busca)
+
+                        res.render('busca', {
+                                title: 'Busca',
+                                apelidoUsuario: req.session.usuario.apelido,
+                                idUsuario: req.session.usuario.id,
+                                jogos: busca
+                        });
 
                 } catch (error) {
                         res.status(401)

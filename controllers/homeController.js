@@ -140,7 +140,8 @@ const homeController = {
         res.render('busca', {
             title: 'Busca',
             apelidoUsuario: req.session.usuario.apelido,
-            idUsuario: req.session.usuario.id
+            idUsuario: req.session.usuario.id,
+            jogos: []
         });
     },
 

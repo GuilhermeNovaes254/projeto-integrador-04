@@ -11,7 +11,7 @@
 
 
 #areaCentral {
-  background-color: #fff;
+  background-color: #E9E9E9;
   height: 1000px;
   width: 100%;
   border-radius: 15px;
@@ -24,6 +24,25 @@
 
 #areaCentral .form-group {
   border-radius: 15px;
+  background-color: #E9E9E9;
+}
+
+#formulario{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:center;
+  align-items: center;
+  align-content: center;
+  width:auto;
+  border-radius: 15px;
+}
+
+
+#tipoDiv{
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-left: 15px;
+  margin-right: 15px;
 }
 
 
@@ -34,22 +53,40 @@
   padding-bottom: 10px;
   border-radius: 15px;
   height: auto;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Confortaa', arial, sans-serif;
+  font-size: 14pt; 
 }
 
 
 #buscaUsuario {
   visibility: hidden;
   height: 0;
-  
+  width: 30vw;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content:center;
+  align-items: center;
+  border-radius: 15px;
+  margin-top: 25px;
+  justify-content:center
 }
 
 #buscaJogo {
   visibility: hidden;
   height: 0;
+  width: 30vw;
+  display: flex;
+  flex-direction: column;
+  justify-content:center
+
 }
 
 button#busca {
-  width: 150px;
+  width: 70px;
+  height: auto;
   border-radius: 15px;
   background-color: #F22441;
   margin-top: 0px;
@@ -68,8 +105,8 @@ button#busca {
 #dominioSelector,
 #temaSelector,
 #mecanicaSelector{
-  max-width: 100%;
-  min-width: 100%;
+  max-width: 30vw;
+  min-width: 20vw;
 }
 
 label{

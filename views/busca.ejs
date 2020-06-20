@@ -1,77 +1,75 @@
 <%- include('./partials/header') %>
 <link rel='stylesheet' href='/css/separados/busca.css' />
 <section id="temaBusca"></section>
+
 <div class="container" id='containerTema'>
     <div class="row">
+        <div class="col-12 justify-content-center" id='areaCentralJogo'>
+            <form onsubmit="return false;">
+                <div id="caixaDeBusca" class="col-10">
 
-        <div class="col-12" id='areaCentralJogo'>
-            <div class="row justify-content-center">
-
-                <form onsubmit="return false;">
-                    <div id="caixaDeBusca" class="col-10 ">
-                        <div class="row justify-content-center ">
-
-                            <div>
-                                <label for="form-group">
-                                    Buscar Por:
-                                </label>
-                            </div>
-
-                            <div class="form-group col-6">
-                                <select class="form-group col-6" id="tipo" name="tipo">
-                                    <option selected>Selecione</option>
-                                    <option value="usuario">Usuário</option>
-                                    <option value="jogo">Jogo</option>
-                                </select>
-                            </div>
-
-                            <div class="row justify-content-end">
-                                <button type="button" button.disabled=true id="busca" class='busca'><img
-                                        src="/images/icons/Lupa.png" alt="" srcset=""></button>
-                            </div>
-
-                            <div class="form-group col-6 buscaJogo" id=buscaUsuario>
-                                <label id='rotulo'>Buscar Usuário</label>
-                                <input type="text" name="buscaUsuario" id=campoUsuario class=buscaUsuario>
-                            </div>
-
-
-                            <div class="form-group col-6" id=buscaJogo>
-                                <div>
-
-                                    <div class="form-group col-6 buscaJogo" id=buscaJogoNomeDiv>
-                                        <label id='rotulo'>Buscar por nome</label>
-                                        <input type="text" name="buscaJogoNome" id=campoJogo class=buscaJogo>
-                                    </div>
-
-                                    <div class="form-group col-6" id="tema" name="tema">
-                                        <label id='rotulo'>Tema</label>
-                                        <select class="form-group col-6" id="temaSelector" name='jogo'>
-                                            <option selected value='0'>Selecione</option>
-                                        </select>
-                                    </div>
-
-                                    <div class="form-group col-6" id="dominio" name="dominio">
-                                        <label id='rotulo'>Domínio</label>
-                                        <select class="form-group col-6" id="dominioSelector" name='jogo'>
-                                            <option selected value='0'>Selecione</option>
-                                        </select>
-                                    </div>
-
-                                    <div class="form-group col-6" id="mecanica" name="mecanica">
-                                        <label id='rotulo'>Mecânica</label>
-                                        <select class="form-group col-6" id="mecanicaSelector" name='jogo'>
-                                            <option selected value='0'>Selecione</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
+                    <div id='formulario'>
+                        <div>
+                            <label>
+                                Buscar Por:
+                            </label>
                         </div>
-                </form>
-            </div>
+
+                        <div id='tipoDiv'>
+                            <select id="tipo" name="tipo">
+                                <option selected>Selecione</option>
+                                <option value="usuario">Usuário</option>
+                                <option value="jogo">Jogo</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <button type="button" button.disabled=true id="busca" class='busca'><img
+                                    src="/images/icons/Lupa.png" alt="" srcset=""></button>
+                        </div>
+                    </div>
+
+                    <div id=buscaUsuario>
+                        <label id='rotulo'>Usuário</label>
+                        <input type="text" name="buscaUsuario" id=campoUsuario class=buscaUsuario>
+                    </div>
+
+
+                    <div id=buscaJogo>
+                        <div id=buscaJogoNomeDiv>
+                            <label id='rotulo'>Nome</label>
+                            <input type="text" name="buscaJogoNome" id=campoJogo class=buscaJogo>
+                        </div>
+
+                        <div id="tema" name="tema">
+                            <label id='rotulo'>Tema</label>
+                            <select id="temaSelector" name='jogo'>
+                                <option selected value='0'>Selecione</option>
+                            </select>
+                        </div>
+
+                        <div id="dominio" name="dominio">
+                            <label id='rotulo'>Domínio</label>
+                            <select id="dominioSelector" name='jogo'>
+                                <option selected value='0'>Selecione</option>
+                            </select>
+                        </div>
+
+                        <div id="mecanica" name="mecanica">
+                            <label id='rotulo'>Mecânica</label>
+                            <select id="mecanicaSelector" name='jogo'>
+                                <option selected value='0'>Selecione</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
 
             <!-- resultado de busca -->
-            <table id="table"></table>
+            <div id="table">
+                <%- include('./partials/highlights-five', {jogos, flagClicavel : true}) %>
+            </div>
         </div>
 
 
@@ -80,5 +78,8 @@
 </div>
 
 </div>
+<script>
+    var jogos = '<%- jogos %>';
+</script>
 <script src="js/scriptBusca.js"></script>
 <%- include('./partials/footer') %>
