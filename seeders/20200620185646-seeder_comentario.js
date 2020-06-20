@@ -81,57 +81,57 @@ module.exports = {
       }, {
         texto: 'uma otima evolução do terra mytica. melhorou o que ja era bom, a arvore de tecnologia é uma grande melhoria ',
         data: '2019-11-01 11:00:06',
-        usuario_id: 1,
+        usuario_id: 4,
         jogo_id: 1
       }, {
         texto: 'Melhor Euro que já joguei até hoje, mecânica complexa, jogo temático, competitivo e equilibrado. Recomendo muito!',
         data: '2019-11-01 12:00:06',
-        usuario_id: 2,
+        usuario_id: 5,
         jogo_id: 1
       }, {
         texto: 'Se Terra Mystica já era uma obra-prima, Projeto Gaia é um jogo que beira a perfeição!',
         data: '2019-12-01 08:00:07',
-        usuario_id: 3,
+        usuario_id: 6,
         jogo_id: 1
       }, {
         texto: 'Que jogo bom! Daqueles que quando termina a partida você já sai pensando na estratégia pra próxima. Tudo funciona muito bem amarrado com o tema. A iconografia é bem intuitiva. Que jogo!',
         data: '2019-12-01 09:00:07',
-        usuario_id: 4,
+        usuario_id: 9,
         jogo_id: 1
       }, {
-        texto: 'O brilho do jogo se dá pela diversidade de povos e suas estratégias, que proporcionam uma vasta combinação de modos diversos de pontuar e ganhar o jogo. Apesar das muitas regras, uma vez aprendida é dominada após 1 partida bem jogada.',
+        texto: 'Muito ruim',
         data: '2019-12-01 10:00:08',
-        usuario_id: 5,
+        usuario_id: 6,
         jogo_id: 2
       }, {
         texto: 'Não gostei!',
         data: '2019-12-01 11:00:08',
-        usuario_id: 6,
+        usuario_id: 7,
         jogo_id: 2
       }, {
         texto: 'O melhor boardgame que existe! PONTO....',
         data: '2019-12-01 12:00:09',
-        usuario_id: 4,
+        usuario_id: 8,
         jogo_id: 2
       }, {
         texto: 'Dez com louvor! Jogo altamente estratégico. Cada vez que jogo, gosto mais. Em cada partida é necessário ter novas estratégias.',
         data: '2019-12-05 01:00:09',
-        usuario_id: 7,
+        usuario_id: 4,
         jogo_id: 3
       }, {
         texto: 'Simplesmente um jogaço. Leve, dinâmico, divertido e bastante temático. Dá vontade de jogar novamente logo que a partida termina',
         data: '2019-12-05 02:00:10',
-        usuario_id: 8,
+        usuario_id: 2,
         jogo_id: 3
       }, {
         texto: 'Para mim, melhor jogo de 2016.',
         data: '2019-12-05 03:00:10',
-        usuario_id: 5,
+        usuario_id: 6,
         jogo_id: 3
       }, {
         texto: 'In sed imperdiet est. Aliquam erat volutpat. Suspendisse porta ante ligula, sed convallis leo congue nec. Nulla vel augue eros. Proin pretium, nunc vitae interdum elementum, ex nibh aliquet dui, et hendrerit libero magna nec diam. Cras gravida augue turpis, in interdum risus feugiat quis.',
         data: '2019-12-10 08:00:11',
-        usuario_id: 9,
+        usuario_id: 8,
         jogo_id: 5
       }, {
         texto: 'Que jogo bom, adoro jogos em que você vai construindo uma engine de pontos e montando combos. E quanto mais você jogar, melhor será sua experiência, por conta da curva de conhecimento.  ',
@@ -151,7 +151,7 @@ module.exports = {
       }, {
         texto: 'Sensacional - Até o momento o melhor da minha coleção',
         data: '2019-12-14 09:00:13',
-        usuario_id: 2,
+        usuario_id: 3,
         jogo_id: 3
       }, {
         texto: 'Jogo sensacional. Vem uma quantidade de conteúdo que teria que juntar mais de 4 jogos para  tentar chegar perto desse.',
@@ -161,7 +161,7 @@ module.exports = {
       }, {
         texto: 'Excelente, jogo com uma história bacana, uma mecânica sensacional e uma quantidade enorme de diversão dentro da caixa.',
         data: '2019-12-15 10:30:14',
-        usuario_id: 4,
+        usuario_id: 1,
         jogo_id: 4
       }, {
         texto: 'Para mim é o mais próximo do RPG que posso chegar, sem um mestre. TOP demais!',
@@ -176,7 +176,7 @@ module.exports = {
       }, {
         texto: 'In sed imperdiet est. Aliquam erat volutpat. Suspendisse porta ante ligula, sed convallis leo congue nec. Nulla vel augue eros. Proin pretium, nunc vitae interdum elementum, ex nibh aliquet dui, et hendrerit libero magna nec diam. Cras gravida augue turpis, in interdum risus feugiat quis.',
         data: '2019-12-16 08:00:15',
-        usuario_id: 7,
+        usuario_id: 3,
         jogo_id: 6
       }, {
         texto: 'Eu e meus 3 amigos achamos incrivelmente divertido, recomendo para qualquer um que tenha uma noite livre com os amigos.',
@@ -186,12 +186,12 @@ module.exports = {
       }, {
         texto: 'Incrível. Ele e o Kingdom death monsters são o que há de melhor em dungeon crawler. Jogo feito com  muito cuidado nas regras e nos componentes.  gigantesco e variado.',
         data: '2019-12-18 08:00:16',
-        usuario_id: 3,
+        usuario_id: 2,
         jogo_id: 4
       }, {
         texto: 'Encantado com a amarração temático-mecânica do jogo, é tudo muito redondo e bem encaixado. É estratégico na medida certa e ainda assim não gera um AP elevado. A arte é magnífica e a fator replay é imenso.',
         data: '2019-12-19 08:00:17',
-        usuario_id: 5,
+        usuario_id: 9,
         jogo_id: 3
       }, {
         texto: 'Jogo com estratégia viciante. Um dos melhores para 2 jogadores na minha opinião e igualmente divertido como seu irmão mais velho.',
@@ -206,12 +206,12 @@ module.exports = {
       }, {
         texto: 'Tudo neste jogo é superlativo. Super caixa, super imersão, super mecânicas e super trabalho pra fazer o set up!',
         data: '2019-12-22 08:00:18',
-        usuario_id: 1,
+        usuario_id: 7,
         jogo_id: 4
       }, {
         texto: 'Melhor board game que já joguei',
         data: '2019-12-23 08:00:19',
-        usuario_id: 2,
+        usuario_id: 4,
         jogo_id: 4
       }, {
         texto: 'Ótimo jogo. Na minha opinião, a obra prima do Pfister até o momento. Mecânica fechada, duração boa, preço decente, tema muito legal.',
