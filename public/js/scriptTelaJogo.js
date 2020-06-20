@@ -73,7 +73,7 @@ async function postaComentario() {
             document.getElementById('coment-box').insertAdjacentHTML('afterend', comentario);
             let elemento = document.getElementById('no-data');
             if (elemento) {
-                comentariosExiste.style.display = "none"
+                elemento.style.display = "none"
             }
             document.getElementById('spinner').className = '';
         });
