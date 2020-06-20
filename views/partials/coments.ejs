@@ -1,12 +1,12 @@
 <div class="c-coments c-write" id="coment-box">
-    <div class="c-coments__photo ">
-      <img src="buscaImagem/<%= USUARIO.foto  %>" alt="">
-    </div>
+  <div class="c-coments__photo ">
+    <img src="buscaImagem/<%= USUARIO.foto  %>" alt="">
+  </div>
   <div class="c-coments__box">
     <p><textarea name="" id="comentario-texto" placeholder="Digite um comentário"></textarea></p>
     <% if(typeof(dominantColor) != "undefined") { %>
     <button type="button" class="btn" style="color: white;" id="posta-comentario" disabled>
-    <% } %> 
+      <% } %>
       <span class="" id="spinner"></span>
       Posta Comentário
     </button>
@@ -37,19 +37,19 @@
           </p>
           <% } %>
         </div>
-        <% if(flagPerfilUsuario) { %>
         <div class="c-coments__features">
+          <% if(!flagPerfilUsuario) { %>
           <div class="c-coments__features--players">
             <strong><i class="icon ion-ios-game-controller-a-outline"></i>742</strong>
           </div>
           <div class="c-coments__features--likes">
             <strong><i class="icon ion-ios-heart-outline"></i>550</strong>
           </div>
+          <% } %>
           <div class="c-coments__features--evaluation js-note-yellow">
             <span>3.0</span>
           </div>
         </div>
-        <% } %>
       </div>
       <p><%= comentario.texto %></p>
     </div>

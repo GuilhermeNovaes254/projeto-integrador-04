@@ -129,32 +129,32 @@ const jogoController = {
     },
 
     contaJaJoguei: async (id) => {
-      
-            let quantidade = 0
-            whereClause = {}
-            whereClause['usuario_id'] = id
 
-            quantidade = await Colecao.count({
-                where: whereClause
-            });
+        let quantidade = 0
+        whereClause = {}
+        whereClause['usuario_id'] = id
 
-            return quantidade;
+        quantidade = await Colecao.count({
+            where: whereClause
+        });
+
+        return quantidade;
 
     },
 
     contaFavorito: async (id) => {
 
-            let quantidade = 0
-            whereClause = {}
-            whereClause['usuario_id'] = id
+        let quantidade = 0
+        whereClause = {}
+        whereClause['usuario_id'] = id
 
-            quantidade = await Favorito.count({
-                where: whereClause
-            });
+        quantidade = await Favorito.count({
+            where: whereClause
+        });
 
-            return quantidade;
+        return quantidade;
     },
-    
+
     // Ações
     carregaComentario: async (req, res) => {
         try {
@@ -273,26 +273,22 @@ const jogoController = {
                 jogo
             } = req.body;
 
-            let existe;
-            await Favorito.count({
+            let existeFavorito;
+            await Favorito.findOrCreate({
                 where: {
                     jogo_id: jogo,
                     usuario_id: req.session.usuario.id
                 }
-            }).then((resposta) => {
-                existe = resposta;
+            }).spread(function (favorito, created) {
+                if (created) {
+                    res.status(200).send(true);
+                } else {
+                    existeFavorito = true;
+                }
             });
 
-            if (existe == 0) {
-                await Favorito.create({
-                    usuario_id: req.session.usuario.id,
-                    jogo_id: jogo
-                }).then(() => {
-                    res.status(200).send(true);
-                });
-
-            } else {
-                await Favorito.destroy({
+            if (existeFavorito) {
+                Favorito.destroy({
                     where: {
                         jogo_id: jogo,
                         usuario_id: req.session.usuario.id
@@ -301,8 +297,8 @@ const jogoController = {
                     res.status(200).send(false);
                 });
             }
-
-        } catch (error) {
+        }
+        catch (error) {
             res.status(401)
         }
     },
@@ -315,25 +311,21 @@ const jogoController = {
             } = req.body;
 
             let existeColecao;
-            await Colecao.count({
+            await Colecao.findOrCreate({
                 where: {
                     jogo_id: jogo,
                     usuario_id: req.session.usuario.id
                 }
-            }).then((resposta) => {
-                existeColecao = resposta;
+            }).spread(function (colecao, created) {
+                if (created) {
+                    res.status(200).send(true);
+                } else {
+                    existeColecao = true;
+                }
             });
 
-            if (existeColecao == 0) {
-                await Colecao.create({
-                    usuario_id: req.session.usuario.id,
-                    jogo_id: jogo
-                }).then(() => {
-                    res.status(200).send(true);
-                });
-
-            } else {
-                await Colecao.destroy({
+            if (existeColecao) {
+                Colecao.destroy({
                     where: {
                         jogo_id: jogo,
                         usuario_id: req.session.usuario.id

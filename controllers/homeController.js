@@ -114,8 +114,8 @@ const homeController = {
             });
         }
 
-        const jogosFavoritos = await busca.listaJogosFavoritos(6, usuario.id);
-        const jogosColecao = await busca.listaJogosColecao(6, usuario.id);
+        const {jogosFavoritos, countFavoritos} = await busca.listaJogosFavoritos(6, usuario.id);
+        const {jogosColecao, countColecao}  = await busca.listaJogosColecao(6, usuario.id);
 
 
         res.render('perfil', {
@@ -130,7 +130,9 @@ const homeController = {
             idUsuario: usuario.id,
             comentarios,
             jogosFavoritos,
-            jogosColecao
+            countFavoritos,
+            jogosColecao,
+            countColecao
         });
     },
 
@@ -200,7 +202,7 @@ const homeController = {
             title: 'Módulo Destaques',
             cidadeUsuario: CIDADE,
             estadoUsuario: ESTADO,
-            jogos,
+            jogos: tipo == 1 ? jogos.jogosColecao : jogos.jogosFavoritos,
             fotoTemaUsuario: usuario.fotoTema,
             fotoUsuario: usuario.foto,
             nomeUsuario: usuario.nome,
