@@ -45,75 +45,78 @@ const buscaController = {
         },
 
 
-        jogos: async (req, res) => {
-                try {
-                        let {
-                                nome,
-                                tema,
-                                dominio,
-                                mecanica
-                        } = req.query;
-                        console.log('oioi')
-                        let busca = []
+        // jogos: async (req, res) => {
+        //         try {
+        //                 let {
+        //                         nome,
+        //                         tema,
+        //                         dominio,
+        //                         mecanica
+        //                 } = req.query;
+
+        //                 console.log('****************')
+        //                 console.log(nome)
+
+        //                 let busca = []
 
 
-                        let whereClause = {};
+        //                 let whereClause = {};
 
-                        if (nome != '') {
-                                whereClause['nome'] = {
-                                        [Op.like]: '%' + nome + '%'
-                                };
-                        }
+        //                 if (nome != '') {
+        //                         whereClause['nome'] = {
+        //                                 [Op.like]: '%' + nome + '%'
+        //                         };
+        //                 }
 
-                        whereClause['aprovado'] = 1;
+        //                 whereClause['aprovado'] = 1;
 
-                        if (tema != 0) {
-                                whereClause['tema_id'] = tema;
-                        }
+        //                 if (tema != 0) {
+        //                         whereClause['tema_id'] = tema;
+        //                 }
 
-                        if (dominio != 0) {
-                                whereClause['dominio_id'] = dominio;
-                        }
+        //                 if (dominio != 0) {
+        //                         whereClause['dominio_id'] = dominio;
+        //                 }
 
-                        if (mecanica != 0) {
-                                whereClause['mecanica_id'] = mecanica;
-                        }
+        //                 if (mecanica != 0) {
+        //                         whereClause['mecanica_id'] = mecanica;
+        //                 }
 
-                        if (mecanica != 0) {
-                                whereClause['mecanica_id'] = mecanica;
-                        }
+        //                 if (mecanica != 0) {
+        //                         whereClause['mecanica_id'] = mecanica;
+        //                 }
 
-                        busca = await Jogo.findAll({
-                                order: [
-                                        ['nome', 'ASC']
-                                ],
-                                where: whereClause
-                        })
+        //                 busca = await Jogo.findAll({
+        //                         order: [
+        //                                 ['nome', 'ASC']
+        //                         ],
+        //                         where: whereClause
+        //                 })
 
-                        console.log(busca)
+        //                 console.log(busca)
 
-                        res.render('busca', {
-                                title: 'Busca',
-                                apelidoUsuario: req.session.usuario.apelido,
-                                idUsuario: req.session.usuario.id,
-                                jogos: busca
-                        });
+        //                 res.render('busca', {
+        //                         title: 'Busca',
+        //                         apelidoUsuario: req.session.usuario.apelido,
+        //                         idUsuario: req.session.usuario.id,
+        //                         jogos: busca
+        //                 });
 
-                } catch (error) {
-                        res.status(401)
-                }
-        },
+        //         } catch (error) {
+        //                 res.status(401)
+        //         }
+        // },
 
         listaJogos: async (limite, orderBy) => {
                 try {
                         let busca = []
-                        
+
                         busca = await Jogo.findAll({
                                 limit: limite,
                                 where: {
                                         aprovado: 1
                                 },
-                                order : orderBy ? [orderBy] : null
+                                order: orderBy ? [orderBy] : null
                         })
 
                         return busca;
@@ -125,7 +128,7 @@ const buscaController = {
 
         listaJogosFavoritos: async (limite, idUsuario) => {
                 try {
-                        let favoritos, countFavoritos; 
+                        let favoritos, countFavoritos;
                         await Favorito.findAndCountAll({
                                 limit: limite,
                                 where: {
@@ -145,7 +148,7 @@ const buscaController = {
                                 jogosFavoritos.push(favorito.jogo);
                         }
 
-                        return {jogosFavoritos, countFavoritos};
+                        return { jogosFavoritos, countFavoritos };
                 } catch (error) {
                         return null;
                 }
@@ -173,7 +176,7 @@ const buscaController = {
                                 jogosColecao.push(jogoColecao.jogo);
                         }
 
-                        return {jogosColecao, countColecao};
+                        return { jogosColecao, countColecao };
                 } catch (error) {
                         return null;
                 }
