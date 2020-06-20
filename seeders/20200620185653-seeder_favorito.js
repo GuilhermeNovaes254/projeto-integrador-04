@@ -53,15 +53,11 @@ module.exports = {
           jogo_id: 5
         },
         {
+          usuario_id: 5,
+          jogo_id: 7
+        },
+        {
           usuario_id: 6,
-          jogo_id: 5
-        },
-        {
-          usuario_id: 7,
-          jogo_id: 5
-        },
-        {
-          usuario_id: 8,
           jogo_id: 5
         },
         {
@@ -111,6 +107,14 @@ module.exports = {
         {
           usuario_id: 9,
           jogo_id: 10
+        },
+        {
+          usuario_id: 3,
+          jogo_id: 1
+        },
+        {
+          usuario_id: 7,
+          jogo_id: 1
         }
       ], {});
   },

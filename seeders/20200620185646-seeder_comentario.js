@@ -19,7 +19,7 @@ module.exports = {
         usuario_id: 3,
         jogo_id: 1,
       }, {
-        texto: 'Com certeza um dos melhores jogos que joguei !!! Bom pacas...',
+        texto: 'Gostei da proposta do jogo',
         data: '2018-12-01 11:00:00',
         usuario_id: 1,
         jogo_id: 2
@@ -29,7 +29,7 @@ module.exports = {
         usuario_id: 2,
         jogo_id: 2
       }, {
-        texto: 'Que jogo sensacional! A curva de aprendizado é um pouco lenta, mas o ponto interessante é que quando você começa a entender todas as facções e seus respetivos estilos de jogo, ele se torna ainda mais fascinante. ',
+        texto: 'Muito demorado, gosto de jogos rápidos',
         data: '2019-02-01 01:00:01',
         usuario_id: 3,
         jogo_id: 2
@@ -124,12 +124,12 @@ module.exports = {
         usuario_id: 2,
         jogo_id: 3
       }, {
-        texto: 'Para mim, melhor jogo de 2016.',
+        texto: 'Para mim não rolou.',
         data: '2019-12-05 03:00:10',
         usuario_id: 6,
         jogo_id: 3
       }, {
-        texto: 'In sed imperdiet est. Aliquam erat volutpat. Suspendisse porta ante ligula, sed convallis leo congue nec. Nulla vel augue eros. Proin pretium, nunc vitae interdum elementum, ex nibh aliquet dui, et hendrerit libero magna nec diam. Cras gravida augue turpis, in interdum risus feugiat quis.',
+        texto: 'Muito complicado, difícil de aprender',
         data: '2019-12-10 08:00:11',
         usuario_id: 8,
         jogo_id: 5
@@ -174,7 +174,7 @@ module.exports = {
         usuario_id: 6,
         jogo_id: 4
       }, {
-        texto: 'In sed imperdiet est. Aliquam erat volutpat. Suspendisse porta ante ligula, sed convallis leo congue nec. Nulla vel augue eros. Proin pretium, nunc vitae interdum elementum, ex nibh aliquet dui, et hendrerit libero magna nec diam. Cras gravida augue turpis, in interdum risus feugiat quis.',
+        texto: 'O jogo que quebrou paradigmas e se tornou um clássico absoluto! Um euro elegante e fácil de se jogar, mas com grande profundidade estratégica!',
         data: '2019-12-16 08:00:15',
         usuario_id: 3,
         jogo_id: 6
@@ -189,7 +189,7 @@ module.exports = {
         usuario_id: 2,
         jogo_id: 4
       }, {
-        texto: 'Encantado com a amarração temático-mecânica do jogo, é tudo muito redondo e bem encaixado. É estratégico na medida certa e ainda assim não gera um AP elevado. A arte é magnífica e a fator replay é imenso.',
+        texto: 'Não gostei muito não, demorado pra iniciar',
         data: '2019-12-19 08:00:17',
         usuario_id: 9,
         jogo_id: 3
@@ -269,7 +269,7 @@ module.exports = {
         usuario_id: 2,
         jogo_id: 7
       }, {
-        texto: 'Que jogo meus amigos!!',
+        texto: 'Todos meus amigos gostaram, menos eu',
         data: '2020-02-10 09:00:25',
         usuario_id: 4,
         jogo_id: 7
