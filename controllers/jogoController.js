@@ -1,4 +1,6 @@
-const Sequelize = require('sequelize');
+const Sequelize = require('sequelize')
+const config = require('../config/database');
+const db = new Sequelize(config)
 const Op = Sequelize.Op;
 const colorThief = require('colorthief');
 
@@ -11,6 +13,7 @@ const {
     Jogo,
     Usuario
 } = require('../models');
+
 
 const jogoController = {
 
@@ -37,22 +40,38 @@ const jogoController = {
         });
 
         let comentarios, countComentarios;
-        await Comentario.findAndCountAll({
+        countComentarios = await Comentario.count({
             limit: 6,
             order: [
                 ['data', 'DESC']
             ],
             where: {
                 jogo_id: jogo.id
-            },
-            include: [{
-                model: Usuario,
-                as: 'usuario'
-            }]
-        }).then(result => {
-            comentarios = result.rows;
-            countComentarios = result.count;
+            }
         });
+
+        const query = `
+            SELECT 
+                c.id AS comentario_id,
+                c.texto AS comentario_texto, 
+                DATE_FORMAT(c.data, "%d/%m/%Y %H:%i") AS comentario_data,
+                u.id AS usuario_id,
+                u.foto AS usuario_foto,
+                u.apelido AS usuario_apelido,
+                j.id AS jogo_id,
+                j.nome AS jogo_nome,
+                TRIM(a.avaliacao / 2)+0 AS avaliacao,
+                f.usuario_id AS favorito
+            FROM comentario c
+            INNER JOIN jogo j ON c.jogo_id = j.id
+            INNER JOIN usuario u ON c.usuario_id = u.id
+            LEFT JOIN avaliacao a ON a.usuario_id = c.usuario_id AND a.jogo_id = c.jogo_id
+            LEFT JOIN favorito f ON f.usuario_id = f.usuario_id AND f.jogo_id = c.jogo_id
+            WHERE j.id = ${jogo.id}
+            ORDER BY c.data DESC
+            LIMIT 6`;
+
+        comentarios = await db.query(query, { type: Sequelize.QueryTypes.SELECT });
 
         let contaFavorito;
         await Favorito.count({
@@ -164,8 +183,7 @@ const jogoController = {
                 indice
             } = req.query
 
-            let comentarios, countComentarios;
-            await Comentario.findAndCountAll({
+            const countRestantes = await Comentario.count({
                 limit: 5,
                 order: [
                     ['data', 'DESC']
@@ -173,15 +191,31 @@ const jogoController = {
                 where: {
                     jogo_id: jogo,
                     id: { [Op.lt]: indice }
-                },
-                include: [{
-                    model: Usuario,
-                    as: 'usuario'
-                }]
-            }).then(result => {
-                comentarios = result.rows;
-                countRestantes = result.count;
+                }
             });
+
+            const query = `
+                SELECT 
+                    c.id AS comentario_id,
+                    c.texto AS comentario_texto, 
+                    DATE_FORMAT(c.data, "%d/%m/%Y %H:%i") AS comentario_data,
+                    u.id AS usuario_id,
+                    u.foto AS usuario_foto,
+                    u.apelido AS usuario_apelido,
+                    j.id AS jogo_id,
+                    j.nome AS jogo_nome,
+                    TRIM(a.avaliacao / 2)+0 AS avaliacao,
+                    f.usuario_id AS favorito
+                FROM comentario c
+                INNER JOIN jogo j ON c.jogo_id = j.id
+                INNER JOIN usuario u ON c.usuario_id = u.id
+                LEFT JOIN avaliacao a ON a.usuario_id = c.usuario_id AND a.jogo_id = c.jogo_id
+                LEFT JOIN favorito f ON f.usuario_id = f.usuario_id AND f.jogo_id = c.jogo_id
+                WHERE j.id = ${jogo} AND c.id < ${indice}
+                ORDER BY c.data DESC
+                LIMIT 5`;
+
+            const comentarios = await db.query(query, { type: Sequelize.QueryTypes.SELECT });
 
             res.render('./partials/coments', { layout: false, comentarios: comentarios, flagPerfilUsuario: false, countRestantes });
 
@@ -218,7 +252,23 @@ const jogoController = {
 
             await Comentario.create(comentario);
 
-            res.render('./partials/coments', { layout: false, comentarios: [comentario], flagPerfilUsuario: false });
+            const dataFormatada = `${
+                ts.getDate().toString().padStart(2, '0')}/${
+                (ts.getMonth()+1).toString().padStart(2, '0')}/${
+                ts.getFullYear().toString().padStart(4, '0')} ${
+                ts.getHours().toString().padStart(2, '0')}:${
+                ts.getMinutes().toString().padStart(2, '0')}`;
+
+            const resposta = {
+                comentario_texto: texto,
+                comentario_data: dataFormatada,
+                usuario_id: req.session.usuario.id,
+                usuario_foto: req.session.usuario.foto,
+                usuario_apelido: req.session.usuario.apelido,
+                jogo_id: jogo
+            }
+
+            res.render('./partials/coments', { layout: false, comentarios: [resposta], flagPerfilUsuario: false });
 
         } catch (error) {
             res.status(401)
