@@ -6,17 +6,17 @@ module.exports = {
       'avaliacao', [{
           usuario_id: 1,
           jogo_id: 1,
-          avaliacao: 1
+          avaliacao: 9
         },
         {
           usuario_id: 1,
           jogo_id: 8,
-          avaliacao: 2
+          avaliacao: 10
         },
         {
           usuario_id: 1,
           jogo_id: 9,
-          avaliacao: 3
+          avaliacao: 10
         },
         {
           usuario_id: 1,
@@ -55,11 +55,11 @@ module.exports = {
         }, {
           usuario_id: 3,
           jogo_id: 1,
-          avaliacao: 1
+          avaliacao: 10
         }, {
           usuario_id: 4,
           jogo_id: 8,
-          avaliacao: 2
+          avaliacao: 10
         },
         {
           usuario_id: 6,
@@ -89,7 +89,7 @@ module.exports = {
         {
           usuario_id: 4,
           jogo_id: 1,
-          avaliacao: 8
+          avaliacao: 10
         },
         {
           usuario_id: 2,
@@ -139,7 +139,7 @@ module.exports = {
         {
           usuario_id: 5,
           jogo_id: 1,
-          avaliacao: 8
+          avaliacao: 10
         },
         {
           usuario_id: 6,
@@ -154,17 +154,17 @@ module.exports = {
         {
           usuario_id: 8,
           jogo_id: 1,
-          avaliacao: 1
+          avaliacao: 10
         },
         {
           usuario_id: 9,
           jogo_id: 1,
-          avaliacao: 2
+          avaliacao: 10
         },
         {
           usuario_id: 10,
           jogo_id: 1,
-          avaliacao: 3
+          avaliacao: 10
         },
         {
           usuario_id: 2,
@@ -219,12 +219,12 @@ module.exports = {
         {
           usuario_id: 5,
           jogo_id: 5,
-          avaliacao: 4
+          avaliacao: 10
         },
         {
           usuario_id: 6,
           jogo_id: 5,
-          avaliacao: 5
+          avaliacao: 10
         },
         {
           usuario_id: 4,
@@ -304,7 +304,7 @@ module.exports = {
         {
           usuario_id: 3,
           jogo_id: 9,
-          avaliacao: 1
+          avaliacao: 10
         },
         {
           usuario_id: 3,
@@ -314,12 +314,12 @@ module.exports = {
         {
           usuario_id: 7,
           jogo_id: 9,
-          avaliacao: 3
+          avaliacao: 10
         },
         {
           usuario_id: 5,
           jogo_id: 9,
-          avaliacao: 4
+          avaliacao: 10
         },
         {
           usuario_id: 7,
