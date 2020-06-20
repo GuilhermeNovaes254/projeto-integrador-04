@@ -14,7 +14,7 @@
         <p>Tema do jogo: <%= jogo.tema.nome %></p>
       </div>
     </div>
-    <div class="c-jogo__left--news c-jogo__left--content" data-aos="fade-up" data-aos-duration="1000"
+    <div class="c-jogo__left--news c-jogo__left--content o-border-shadow" data-aos="fade-up" data-aos-duration="1000"
       data-aos-delay="200">
       <h5>Confira os Jogos Relacionados</h5>
       <ol>
@@ -29,7 +29,7 @@
     </div>
   </div>
   <div class="c-jogo__right" style="margin-top: 0px;">
-    <div class="c-jogo__right--fav c-jogo__right--content" data-aos="fade-up" data-aos-duration="1000"
+    <div class="c-jogo__right--info c-jogo__right--content" data-aos="fade-up" data-aos-duration="1000"
       data-aos-delay="400">
       <h2 id='rated' class="c-jogo__right--title">
 
@@ -40,9 +40,17 @@
 
         <p>Usuário:</p> <%- include('./partials/rating') %>
 
+<<<<<<< HEAD
         <p id="notaJogo">Nota total: <%= (jogo.notaJogo / 2).toFixed(2)  %></p> 
+=======
+        <p id="notaJogo" class="c-total-note"><%= (jogo.notaJogo / 2)  %></p> 
+>>>>>>> 77c93723a1caf7717aa387d2141ca2c53ad7513c
 
       </h2>
+      <!-- <div id='jogolinkYoutube'><iframe  width="560" height="315" src="https://www.youtube.com/embed/aR-KAldshAE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div> -->
+    </div>
+    <div class="c-jogo__right--menu c-jogo__right--content" data-aos="fade-up" data-aos-duration="1000"
+      data-aos-delay="400">
       <div>
         <h1 class="game-name"><%= jogo.nome %> (<%= jogo.ano %>)</h1>
         <h6 class="game-detail">Descrição:</h6>
@@ -60,7 +68,7 @@
     <div class="c-jogo__right--evaluation c-jogo__right--content"
       style="background-color: transparent; padding-bottom: 0;" data-aos="fade-up" data-aos-duration="1000"
       data-aos-delay="200">
-      <h2 class="c-jogo__right--title" style="background-color: white;"><i class="icon ion-android-star-half"></i>
+      <h2 class="c-jogo__right--title c-category-<%= jogo.tema_id %> o-color-white o-border-shadow"><i class="icon ion-android-star-half"></i>
         Avaliações</h2>
     </div>
     <div class="c-jogo__right--comments c-jogo__right--content" data-aos="fade-up" data-aos-duration="1000"
