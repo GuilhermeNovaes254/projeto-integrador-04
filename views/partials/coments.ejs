@@ -18,40 +18,45 @@
   <% } %>
 
   <% for(let comentario of comentarios) { %>
-  <div class="c-coments" id="<%= comentario.id  %>">
+  <div class="c-coments" id="<%= comentario.comentario_id  %>">
 
     <div class="c-coments__photo">
-      <a href="/perfil/<%= comentario.usuario.id  %>">
-        <img src="/buscaImagem/<%= comentario.usuario.foto  %>" alt="">
+      <a href="/perfil/<%= comentario.usuario_id  %>">
+        <img src="/buscaImagem/<%= comentario.usuario_foto  %>" alt="">
       </a>
     </div>
 
     <div class="c-coments__box animate-bubble-float-left">
       <div class="c-coments__box--header">
         <div class="c-coments__info">
-          <h4><%= comentario.usuario.apelido  %></h4>
+          <h4><%= comentario.usuario_apelido  %></h4>
           <% if(flagPerfilUsuario) { %>
           <p>
-          <h3>Comentou em <a href="/jogo?id=<%= comentario.jogo.id  %>">
-              <%= comentario.jogo.nome  %></a></h3>
+          <h3>Comentou em <a href="/jogo?id=<%= comentario.jogo_id  %>">
+              <%= comentario.jogo_nome  %></a></h3>
           </p>
           <% } %>
         </div>
         <div class="c-coments__features">
-          <% if(!flagPerfilUsuario) { %>
+          <!-- <% if(!flagPerfilUsuario) { %>
+            <% } %>
           <div class="c-coments__features--players">
-            <strong><i class="icon ion-ios-game-controller-a-outline"></i>742</strong>
-          </div>
+            <strong><i class="icon ion-ios-game-controller-a-outline"></i></strong>
+          </div> -->
+          <% if(comentario.favorito != null) { %>
           <div class="c-coments__features--likes">
-            <strong><i class="icon ion-ios-heart-outline"></i>550</strong>
+            <strong><i class="icon ion-ios-heart"></i></strong>
           </div>
           <% } %>
+          <% if(comentario.avaliacao != null) { %>
           <div class="c-coments__features--evaluation js-note-yellow">
-            <span>3.0</span>
+            <span><%= comentario.avaliacao %></span>
           </div>
+          <% } %>
         </div>
       </div>
-      <p><%= comentario.texto %></p>
+      <p><%= comentario.comentario_texto %></p>
+      <p><strong>Data:</strong> <%= comentario.comentario_data %></p>
     </div>
   </div>
   <% } %>
