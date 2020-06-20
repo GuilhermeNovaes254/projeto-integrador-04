@@ -35,11 +35,11 @@
         <a href="#" id="favoritar" class="btn btn-secondary" data-tooltip="Desfavoritar"
           data-placement="top"><%= favorito ? 'Desfavoritar' : 'Favoritar'  %></a>
         <a href="#" id="colecao" class="btn btn-primary" data-tooltip="Remover da sua coleção"
-          data-placement="top"><%= colecao ? 'Retira coleção' : 'Adiciona coleçã'  %></a>
+          data-placement="top"><%= colecao ? 'Retira coleção' : 'Adiciona coleçã'  %></a>      
 
-        <p id="notaJogo"><%= (jogo.notaJogo / 2)  %></p>
+        <p>Usuário:</p> <%- include('./partials/rating') %>
 
-        <%- include('./partials/rating') %>
+        <p id="notaJogo">Nota total: <%= (jogo.notaJogo / 2)  %></p> 
 
       </h2>
       <div>

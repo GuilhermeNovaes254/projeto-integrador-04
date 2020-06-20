@@ -50,6 +50,20 @@ const jogoController = {
             }
         });
 
+        let avaliacaoUsuario
+        await Avaliacao.findOne({
+            where: {
+                usuario_id: req.session.usuario.id,
+                jogo_id: jogo.id
+            }
+        }).then(result => {
+            if(result !== null){
+                avaliacaoUsuario = result.avaliacao;
+            } else {
+                avaliacaoUsuario = null;
+            }
+        });
+
         const query = `
             SELECT 
                 c.id AS comentario_id,
@@ -103,6 +117,11 @@ const jogoController = {
             }
         }).join(', ');
 
+        console.log('*********************************')
+        console.log(avaliacaoUsuario)
+
+        
+
         res.render('jogo', {
             title: 'Jogo',
             jogo,
@@ -111,7 +130,8 @@ const jogoController = {
             countComentarios,
             dominantColor,
             favorito: contaFavorito > 0 ? true : false,
-            colecao: contaColecao > 0 ? true : false
+            colecao: contaColecao > 0 ? true : false,
+            avaliacaoUsuario
         });
     },
 
