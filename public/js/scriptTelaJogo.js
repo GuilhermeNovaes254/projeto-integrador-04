@@ -23,11 +23,17 @@ const btnColecionar = document.getElementById('colecao');
 btnColecionar.addEventListener('click', function () {
     adicionaColecao();
 });
+
+const rating = document.getElementById('rating');
+rating.addEventListener('change', function () {
+    let nota = getRadioVal(this, 'c-rating');
+    postaAvaliacao(nota)
+});
 //#endregion
 
 //#region ActionRequests
 async function carregaComentarios() {
-    let qtdComentarios = document.getElementsByClassName('c-coments');
+    let qtdComentarios = document.getElementsByClassName('c-comments');
     let indice = qtdComentarios[qtdComentarios.length - 1].id;
     let url = `/jogo/acao/carregaComentario?jogo=${jogo}&indice=${indice}`;
 
@@ -72,6 +78,29 @@ async function postaComentario() {
             document.getElementById('spinner').className = '';
         });
 }
+
+async function postaAvaliacao(nota) {
+    let url = `/jogo/acao/postaAvaliacao`;
+    // fetch(url,
+    //     {
+    //         method: 'POST',
+    //         headers: {
+    //             'Accept': 'application/json',
+    //             'Content-Type': 'application/json'
+    //         },
+    //         body: JSON.stringify({ jogo, nota })
+    //     })
+    //     .then((resposta) => JSON.stringify(resposta))
+    //     .then((favorito) => {
+    //         console.log(favorito);
+    //         if (favorito == "true") {
+    //             btnFavoritar.innerText = 'Desfavoritar';
+    //         } else if (favorito == "false") {
+    //             btnFavoritar.innerText = 'Favoritar';
+    //         }
+    //     });
+}
+
 
 async function adicionaFavorito() {
     let url = `/jogo/acao/adicionaFavorito`;
@@ -154,7 +183,22 @@ async function adicionaColecao() {
 
 // carregaElementos();
 // leEstrelas();
-//#endregion TO_DO
+//#endregion
+
+//#region Funções gerais
+function getRadioVal(form, name) {
+    let val;
+    let radios = form.elements[name];
+    
+    // loop through list of radio buttons
+    for (let i=0, len=radios.length; i<len; i++) {
+        if ( radios[i].checked ) { 
+            val = radios[i].value;
+            break;
+        }
+    }
+    return val;
+}
 
 function alteraCorElementos() {
     document.querySelector('.c-jogo__left--news').style.background = `rgb(${dominantColor})`;
@@ -162,6 +206,7 @@ function alteraCorElementos() {
     document.querySelector('header').style.background = `rgb(${dominantColor})`;
     document.querySelector('footer div').style.background = `rgb(${dominantColor})`;
 }
+//#endregion
 
 const jogo = document.getElementById('jogoId').value;
 

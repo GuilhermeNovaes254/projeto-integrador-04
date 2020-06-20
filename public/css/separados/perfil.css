@@ -157,45 +157,45 @@
       }
     }
 
-.c-perfil__right--coments{
+.c-perfil__right--comments{
   background: transparent;
   padding-top: 10px;
 }
 
-  .c-perfil__right--coments a.c-bt-default{
+  .c-perfil__right--comments a.c-bt-default{
     margin-top: 55px;
     display: block;
   }
 
-.c-coments{
+.c-comments{
   display: flex;
   margin: 15px 0;
 }
 
-  .c-coments__photo{
+  .c-comments__photo{
     flex-basis: 15%;
     display: flex;
     align-items: center;
   }
 
 @media(max-width:600px){
-  .c-coments__photo{
+  .c-comments__photo{
     display: none;
   }  
 }
 
-/*     .c-coments__photo:hover img{
+/*     .c-comments__photo:hover img{
       border: 2px solid #fff;
     } */
 
-    .c-coments__photo img{
+    .c-comments__photo img{
       border-radius: 100px;
       max-width: 75px;
       margin-right: 35px;
       border: 2px solid #fff;
     }
 
-    .c-coments__photo h4{
+    .c-comments__photo h4{
       max-width: 75px;
       text-align: center;
       padding: 5px 0;
@@ -207,7 +207,7 @@
       font-family: 'Montserrat', arial, sans-serif;
     }
 
-  .c-coments__box{
+  .c-comments__box{
     flex-basis: 85%;
     border-radius: 50px;
     background: #fff;
@@ -216,45 +216,45 @@
   }
 
   @media(max-width:600px){
-    .c-coments__box{
+    .c-comments__box{
       width: 100%;
       flex-basis: 100%;
     }
   }
-    .c-coments__box p{
+    .c-comments__box p{
       font-size: 15px;
       line-height: 22px;
     }
 
-  .c-coments__features{
+  .c-comments__features{
     display: flex;
     justify-content: flex-end;
     padding-bottom: 10px;
   }
 
 @media(max-width:600px){
-  .c-coments__features{
+  .c-comments__features{
     justify-content: space-evenly;
   }
 }
 
-    .c-coments__features i{
+    .c-comments__features i{
       font-size: 33px;
       margin-right: 10px;
     }
 
   @media(max-width:600px){
-    .c-coments__features i{
+    .c-comments__features i{
       margin-right: 0;
     }
   }
     
-    .c-coments__features strong{
+    .c-comments__features strong{
       cursor: pointer;
       display: contents;
     }
 
-    .c-coments__features div{
+    .c-comments__features div{
       margin-right: 20px;
       padding: 10px 10px;
       align-items: center;
@@ -262,45 +262,33 @@
     }
 
   @media(max-width:600px){
-    .c-coments__features div{
+    .c-comments__features div{
       flex-direction: column;
       margin-right: 0;
     }
   }
 
-    .c-coments__features--evaluation{
+    .c-comments__features--evaluation{
       border-radius: 10px;
       color: #fff;
       font-weight: 900;
       align-self: center;
     }
 
-    .c-coments__features--players{
+    .c-comments__features--players{
 
     }
 
-      .c-coments__features--players .ion-ios-game-controller-a{
+      .c-comments__features--players .ion-ios-game-controller-a{
         color: green;
       }
 
-    .c-coments__features--likes{
+    .c-comments__features--likes{
 
     }
 
-      .c-coments__features--likes .ion-ios-heart{
+      .c-comments__features--likes .ion-ios-heart{
         color: red;
       }
-
-.js-note-red{
-  background: #F22441;
-}
-
-.js-note-yellow{
-  background: #EFC11D;
-}
-
-.js-note-green{
-  background: #0F7A2F;
-}
     
 

@@ -3,79 +3,78 @@
 <section id="temaBusca"></section>
 
 <div class="container" id='containerTema'>
-    <div class="row">
-        <div class="col-12 justify-content-center" id='areaCentralJogo'>
-            <form onsubmit="return false;">
-                <div id="caixaDeBusca" class="col-10">
+    <!-- <div class="row"> -->
 
-                    <div id='formulario'>
-                        <div>
-                            <label>
-                                Buscar Por:
-                            </label>
-                        </div>
-
-                        <div id='tipoDiv'>
-                            <select id="tipo" name="tipo">
-                                <option selected>Selecione</option>
-                                <option value="usuario">Usuário</option>
-                                <option value="jogo">Jogo</option>
-                            </select>
-                        </div>
-
-                        <div>
-                            <button type="button" button.disabled=true id="busca" class='busca'><img
-                                    src="/images/icons/Lupa.png" alt="" srcset=""></button>
-                        </div>
-                    </div>
-
-                    <div id=buscaUsuario>
-                        <label id='rotulo'>Usuário</label>
-                        <input type="text" name="buscaUsuario" id=campoUsuario class=buscaUsuario>
-                    </div>
+    <div class="col-12" id='areaCentralJogo'>
+        
+        <!-- <form onsubmit="return false;"> -->
+        <div id="caixaDeBusca" class="col-10">
+            <form action='/busca' method='GET'>
+                <div>
+                    <label>
+                        Buscar Por:
+                    </label>
 
 
-                    <div id=buscaJogo>
-                        <div id=buscaJogoNomeDiv>
-                            <label id='rotulo'>Nome</label>
-                            <input type="text" name="buscaJogoNome" id=campoJogo class=buscaJogo>
-                        </div>
+                    <select id="tipo" name="tipo" class="form-group">
+                        <option>Selecione</option>
+                        <option value="usuario">Usuário</option>
+                        <option value="jogo">Jogo</option>
+                    </select>
 
-                        <div id="tema" name="tema">
-                            <label id='rotulo'>Tema</label>
-                            <select id="temaSelector" name='jogo'>
-                                <option selected value='0'>Selecione</option>
-                            </select>
-                        </div>
-
-                        <div id="dominio" name="dominio">
-                            <label id='rotulo'>Domínio</label>
-                            <select id="dominioSelector" name='jogo'>
-                                <option selected value='0'>Selecione</option>
-                            </select>
-                        </div>
-
-                        <div id="mecanica" name="mecanica">
-                            <label id='rotulo'>Mecânica</label>
-                            <select id="mecanicaSelector" name='jogo'>
-                                <option selected value='0'>Selecione</option>
-                            </select>
-                        </div>
+                    <div>
+                        <button type="button" button.disabled=true id="busca" class='busca'><img
+                                src="/images/icons/Lupa.png" alt="" srcset=""></button>
                     </div>
                 </div>
+                <div class=buscaUsuario>
+                    <label id='rotulo'>Usuário</label>
+                    <input type="text" name="nomeUsuario" class="form-group">
+                </div>
+
+
+                <div class="buscaJogo">
+                    <div>
+                        <label for="nome">Nome</label>
+                        <input type="text" id="nome" name='nomeJogo'>
+                    </div>
+
+                    <div id="tema" name="tema">
+                        <label id='rotulo'>Tema</label>
+                        <select id="temaSelector" name='tema'>
+                            <option selected value='0' name="tema">Selecione</option>
+                        </select>
+                    </div>
+
+                    <div id="dominio" name="dominio">
+                        <label id='rotulo'>Domínio</label>
+                        <select id="dominioSelector" name='dominio'>
+                            <option selected value='0'>Selecione</option>
+                        </select>
+                    </div>
+
+                    <div id="mecanica" name="mecanica">
+                        <label id='rotulo'>Mecânica</label>
+                        <select id="mecanicaSelector" name='mecanica'>
+                            <option selected value='0'>Selecione</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="submit" id='botaoCadastro'>Pesquisar!</button>
             </form>
-
-
-            <!-- resultado de busca -->
-            <div id="table">
-                <%- include('./partials/highlights-five', {jogos, flagClicavel : true}) %>
-            </div>
         </div>
 
 
+        <!-- resultado de busca -->
+        <div id="dadosBusca">
+            <%- include('./partials/highlights-five', {jogos, flagClicavel : true}) %>
+        </div>
     </div>
 
+
 </div>
+
+<!-- </div> -->
 
 </div>
 <script>
