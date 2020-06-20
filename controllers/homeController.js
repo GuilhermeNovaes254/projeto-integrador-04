@@ -110,7 +110,7 @@ const homeController = {
             INNER JOIN jogo j ON c.jogo_id = j.id
             INNER JOIN usuario u ON c.usuario_id = u.id
             LEFT JOIN avaliacao a ON a.usuario_id = c.usuario_id AND a.jogo_id = c.jogo_id
-            LEFT JOIN favorito f ON f.usuario_id = f.usuario_id AND f.jogo_id = c.jogo_id
+            LEFT JOIN favorito f ON f.usuario_id = u.id AND f.jogo_id = c.jogo_id
             WHERE c.usuario_id = ${id}
             ORDER BY c.data DESC`;
 
