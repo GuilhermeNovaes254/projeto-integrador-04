@@ -14,6 +14,7 @@ const jogoCtrl = require('./jogoController');
 const Sequelize = require('sequelize')
 const config = require('../config/database');
 const db = new Sequelize(config)
+const Op = Sequelize.Op;
 
 const homeController = {
 
@@ -162,13 +163,54 @@ const homeController = {
     },
 
 
-    busca: (req, res) => {
+    busca: async (req, res) => {
+
+        let {
+            nomeJogo,
+            tema,
+            dominio,
+            mecanica,
+            nomeUsuario,
+            tipo
+        } = req.query;
+
+        let busca = []
+        let whereClause = {};
+
+        if (tipo = 'jogo' && tipo !== undefined) {
+            if (nomeJogo != '') {
+                whereClause['nome'] = {
+                    [Op.like]: '%' + nomeJogo + '%'
+                };
+            }
+
+            whereClause['aprovado'] = 1;
+
+            if (tema != 0) {
+                whereClause['tema_id'] = tema;
+            }
+
+            if (dominio != 0) {
+                whereClause['dominio_id'] = dominio;
+            }
+
+            if (mecanica != 0) {
+                whereClause['mecanica_id'] = mecanica;
+            }
+
+            busca = await Jogo.findAll({
+                order: [
+                    ['nome', 'ASC']
+                ],
+                where: whereClause
+            })
+        }
 
         res.render('busca', {
             title: 'Busca',
             apelidoUsuario: req.session.usuario.apelido,
             idUsuario: req.session.usuario.id,
-            jogos: []
+            jogos: busca
         });
     },
 
