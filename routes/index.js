@@ -84,6 +84,7 @@ router.post('/jogo/elementos/joguei', VerificaUsuarioLogado, elementosJogos.post
 router.post('/jogo/acao/adicionaFavorito', VerificaUsuarioLogado, elementosJogos.adicionaFavorito)
 router.post('/jogo/acao/adicionaColecao', VerificaUsuarioLogado, elementosJogos.adicionaColecao) 
 router.post('/jogo/acao/postaComentario', VerificaUsuarioLogado, elementosJogos.postaComentario)
+router.post('/jogo/acao/postaAvaliacao', VerificaUsuarioLogado, elementosJogos.postaAvaliacao)
 router.get('/jogo/acao/carregaComentario', elementosJogos.carregaComentario)
 
 

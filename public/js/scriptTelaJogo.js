@@ -81,24 +81,21 @@ async function postaComentario() {
 
 async function postaAvaliacao(nota) {
     let url = `/jogo/acao/postaAvaliacao`;
-    // fetch(url,
-    //     {
-    //         method: 'POST',
-    //         headers: {
-    //             'Accept': 'application/json',
-    //             'Content-Type': 'application/json'
-    //         },
-    //         body: JSON.stringify({ jogo, nota })
-    //     })
-    //     .then((resposta) => JSON.stringify(resposta))
-    //     .then((favorito) => {
-    //         console.log(favorito);
-    //         if (favorito == "true") {
-    //             btnFavoritar.innerText = 'Desfavoritar';
-    //         } else if (favorito == "false") {
-    //             btnFavoritar.innerText = 'Favoritar';
-    //         }
-    //     });
+    fetch(url,
+        {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ jogo, nota })
+        })
+        .then((resposta) => resposta.json())
+        .then((nota) => {
+            console.log(nota);
+            document.getElementById('notaJogo').innerText = (nota.notaFinal / 2).toFixed(2);
+            
+        });
 }
 
 

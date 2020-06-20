@@ -301,14 +301,11 @@ const jogoController = {
             let {
                 jogo,
                 nota
-            } = req.params;
-
-
-            let usuarioId = req.session.usuario.id
+            } = req.body;
 
             whereClause = {}
             whereClause['jogo_id'] = jogo
-            whereClause['usuario_id'] = usuarioId
+            whereClause['usuario_id'] = req.session.usuario.id
 
             let existe = await Avaliacao.count({
                 where: whereClause
@@ -316,20 +313,48 @@ const jogoController = {
 
             if (existe == 0) {
                 await Avaliacao.create({
-                    usuario_id: parseInt(usuarioId),
-                    jogo_id: parseInt(jogo),
-                    avaliacao: parseFloat(nota)
+                    usuario_id: req.session.usuario.id,
+                    jogo_id: jogo,
+                    avaliacao: (nota * 2)
                 });
-                console.log("criada")
             } else {
                 await Avaliacao.update({
-                    avaliacao: parseFloat(nota)
+                    avaliacao: (nota * 2)
                 }, {
                     where: whereClause
                 });
-                console.log('nota Atribuida')
             }
-            res.status(200).send('OK')
+
+            ;
+            let avaliacoes,countAvaliacoes;
+            await Avaliacao.findAndCountAll({
+                raw: true,
+                attributes: ['avaliacao'],
+                where: {
+                    jogo_id: jogo
+                }
+            }).then(result => {
+                avaliacoes = result.rows;
+                countAvaliacoes = result.count;
+            });
+
+            let somaAvaliacoes = 0;
+            await avaliacoes.map((nota) => {
+                somaAvaliacoes = somaAvaliacoes + parseInt(nota.avaliacao);
+            });
+
+            let notaFinal = (somaAvaliacoes / countAvaliacoes).toFixed(2);
+            console.log(notaFinal);
+
+            await Jogo.update({
+                notaJogo: notaFinal
+            }, {
+                where: {
+                    id: jogo
+                }
+            });
+
+            res.status(200).send({ notaFinal })
         } catch (error) {
             res.status(401)
         }
