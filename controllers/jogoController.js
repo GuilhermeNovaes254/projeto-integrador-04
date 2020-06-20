@@ -11,7 +11,7 @@ const {
     Colecao,
     Avaliacao,
     Jogo,
-    Usuario
+    Tema
 } = require('../models');
 
 
@@ -22,14 +22,19 @@ const jogoController = {
         let { id } = req.query;
 
         const jogo = await Jogo.findOne({
-            raw: true,
             order: [
                 ['nome', 'ASC']
             ],
             where: {
                 id
-            }
+            },
+            include: [{
+                model: Tema,
+                as: 'tema'
+            }]
         });
+
+        console.log(jogo);
 
         let jogosRelacionados = await Jogo.findAll({
             limit: 5,
@@ -57,7 +62,7 @@ const jogoController = {
                 jogo_id: jogo.id
             }
         }).then(result => {
-            if(result !== null){
+            if (result !== null) {
                 avaliacaoUsuario = result.avaliacao;
             } else {
                 avaliacaoUsuario = null;
@@ -116,11 +121,6 @@ const jogoController = {
                 return value;
             }
         }).join(', ');
-
-        console.log('*********************************')
-        console.log(avaliacaoUsuario)
-
-        
 
         res.render('jogo', {
             title: 'Jogo',
@@ -274,7 +274,7 @@ const jogoController = {
 
             const dataFormatada = `${
                 ts.getDate().toString().padStart(2, '0')}/${
-                (ts.getMonth()+1).toString().padStart(2, '0')}/${
+                (ts.getMonth() + 1).toString().padStart(2, '0')}/${
                 ts.getFullYear().toString().padStart(4, '0')} ${
                 ts.getHours().toString().padStart(2, '0')}:${
                 ts.getMinutes().toString().padStart(2, '0')}`;
