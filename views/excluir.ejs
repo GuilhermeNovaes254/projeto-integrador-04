@@ -13,7 +13,7 @@
 
             <div id='usuario'><%=nomeUsuario %></div>
             <div id="alerta">* Esta ação é irreversível</div>
-                <form action='/excluir' method='POST'>
+                <form action='/excluir' method='POST' autocomplete="off">
                     <input type="text" class="deleteUser" id="deleteUserForm" name="nome">
                     
                     <button type="submit" id='botaoExcluir'>Prosseguir</button>
