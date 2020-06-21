@@ -21,7 +21,7 @@ const homeController = {
 
     index: async (req, res) => {
 
-        const jogos = await busca.listaJogos(10);
+        const jogos = await busca.listaJogos(10, ['notaJogo', 'DESC']);
 
         res.render('index', {
             title: 'Home',
