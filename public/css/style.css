@@ -505,7 +505,22 @@ input[type=checkbox] {
     min-height: 200px;
     background-size: cover !important;
     margin-top: -1px;
+    position: relative;
   }
+
+    .o-highlights__header h3{
+      position: absolute;
+      right: 0;
+      top: 0;    
+      display: flex;
+
+      color:#fff;
+      padding: 20px 25px;
+      border-radius: 0 0 0 25px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      font-size: 26px;
+    }
 
     .o-highlights__header h2{
       font: bold 25px/28px 'Comfortaa';
@@ -515,18 +530,39 @@ input[type=checkbox] {
   .o-highlights__description{
     padding: 35px 25px 55px;
     width: 100%;
+    margin-bottom: 55px;
   }
 
-    .o-highlights__description h2{
-      font-style: normal;
-      font-weight: 800;
-      font-size: 24px;
-      font-family: 'Montserrat', arial, sans-serif;
-      line-height: 32px;
-      letter-spacing: -0.015em;
+    .o-highlights__description a{
       color: #fff;
       text-transform: uppercase;
-      padding-bottom: 20px;
+    }
+
+      .o-highlights__description a h2{
+        font-style: normal;
+        font-weight: 800;
+        font-size: 24px;
+        font-family: 'Montserrat', arial, sans-serif;
+        line-height: 32px;
+        letter-spacing: -0.015em;
+        padding-bottom: 20px;
+      }
+
+    .o-highlights__description a.c-jogo__tag{
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 100%;
+      border: 0;
+      background: #222;
+      padding: 0;
+      margin: 0;
+      min-height: 55px;
+      border-radius: 0 0 25px 25px;
+      line-height: 55px;
+      font-size: 13px;
+      letter-spacing: 4px;
+      font-weight: 300;
     }
 
     .o-highlights__description p{
