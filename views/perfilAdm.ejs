@@ -45,7 +45,7 @@
                     <% } %>
                     <% for(let usuario of pendentes) { %>
                     <tr>
-                        <td><%= usuario.nome %></td>
+                        <td><a href="/perfil/<%= usuario.id %>"><%= usuario.nome %></a></td>
                         <td>
                             <%= usuario.apelido %>
                         </td>
