@@ -244,6 +244,7 @@ const homeController = {
         const estado = await local.buscaEstadoController(usuario.cidade_estado_id)
         const cidade = await local.buscaCidadeController(usuario.cidade_id)
         const favoritos = await jogoCtrl.contaFavorito(id)
+        const colecionados = await jogoCtrl.contaColecao(id)
         const jogados = await jogoCtrl.contaJaJoguei(id)
 
 
@@ -286,8 +287,10 @@ const homeController = {
             apelidoUsuario: usuario.apelido,
             descricaoUsuario: usuario.descricao,
             favoritos,
-            jogados
-
+            jogados,
+            colecionados,
+            idUsuario: usuario.id,
+            tipo
         });
     },
 
