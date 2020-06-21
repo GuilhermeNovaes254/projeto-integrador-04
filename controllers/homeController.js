@@ -105,12 +105,14 @@ const homeController = {
                 j.id AS jogo_id,
                 j.nome AS jogo_nome,
                 TRIM(a.avaliacao / 2)+0 AS avaliacao,
-                f.usuario_id AS favorito
+                f.usuario_id AS favorito,
+                joguei.usuario_id AS joguei
             FROM comentario c
             INNER JOIN jogo j ON c.jogo_id = j.id
             INNER JOIN usuario u ON c.usuario_id = u.id
             LEFT JOIN avaliacao a ON a.usuario_id = c.usuario_id AND a.jogo_id = c.jogo_id
             LEFT JOIN favorito f ON f.usuario_id = u.id AND f.jogo_id = c.jogo_id
+            LEFT JOIN joguei ON joguei.usuario_id = u.id AND joguei.jogo_id = c.jogo_id
             WHERE c.usuario_id = ${id}
             ORDER BY c.data DESC`;
 
