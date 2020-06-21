@@ -13,6 +13,7 @@ const {
     validationResult,
     body
 } = require('express-validator');
+const colorThief = require('colorthief');
 
 const forms = {
 
@@ -243,6 +244,7 @@ const forms = {
         var mecanicas = await Mecanica.findAll();
         let foto = '';
         let fotoTema = '';
+        let corTema = '';
 
         let {
             files
@@ -256,6 +258,7 @@ const forms = {
                 foto = file.originalname
             }
         }
+       
 
         let listOfErrors = validationResult(req);
 
@@ -296,6 +299,16 @@ const forms = {
                 foto = 'GameDefault.png';
             }
 
+
+            corTema = await colorThief.getColor(`http://localhost:5000/buscaImagem/${fotoTema}`);
+            corTema = corTema.map(value => {
+                if (value > 200) {
+                    return 190;
+                } else {
+                    return value;
+                }
+            }).join(', ');
+            
             const jogo = await Jogo.create({
                 nome: nomeJogo,
                 ano: anoJogo,
@@ -314,7 +327,8 @@ const forms = {
                 mecanica_id: mecanicaJogo,
                 foto,
                 fotoTema,
-                video
+                video,
+                corTema
             })
 
             return res.redirect('/feeds');
