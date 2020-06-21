@@ -145,6 +145,7 @@ const homeController = {
 
         const { jogosFavoritos, countFavoritos } = await busca.listaJogosFavoritos(6, usuario.id);
         const { jogosColecao, countColecao } = await busca.listaJogosColecao(6, usuario.id);
+        const { jogosJaJoguei, countJaJoguei } = await busca.listaJogosJogados(6, usuario.id);
 
 
         res.render('perfil', {
@@ -162,6 +163,8 @@ const homeController = {
             countFavoritos,
             jogosColecao,
             countColecao,
+            jogosJaJoguei,
+            countJaJoguei,
             dominantColor: usuario.corTema
         });
     },
