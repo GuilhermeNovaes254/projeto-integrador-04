@@ -175,6 +175,20 @@ const jogoController = {
         whereClause = {}
         whereClause['usuario_id'] = id
 
+        quantidade = await Joguei.count({
+            where: whereClause
+        });
+
+        return quantidade;
+
+    },
+
+    contaColecao: async (id) => {
+
+        let quantidade = 0
+        whereClause = {}
+        whereClause['usuario_id'] = id
+
         quantidade = await Colecao.count({
             where: whereClause
         });
