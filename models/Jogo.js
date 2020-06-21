@@ -100,6 +100,10 @@ const Jogo = (sequelize, DataTypes) => {
             video:{
                 type: DataTypes.STRING(500),
                 allowNull: true
+            },
+            corTema:{
+                type: DataTypes.STRING(30),
+                allowNull: true
             }
             
         },{
