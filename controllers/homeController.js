@@ -247,12 +247,18 @@ const homeController = {
         const jogados = await jogoCtrl.contaJaJoguei(id)
 
 
-        let jogos;
+        let jogos, colecao;
         if (tipo == 1) {
-            jogos = await busca.listaJogosColecao(100, id)
-        } else {
+            jogos = await busca.listaJogosColecao(100, id);
+            colecao = jogos.jogosColecao;
+        } else if (tipo == 2){
             jogos = await busca.listaJogosFavoritos(100, id)
+            colecao = jogos.jogosFavoritos;
+        } else if(tipo == 3){
+            jogos = await busca.listaJogosJogados(100, id);
+            colecao = jogos.jogosJaJoguei;
         }
+
 
         let CIDADE
         if (cidade == null) {
@@ -273,7 +279,7 @@ const homeController = {
             title: 'Módulo Destaques',
             cidadeUsuario: CIDADE,
             estadoUsuario: ESTADO,
-            jogos: tipo == 1 ? jogos.jogosColecao : jogos.jogosFavoritos,
+            jogos: colecao,
             fotoTemaUsuario: usuario.fotoTema,
             fotoUsuario: usuario.foto,
             nomeUsuario: usuario.nome,
