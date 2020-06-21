@@ -92,8 +92,7 @@ async function postaAvaliacao(nota) {
         })
         .then((resposta) => resposta.json())
         .then((nota) => {
-            console.log(nota);
-            document.getElementById('notaJogo').innerText = (nota.notaFinal / 2).toFixed(2);
+            document.getElementById('notaJogo').innerText = (nota.notaFinal / 2).toFixed(1);
             
         });
 }
