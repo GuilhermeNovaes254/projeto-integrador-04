@@ -6,7 +6,9 @@ const {
     Tema,
     Comentario,
     Usuario,
-    Jogo
+    Jogo,
+    Favorito,
+    Joguei
 } = require('../models')
 const busca = require('./buscaController');
 const local = require('./localizacaoController');
@@ -209,8 +211,29 @@ const homeController = {
                 order: [
                     ['nome', 'ASC']
                 ],
-                where: whereClause
+                where: whereClause,
+                include: [{
+                    model: Tema,
+                    as: 'tema'
+                }]
             })
+
+            for (let i = 0; i < busca.length; i++) {
+                await Favorito.count({
+                    where: {
+                        jogo_id: busca[i].id,
+                    }
+                }).then(result => {
+                    busca[i].totalFavorito = result;
+                });
+                await Joguei.count({
+                    where: {
+                        jogo_id: busca[i].id,
+                    }
+                }).then(result => {
+                    busca[i].totalJoguei = result;
+                });
+            }
         }
 
         res.render('busca', {
@@ -255,10 +278,10 @@ const homeController = {
         if (tipo == 1) {
             jogos = await busca.listaJogosColecao(100, id);
             colecao = jogos.jogosColecao;
-        } else if (tipo == 2){
+        } else if (tipo == 2) {
             jogos = await busca.listaJogosFavoritos(100, id)
             colecao = jogos.jogosFavoritos;
-        } else if(tipo == 3){
+        } else if (tipo == 3) {
             jogos = await busca.listaJogosJogados(100, id);
             colecao = jogos.jogosJaJoguei;
         }
