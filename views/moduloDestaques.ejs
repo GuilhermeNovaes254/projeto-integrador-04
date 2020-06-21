@@ -23,16 +23,30 @@
                 <div id="descricao"><%=descricaoUsuario%></div>
 
                 <div id='destaques'>
-                    <strong><i class="icon ion-ios-heart-outline"></i><%=favoritos%></strong>
-                    <strong><i class="icon ion-ios-game-controller-a-outline"></i><%=jogados%></strong>
+                    
+                    <a href="/moduloDestaques?id=<%=idUsuario%>&tipo=2"><strong>Favoritei: <%=favoritos%></strong></a>
+                    <a href="/moduloDestaques?id=<%=idUsuario%>&tipo=3"><strong>Já joguei: <%=jogados%></strong></a>
+                    <a href="/moduloDestaques?id=<%=idUsuario%>&tipo=1"><strong>Minha coleção: <%=colecionados%></strong></a>
                 </div>
 
             </div>
 
             <div id='areaCentral'>
                 <div class="containerTabela">
-                    <div class="row " id='linha'>
+                    <div class="row">
+                        <% if(tipo == 1) { %>
+                            <h1>Jogos colecionados</h1>
+                        <% } else if(tipo == 2) {%>   
+                            <h1>Jogos Favoritos</h1>
+                        <% } else if(tipo == 3) {%> 
+                            <h1>Jogados</h1>
+                        <% } %>     
+                    </div>
+                    <div class="row " id='linha'>    
                         <%- include('./partials/highlights-five', {jogos, flagClicavel : true}) %>
+                        <% if(jogos.length == 0) { %>
+                            <p>Nenhum jogo adicionado</p>
+                        <% } %>    
                     </div>
                 </div>
             </div>

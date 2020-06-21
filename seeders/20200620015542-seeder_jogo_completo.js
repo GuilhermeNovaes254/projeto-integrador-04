@@ -21,7 +21,8 @@ module.exports = {
         dominio_id: 10,
         mecanica_id: 1,
         foto:'projetoGaia.jpg',
-        fotoTema:'projetoGaia2.jpg'
+        fotoTema:'projetoGaia2.jpg',
+        corTema: '30, 35, 40'
       }, {
         nome: 'Terra Mystica',
         ano: '2012',
@@ -40,7 +41,8 @@ module.exports = {
         dominio_id: 6,
         mecanica_id: 4,
         foto:'terraMistica.jpg',
-        fotoTema:'terraMistica2.jpg'
+        fotoTema:'terraMistica2.jpg',
+        corTema: '153, 127, 62'
       },{
         nome: 'Terraforming Mars',
         ano: '2016',
@@ -59,7 +61,8 @@ module.exports = {
         dominio_id: 13,
         mecanica_id: 5,
         foto:'terraforming_mars.jpg',
-        fotoTema:'terraforming_mars2.jpg'
+        fotoTema:'terraforming_mars2.jpg',
+        corTema:'183, 184, 136'
       },
       {
         nome: 'Gloomhaven',
@@ -79,7 +82,8 @@ module.exports = {
         dominio_id: 10,
         mecanica_id: 6,
         foto:'Gloomhaven.jpg',
-        fotoTema:'Gloomhaven2.jpg'
+        fotoTema:'Gloomhaven2.jpg',
+        corTema:'233, 213, 179'
       },
       {
         nome: 'Great Western Trail',
@@ -99,7 +103,8 @@ module.exports = {
         dominio_id: 8,
         mecanica_id: 4,
         foto:'GreatWesternTrail.jpg',
-        fotoTema:'GreatWesternTrail2.jpg'
+        fotoTema:'GreatWesternTrail2.jpg',
+        corTema: '155, 140, 93'
       },
       {
         nome: 'Puerto Rico',
@@ -119,7 +124,8 @@ module.exports = {
         dominio_id: 5,
         mecanica_id: 2,
         foto:'PuertoRico.jpg',
-        fotoTema:'PuertoRico2.jpg'
+        fotoTema:'PuertoRico2.jpg',
+        corTema:'65, 106, 100'
       },
       {
         nome: 'Mage knight',
@@ -139,7 +145,8 @@ module.exports = {
         dominio_id: 2,
         mecanica_id: 1,
         foto:'Mageknight.jpg',
-        fotoTema:'Mageknight2.jpg'
+        fotoTema:'Mageknight2.jpg',
+        corTema:'202, 176, 98'
       },
       {
         nome: 'Clãs da Caledônia',
@@ -159,7 +166,8 @@ module.exports = {
         dominio_id: 4,
         mecanica_id: 3,
         foto:'Clas.png',
-        fotoTema:'Clas2.jpg'
+        fotoTema:'Clas2.jpg',
+        corTema:'112, 122, 63'
       },
       {
         nome: '7 Wonders Duel',
@@ -179,7 +187,8 @@ module.exports = {
         dominio_id: 2,
         mecanica_id: 6,
         foto:'WondersDuel.jpg',
-        fotoTema:'WondersDuel2.jpg'
+        fotoTema:'WondersDuel2.jpg',
+        corTema:'190, 192, 175'
       },
       {
         nome: 'Mansions of Madness',
@@ -199,7 +208,8 @@ module.exports = {
         dominio_id: 3,
         mecanica_id: 3,
         foto:'MansionsofMadness.jpg',
-        fotoTema:'MansionsofMadness2.jpg'
+        fotoTema:'MansionsofMadness2.jpg',
+        corTema:'144, 143, 139'
       },
     ], {});
 

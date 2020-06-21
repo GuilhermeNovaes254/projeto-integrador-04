@@ -13,6 +13,7 @@ const {
     validationResult,
     body
 } = require('express-validator');
+const colorThief = require('colorthief');
 
 const forms = {
 
@@ -37,7 +38,8 @@ const forms = {
                 fotoTema,
                 senha: bcrypt.hashSync(senha, 10),
                 cargo: 0, //usuario comum
-                aprovado: 1
+                aprovado: 1,
+                corTema: '21, 125, 52'
             });
 
             const user = await Usuario.findOne({
@@ -89,6 +91,7 @@ const forms = {
     editarUsuario: async (req, res) => {
         let foto = '';
         let fotoTema = '';
+        let corTema = '';
 
         let {
             files
@@ -141,6 +144,16 @@ const forms = {
                 senhaEncript = bcrypt.hashSync(senha, 10);
             }
             
+            corTema = await colorThief.getColor(`http://localhost:5000/buscaImagem/${fotoTema}`);
+            corTema = corTema.map(value => {
+                if (value > 200) {
+                    return 190;
+                } else {
+                    return value;
+                }
+            }).join(', ');
+            
+            
             let updateUser = {
                 nome: nomeUser,
                 apelido,
@@ -150,7 +163,8 @@ const forms = {
                 descricao: descricaoUser,
                 senha: senhaEncript,
                 foto,
-                fotoTema
+                fotoTema,
+                corTema
             }
 
             if(moderador == 1){
@@ -243,6 +257,7 @@ const forms = {
         var mecanicas = await Mecanica.findAll();
         let foto = '';
         let fotoTema = '';
+        let corTema = '';
 
         let {
             files
@@ -256,6 +271,7 @@ const forms = {
                 foto = file.originalname
             }
         }
+       
 
         let listOfErrors = validationResult(req);
 
@@ -296,6 +312,16 @@ const forms = {
                 foto = 'GameDefault.png';
             }
 
+
+            corTema = await colorThief.getColor(`http://localhost:5000/buscaImagem/${fotoTema}`);
+            corTema = corTema.map(value => {
+                if (value > 200) {
+                    return 190;
+                } else {
+                    return value;
+                }
+            }).join(', ');
+            
             const jogo = await Jogo.create({
                 nome: nomeJogo,
                 ano: anoJogo,
@@ -314,7 +340,8 @@ const forms = {
                 mecanica_id: mecanicaJogo,
                 foto,
                 fotoTema,
-                video
+                video,
+                corTema
             })
 
             return res.redirect('/feeds');

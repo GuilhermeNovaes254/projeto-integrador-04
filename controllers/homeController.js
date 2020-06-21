@@ -161,7 +161,8 @@ const homeController = {
             jogosFavoritos,
             countFavoritos,
             jogosColecao,
-            countColecao
+            countColecao,
+            dominantColor: usuario.corTema
         });
     },
 
@@ -243,15 +244,22 @@ const homeController = {
         const estado = await local.buscaEstadoController(usuario.cidade_estado_id)
         const cidade = await local.buscaCidadeController(usuario.cidade_id)
         const favoritos = await jogoCtrl.contaFavorito(id)
+        const colecionados = await jogoCtrl.contaColecao(id)
         const jogados = await jogoCtrl.contaJaJoguei(id)
 
 
-        let jogos;
+        let jogos, colecao;
         if (tipo == 1) {
-            jogos = await busca.listaJogosColecao(100, id)
-        } else {
+            jogos = await busca.listaJogosColecao(100, id);
+            colecao = jogos.jogosColecao;
+        } else if (tipo == 2){
             jogos = await busca.listaJogosFavoritos(100, id)
+            colecao = jogos.jogosFavoritos;
+        } else if(tipo == 3){
+            jogos = await busca.listaJogosJogados(100, id);
+            colecao = jogos.jogosJaJoguei;
         }
+
 
         let CIDADE
         if (cidade == null) {
@@ -272,15 +280,17 @@ const homeController = {
             title: 'Módulo Destaques',
             cidadeUsuario: CIDADE,
             estadoUsuario: ESTADO,
-            jogos: tipo == 1 ? jogos.jogosColecao : jogos.jogosFavoritos,
+            jogos: colecao,
             fotoTemaUsuario: usuario.fotoTema,
             fotoUsuario: usuario.foto,
             nomeUsuario: usuario.nome,
             apelidoUsuario: usuario.apelido,
             descricaoUsuario: usuario.descricao,
             favoritos,
-            jogados
-
+            jogados,
+            colecionados,
+            idUsuario: usuario.id,
+            tipo
         });
     },
 

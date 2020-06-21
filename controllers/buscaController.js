@@ -202,6 +202,56 @@ const buscaController = {
                 }
         },
 
+        listaJogosJogados: async (limite, idUsuario) => {
+                try {
+                        let jogados, countJogados;
+                        await Joguei.findAndCountAll({
+                                limit: limite,
+                                where: {
+                                        usuario_id: idUsuario
+                                },
+                                include: [{
+                                        model: Jogo,
+                                        as: 'jogo',
+                                        include: [{
+                                                model: Tema,
+                                                as: 'tema'
+                                        }]
+                                }]
+                        }).then(result => {
+                                jogados = result.rows;
+                                countJogados = result.count;
+                        });
+
+                        let jogosJaJoguei = [];
+                        for (let i = 0; i < jogados.length; i++) {
+                                await Favorito.count({
+                                        where: {
+                                                jogo_id: jogados[i].jogo.id,
+                                        }
+                                }).then(result => {
+                                        jogados[i].jogo.totalFavorito = result;
+                                });
+                                await Joguei.count({
+                                        where: {
+                                                jogo_id: jogados[i].jogo.id,
+                                        }
+                                }).then(result => {
+                                        jogados[i].jogo.totalJoguei = result;
+                                });
+
+                                jogosJaJoguei.push(jogados[i].jogo);
+                        }
+
+                        return {
+                                jogosJaJoguei,
+                                countJogados
+                        };
+                } catch (error) {
+                        return null;
+                }
+        },
+
         listaJogosColecao: async (limite, idUsuario) => {
                 try {
                         let colecao, countColecao;
