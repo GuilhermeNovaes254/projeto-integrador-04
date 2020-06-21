@@ -27,7 +27,8 @@ module.exports = {
           cidade_id:5409,
           cidade_estado_id:26,
           foto: 'default_adm.jpg',
-          fotoTema: 'wallhaven-md5z28.jpg'
+          fotoTema: 'wallhaven-md5z28.jpg',
+          corTema:'225, 204, 170'
         },
         {
           nome:'Daniele Lucas',
@@ -43,7 +44,8 @@ module.exports = {
           cidade_id:5409,
           cidade_estado_id:26,
           foto: 'teste5.jpg',
-          fotoTema: 'wallhaven-x15jgo.jpg'
+          fotoTema: 'wallhaven-x15jgo.jpg',
+          corTema:'7, 7, 7'
         },
         {
           nome:'Alice Sullivan',
@@ -59,7 +61,8 @@ module.exports = {
           cidade_id:25,
           cidade_estado_id:2,
           foto: 'harry_potter.jpg',
-          fotoTema: 'wallhaven-qd218r.png'
+          fotoTema: 'wallhaven-qd218r.png',
+          corTema:'66, 47, 27'
         },
         {
           nome:'Natalia Silva',
@@ -75,7 +78,8 @@ module.exports = {
           cidade_id:114,
           cidade_estado_id:2,
           foto: 'dany.jpg',
-          fotoTema: 'wallhaven-4lq9w2.jpg'
+          fotoTema: 'wallhaven-4lq9w2.jpg',
+          corTema:'177, 171, 154'
         },
         {
           nome:'Bruna Tavares',
@@ -91,7 +95,8 @@ module.exports = {
           cidade_id:157,
           cidade_estado_id:3,
           foto: 'leia.jpg',
-          fotoTema: 'wallhaven-zmdzlo.jpg'
+          fotoTema: 'wallhaven-zmdzlo.jpg',
+          corTema:'9, 9, 6'
         },
         {
           nome:'Aline Oliveira',
@@ -107,7 +112,8 @@ module.exports = {
           cidade_id:162,
           cidade_estado_id:3,
           foto: 'viuva-negra.jpg',
-          fotoTema: 'wallhaven-nz335w.jpg'
+          fotoTema: 'wallhaven-nz335w.jpg',
+          corTema:'35, 45, 62'
         },
         {
           nome:'Yuri Santos',
@@ -123,7 +129,8 @@ module.exports = {
           cidade_id:215,
           cidade_estado_id:5,
           foto: 'gVDsxThW_400x400.jpg',
-          fotoTema: 'wallhaven-48oz71.jpg'
+          fotoTema: 'wallhaven-48oz71.jpg',
+          corTema:'46, 46, 31'
         },
         {
           nome:'Gabriel Maragoni',
@@ -139,7 +146,8 @@ module.exports = {
           cidade_id:247,
           cidade_estado_id:5,
           foto: '140026_36.jpg',
-          fotoTema: 'wallhaven-nrdr9j.jpg'
+          fotoTema: 'wallhaven-nrdr9j.jpg',
+          corTema: '237, 103, 59'
         },
         {
           nome:'Leonel Araujo',
@@ -155,7 +163,8 @@ module.exports = {
           cidade_id:664,
           cidade_estado_id:6,
           foto: 'devoltal1.png',
-          fotoTema: 'wallhaven-0pzo3e.jpg'
+          fotoTema: 'wallhaven-0pzo3e.jpg',
+          corTema: '47, 56, 76'
         },
         {
           nome:'Flavio Araujo',
@@ -171,7 +180,8 @@ module.exports = {
           cidade_id:841,
           cidade_estado_id:8,
           foto: '1528066220-br-benedict.jpg',
-          fotoTema: 'wallhaven-r276qj.png'
+          fotoTema: 'wallhaven-r276qj.png',
+          corTema: '31, 15, 53'
         }
       ], {});
 
