@@ -186,7 +186,7 @@ const homeController = {
         let busca = []
         let whereClause = {};
 
-        if (tipo = 'jogo' && tipo !== undefined) {
+        if (tipo == 'jogo') {
             if (nomeJogo != '') {
                 whereClause['nome'] = {
                     [Op.like]: '%' + nomeJogo + '%'
@@ -236,11 +236,28 @@ const homeController = {
             }
         }
 
+        if (tipo == 'usuario') {
+            if (nomeUsuario != '') {
+                whereClause['nome'] = {
+                    [Op.like]: '%' + nomeUsuario + '%'
+                };
+            }
+
+
+            busca = await Usuario.findAll({
+                order: [
+                    ['nome', 'ASC']
+                ],
+                where: whereClause
+            })
+        }
+
         res.render('busca', {
             title: 'Busca',
             apelidoUsuario: req.session.usuario.apelido,
             idUsuario: req.session.usuario.id,
-            jogos: busca
+            jogos: tipo == 'jogo' ? busca : null,
+            usuarios: tipo == 'usuario' ? busca : null
         });
     },
 
