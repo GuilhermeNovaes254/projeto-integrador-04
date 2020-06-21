@@ -13,38 +13,38 @@ const {
 
 const buscaController = {
 
-        usuarios: async (req, res) => {
-                try {
-                        let {
-                                item
-                        } = req.params;
+        // usuarios: async (req, res) => {
+        //         try {
+        //                 let {
+        //                         item
+        //                 } = req.params;
 
 
-                        let busca = []
+        //                 let busca = []
 
-                        let whereClause = {};
+        //                 let whereClause = {};
 
-                        if (item != '') {
-                                whereClause['nome'] = {
-                                        [Op.like]: '%' + item + '%'
-                                };
-                        }
-
-
-                        busca = await Usuario.findAll({
-                                order: [
-                                        ['nome', 'ASC']
-                                ],
-                                where: whereClause
-                        })
+        //                 if (item != '') {
+        //                         whereClause['nome'] = {
+        //                                 [Op.like]: '%' + item + '%'
+        //                         };
+        //                 }
 
 
-                        res.send(busca)
+        //                 busca = await Usuario.findAll({
+        //                         order: [
+        //                                 ['nome', 'ASC']
+        //                         ],
+        //                         where: whereClause
+        //                 })
 
-                } catch (error) {
-                        res.status(401)
-                }
-        },
+
+        //                 res.send(busca)
+
+        //         } catch (error) {
+        //                 res.status(401)
+        //         }
+        // },
 
 
         // jogos: async (req, res) => {

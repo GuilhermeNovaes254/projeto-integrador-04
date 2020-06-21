@@ -6,7 +6,9 @@ const {
     Tema,
     Comentario,
     Usuario,
-    Jogo
+    Jogo,
+    Favorito,
+    Joguei
 } = require('../models')
 const busca = require('./buscaController');
 const local = require('./localizacaoController');
@@ -184,7 +186,7 @@ const homeController = {
         let busca = []
         let whereClause = {};
 
-        if (tipo = 'jogo' && tipo !== undefined) {
+        if (tipo == 'jogo') {
             if (nomeJogo != '') {
                 whereClause['nome'] = {
                     [Op.like]: '%' + nomeJogo + '%'
@@ -209,6 +211,43 @@ const homeController = {
                 order: [
                     ['nome', 'ASC']
                 ],
+                where: whereClause,
+                include: [{
+                    model: Tema,
+                    as: 'tema'
+                }]
+            })
+
+            for (let i = 0; i < busca.length; i++) {
+                await Favorito.count({
+                    where: {
+                        jogo_id: busca[i].id,
+                    }
+                }).then(result => {
+                    busca[i].totalFavorito = result;
+                });
+                await Joguei.count({
+                    where: {
+                        jogo_id: busca[i].id,
+                    }
+                }).then(result => {
+                    busca[i].totalJoguei = result;
+                });
+            }
+        }
+
+        if (tipo == 'usuario') {
+            if (nomeUsuario != '') {
+                whereClause['nome'] = {
+                    [Op.like]: '%' + nomeUsuario + '%'
+                };
+            }
+
+
+            busca = await Usuario.findAll({
+                order: [
+                    ['nome', 'ASC']
+                ],
                 where: whereClause
             })
         }
@@ -217,7 +256,8 @@ const homeController = {
             title: 'Busca',
             apelidoUsuario: req.session.usuario.apelido,
             idUsuario: req.session.usuario.id,
-            jogos: busca
+            jogos: tipo == 'jogo' ? busca : null,
+            usuarios: tipo == 'usuario' ? busca : null
         });
     },
 
@@ -255,10 +295,10 @@ const homeController = {
         if (tipo == 1) {
             jogos = await busca.listaJogosColecao(100, id);
             colecao = jogos.jogosColecao;
-        } else if (tipo == 2){
+        } else if (tipo == 2) {
             jogos = await busca.listaJogosFavoritos(100, id)
             colecao = jogos.jogosFavoritos;
-        } else if(tipo == 3){
+        } else if (tipo == 3) {
             jogos = await busca.listaJogosJogados(100, id);
             colecao = jogos.jogosJaJoguei;
         }

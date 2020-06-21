@@ -23,8 +23,9 @@
         <% for(let jogoRelacionado of jogosRelacionados) { %>
         <li>
           <a href="/jogo?id=<%= jogoRelacionado.id %>">
+            <img src="/buscaImagem/<%= jogoRelacionado.foto %>">
             <h6><%= jogoRelacionado.nome %></h6>
-          </a>
+          </img>
         </li>
         <% } %>
       </ol>
