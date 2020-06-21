@@ -34,8 +34,6 @@ const jogoController = {
             }]
         });
 
-        console.log(jogo);
-
         let jogosRelacionados = await Jogo.findAll({
             limit: 5,
             where: {
@@ -55,7 +53,7 @@ const jogoController = {
             }
         });
 
-        let avaliacaoUsuario
+        let avaliacaoUsuario;
         await Avaliacao.findOne({
             where: {
                 usuario_id: req.session.usuario.id,
@@ -68,6 +66,7 @@ const jogoController = {
                 avaliacaoUsuario = null;
             }
         });
+        
 
         const query = `
             SELECT 
@@ -112,6 +111,16 @@ const jogoController = {
             contaColecao = result;
         });
 
+        let contaJaJoguei;
+        await Joguei.count({
+            where: {
+                jogo_id: jogo.id,
+                usuario_id: req.session.usuario.id
+            }
+        }).then(result => {
+            contaJaJoguei = result;
+        });
+
         let dominantColor = await colorThief.getColor(`http://localhost:5000/buscaImagem/${jogo.fotoTema}`);
 
         dominantColor = dominantColor.map(value => {
@@ -131,7 +140,8 @@ const jogoController = {
             dominantColor,
             favorito: contaFavorito > 0 ? true : false,
             colecao: contaColecao > 0 ? true : false,
-            avaliacaoUsuario
+            avaliacaoUsuario,
+            jaJoguei: contaJaJoguei > 0 ? true : false
         });
     },
 
