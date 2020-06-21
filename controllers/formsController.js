@@ -38,7 +38,8 @@ const forms = {
                 fotoTema,
                 senha: bcrypt.hashSync(senha, 10),
                 cargo: 0, //usuario comum
-                aprovado: 1
+                aprovado: 1,
+                corTema: '21, 125, 52'
             });
 
             const user = await Usuario.findOne({
@@ -90,6 +91,7 @@ const forms = {
     editarUsuario: async (req, res) => {
         let foto = '';
         let fotoTema = '';
+        let corTema = '';
 
         let {
             files
@@ -142,6 +144,16 @@ const forms = {
                 senhaEncript = bcrypt.hashSync(senha, 10);
             }
             
+            corTema = await colorThief.getColor(`http://localhost:5000/buscaImagem/${fotoTema}`);
+            corTema = corTema.map(value => {
+                if (value > 200) {
+                    return 190;
+                } else {
+                    return value;
+                }
+            }).join(', ');
+            
+            
             let updateUser = {
                 nome: nomeUser,
                 apelido,
@@ -151,7 +163,8 @@ const forms = {
                 descricao: descricaoUser,
                 senha: senhaEncript,
                 foto,
-                fotoTema
+                fotoTema,
+                corTema
             }
 
             if(moderador == 1){

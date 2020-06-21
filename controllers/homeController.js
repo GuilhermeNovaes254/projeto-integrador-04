@@ -161,7 +161,8 @@ const homeController = {
             jogosFavoritos,
             countFavoritos,
             jogosColecao,
-            countColecao
+            countColecao,
+            dominantColor: usuario.corTema
         });
     },
 
