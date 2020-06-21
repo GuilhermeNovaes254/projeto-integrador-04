@@ -77,6 +77,10 @@ const Usuario = (sequelize, DataTypes) => {
                 type: DataTypes.STRING(500),
                 allowNull: true,
                 default:'ProfileDefaultTema.jpg'
+            },
+            corTema:{
+                type: DataTypes.STRING(30),
+                allowNull: true
             }
         },{
             tableName: "usuario",
