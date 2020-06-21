@@ -12,10 +12,9 @@
           </div>
           <div class="o-highlights__description o-highlights-five__description">
             <h2><%= jogo.nome %></h2>
-            <h6><%= (jogo.notaJogo / 2).toFixed(1) %></h6>
             <a href='#'class='c-jogo__tag'><%= jogo.tema.nome %></a>
-            <h6><%= jogo.totalFavorito %></h6>
-            <h6><%= jogo.totalJoguei %></h6>
+            <h6>Total favoritos <%= jogo.totalFavorito %></h6>
+            <h6>Total Jogadores <%= jogo.totalJoguei %></h6>
 
           </div>
         </a>
