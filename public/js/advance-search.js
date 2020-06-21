@@ -4,12 +4,29 @@ let filtroTipo = document.querySelector('.c-search-form__inline-filters__current
 let boxOpcoes = document.querySelector('.c-search-form__inline-filters__options');
 let inputGames = document.querySelector('#advance-search-games');
 let inputUsers = document.querySelector('#advance-search-users');
+let btnSearch = document.querySelector('.c-search-form__submit');
+let Url = window.location.href.replace('/feeds','');
+let valueSearch;
+
+const ativarBotaoDaBusca = () =>{
+  if(inputGames){
+    inputGames.addEventListener('change',function(){
+      valueSearch = inputGames.value;
+    })
+  
+    btnSearch.addEventListener('click', function(){
+      window.location.href = Url + "/busca?tipo=jogo&nomeUsuario=&nomeJogo=" + valueSearch + "&tema=0&dominio=0&mecanica=0";
+    }); 
+  }
+}
 
 window.addEventListener('DOMContentLoaded', function(){
 
   if(inputUsers){
     inputUsers.style.display = "none";
   }
+
+  ativarBotaoDaBusca();
 
   if(filtro){
     filtro.addEventListener('click', function(){
@@ -28,10 +45,27 @@ window.addEventListener('DOMContentLoaded', function(){
           filtroTipo.textContent = 'Jogos';
           inputUsers.style.display = "none";
           inputGames.style.display = "block";
+
+          inputGames.addEventListener('change',function(){
+            valueSearch = inputGames.value;
+          })
+        
+          btnSearch.addEventListener('click', function(){
+            window.location.href = Url + "/busca?tipo=jogo&nomeUsuario=&nomeJogo=" + valueSearch + "&tema=0&dominio=0&mecanica=0";
+          }); 
+
         }else{
           filtroTipo.textContent = 'Usuários';
           inputUsers.style.display = "block";
           inputGames.style.display = "none";
+
+          inputUsers.addEventListener('change',function(){
+            valueSearch = inputUsers.value;
+          })
+
+          btnSearch.addEventListener('click', function(){
+            window.location.href = Url + "/busca?tipo=usuario&nomeUsuario=" + valueSearch + "&nomeJogo=&tema=0&dominio=0&mecanica=0";
+          }); 
         }
     
     });
