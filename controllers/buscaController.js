@@ -244,7 +244,7 @@ const buscaController = {
                         }
 
                         return {
-                                jogados,
+                                jogosJaJoguei,
                                 countJogados
                         };
                 } catch (error) {
