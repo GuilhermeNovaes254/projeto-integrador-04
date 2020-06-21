@@ -70,6 +70,7 @@
     text-decoration: none;
     border: 2px solid #fff;
     color: #ffffff;
+    text-align: center;
     background: transparent;
     transition: color .25s ease,background .25s ease;
   }
@@ -654,3 +655,5 @@ a[data-tooltip][data-placement="top"]::after {
   left: calc(50% - 5px);
   margin-bottom: 4px;
 }
+
+/* botao favoritar */
