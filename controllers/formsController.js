@@ -120,7 +120,8 @@ const forms = {
                 senha,
                 senha2,
                 imagemTema,
-                imagemPerfil
+                imagemPerfil,
+                moderador
             } = req.body;
 
             if(fotoTema.length < 1){
@@ -150,6 +151,11 @@ const forms = {
                 senha: senhaEncript,
                 foto,
                 fotoTema
+            }
+
+            if(moderador == 1){
+                updateUser = {...updateUser, cargo:1};
+                updateUser = {...updateUser, aprovado:0};
             }
 
             if(!isNaN(cidade)){
@@ -223,7 +229,8 @@ const forms = {
                 fotoTema,
                 cidadeUsuario: cidade.cidade ? cidade.cidade : '',
                 estadoUsuario: estado.sigla ? estado.sigla : '',
-                formData: req.body
+                formData: req.body,
+                moderador: req.session.usuario.cargo === 0 ? 1 : 0
                 })
         }
 
