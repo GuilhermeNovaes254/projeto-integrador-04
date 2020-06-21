@@ -157,6 +157,7 @@ router.post('/editar', VerificaUsuarioLogado, upload.any(), [
     check("estado").toInt(),
     check("cidade").toInt(),
     check("tipoNivelAP").toInt(),
+    check("moderador").toInt(),
     check("descricaoUser").isLength({
         max: 500
     })

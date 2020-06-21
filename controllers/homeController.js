@@ -342,7 +342,8 @@ const homeController = {
             idUsuario: req.session.usuario.id,
             formData: req.body,
             foto,
-            fotoTema
+            fotoTema,
+            moderador: req.session.usuario.cargo === 0 ? 1 : 0
         });
 
     },

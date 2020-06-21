@@ -8,6 +8,7 @@ let diaNasc = formDiaNasc;
 let mesNasc = formMesNasc;
 let anoNasc = formAnoNasc;
 let nivelAp = formNivelAp;
+let moderador = formModerador;
 let fotoTemaCad = formFotoTemaCad;
 let fotoCad = formFotoCad;
 
@@ -23,6 +24,7 @@ let selectNivelAp = document.getElementById('tipoNivelAP');
 let imagemPerfil = document.getElementById('imagemPerfil');
 let imagemTema = document.getElementById('imagemTema');
 let selectCidade = document.getElementById('cidade');
+let divModerador = document.getElementById('mostrarModerador');
 
 function buscaEstados() {
     // Set up our HTTP request
@@ -167,6 +169,15 @@ if (typeof(formData.tipoNivelAP) != "undefined" && formData.tipoNivelAP != null)
 }else{
     selectNivelAp.value = nivelAp;
 };
+
+if(moderador === '1'){
+    divModerador.innerHTML += '<label for="moderador">Solicitar se tornar moderador</label><select class="form-control" id="moderador" name="moderador"><option value="0">Não</option><option value="1">Sim</option></select>';
+    if (typeof(formData.moderador) != "undefined" && formData.moderador != null) {
+        let selectModerador = document.getElementById('moderador');
+        selectModerador.value = formData.moderador;
+    }
+
+}
 
 //carregar foto selecionada para perfil e tema
 fotoPerfil.addEventListener('change', function (evt) {
