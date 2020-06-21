@@ -15,7 +15,7 @@
   <div class="c-perfil__right">
     <div class="c-perfil__right--fav c-perfil__right--content" data-aos="fade-up" data-aos-duration="1000"
       data-aos-delay="400">
-      <h2 class="c-perfil__right--title"><i class="icon ion-ios-heart"></i> Favoritos</h2>
+      <h2 class="c-perfil__right--title o-border-shadow"><i class="icon ion-ios-heart"></i> Favoritos</h2>
       <%- include('./partials/highlights-three', {jogos : jogosFavoritos}) %>
       <% if(countFavoritos > 6) { %>
       <a href="/moduloDestaques?id=<%=idUsuario%>&tipo=2" class="c-bt-default">Ver mais</a>
@@ -23,7 +23,7 @@
     </div>
     <div class="c-perfil__right--fav c-perfil__right--content" data-aos="fade-up" data-aos-duration="1000"
       data-aos-delay="400">
-      <h2 class="c-perfil__right--title"><i class="icon ion-ios-albums"></i> Coleção</h2>
+      <h2 class="c-perfil__right--title o-border-shadow"><i class="icon ion-ios-albums"></i> Coleção</h2>
       <%- include('./partials/highlights-three', {jogos : jogosColecao}) %>
       <div style="padding: 15px; align-content: right;">
         <% if(countColecao > 6) { %>
@@ -31,19 +31,9 @@
         <% }%>
       </div>
     </div>
-    <div class="c-perfil__right--fav c-perfil__right--content" data-aos="fade-up" data-aos-duration="1000"
-      data-aos-delay="400">
-      <h2 class="c-perfil__right--title"><i class="icon ion-ios-albums"></i> Já joguei</h2>
-      <%- include('./partials/highlights-three', {jogos : jogosJaJoguei}) %>
-      <div style="padding: 15px; align-content: right;">
-        <% if(countJaJoguei > 6) { %>
-        <a href="/moduloDestaques?id=<%=idUsuario%>&tipo=3" class="c-bt-default">Ver mais</a>
-        <% }%>
-      </div>
-    </div>
     <div class="c-perfil__right--evaluation c-perfil__right--content" data-aos="fade-up" data-aos-duration="1000"
       data-aos-delay="200" style="background-color: transparent; padding-bottom: 0;">
-      <h2 class="c-perfil__right--title"><i class="icon ion-android-star-half"></i> Avaliações </h2>
+      <h2 class="c-perfil__right--title o-border-shadow"><i class="icon ion-android-star-half"></i> Avaliações </h2>
     </div>
     <div class="c-perfil__right--comments c-perfil__right--content" data-aos="fade-up" data-aos-duration="1000"
       data-aos-delay="200">

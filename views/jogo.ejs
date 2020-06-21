@@ -7,7 +7,9 @@
     <div class="c-jogo__left--description c-jogo__left--content" data-aos="fade-up" data-aos-duration="1000"
       data-aos-delay="200">
       <div class='c-photo-game' id='headPage'
-        style="background: url('buscaImagem/<%= jogo.foto %>') center center no-repeat; min-height: 280px;"></div>
+        style="background: url('buscaImagem/<%= jogo.foto %>') center center no-repeat; min-height: 280px;">
+        <p id="notaJogo" class="c-total-note c-category-<%= jogo.tema_id %> o-border-shadow"><%= (jogo.notaJogo / 2).toFixed(1)  %></p>
+      </div>
       <div class="c-jogo__description c-category-<%= jogo.tema_id %>">
         <h2 id='jogoNome'><%= jogo.nome %></h2>
         <p id='jogoDescricao'><%= jogo.descricao %></p>
@@ -40,8 +42,6 @@
         <a id="jaJoguei" class="btn btn-primary" data-placement="top"><%= jaJoguei ? 'Retira joguei' : 'Adiciona joguei'  %></a>
 
         <p>Usuário:</p> <%- include('./partials/rating') %>
-
-        <p id="notaJogo" class="c-total-note"><%= (jogo.notaJogo / 2).toFixed(1)  %></p>
 
       </h2>
       <!-- <div id='jogolinkYoutube'><iframe  width="560" height="315" src="https://www.youtube.com/embed/aR-KAldshAE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div> -->

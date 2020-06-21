@@ -50,7 +50,21 @@
   box-sizing: content-box;
   min-height: 280px;
   background-size: cover !important;
+  position: relative;
+  overflow: hidden;
 }
+
+/* .c-photo-game:after{
+  content: "";
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+} */
 
 .c-jogo{
   display: flex;
@@ -524,7 +538,7 @@
   padding-bottom: 10px;
 }
     
-.c-total-note{
+/* .c-total-note{
   background-image: url('/images/jogos/star-note.png');
   height: 109px;
   width: 108px;
@@ -535,6 +549,19 @@
   color: #9e5622;
   font-weight: bold;
   letter-spacing: -0.5px;
+} */
+
+.c-total-note{
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  color: #fff;
+  padding: 20px 25px;
+  border-radius: 0 0 25px 0;
+  font-weight: bold;
+  letter-spacing: 1px;
+  font-size: 26px;
 }
 
 .c-jogo__right--info{
