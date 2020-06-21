@@ -23,7 +23,7 @@
 
                                 <div class="form-group pt-3">
                                     <label for="nomeJogo">Nome</label>
-                                    <input type="text" class="form-control" id="nomeJogo" name="nomeJogo" required value=<%= formData.nomeJogo %>>
+                                    <input type="text" class="form-control" id="nomeJogo" name="nomeJogo" required value="<%= formData.nomeJogo %>">
                                 </div>
                                 <div class="row tamanho">
                                     <div class="col-6">
@@ -46,7 +46,7 @@
                                         <div class="form-group">
                                             <label for="duracao">Duração</label>
                                             <input type="number" class="form-control" id="duracao" name="duracao"
-                                                value=<%= formData.duracao %>>
+                                                value="<%= formData.duracao %>">
 
                                         </div>
                                     </div>
@@ -66,13 +66,13 @@
                                     <select class="form-control" id="temaJogo" name="temaJogo">
                                         <option value="">Selecione</option>
                                         <% for(tema of temas) { %>
-                                        <option value=<%= tema.id %>><%= tema.nome %></option>
+                                        <option value="<%= tema.id %>"><%= tema.nome %></option>
                                         <% } %>
                                     </select>
                                 </div>
                                 <div class="form-group">
                                     <label for="video">Link Video</label>
-                                    <input type="text" class="form-control" id="video" name="video" value=<%=formData.video %>>
+                                    <input type="text" class="form-control" id="video" name="video" value="<%=formData.video %>">
                                 </div>
 
 
@@ -97,14 +97,14 @@
                                                 <div class="form-group pt-3">
                                                     <label for="minJogadores">Mínimo</label>
                                                     <input type="number" class="form-control" id="minJogadores"
-                                                        name="minJogadores" value=<%= formData.minJogadores %>>
+                                                        name="minJogadores" value="<%= formData.minJogadores %>">
                                                 </div>
                                             </div>
                                             <div class="col-6">
                                                 <div class="form-group pt-3">
                                                     <label for="maxJogadores">Máximo</label>
                                                     <input type="number" class="form-control" id="maxJogadores"
-                                                        name="maxJogadores" value=<%= formData.maxJogadores %>>
+                                                        name="maxJogadores" value="<%= formData.maxJogadores %>">
                                                 </div>
                                             </div>
                                         </div>
@@ -143,7 +143,7 @@
                                             <select class="form-control" id="dominioJogo" name="dominioJogo">
                                                 <option value="">Selecione</option>
                                                 <% for(dominio of dominios) { %>
-                                                <option value=<%= dominio.id %>><%= dominio.nome %></option>
+                                                <option value="<%= dominio.id %>"><%= dominio.nome %></option>
                                                 <% } %>
                                             </select>
                                         </div>
@@ -152,7 +152,7 @@
                                             <select class="form-control" id="mecanicaJogo" name="mecanicaJogo">
                                                 <option value="">Selecione</option>
                                                 <% for(mecanica of mecanicas) { %>
-                                                <option value=<%= mecanica.id %>><%= mecanica.nome %></option>
+                                                <option value="<%= mecanica.id %>"><%= mecanica.nome %></option>
                                                 <% } %>
                                             </select>
                                         </div>

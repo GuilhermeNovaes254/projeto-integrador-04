@@ -1,5 +1,5 @@
-<link rel='stylesheet' href='/css/separados/perfilAdm.css'>
 <%- include('./partials/header') %>
+<link rel='stylesheet' href='/css/separados/perfilAdm.css'>
 
 
 <section id="temaPerfil"></section>
@@ -35,11 +35,20 @@
                         <th>Aprovação</th>
                     </tr>
                 </thead>
-                <tbody id='dinamico'>
+                <tbody>
+                    <% if(countStatus.pendentes == 0) { %>
+                    <tr>
+                        <td></td>
+                        <td><p>Sem ações necessárias</p></td>
+                        <td></td>
+                    </tr>
+                    <% } %>
                     <% for(let usuario of pendentes) { %>
                     <tr>
                         <td><%= usuario.nome %></td>
-                        <td><%= usuario.apelido %></td>
+                        <td>
+                            <%= usuario.apelido %>
+                        </td>
                         <td>
                             <a href="/perfilAdm/aprovaModerador/<%= usuario.id %>"><img id="lapisVerde"
                                     src="/images/icons/lapisVerde.png" alt="lapisVerde"></a>

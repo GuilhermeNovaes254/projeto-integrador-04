@@ -24,6 +24,11 @@ btnColecionar.addEventListener('click', function () {
     adicionaColecao();
 });
 
+const btnJaJoguei = document.getElementById('jaJoguei');
+btnJaJoguei.addEventListener('click', function () {
+    postaJaJoguei()
+});
+
 const rating = document.getElementById('rating');
 rating.addEventListener('change', function () {
     let nota = getRadioVal(this, 'c-rating');
@@ -92,9 +97,29 @@ async function postaAvaliacao(nota) {
         })
         .then((resposta) => resposta.json())
         .then((nota) => {
-            console.log(nota);
-            document.getElementById('notaJogo').innerText = (nota.notaFinal / 2).toFixed(2);
+            document.getElementById('notaJogo').innerText = (nota.notaFinal / 2).toFixed(1);
             
+        });
+}
+
+async function postaJaJoguei() {
+    let url = `/jogo/acao/jaJoguei`;
+    fetch(url,
+        {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ jogo })
+        })
+        .then((resposta) => resposta.text())
+        .then((jaJoguei) => {
+            if (jaJoguei == "true") {
+                btnJaJoguei.innerText = 'Retira joguei';
+            } else if (jaJoguei == "false") {
+                btnJaJoguei.innerText = 'Adiciona joguei';
+            }
         });
 }
 
