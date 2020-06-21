@@ -5,7 +5,8 @@ const {
         Usuario,
         Jogo,
         Favorito,
-        Colecao
+        Colecao,
+        Tema
 } = require('../models')
 
 
@@ -116,7 +117,11 @@ const buscaController = {
                                 where: {
                                         aprovado: 1
                                 },
-                                order: orderBy ? [orderBy] : null
+                                order: orderBy ? [orderBy] : null,
+                                include: [{
+                                        model: Tema,
+                                        as: 'tema'
+                                }]
                         })
 
                         return busca;
@@ -136,7 +141,11 @@ const buscaController = {
                                 },
                                 include: [{
                                         model: Jogo,
-                                        as: 'jogo'
+                                        as: 'jogo',
+                                        include: [{
+                                                model: Tema,
+                                                as: 'tema'
+                                        }]
                                 }]
                         }).then(result => {
                                 favoritos = result.rows;
@@ -164,7 +173,11 @@ const buscaController = {
                                 },
                                 include: [{
                                         model: Jogo,
-                                        as: 'jogo'
+                                        as: 'jogo',
+                                        include: [{
+                                                model: Tema,
+                                                as: 'tema'
+                                        }]
                                 }]
                         }).then(result => {
                                 colecao = result.rows;
