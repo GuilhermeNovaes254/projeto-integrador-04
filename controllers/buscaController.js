@@ -6,7 +6,8 @@ const {
         Jogo,
         Favorito,
         Colecao,
-        Tema
+        Tema,
+        Joguei
 } = require('../models')
 
 
@@ -124,6 +125,23 @@ const buscaController = {
                                 }]
                         })
 
+                        for (let i = 0; i < busca.length; i++) {
+                                await Favorito.count({
+                                        where: {
+                                                jogo_id: busca[i].id,
+                                        }
+                                }).then(result => {
+                                        busca[i].totalFavorito = result;
+                                });
+                                await Joguei.count({
+                                        where: {
+                                                jogo_id: busca[i].id,
+                                        }
+                                }).then(result => {
+                                        busca[i].totalJoguei = result;
+                                });
+
+                        }
                         return busca;
 
                 } catch (error) {
@@ -153,11 +171,32 @@ const buscaController = {
                         });
 
                         let jogosFavoritos = [];
-                        for (let favorito of favoritos) {
-                                jogosFavoritos.push(favorito.jogo);
+                        // for (let favorito of favoritos) {
+                        //         jogosFavoritos.push(favorito.jogo);
+                        // }
+                        for (let i = 0; i < favoritos.length; i++) {
+                                await Favorito.count({
+                                        where: {
+                                                jogo_id: favoritos[i].jogo.id,
+                                        }
+                                }).then(result => {
+                                        favoritos[i].jogo.totalFavorito = result;
+                                });
+                                await Joguei.count({
+                                        where: {
+                                                jogo_id: favoritos[i].jogo.id,
+                                        }
+                                }).then(result => {
+                                        favoritos[i].jogo.totalJoguei = result;
+                                });
+
+                                jogosFavoritos.push(favoritos[i].jogo);
                         }
 
-                        return { jogosFavoritos, countFavoritos };
+                        return {
+                                jogosFavoritos,
+                                countFavoritos
+                        };
                 } catch (error) {
                         return null;
                 }
@@ -185,11 +224,30 @@ const buscaController = {
                         });
 
                         let jogosColecao = [];
-                        for (let jogoColecao of colecao) {
-                                jogosColecao.push(jogoColecao.jogo);
+
+                        for (let i = 0; i < colecao.length; i++) {
+                                await Favorito.count({
+                                        where: {
+                                                jogo_id: colecao[i].jogo.id,
+                                        }
+                                }).then(result => {
+                                        colecao[i].jogo.totalFavorito = result;
+                                });
+                                await Joguei.count({
+                                        where: {
+                                                jogo_id: colecao[i].jogo.id,
+                                        }
+                                }).then(result => {
+                                        colecao[i].jogo.totalJoguei = result;
+                                });
+
+                                jogosColecao.push(colecao[i].jogo);
                         }
 
-                        return { jogosColecao, countColecao };
+                        return {
+                                jogosColecao,
+                                countColecao
+                        };
                 } catch (error) {
                         return null;
                 }
