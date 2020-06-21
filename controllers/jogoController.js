@@ -452,13 +452,30 @@ const jogoController = {
                 jogo
             } = req.body;
 
-            let usuarioId = req.session.usuario.id
-
-            await Joguei.create({
-                usuario_id: usuarioId,
-                jogo_id: jogo
+            let existeJoguei;
+            await Joguei.findOrCreate({
+                where: {
+                    jogo_id: jogo,
+                    usuario_id: req.session.usuario.id
+                }
+            }).spread(function (joguei, created) {
+                if (created) {
+                    res.status(200).send(true);
+                } else {
+                    existeJoguei = true;
+                }
             });
 
+            if (existeJoguei) {
+                Joguei.destroy({
+                    where: {
+                        jogo_id: jogo,
+                        usuario_id: req.session.usuario.id
+                    }
+                }).then(() => {
+                    res.status(200).send(false);
+                });
+            }
 
         } catch (error) {
             res.status(401)
