@@ -48,6 +48,11 @@
             <strong><i class="icon ion-ios-heart"></i></strong>
           </div>
           <% } %>
+          <% if(comentario.joguei != null) { %>
+            <div class="c-comments__features--likes">
+              <strong><i class="icon "></i><h2>JOGUEI</h2></strong>
+            </div>
+            <% } %>
           <% if(comentario.avaliacao != null) {  %>
             <%  let noteConverter = parseFloat(comentario.avaliacao).toFixed(1).replace(".", "") %>
           <div class="c-comments__features--evaluation js-note-<%= noteConverter %>">
