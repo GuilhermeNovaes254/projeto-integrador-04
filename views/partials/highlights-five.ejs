@@ -8,14 +8,19 @@
         <a href="/jogo?id=<%= jogo.id %>">
           <% } %>
           <div class="o-highlights__header o-highlights-five__header" style="background: url('/buscaImagem/<%= jogo.foto %>') center center no-repeat;">
-            <h3 class="c-category-<%= jogo.tema_id %>"><%= (jogo.notaJogo / 2).toFixed(1) %></h3>
+            <h3 class="c-category-<%= jogo.tema_id %> o-border-shadow"><%= (jogo.notaJogo / 2).toFixed(1) %></h3>
           </div>
           <div class="o-highlights__description o-highlights-five__description">
             <h2><%= jogo.nome %></h2>
-            <a href='#'class='c-jogo__tag'><%= jogo.tema.nome %></a>
-            <h6>Total favoritos <%= jogo.totalFavorito %></h6>
-            <h6>Total Jogadores <%= jogo.totalJoguei %></h6>
-
+            <div class="o-highlights__features">
+              <div class="o-highlights__features--item o-border-shadow">
+                <h6><i class="icon ion-heart"></i> <%= jogo.totalFavorito %></h6>
+              </div>
+              <div class="o-highlights__features--item o-border-shadow">
+                <h6><i class="icon ion-happy"></i> <%= jogo.totalJoguei %></h6>
+              </div>
+            </div>
+            <a href='/jogo?id=<%= jogo.id %>'class='c-jogo__tag'><%= jogo.tema.nome %></a>
           </div>
         </a>
     </div>
