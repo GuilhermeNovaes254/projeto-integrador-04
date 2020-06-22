@@ -204,7 +204,7 @@ const buscaController = {
 
         listaJogosJogados: async (limite, idUsuario) => {
                 try {
-                        let jogados, countJogados;
+                        let jogados, countJaJoguei;
                         await Joguei.findAndCountAll({
                                 limit: limite,
                                 where: {
@@ -220,8 +220,11 @@ const buscaController = {
                                 }]
                         }).then(result => {
                                 jogados = result.rows;
-                                countJogados = result.count;
+                                countJaJoguei = result.count;
                         });
+
+                        console.log(`*******************countJaJoguei**`)
+                        console.log(countJaJoguei)
 
                         let jogosJaJoguei = [];
                         for (let i = 0; i < jogados.length; i++) {
@@ -245,7 +248,7 @@ const buscaController = {
 
                         return {
                                 jogosJaJoguei,
-                                countJogados
+                                countJaJoguei
                         };
                 } catch (error) {
                         return null;
