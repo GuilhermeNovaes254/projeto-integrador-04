@@ -8,7 +8,9 @@
       data-aos-delay="200">
       <div class='c-photo-game' id='headPage'
         style="background: url('buscaImagem/<%= jogo.foto %>') center center no-repeat; min-height: 280px;">
-        <p id="notaJogo" class="c-total-note c-category-<%= jogo.tema_id %> o-border-shadow"><%= (jogo.notaJogo / 2).toFixed(1)  %></p>
+        <p id="notaJogo" class="c-total-note c-category-<%= jogo.tema_id %> o-border-shadow">
+          <%= (jogo.notaJogo / 2).toFixed(1) %>&nbsp;<i class="icon ion-star"></i>
+        </p>
       </div>
       <div class="c-jogo__description c-category-<%= jogo.tema_id %>">
         <h2 id='jogoNome'><%= jogo.nome %></h2>
@@ -19,31 +21,38 @@
     <div class="c-jogo__left--news c-jogo__left--content o-border-shadow" data-aos="fade-up" data-aos-duration="1000"
       data-aos-delay="200">
       <h5>Confira os Jogos Relacionados</h5>
-      <ol>
+      <ul class='c-jogo__game-relationship'>
         <% for(let jogoRelacionado of jogosRelacionados) { %>
         <li>
           <a href="/jogo?id=<%= jogoRelacionado.id %>">
             <img src="/buscaImagem/<%= jogoRelacionado.foto %>">
             <h6><%= jogoRelacionado.nome %></h6>
-          </img>
+          </a>
         </li>
         <% } %>
-      </ol>
+      </ul>
     </div>
   </div>
-  <div class="c-jogo__right" style="margin-top: 0px;">
+  <div class="c-jogo__right" style="margin-top: 35px;">
     <div class="c-jogo__right--info c-jogo__right--content" data-aos="fade-up" data-aos-duration="1000"
       data-aos-delay="400">
-      <h2 id='rated' class="c-jogo__right--title">
+      <h2 id='rated' class="c-jogo__right--title o-border-shadow">
 
-        <a id="favoritar" class="btn btn-secondary" data-tooltip="Desfavoritar"
-          data-placement="top"><%= favorito ? 'Desfavoritar' : 'Favoritar'  %></a>
-        <a id="colecao" class="btn btn-primary" data-tooltip="Remover da sua coleção"
-          data-placement="top"><%= colecao ? 'Retira coleção' : 'Adiciona coleção'  %></a>
-        <a id="jaJoguei" class="btn btn-primary" data-placement="top"><%= jaJoguei ? 'Retira joguei' : 'Adiciona joguei'  %></a>
-
-        <p>Usuário:</p> <%- include('./partials/rating') %>
-
+        <div class="c-jogo__action-buttons">
+          <a id="favoritar" class="btn btn-secondary">
+            <%= favorito ? 'Desfavoritar' : 'Favoritar'  %>
+          </a>
+          <a id="colecao" class="btn btn-primary">
+            <%= colecao ? 'Retira coleção' : 'Adiciona coleção'  %>
+          </a>
+          <a id="jaJoguei" class="btn btn-primary">
+            <%= jaJoguei ? 'Retira joguei' : 'Adiciona joguei'  %>
+          </a>
+        </div>
+        
+        <div class="c-jogo__avaliate">
+          <%- include('./partials/rating') %>  
+        </div>
       </h2>
       <!-- <div id='jogolinkYoutube'><iframe  width="560" height="315" src="https://www.youtube.com/embed/aR-KAldshAE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div> -->
     </div>

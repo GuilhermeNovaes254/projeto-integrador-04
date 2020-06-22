@@ -73,6 +73,31 @@
   margin-bottom: 80px;
 }
 
+  .c-jogo__game-relationship li{
+    padding: 15px;
+    background: #fff;
+    border-radius: 25px;
+  }
+
+    .c-jogo__game-relationship li a{
+      display: flex;
+      width: 100%;
+    }
+
+  .c-jogo__game-relationship li a h6{
+    font-size: 15px;
+    font-weight: 500;
+    color: #222;
+  }
+
+  .c-jogo__game-relationship img{
+    width: 100%;
+    border-radius: 100%;
+    width: 65px;
+    height: 65px;
+    margin-right: 10px;
+  }
+
   .c-jogo__tag{
     padding: 5px 10px;
     border-radius: 25px;
@@ -280,7 +305,7 @@
       font-weight: 600;
       letter-spacing: 0.5px;
       margin-bottom: 35px;
-      border: 1px solid #ccc;
+      /* border: 1px solid #ccc; */
     }
 
       .c-jogo__right h2.c-jogo__right--title i{
@@ -553,16 +578,42 @@
 
 .c-total-note{
   position: absolute;
-  left: 0;
+  right: 0;
   top: 0;
   display: flex;
   color: #fff;
-  padding: 20px 25px;
-  border-radius: 0 0 25px 0;
+  padding: 15px;
+  border-radius: 0 25px 0;
   font-weight: bold;
   letter-spacing: 1px;
-  font-size: 26px;
+  font-size: 19px;
+  font-family: Montserrat, arial, sans-serif;
 }
+
+.c-jogo__avaliate{
+  background: #f1f1f1;
+  padding: 5px 25px;
+  border-radius: 25px;
+}
+
+.c-jogo__action-buttons{
+
+}
+
+  .c-jogo__action-buttons a{
+    background: #fff;
+    border-radius: 50px;
+    border-color: #eaeaea;
+    font-weight: 600;
+    border-color:#ccc;
+    color:#777;
+  }
+
+    .c-jogo__action-buttons a:hover{
+      background: #fff;
+      border-radius: 50px;
+      border-color:#333;
+    }
 
 .c-jogo__right--info{
   background: transparent;
@@ -573,6 +624,14 @@
   .c-jogo__right--info h2{
     background: #eaeaea;
     border: 0;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @media(max-width:768px){
+    .c-jogo__right--info h2{
+      flex-direction: column;
+    }
   }
 
 /* avaliacao */
