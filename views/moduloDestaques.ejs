@@ -32,7 +32,7 @@
             </div>
 
             <div id='areaCentral'>
-                <div class="containerTabela">
+                <div class="containerTabela container">
                     <div class="row">
                         <% if(tipo == 1) { %>
                             <h1>Jogos colecionados</h1>
@@ -41,13 +41,11 @@
                         <% } else if(tipo == 3) {%> 
                             <h1>Jogados</h1>
                         <% } %>     
-                    </div>
-                    <div class="row " id='linha'>    
+                    </div> 
                         <%- include('./partials/highlights-five', {jogos, flagClicavel : true}) %>
                         <% if(jogos.length == 0) { %>
                             <p>Nenhum jogo adicionado</p>
                         <% } %>    
-                    </div>
                 </div>
             </div>
 

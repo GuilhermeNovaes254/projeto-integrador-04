@@ -22,40 +22,44 @@
                             <a href="/feeds"><img src="/images/logo-mobile.png" alt=""></a>
                         </div>
                     </div>
-                    <nav class="o-header__container--menu">
-                        <input id="o-navbar" type='checkbox'>
-                        <label for="o-navbar">
-                            <div class="o-menu__link">
-                                <span><%=USUARIO.apelido%></span>
-                            </div>
-                            <div class='o-menu'>
-                                <div class="o-menu__avatar">
-                                    <img src='/buscaImagem/<%= USUARIO.foto %>' alt="">
-                                    <span class='o-hamburger'></span>
+                    <div class="o-header-navbars">
+                        <nav class="o-header__icons--menu">
+                            <a href='/moduloDestaques?id=<%=USUARIO.id%>&tipo=1'><i class="icon ion-ios-albums-outline" title="Coleção"></i></a>
+                            <a href='/moduloDestaques?id=<%=USUARIO.id%>&tipo=2'><i class="icon ion-ios-heart-outline" title="Favoritos"></i></a>
+                        </nav>
+                        <nav class="o-header__container--menu">
+                            <input id="o-navbar" type='checkbox'>
+                            <label for="o-navbar">
+                                <div class="o-menu__link">
+                                    <span><%=USUARIO.apelido%></span>
                                 </div>
-                            </div>
-                        </label>
-                        <ul>
-                            <li><img class="o-hamburger--avatar" src='/buscaImagem/<%= USUARIO.foto %>' alt=""></li>
-
-                            <li><a href='/perfil/<%=USUARIO.id%>'>Perfil</a></li>
-                            <li><a href='/editar'>Editar Perfil</a></li>
-                            <!-- <li><a href='#'>Minha Pagina</a></li> -->
-                            <%if( (USUARIO.cargo == 1 || USUARIO.cargo == 2 ) && USUARIO.aprovado == 1){%>
-                            <li><a href='/perfilModerador'>Moderação</a></li>
-                            <%}%>
-                            <%if( USUARIO.cargo == 2  && USUARIO.aprovado == 1){%>
-                            <li><a href='/perfilAdm'>Administração</a></li>
-                            <%}%>
-                            <li><a href='/moduloDestaques?id=<%=USUARIO.id%>&tipo=1'>Meus Jogos</a></li>
-                            <li><a href='/moduloDestaques?id=<%=USUARIO.id%>&tipo=2'>Favoritos</a></li>
-                            <li><a href='/moduloDestaques?id=<%=USUARIO.id%>&tipo=3'>Já joguei</a></li>
-                            <li><a href='/cadastroJogo'>Cadastrar Jogo</a></li>
-                            <li><a href='/busca'>Buscar</a></li>
-                            <li><a href='/excluir'>Excluir</a></li>
-                            <li><a href='/'>Sair</a></li>
-                        </ul>
-                    </nav>
+                                <div class='o-menu'>
+                                    <div class="o-menu__avatar">
+                                        <img src='/buscaImagem/<%= USUARIO.foto %>' alt="">
+                                        <span class='o-hamburger'></span>
+                                    </div>
+                                </div>
+                            </label>
+                            <ul>
+                                <li><img class="o-hamburger--avatar" src='/buscaImagem/<%= USUARIO.foto %>' alt=""></li>
+    
+                                <li><a href='/perfil/<%=USUARIO.id%>'>Perfil</a></li>
+                                <li><a href='/editar'>Editar Perfil</a></li>
+                                <!-- <li><a href='#'>Minha Pagina</a></li> -->
+                                <%if( (USUARIO.cargo == 1 || USUARIO.cargo == 2 ) && USUARIO.aprovado == 1){%>
+                                <li><a href='/perfilModerador'>Moderação</a></li>
+                                <%}%>
+                                <%if( USUARIO.cargo == 2  && USUARIO.aprovado == 1){%>
+                                <li><a href='/perfilAdm'>Administração</a></li>
+                                <%}%>
+                                <li><a href='/moduloDestaques?id=<%=USUARIO.id%>&tipo=3'>Já joguei</a></li>
+                                <li><a href='/cadastroJogo'>Cadastrar Jogo</a></li>
+                                <li><a href='/busca'>Buscar</a></li>
+                                <li><a href='/excluir'>Excluir</a></li>
+                                <li><a href='/'>Sair</a></li>
+                            </ul>
+                        </nav>
+                    </div>
                 </div>
             </div>
         </div>

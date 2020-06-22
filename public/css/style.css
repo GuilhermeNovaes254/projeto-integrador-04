@@ -91,12 +91,28 @@ section#temaExcluir {
   background: #0F7A2F;
 }
 
+.o-header-navbars{
+  display: flex;
+}
+
+.o-header__icons--menu{
+  display: flex;
+  align-items: center;
+}
+
+  .o-header__icons--menu a{
+    color:#fff;
+    padding: 0 15px;
+    font-size: 28px;
+  }
+
 .o-header__container {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	min-height: 71px;
-	margin: 0;
+  margin: 0;
+  flex-wrap: initial;
 }
 
   .o-header__container--menu label{

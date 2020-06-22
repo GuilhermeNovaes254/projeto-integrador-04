@@ -21,9 +21,7 @@
   <div class="c-comments" id="<%= comentario.comentario_id  %>">
 
     <div class="c-comments__photo">
-      <a href="/perfil/<%= comentario.usuario_id  %>">
-        <img src="/buscaImagem/<%= comentario.usuario_foto  %>" alt="">
-      </a>
+      <a href="/perfil/<%= comentario.usuario_id  %>" style="background: url('/buscaImagem/<%= comentario.usuario_foto  %>') center center no-repeat;"></a>
     </div>
 
     <div class="c-comments__box animate-bubble-float-left">
