@@ -26,6 +26,7 @@
                         <nav class="o-header__icons--menu">
                             <a href='/moduloDestaques?id=<%=USUARIO.id%>&tipo=1'><i class="icon ion-ios-albums-outline" title="Coleção"></i></a>
                             <a href='/moduloDestaques?id=<%=USUARIO.id%>&tipo=2'><i class="icon ion-ios-heart-outline" title="Favoritos"></i></a>
+                            <a href='/moduloDestaques?id=<%=USUARIO.id%>&tipo=3'><i class="icon ion-ios-game-controller-b-outline" title="Já joguei"></i></a>
                         </nav>
                         <nav class="o-header__container--menu">
                             <input id="o-navbar" type='checkbox'>
@@ -52,7 +53,6 @@
                                 <%if( USUARIO.cargo == 2  && USUARIO.aprovado == 1){%>
                                 <li><a href='/perfilAdm'>Administração</a></li>
                                 <%}%>
-                                <li><a href='/moduloDestaques?id=<%=USUARIO.id%>&tipo=3'>Já joguei</a></li>
                                 <li><a href='/cadastroJogo'>Cadastrar Jogo</a></li>
                                 <li><a href='/busca'>Buscar</a></li>
                                 <li><a href='/excluir'>Excluir</a></li>

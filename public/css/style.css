@@ -100,10 +100,24 @@ section#temaExcluir {
   align-items: center;
 }
 
+@media(min-width:768px){
+  .o-header__icons--menu{
+    padding-right: 10px;
+  }
+}
+
   .o-header__icons--menu a{
     color:#fff;
     padding: 0 15px;
     font-size: 28px;
+  }
+
+  @media(max-width:320px){
+    .o-header__icons--menu a{
+      color: #fff;
+      padding: 0 10px;
+      font-size: 20px;
+    }
   }
 
 .o-header__container {
@@ -141,6 +155,13 @@ section#temaExcluir {
     visibility: hidden;
     z-index: 2;
   }
+
+  @media(max-width:768px) {
+    .o-header__container--menu ul{
+          margin-top: 30px;
+    }
+  }
+
     .o-header__container--menu ul li{
       text-align: left;
     }
@@ -269,6 +290,12 @@ input[type=checkbox] {
 
 .o-menu__link{
   padding-right: 15px;
+}
+
+@media(max-width:768px) {
+  .o-menu__link{
+    display: none;
+  }
 }
 
   .o-menu__link span{
@@ -620,6 +647,13 @@ input[type=checkbox] {
 /* Fim destaques */
 
 /* componentes reutilizaveis */
+
+@media(max-width:600px){
+  .o-feeds-content h2{
+    font-size: 32px !important;
+  }
+}
+
 
 .o-btn--rounded{
   color:#fff;

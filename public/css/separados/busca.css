@@ -189,12 +189,10 @@ label{
 
 .c-search{
   background: none;
-  margin-top: 130px;
-  /* min-height: 340px; */
   position: relative;
   text-align: center;
-  width: 100%;
   z-index: 1;
+  margin: 130px 20px 0 20px;
 }
 
   .c-search .c-search-form {
@@ -233,6 +231,12 @@ input[type="hidden" i] {
   position: relative;
   text-align: left;
   white-space: nowrap;
+}
+
+@media(max-width:600px){
+  .c-search-form__inline-filters {
+    display: none;
+  }
 }
 
 .c-search .c-search-form__inline-filters .c-search-form__inline-filters__current {
