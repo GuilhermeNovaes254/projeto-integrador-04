@@ -12,6 +12,27 @@ body{
 	background-color: #e3e3e3;
 }
 
+#sair{
+	width: 200px;
+	height: 50px;
+	background-color: #F22441;
+	border-radius: 25px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	align-self: center;
+	margin-bottom: 50px;
+}
+
+
+#areaBotao{
+	display: flex;
+	justify-content: center;
+}
+
+#areaBotao a{
+	color:white
+}
 
 #areaCentral {
 	background-color: #fff;
@@ -26,6 +47,7 @@ body{
 	margin-top: -60px;
 	margin-bottom: 100px;
 	min-height: 50px;
+    justify-content: center;
 }
 
 
