@@ -55,7 +55,7 @@
             <% } %>
           <% if(comentario.avaliacao != null) {  %>
             <%  let noteConverter = parseFloat(comentario.avaliacao).toFixed(1).replace(".", "") %>
-          <div class="c-comments__features--evaluation js-note-<%= noteConverter %>">
+          <div class="c-comments__features--evaluation js-note-<%= noteConverter %> o-border-shadow">
             <span><%= parseFloat(comentario.avaliacao).toFixed(1) %></span>
           </div>
           <% } %>
