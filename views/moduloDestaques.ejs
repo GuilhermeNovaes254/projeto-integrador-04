@@ -2,7 +2,7 @@
 
 <link rel='stylesheet' href='/css/separados/moduloDestaques.css' />
 
-<section id="tema" style="background-image: url('/buscaImagem/<%= USUARIO.fotoTema %>');"></section>
+<section id="tema" style="background-image: url('/buscaImagem/<%= fotoTemaUsuario %>');"></section>
 
 <div class="container" id='containerTema'>
     <div class="row">
@@ -11,7 +11,7 @@
             <div id='cabecalho'>
 
                 <div id="avatar1">
-                    <div id='avatarEnd'>'/buscaImagem/<%= USUARIO.foto %>'</div>
+                    <div id='avatarEnd'>'/buscaImagem/<%= fotoUsuario %>'</div>
                 </div>
 
                 <div id="highLights">
@@ -26,8 +26,7 @@
 
                     <a href="/moduloDestaques?id=<%=idUsuario%>&tipo=2"><strong>Favoritei: <%=favoritos%></strong></a>
                     <a href="/moduloDestaques?id=<%=idUsuario%>&tipo=3"><strong>Já joguei: <%=jogados%></strong></a>
-                    <a href="/moduloDestaques?id=<%=idUsuario%>&tipo=1"><strong>Minha coleção:
-                            <%=colecionados%></strong></a>
+                    <a href="/moduloDestaques?id=<%=idUsuario%>&tipo=1"><strong>Minha coleção:<%=colecionados%></strong></a>
                 </div>
 
             </div>
