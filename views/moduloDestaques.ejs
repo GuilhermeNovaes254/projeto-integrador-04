@@ -15,7 +15,15 @@
                 </div>
 
                 <div id="highLights">
-                    <h3><%=nomeUsuario%></h3>
+                    <h3 id='nome'><%=nomeUsuario%></h3>
+                    <%if(cargo == 2 && aprovado == 1){%>
+                    <h4 id='cargo'>Administrador</h4>
+                    <%}else{%>
+                    <%if(cargo == 1 && aprovado == 1){%>
+                    <h4 id='cargo'>Moderador</h4>
+                    <%}else{%>
+                    <h4 id='cargo'>Usuário</h4>
+                    <%}}%>
                     <h4><%=apelidoUsuario%></h4>
                     <h4><%=cidadeUsuario%> / <%=estadoUsuario%></h4>
                 </div>
@@ -26,7 +34,8 @@
 
                     <a href="/moduloDestaques?id=<%=idUsuario%>&tipo=2"><strong>Favoritei: <%=favoritos%></strong></a>
                     <a href="/moduloDestaques?id=<%=idUsuario%>&tipo=3"><strong>Já joguei: <%=jogados%></strong></a>
-                    <a href="/moduloDestaques?id=<%=idUsuario%>&tipo=1"><strong>Minha coleção:<%=colecionados%></strong></a>
+                    <a href="/moduloDestaques?id=<%=idUsuario%>&tipo=1"><strong>Minha
+                            coleção:<%=colecionados%></strong></a>
                 </div>
 
             </div>
@@ -60,4 +69,23 @@
 
     document.querySelector('header').style.background = `rgb(${dominantColor})`;
     document.querySelector('footer div').style.background = `rgb(${dominantColor})`;
+
+    let corCargo = ''
+    let cargo = "<%= cargo%>"
+    let aprovado = "<%= aprovado%>"
+
+    if (cargo == 2 && aprovado == 1) {
+        corCargo = '#F22441'
+    } else {
+        
+        if (cargo == 1 && aprovado == 1) {
+            corCargo = '#FFCF40'
+        } else {
+            corCargo = '#0F7A2F'
+        }
+    }
+
+    document.querySelector('#cabecalho').style.border = `2px solid ${corCargo}`;
+    document.querySelector('#nome').style.color = `${corCargo}`;
+
 </script>
