@@ -10,6 +10,14 @@
       <h4><%=apelidoUsuario%></h4>
       <p><%=descricaoUsuario%></p>
       <h3><%=cidadeUsuario%> - <%=estadoUsuario%></h3>
+      <div class="row">
+        <a href='/moduloDestaques?id=<%=idUsuario%>&tipo=1'><%= countColecao %><i class="icon ion-ios-albums-outline"
+            style="font-size: 40px; padding: 2px;" title="Coleção"></i> </a>
+        <a href='/moduloDestaques?id=<%=idUsuario%>&tipo=2'><%= countFavoritos %><i class="icon ion-ios-heart-outline"
+            style="font-size: 40px; padding: 2px;" title="Favoritos"></i></a>
+        <a href='/moduloDestaques?id=<%=idUsuario%>&tipo=3'><%= countJaJoguei %><i class="icon ion-ios-game-controller-b-outline"
+            style="font-size: 40px; padding: 2px;" title="Já joguei"></i> </a>
+      </div>
     </div>
   </div>
   <div class="c-perfil__right">
@@ -33,7 +41,7 @@
     </div>
     <div class="c-perfil__right--fav c-perfil__right--content" data-aos="fade-up" data-aos-duration="1000"
       data-aos-delay="400">
-      <h2 class="c-perfil__right--title o-border-shadow"><i class="icon ion-ios-albums"></i> Já joguei</h2>
+      <h2 class="c-perfil__right--title o-border-shadow"><i class="icon ion-ios-game-controller-b"></i> Já joguei</h2>
       <%- include('./partials/highlights-three', {jogos : jogosJaJoguei}) %>
       <div style="padding: 15px; align-content: right;">
         <% if(countJaJoguei > 6) { %>
