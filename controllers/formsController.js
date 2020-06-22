@@ -7,6 +7,8 @@ const {
     Tema,
     Usuario
 } = require('../models');
+
+const busca = require('./buscaController');
 const bcrypt = require('bcrypt');
 const {
     check,
@@ -63,6 +65,9 @@ const forms = {
         let {
             nome
         } = req.body;
+
+        const jogos = await busca.listaJogos(10, ['notaJogo', 'DESC']);
+
         const user = await Usuario.findOne({
             where: {
                 nome: nome
@@ -83,7 +88,9 @@ const forms = {
 
             req.session.destroy();
             res.render('index', {
-                title: 'Home'
+                title: 'Home',
+                jogos
+                
             });
         }
     },
