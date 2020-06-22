@@ -22,7 +22,11 @@
                 <h6><i class="icon ion-happy"></i> <%= jogo.totalJoguei %></h6>
               </div>
             </div>
+            <% if(flagClicavel) { %>
             <a href='/jogo?id=<%= jogo.id %>'class='c-jogo__tag'><%= jogo.tema.nome %></a>
+            <% } else {%>
+            <a class='c-jogo__tag'><%= jogo.tema.nome %></a>
+            <% } %>
           </div>
         </a>
     </div>
