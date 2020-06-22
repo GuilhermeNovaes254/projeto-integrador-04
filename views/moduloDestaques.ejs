@@ -23,10 +23,11 @@
                 <div id="descricao"><%=descricaoUsuario%></div>
 
                 <div id='destaques'>
-                    
+
                     <a href="/moduloDestaques?id=<%=idUsuario%>&tipo=2"><strong>Favoritei: <%=favoritos%></strong></a>
                     <a href="/moduloDestaques?id=<%=idUsuario%>&tipo=3"><strong>Já joguei: <%=jogados%></strong></a>
-                    <a href="/moduloDestaques?id=<%=idUsuario%>&tipo=1"><strong>Minha coleção: <%=colecionados%></strong></a>
+                    <a href="/moduloDestaques?id=<%=idUsuario%>&tipo=1"><strong>Minha coleção:
+                            <%=colecionados%></strong></a>
                 </div>
 
             </div>
@@ -35,17 +36,17 @@
                 <div class="containerTabela container">
                     <div class="row">
                         <% if(tipo == 1) { %>
-                            <h1>Jogos colecionados</h1>
-                        <% } else if(tipo == 2) {%>   
-                            <h1>Jogos Favoritos</h1>
-                        <% } else if(tipo == 3) {%> 
-                            <h1>Jogados</h1>
-                        <% } %>     
-                    </div> 
-                        <%- include('./partials/highlights-five', {jogos, flagClicavel : true}) %>
-                        <% if(jogos.length == 0) { %>
-                            <p>Nenhum jogo adicionado</p>
-                        <% } %>    
+                        <h1>Jogos colecionados</h1>
+                        <% } else if(tipo == 2) {%>
+                        <h1>Jogos Favoritos</h1>
+                        <% } else if(tipo == 3) {%>
+                        <h1>Jogados</h1>
+                        <% } %>
+                    </div>
+                    <%- include('./partials/highlights-five', {jogos, flagClicavel : true}) %>
+                    <% if(jogos.length == 0) { %>
+                    <p>Nenhum jogo adicionado</p>
+                    <% } %>
                 </div>
             </div>
 
@@ -53,6 +54,11 @@
     </div>
 </div>
 
-
 <script src='js/fotoPerfil.js' onload></script>
 <%- include('./partials/footer') %>
+<script>
+    let dominantColor = "<%= dominantColor %>";
+
+    document.querySelector('header').style.background = `rgb(${dominantColor})`;
+    document.querySelector('footer div').style.background = `rgb(${dominantColor})`;
+</script>

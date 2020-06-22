@@ -333,7 +333,8 @@ const homeController = {
             jogados,
             colecionados,
             idUsuario: usuario.id,
-            tipo
+            tipo,
+            dominantColor: usuario.corTema
         });
     },
 
