@@ -28,6 +28,13 @@ strong{
 	font-size: 16pt;
 }
 
+#highLights{
+	max-height: 290px;
+	display: flex;
+	flex-direction: column;
+	box-sizing: border-box;
+}
+
 #areaCentral {
 	background-color: #fff;
 	height: auto;
@@ -54,38 +61,6 @@ strong{
 }
 
 
-.containerJogo{
-	width: 200px;
-	margin: auto;
-}
-
-#estrelas{
-	align-content: center;
-	background-image: url('/images/icons/estrelas45.png');
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: cover;
-	height: 18px;
-	background-size:contain;
-}
-
-#capaJogo{
-	background-image: url('/images/jogos/jogo_star_wars_legion.png');
-	background-repeat: no-repeat;
-	background-position: center;
-	width: 100%;
-	height: 175px;
-	background-size:contain;
-}
-
-#nomeJogo{
-	padding-top: 10px;
-	width: 100%;
-	font-weight: 500;
-}
-
-
-
 #avatar1{
 	background-image: url('/images/fotos/avatar7.jpg ');
 	background-position: center;
@@ -96,9 +71,6 @@ strong{
 	height: 100px;
 	size: initial;
 	align-content: center;
-	margin-left: 18px;
-	margin-bottom: 17.5px;
-	margin-top: 17.5px;
 	box-sizing: border-box;
 }
 
@@ -109,8 +81,6 @@ strong{
 #highLights{
 	height: 100px;
 	width: 200px;
-	margin-bottom: 17.5px;
-	margin-top: 17.5px;
 	box-sizing: border-box;
 	text-align: center;
 	vertical-align: middle;
@@ -133,8 +103,6 @@ strong{
 #descricao{
 	max-height: 80px;
 	width: 450px;
-	margin-bottom: 17.5px;
-	margin-top: 17.5px;
 	font-size: 12pt;
 	box-sizing: border-box;
 	font-weight: 500;
@@ -142,77 +110,11 @@ strong{
 	
 }
 
-
-.redesSociais{
-	height: 40px;
-	width: 100px;
-	box-sizing: border-box;
-	display: flex;
-	margin: auto;
-	margin-right: 10px;
-}
-
-#facebook{
-	background-image: url('/images/icons/Facebook.svg');
-}
-
-#twitter{
-	background-image: url('/images/icons/Twitter.svg');
-	
-}
-
-#googleplus{
-	background-image: url('/images/icons/Googleplus.svg');
-}
-
-#facebook,
-#twitter,
-#googleplus{
-
-	width: 30px;
-	background-position: center;
-	background-repeat: no-repeat; 
-	background-size:contain;
-}
-
-#botao {
-    box-sizing: border-box;
-    background-color: #f22441;
-    border-color: #f22441;
-    width: 150px;
-    height: 30px;
-    color: white;
-    border-radius: 100px;
-    align-items: center;
-    text-align: center;
-    margin-bottom: 50px;
-    align-content: center;
-    
-}
-
-form{
-    text-align: right;
-    padding-right: 50vh;
-}
-
-#areaBotao{
-	background-color: #fff;
-	height: auto;
-	width: 100%;
-	border-radius: 0px 15px;
-	text-align: right;
-	margin-top: -20px;
-	padding-bottom: 5px;
-	box-sizing: border-box;
-	text-align: center;
-}
-
 #destaques{
 	height: 100%;
 	display: flex;
 	flex-direction: column;
 }
-
 
 
 @media(max-width:400px) {
