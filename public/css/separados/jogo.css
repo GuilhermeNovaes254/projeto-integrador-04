@@ -14,7 +14,7 @@
   background: url(/images/leaguewallpaper.jpg) center center no-repeat;
   background-size: cover;
   width: 100%;
-  min-height: 450px;
+  min-height: 580px;
   box-sizing: content-box;
   position: relative;
   -webkit-transform: skewY(-2.2deg);
@@ -22,6 +22,25 @@
   -webkit-transform-origin: 0 0;
   transform-origin: 0 0;
   z-index: -1;
+  overflow: hidden;
+}
+
+.c-banner-jogo:after{
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 120%;
+  display: block;
+  -webkit-transform: skewY(+2.2deg);
+  transform: skewY(+2.2deg);
+  background-image: url(/images/jogos/video-highlight-texture.png);
+  z-index: 1;
+  bottom: -35px;
+  background-size: cover;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 /* .c-banner-jogo:before{
@@ -34,7 +53,7 @@
   display: block;
 } */
 
-.c-banner-jogo:after{
+/* .c-banner-jogo:after{
   content: '';
   position: absolute;
   bottom: -700px;
@@ -42,7 +61,7 @@
   height: 700px;
   display: block;
   background: #E5E5E5;
-}
+} */
 
 .c-photo-game{
   width: 100%;
@@ -68,7 +87,7 @@
 
 .c-jogo{
   display: flex;
-  margin-top: -100px;
+  margin-top: -300px;
   flex-direction: column;
   margin-bottom: 80px;
 }

@@ -8,51 +8,38 @@
     <div class="col-12" id='areaCentralJogo'>
 
         <!-- <form onsubmit="return false;"> -->
-        <div id="caixaDeBusca" class="col-10">
+        <div id="caixaDeBusca" class="c-search-page">
             <form action='/busca' method='GET'>
-                <div>
-                    <label>
-                        Buscar Por:
-                    </label>
-
-
+                <div class="c-search-page__default">
                     <select id="tipo" name="tipo" class="form-group">
                         <option>Selecione</option>
                         <option value="usuario">Usuário</option>
                         <option value="jogo">Jogo</option>
                     </select>
-
-                    <div>
-                        <button type="button" button.disabled=true id="busca" class='busca'><img
-                                src="/images/icons/Lupa.png" alt="" srcset=""></button>
+                    <div class=buscaUsuario>
+                        <input type="text" name="nomeUsuario" class="form-group" placeholder="Buscar usuarios...">
+                    </div>
+                    <div class="buscaJogo">
+                        <div>
+                            <input type="text" id="nome" name='nomeJogo' placeholder="Buscar jogos...">
+                        </div>
                     </div>
                 </div>
-                <div class=buscaUsuario>
-                    <label id='rotulo'>Usuário</label>
-                    <input type="text" name="nomeUsuario" class="form-group">
-                </div>
-
-
-                <div class="buscaJogo">
-                    <div>
-                        <label for="nome">Nome</label>
-                        <input type="text" id="nome" name='nomeJogo'>
-                    </div>
-
+                <div class="c-advance-filter">
                     <div id="tema" name="tema">
                         <label id='rotulo'>Tema</label>
                         <select id="temaSelector" name='tema'>
                             <option selected value='0' name="tema">Selecione</option>
                         </select>
                     </div>
-
+    
                     <div id="dominio" name="dominio">
                         <label id='rotulo'>Domínio</label>
                         <select id="dominioSelector" name='dominio'>
                             <option selected value='0'>Selecione</option>
                         </select>
                     </div>
-
+    
                     <div id="mecanica" name="mecanica">
                         <label id='rotulo'>Mecânica</label>
                         <select id="mecanicaSelector" name='mecanica'>
@@ -67,14 +54,18 @@
 
         <!-- resultado de busca -->
         <div id="dadosBusca">
-            <% if(jogos !== null) { %>
+            <% 
+            
+            if(jogos !== null) { %>
                 <%- include('./partials/highlights-five', {jogos, flagClicavel : true}) %>
-            <% } if(usuarios !== null) {%>
-
+            <% } 
+            
+            if(usuarios !== null) { %>
                 <% for(let usuario of usuarios) { %>
-                    <img src="/buscaImagem/<%= usuario.foto %>">
-                    <a href="/perfil/<%= usuario.id %>"><p><%= usuario.nome %></p></a>
-
+                    <div class="c-result-person">
+                        <img src="/buscaImagem/<%= usuario.foto %>">
+                        <a href="/perfil/<%= usuario.id %>"><p><%= usuario.nome %></p></a>
+                    </div>
                 <% } %>
             <% } %>
         </div>

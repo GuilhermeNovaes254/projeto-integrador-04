@@ -15,8 +15,6 @@ section#temaCadastroJogo {
 }
 
 #areaCentralJogo {
-	background-color: #fff;
-	/*height: 1000px;*/
 	width: 100%;
 	border-radius: 15px;
 	text-align: left;
@@ -133,3 +131,36 @@ section#temaCadastroJogo {
 }
 
 /* Fim cadastroJOgo.ejs */
+
+.c-search-page select{
+	background-color: #e5e5e5;
+	padding: 10px 20px;
+	border-radius: 25px;
+	border: 0;
+	widows: 100%;
+	outline: none;
+	border-right: 15px solid #e5e5e5;
+	box-sizing: content-box;
+}
+
+.c-search-page select option{
+	background-color: #e5e5e5;
+	border:0;
+}
+
+.c-search-page select option:not(:checked) { 
+	background-color: white; 
+	color:#000;
+}
+
+.c-search-page__default{
+	display: flex;
+}
+
+.c-advance-filter{
+	display: flex;
+}
+
+.c-advance-filter div{
+	width: 33.3333333%;
+}

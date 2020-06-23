@@ -48,10 +48,9 @@
 
 #caixaDeBusca {
   padding-top: 10px;
-  margin: 20px auto;
-  background: #E9E9E9;
-  padding-bottom: 10px;
-  border-radius: 15px;
+  background: #ffffff;
+  padding: 55px 35px;
+  border-radius: 25px;
   height: auto;
   display: flex;
   flex-direction: column;
@@ -100,14 +99,14 @@ button#busca {
 
 /* Aspecto dos menus do formulário */
 
-#tipo,
+/* #tipo,
 #buscaUsuarioS,
 #dominioSelector,
 #temaSelector,
 #mecanicaSelector{
   max-width: 30vw;
   min-width: 20vw;
-}
+} */
 
 label{
   font-size: 19px;
@@ -601,4 +600,13 @@ input[type="hidden" i] {
   opacity: 1;
   padding: 2px 15px 11px;
   pointer-events: auto;  
+}
+
+.c-result-person{
+  max-width: 33.33333%;
+  display: flex;
+}
+
+.c-result-person img{
+  width:100%;
 }
