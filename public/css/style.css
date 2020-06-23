@@ -616,6 +616,17 @@ input[type=checkbox] {
         padding-bottom: 30px;
       }
 
+      .o-highlights__description  h2{
+        font-style: normal;
+        font-weight: 800;
+        font-size: 24px;
+        font-family: 'Montserrat', arial, sans-serif;
+        line-height: 32px;
+        letter-spacing: -0.015em;
+        padding-bottom: 30px;
+        color: #fff;
+      }
+
     .o-highlights__description a.c-jogo__tag{
       position: absolute;
       bottom: 0;
