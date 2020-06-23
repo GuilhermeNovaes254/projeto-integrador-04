@@ -27,7 +27,8 @@
     <div class="c-comments__box animate-bubble-float-left">
       <div class="c-comments__box--header">
         <div class="c-comments__info">
-          <h4><%= comentario.usuario_apelido  %></h4>
+          <h4><%= comentario.usuario_apelido  %>
+          </h4><p><strong>Data:</strong> <%= comentario.comentario_data %></p>
           <% if(flagPerfilUsuario) { %>
           <p>
           <h3>Comentou em <a href="/jogo?id=<%= comentario.jogo_id  %>">
@@ -60,7 +61,7 @@
         </div>
       </div>
       <p><%= comentario.comentario_texto %></p>
-      <p><strong>Data:</strong> <%= comentario.comentario_data %></p>
+      
     </div>
   </div>
   <% } %>
