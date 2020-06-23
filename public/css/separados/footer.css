@@ -1,14 +1,15 @@
 footer div {
-    height: 20px;
-    background-color: #0F7A2F;
-    font-size: 18px;
-    font-family: 'Confortaa', arial, sans-serif;
+    height: 60px;
+    background-color: #181718;
+    font-size: 22px;
+    font-weight: 800;
     color: #ffffff;
-    text-align: right;
-    padding-right: 15px;
-	box-sizing: border-box;
+    padding-right: 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
     vertical-align: middle;
-    padding-bottom: 25px;
-    padding-top: 25px;
-
+    align-content: center;
+    align-self:center;
 }
