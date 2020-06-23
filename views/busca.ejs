@@ -61,12 +61,18 @@
             <% } 
             
             if(usuarios !== null) { %>
-                <% for(let usuario of usuarios) { %>
-                    <div class="c-result-person">
-                        <img src="/buscaImagem/<%= usuario.foto %>">
-                        <a href="/perfil/<%= usuario.id %>"><p><%= usuario.nome %></p></a>
-                    </div>
-                <% } %>
+                <div class="c-result-content" data-aos="fade-up" data-aos-duration="1000"
+                data-aos-delay="200">
+                    
+                    <% for(let usuario of usuarios) { %>
+                        <div class="c-result-person">
+                            <a href="/perfil/<%= usuario.id %>">
+                                <div class="c-result-person--photo" style="background: url('/buscaImagem/<%= usuario.foto %>') center center no-repeat;"></div>
+                                <p><%= usuario.nome %></p>
+                            </a>
+                        </div>
+                    <% } %>
+                </div>
             <% } %>
         </div>
     </div>
