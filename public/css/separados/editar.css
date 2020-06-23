@@ -10,7 +10,7 @@ section#tema {
 }
 
 #cabecalho{
-	overflow-y: auto ;width:100%;
+	overflow-y: hidden ;width:100%;
 	height: auto;	
 	max-height: 300px;
 	margin-bottom: -100px;
@@ -20,8 +20,17 @@ section#tema {
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 	box-sizing: border-box;
 	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content:space-around;
 }
 
+#highLights{
+	max-height: 290px;
+	display: flex;
+	flex-direction: column;
+	box-sizing: border-box;
+}
 
 #avatar1{
 	background-image: url('/images/fotos/avatar7.jpg ');
@@ -33,9 +42,6 @@ section#tema {
 	height: 100px;
 	size: initial;
 	align-content: center;
-	margin-left: 18px;
-	margin-bottom: 17.5px;
-	margin-top: 17.5px;
 	box-sizing: border-box;
 }
 
@@ -46,8 +52,6 @@ section#tema {
 #highLights{
 	height: 100px;
 	width: 200px;
-	margin-bottom: 17.5px;
-	margin-top: 17.5px;
 	box-sizing: border-box;
 	text-align: center;
 	vertical-align: middle;
@@ -70,50 +74,12 @@ section#tema {
 #descricao{
 	max-height: 80px;
 	width: 450px;
-	margin-bottom: 17.5px;
-	margin-top: 17.5px;
-	font-size: 11pt;
+	font-size: 12pt;
 	box-sizing: border-box;
 	font-weight: 500;
 	word-wrap: break-word;
 	
 }
-
-
-.redesSociais{
-	height: 40px;
-	width: 100px;
-	box-sizing: border-box;
-	display: flex;
-	margin: auto;
-	margin-right: 10px;
-}
-
-#facebook{
-	background-image: url('/images/icons/Facebook.svg');
-}
-
-#twitter{
-	background-image: url('/images/icons/Twitter.svg');
-	
-}
-
-#googleplus{
-	background-image: url('/images/icons/Googleplus.svg');
-}
-
-#facebook,
-#twitter,
-#googleplus{
-
-	width: 30px;
-	background-position: center;
-	background-repeat: no-repeat; 
-	background-size:contain;
-}
-
-
-
 
 
 
