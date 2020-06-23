@@ -167,7 +167,9 @@ const homeController = {
             countColecao,
             jogosJaJoguei,
             countJaJoguei,
-            dominantColor: usuario.corTema
+            dominantColor: usuario.corTema,
+            cargo : usuario.cargo,
+            aprovado : usuario.aprovado
         });
     },
 
@@ -334,7 +336,9 @@ const homeController = {
             colecionados,
             idUsuario: usuario.id,
             tipo,
-            dominantColor: usuario.corTema
+            dominantColor: usuario.corTema,
+            cargo :  usuario.cargo,
+            aprovado :  usuario.aprovado
         });
     },
 

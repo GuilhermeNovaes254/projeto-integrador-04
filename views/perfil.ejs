@@ -6,7 +6,15 @@
     <div class="c-perfil__left--description c-perfil__left--content" data-aos="fade-up" data-aos-duration="1000"
       data-aos-delay="200">
       <div class="c-photo" style="background: url('/buscaImagem/<%= fotoUsuario %>') center center no-repeat;"></div>
-      <h2><%=nomeUsuario%></h2>
+      <h2 id='nome'><%=nomeUsuario%></h2>
+      <%if(cargo == 2 && aprovado == 1){%>
+        <h4 id='cargo'>Administrador</h4>
+        <%}else{%>
+        <%if(cargo == 1 && aprovado == 1){%>
+        <h4 id='cargo'>Moderador</h4>
+        <%}else{%>
+        <h4 id='cargo'>Usuário</h4>
+        <%}}%>
       <h4><%=apelidoUsuario%></h4>
       <p><%=descricaoUsuario%></p>
       <h3><%=cidadeUsuario%> - <%=estadoUsuario%></h3>
@@ -69,4 +77,22 @@
 
   document.querySelector('header').style.background = `rgb(${dominantColor})`;
   document.querySelector('footer div').style.background = `rgb(${dominantColor})`;
+
+  let corCargo = ''
+    let cargo = "<%= cargo%>"
+    let aprovado = "<%= aprovado%>"
+
+    if (cargo == 2 && aprovado == 1) {
+        corCargo = '#F22441'
+    } else {
+        
+        if (cargo == 1 && aprovado == 1) {
+            corCargo = '#FFCF40'
+        } else {
+            corCargo = '#0F7A2F'
+        }
+    }
+
+    document.querySelector('.c-photo').style.border = `4px solid ${corCargo}`;
+    document.querySelector('#nome').style.color = `${corCargo}`;
 </script>

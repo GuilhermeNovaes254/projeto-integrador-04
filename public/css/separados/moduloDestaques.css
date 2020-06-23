@@ -10,7 +10,7 @@ section#tema {
 }
 
 #cabecalho{
-	overflow-y: auto ;width:100%;
+	overflow-y: hidden ;width:100%;
 	height: auto;	
 	max-height: 300px;
 	margin-bottom: -100px;

@@ -15,7 +15,15 @@
                 </div>
 
                 <div id="highLights">
-                    <h3><%=nomeUsuario%></h3>
+                    <h3 id='nome'><%=nomeUsuario%></h3>
+                    <%if(cargo == 2 && aprovado == 1){%>
+                    <h4 id='cargo'>Administrador</h4>
+                    <%}else{%>
+                    <%if(cargo == 1 && aprovado == 1){%>
+                    <h4 id='cargo'>Moderador</h4>
+                    <%}else{%>
+                    <h4 id='cargo'>Usuário</h4>
+                    <%}}%>
                     <h4><%=apelidoUsuario%></h4>
                     <h4><%=cidadeUsuario%> / <%=estadoUsuario%></h4>
                 </div>
@@ -24,9 +32,10 @@
 
                 <div id='destaques'>
 
-                    <a href="/moduloDestaques?id=<%=idUsuario%>&tipo=2"><strong>Favoritei: <%=favoritos%></strong></a>
-                    <a href="/moduloDestaques?id=<%=idUsuario%>&tipo=3"><strong>Já joguei: <%=jogados%></strong></a>
-                    <a href="/moduloDestaques?id=<%=idUsuario%>&tipo=1"><strong>Minha coleção:<%=colecionados%></strong></a>
+                    <a href="/moduloDestaques?id=<%=idUsuario%>&tipo=2" id='icons1'><strong><i class="icon ion-ios-heart" title="Favoritos"></i> <%=favoritos%></strong></a>
+                    <a href="/moduloDestaques?id=<%=idUsuario%>&tipo=3" id='icons2'><strong><i class="icon ion-ios-game-controller-b" title="Já joguei"></i> <%=jogados%></strong></a>
+                    <a href="/moduloDestaques?id=<%=idUsuario%>&tipo=1" id='icons3'><strong><i class="icon ion-ios-albums" title="Coleção"></i> <%=colecionados%></strong></a>
+
                 </div>
 
             </div>
@@ -60,4 +69,38 @@
 
     document.querySelector('header').style.background = `rgb(${dominantColor})`;
     document.querySelector('footer div').style.background = `rgb(${dominantColor})`;
+
+    let corCargo = ''
+    let cargo = "<%= cargo%>"
+    let aprovado = "<%= aprovado%>"
+
+    if (cargo == 2 && aprovado == 1) {
+        corCargo = '#F22441'
+    } else {
+        
+        if (cargo == 1 && aprovado == 1) {
+            corCargo = '#FFCF40'
+        } else {
+            corCargo = '#0F7A2F'
+        }
+    }
+
+    document.querySelector('#cabecalho').style.border = `3px solid ${corCargo}`;
+    document.querySelector('#nome').style.color = `${corCargo}`;
+    document.querySelector('#avatar1').style.border = `4px solid ${corCargo}`;
+    document.querySelector('#icons1').style.color = `${corCargo}`;
+    document.querySelector('#icons2').style.color = `${corCargo}`;
+    document.querySelector('#icons3').style.color = `${corCargo}`;
+    
+    //Altera Header
+    if("<%=tipo%>" == 2 ){
+        document.querySelector('#tipo2').className = "icon ion-ios-heart"
+    }
+    if("<%=tipo%>" == 3 ){
+        document.querySelector('#tipo3').className = "icon ion-ios-game-controller-b"
+    }
+    if("<%=tipo%>" == 1 ){
+        document.querySelector('#tipo1').className = "icon ion-ios-albums"
+    }
+
 </script>
