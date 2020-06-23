@@ -91,5 +91,16 @@
     document.querySelector('#icons1').style.color = `${corCargo}`;
     document.querySelector('#icons2').style.color = `${corCargo}`;
     document.querySelector('#icons3').style.color = `${corCargo}`;
+    
+    //Altera Header
+    if("<%=tipo%>" == 2 ){
+        document.querySelector('#tipo2').className = "icon ion-ios-heart"
+    }
+    if("<%=tipo%>" == 3 ){
+        document.querySelector('#tipo3').className = "icon ion-ios-game-controller-b"
+    }
+    if("<%=tipo%>" == 1 ){
+        document.querySelector('#tipo1').className = "icon ion-ios-albums"
+    }
 
 </script>
