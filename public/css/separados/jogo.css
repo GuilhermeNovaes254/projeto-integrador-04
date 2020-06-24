@@ -279,19 +279,21 @@
     display: flex;
     font-family: 'Montserrat', arial, sans-serif;
     font-size: 30px;
-    font-weight: 600;
+    font-weight: 900;
     letter-spacing: 0.5px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
   }  
   .game-detail{
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f22441', endColorstr='#efa0ab',GradientType=1 );
     color: #222;
     display: flex;
     font-family: 'Montserrat', arial, sans-serif;
-    font-size: 20px;
+    font-size: 17px;
     font-weight: 600;
     letter-spacing: 0.5px;
     margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: -1px;
   }  
 
   .game-detail-content{
