@@ -196,3 +196,15 @@ const ativarNotificacao = () =>{
 
 window.addEventListener('load', ativarNotificacao);
 
+
+let searchButton = document.querySelector('.main');
+let mainContent = document.querySelector('.main-content');
+let btnList = document.querySelector('.btn-list');
+
+searchButton.addEventListener('click', function(){
+	mainContent.classList.toggle('opened');
+	btnList.classList.toggle('opened');
+
+});
+
+
