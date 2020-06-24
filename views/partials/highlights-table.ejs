@@ -1,0 +1,36 @@
+<div class="row o-highlights-table" id="highlights-table">
+  <% for(let jogo of jogos) { %>
+  <div class="o-highlights__content"
+    style="padding: 0; display: flex; box-shadow: 0 0 15px 0 hsla(0,0%,73%,.3);"
+    data-aos="fade-up" data-aos-duration="1000">
+    <div class="o-highlights-table__listbox o-highlights_content-animate animate-grow-shadow c-category-<%= jogo.tema_id %>">
+      <% if(flagClicavel) { %>
+        <a href="/jogo?id=<%= jogo.id %>" class="o-highlights-table__card">
+          <% } %>
+          <div class="o-highlights-table__listbox-img o-highlights__header o-highlights-five__header" style="background: url('/buscaImagem/<%= jogo.foto %>') center center no-repeat;">
+            <h3 class="c-category-<%= jogo.tema_id %> o-border-shadow">
+              <%= (jogo.notaJogo / 2).toFixed(1) %>&nbsp;<i class="icon ion-star"></i>
+            </h3>
+          </div>
+          <div class="o-highlights-table__listbox-info o-highlights__description o-highlights-five__description">
+            <h2><%= jogo.nome %></h2>
+            <div class="o-highlights__features">
+              <div class="o-highlights__features--item o-border-shadow">
+                <h6><i class="icon ion-heart"></i> <%= jogo.totalFavorito %></h6>
+              </div>
+              <div class="o-highlights__features--item o-border-shadow">
+                <h6><i class="icon ion-happy"></i> <%= jogo.totalJoguei %></h6>
+              </div>
+            </div>
+            <% if(flagClicavel) { %>
+            <a href='/jogo?id=<%= jogo.id %>'class='c-jogo__tag'><%= jogo.tema.nome %></a>
+            <% } else {%>
+            <a class='c-jogo__tag'><%= jogo.tema.nome %></a>
+            <% } %>
+          </div>
+        </a>
+    </div>
+    
+  </div>
+  <% } %>
+</div>
