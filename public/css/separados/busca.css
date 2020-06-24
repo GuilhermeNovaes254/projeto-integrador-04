@@ -56,7 +56,8 @@
   flex-direction: column;
   font-family: 'Confortaa', arial, sans-serif;
   font-size: 14pt; 
-  margin-top: -200px;
+  max-width: 770px;
+  margin: -270px auto 0;
 }
 
 
@@ -666,4 +667,29 @@ input[type="hidden" i] {
 
 .c-result-person img{
   width:100%;
+}
+
+/* busca pagina */
+
+.c-advance-filter{
+  display: flex;
+}
+
+.c-advance-filter div{
+  width: 33.33333%;
+  display: flex;
+  padding: 0 15px;
+  justify-content: center;
+}
+
+  .c-advance-filter div label{
+    display: flex;
+    align-self: center;
+    font-weight: 900;
+    font-size: 15px;
+    margin-right: 10px;
+  }
+
+.c-advance-filter select{
+  width: 100%;
 }

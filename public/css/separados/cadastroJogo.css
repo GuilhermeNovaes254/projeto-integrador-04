@@ -132,7 +132,8 @@ section#temaCadastroJogo {
 
 /* Fim cadastroJOgo.ejs */
 
-.c-search-page select{
+.c-search-page select,
+.c-search-page input[type='text']{
 	background-color: #e5e5e5;
 	padding: 10px 20px;
 	border-radius: 25px;
@@ -141,6 +142,11 @@ section#temaCadastroJogo {
 	outline: none;
 	border-right: 15px solid #e5e5e5;
 	box-sizing: content-box;
+	height: 25px;
+}
+
+.c-search-page input[type='text']{
+	margin-left: 15px;
 }
 
 .c-search-page select option{
@@ -159,8 +165,4 @@ section#temaCadastroJogo {
 
 .c-advance-filter{
 	display: flex;
-}
-
-.c-advance-filter div{
-	width: 33.3333333%;
 }

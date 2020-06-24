@@ -145,11 +145,16 @@
   padding: 15px 25px;
   border: 0;
   cursor: pointer;
-  margin-top: 35px;
-	width: 150px;
 	color: white;
 	border-radius: 100px;
   text-align: center;
+  height: 45px;
+  margin-left: 15px;
+  width: 100%;
+}
+
+#botaoCadastro i{
+  font-size: 22px;
 }
 
 .sizeFontErro{

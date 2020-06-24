@@ -8,7 +8,7 @@
     <div class="col-12" id='areaCentralJogo'>
 
         <!-- <form onsubmit="return false;"> -->
-        <div id="caixaDeBusca" class="c-search-page">
+        <div id="caixaDeBusca" class="c-search-page o-border-shadow">
             <form action='/busca' method='GET'>
                 <div class="c-search-page__default">
                     <select id="tipo" name="tipo" class="form-group">
@@ -24,6 +24,9 @@
                             <input type="text" id="nome" name='nomeJogo' placeholder="Buscar jogos...">
                         </div>
                     </div>
+                    <button type="submit" id='botaoCadastro'>
+                        <i class="icon ion-search"></i>
+                    </button>
                 </div>
                 <div class="c-advance-filter">
                     <div id="tema" name="tema">
@@ -47,7 +50,6 @@
                         </select>
                     </div>
                 </div>
-                <button type="submit" id='botaoCadastro'>Pesquisar!</button>
             </form>
         </div>
 
