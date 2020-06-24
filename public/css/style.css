@@ -89,6 +89,9 @@ section#temaExcluir {
 .o-header {
 	min-height: 75px;
   background: #0F7A2F;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
 }
 
 .o-header-navbars{
@@ -160,7 +163,7 @@ section#temaExcluir {
 
   .o-header__container--menu ul {
     position: absolute;
-    top: 50%;
+    top: 500%;
     left: 50%;
     transform: translate(-50%, -50%);
     list-style: none;
@@ -171,9 +174,20 @@ section#temaExcluir {
     z-index: 2;
   }
 
-  @media(max-width:768px) {
+  @media(min-width:460px) and (max-width:768px) {
     .o-header__container--menu ul{
-          margin-top: 30px;
+      top: 600%;
+    }
+  }
+
+  @media(min-width:320px) and (max-width:459px) {
+    .o-header__container--menu ul{
+      top: 400%;
+    }
+    .o-header__container--menu ul li a{
+      font-size: 22px;
+      line-height: 32px;
+      display: block;
     }
   }
 
@@ -183,7 +197,7 @@ section#temaExcluir {
       .o-header__container--menu ul a{
         color:#181718;
         line-height: 45px;
-        font-size: 40px;
+        font-size: 35px;
       }
 
 @media(max-width:768px) {
@@ -241,6 +255,7 @@ section#temaExcluir {
   .o-hamburger--avatar{
     border-radius: 50%;
     max-width: 120px;
+    margin-bottom: 35px;
   }
 
   .o-hamburger:after,
@@ -778,3 +793,80 @@ input[type=checkbox] {
 .c-category-15{background: #222222;}
 
 /* fim cores de categorias */
+
+/* busca */
+
+/* .main {
+  position: fixed;
+  bottom: 100px;
+  right: 100px;
+  z-index: 99999;
+}
+.main-button {
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #e91e63;
+  transition: box-shadow 0.3s ease-in-out;
+}
+.main-button:hover {
+  cursor: pointer;
+  -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+.main-content {
+  z-index: 10;
+  font-size: 35px;
+  color: #fff;
+  transition: transform 0.5s ease-in-out;
+}
+.main-content.opened {
+  transform: rotate(90deg);
+}
+.btn-list {
+  position: absolute;
+  z-index: -1;
+  width: 200px;
+  height: 200px;
+  top: -75px;
+  left: -75px;
+  transform: scale(0);
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.2);
+  transition: all 0.3s 0.3s ease-in-out;
+}
+.btn-list.opened {
+  transform: scale(1);
+}
+.btn-list.opened a {
+  transform: scale(1);
+}
+.btn-float {
+  color: #fff;
+  font-size: 25px;
+  position: absolute;
+  transform: scale(0);
+  transition: all 0.3s 0.4s ease-in-out;
+}
+.btn-float.edit {
+  top: 25px;
+  left: 90px;
+}
+.btn-float.msg {
+  top: 90px;
+  left: 150px;
+}
+.btn-float.delete {
+  top: 150px;
+  left: 90px;
+}
+.btn-float.search {
+  top: 90px;
+  left: 25px;
+}
+ */
