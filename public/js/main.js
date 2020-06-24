@@ -177,16 +177,22 @@ const ativarNotificacao = () =>{
 	let btColecao = document.querySelector('#tipo1');
 	let btJajoguei = document.querySelector('#tipo3');
 
-	favoritar.addEventListener('click', function(){
-		btFavoritar.parentNode.classList.toggle('active');
-	});
-	colecao.addEventListener('click', function(){
-		btColecao.parentNode.classList.toggle('active');
-	});
-	jaJoguei.addEventListener('click', function(){
-		btJajoguei.parentNode.classList.toggle('active');
-	});
+	if(favoritar){
+		favoritar.addEventListener('click', function(){
+			btFavoritar.parentNode.classList.toggle('active');
+		});
+	}
+	if(colecao){
+		colecao.addEventListener('click', function(){
+			btColecao.parentNode.classList.toggle('active');
+		});
+	}
+	if(jaJoguei){
+		jaJoguei.addEventListener('click', function(){
+			btJajoguei.parentNode.classList.toggle('active');
+		});
+	}
 }
 
-window.addEventListener('DOMContentLoaded', ativarNotificacao);
+window.addEventListener('load', ativarNotificacao);
 
