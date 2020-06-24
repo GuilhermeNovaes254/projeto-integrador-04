@@ -60,6 +60,41 @@
   margin: -270px auto 0;
 }
 
+@media(max-width:767px){
+  #caixaDeBusca{
+    margin-top: -175px;
+    padding: 25px;
+  }
+  #botaoCadastro{
+    margin-top: 15px;
+  }
+  .c-search-page__default,
+  .c-advance-filter,
+  .c-advance-filter div{
+    flex-direction: column;
+  }
+  .c-advance-filter div{
+    width: 100% !important;
+    padding: 0 !important;
+  }
+  .c-advance-filter select,
+  #botaoCadastro{
+    width: initial !important;
+  }
+  #botaoCadastro,
+  .c-search-page input[type='text']{
+    margin: 0;
+  }
+  .buscaUsuario,
+  .buscaJogo{
+    text-align: center;
+    padding-bottom: 15px;
+  }
+  .c-advance-filter div label{
+    padding: 15px 0;
+  }
+
+}
 
 #buscaUsuario {
   visibility: hidden;

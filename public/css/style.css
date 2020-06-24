@@ -580,6 +580,13 @@ input[type=checkbox] {
     flex-direction: column;
   }
 
+  @media(max-width:600px){
+    .o-highlights_content-animate a{
+      width: 180px;
+      min-height: 180px;
+    }
+  }
+
   .o-highlights__header{
     text-align: center;
     border-radius: 23px 23px 0 0; 
