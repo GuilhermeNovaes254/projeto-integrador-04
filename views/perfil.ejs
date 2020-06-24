@@ -32,28 +32,45 @@
     <div class="c-perfil__right--fav c-perfil__right--content" data-aos="fade-up" data-aos-duration="1000"
       data-aos-delay="400">
       <h2 class="c-perfil__right--title o-border-shadow"><i class="icon ion-ios-heart"></i> Favoritos</h2>
-      <%- include('./partials/highlights-three', {jogos : jogosFavoritos}) %>
+      <%- include('./partials/highlights-table', {jogos : jogosFavoritos, flagClicavel : true}) %>
+      <div style="padding: 15px; align-content: right;">
+      <% if(countFavoritos == 0) { %>
+        <p style="text-align: center;">Nenhum jogo adicionado</p>
+        <% }%>
       <% if(countFavoritos > 6) { %>
-      <a href="/moduloDestaques?id=<%=idUsuario%>&tipo=2" class="c-bt-default">Ver mais</a>
+      <div style="text-align: center;">
+        <a href="/moduloDestaques?id=<%=idUsuario%>&tipo=2" class="c-bt-default">Ver mais</a>
+      </div>
       <% }%>
     </div>
+  </div>
     <div class="c-perfil__right--fav c-perfil__right--content" data-aos="fade-up" data-aos-duration="1000"
       data-aos-delay="400">
       <h2 class="c-perfil__right--title o-border-shadow"><i class="icon ion-ios-albums"></i> Coleção</h2>
-      <%- include('./partials/highlights-three', {jogos : jogosColecao}) %>
+      <%- include('./partials/highlights-table', {jogos : jogosColecao, flagClicavel : true}) %>
       <div style="padding: 15px; align-content: right;">
+        <% if(countColecao == 0) { %>
+          <p style="text-align: center;">Nenhum jogo adicionado</p>
+          <% }%>
         <% if(countColecao > 6) { %>
-        <a href="/moduloDestaques?id=<%=idUsuario%>&tipo=1" class="c-bt-default">Ver mais</a>
+        <div style="text-align: center;">
+          <a href="/moduloDestaques?id=<%=idUsuario%>&tipo=1" class="c-bt-default">Ver mais</a>
+        </div>
         <% }%>
       </div>
     </div>
     <div class="c-perfil__right--fav c-perfil__right--content" data-aos="fade-up" data-aos-duration="1000"
       data-aos-delay="400">
       <h2 class="c-perfil__right--title o-border-shadow"><i class="icon ion-ios-game-controller-b"></i> Já joguei</h2>
-      <%- include('./partials/highlights-three', {jogos : jogosJaJoguei}) %>
+      <%- include('./partials/highlights-table', {jogos : jogosJaJoguei, flagClicavel : true}) %>
       <div style="padding: 15px; align-content: right;">
+        <% if(countJaJoguei == 0) { %>
+          <p style="text-align: center;">Nenhum jogo adicionado</p>
+          <% }%>
         <% if(countJaJoguei > 6) { %>
-        <a href="/moduloDestaques?id=<%=idUsuario%>&tipo=3" class="c-bt-default">Ver mais</a>
+          <div style="text-align: center;">
+            <a href="/moduloDestaques?id=<%=idUsuario%>&tipo=3" class="c-bt-default">Ver mais</a>
+          </div>
         <% }%>
       </div>
     </div>
