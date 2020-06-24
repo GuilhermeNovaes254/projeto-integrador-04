@@ -98,6 +98,7 @@ async function postaAvaliacao(nota) {
         .then((resposta) => resposta.json())
         .then((nota) => {
             document.getElementById('notaJogo').innerText = (nota.notaFinal / 2).toFixed(1);
+            document.getElementById('notaJogo').innerHTML += "&nbsp;<i class='icon ion-star'></i>"
             
         });
 }
