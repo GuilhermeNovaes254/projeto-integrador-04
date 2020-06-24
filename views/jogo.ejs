@@ -13,8 +13,22 @@
         </p>
       </div>
       <div class="c-jogo__description c-category-<%= jogo.tema_id %>">
-        <h2 id='jogoNome'><%= jogo.nome %></h2>
-        <p id='jogoDescricao'><%= jogo.descricao %></p>
+        <h2 id='jogoNome' style="text-align: center;"><%= jogo.nome %></h2>
+        <br>
+        <p style="text-align: center;">Duração:</p>
+        <p style="text-align: center;"><%= jogo.duracao %> minutos</p>
+        <br>
+        <p style="text-align: center;">Quantidade:</p>
+        <p style="text-align: center;"><%= jogo.qntMin %> a <%= jogo.qntMax %> jogadores</p>
+        <br>
+
+        <p style="text-align: center;">Faixa etária:</p>
+        <% if (jogo.faixaEtaria === 0){ %>
+          <p style="text-align: center;">Livre</p>
+        <% }else{ %>
+          <p style="text-align: center;">+ <%= jogo.faixaEtaria %> anos</p>
+        <% } %>
+
         <a class="c-tag c-jogo__tag c-category-<%= jogo.tema_id %>">Tema do jogo: <%= jogo.tema.nome %></a>
       </div>
     </div>
@@ -62,12 +76,40 @@
         <h1 class="game-name"><%= jogo.nome %> (<%= jogo.ano %>)</h1>
         <h6 class="game-detail">Descrição:</h6>
         <p class="game-detail-content"><%= jogo.descricao %></p>
-        <h6 class="game-detail">Ano de lançamento:</h6>
-        <p class="game-detail-content"><%= jogo.ano %></p>
-        <h6 class="game-detail">Faixa etária:</h6>
-        <p class="game-detail-content"><%= jogo.faixaEtaria %></p>
-        <h6 class="game-detail">Duração:</h6>
-        <h6 class="game-detail-content"><%= jogo.faixaEtaria %></h6>
+        
+        <h6 class="game-detail">Peso (Dificuldade):</h6>
+        <% if (jogo.peso === 1){ %>
+          <p class="game-detail-content">Leve</p>
+        <% } %>
+        <% if (jogo.peso === 2){ %>
+          <p class="game-detail-content">Médio-Leve</p>
+        <% } %>
+        <% if (jogo.peso === 3){ %>
+          <p class="game-detail-content">Médio</p>
+        <% } %>
+        <% if (jogo.peso === 4){ %>
+          <p class="game-detail-content">Médio-Pesado</p>
+        <% } %>
+        <% if (jogo.peso === 5){ %>
+          <p class="game-detail-content">Pesado</p>
+        <% } %>
+
+        <h6 class="game-detail">Downtime:</h6>
+        <% if (jogo.downtime === 1){ %>
+          <p class="game-detail-content">Baixo</p>
+        <% } %>
+        <% if (jogo.downtime === 2){ %>
+          <p class="game-detail-content">Médio</p>
+        <% } %>
+        <% if (jogo.downtime === 3){ %>
+          <p class="game-detail-content">Alto</p>
+        <% } %>
+
+        <h6 class="game-detail">Domínio:</h6>
+        <p class="game-detail-content"><%= jogo.dominio.nome %></p>
+
+        <h6 class="game-detail">Mecânica:</h6>
+        <p class="game-detail-content"><%= jogo.mecanica.nome %></p>
 
       </div>
       <!-- <div id='jogolinkYoutube'><iframe  width="560" height="315" src="https://www.youtube.com/embed/aR-KAldshAE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div> -->

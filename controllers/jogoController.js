@@ -10,7 +10,9 @@ const {
     Colecao,
     Avaliacao,
     Jogo,
-    Tema
+    Tema,
+    Dominio,
+    Mecanica
 } = require('../models');
 
 
@@ -30,6 +32,12 @@ const jogoController = {
             include: [{
                 model: Tema,
                 as: 'tema'
+            },{
+                model: Dominio,
+                as: 'dominio'
+            },{
+                model: Mecanica,
+                as: 'mecanica'
             }]
         });
 
