@@ -100,6 +100,20 @@ section#temaExcluir {
   align-items: center;
 }
 
+.o-header__icons--menu .active::before{
+  content: '1';
+  width: 12px;
+  height: 12px;
+  background-color: #ed673b;
+  position: absolute;
+  border-radius: 50px;
+  left: 12px;
+  font-size: 8px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 12px;
+}
+
 @media(min-width:768px){
   .o-header__icons--menu{
     padding-right: 10px;
@@ -110,6 +124,7 @@ section#temaExcluir {
     color:#fff;
     padding: 0 15px;
     font-size: 28px;
+    position: relative;
   }
 
   @media(max-width:320px){

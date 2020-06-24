@@ -472,7 +472,6 @@
 
     .c-comments__features i{
       font-size: 33px;
-      margin-right: 10px;
     }
 
   @media(max-width:600px){
@@ -515,8 +514,13 @@
         color: green;
       }
 
-    .c-comments__features--likes{
-
+    .c-comments__features--likes h6{
+      font-size: 19px;
+      font-family: 'Montserrat', arial, sans-serif;
+      color: #222;
+      font-weight: bold;
+      padding-right: 5px;
+      margin-top: -3px;
     }
 
       .c-comments__features--likes .ion-ios-heart{

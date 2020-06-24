@@ -166,3 +166,27 @@ colorButton.on("click", function(){
 	
 });
 
+/* funcao de marcador do menu */
+
+const ativarNotificacao = () =>{
+
+	let favoritar = document.querySelector('#favoritar');
+	let colecao = document.querySelector('#colecao');
+	let jaJoguei = document.querySelector('#jaJoguei');
+	let btFavoritar = document.querySelector('#tipo2');
+	let btColecao = document.querySelector('#tipo1');
+	let btJajoguei = document.querySelector('#tipo3');
+
+	favoritar.addEventListener('click', function(){
+		btFavoritar.parentNode.classList.toggle('active');
+	});
+	colecao.addEventListener('click', function(){
+		btColecao.parentNode.classList.toggle('active');
+	});
+	jaJoguei.addEventListener('click', function(){
+		btJajoguei.parentNode.classList.toggle('active');
+	});
+}
+
+window.addEventListener('DOMContentLoaded', ativarNotificacao);
+
