@@ -57,7 +57,7 @@ module.exports = {
         qntMax:5,
         notaJogo:7.71,
         aprovado: 1,
-        tema_id: 8,
+        tema_id: 7,
         dominio_id: 13,
         mecanica_id: 5,
         foto:'terraforming_mars.jpg',

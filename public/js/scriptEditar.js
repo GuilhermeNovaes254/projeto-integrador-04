@@ -25,6 +25,7 @@ let imagemPerfil = document.getElementById('imagemPerfil');
 let imagemTema = document.getElementById('imagemTema');
 let selectCidade = document.getElementById('cidade');
 let divModerador = document.getElementById('mostrarModerador');
+let form = document.getElementById('form');
 
 function buscaEstados() {
     // Set up our HTTP request
@@ -226,3 +227,10 @@ if (typeof(fotoTema1) != "undefined" && fotoTema1.length > 0) {
 }else{
     imagemTema.value = fotoTemaCad;
 };
+
+const onFormSubmit = (evt) => {
+    if (typeof(formData) != undefined) {
+        alert("Usuário atualizado com sucesso!")
+    }
+};
+form.addEventListener('submit', onFormSubmit);

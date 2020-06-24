@@ -423,7 +423,7 @@ input[type=checkbox] {
 .centerImg{
   display: block;
   margin-left: auto;
-  margin-right: auto
+  margin-right: auto;
 }
 
 @media(min-width:1px){
