@@ -55,21 +55,21 @@
                                 </div>
                             </label>
                             <ul>
-                                <li><img class="o-hamburger--avatar" src='/buscaImagem/<%= USUARIO.foto %>' alt=""></li>
+                                <li><a href='/perfil/<%=USUARIO.id%>'><img class="o-hamburger--avatar" src='/buscaImagem/<%= USUARIO.foto %>' alt=""></a></li>
     
-                                <li><a href='/perfil/<%=USUARIO.id%>'>Perfil</a></li>
-                                <li><a href='/editar'>Editar Perfil</a></li>
+                                <li class="animate-underline-from-left"><a href='/perfil/<%=USUARIO.id%>'>Perfil</a></li>
+                                <li class="animate-underline-from-left"><a href='/editar'>Editar Perfil</a></li>
                                 <!-- <li><a href='#'>Minha Pagina</a></li> -->
                                 <%if( (USUARIO.cargo == 1 || USUARIO.cargo == 2 ) && USUARIO.aprovado == 1){%>
-                                <li><a href='/perfilModerador'>Moderação</a></li>
+                                <li class="animate-underline-from-left"><a href='/perfilModerador'>Moderação</a></li>
                                 <%}%>
                                 <%if( USUARIO.cargo == 2  && USUARIO.aprovado == 1){%>
-                                <li><a href='/perfilAdm'>Administração</a></li>
+                                <li class="animate-underline-from-left"><a href='/perfilAdm'>Administração</a></li>
                                 <%}%>
-                                <li><a href='/cadastroJogo'>Cadastrar Jogo</a></li>
-                                <li><a href='/busca'>Buscar</a></li>
-                                <li><a href='/excluir'>Encerrar Conta</a></li>
-                                <li><a href='/'>Sair</a></li>
+                                <li class="animate-underline-from-left"><a href='/cadastroJogo'>Cadastrar Jogo</a></li>
+                                <li class="animate-underline-from-left"><a href='/busca'>Buscar</a></li>
+                                <li class="animate-underline-from-left"><a href='/excluir'>Encerrar Conta</a></li>
+                                <li class="animate-underline-from-left"><a href='/'>Sair</a></li>
                             </ul>
                         </nav>
                     </div>

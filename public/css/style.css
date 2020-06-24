@@ -172,6 +172,8 @@ section#temaExcluir {
     transition: .25s .1s cubic-bezier(0, 1.07, 0, 1.02);
     visibility: hidden;
     z-index: 2;
+    display: flex;
+    flex-direction: column;
   }
 
   @media(min-width:460px) and (max-width:768px) {
@@ -198,6 +200,11 @@ section#temaExcluir {
         color:#181718;
         line-height: 45px;
         font-size: 35px;
+      }
+
+      .o-header__container--menu ul a:hover{
+        color:rgb(242, 36, 65);
+        text-decoration: none;
       }
 
 @media(max-width:768px) {
